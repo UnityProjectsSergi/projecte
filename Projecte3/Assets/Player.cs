@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         Debug.Log(playerInput.settingBtn);
         // aixo va 
         // asi no hay que tener el num de jugador
-        Direction = new Vector3(playerInput.Horizontal, 0, playerInput.Vertical);
+       // Direction = new Vector3(playerInput.Horizontal, 0, playerInput.Vertical);
   //      Debug.Log(Direction);
         if (!IsMoving) return;
 

@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         l_Forward = gameObject.transform.forward;
         l_Right = gameObject.transform.right;
         playerInput = GetComponent<PlayerInput>();
-        playerInput.SetControllerNumber(1, "PS");
+        playerInput.SetControllerNumber(1, "PS4");
     }
 
     void Update()
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovePS4Controller()
     {
-        Direction = new Vector3(playerInput.Horizontal, 0, playerInput.Vertical);
+        Direction = new Vector3(playerInput.leftHorizontal, 0, playerInput.leftVertical);
         if (!IsMoving) return;
         transform.rotation = Rotation;
         m_CharacterController.Move(Direction * movementSpeed * Time.deltaTime);
