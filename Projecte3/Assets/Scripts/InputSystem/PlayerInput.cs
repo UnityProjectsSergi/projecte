@@ -6,15 +6,14 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public ControlerLayout ControlerLayout;
-    private string horitzontalAxis;
-    private string verticalAxis;
+    public string horitzontalAxis;
+    public string verticalAxis;
     // buttons for player 
     public string settingsBtn;
     public bool settingBtn;
     private string Button_2;
     public string platformCtrl;
-    private int controllerNumber=1;
+    public int controllerNumber=1;
 
     internal void SetPlatformController(string platform)
     {
@@ -34,30 +33,26 @@ public class PlayerInput : MonoBehaviour
     {
        // ControlerLayout = new ControlerLayout();
     }
-    public void setControlerLayout(ControlerLayout controlerLayout)
+    internal void SetControllerNumber(int number,string platctr)
     {
-        ControlerLayout = controlerLayout;
-    }
-    internal void SetControllerNumber(int number)
-    {
-       // ControlerLayout.HorizontalMovimentAxis = "s";
+        platformCtrl = platctr;
         controllerNumber = number;
         horitzontalAxis = "J" + controllerNumber + "Horizontal"+platformCtrl;
-        verticalAxis = "J" + controllerNumber + "Vertical"+platformCtrl;
+        verticalAxis = "J" + controllerNumber + "Vertical" + platformCtrl;
         settingsBtn = "J" + controllerNumber + "Settings" + platformCtrl;
 
         // jo he seperat els inputs del player 
     }
     // Update is called once per frame
     private void Update()
-
     { // assigno el  nummero de player 1 o 2  
         if(controllerNumber>0)
         {
 
-            Horizontal =Mathf.Ceil(InputManager.Instance.GetAxis(horitzontalAxis));
-            
-            Vertical =Mathf.Ceil( InputManager.Instance.GetAxis(verticalAxis));
+            Horizontal =InputManager.Instance.GetAxis(horitzontalAxis);
+          //  Debug.Log(Horizontal);
+            Vertical =InputManager.Instance.GetAxis(verticalAxis);
+           // Debug.Log(Vertical);
             settingBtn = InputManager.Instance.GetButtonOnHold(settingsBtn);
         }
     }

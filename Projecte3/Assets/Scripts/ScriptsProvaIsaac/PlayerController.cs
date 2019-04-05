@@ -19,21 +19,24 @@ public class PlayerController : MonoBehaviour
     Vector3 l_Movement;
     Vector3 l_Forward;
     Vector3 l_Right;
-
+    private PlayerInput playerInput;
     [Header("Gravity Settings")]
     public float m_GravityMultiplier = 3.7f;
     float m_VerticalSpeed = 0.0f;
     bool m_OnGround = false;
     float l_SpeedMultiplier = 1.0f;
     public float m_FastSpeedMultiplier = 1.6f;
-
+    public float movementSpeed;
+    public float rotationSpeed;
+    private Vector3 Direction { get; set; }
     private void Start()
     {
-        //Cursor.visible = false;
         m_CharacterController = GetComponent<CharacterController>();
         m_MainCamera = Camera.main;
         l_Forward = gameObject.transform.forward;
         l_Right = gameObject.transform.right;
+        playerInput = GetComponent<PlayerInput>();
+        playerInput.SetControllerNumber(1, "PS");
     }
 
     void Update()
@@ -88,10 +91,10 @@ public class PlayerController : MonoBehaviour
 
     private void MovePS4Controller()
     {
-        Vector3 NextDir = new Vector3(Input.GetAxisRaw("J" + m_NumPlayer + "Horizontal"), 0, Input.GetAxisRaw("J" + m_NumPlayer + "Vertical"));
-        if (NextDir != Vector3.zero)
-            transform.rotation = Quaternion.LookRotation(NextDir);
-        m_CharacterController.Move(NextDir / 8);
+        Direction = new Vector3(playerInput.Horizontal, 0, playerInput.Vertical);
+        if (!IsMoving) return;
+        transform.rotation = Rotation;
+        m_CharacterController.Move(Direction * movementSpeed * Time.deltaTime);
     }
 
     void GravityController()
@@ -112,4 +115,14 @@ public class PlayerController : MonoBehaviour
         if ((l_CollisionFlags & CollisionFlags.Above) != 0 && m_VerticalSpeed > 0.0f)
             m_VerticalSpeed = 0.0f;
     }
+    private bool IsMoving => Direction != Vector3.zero;
+
+    private Quaternion Rotation => Quaternion.LookRotation(RotationDirection);
+
+    private Vector3 RotationDirection =>
+        Vector3.RotateTowards(
+            transform.forward,
+            Direction,
+            rotationSpeed * Time.deltaTime,
+            0);
 }

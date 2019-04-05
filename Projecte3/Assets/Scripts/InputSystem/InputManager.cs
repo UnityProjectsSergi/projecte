@@ -43,7 +43,6 @@ public class InputManager : MonoBehaviour
     }
     public float GetAxis(string axis)
     {
-        Debug.Log(Input.GetAxis(axis));
         return Input.GetAxis(axis);
     }
     public bool GetKey(KeyCode code)

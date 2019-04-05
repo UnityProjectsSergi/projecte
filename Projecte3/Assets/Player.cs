@@ -12,16 +12,19 @@ public class Player : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        playerInput.SetControllerNumber(1);
-        playerInput.SetPlatformController(PlatformCrl);
+        playerInput.SetControllerNumber(1,"PS");
+    //    playerInput.SetPlatformController("PS");
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        /// cada pplaayer te el seu player input
+        Debug.Log(playerInput.settingBtn);
+        // aixo va 
+        // asi no hay que tener el num de jugador
         Direction = new Vector3(playerInput.Horizontal, 0, playerInput.Vertical);
-        Debug.Log(Direction);
+  //      Debug.Log(Direction);
         if (!IsMoving) return;
 
         transform.position += Direction * movementSpeed * Time.deltaTime;
