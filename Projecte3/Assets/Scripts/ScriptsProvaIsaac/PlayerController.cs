@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.InputSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,6 +42,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(playerInput.settingsBtn.Down)
+        {
+            Debug.Log("setting btn down");
+        }
         MovePS4Controller();
         GravityController();
     }
@@ -91,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovePS4Controller()
     {
-        Direction = new Vector3(playerInput.leftHorizontal, 0, playerInput.leftVertical);
+        Direction = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
         if (!IsMoving) return;
         transform.rotation = Rotation;
         m_CharacterController.Move(Direction * movementSpeed * Time.deltaTime);

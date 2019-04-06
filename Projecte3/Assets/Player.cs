@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.InputSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +21,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         /// cada pplaayer te el seu player input
-        Debug.Log(playerInput.settingBtn);
+       //Debug.Log(playerInput.settingBtnDown);
         // aixo va 
         // asi no hay que tener el num de jugador
        // Direction = new Vector3(playerInput.Horizontal, 0, playerInput.Vertical);
