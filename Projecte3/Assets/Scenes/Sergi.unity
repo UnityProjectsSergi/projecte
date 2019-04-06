@@ -121,6 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108616668}
+  - component: {fileID: 108616667}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -128,6 +129,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &108616667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108616666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4551bb1e88dda694c83149a9dcff222f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temp: []
 --- !u!4 &108616668
 Transform:
   m_ObjectHideFlags: 0
@@ -576,6 +590,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5065795425785184457, guid: d710d9112cffdc44aae5eb0103169511,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5065795425785185077, guid: d710d9112cffdc44aae5eb0103169511,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -679,6 +698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065795425785184457, guid: d710d9112cffdc44aae5eb0103169511,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5065795425785185077, guid: d710d9112cffdc44aae5eb0103169511,
         type: 3}
