@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int m_NumPlayer = 1;
-    CharacterController m_CharacterController;
+   
+    CharacterController characterController;
     Camera m_MainCamera;
 
     [Header("Move Settings")]
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     Vector3 l_Movement;
     Vector3 l_Forward;
     Vector3 l_Right;
-    private PlayerInput playerInput;
+    public PlayerInput playerInput;
     [Header("Gravity Settings")]
     public float m_GravityMultiplier = 3.7f;
     float m_VerticalSpeed = 0.0f;
@@ -30,23 +30,36 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
     private Vector3 Direction { get; set; }
+    public int playercontroller;
+   public CollisionFlags l_CollisionFlags;
     private void Start()
     {
-        m_CharacterController = GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
         m_MainCamera = Camera.main;
         l_Forward = gameObject.transform.forward;
         l_Right = gameObject.transform.right;
         playerInput = GetComponent<PlayerInput>();
-        playerInput.SetControllerNumber(1, "PS4");
+        playerInput.SetControllerNumber(playercontroller, "PS4");
+        foreach (var item in Input.GetJoystickNames())
+        {
+          //  Debug.Log(item );
+        } 
     }
-
+    public bool dd = true;
     void Update()
     {
-        if(playerInput.settingsBtn.Down)
+
+        // requires you to set up axes "Joy0X" - "Joy3X" and "Joy0Y" - "Joy3Y" in the Input Manger
+     
+
+        //  Debug.Log("j2 x" + Input.GetAxis("J2LeftStickHorizontalPS4"));
+        if (playerInput.settingsBtn.Down)
         {
             Debug.Log("setting btn down");
         }
         MovePS4Controller();
+        //Move();
+     //   ColliderFlags();
         GravityController();
     }
 
@@ -80,7 +93,7 @@ public class PlayerController : MonoBehaviour
             l_IsMove = true;
         }
 
-        if (l_IsMove)
+        if(l_IsMove)
         {
             l_Speed += m_Acceleration * Time.deltaTime;
             l_Speed = Mathf.Clamp(l_Speed, m_Acceleration, m_MaxSpeed);
@@ -91,7 +104,8 @@ public class PlayerController : MonoBehaviour
         else
             l_Speed = 0.0f;
 
-        CollisionFlags l_CollisionFlags = m_CharacterController.Move(l_Movement);
+         l_CollisionFlags = characterController.Move(l_Movement);
+     
     }
 
     private void MovePS4Controller()
@@ -99,7 +113,7 @@ public class PlayerController : MonoBehaviour
         Direction = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
         if (!IsMoving) return;
         transform.rotation = Rotation;
-        m_CharacterController.Move(Direction * movementSpeed * Time.deltaTime);
+  //      l_CollisionFlags= characterController.Move(Direction * movementSpeed * Time.deltaTime);
     }
 
     void GravityController()
@@ -107,7 +121,7 @@ public class PlayerController : MonoBehaviour
         m_VerticalSpeed += (Physics.gravity.y * m_GravityMultiplier) * Time.deltaTime;
         l_Movement.y = m_VerticalSpeed * Time.deltaTime;
 
-        CollisionFlags l_CollisionFlags = m_CharacterController.Move(l_Movement);
+        l_CollisionFlags= characterController.Move(l_Movement);
 
         if ((l_CollisionFlags & CollisionFlags.Below) != 0)
         {
@@ -130,4 +144,28 @@ public class PlayerController : MonoBehaviour
             Direction,
             rotationSpeed * Time.deltaTime,
             0);
+    public void ColliderFlags()
+    {
+        if (characterController.collisionFlags == CollisionFlags.None)
+            print("Free floating!");
+
+        if ((characterController.collisionFlags & CollisionFlags.Sides) != 0)
+            print("Touching sides!");
+
+        if (characterController.collisionFlags == CollisionFlags.Sides)
+            print("Only touching sides, nothing else!");
+
+        if ((characterController.collisionFlags & CollisionFlags.Above) != 0)
+            print("Touching sides!");
+
+        if (characterController.collisionFlags == CollisionFlags.Above)
+            print("Only touching Ceiling, nothing else!");
+
+        if ((characterController.collisionFlags & CollisionFlags.Below) != 0)
+            print("Touching ground!");
+
+        if (characterController.collisionFlags == CollisionFlags.Below)
+            print("Only touching ground, nothing else!");
+    }
+
 }

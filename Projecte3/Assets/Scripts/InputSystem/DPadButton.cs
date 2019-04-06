@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.InputSystem
 {
-    public enum DPadButton
+    [System.Serializable]
+    public class DPadButton
     {
-        Right,Up,Left,Down
+        public bool Right, Up, Left, Down;
+      //  public ButtonInputPlayer RightBtn;
     }
 }

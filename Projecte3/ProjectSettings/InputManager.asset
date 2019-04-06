@@ -17,7 +17,7 @@ InputManager:
     dead: 0.19
     sensitivity: 0.75
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
     axis: 0
     joyNum: 1
@@ -45,16 +45,16 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
-    dead: 0.19
-    sensitivity: 0.75
+    gravity: 1000
+    dead: 0
+    sensitivity: 1000
     snap: 0
     invert: 0
     type: 2
     axis: 6
     joyNum: 1
   - serializedVersion: 3
-    m_Name: J2LeftHorizontalPS4
+    m_Name: J2LeftStickHorizontalPS4
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -68,9 +68,9 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 2
+    joyNum: 3
   - serializedVersion: 3
-    m_Name: J2RightHorizontalPS4
+    m_Name: J2RightStickHorizontalPS4
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -93,9 +93,9 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
-    dead: 0.19
-    sensitivity: 0.75
+    gravity: 1000
+    dead: 0
+    sensitivity: 1000
     snap: 0
     invert: 0
     type: 2
@@ -173,13 +173,13 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
-    dead: 0.19
-    sensitivity: 0.75
+    gravity: 100
+    dead: 0
+    sensitivity: 1000
     snap: 0
     invert: 0
     type: 2
-    axis: 7
+    axis: 8
     joyNum: 1
   - serializedVersion: 3
     m_Name: J2LeftStickVerticalPS4
@@ -222,12 +222,12 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1
-    dead: 0.19
+    dead: 0
     sensitivity: 0.75
     snap: 0
     invert: 0
     type: 2
-    axis: 7
+    axis: 8
     joyNum: 2
   - serializedVersion: 3
     m_Name: J1HorizontalXBOX
@@ -900,4 +900,68 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Joy0X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Joy1X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Joy1Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 1
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Joy0Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 1
     joyNum: 1

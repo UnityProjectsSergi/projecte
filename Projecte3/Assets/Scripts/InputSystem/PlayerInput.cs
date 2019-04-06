@@ -8,7 +8,7 @@ namespace Assets.Scripts.InputSystem
     public class PlayerInput : MonoBehaviour
     {
         #region Strings
-        public string _leftHoritzontalAxis;
+        private string _leftHoritzontalAxis;
         public string _leftVerticalAxis;
         public string _rightHoritzontalAxis;
         public string _rightVerticalAxis;
@@ -44,14 +44,15 @@ namespace Assets.Scripts.InputSystem
         public ButtonInputPlayer L2Btn = new ButtonInputPlayer();
         public ButtonInputPlayer L1Btn = new ButtonInputPlayer();
         public ButtonInputPlayer R1Btn = new ButtonInputPlayer();
-        public AxisInputPlayer DPad = new AxisInputPlayer();
+        public AxisInputPlayer DPadAxis = new AxisInputPlayer();
         public AxisInputPlayer L2Axis = new AxisInputPlayer();
         public AxisInputPlayer R2Axis = new AxisInputPlayer();
         public AxisInputPlayer RightStick = new AxisInputPlayer();
         public AxisInputPlayer LeftStick = new AxisInputPlayer();
-        public DPadButton dPadButton;
+        public DPadButton DPadButton = new DPadButton();
         public int controllerNumber = 1;
-     
+        private float lastBtnStateH;
+
         #endregion
         private void Awake()
         {
@@ -93,19 +94,26 @@ namespace Assets.Scripts.InputSystem
         }
         // Update is called once per frame
         private void Update()
-        { // assigno el  nummero de player 1 o 2  
+        { // assigno el  nummero de player 1 o 2
+            if (Input.GetJoystickNames().Length > 0)
+           //     Debug.Log("chec");
             if (controllerNumber > 0)
             {
-
+                //foreach (var item in Input.GetJoystickNames())
+                //{
+                //    Debug.Log(item.ToString());
+                //}
+                Debug.Log(Input.GetJoystickNames().Length + " is moved");
                 //Left Stick
-                LeftStick.Horizontal = InputManager.Instance.GetAxis(_leftHoritzontalAxis);
-                LeftStick.Vertical = InputManager.Instance.GetAxis(_leftVerticalAxis);
-                // Right Stck
+                LeftStick.Horizontal = Input.GetAxis(_leftHoritzontalAxis);
+                LeftStick.Vertical = Input.GetAxis(_leftVerticalAxis);
+             //   Debug.Log(LeftStick.Vertical +" "+ controllerNumber);
+                //Right Stck
                 RightStick.Horizontal = InputManager.Instance.GetAxis(_rightHoritzontalAxis);
                 RightStick.Vertical = InputManager.Instance.GetAxis(_rightVerticalAxis);
                 // Dpad Axis
-                DPad.Horizontal = InputManager.Instance.GetAxis(_dPadHorizontal);
-                DPad.Vertical = InputManager.Instance.GetAxis(_dPadVertical);
+                DPadAxis.Horizontal = InputManager.Instance.GetAxis(_dPadHorizontal);
+                DPadAxis.Vertical = InputManager.Instance.GetAxis(_dPadVertical);
                 //R2  and L2 Axis
                 R2Axis.Vertical = InputManager.Instance.GetAxis(_R2Axis);
                 L2Axis.Vertical = InputManager.Instance.GetAxis(_L2Axis);
@@ -122,7 +130,7 @@ namespace Assets.Scripts.InputSystem
                 startBtn.Down = InputManager.Instance.GetButtonDown(_startBtn);
                 startBtn.Up = InputManager.Instance.GetButtonUp(_startBtn);
 
-         
+
                 // L2 Btn
                 L2Btn.Hold = InputManager.Instance.GetButtonOnHold(_L2Btn);
                 L2Btn.Down = InputManager.Instance.GetButtonDown(_L2Btn);
@@ -146,7 +154,7 @@ namespace Assets.Scripts.InputSystem
                 // Left Stick
                 leftStickClick.Hold = InputManager.Instance.GetButtonOnHold(_leftStickClick);
                 leftStickClick.Down = InputManager.Instance.GetButtonDown(_leftStickClick);
-                leftStickClick.Up    = InputManager.Instance.GetButtonUp(_leftStickClick);
+                leftStickClick.Up = InputManager.Instance.GetButtonUp(_leftStickClick);
                 // Touckpd Btn
                 touchPadBtn.Hold = InputManager.Instance.GetButtonOnHold(_touchpadBtn);
                 touchPadBtn.Up = InputManager.Instance.GetButtonUp(_touchpadBtn);
@@ -167,7 +175,12 @@ namespace Assets.Scripts.InputSystem
                 triangleBtn.Hold = InputManager.Instance.GetButtonOnHold(_triangleBtn);
                 triangleBtn.Up = InputManager.Instance.GetButtonUp(_triangleBtn);
                 triangleBtn.Down = InputManager.Instance.GetButtonDown(_triangleBtn);
-                
+
+                DPadButton.Down = (InputManager.Instance.GetAxisRaw(_dPadVertical) == -1);
+                DPadButton.Up = (InputManager.Instance.GetAxisRaw(_dPadVertical) == 1);
+                DPadButton.Left = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == -1);
+                DPadButton.Right = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == 1);
+
             }
         }
     }

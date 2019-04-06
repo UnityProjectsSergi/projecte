@@ -21,13 +21,18 @@ public class InputManager : MonoBehaviour
         {
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
+
         }
     }
-
-            // Update is called once per frame
+    private void Start()
+    {
+       
+    }
+ 
+    // Update is called once per frame
     void Update()
     {
- 
+       
     }
     
     public bool GetButtonOnHold(string btn)
@@ -57,6 +62,10 @@ public class InputManager : MonoBehaviour
     public bool GetKeyDown(KeyCode code)
     {
         return Input.GetKeyDown(code);
+    }
+    public float GetAxisRaw(string axisraw)
+    {
+        return Input.GetAxisRaw(axisraw);
     }
 
     
