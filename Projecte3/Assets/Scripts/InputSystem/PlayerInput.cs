@@ -95,7 +95,7 @@ namespace Assets.Scripts.InputSystem
         // Update is called once per frame
         private void Update()
         { // assigno el  nummero de player 1 o 2
-            if (Input.GetJoystickNames().Length > 0)
+           
            //     Debug.Log("chec");
             if (controllerNumber > 0)
             {
@@ -111,9 +111,11 @@ namespace Assets.Scripts.InputSystem
                 //Right Stck
                 RightStick.Horizontal = InputManager.Instance.GetAxis(_rightHoritzontalAxis);
                 RightStick.Vertical = InputManager.Instance.GetAxis(_rightVerticalAxis);
-                // Dpad Axis
-                DPadAxis.Horizontal = InputManager.Instance.GetAxis(_dPadHorizontal);
-                DPadAxis.Vertical = InputManager.Instance.GetAxis(_dPadVertical);
+                    // Dpad Axis
+              
+                    DPadAxis.Vertical = InputManager.Instance.GetAxis(_dPadVertical);
+                    DPadAxis.Horizontal = InputManager.Instance.GetAxis(_dPadHorizontal);
+              
                 //R2  and L2 Axis
                 R2Axis.Vertical = InputManager.Instance.GetAxis(_R2Axis);
                 L2Axis.Vertical = InputManager.Instance.GetAxis(_L2Axis);
@@ -176,10 +178,10 @@ namespace Assets.Scripts.InputSystem
                 triangleBtn.Up = InputManager.Instance.GetButtonUp(_triangleBtn);
                 triangleBtn.Down = InputManager.Instance.GetButtonDown(_triangleBtn);
 
-                DPadButton.Down = (InputManager.Instance.GetAxisRaw(_dPadVertical) == -1);
-                DPadButton.Up = (InputManager.Instance.GetAxisRaw(_dPadVertical) == 1);
-                DPadButton.Left = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == -1);
-                DPadButton.Right = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == 1);
+                //DPadButton.Down = (InputManager.Instance.GetAxisRaw(_dPadVertical) == -1);
+                //DPadButton.Up = (InputManager.Instance.GetAxisRaw(_dPadVertical) == 1);
+                //DPadButton.Left = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == -1);
+                //DPadButton.Right = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == 1);
 
             }
         }
