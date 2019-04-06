@@ -58,9 +58,9 @@ public class PlayerController : MonoBehaviour
             Debug.Log("setting btn down");
         }
         MovePS4Controller();
-        //Move();
-     //   ColliderFlags();
-        GravityController();
+     //  Move();
+       //ColliderFlags();
+        //GravityController();
     }
 
     //Solo para provar sin mando
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         Direction = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
         if (!IsMoving) return;
         transform.rotation = Rotation;
-  //      l_CollisionFlags= characterController.Move(Direction * movementSpeed * Time.deltaTime);
+        l_CollisionFlags= characterController.Move(Direction * movementSpeed * Time.deltaTime);
     }
 
     void GravityController()
@@ -167,5 +167,8 @@ public class PlayerController : MonoBehaviour
         if (characterController.collisionFlags == CollisionFlags.Below)
             print("Only touching ground, nothing else!");
     }
-
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        
+    }
 }
