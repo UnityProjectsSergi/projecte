@@ -10,14 +10,15 @@ using UnityEngine;
     {
         public bool isActive;
         public bool hasObjectOn;
-        public bool objectOn;
-        public void Catch()
+        public GameObject objectOn;
+        public Transform positionObjOn; 
+        public void CatchObjOn(Player player)
         {
             
         }
-        public void LeaveOn()
+        public void LeaveObjOn(Player player)
         {
-
+            
         }
     }
 

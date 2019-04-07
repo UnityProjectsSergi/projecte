@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
-    public class FireSlot:Slot
+    public class StoveSlot:Slot
     {
+
     }
 }
