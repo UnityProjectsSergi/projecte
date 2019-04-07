@@ -18,7 +18,7 @@ public class CharaterControllerMod : MonoBehaviour
     bool onGround = false;
  
  
-    private Vector3 Direction;
+    public Vector3 Direction;
     public int playercontroller;
    public CollisionFlags l_CollisionFlags;
     /// <summary>
@@ -35,7 +35,7 @@ public class CharaterControllerMod : MonoBehaviour
             transform.forward,
             Direction,
             characterParameters.rotationSpeed * Time.deltaTime,
-            50);
+            0);
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -58,7 +58,7 @@ public class CharaterControllerMod : MonoBehaviour
     {
         Direction = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
         if (!IsMoving) { characterParameters.currentVelocity = 0.0f; return; }
-        
+    
         transform.rotation = Rotation;
         Direction.Normalize();
         CalculCurrentSpeed();
@@ -66,7 +66,7 @@ public class CharaterControllerMod : MonoBehaviour
     }
     public void CalculCurrentSpeed()
     {
-        if (Direction.normalized.magnitude>0.9f)
+        if (Direction.magnitude>0.0f)
         {
             characterParameters.currentVelocity = characterParameters.currentVelocity + (characterParameters.accelerationRate * Time.deltaTime);
         }

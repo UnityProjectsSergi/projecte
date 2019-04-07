@@ -22,6 +22,8 @@ public class CharacterParameters
     public float accelerationRate = 10.0f;
     //this is the velocity we subtract each second while decelerating
     public float decelerationRate = 50.0f;
+
+    
     public float rotationSpeed = 50f;
     // Use this for initialization
 }
