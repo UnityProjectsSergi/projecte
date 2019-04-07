@@ -20,7 +20,7 @@ public class CharaterControllerMod : MonoBehaviour
  
     public Vector3 Direction;
     public int playercontroller;
-   public CollisionFlags l_CollisionFlags;
+    public CollisionFlags l_CollisionFlags;
     /// <summary>
     /// says if isMoving or not
     /// </summary>
@@ -44,12 +44,9 @@ public class CharaterControllerMod : MonoBehaviour
         playerInput.SetControllerNumber(playercontroller, "PS4");
     }
     void Update()
-    {
-
-   
-    
-      MovePS4Controller();
-       //ColliderFlags();
+    {  
+        MovePS4Controller();
+        //ColliderFlags();
         //GravityController();
     }
 
@@ -64,6 +61,7 @@ public class CharaterControllerMod : MonoBehaviour
         CalculCurrentSpeed();
         l_CollisionFlags = characterController.Move(Direction * characterParameters.currentVelocity * Time.deltaTime);
     }
+
     public void CalculCurrentSpeed()
     {
         if (Direction.magnitude>0.0f)

@@ -7,9 +7,6 @@ using System.Threading.Tasks;
 [System.Serializable]
 public class CharacterParameters
 {
-
-  
-
     public float initialVelocity = 0.0f;
     //this is our target velocity while accelerating
     public float finalVelocityForwards = 500.0f;
