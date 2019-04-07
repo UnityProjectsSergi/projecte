@@ -103,7 +103,7 @@ namespace Assets.Scripts.InputSystem
                 //{
                 //    Debug.Log(item.ToString());
                 //}
-                Debug.Log(Input.GetJoystickNames().Length + " is moved");
+              //  Debug.Log(Input.GetJoystickNames().Length + " is moved");
                 //Left Stick
                 LeftStick.Horizontal = Input.GetAxis(_leftHoritzontalAxis);
                 LeftStick.Vertical = Input.GetAxis(_leftVerticalAxis);
