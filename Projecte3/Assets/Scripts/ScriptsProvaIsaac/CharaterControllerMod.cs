@@ -22,6 +22,7 @@ public class CharaterControllerMod : MonoBehaviour
     public int playercontroller;
     public CollisionFlags l_CollisionFlags;
     private ControllerParameters _overrideParameters;
+    private bool dashActive;
 
     /// <summary>
     /// says if isMoving or not
@@ -49,14 +50,33 @@ public class CharaterControllerMod : MonoBehaviour
     {
         Move();
         ColliderFlags();
+        ActivateDash();
    
+    }
+    public void ActivateDash()
+    {
+        if (playerInput.OBtn.Down)
+            StartCoroutine(Dash(2f));
+    }
+    IEnumerator Dash(float duration)
+    {
+        dashActive = true;
+        yield return new WaitForSeconds(duration);
+        dashActive = false;
     }
     public void Move()
     {
         MovementHorizontal();
         GravityController();
+        if (dashActive)
+        {
+            Parameters.currentVelocity = Parameters.normalVelocity*Parameters.dashVelocityMultiplier;
+        }
+        else
+        {
+            Parameters.currentVelocity = Parameters.normalVelocity;
+        }
         
-       
         l_CollisionFlags = characterController.Move(Direction *Parameters.currentVelocity* Time.deltaTime);
     }
 

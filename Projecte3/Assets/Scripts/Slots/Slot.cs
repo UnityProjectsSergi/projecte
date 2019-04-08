@@ -27,9 +27,9 @@ public abstract class Slot :MonoBehaviour
     }
 
     public void CatchObjOn(Player player)
-        {
+    {
             
-        }
+    }
    
     public virtual void LeaveObjOn(CharacterControllerAct player)
     {
@@ -40,7 +40,7 @@ public abstract class Slot :MonoBehaviour
             item = player.attachedObject;
             item.transform.position = positionObjOn.transform.position;
             player.attachedObject = null;
-        }
+        }    
     }
 }
 

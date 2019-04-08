@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
+    // Fogon
     public class StoveSlot:Slot
     {
+        public ItemSlot Pot;// olla
 
     }
 }

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 public class ControllerParameters
 {
 
-
+    public float dashVelocityMultiplier = 3f;
    
     //this is our current velocity
-    public float currentVelocity = 5.0f;
-   
+    public float currentVelocity = 0f;
+    public float normalVelocity = 5.0f;
    
 
     

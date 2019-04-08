@@ -7,8 +7,9 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
+    //Slot Where player catch ingrredients 
     public class ItemSlot : Slot
-    {
+    { 
         public GameObject itemPrefab;
 
         private void Start()
