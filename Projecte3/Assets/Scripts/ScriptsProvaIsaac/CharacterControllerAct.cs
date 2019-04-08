@@ -1,48 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.InputSystem;
 
 public class CharacterControllerAct : MonoBehaviour
 {
     public Transform attachTransform;
+    PlayerInput playerInput;
 
-    private ItemBox itemBox;
+    private Slot slot;
+    private bool inSlot;
 
-    bool canTakeItem = false;
+    private GameObject attachedObject;
+
+    private void Start()
+    {
+        playerInput = GetComponent<PlayerInput>();
+    }
 
     void Update()
     {
-        Action();
+        if (inSlot)
+            Action();
     }
 
     void Action()
     {
-        Debug.Log(Input.GetAxis("J1XButtonPS4"));
-        if(canTakeItem)
-        {           
-            if(Input.GetAxis("J1XButtonPS4") > 0)
-            {
-                Debug.Log("instantiate");
-                Instantiate(itemBox.item, attachTransform.position, Quaternion.identity, attachTransform);
-            }       
-        }
+        if (attachedObject == null)
+        {
+            if (playerInput.XBtn.Down)
+                slot.Catch(attachTransform, ref attachedObject);
+        }     
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Box")
+        if (other.gameObject.tag == "Slot")
         {
-            canTakeItem = true;
-            itemBox = other.gameObject.GetComponent<ItemBox>();
+            inSlot = true;
+            slot = other.gameObject.GetComponent<Slot>();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Box")
+        if (other.gameObject.tag == "Slot")
         {
-            canTakeItem = false;
-            itemBox = null;
+            inSlot = false;
+            slot = null;
         }
     }
 }
