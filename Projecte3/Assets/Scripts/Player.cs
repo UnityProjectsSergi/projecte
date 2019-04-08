@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-   
+    public GameObject Obj;  
     void Start()
     {
     

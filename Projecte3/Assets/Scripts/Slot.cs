@@ -12,22 +12,32 @@ using UnityEngine;
 
         public bool isActive;
         public bool hasObjectOn;
+
         public bool objectOn;
 
         public void Catch(Transform _attachTransform, ref GameObject _attachedObject)
+    {
+        if (item != null)
         {
-            if (item != null)
-            {
-                item.transform.parent = _attachTransform.transform;
-                item.transform.position = _attachTransform.position;
-                _attachedObject = item;
-                item = null;
-            }
+            item.transform.parent = _attachTransform.transform;
+            item.transform.position = _attachTransform.position;
+            _attachedObject = item;
+            item = null;
+        }
+    }
+     
+        public Transform positionObjOn; 
+        public void CatchObjOn(Player player)
+        {
+            
         }
 
-        public void LeaveOn()
-        {
+        
 
+        public void LeaveObjOn(Player player)
+
+        {
+            
         }
     }
 
