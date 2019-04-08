@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Ingredient : MonoBehaviour
+public enum StateIngredient
 {
+
+}
+// x fer unna maq esstats
+public abstract class Ingredient : MonoBehaviour
+{
+
     // Start is called before the first frame update
     void Start()
     {
