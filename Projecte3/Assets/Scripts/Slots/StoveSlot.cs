@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
-   public  class GarbageSlot:Slot
+    // Fogon
+    public class StoveSlot:Slot
     {
+        public ItemSlot Pot;// olla
+
     }
 }

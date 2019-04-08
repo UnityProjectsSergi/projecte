@@ -24,17 +24,13 @@ using UnityEngine;
                 _attachedObject = item;
                 item = null;
             }
-        }
 
-        public void CatchObjOn(Player player)
+        }
+        public virtual void Update()
         {
             
         }
-       
-        public void LeaveObjOn(Player player)
 
-        {
-            
-        }
+     
     }
 
