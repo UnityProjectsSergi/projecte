@@ -9,31 +9,28 @@ using UnityEngine;
     public abstract class Slot :MonoBehaviour
     {
         protected GameObject item;
+        public Transform positionObjOn;
 
         public bool isActive;
         public bool hasObjectOn;
-
         public bool objectOn;
 
-        public void Catch(Transform _attachTransform, ref GameObject _attachedObject)
-    {
-        if (item != null)
+        public virtual void Catch(Transform _attachTransform, ref GameObject _attachedObject)
         {
-            item.transform.parent = _attachTransform.transform;
-            item.transform.position = _attachTransform.position;
-            _attachedObject = item;
-            item = null;
+            if (item != null)
+            {
+                item.transform.parent = _attachTransform.transform;
+                item.transform.position = _attachTransform.position;
+                _attachedObject = item;
+                item = null;
+            }
         }
-    }
-     
-        public Transform positionObjOn; 
+
         public void CatchObjOn(Player player)
         {
             
         }
-
-        
-
+       
         public void LeaveObjOn(Player player)
 
         {

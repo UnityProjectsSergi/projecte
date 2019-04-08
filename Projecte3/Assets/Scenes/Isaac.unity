@@ -2408,6 +2408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6e34b494f64934080982f435c15013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionObjOn: {fileID: 0}
   isActive: 0
   hasObjectOn: 0
   objectOn: 0
@@ -2609,12 +2610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05851d176cdfb1c4c89408505a1af33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterParameters:
-    initialVelocity: 0
-    finalVelocityForwards: 5
-    currentVelocity: 0
-    accelerationRate: 80
-    decelerationRate: 80
+  DefaultParameters:
+    currentVelocity: 8
     rotationSpeed: 50
   playerInput: {fileID: 768907778}
   m_GravityMultiplier: 3.7

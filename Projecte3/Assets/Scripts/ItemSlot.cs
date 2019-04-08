@@ -11,6 +11,11 @@ namespace Assets.Scripts
     {
         public GameObject itemPrefab;
 
+        public override void Catch(Transform _attachTransform, ref GameObject _attachedObject)
+        {
+            base.Catch(_attachTransform, ref _attachedObject);
+        }
+
         private void Update()
         {
             if(item == null)
