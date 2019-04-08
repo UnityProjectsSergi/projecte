@@ -11,15 +11,17 @@ namespace Assets.Scripts
     {
         public GameObject itemPrefab;
 
-        public override void Catch(Transform _attachTransform, ref GameObject _attachedObject)
+        private void Start()
         {
-            base.Catch(_attachTransform, ref _attachedObject);
+            item = Instantiate(itemPrefab, positionObjOn.transform.position, Quaternion.identity, positionObjOn.transform);
+            hasObjectOn = true;
         }
 
-        private void Update()
+        public override void Catch(CharacterControllerAct player)
         {
-            if(item == null)
-                item = Instantiate(itemPrefab, transform.position, Quaternion.identity, transform);
+            base.Catch(player);
+            item = Instantiate(itemPrefab, positionObjOn.transform.position, Quaternion.identity, positionObjOn.transform);
+            hasObjectOn = true;
         }
     }
 }

@@ -7,11 +7,13 @@ public class CharacterControllerAct : MonoBehaviour
 {
     public Transform attachTransform;
     PlayerInput playerInput;
+    public LayerMask tablesLayerMask;
+    public Transform raycastTransform;
 
     private Slot slot;
     private bool inSlot;
 
-    private GameObject attachedObject;
+    public GameObject attachedObject;
 
     private void Start()
     {
@@ -20,34 +22,41 @@ public class CharacterControllerAct : MonoBehaviour
 
     void Update()
     {
-        if (inSlot)
-            Action();
+        SlotAction();        
     }
 
-    void Action()
+    void SlotAction()
     {
         if (attachedObject == null)
         {
             if (playerInput.XBtn.Down)
-                slot.Catch(attachTransform, ref attachedObject);
-        }     
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Slot")
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
+                {
+                    inSlot = true;
+                    slot = hit.collider.GetComponent<Slot>();
+                    slot.Catch(this);
+                }
+            }
+        }
+        else
         {
-            inSlot = true;
-            slot = other.gameObject.GetComponent<Slot>();
+            if (playerInput.XBtn.Down)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
+                {
+                    inSlot = true;
+                    slot = hit.collider.GetComponent<Slot>();
+                    slot.LeaveObjOn(this);
+                }
+            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnDrawGizmos()
     {
-        if (other.gameObject.tag == "Slot")
-        {
-            inSlot = false;
-            slot = null;
-        }
+        Gizmos.DrawRay(transform.position, transform.forward * 1f);
     }
 }

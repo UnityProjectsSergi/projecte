@@ -6,35 +6,41 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 
-    public abstract class Slot :MonoBehaviour
+public abstract class Slot :MonoBehaviour
+{
+    protected GameObject item;
+    public Transform positionObjOn;
+
+    public bool isActive;
+    public bool hasObjectOn; //Object in slot
+
+    public virtual void Catch(CharacterControllerAct player)
     {
-        protected GameObject item;
-        public Transform positionObjOn;
-
-        public bool isActive;
-        public bool hasObjectOn;
-        public bool objectOn;
-
-        public virtual void Catch(Transform _attachTransform, ref GameObject _attachedObject)
+        if (hasObjectOn)
         {
-            if (item != null)
-            {
-                item.transform.parent = _attachTransform.transform;
-                item.transform.position = _attachTransform.position;
-                _attachedObject = item;
-                item = null;
-            }
-        }
-
-        public void CatchObjOn(Player player)
-        {
-            
-        }
-       
-        public void LeaveObjOn(Player player)
-
-        {
-            
+            item.transform.parent = player.attachTransform;
+            item.transform.position = player.attachTransform.position;
+            player.attachedObject = item;
+            hasObjectOn = false;
+            item = null;
         }
     }
+
+    public void CatchObjOn(Player player)
+        {
+            
+        }
+   
+    public virtual void LeaveObjOn(CharacterControllerAct player)
+    {
+        if (!hasObjectOn)
+        {
+            hasObjectOn = true;
+            player.attachedObject.transform.parent = positionObjOn.transform;
+            item = player.attachedObject;
+            item.transform.position = positionObjOn.transform.position;
+            player.attachedObject = null;
+        }
+    }
+}
 
