@@ -44,10 +44,14 @@ public class CharaterControllerMod : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         m_MainCamera = Camera.main;
         playerInput = GetComponent<PlayerInput>();
+        if (playerInput == null)
+            Debug.LogError("Controlleer" + playercontroller + "not connected");
         playerInput.SetControllerNumber(playercontroller, "PS4");
     }
     void Update()
     {
+        if (playerInput == null)
+            Debug.LogError("Controlleer" + playercontroller + "not connected");
         Move();
         ColliderFlags();
         ActivateDash();

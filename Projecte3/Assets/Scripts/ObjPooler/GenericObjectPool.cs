@@ -12,7 +12,7 @@ namespace Assets.Scripts.ObjPooler
         [SerializeField] T Prefab;
         private static GenericObjectPool<T> _instance;
         public static GenericObjectPool<T> Instance { get { return _instance; } private set { } }
-        private Queue<T> objects;
+        public Queue<T> objects;
 
         private void Awake()
         {
@@ -23,15 +23,21 @@ namespace Assets.Scripts.ObjPooler
             else
             {
                 _instance = this;
+                objects = new Queue<T>();
                 DontDestroyOnLoad(this.gameObject);
 
             }
         }
-        private T GetObjFromPool()
+        public T GetObjFromPool(Transform transform)
         {
             if (objects.Count == 0)
-                AddObjects(1);
-            return objects.Dequeue();
+                AddObjects(4);
+
+            T obj = objects.Dequeue();
+            obj.transform.position = transform.position;
+            obj.transform.rotation = transform.rotation;
+            obj.gameObject.SetActive(true);
+            return obj ;
         }
 
         private void AddObjects(int v)
@@ -40,8 +46,14 @@ namespace Assets.Scripts.ObjPooler
             {
                 var newObj = GameObject.Instantiate(Prefab);
                 newObj.gameObject.SetActive(false);
+                newObj.transform.parent=transform;
                 objects.Enqueue(newObj);
             }
+        }
+        public void ReturnToPool(T gameObjectReturnPool)
+        {
+            gameObjectReturnPool.gameObject.SetActive(false);
+            objects.Enqueue(gameObjectReturnPool);
         }
     }
 

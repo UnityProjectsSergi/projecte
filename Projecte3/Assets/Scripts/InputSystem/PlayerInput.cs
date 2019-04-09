@@ -95,8 +95,13 @@ namespace Assets.Scripts.InputSystem
         // Update is called once per frame
         private void Update()
         { // assigno el  nummero de player 1 o 2
-           
-           //     Debug.Log("chec");
+
+            //     Debug.Log("chec");
+            //if (Input.GetJoystickNames().Length > 0)
+            //{
+            //    if (string.IsNullOrWhiteSpace(Input.GetJoystickNames()[controllerNumber]))
+            //        Debug.Log("connect Controller " + Input.GetJoystickNames()[controllerNumber]);
+            //}
             if (controllerNumber > 0)
             {
                 //foreach (var item in Input.GetJoystickNames())

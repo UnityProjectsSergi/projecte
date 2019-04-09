@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.InputSystem;
-
+using Assets.Scripts.ObjPooler;
 public class CharacterControllerAct : MonoBehaviour
 {
     public Transform attachTransform;
@@ -31,9 +31,11 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if (playerInput.XBtn.Down)
             {
+                Debug.Log("ss");
                 RaycastHit hit;
                 if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
                 {
+                    Debug.Log("sss");
                     inSlot = true;
                     slot = hit.collider.GetComponent<Slot>();
                     slot.Catch(this);

@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-   public  class GarbageSlot:Slot
+   /*public  class GarbageSlot:Slot
     {
-        public override void Catch(UnityEngine.Transform _attachTransform, ref GameObject _attachedObject)
-        {
-            base.Catch(_attachTransform, ref _attachedObject);
-        }
-    }
+        //public override void Catch(UnityEngine.Transform _attachTransform, ref GameObject _attachedObject)
+        //{
+        //    base.Catch(_attachTransform, ref _attachedObject);
+        //}
+    }*/
 }
