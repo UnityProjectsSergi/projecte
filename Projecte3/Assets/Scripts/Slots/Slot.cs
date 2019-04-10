@@ -8,7 +8,7 @@ using UnityEngine;
 
 public abstract class Slot :MonoBehaviour
 {
-    protected Ingredient item;
+    protected Item item;
     public Transform positionObjOn;
 
     public bool isActive;
@@ -36,7 +36,7 @@ public abstract class Slot :MonoBehaviour
         {
             hasObjectOn = true;
             player.attachedObject.transform.parent = positionObjOn.transform;
-            item = player.attachedObject.GetComponent<Ingredient>();
+            item = player.attachedObject.GetComponent<Item>();
             item.transform.position = positionObjOn.transform.position;
             player.attachedObject = null;
         }    

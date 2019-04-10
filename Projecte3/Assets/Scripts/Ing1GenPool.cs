@@ -7,7 +7,9 @@ using UnityEngine;
 using Assets.Scripts.ObjPooler;
 namespace Assets.Scripts.ObjPooler
 {
-   public class Ing1GenPool:GenericObjectPool<Ingredient>
+
+    // xo el problema q hi veig esq  si l'objectee  item 
+   public class Ing1GenPool:GenericObjectPool<Ing11>
     {
 
     }

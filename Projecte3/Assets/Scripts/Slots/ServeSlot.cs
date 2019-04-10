@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Assets.Scripts.ObjPooler;
-namespace Assets.Scripts
+
+namespace Assets.Scripts.Slots
 {
-    public  class GarbageSlot:Slot
+    public  class ServeSlot:Slot
     {
+
         public override void LeaveObjOn(CharacterControllerAct player)
         {
             if (!hasObjectOn)
             {
+
                 item = player.attachedObject.GetComponent<Item>();
-                if (item.GetComponent<Ing11>())
+
+                if (!item.GetComponent<Ing11>())
                 {
                     player.attachedObject = null;
                     item.transform.parent = null;
-                    Ing1GenPool.Instance.ReturnToPool((Ing11)item);
+                    //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
+                    OrderManager.Instance.CheckAllOrder(item);
+
+                   // Ing1GenPool.Instance.ReturnToPool(item);
                 }
-            }          
+            }
         }
     }
 }
