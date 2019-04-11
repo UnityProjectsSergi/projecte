@@ -28,6 +28,9 @@ namespace Assets.Scripts.ObjPooler
 
             }
         }
+
+     
+
         public T GetObjFromPool(Transform transform)
         {
             if (objects.Count == 0)

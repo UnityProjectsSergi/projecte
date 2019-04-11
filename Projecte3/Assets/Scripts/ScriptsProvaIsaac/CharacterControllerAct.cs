@@ -10,8 +10,8 @@ public class CharacterControllerAct : MonoBehaviour
     public LayerMask tablesLayerMask;
     public Transform raycastTransform;
 
-    private Slot slot;
-    private bool inSlot;
+    public Slot slot;
+    public bool inSlot;
 
     public GameObject attachedObject;
 
@@ -33,7 +33,7 @@ public class CharacterControllerAct : MonoBehaviour
             {
                 Debug.Log("ss");
                 RaycastHit hit;
-                if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
+                if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2 , tablesLayerMask))
                 {
                     Debug.Log("sss");
                     inSlot = true;
@@ -46,8 +46,9 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if (playerInput.XBtn.Down)
             {
+
                 RaycastHit hit;
-                if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
+                if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
                 {
                     inSlot = true;
                     slot = hit.collider.GetComponent<Slot>();
@@ -59,6 +60,6 @@ public class CharacterControllerAct : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(transform.position, transform.forward * 1f);
+        Gizmos.DrawRay(transform.position, transform.forward * 2f);
     }
 }

@@ -10,6 +10,5 @@ namespace Assets.Scripts.InputSystem
     public class DPadButton
     {
         public bool Right, Up, Left, Down;
-      //  public ButtonInputPlayer RightBtn;
     }
 }

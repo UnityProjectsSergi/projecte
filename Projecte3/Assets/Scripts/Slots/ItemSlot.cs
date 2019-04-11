@@ -12,7 +12,7 @@ using Assets.Scripts.ObjPooler;
         public GameObject itemPrefab;
         private void Start()
         {
-            item = Ing1GenPool.Instance.GetObjFromPool(transform);
+            item = Ing1Pool.Instance.GetObjFromPool(transform);
            // item = Instantiate(itemPrefab, positionObjOn.transform.position, Quaternion.identity, positionObjOn.transform);
             hasObjectOn = true;
         }
@@ -20,7 +20,7 @@ using Assets.Scripts.ObjPooler;
         public override void Catch(CharacterControllerAct player)
         {
             base.Catch(player);
-            item = Ing1GenPool.Instance.GetObjFromPool(transform);
+            item = Ing1Pool.Instance.GetObjFromPool(transform);
            
         //    item = Instantiate(itemPrefab, positionObjOn.transform.position, Quaternion.identity, positionObjOn.transform);
             hasObjectOn = true;

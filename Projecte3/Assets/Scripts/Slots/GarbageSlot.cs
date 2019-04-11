@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEngine;
-
+using Assets.Scripts.ObjPooler;
 namespace Assets.Scripts
 {
-   /*public  class GarbageSlot:Slot
+    public  class GarbageSlot:Slot
     {
-        //public override void Catch(UnityEngine.Transform _attachTransform, ref GameObject _attachedObject)
-        //{
-        //    base.Catch(_attachTransform, ref _attachedObject);
-        //}
-    }*/
+        public override void LeaveObjOn(CharacterControllerAct player)
+        {
+            if (!hasObjectOn)
+            {
+                item = player.attachedObject.GetComponent<Item>();
+                if (item.GetComponent<Ing11>())
+                {
+                    player.attachedObject = null;
+                    item.transform.parent = null;
+                    Ing1Pool.Instance.ReturnToPool((Ing11)item);
+                }
+
+            }          
+        }
+    }
 }

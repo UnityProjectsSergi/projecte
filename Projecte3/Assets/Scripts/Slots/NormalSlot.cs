@@ -5,8 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-    public class NormalSlot:Slot
+public class NormalSlot:Slot
+{
+    public override void Catch(CharacterControllerAct player)
     {
-        
+        base.Catch(player);
     }
+    public override void LeaveObjOn(CharacterControllerAct player)
+    {
+        base.LeaveObjOn(player);
+    }
+}
 
