@@ -9,7 +9,7 @@ namespace Assets.Scripts.ObjPooler
 {
 
     // xo el problema q hi veig esq  si l'objectee  item 
-   public class Ing1GenPool:GenericObjectPool<Ing11>
+   public class PotPool:GenericObjectPool<ItemPot>
     {
 
     }

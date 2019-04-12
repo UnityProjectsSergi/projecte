@@ -9,14 +9,16 @@ using System.Threading.Tasks;
     { 
     public override void LeaveObjOn(CharacterControllerAct player)
     {
-       
+        Item i = player.attachedObject.GetComponent<Item>();
         base.LeaveObjOn(player);
-        item.stateIngredient = StateIngredient.cutting;
+        if (i.itemType == ItemType.Ing)
+            item.stateIngredient = StateIngredient.cutting;
 
     }
     public override void Catch(CharacterControllerAct player)
     { 
-        item.stateIngredient = StateIngredient.cutted;
+      
+      if(item.stateIngredient == StateIngredient.cutted)
         base.Catch(player);
         
     }

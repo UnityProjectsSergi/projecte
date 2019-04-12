@@ -5,12 +5,14 @@ using Assets.Scripts.ObjPooler;
 
 public enum StateIngredient
 {
-    raw,cutting,cutted,cooked
+    raw,cutting,cutted,initCook,cooked
 }
 
 // x fer unna maq esstats
 public  class Item : MonoBehaviour
 {
+    public ItemType itemType;
+    public bool isPot;
     public int points;
     public StateIngredient stateIngredient;
     public RigidbodyController rigidbodyController;
