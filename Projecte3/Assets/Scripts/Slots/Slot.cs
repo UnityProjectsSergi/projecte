@@ -23,6 +23,7 @@ public abstract class Slot :MonoBehaviour
             item.transform.parent = player.attachTransform;
             item.transform.position = player.attachTransform.position;
             player.attachedObject = item.gameObject;
+            item.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             hasObjectOn = false;
             item = null;
         }
@@ -35,6 +36,7 @@ public abstract class Slot :MonoBehaviour
         if (!hasObjectOn)
         {
             hasObjectOn = true;
+            player.attachedObject.GetComponent<Rigidbody>().isKinematic = true;
             player.attachedObject.transform.parent = positionObjOn.transform;
             item = player.attachedObject.GetComponent<Item>();
             item.transform.position = positionObjOn.transform.position;

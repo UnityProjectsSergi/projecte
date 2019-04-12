@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.InputSystem;
 using Assets.Scripts.ObjPooler;
+
 public class CharacterControllerAct : MonoBehaviour
 {
     public Transform attachTransform;
     PlayerInput playerInput;
     public LayerMask tablesLayerMask;
+    public LayerMask itemsLayerMask;
     public Transform raycastTransform;
 
     private Slot slot;
-    private bool inSlot;
+    private Item item;
 
     public GameObject attachedObject;
 
@@ -31,14 +33,16 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if (playerInput.XBtn.Down)
             {
-                Debug.Log("ss");
                 RaycastHit hit;
                 if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
                 {
-                    Debug.Log("sss");
-                    inSlot = true;
                     slot = hit.collider.GetComponent<Slot>();
                     slot.Catch(this);
+                }
+                if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, itemsLayerMask))
+                {
+                    item = hit.collider.GetComponent<Item>();
+                    item.Catch(this);
                 }
             }
         }
@@ -48,10 +52,15 @@ public class CharacterControllerAct : MonoBehaviour
             {
                 RaycastHit hit;
                 if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
-                {
-                    inSlot = true;
+                {                  
                     slot = hit.collider.GetComponent<Slot>();
                     slot.LeaveObjOn(this);
+                }
+                else
+                {
+                    attachedObject.GetComponent<RigidbodyController>().ActiveRigidbody(true);
+                    attachedObject.transform.parent = null;
+                    attachedObject = null;
                 }
             }
         }
@@ -59,6 +68,6 @@ public class CharacterControllerAct : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(transform.position, transform.forward * 1f);
+        Gizmos.DrawRay(raycastTransform.position, transform.forward * 1f);
     }
 }

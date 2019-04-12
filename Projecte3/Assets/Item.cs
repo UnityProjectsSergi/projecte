@@ -7,24 +7,26 @@ public enum StateIngredient
 {
     raw,cutting,cutted,cooked
 }
+
 // x fer unna maq esstats
 public  class Item : MonoBehaviour
 {
     public int points;
     public StateIngredient stateIngredient;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public RigidbodyController rigidbodyController;
+
+    private bool inTable { get { return inTable; } set { } }
+
     private void OnEnable()
     {
         stateIngredient=StateIngredient.raw;
     }
-    // Update is called once per frame
-    void Update()
+
+    public virtual void Catch(CharacterControllerAct player)
     {
-      
-           
+        rigidbodyController.ActiveRigidbody(false);
+        transform.parent = player.attachTransform;
+        transform.position = player.attachTransform.position;
+        player.attachedObject = gameObject;    
     }
 }
