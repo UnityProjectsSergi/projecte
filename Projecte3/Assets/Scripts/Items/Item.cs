@@ -21,6 +21,7 @@ public  class Item : MonoBehaviour
 
     private void OnEnable()
     {
+       
         stateIngredient=StateIngredient.raw;
     }
 
@@ -30,5 +31,22 @@ public  class Item : MonoBehaviour
         transform.parent = player.attachTransform;
         transform.position = player.attachTransform.position;
         player.attachedObject = gameObject;    
+    }
+}
+class ItemEqualityComparer : IEqualityComparer<Item>
+{
+    public bool Equals(Item b1, Item b2)
+    {
+        if (b2 == null && b1 == null)
+            return true;
+        else if (b1 == null || b2 == null)
+            return false;
+         else
+            return false;
+    }
+
+    public int GetHashCode(Item obj)
+    {
+        throw new System.NotImplementedException();
     }
 }

@@ -27,12 +27,11 @@ using UnityEngine;
     {
 
     }
-    public void CheckAllOrder(Item item)
-        
-    {
+    public void CheckAllOrder(VialItem item)
+    { 
         foreach (var order in listOrders)
         {
-     //       CheckOrder(order, item);
+            
         }
     }
     //public bool CheckOrder(Order order,Item item)

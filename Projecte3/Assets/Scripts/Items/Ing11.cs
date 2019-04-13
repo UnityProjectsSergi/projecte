@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
     public class Ing11:Item
     {
+    public string name;
     public void Start()
     {
+        name = "1";
         itemType = ItemType.Ing;
     }
 }
