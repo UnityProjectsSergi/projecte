@@ -24,6 +24,12 @@ namespace Assets.Scripts.InputSystem
         public string _rightStickClick;
         public string _leftStickClick;
         public string _R2Btn, _R1Btn, _L1Btn, _L2Btn;
+
+        internal void SetControllerNumber(object playercontroller, string v)
+        {
+            throw new NotImplementedException();
+        }
+
         public string _L2Axis, _R2Axis;
         public string _dPadHorizontal, _dPadVertical;
 

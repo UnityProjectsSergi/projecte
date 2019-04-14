@@ -93,9 +93,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796c4ea6898003241aa4d1243028c0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 0
+  isPot: 0
   points: 0
   stateIngredient: 0
   rigidbodyController: {fileID: 6281994492684871375}
+  name: name
 --- !u!54 &3109924906579807375
 Rigidbody:
   m_ObjectHideFlags: 0

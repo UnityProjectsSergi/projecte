@@ -9,14 +9,16 @@ public enum StateIngredient
 }
 
 // x fer unna maq esstats
+
 public  class Item : MonoBehaviour
 {
     public ItemType itemType;
     public bool isPot;
     public int points;
+    public string namme;
     public StateIngredient stateIngredient;
     public RigidbodyController rigidbodyController;
-
+    
     private bool inTable { get { return inTable; } set { } }
 
     private void OnEnable()
@@ -32,21 +34,28 @@ public  class Item : MonoBehaviour
         transform.position = player.attachTransform.position;
         player.attachedObject = gameObject;    
     }
-}
-class ItemEqualityComparer : IEqualityComparer<Item>
-{
-    public bool Equals(Item b1, Item b2)
+    public override bool Equals(object other)
     {
-        if (b2 == null && b1 == null)
-            return true;
-        else if (b1 == null || b2 == null)
+        if (!(other is Item))
+        {
             return false;
-         else
+        }
+        var objOther = other as Item;
+        if (namme != objOther.namme)
             return false;
+        return true;
     }
+    public static bool operator ==(Item x, Item y)
+    {
+        return x.Equals(y);
+    }
+    public static bool operator !=(Item x,Item y)
+    {
+        return !(x == y);
+    }
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+}
 
-    public int GetHashCode(Item obj)
-    {
-        throw new System.NotImplementedException();
-    }
-}

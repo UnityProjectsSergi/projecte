@@ -19,13 +19,21 @@ namespace Assets.Scripts.Slots
 
                 if (item.itemType==ItemType.Vial)
                 {
-                    Debug.Log("es vial");
+                    VialItem vialItem = item.GetComponent<VialItem>();
+                       Debug.Log("es vial");
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
-                    
+                    if (OrderManager.Instance.CheckAllOrder(vialItem))
+                    {
+                        Debug.Log("Odrer ok");
+                    }
+                    else
+                    {
+                        Debug.Log("Order KO");
+                    }
                     player.attachedObject = null;
                     item.transform.parent = null;
-                    item.GetComponent<VialItem>().ResetVial();
-                    VialPool.Instance.ReturnToPool(item.GetComponent<VialItem>());
+                    //vialItem.ResetVial();
+                  //  VialPool.Instance.ReturnToPool(vialItem);
                 }
             }
         }

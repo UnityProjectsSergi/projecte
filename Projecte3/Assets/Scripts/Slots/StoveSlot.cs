@@ -9,7 +9,8 @@ using Assets.Scripts.ObjPooler;
     // Fogon
 public class StoveSlot:Slot
 {
-  // el foc
+    // el foc
+    public bool hasPassIngToVial;
     // get ItemPot from ItemPotPool.
     public void Start()
     {
@@ -31,7 +32,8 @@ public class StoveSlot:Slot
                 item.GetComponent<ItemPot>().LeaveObjIn(m);
                 player.attachedObject = null;
                 m.transform.parent = item.transform;
-                Ing1Pool.Instance.ReturnToPool(i.GetComponent<Ing11>());
+               // Ing1Pool.Instance.ReturnToPool(i.GetComponent<Ing11>());
+                hasPassIngToVial = false;
             }
         }
         else if(i.itemType==ItemType.Pot)
@@ -41,11 +43,22 @@ public class StoveSlot:Slot
         else if (i.itemType == ItemType.Vial)
         {
             Debug.Log("porto vial");
-            if (CheckIsCookedIng())
+            if (CheckIsCookedIng() && !hasPassIngToVial)
             {
                 Debug.Log("ssspoar");
                 player.attachedObject.GetComponent<VialItem>().listItem = item.GetComponent<ItemPot>().listItem;
+                // jo tinc 2 llistes de ingredients
+                // la de l'olla i la del pot x servir= VIAL
+                // agafo ingredient ael deixo a l'olla 
+                // despres vull agafar tots els ingredints d lolla i posals al vialB
+                // despres d canviar els ingreddents d lloc vull vuidar l'olla 
+                
+                // XQ NO VULL Q I SIGUIN EN LA PROJIMA RECEPTA
+                // EL PROBLEMA ES Q SI LA VUIDO NO OMLE EL VIAL
+                //i x canvar 
                 item.GetComponent<ItemPot>().ResetPot();
+                hasPassIngToVial = true;
+
             }
             else
             {
