@@ -110,23 +110,15 @@ namespace Assets.Scripts.InputSystem
             //}
             if (controllerNumber > 0)
             {
-                //foreach (var item in Input.GetJoystickNames())
-                //{
-                //    Debug.Log(item.ToString());
-                //}
-              //  Debug.Log(Input.GetJoystickNames().Length + " is moved");
                 //Left Stick
                 LeftStick.Horizontal = Input.GetAxis(_leftHoritzontalAxis);
                 LeftStick.Vertical = Input.GetAxis(_leftVerticalAxis);
-             //   Debug.Log(LeftStick.Vertical +" "+ controllerNumber);
                 //Right Stck
                 RightStick.Horizontal = InputManager.Instance.GetAxis(_rightHoritzontalAxis);
                 RightStick.Vertical = InputManager.Instance.GetAxis(_rightVerticalAxis);
-                    // Dpad Axis
-              
-                    DPadAxis.Vertical = InputManager.Instance.GetAxis(_dPadVertical);
-                    DPadAxis.Horizontal = InputManager.Instance.GetAxis(_dPadHorizontal);
-              
+                // Dpad Axis
+                DPadAxis.Vertical = InputManager.Instance.GetAxis(_dPadVertical);
+                DPadAxis.Horizontal = InputManager.Instance.GetAxis(_dPadHorizontal);             
                 //R2  and L2 Axis
                 R2Axis.Vertical = InputManager.Instance.GetAxis(_R2Axis);
                 L2Axis.Vertical = InputManager.Instance.GetAxis(_L2Axis);
@@ -142,8 +134,6 @@ namespace Assets.Scripts.InputSystem
                 startBtn.Hold = InputManager.Instance.GetButtonOnHold(_startBtn);
                 startBtn.Down = InputManager.Instance.GetButtonDown(_startBtn);
                 startBtn.Up = InputManager.Instance.GetButtonUp(_startBtn);
-
-
                 // L2 Btn
                 L2Btn.Hold = InputManager.Instance.GetButtonOnHold(_L2Btn);
                 L2Btn.Down = InputManager.Instance.GetButtonDown(_L2Btn);

@@ -18,7 +18,7 @@ public class CharaterControllerMod : MonoBehaviour
     bool onGround = false;
     public ControllerParameters Parameters { get { return _overrideParameters ?? DefaultParameters; } }
    
-    public Vector3 Direction,graity;
+    public Vector3 Direction, gravity;
     public int playercontroller;
     public CollisionFlags l_CollisionFlags;
     private ControllerParameters _overrideParameters;
@@ -70,7 +70,7 @@ public class CharaterControllerMod : MonoBehaviour
     }
     public void Move()
     {
-    //   GravityController();
+        GravityController();
         MovementHorizontal();
 
         if (dashActive)
@@ -112,11 +112,9 @@ public class CharaterControllerMod : MonoBehaviour
     }
     void GravityController()
     {
-     
-        m_VerticalSpeed += (Physics.gravity.y * m_GravityMultiplier);
-        graity.y = m_VerticalSpeed;
-        //transform.position=new Vector3(0, m_VerticalSpeed * Time.deltaTime,0);
-       // characterController.Move(new Vector3(0, m_VerticalSpeed, 0));
+        m_VerticalSpeed += (Physics.gravity.y * m_GravityMultiplier) * Time.deltaTime;
+        Direction.y = m_VerticalSpeed * Time.deltaTime;
+
         if ((l_CollisionFlags & CollisionFlags.Below) != 0)
         {
             onGround = true;

@@ -15,11 +15,9 @@ public abstract class Slot :MonoBehaviour
     public bool hasObjectOn; //Object in slot
 
     public virtual void Catch(CharacterControllerAct player)
-    {
-    
+    {  
         if (hasObjectOn)
-        {
-       
+        {    
             item.transform.parent = player.attachTransform;
             item.transform.position = player.attachTransform.position;
             player.attachedObject = item.gameObject;
@@ -28,9 +26,7 @@ public abstract class Slot :MonoBehaviour
             item = null;
         }
     }
-
-
-   
+  
     public virtual void LeaveObjOn(CharacterControllerAct player)
     {
         Debug.Log("leave");
@@ -44,6 +40,11 @@ public abstract class Slot :MonoBehaviour
             item.transform.position = positionObjOn.transform.position;
             player.attachedObject = null;
         }    
+    }
+
+    public virtual void Action(CharacterControllerAct player)
+    {
+
     }
 }
 

@@ -10,6 +10,7 @@ using Assets.Scripts.ObjPooler;
     public class ItemSlot : Slot
     { 
         public GameObject itemPrefab;
+
         private void Start()
         {
             item = Ing1Pool.Instance.GetObjFromPool(transform);
