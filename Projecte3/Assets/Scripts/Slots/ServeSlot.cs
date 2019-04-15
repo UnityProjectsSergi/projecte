@@ -35,6 +35,12 @@ namespace Assets.Scripts.Slots
                     //vialItem.ResetVial();
                   //  VialPool.Instance.ReturnToPool(vialItem);
                 }
+                else
+                {
+                    //ToDo Show Error on Screen Needs a vial
+
+                    Debug.Log("Nees a vial");
+                }
             }
         }
     }
