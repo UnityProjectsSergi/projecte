@@ -18,7 +18,7 @@ public class CharaterControllerMod : MonoBehaviour
     bool onGround = false;
     public ControllerParameters Parameters { get { return _overrideParameters ?? DefaultParameters; } }
    
-    public Vector3 Direction;
+    public Vector3 Direction,graity;
     public int playercontroller;
     public CollisionFlags l_CollisionFlags;
     private ControllerParameters _overrideParameters;
@@ -70,8 +70,9 @@ public class CharaterControllerMod : MonoBehaviour
     }
     public void Move()
     {
+    //   GravityController();
         MovementHorizontal();
-        GravityController();
+
         if (dashActive)
         {
             Parameters.currentVelocity = Parameters.normalVelocity*Parameters.dashVelocityMultiplier;
@@ -81,15 +82,17 @@ public class CharaterControllerMod : MonoBehaviour
             Parameters.currentVelocity = Parameters.normalVelocity;
         }
         
-        l_CollisionFlags = characterController.Move(Direction *Parameters.currentVelocity* Time.deltaTime);
+        //l_CollisionFlags = characterController.Move(Direction *Parameters.currentVelocity* Time.deltaTime);
     }
 
     private void MovementHorizontal()
     {
         Direction = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
+     //   Direction += graity;
         if (!IsMoving) {  return; }
         Direction.Normalize();
         transform.rotation = Rotation;
+        characterController.Move(Direction * Parameters.currentVelocity * Time.deltaTime);
     }
 
     
@@ -110,9 +113,10 @@ public class CharaterControllerMod : MonoBehaviour
     void GravityController()
     {
      
-        m_VerticalSpeed += (Physics.gravity.y * m_GravityMultiplier) * Time.deltaTime;
-        Direction.y = m_VerticalSpeed * Time.deltaTime;
-
+        m_VerticalSpeed += (Physics.gravity.y * m_GravityMultiplier);
+        graity.y = m_VerticalSpeed;
+        //transform.position=new Vector3(0, m_VerticalSpeed * Time.deltaTime,0);
+       // characterController.Move(new Vector3(0, m_VerticalSpeed, 0));
         if ((l_CollisionFlags & CollisionFlags.Below) != 0)
         {
             onGround = true;
@@ -152,4 +156,5 @@ public class CharaterControllerMod : MonoBehaviour
     {
         
     }
+    
 }

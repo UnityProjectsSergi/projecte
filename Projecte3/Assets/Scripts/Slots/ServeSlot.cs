@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using UnityEngine;
+using Assets.Scripts.ObjPooler;
 namespace Assets.Scripts.Slots
 {
     public  class ServeSlot:Slot
@@ -16,14 +17,23 @@ namespace Assets.Scripts.Slots
 
                 item = player.attachedObject.GetComponent<Item>();
 
-                if (!item.GetComponent<Ing11>())
+                if (item.itemType==ItemType.Vial)
                 {
-                    player.attachedObject = null;
-                    item.transform.parent = null;
+                    VialItem vialItem = item.GetComponent<VialItem>();
+                       Debug.Log("es vial");
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
-                    OrderManager.Instance.CheckAllOrder(item);
-
-                   // Ing1GenPool.Instance.ReturnToPool(item);
+                    if (OrderManager.Instance.CheckAllOrder(vialItem))
+                    {
+                        Debug.Log("Odrer ok");
+                    }
+                    else
+                    {
+                        Debug.Log("Order KO");
+                    }
+                   // player.attachedObject = null;
+                    //item.transform.parent = null;
+                    //vialItem.ResetVial();
+                  //  VialPool.Instance.ReturnToPool(vialItem);
                 }
             }
         }

@@ -11,11 +11,16 @@ public class ItemPot : Item
    
     public void Start()
     {
+        listItem = new List<Item>();
         itemType = ItemType.Pot;
     }
     public void LeaveObjIn(Item item)
     {
         listItem.Add(item);
+    }
+    public void ResetPot()
+    {
+        listItem.Clear();
     }
 }
 

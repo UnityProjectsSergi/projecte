@@ -9,7 +9,8 @@ using Assets.Scripts.ObjPooler;
     // Fogon
 public class StoveSlot:Slot
 {
-  
+    // el foc
+    public bool hasPassIngToVial;
     // get ItemPot from ItemPotPool.
     public void Start()
     {
@@ -26,33 +27,53 @@ public class StoveSlot:Slot
             {
                 Debug.Log("ssm");
                 //item.transform.parent = null;
-                Item m = i;
+                Item m=i.Clone();
+                Debug.Log(m);
                 item.GetComponent<ItemPot>().LeaveObjIn(m);
                 player.attachedObject = null;
-                m.transform.parent=item.transform;
-                
+                m.transform.parent = item.transform;
                 Ing1Pool.Instance.ReturnToPool(i.GetComponent<Ing11>());
+                hasPassIngToVial = false;
             }
         }
         else if(i.itemType==ItemType.Pot)
         {
             base.LeaveObjOn(player);
         }
+        else if (i.itemType == ItemType.Vial)
+        {
+            Debug.Log("porto vial");
+            if (CheckIsCookedIng() && !hasPassIngToVial)
+            {
+                Debug.Log("ssspoar");
+                player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(item.GetComponent<ItemPot>().listItem);
+                item.GetComponent<ItemPot>().ResetPot();
+                hasPassIngToVial = true;
+
+            }
+            else
+            {
+                //Todo ErrorOnScreen
+            }
+        }
     }
     public void Update()
     {
         
     }
-    public void Catch(CharacterControllerAct player)
+    public override void Catch(CharacterControllerAct player)
     {
-        if(player.attachedObject.GetComponent<VialItem>())
+        // si player te fracco i recepta feta 
+        //passar ing dde olla a frasco
+        // sino sta feta recpta i tens frasco no agafes recepte  
+
+     
+        if (player.attachedObject == null)
         {
-
+            base.Catch(player);
         }
-        base.Catch(player);
-
-        //item.stateIngredient = StateIngredient.cooked;
-        
+   
+   
     }
     /// <summary>
     /// Check if all ingredients are cooked
