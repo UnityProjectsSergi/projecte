@@ -172,7 +172,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256945233789757798}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05851d176cdfb1c4c89408505a1af33c, type: 3}
   m_Name: 
@@ -185,7 +185,7 @@ MonoBehaviour:
   playerInput: {fileID: 1256945233789757792}
   m_GravityMultiplier: 3.7
   Direction: {x: 0, y: 0, z: 0}
-  graity: {x: 0, y: 0, z: 0}
+  graity: {x: 0, y: -23, z: 0}
   playercontroller: 1
   l_CollisionFlags: 0
 --- !u!114 &1256945233789757792
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256945233789757798}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3026c00e4e9d3524989f538097551adb, type: 3}
   m_Name: 

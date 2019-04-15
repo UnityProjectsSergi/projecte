@@ -27,25 +27,29 @@ using UnityEngine;
     {
 
     }
+    public Order FoundOrder;
     public bool CheckAllOrder(VialItem item)
     {
+       
         bool found1=false;
         foreach (var order in listOrders)
         {
-            List<Item> difsItem;
-            if (order.ingredients.Count == item.listItem.Count)
+            if (!order.isServed)
             {
-                difsItem = order.ingredients.Where(a => item.listItem.Any(b => a.namme.Equals(b.namme))).ToList();
-                if (difsItem.Count == item.listItem.Count)
+                FoundOrder = null;
 
+                if (!Utils.CompareLists<Item>(order.ingredients, item.listItem))
+                {
                     found1 = true;
+                    FoundOrder = order;
+                    order.isServed = true;
+                    break;
+                }
             }
-            //  difsItem =  order.ingredients.Where(p1 => item.listItem.Any(p2 => p1.name == p2.name)).ToList();
-                            return true;
+            
+
         }
-        if (found1)
-            return true;
-        return false;
+        return found1;
     }
     //public bool CheckOrder(Order order,Item item)
     //{

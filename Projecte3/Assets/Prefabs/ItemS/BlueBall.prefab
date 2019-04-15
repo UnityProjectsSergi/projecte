@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3109924906579807375}
   - component: {fileID: 6281994492684871375}
   - component: {fileID: 4056078537708835031}
+  - component: {fileID: 1803613430}
   m_Layer: 10
   m_Name: BlueBall
   m_TagString: Item
@@ -93,12 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796c4ea6898003241aa4d1243028c0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 2
   isPot: 0
   points: 0
+  namme: 
   stateIngredient: 0
   rigidbodyController: {fileID: 6281994492684871375}
-  name: name
 --- !u!54 &3109924906579807375
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,4 +140,17 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1803613430
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4019033098300839940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.85, y: 0.85, z: 0.85}
   m_Center: {x: 0, y: 0, z: 0}

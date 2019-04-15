@@ -18,7 +18,10 @@ public  class Item : MonoBehaviour
     public string namme;
     public StateIngredient stateIngredient;
     public RigidbodyController rigidbodyController;
-    
+  
+
+   
+
     private bool inTable { get { return inTable; } set { } }
 
     private void OnEnable()
@@ -56,6 +59,10 @@ public  class Item : MonoBehaviour
     public override int GetHashCode()
     {
         return base.GetHashCode();
+    }
+    public Item Clone()
+    {
+        return(Item) this.MemberwiseClone();
     }
 }
 

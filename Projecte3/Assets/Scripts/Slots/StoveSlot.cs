@@ -27,12 +27,12 @@ public class StoveSlot:Slot
             {
                 Debug.Log("ssm");
                 //item.transform.parent = null;
-                Item m = i;
+                Item m=i.Clone();
                 Debug.Log(m);
                 item.GetComponent<ItemPot>().LeaveObjIn(m);
                 player.attachedObject = null;
                 m.transform.parent = item.transform;
-               // Ing1Pool.Instance.ReturnToPool(i.GetComponent<Ing11>());
+                Ing1Pool.Instance.ReturnToPool(i.GetComponent<Ing11>());
                 hasPassIngToVial = false;
             }
         }
@@ -46,16 +46,7 @@ public class StoveSlot:Slot
             if (CheckIsCookedIng() && !hasPassIngToVial)
             {
                 Debug.Log("ssspoar");
-                player.attachedObject.GetComponent<VialItem>().listItem = item.GetComponent<ItemPot>().listItem;
-                // jo tinc 2 llistes de ingredients
-                // la de l'olla i la del pot x servir= VIAL
-                // agafo ingredient ael deixo a l'olla 
-                // despres vull agafar tots els ingredints d lolla i posals al vialB
-                // despres d canviar els ingreddents d lloc vull vuidar l'olla 
-                
-                // XQ NO VULL Q I SIGUIN EN LA PROJIMA RECEPTA
-                // EL PROBLEMA ES Q SI LA VUIDO NO OMLE EL VIAL
-                //i x canvar 
+                player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(item.GetComponent<ItemPot>().listItem);
                 item.GetComponent<ItemPot>().ResetPot();
                 hasPassIngToVial = true;
 
@@ -70,17 +61,14 @@ public class StoveSlot:Slot
     {
         
     }
-    public void Catch(CharacterControllerAct player)
+    public override void Catch(CharacterControllerAct player)
     {
         // si player te fracco i recepta feta 
         //passar ing dde olla a frasco
         // sino sta feta recpta i tens frasco no agafes recepte  
 
-        if (player.attachedObject.GetComponent<Item>().itemType == ItemType.Vial)
-        {
-          
-        }
-        else if (player.attachedObject == null)
+     
+        if (player.attachedObject == null)
         {
             base.Catch(player);
         }
