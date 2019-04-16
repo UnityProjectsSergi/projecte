@@ -76,7 +76,7 @@ using UnityEngine;
             if (!order.isServed)
             {
                 if (order._orderUI.timeOutValue <= 0.0f)
-                    order.IsTimeOut();
+                    order.IsTimeOut();  
             }
         }
     }

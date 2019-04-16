@@ -34,6 +34,10 @@ public class Order
     {
         _orderUI.gameObject.SetActive(false);
     }
+    public void IsTimeOut()
+    {
+        _orderUI.gameObject.SetActive(false);
+    }
     public void SetOrderUi(OrderUI ordrrui)
     {
         _orderUI = ordrrui;
