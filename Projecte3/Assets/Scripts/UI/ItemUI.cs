@@ -4,9 +4,10 @@ public class ItemUI : MonoBehaviour
 {
     public Image image;
     public ItemUiType itemUiType;
-    public ItemUI()
+    
+    public  void Awake()
     {
-
+      //  image = GetComponent<Image>();
     }
 }
 // x pose dir si es 

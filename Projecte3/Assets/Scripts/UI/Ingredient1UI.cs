@@ -3,10 +3,13 @@ using System.Collections;
 
 public class Ingredient1UI : ItemUI
 {
+    public Color color;
 
     // Use this for initialization
-    void Start()
+    public  void Start()
     {
+       
+       // image.color = color;
         itemUiType = ItemUiType.Ing1;
     }
 

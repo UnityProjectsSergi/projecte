@@ -6,19 +6,32 @@ using UnityEngine.UI;
 public class OrderUI:MonoBehaviour
 {
     public Image imageTimeOut;
-    public List<ItemUI> ItemUIlist;
+    public List<ItemUI> ItemUIlist=new List<ItemUI>();
     public float duration;
-    public OrderUI()
-    {
-
-    }
+    public GameObject ListItemsUIParent;
+   
     public void Start()
     {
-        ItemUIlist = new List<ItemUI>();
+       
     }
     public void generateItems()
     {
+        RectTransform rect = GetComponent<RectTransform>();
+        float withOfRect= rect.rect.width;
+        Debug.Log(withOfRect);
+        float withOfChilds = withOfRect / ItemUIlist.Count;
+        Debug.Log(withOfChilds);
+        foreach (var item in ItemUIlist)
+        {
+            Debug.Log(item);
+             item.gameObject.transform.SetParent(ListItemsUIParent.transform);
+            item.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, withOfChilds);
+           
 
+
+          //  rectc.sizeDelta=;
+
+        }
     }
     IEnumerator Countdown()
     {

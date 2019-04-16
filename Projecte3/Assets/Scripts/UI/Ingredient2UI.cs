@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Ingredient2UI : ItemUI
 {
-
+    public Color color;
     // Use this for initialization
-    void Start()
+    public  void Start()
     {
+        //base.Start();
+       // image.color = color;
         itemUiType = ItemUiType.Ing2;
     }
 
