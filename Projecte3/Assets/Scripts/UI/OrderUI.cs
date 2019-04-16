@@ -10,12 +10,14 @@ public class OrderUI:MonoBehaviour
     public float duration;
     public float timeOutValue;
     public GameObject ListItemsUIParent;
-    
+    public bool timeout;
     public void Start()
     {
+        timeout = false;
         StartCoroutine(Countdown());
+        
     }
-    public void generateItems()
+    public void generateItemsUI()
     {
         RectTransform rect = GetComponent<RectTransform>();
         float withOfRect= rect.rect.width;
@@ -24,7 +26,7 @@ public class OrderUI:MonoBehaviour
         Debug.Log(withOfChilds);
         foreach (var item in ItemUIlist)
         {
-             item.gameObject.transform.SetParent(ListItemsUIParent.transform);
+            item.gameObject.transform.SetParent(ListItemsUIParent.transform);
             item.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, withOfChilds);
         }
     }
@@ -44,9 +46,12 @@ public class OrderUI:MonoBehaviour
         float totalTime = 0;
         while (totalTime <= duration)
         {
-            timeOutValue =Mathf.Lerp(1,0, totalTime / duration);
+            if (!timeout)
+         {       timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
             totalTime += Time.deltaTime;
-            
+            if (timeOutValue < 0.1f)
+                timeout = true;
+        }
             yield return null;
         }
     }

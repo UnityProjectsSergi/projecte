@@ -24,6 +24,7 @@ namespace Assets.Scripts.Slots
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
                     if (OrderManager.Instance.CheckAllOrder(vialItem))
                     {
+                        
                         Debug.Log("Odrer ok");
                     }
                     else

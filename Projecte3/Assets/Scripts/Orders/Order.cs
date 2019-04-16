@@ -30,17 +30,19 @@ public class Order
         _ingredients = ingredients;
       
     }
-    public void HasisServed()
+    public void HideUIOrder()
     {
         _orderUI.gameObject.SetActive(false);
+
     }
-    public void IsTimeOut()
-    {
-        _orderUI.gameObject.SetActive(false);
-    }
+    
     public void SetOrderUi(OrderUI ordrrui)
     {
         _orderUI = ordrrui;
+    }
+    public bool isTimeout()
+    {
+        return _orderUI.timeout;
     }
 }
 

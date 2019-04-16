@@ -69,12 +69,9 @@ public class OrderGenerator : MonoBehaviour
        // afegeixo els la llista d'ingredients UI generada al ordre 
        orderUIS.ItemUIlist.AddRange(listIngUI);
         // genero i ordeno la llista ingredienta a UI
-       orderUIS.generateItems();
+       orderUIS.generateItemsUI();
         // Assigno obj OrderUi a l'order
         order.SetOrderUi(orderUIS);
-          
         return order;
-        
     }
-   
 }

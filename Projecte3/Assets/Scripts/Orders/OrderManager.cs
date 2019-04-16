@@ -36,17 +36,17 @@ using UnityEngine;
         bool found1=false;
         foreach (var order in listOrders)
         {
-            Debug.Log("ss");
+        //    Debug.Log("ss");
             if (!order.isServed)
             {
-
+                // checkeo si els ingredients de la ordre q em donen el tinc a una ordre de la llista 
                 FoundOrder = null;
                 if (Utils.CompareLists2<Item>(order._ingredients, item.listItem))
                 {
                     found1 = true;
                     FoundOrder = order;
                     order.isServed = true;
-                    order.HasisServed();
+                    order.HideUIOrder();
                     break;
                 }
             }
@@ -68,15 +68,18 @@ using UnityEngine;
         {
             AddOrder();
         }
+        CheckIfOrderListHasTimeOut();
     }
-    public void CheckIfOrderHasTimeOut()
+    public void CheckIfOrderListHasTimeOut()
     {
         foreach (var order in listOrders)
         {
             if (!order.isServed)
             {
-                if (order._orderUI.timeOutValue <= 0.0f)
-                    order.IsTimeOut();  
+                if(order.isTimeout())
+                {
+                    order.HideUIOrder();
+                }
             }
         }
     }
