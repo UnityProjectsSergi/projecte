@@ -8,11 +8,12 @@ public class OrderUI:MonoBehaviour
     public Image imageTimeOut;
     public List<ItemUI> ItemUIlist=new List<ItemUI>();
     public float duration;
+    public float timeOutValue;
     public GameObject ListItemsUIParent;
-   
+    
     public void Start()
     {
-       
+        StartCoroutine(Countdown());
     }
     public void generateItems()
     {
@@ -23,14 +24,18 @@ public class OrderUI:MonoBehaviour
         Debug.Log(withOfChilds);
         foreach (var item in ItemUIlist)
         {
-        //    Debug.Log(item);
              item.gameObject.transform.SetParent(ListItemsUIParent.transform);
             item.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, withOfChilds);
         }
     }
     public void Update()
     {
-        
+        UpdateTimeOut();
+    }
+    public void UpdateTimeOut()
+    {
+
+        imageTimeOut.fillAmount = timeOutValue;
     }
     IEnumerator Countdown()
     {
@@ -39,10 +44,9 @@ public class OrderUI:MonoBehaviour
         float totalTime = 0;
         while (totalTime <= duration)
         {
-            imageTimeOut.fillAmount = totalTime / duration;
+            timeOutValue =Mathf.Lerp(1,0, totalTime / duration);
             totalTime += Time.deltaTime;
-            var integer = (int)totalTime; /* choose how to quantize this */
-                                          /* convert integer to string and assign to text */
+            
             yield return null;
         }
     }

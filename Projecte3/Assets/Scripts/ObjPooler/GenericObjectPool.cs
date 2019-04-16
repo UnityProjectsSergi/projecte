@@ -24,7 +24,7 @@ namespace Assets.Scripts.ObjPooler
             {
                 _instance = this;
                 objects = new Queue<T>();
-                //DontDestroyOnLoad(this.gameObject);
+               DontDestroyOnLoad(this.gameObject);
 
             }
         }

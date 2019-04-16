@@ -9,7 +9,7 @@ public class TextCompareList : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        mm.Add(Ing1Pool.Instance.GetObjFromPool());
+        mm.Add(Ingredient2Pool.Instance.GetObjFromPool());
         mn.Add(Ingredient2Pool.Instance.GetObjFromPool());
         if (Utils.CompareLists2<Item>(mm, mn))
             Debug.Log("has same");

@@ -7,18 +7,12 @@ public class OrderGenerator : MonoBehaviour
 {
 
     // Use this for initialization
-    public GameObject OrderUIPrefb,Ing1UIPrefab,Ing2UIPrefab,Ing1,Ing2;
+    public GameObject OrderUIPrefb,Ing1UIPrefab,Ing2UIPrefab;
     public Transform parentUI;
-    //public List<Item> listAllIngeridients;
-    //public List<ItemUI> listAllIngredietsUI;
+   
     void Start()
     {
-        //if(listAllIngeridients.Count==0 )
-        //    Debug.LogError("List of All ingedients must be filled");
-        //if (listAllIngredietsUI.Count==0)
-        //    Debug.LogError("List of All ingedientsUI must be filled");
-        //if (listAllIngredietsUI.Count != listAllIngeridients.Count)
-        //    Debug.LogError("Both list must have same count");
+
     }
 
     // Update is called once per frame
@@ -26,8 +20,14 @@ public class OrderGenerator : MonoBehaviour
     {
 
     }
+    /// <summary>
+    /// Order UI and Order data Generator 
+    /// </summary>
+    /// <param name="numIng"></param>
+    /// <returns></returns>
     public Order GenerateOrder(int numIng)
     {
+        // listes Elements a generar x crear ordre
         List<Item> listIng = new List<Item>();
         List<ItemUI> listIngUI = new List<ItemUI>();
         
@@ -35,9 +35,11 @@ public class OrderGenerator : MonoBehaviour
         {
             for (int i = 0; i < numIng; i++)
             {
-                Debug.Log("num" + i);
+                // UI elements
                 GameObject m;
+                // item elements
                 Item n;
+                /// Decideixo quin ingredinent si un o l'altre amb random
                 float rad = Random.Range(0.0f, 1.0f);
                 if (rad>0.5f)
                 {
@@ -50,22 +52,27 @@ public class OrderGenerator : MonoBehaviour
                     n = Ingredient2Pool.Instance.GetObjFromPool();
                      m = Instantiate(Ing2UIPrefab);
                 }
+                //// Adegirixo a llistes a generar la UI i els obj Ingreienr o Item
                 ItemUI mn =m.GetComponent<ItemUI>();
                 listIngUI.Add(mn);
                 listIng.Add(n);
             }    
         }
+        // Creo Obj order passat li la list ingredients
         Order order = new Order(listIng, 8);
+        // Creao obj de tipus OrdreUI 
         GameObject orderUI = Instantiate(OrderUIPrefb, parentUI);
+        // li poso pare de la llista de elements a UI
         orderUI.transform.SetParent(parentUI);
+        // Trec el script OrdrerUI del obj
         OrderUI orderUIS = orderUI.GetComponent<OrderUI>();
-       
-       
+       // afegeixo els la llista d'ingredients UI generada al ordre 
        orderUIS.ItemUIlist.AddRange(listIngUI);
+        // genero i ordeno la llista ingredienta a UI
        orderUIS.generateItems();
+        // Assigno obj OrderUi a l'order
         order.SetOrderUi(orderUIS);
-
-   
+          
         return order;
         
     }

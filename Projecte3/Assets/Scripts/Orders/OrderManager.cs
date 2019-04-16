@@ -63,9 +63,21 @@ using UnityEngine;
     }
     public void Update()
     {
+        // Test
         if (Input.GetKeyDown(KeyCode.M))
         {
             AddOrder();
+        }
+    }
+    public void CheckIfOrderHasTimeOut()
+    {
+        foreach (var order in listOrders)
+        {
+            if (!order.isServed)
+            {
+                if (order._orderUI.timeOutValue <= 0.0f)
+                    order.IsTimeOut();
+            }
         }
     }
 }
