@@ -8,7 +8,7 @@ namespace Assets.Scripts.InputSystem
     public class PlayerInput : MonoBehaviour
     {
         #region Strings
-        private string _leftHoritzontalAxis;
+        public string _leftHoritzontalAxis;
         public string _leftVerticalAxis;
         public string _rightHoritzontalAxis;
         public string _rightVerticalAxis;

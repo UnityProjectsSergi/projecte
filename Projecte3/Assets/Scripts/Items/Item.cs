@@ -18,6 +18,7 @@ public  class Item : MonoBehaviour
     public string namme;
     public StateIngredient stateIngredient;
     public RigidbodyController rigidbodyController;
+    
   
 
    

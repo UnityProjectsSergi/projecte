@@ -8,7 +8,18 @@ public class OrderUI:MonoBehaviour
     public Image imageTimeOut;
     public List<ItemUI> ItemUIlist;
     public float duration;
+    public OrderUI()
+    {
 
+    }
+    public void Start()
+    {
+        ItemUIlist = new List<ItemUI>();
+    }
+    public void generateItems()
+    {
+
+    }
     IEnumerator Countdown()
     {
         // 3 seconds you can change this to
