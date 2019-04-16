@@ -9,7 +9,7 @@ namespace Assets.Scripts.ObjPooler
 {
     public abstract class GenericObjectPool<T>:MonoBehaviour  where T:Component
     {
-        [SerializeField] T Prefab;
+       public T Prefab;
         private static GenericObjectPool<T> _instance;
         public static GenericObjectPool<T> Instance { get { return _instance; } private set { } }
         public Queue<T> objects;

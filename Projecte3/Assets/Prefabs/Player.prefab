@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d995798edf98fcc4dbd836d6ff98811a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _leftHoritzontalAxis: 
   _leftVerticalAxis: 
   _rightHoritzontalAxis: 
   _rightVerticalAxis: 
@@ -387,6 +388,7 @@ MonoBehaviour:
   playerInput: {fileID: 6527962491886981445}
   m_GravityMultiplier: 3.7
   Direction: {x: 0, y: 0, z: 0}
+  gravity: {x: 0, y: 0, z: 0}
   playercontroller: 1
   l_CollisionFlags: 0
 --- !u!114 &6527962491886981442
@@ -409,6 +411,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   raycastTransform: {fileID: 6527962491000485772}
+  animator: {fileID: 0}
   attachedObject: {fileID: 0}
 --- !u!114 &6527962491886981441
 MonoBehaviour:

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -8,6 +8,7 @@ using UnityEngine;
     {
     private static OrderManager _instance;
     public static OrderManager Instance { get { return _instance; } private set { } }
+    public Queue<Order> listOrdderQueue = new Queue<Order>();
     public List<Order> listOrders = new List<Order>();
     public OrderGenerator OrderGenerator;
     private void Awake()
@@ -25,7 +26,8 @@ using UnityEngine;
     }
     public void AddOrder()
     {
-        listOrders.Add(OrderGenerator.GenerateOrder(2));
+        listOrders.Add(OrderGenerator.GenerateOrder(1));
+       // listOrders.Add();
     }
     public Order FoundOrder;
     public bool CheckAllOrder(VialItem item)
@@ -42,7 +44,9 @@ using UnityEngine;
                 {
                     found1 = true;
                     FoundOrder = order;
+
                     order.isServed = true;
+                    order.HasisServed();
                     break;
                 }
             }
@@ -55,9 +59,9 @@ using UnityEngine;
     //{
         
     //}
-    public void RemoveOrder()
+    public void RemoveOrder(Order m)
     {
-
+        listOrders.Remove(m);
     }
     public void Update()
     {

@@ -10,20 +10,15 @@ using Assets.Scripts.ObjPooler;
     public class ItemSlot : Slot
     { 
         public GameObject itemPrefab;
-
-        private void Start()
-        {
-            item = Ing1Pool.Instance.GetObjFromPool(transform);
-           // item = Instantiate(itemPrefab, positionObjOn.transform.position, Quaternion.identity, positionObjOn.transform);
+        
+        public virtual void Start()
+        { 
             hasObjectOn = true;
         }
 
         public override void Catch(CharacterControllerAct player)
         {
             base.Catch(player);
-            item = Ing1Pool.Instance.GetObjFromPool(transform);
-           
-        //    item = Instantiate(itemPrefab, positionObjOn.transform.position, Quaternion.identity, positionObjOn.transform);
             hasObjectOn = true;
         }
     }

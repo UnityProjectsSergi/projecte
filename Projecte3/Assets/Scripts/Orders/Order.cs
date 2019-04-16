@@ -23,7 +23,10 @@ public class Order
         _ingredients = ingredients;
         _orderUI = orderUI;
     }
-   
+   public void HasisServed()
+    {
+        _orderUI = null;
+    }
 }
 
 

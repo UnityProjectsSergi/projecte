@@ -23,14 +23,9 @@ public class OrderUI:MonoBehaviour
         Debug.Log(withOfChilds);
         foreach (var item in ItemUIlist)
         {
-            Debug.Log(item);
+        //    Debug.Log(item);
              item.gameObject.transform.SetParent(ListItemsUIParent.transform);
             item.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, withOfChilds);
-           
-
-
-          //  rectc.sizeDelta=;
-
         }
     }
     IEnumerator Countdown()

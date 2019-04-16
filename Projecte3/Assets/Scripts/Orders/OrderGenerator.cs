@@ -34,10 +34,10 @@ public class OrderGenerator : MonoBehaviour
         {
             for (int i = 0; i < numIng; i++)
             {
-                Debug.Log("num" + i);
+                //Debug.Log("num" + i);
                 GameObject m;
                 float rad = Random.Range(0.0f, 1.0f);
-                Debug.Log(rad);
+              //  Debug.Log(rad);
                 if (rad>0.5f)
                 {
                      m = Instantiate(Ing1UIPrefab);
