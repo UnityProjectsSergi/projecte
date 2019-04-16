@@ -22,14 +22,16 @@ public class CuttingSlot : Slot
     public override void LeaveObjOn(CharacterControllerAct player)
     {
         Item i = player.attachedObject.GetComponent<Item>();
-        base.LeaveObjOn(player);
 
         if (i.itemType == ItemType.Ing)
+        {
+            base.LeaveObjOn(player);
             if (i.stateIngredient == StateIngredient.raw)
             {
                 barCanvas.SetActive(true);
                 progresBar.fillAmount = 0;
             }
+        }
     }
 
     public override void Catch(CharacterControllerAct player)
