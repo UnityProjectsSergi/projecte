@@ -25,7 +25,7 @@ using UnityEngine;
     }
     public void AddOrder()
     {
-        listOrders.Add(OrderGenerator.GenerateOrder(5));
+        listOrders.Add(OrderGenerator.GenerateOrder(2));
     }
     public Order FoundOrder;
     public bool CheckAllOrder(VialItem item)
