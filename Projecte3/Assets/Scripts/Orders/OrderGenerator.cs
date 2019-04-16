@@ -39,7 +39,6 @@ public class OrderGenerator : MonoBehaviour
                 GameObject m;
                 Item n;
                 float rad = Random.Range(0.0f, 1.0f);
-              //  Debug.Log(rad);
                 if (rad>0.5f)
                 {
                     n = Ing1Pool.Instance.GetObjFromPool();

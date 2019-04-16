@@ -45,10 +45,8 @@ public class StoveSlot:Slot
         }
         else if (i.itemType == ItemType.Vial)
         {
-            Debug.Log("porto vial");
             if (CheckIsCookedIng() && !hasPassIngToVial)
             {
-                Debug.Log("ssspoar");
                 player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(item.GetComponent<ItemPot>().listItem);
                 item.GetComponent<ItemPot>().ResetPot();
                 hasPassIngToVial = true;

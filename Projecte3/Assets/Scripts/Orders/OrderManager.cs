@@ -43,7 +43,6 @@ using UnityEngine;
                 FoundOrder = null;
                 if (Utils.CompareLists2<Item>(order._ingredients, item.listItem))
                 {
-                    Debug.Log("ssm");
                     found1 = true;
                     FoundOrder = order;
                     order.isServed = true;

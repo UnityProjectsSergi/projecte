@@ -32,7 +32,7 @@ public class Order
     }
     public void HasisServed()
     {
-        _orderUI = null;
+        _orderUI.gameObject.SetActive(false);
     }
     public void SetOrderUi(OrderUI ordrrui)
     {
