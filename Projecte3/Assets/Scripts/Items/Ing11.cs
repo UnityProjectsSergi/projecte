@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
     public void Start()
     {
-        namme = "ingedient1";
+       
         itemType = ItemType.Ing;
     }
 }

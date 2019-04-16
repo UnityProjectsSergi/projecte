@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.ObjPooler;
 
 public class OrderGenerator : MonoBehaviour
 {
 
     // Use this for initialization
-    public GameObject OrderUIPrefb,Ing1UIPrefab,Ing2UIPrefab;
+    public GameObject OrderUIPrefb,Ing1UIPrefab,Ing2UIPrefab,Ing1,Ing2;
     public Transform parentUI;
     //public List<Item> listAllIngeridients;
     //public List<ItemUI> listAllIngredietsUI;
@@ -34,22 +35,28 @@ public class OrderGenerator : MonoBehaviour
         {
             for (int i = 0; i < numIng; i++)
             {
-                //Debug.Log("num" + i);
+                Debug.Log("num" + i);
                 GameObject m;
+                Item n;
                 float rad = Random.Range(0.0f, 1.0f);
               //  Debug.Log(rad);
                 if (rad>0.5f)
                 {
+                    n = Ing1Pool.Instance.GetObjFromPool();
                      m = Instantiate(Ing1UIPrefab);
+                   
                 }
                 else
                 {
+                    n = Ingredient2Pool.Instance.GetObjFromPool();
                      m = Instantiate(Ing2UIPrefab);
                 }
                 ItemUI mn =m.GetComponent<ItemUI>();
                 listIngUI.Add(mn);
+                listIng.Add(n);
             }    
         }
+        Order order = new Order(listIng, 8);
         GameObject orderUI = Instantiate(OrderUIPrefb, parentUI);
         orderUI.transform.SetParent(parentUI);
         OrderUI orderUIS = orderUI.GetComponent<OrderUI>();
@@ -57,10 +64,11 @@ public class OrderGenerator : MonoBehaviour
        
        orderUIS.ItemUIlist.AddRange(listIngUI);
        orderUIS.generateItems();
+        order.SetOrderUi(orderUIS);
 
-        Order order = new Order(listIng, 8, orderUIS);
+   
         return order;
-        return null;
+        
     }
    
 }

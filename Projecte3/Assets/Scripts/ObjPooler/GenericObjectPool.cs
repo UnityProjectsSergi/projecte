@@ -24,21 +24,24 @@ namespace Assets.Scripts.ObjPooler
             {
                 _instance = this;
                 objects = new Queue<T>();
-                DontDestroyOnLoad(this.gameObject);
+                //DontDestroyOnLoad(this.gameObject);
 
             }
         }
 
      
 
-        public T GetObjFromPool(Transform transform)
+        public T GetObjFromPool(Transform transform=null)
         {
             if (objects.Count == 0)
                 AddObjects(4);
 
             T obj = objects.Dequeue();
-            obj.transform.position = transform.position;
-            obj.transform.rotation = transform.rotation;
+            if (transform != null)
+            {
+                obj.transform.position = transform.position;
+                obj.transform.rotation = transform.rotation;
+            }
             obj.gameObject.SetActive(true);
             return obj ;
         }

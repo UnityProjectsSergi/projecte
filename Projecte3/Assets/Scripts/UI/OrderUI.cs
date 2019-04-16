@@ -28,6 +28,10 @@ public class OrderUI:MonoBehaviour
             item.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, withOfChilds);
         }
     }
+    public void Update()
+    {
+        
+    }
     IEnumerator Countdown()
     {
         // 3 seconds you can change this to

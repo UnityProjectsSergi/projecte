@@ -32,7 +32,10 @@ public class StoveSlot:Slot
                 item.GetComponent<ItemPot>().LeaveObjIn(m);
                 player.attachedObject = null;
                 m.transform.parent = item.transform;
-                Ing1Pool.Instance.ReturnToPool(i.GetComponent<Ing11>());
+                if (i.GetType()==typeof(Ingredient2))
+                    Ingredient2Pool.Instance.ReturnToPool(i.GetComponent<Ingredient2>());
+                else
+                    Ing1Pool.Instance.ReturnToPool(i.GetComponent<Ing11>());
                 hasPassIngToVial = false;
             }
         }

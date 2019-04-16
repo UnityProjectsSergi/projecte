@@ -20,12 +20,23 @@ public class Order
     public Order (List<Item> ingredients,int points,OrderUI orderUI)
     {
         _points = points;
+
         _ingredients = ingredients;
         _orderUI = orderUI;
     }
-   public void HasisServed()
+    public Order(List<Item> ingredients, int points)
+    {
+        _points = points;
+        _ingredients = ingredients;
+      
+    }
+    public void HasisServed()
     {
         _orderUI = null;
+    }
+    public void SetOrderUi(OrderUI ordrrui)
+    {
+        _orderUI = ordrrui;
     }
 }
 

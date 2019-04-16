@@ -12,10 +12,11 @@ public enum StateIngredient
 
 public  class Item : MonoBehaviour
 {
+    public ItemUiType ing;
     public ItemType itemType;
     public bool isPot;
     public int points;
-    public string namme;
+   
     public StateIngredient stateIngredient;
     public RigidbodyController rigidbodyController;
     
@@ -42,21 +43,23 @@ public  class Item : MonoBehaviour
     {
         if (!(other is Item))
         {
+            Debug.Log("ss");
             return false;
         }
         var objOther = other as Item;
-        if (namme != objOther.namme)
+        if (GetType() !=objOther.GetType())
             return false;
+        Debug.Log("ssm");
         return true;
     }
-    public static bool operator ==(Item x, Item y)
-    {
-        return x.Equals(y);
-    }
-    public static bool operator !=(Item x,Item y)
-    {
-        return !(x == y);
-    }
+    //public static bool operator ==(Item x, Item y)
+    //{
+    //    return x.Equals(y);
+    //}
+    //public static bool operator !=(Item x,Item y)
+    //{
+    //    return !(x == y);
+    //}
     public override int GetHashCode()
     {
         return base.GetHashCode();

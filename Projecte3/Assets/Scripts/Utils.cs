@@ -43,19 +43,19 @@ using System.Threading.Tasks;
             return lookUp.Count == 0;
         }
     //A method of type bool to give you the result of equality between two lists
-   public static bool CompareLists2<T>(List<T> list1, List<T> list2)
+   public static bool CompareLists2<Item>(List<Item> list1, List<Item> list2)
     {
         //here we check the count of list elements if they match, it can work also if the list count doesn't meet, to do it just comment out this if statement
         if (list1.Count != list2.Count)
             return false;
 
         //here we check and find every element from the list1 in the list2
-        foreach (var item in list1)
+        foreach (Item item in list1)
             if (list2.Find(i => i.Equals(item)) == null)
                 return false;
 
         //here we check and find every element from the list2 in the list1 to make sure they don't have repeated and mismatched elements
-        foreach (var item in list2)
+        foreach (Item item in list2)
             if (list1.Find(i => i.Equals(item)) == null)
                 return false;
 

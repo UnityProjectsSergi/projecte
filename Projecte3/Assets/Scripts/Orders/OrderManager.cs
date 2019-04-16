@@ -36,22 +36,21 @@ using UnityEngine;
         bool found1=false;
         foreach (var order in listOrders)
         {
+            Debug.Log("ss");
             if (!order.isServed)
             {
-                FoundOrder = null;
 
-                if (!Utils.CompareLists<Item>(order._ingredients, item.listItem))
+                FoundOrder = null;
+                if (Utils.CompareLists2<Item>(order._ingredients, item.listItem))
                 {
+                    Debug.Log("ssm");
                     found1 = true;
                     FoundOrder = order;
-
                     order.isServed = true;
                     order.HasisServed();
                     break;
                 }
             }
-            
-
         }
         return found1;
     }
