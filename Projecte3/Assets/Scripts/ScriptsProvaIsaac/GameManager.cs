@@ -6,14 +6,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public bool _P1;
-    public bool _P2;
-    public bool _P3;
-    public bool _P4;
+    public static GameManager Instance
+    {
+        get { return instance; }
+    }
+
+    public bool _J1;
+    public bool _J2;
 
     void Awake()
     {
-        Debug.Log(gameObject.name);
         if (instance == null)
             instance = this;
 
@@ -23,7 +25,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void LoadLvl(bool _P1, bool _P2, bool _P3, bool _P4, int _lvl)
+    public void LoadLvl()
     {
 
     }

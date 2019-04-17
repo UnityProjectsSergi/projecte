@@ -24,16 +24,6 @@ public class InputManager : MonoBehaviour
 
         }
     }
-    private void Start()
-    {
-       
-    }
- 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
     
     public bool GetButtonOnHold(string btn)
     {

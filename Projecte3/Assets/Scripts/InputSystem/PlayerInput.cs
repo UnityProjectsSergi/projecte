@@ -60,15 +60,7 @@ namespace Assets.Scripts.InputSystem
         private float lastBtnStateH;
 
         #endregion
-        private void Awake()
-        {
 
-        }
-        // Start is called before the first frame update
-        void Start()
-        {
-            // ControlerLayout = new ControlerLayout();
-        }
         internal void SetControllerNumber(int number, string platctr)
         {
             _platformCtrl = platctr;
@@ -94,11 +86,9 @@ namespace Assets.Scripts.InputSystem
             _R2Axis = "J" + controllerNumber + "R2Axis" + _platformCtrl;
             _dPadHorizontal = "J" + controllerNumber + "DPadHorizontal" + _platformCtrl;
             _dPadVertical = "J" + controllerNumber + "DPadVertical" + _platformCtrl;
-            _shareBtn = "J" + controllerNumber + "ShareButton" + _platformCtrl;
-
-            // jo he seperat els inputs del player 
+            _shareBtn = "J" + controllerNumber + "ShareButton" + _platformCtrl;         
         }
-        // Update is called once per frame
+
         private void Update()
         { // assigno el  nummero de player 1 o 2
 
