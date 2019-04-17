@@ -19,10 +19,9 @@ public  class Item : MonoBehaviour
    
     public StateIngredient stateIngredient;
     public RigidbodyController rigidbodyController;
-    
-  
+    public float duration;
 
-   
+
 
     private bool inTable { get { return inTable; } set { } }
 
@@ -31,7 +30,7 @@ public  class Item : MonoBehaviour
        
         stateIngredient=StateIngredient.raw;
     }
-
+    
     public virtual void Catch(CharacterControllerAct player)
     {
         rigidbodyController.ActiveRigidbody(false);

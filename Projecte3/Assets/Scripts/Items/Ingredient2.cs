@@ -5,9 +5,11 @@ public class Ingredient2 : Item
 {
 
     // Use this for initialization
-    public void Start()
+   
+    public  void Start()
     {
-       
+
+        duration = 5f;
         itemType = ItemType.Ing;
     }
 
