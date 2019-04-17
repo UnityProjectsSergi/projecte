@@ -10,11 +10,19 @@ public class SelectorManager : MonoBehaviour
     public GameObject j1ConnectedText;
     public GameObject j2ConnectedText;
     public GameObject pressStartText;
+    public string nextScaneName;
+
+    private GameManager gameManager;
 
     private bool j1Connected = false;
     private bool j2Connected = false;
 
     private bool isPressStart = false;
+
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
 
     private void Update()
     {
@@ -25,9 +33,13 @@ public class SelectorManager : MonoBehaviour
                 j1Connected = true;
                 j1PressCricle.SetActive(false);
                 j1ConnectedText.SetActive(true);
+                gameManager.j1 = true;
 
                 if (!isPressStart)
-                    pressStartText.SetActive(true);
+                {
+                    isPressStart = true;
+                    pressStartText.SetActive(true);                  
+                }
 
             }
         }
@@ -39,10 +51,21 @@ public class SelectorManager : MonoBehaviour
                 j2Connected = true;
                 j2PressCricle.SetActive(false);
                 j2ConnectedText.SetActive(true);
+                gameManager.j2 = true;
 
                 if (!isPressStart)
+                {
+                    isPressStart = true;
                     pressStartText.SetActive(true);
+                }
             }
+        }
+
+        if(isPressStart)
+        {
+            Debug.Log("Start");
+            if(Input.GetAxis("J1SettingsButtonPS4") > 0 || Input.GetAxis("J2SettingsButtonPS4") > 0)
+                gameManager.LoadScene(nextScaneName);
         }
     }
 }
