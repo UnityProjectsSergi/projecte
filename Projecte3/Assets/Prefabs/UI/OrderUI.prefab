@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8867924, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.34901962}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -190,7 +190,9 @@ MonoBehaviour:
   imageTimeOut: {fileID: 286225795048732536}
   ItemUIlist: []
   duration: 5
+  timeOutValue: 0
   ListItemsUIParent: {fileID: 6494231433589240864}
+  timeout: 0
 --- !u!1 &6494231434479775969
 GameObject:
   m_ObjectHideFlags: 0
