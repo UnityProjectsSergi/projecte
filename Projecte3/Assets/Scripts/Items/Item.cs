@@ -12,17 +12,17 @@ public enum StateIngredient
 
 public  class Item : MonoBehaviour
 {
+    [Header("Item Variables")]
     public ItemUiType ing;
     public ItemType itemType;
-    public bool isPot;
+   
     public int points;
    
     public StateIngredient stateIngredient;
     public RigidbodyController rigidbodyController;
-    
-  
+    public float duration;
 
-   
+
 
     private bool inTable { get { return inTable; } set { } }
 
@@ -31,7 +31,7 @@ public  class Item : MonoBehaviour
        
         stateIngredient=StateIngredient.raw;
     }
-
+    
     public virtual void Catch(CharacterControllerAct player)
     {
         rigidbodyController.ActiveRigidbody(false);

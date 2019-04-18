@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public bool _P1;
-    public bool _P2;
-    public bool _P3;
-    public bool _P4;
+    public static GameManager Instance
+    {
+        get { return instance; }
+    }
+
+    public bool j1, j2;
 
     void Awake()
     {
-        Debug.Log(gameObject.name);
         if (instance == null)
             instance = this;
 
@@ -23,8 +25,25 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void LoadLvl(bool _P1, bool _P2, bool _P3, bool _P4, int _lvl)
+    public void CheckPlayerActive(int controller, GameObject caller)
     {
+        switch(controller)
+        {
+            case 1:
+                if (!j1)
+                    caller.SetActive(false);
+                break;
+            case 2:
+                if (!j2)
+                    caller.SetActive(false);
+                break;
+            default:
+                break;
+        }
+    }
 
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

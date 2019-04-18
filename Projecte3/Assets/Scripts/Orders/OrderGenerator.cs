@@ -25,7 +25,7 @@ public class OrderGenerator : MonoBehaviour
     /// </summary>
     /// <param name="numIng"></param>
     /// <returns></returns>
-    public Order GenerateOrder(int numIng)
+    public Order GenerateOrder(int numIng,float duration)
     {
         // listes Elements a generar x crear ordre
         List<Item> listIng = new List<Item>();
@@ -51,7 +51,9 @@ public class OrderGenerator : MonoBehaviour
                 {
                     n = Ingredient2Pool.Instance.GetObjFromPool();
                      m = Instantiate(Ing2UIPrefab);
+                    
                 }
+                n.gameObject.SetActive(false);
                 //// Adegirixo a llistes a generar la UI i els obj Ingreienr o Item
                 ItemUI mn =m.GetComponent<ItemUI>();
                 listIngUI.Add(mn);
@@ -59,7 +61,7 @@ public class OrderGenerator : MonoBehaviour
             }    
         }
         // Creo Obj order passat li la list ingredients
-        Order order = new Order(listIng, 8);
+        Order order = new Order(listIng, 8,duration);
         // Creao obj de tipus OrdreUI 
         GameObject orderUI = Instantiate(OrderUIPrefb, parentUI);
         // li poso pare de la llista de elements a UI

@@ -10,9 +10,8 @@ public class CharaterControllerMod : MonoBehaviour
     CharacterController characterController;
     Camera m_MainCamera;
     public ControllerParameters DefaultParameters;
-
     public PlayerInput playerInput;
-    [Header("Gravity Settings")]
+
     public float m_GravityMultiplier = 3.7f;
     float m_VerticalSpeed = 0.0f;
     bool onGround = false;
@@ -39,15 +38,19 @@ public class CharaterControllerMod : MonoBehaviour
             Direction,
             Parameters.rotationSpeed* Time.deltaTime,
             0);
+
     private void Start()
     {
-        characterController = GetComponent<CharacterController>();
         m_MainCamera = Camera.main;
+        GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
+
+        characterController = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         if (playerInput == null)
             Debug.LogError("Controlleer" + playercontroller + "not connected");
         playerInput.SetControllerNumber(playercontroller, "PS4");
     }
+
     void Update()
     {
         if (playerInput == null)
@@ -57,30 +60,29 @@ public class CharaterControllerMod : MonoBehaviour
         ActivateDash();
    
     }
+
     public void ActivateDash()
     {
         if (playerInput.OBtn.Down)
             StartCoroutine(Dash(2f));
     }
+
     IEnumerator Dash(float duration)
     {
         dashActive = true;
         yield return new WaitForSeconds(duration);
         dashActive = false;
     }
+
     public void Move()
     {
-        GravityController();
+        //GravityController();
         MovementHorizontal();
 
         if (dashActive)
-        {
             Parameters.currentVelocity = Parameters.normalVelocity*Parameters.dashVelocityMultiplier;
-        }
         else
-        {
             Parameters.currentVelocity = Parameters.normalVelocity;
-        }
         
         //l_CollisionFlags = characterController.Move(Direction *Parameters.currentVelocity* Time.deltaTime);
     }
@@ -95,21 +97,6 @@ public class CharaterControllerMod : MonoBehaviour
         characterController.Move(Direction * Parameters.currentVelocity * Time.deltaTime);
     }
 
-    
-
-    public void CalculCurrentSpeed()
-    {
-        //if (Direction.magnitude>0.0f)
-        //{
-        //    characterParameters.currentVelocity = characterParameters.currentVelocity + (characterParameters.accelerationRate * Time.deltaTime);
-        //}
-        //else
-        //{
-        //    if (characterParameters.currentVelocity > 0)
-        //        characterParameters.currentVelocity = characterParameters.currentVelocity - (characterParameters.decelerationRate * Time.deltaTime);         
-        //}
-        //characterParameters.currentVelocity = Mathf.Clamp(characterParameters.currentVelocity, characterParameters.initialVelocity, characterParameters.finalVelocityForwards);
-    }
     void GravityController()
     {
         m_VerticalSpeed += (Physics.gravity.y * m_GravityMultiplier) * Time.deltaTime;
@@ -150,9 +137,9 @@ public class CharaterControllerMod : MonoBehaviour
         if (characterController.collisionFlags == CollisionFlags.Below)
             print("Only touching ground, nothing else!");
     }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         
-    }
-    
+    } 
 }

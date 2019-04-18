@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4056078537708835031}
   - component: {fileID: 1803613430}
   m_Layer: 10
-  m_Name: BlueBall
+  m_Name: Ingredient1
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,12 +94,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796c4ea6898003241aa4d1243028c0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ing: 0
   itemType: 2
   isPot: 0
   points: 0
-  namme: 
   stateIngredient: 0
   rigidbodyController: {fileID: 6281994492684871375}
+  duration: 5
 --- !u!54 &3109924906579807375
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class OrderUI:MonoBehaviour
     public float timeOutValue;
     public GameObject ListItemsUIParent;
     public bool timeout;
+    public Color TimeOutColor;
     public void Start()
     {
         timeout = false;
@@ -27,6 +28,9 @@ public class OrderUI:MonoBehaviour
         foreach (var item in ItemUIlist)
         {
             item.gameObject.transform.SetParent(ListItemsUIParent.transform);
+            item.gameObject.transform.position = transform.position;
+            item.gameObject.transform.rotation = transform.rotation;
+            item.gameObject.transform.localScale = transform.localScale;
             item.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, withOfChilds);
         }
     }
@@ -47,9 +51,11 @@ public class OrderUI:MonoBehaviour
         while (totalTime <= duration)
         {
             if (!timeout)
-         {       timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
+         {
+                timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
+
             totalTime += Time.deltaTime;
-            if (timeOutValue < 0.1f)
+            if (timeOutValue < 0.01f)
                 timeout = true;
         }
             yield return null;

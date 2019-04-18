@@ -24,10 +24,11 @@ public class Order
         _ingredients = ingredients;
         _orderUI = orderUI;
     }
-    public Order(List<Item> ingredients, int points)
+    public Order(List<Item> ingredients, int points,float duracio)
     {
         _points = points;
         _ingredients = ingredients;
+        duration = duracio;
       
     }
     public void HideUIOrder()
@@ -39,6 +40,7 @@ public class Order
     public void SetOrderUi(OrderUI ordrrui)
     {
         _orderUI = ordrrui;
+        _orderUI.duration = duration;
     }
     public bool isTimeout()
     {
