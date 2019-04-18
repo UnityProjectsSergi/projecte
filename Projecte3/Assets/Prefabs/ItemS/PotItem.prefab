@@ -265,11 +265,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   potUIBar: {fileID: 1385927053}
-  listuI: []
+  listUIItems: []
   ListIng: {fileID: 9108326518432846173}
   ItemPotUIPrefab: {fileID: 1134867215814376660, guid: ebb958ba0507e0a4eb204a0e07bff99f,
     type: 3}
-  currentSoltUi: 0
 --- !u!1 &3908169331254990592
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +466,7 @@ MonoBehaviour:
   listItem: []
   IsStartCooking: 0
   potUi: {fileID: 1546401196}
+  tempListItem: []
 --- !u!54 &5404493371187664788
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -534,7 +534,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9108326518432846173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.445}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590111433111636841}

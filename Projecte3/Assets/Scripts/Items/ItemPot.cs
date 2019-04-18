@@ -20,13 +20,15 @@ public class ItemPot : Item
     {
         
         listItem = new List<Item>();
+        tempListItem = new List<Item>();
         potUi.StartUiPot();
         itemType = ItemType.Pot;
+        
     }
   
     public void LeaveObjOnItTemp(Item item)
     {
-        tempListItem.Add(item)
+        tempListItem.Add(item);
     }
     public void LeaveObjIn(Item item)
     {
@@ -41,7 +43,7 @@ public class ItemPot : Item
         
         IsStartCooking = false;
         listItem.Clear();
-        potUi.Reset();
+        potUi.ResetUI();
     }
     public bool CheckIsCookedIng()
     {
