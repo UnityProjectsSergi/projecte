@@ -53,6 +53,7 @@ public class OrderGenerator : MonoBehaviour
                      m = Instantiate(Ing2UIPrefab);
                     
                 }
+                n.gameObject.SetActive(false);
                 //// Adegirixo a llistes a generar la UI i els obj Ingreienr o Item
                 ItemUI mn =m.GetComponent<ItemUI>();
                 listIngUI.Add(mn);
