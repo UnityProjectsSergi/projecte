@@ -51,6 +51,7 @@ public class OrderGenerator : MonoBehaviour
                 {
                     n = Ingredient2Pool.Instance.GetObjFromPool();
                      m = Instantiate(Ing2UIPrefab);
+                    
                 }
                 //// Adegirixo a llistes a generar la UI i els obj Ingreienr o Item
                 ItemUI mn =m.GetComponent<ItemUI>();

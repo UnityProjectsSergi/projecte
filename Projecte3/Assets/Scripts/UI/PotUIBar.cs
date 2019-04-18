@@ -18,7 +18,7 @@ public class PotUIBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(Camera.main.transform);
     }
     IEnumerator Cooking(float duration)
     {

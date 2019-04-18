@@ -26,7 +26,7 @@ using UnityEngine;
     }
     public void AddOrder()
     {
-        listOrders.Add(OrderGenerator.GenerateOrder(1));
+        listOrders.Add(OrderGenerator.GenerateOrder(2));
        // listOrders.Add();
     }
     public Order FoundOrder;
