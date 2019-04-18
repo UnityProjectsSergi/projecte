@@ -12,9 +12,10 @@ public enum StateIngredient
 
 public  class Item : MonoBehaviour
 {
+    [Header("Item Variables")]
     public ItemUiType ing;
     public ItemType itemType;
-    public bool isPot;
+   
     public int points;
    
     public StateIngredient stateIngredient;

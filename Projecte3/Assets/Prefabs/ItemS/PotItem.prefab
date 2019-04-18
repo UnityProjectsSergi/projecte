@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 8377703101934110814}
   - component: {fileID: 1142069224921468985}
   - component: {fileID: 6077146018220610743}
+  - component: {fileID: 1546401196}
   m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
@@ -251,6 +252,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1546401196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298144818042481950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31bb400ac7137b4388b4b69fc0a0c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potUIBar: {fileID: 1385927053}
+  listuI: []
+  ListIng: {fileID: 9108326518432846173}
+  ItemPotUIPrefab: {fileID: 1134867215814376660, guid: ebb958ba0507e0a4eb204a0e07bff99f,
+    type: 3}
+  currentSoltUi: 0
 --- !u!1 &3908169331254990592
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +281,7 @@ GameObject:
   - component: {fileID: 4127161978388845102}
   - component: {fileID: 4309232608044329679}
   - component: {fileID: 3270250106653039382}
+  - component: {fileID: 1385927053}
   m_Layer: 10
   m_Name: BgProgressbar
   m_TagString: Untagged
@@ -310,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.34901962}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -326,6 +346,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &1385927053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908169331254990592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba92d3fbda51677439ae8fa4c7d98d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresSpeed: 1
+  ProgressBar: {fileID: 0}
+  totalduration: 0
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,22 +458,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ing: 0
   itemType: 0
-  isPot: 0
   points: 0
   stateIngredient: 0
   rigidbodyController: {fileID: 0}
   duration: 0
-  numIng: 3
+  NumIngedientsOfPot: 1
+  ShowSlotsIngEmpty: 1
   listItem: []
-  ProgressBar: {fileID: 8611695727971123269}
-  ListIng: {fileID: 9108326518432846173}
-  timerToAction: 0
-  ItemPotUIPrefab: {fileID: 1134867215814376660, guid: ebb958ba0507e0a4eb204a0e07bff99f,
-    type: 3}
-  listuI: []
-  totalduration: 0
   IsStartCooking: 0
-  num: 0
+  potUi: {fileID: 1546401196}
 --- !u!54 &5404493371187664788
 Rigidbody:
   m_ObjectHideFlags: 0

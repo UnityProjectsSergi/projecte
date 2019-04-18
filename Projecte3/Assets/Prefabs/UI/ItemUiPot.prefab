@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6083781165394890977}
   - component: {fileID: 8808946364111125067}
   - component: {fileID: 6724526006587959482}
+  - component: {fileID: 5663299165781800516}
   m_Layer: 10
-  m_Name: ItemUiOlla
+  m_Name: ItemUiPot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,3 +75,18 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &5663299165781800516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134867215814376660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15149e60b1b23bb478251a385cbfb654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showWhenIsEmpty: 0
+  DefaultSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  image: {fileID: 6724526006587959482}

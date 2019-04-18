@@ -9,44 +9,39 @@ using UnityEngine.UI;
 
 public class ItemPot : Item
 {
-    public int numIng=3;
-    public List<Item> listItem;
-
-    public Image ProgressBar;
-    public GameObject ListIng;
-    private float fillAmount = 0;
-    public float timerToAction;
-    private float progresSpeed;
-    public GameObject ItemPotUIPrefab;
-    public List<GameObject> listuI;
-    public float totalduration = 0;
+    [Header("Pot Variables")]
+    public int NumIngedientsOfPot;
+    public bool ShowSlotsIngEmpty;
+    public List<Item> listItem;    
     public bool IsStartCooking;
+    public PotUI potUi;
+    public List<Item> tempListItem;
     public void Start()
     {
+        
         listItem = new List<Item>();
-        listuI = new List<GameObject>();
-        for (int i = 0; i < numIng; i++)
-        {
-            GameObject ingPot = Instantiate(ItemPotUIPrefab);
-            listuI.Add(ingPot);
-            ingPot.transform.SetParent(ListIng.transform);
-        }
+        potUi.StartUiPot();
         itemType = ItemType.Pot;
     }
-  public int num=0;
+  
+    public void LeaveObjOnItTemp(Item item)
+    {
+        tempListItem.Add(item)
+    }
     public void LeaveObjIn(Item item)
     {
-        StartCoroutine(Cooking(totalduration));
+       
         listItem.Add(item);
-        totalduration += item.duration;
-        listuI[num].GetComponent<Image>().material = item.GetComponent<Renderer>().material;
-        num++;
+        potUi.SetItemOnUISlot(item);
+
     }
+   
     public void ResetPot()
     {
-        num = 0;
+        
         IsStartCooking = false;
         listItem.Clear();
+        potUi.Reset();
     }
     public bool CheckIsCookedIng()
     {
@@ -59,20 +54,6 @@ public class ItemPot : Item
             
         }
     }
-    IEnumerator Cooking(float duration)
-    {
-        float startTime = Time.realtimeSinceStartup;
-        float journey = 0f;
-        while (journey <= duration)
-        {
-            journey += Time.deltaTime;
-            float percent = Mathf.Clamp01(journey / duration);
-
-            ProgressBar.fillAmount = Mathf.Lerp(0, 1.0f, percent);
-
-            yield return null;
-
-        }
-    }
+   
 }
 

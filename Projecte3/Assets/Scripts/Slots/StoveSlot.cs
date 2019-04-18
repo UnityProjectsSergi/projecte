@@ -38,7 +38,8 @@ public class StoveSlot:Slot
                         //clono itemplayer
                         Item ItemClonIngredient = itemPlayer.Clone();
                         ItemPot itempot  = item.GetComponent<ItemPot>();
-                        if (itempot.listItem.Count < itempot.numIng)
+                        itempot.LeaveObjOnItTemp(ItemClonIngredient);
+                        if (itempot.tempListItem.Count < itempot.potUi.currentSoltUi)
                         {
                             //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  
                             itempot.LeaveObjIn(ItemClonIngredient);
