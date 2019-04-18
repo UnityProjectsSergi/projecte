@@ -13,13 +13,19 @@ namespace Assets.Scripts
             if (!hasObjectOn)
             {
                 item = player.attachedObject.GetComponent<Item>();
-                if (item.GetComponent<Ing11>())
+
+                if(item.GetType() == typeof(Ingredient2))
+                {
+                    player.attachedObject = null;
+                    item.transform.parent = null;
+                    Ingredient2Pool.Instance.ReturnToPool((Ingredient2)item);
+                }
+                else
                 {
                     player.attachedObject = null;
                     item.transform.parent = null;
                     Ing1Pool.Instance.ReturnToPool((Ing11)item);
                 }
-
             }          
         }
     }
