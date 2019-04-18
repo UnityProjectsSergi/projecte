@@ -9,6 +9,8 @@ public class PotUIBar : MonoBehaviour
     public Image ProgressBar;
     private float fillAmount = 0;
     public float totalduration = 0;
+    public bool StartCookingBool;
+    Coroutine co;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,31 @@ public class PotUIBar : MonoBehaviour
     void Update()
     {
         transform.LookAt(Camera.main.transform);
+        if (StartCookingBool)
+        {
+            fillAmount += totalduration * Time.deltaTime;
+            ProgressBar.fillAmount = fillAmount;
+        }
+    }
+    public void StartCooking()
+    {
+        
+        StartCookingBool = true;
+       // co=StartCoroutine(Cooking(totalduration));
+    }
+   public void StopCooking()
+    {
+        StartCookingBool = false;
+        if (co != null)
+        {
+            Debug.Log("stop cok");
+            StopCoroutine(co);
+            
+        }
     }
     IEnumerator Cooking(float duration)
     {
         ProgressBar.gameObject.SetActive(true);
-        float startTime = Time.realtimeSinceStartup;
         float journey = 0f;
         while (journey <= duration)
         {

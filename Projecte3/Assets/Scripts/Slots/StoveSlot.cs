@@ -41,7 +41,7 @@ public class StoveSlot:Slot
                         ItemPot itempot  = item.GetComponent<ItemPot>();
                         
                         
-                        if (itempot.listItem.Count < itempot.potUi.listUIItems.Capacity)
+                        if (itempot.listItem.Count < itempot.potUi.listUIItems.Count)
                         {
                             Debug.Log("is inseidetemp and check");
                             //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  

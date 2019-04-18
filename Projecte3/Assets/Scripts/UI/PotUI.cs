@@ -9,7 +9,11 @@ public class PotUI : MonoBehaviour
     public GameObject ListIng;
     public GameObject ItemPotUIPrefab;
     private ItemPot ItemPot;
-    private int currentSoltUi=0;
+    public int currentSoltUi=0;
+    public bool hasStoveUnder;
+    public float duration;
+    private int oldSlot;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -34,12 +38,27 @@ public class PotUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(currentSoltUi!=oldSlot)
+        potUIBar.totalduration = duration;
+
+        if (hasStoveUnder)
+        {
+            potUIBar.StartCooking();
+        }
+        else
+        {
+            potUIBar.StopCooking();
+        }
+        oldSlot = currentSoltUi;
     }
     public void SetItemOnUISlot(Item item)
     {
-        listUIItems[currentSoltUi].SetSpriteFromImgredient(item.GetComponent<Renderer>().material);
-        currentSoltUi++;
+        if (currentSoltUi < listUIItems.Count)
+        {
+            listUIItems[currentSoltUi].SetSpriteFromImgredient(item.GetComponent<Renderer>().material);
+            currentSoltUi++;
+            duration = item.duration;
+        }
     }
     public void ResetUI()
     {

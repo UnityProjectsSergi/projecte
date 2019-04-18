@@ -15,20 +15,20 @@ public class ItemPot : Item
     public List<Item> listItem;    
     public bool IsStartCooking;
     public PotUI potUi;
-    public List<Item> tempListItem;
+ 
+    public LayerMask layerMask;
+
     public void Start()
-    {
-        
+    {    
         listItem = new List<Item>();
-        tempListItem = new List<Item>();
+    
         potUi.StartUiPot();
         itemType = ItemType.Pot;
-        
     }
-  
+    
     public void LeaveObjOnItTemp(Item item)
     {
-        tempListItem.Add(item);
+       
     }
     public void LeaveObjIn(Item item)
     {
@@ -49,12 +49,25 @@ public class ItemPot : Item
     {
         return true;
     }
+    public bool hasStoveUnder;
     public void Update()
     {
-        if (listItem.Count == 1)
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -transform.up * 2f,out hit, layerMask))
         {
-            
+            StoveSlot slot= hit.collider.gameObject.GetComponent<StoveSlot>();
+            if (slot)
+            {
+                hasStoveUnder = true;
+                potUi.hasStoveUnder = true;
+            }
+            else
+            {
+                hasStoveUnder = false;
+                potUi.hasStoveUnder = false;
+            }
         }
+       
     }
    
 }

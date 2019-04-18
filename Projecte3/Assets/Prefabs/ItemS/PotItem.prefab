@@ -269,6 +269,8 @@ MonoBehaviour:
   ListIng: {fileID: 9108326518432846173}
   ItemPotUIPrefab: {fileID: 1134867215814376660, guid: ebb958ba0507e0a4eb204a0e07bff99f,
     type: 3}
+  hasStoveUnder: 0
+  duration: 0
 --- !u!1 &3908169331254990592
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progresSpeed: 1
-  ProgressBar: {fileID: 0}
+  ProgressBar: {fileID: 8611695727971123269}
   totalduration: 0
 --- !u!1 &4334500036433946894
 GameObject:
@@ -466,7 +468,10 @@ MonoBehaviour:
   listItem: []
   IsStartCooking: 0
   potUi: {fileID: 1546401196}
-  tempListItem: []
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  hasStoveUnder: 0
 --- !u!54 &5404493371187664788
 Rigidbody:
   m_ObjectHideFlags: 0
