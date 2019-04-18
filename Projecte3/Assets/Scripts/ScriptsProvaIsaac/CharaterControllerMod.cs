@@ -41,8 +41,10 @@ public class CharaterControllerMod : MonoBehaviour
 
     private void Start()
     {
-        characterController = GetComponent<CharacterController>();
         m_MainCamera = Camera.main;
+        GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
+
+        characterController = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         if (playerInput == null)
             Debug.LogError("Controlleer" + playercontroller + "not connected");
@@ -135,9 +137,9 @@ public class CharaterControllerMod : MonoBehaviour
         if (characterController.collisionFlags == CollisionFlags.Below)
             print("Only touching ground, nothing else!");
     }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         
-    }
-    
+    } 
 }

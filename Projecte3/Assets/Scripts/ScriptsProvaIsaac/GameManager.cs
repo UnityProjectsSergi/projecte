@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,8 +12,7 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
-    public bool _J1;
-    public bool _J2;
+    public bool j1, j2;
 
     void Awake()
     {
@@ -25,8 +25,25 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void LoadLvl()
+    public void CheckPlayerActive(int controller, GameObject caller)
     {
+        switch(controller)
+        {
+            case 1:
+                if (!j1)
+                    caller.SetActive(false);
+                break;
+            case 2:
+                if (!j2)
+                    caller.SetActive(false);
+                break;
+            default:
+                break;
+        }
+    }
 
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
