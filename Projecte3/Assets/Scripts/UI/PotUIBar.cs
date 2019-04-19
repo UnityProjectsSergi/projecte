@@ -20,7 +20,7 @@ public class PotUIBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Camera.main.transform);
+     
         if (StartCookingBool)
         {
             fillAmount += totalduration * Time.deltaTime;
