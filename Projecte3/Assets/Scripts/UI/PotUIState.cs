@@ -3,19 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PotUIBar : MonoBehaviour
+public class PotUIState : MonoBehaviour
 {
     public float progresSpeed = 1;
     public Image ProgressBar;
+    public Image AlertBurn;
+    public Image BurnAfterFire;
+    public Image CookedOk;
     public float fillAmount = 0;
     public float totalduration = 0;
     public bool StartCookingBool;
-    public float timeShowAlertBurning = 0.5f;
+    public bool StartBuringBool;
+    
+    public float timeShowAlertBurning = 2.5f;
+    public float timeBurning = 1.0f;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        ProgressBar.gameObject.SetActive(false);
     }
   
     // Update is called once per frame
@@ -24,30 +30,34 @@ public class PotUIBar : MonoBehaviour
         // q tu aqui li dones un valor 
         if (StartCookingBool)
         {
+          
             journey += Time.deltaTime;
             if (journey < totalduration)
             {
-                
+                ProgressBar.gameObject.SetActive(true);
                 percentCook = Mathf.Clamp01(journey / totalduration);
                 Debug.Log(percentCook + "percent   fillamount: "+ProgressBar.fillAmount+" juourney " + journey);
                 ProgressBar.fillAmount = percentCook;
-                if (ProgressBar.fillAmount >= 1.0f)
+                if (ProgressBar.fillAmount >= 0.99f)
                 {
-                    
+                    ProgressBar.gameObject.SetActive(false);
                     Debug.Log("buen ththe stove");
-                    
-                    
+                    StartCoroutine(ShowImageOK(3f));
                 }
             }
             else
             {
-                if(journey<=totalduration + timeShowAlertBurning)
+                if(journey<=(totalduration + timeShowAlertBurning))
                 {
                     Debug.Log("show alert to burn");
+
+
+                    
                 }
-                else
+                else if(journey<= (totalduration+timeShowAlertBurning+timeBurning))
                 {
-                    // cal 
+                 //   AlertShowed = true;
+                    
                     Debug.Log("show icon ingredients burned");
                 }
             }
@@ -60,20 +70,32 @@ public class PotUIBar : MonoBehaviour
     public void StartCooking()
     {
         // pk sempre es true
-        StartCookingBool = true; ProgressBar.gameObject.SetActive(true);
+        StartCookingBool = true;
+       
         // co=StartCoroutine(UIBarCooking());
     }
    
    public void StopCooking()
     {
         StartCookingBool = false;
-        ProgressBar.gameObject.SetActive(false);
-        if (co != null)
-        {
-            Debug.Log("stop cok");
-         ///  StopCoroutine(co);
-            
-        }
+        
+      
+    }
+    public IEnumerator ShowImageOK(float wait)
+    {
+        CookedOk.gameObject.SetActive(true);
+        yield return new WaitForSeconds(wait);
+        CookedOk.gameObject.SetActive(false);
+          
+    }
+
+    public void StartBurning()
+    {
+        StartBuringBool = true;
+    }
+    public void StopBurning()
+    {
+        StartBuringBool = false;
     }
     public float percentCook;
     private float journey;

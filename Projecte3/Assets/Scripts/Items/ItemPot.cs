@@ -17,16 +17,13 @@ public class ItemPot : Item
     public PotUI potUi;
     // saber si el que hi ha 
     public LayerMask layerMask;
-    enum ItemPotStateIngredients
-    {
-        Cooking, CookedDone , Alert, Burning, BurnedToTrash 
-
-    }
+    public  ItemPotStateIngredients currentStatePot;
+   
     public void Start()
     {
         
         listItem = new List<Item>();
-    
+        currentStatePot = ItemPotStateIngredients.Empty;
         potUi.StartUiPot();
         itemType = ItemType.Pot;
     }
@@ -37,15 +34,15 @@ public class ItemPot : Item
        // Son diferent crec jo tinc varies duracions una ui 
         listItem.Add(item);
         potUi.SetItemOnUISlot(item);
-       
+        currentStatePot = ItemPotStateIngredients.Cooking;
      //  potUi.potUIBar.AddDuration(item.duration);
       // item.StartCoroutine(item.Cook());
      
     }
-   
+   //
     public void ResetPot()
     {
-        
+        currentStatePot = ItemPotStateIngredients.Empty;
         IsStartCooking = false;
         listItem.Clear();
         potUi.ResetUI();

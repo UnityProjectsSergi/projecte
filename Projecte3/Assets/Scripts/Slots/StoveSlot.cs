@@ -84,7 +84,7 @@ public class StoveSlot:Slot
             if (itemPlayer.itemType == ItemType.Pot)
                 base.LeaveObjOn(player);
         }
-        
+        // mirar al joc si es poden fgr 
     }
     public void Update()
     {

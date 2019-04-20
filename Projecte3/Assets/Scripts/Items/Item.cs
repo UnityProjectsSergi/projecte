@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.ObjPooler;
 
-public enum StateIngredient
-{
-    raw,cutting,cutted,initCook,cooked
-}
+
 
 // x fer unna maq esstats
 

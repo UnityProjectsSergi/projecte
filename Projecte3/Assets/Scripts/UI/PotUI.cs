@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PotUI : MonoBehaviour
 {
-    public PotUIBar potUIBar;
+    public PotUIState potUIState;
     public List<ItemUIPot> listUIItems= new List<ItemUIPot>();
     public GameObject ListIng;
     public GameObject ItemPotUIPrefab;
@@ -40,21 +40,18 @@ public class PotUI : MonoBehaviour
     {
         if (currentSoltUi != oldSlot)
         {
-            potUIBar.totalduration += duration;
-            // totalduration = duration;
-            Debug.Log("percenkCook before " + potUIBar.percentCook + "totalduration " + potUIBar.totalduration);
-         //   potUIBar.percentCook = (float)Mathf.Round((100f * potUIBar.percentCook) / potUIBar.totalduration);
-            Debug.Log("percenkCook after " + potUIBar.percentCook + "totalduration " + potUIBar.totalduration);
+            potUIState.totalduration += duration;
         }  
         
         // on assingre sfillampit 
         if (hasStoveUnder)
         {
-            potUIBar.StartCooking();
+            potUIState.StartCooking();
+            
         }
         else
         {
-            potUIBar.StopCooking();
+            potUIState.StopCooking();
         }
         oldSlot = currentSoltUi;
         RotateTOCam();
