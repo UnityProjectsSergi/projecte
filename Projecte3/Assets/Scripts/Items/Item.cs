@@ -21,7 +21,7 @@ public  class Item : MonoBehaviour
     public StateIngredient stateIngredient;
     public RigidbodyController rigidbodyController;
     public float duration;
-
+    public float ingCookValue = 0;
 
 
     private bool inTable { get { return inTable; } set { } }
@@ -68,5 +68,23 @@ public  class Item : MonoBehaviour
     {
         return(Item) this.MemberwiseClone();
     }
+    public float percentCooked;
+    public IEnumerator Cook()
+    {
+        float journey = 0f;
+        while (journey <= duration)
+        {
+            journey += Time.deltaTime;
+            percentCooked = Mathf.Clamp01(journey / duration);
+
+            ingCookValue = Mathf.Lerp(0, 1.0f, percentCooked);
+            if (ingCookValue > 0.99f)
+                stateIngredient = StateIngredient.cooked;
+
+            yield return null;
+
+        }
+    }
+  
 }
 

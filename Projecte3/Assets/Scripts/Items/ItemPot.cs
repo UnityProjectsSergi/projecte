@@ -15,27 +15,32 @@ public class ItemPot : Item
     public List<Item> listItem;    
     public bool IsStartCooking;
     public PotUI potUi;
- 
+    // saber si el que hi ha 
     public LayerMask layerMask;
+    enum ItemPotStateIngredients
+    {
+        Cooking, CookedDone , Alert, Burning, BurnedToTrash 
 
+    }
     public void Start()
-    {    
+    {
+        
         listItem = new List<Item>();
     
         potUi.StartUiPot();
         itemType = ItemType.Pot;
     }
     
-    public void LeaveObjOnItTemp(Item item)
-    {
-       
-    }
+  
     public void LeaveObjIn(Item item)
     {
-       
+       // Son diferent crec jo tinc varies duracions una ui 
         listItem.Add(item);
         potUi.SetItemOnUISlot(item);
-
+       
+     //  potUi.potUIBar.AddDuration(item.duration);
+      // item.StartCoroutine(item.Cook());
+     
     }
    
     public void ResetPot()
@@ -47,7 +52,7 @@ public class ItemPot : Item
     }
     public bool CheckIsCookedIng()
     {
-        return true;
+        return listItem.All(item => item.stateIngredient == StateIngredient.cooked);
     }
     public bool hasStoveUnder;
     public void Update()
@@ -56,7 +61,7 @@ public class ItemPot : Item
         if (Physics.Raycast(transform.position, -transform.up * 2f,out hit, layerMask))
         {
             StoveSlot slot= hit.collider.gameObject.GetComponent<StoveSlot>();
-            if (slot)
+            if (slot  && listItem.Count>0)
             {
                 hasStoveUnder = true;
                 potUi.hasStoveUnder = true;
@@ -67,6 +72,7 @@ public class ItemPot : Item
                 potUi.hasStoveUnder = false;
             }
         }
+        
        
     }
    

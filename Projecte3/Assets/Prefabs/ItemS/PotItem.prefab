@@ -112,7 +112,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_SizeDelta: {x: 1, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5625517968046367171
 CanvasRenderer:
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3908169331254990592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -362,8 +362,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progresSpeed: 1
   ProgressBar: {fileID: 8611695727971123269}
+  fillAmount: 0
   totalduration: 0
   StartCookingBool: 0
+  percentCook: 0
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +467,9 @@ MonoBehaviour:
   stateIngredient: 0
   rigidbodyController: {fileID: 0}
   duration: 0
-  NumIngedientsOfPot: 1
+  ingCookValue: 0
+  percentCooked: 0
+  NumIngedientsOfPot: 3
   ShowSlotsIngEmpty: 1
   listItem: []
   IsStartCooking: 0
@@ -569,10 +573,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 0.5, y: 0.5}
-  m_Spacing: {x: 0, y: 0}
+  m_CellSize: {x: 0.49, y: 0.49}
+  m_Spacing: {x: 0.01, y: 0.01}
   m_Constraint: 0
   m_ConstraintCount: 2

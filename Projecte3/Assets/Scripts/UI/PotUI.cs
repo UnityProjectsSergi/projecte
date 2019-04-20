@@ -38,9 +38,16 @@ public class PotUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentSoltUi!=oldSlot)
-        potUIBar.totalduration = duration;
-
+        if (currentSoltUi != oldSlot)
+        {
+            potUIBar.totalduration += duration;
+            // totalduration = duration;
+            Debug.Log("percenkCook before " + potUIBar.percentCook + "totalduration " + potUIBar.totalduration);
+         //   potUIBar.percentCook = (float)Mathf.Round((100f * potUIBar.percentCook) / potUIBar.totalduration);
+            Debug.Log("percenkCook after " + potUIBar.percentCook + "totalduration " + potUIBar.totalduration);
+        }  
+        
+        // on assingre sfillampit 
         if (hasStoveUnder)
         {
             potUIBar.StartCooking();
@@ -50,9 +57,7 @@ public class PotUI : MonoBehaviour
             potUIBar.StopCooking();
         }
         oldSlot = currentSoltUi;
-        Vector3 dir=Camera.main.transform.position - transform.position;
-        dir.x = 0;
-        transform.rotation=Quaternion.LookRotation(dir,Vector3.up);
+        RotateTOCam();
     }
     public void SetItemOnUISlot(Item item)
     {
@@ -70,5 +75,11 @@ public class PotUI : MonoBehaviour
         {
             item.setDefault();
         }
+    }
+    public void RotateTOCam()
+    {
+        Vector3 dir = Camera.main.transform.position - transform.position;
+        dir.x = 0;
+        transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
     }
 }

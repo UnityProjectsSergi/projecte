@@ -42,7 +42,11 @@ public class Order
         _orderUI = ordrrui;
         _orderUI.duration = duration;
     }
-    public bool isTimeout()
+    public bool IsServed()
+    {
+        return isServed;
+    }
+    public bool IsTimeout()
     {
         return _orderUI.timeout;
     }
