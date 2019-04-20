@@ -37,8 +37,11 @@ public class CuttingSlot : Slot
     public override void Catch(CharacterControllerAct player)
     {
         // The player just can catch items cutted or raw
-        if(item.stateIngredient == StateIngredient.cutted || item.stateIngredient == StateIngredient.raw)
-            base.Catch(player);       
+        if (item != null)
+        {
+            if (item.stateIngredient == StateIngredient.cutted || item.stateIngredient == StateIngredient.raw)
+                base.Catch(player);
+        }
     }
 
     public override void Action(CharacterControllerAct player)
