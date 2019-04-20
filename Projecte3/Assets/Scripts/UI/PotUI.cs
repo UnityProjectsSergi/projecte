@@ -50,6 +50,9 @@ public class PotUI : MonoBehaviour
             potUIBar.StopCooking();
         }
         oldSlot = currentSoltUi;
+        Vector3 dir=Camera.main.transform.position - transform.position;
+        dir.x = 0;
+        transform.rotation=Quaternion.LookRotation(dir,Vector3.up);
     }
     public void SetItemOnUISlot(Item item)
     {
