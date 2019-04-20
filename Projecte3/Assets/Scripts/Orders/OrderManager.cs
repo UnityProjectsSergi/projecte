@@ -24,9 +24,9 @@ using UnityEngine;
             DontDestroyOnLoad(this.gameObject);
         }
     }
-    public void AddOrder()
+    public void AddOrder(int ingredients,float time)
     {
-        listOrders.Add(OrderGenerator.GenerateOrder(2,5));
+        listOrders.Add(OrderGenerator.GenerateOrder(ingredients,time));
     }
     public Order FoundOrder;
     public bool CheckAllOrder(VialItem item)
@@ -46,6 +46,7 @@ using UnityEngine;
                     FoundOrder = order;
                     order.isServed = true;
                     order.HideUIOrder();
+                    OrderManager.Instance.RemoveOrder(order);
                     break;
                 }
             }
@@ -65,22 +66,24 @@ using UnityEngine;
         // Test
         if (Input.GetKeyDown(KeyCode.M))
         {
-            AddOrder();
+            AddOrder(3,14f);
         }
         CheckIfOrderListHasTimeOut();
     }
     public void CheckIfOrderListHasTimeOut()
     {
-        foreach (var order in listOrders)
+        for (int i = 0; i < listOrders.Count; i++)
         {
-            if (!order.isServed)
+            if(!listOrders[i].IsServed())
             {
-                if(order.isTimeout())
+                if (listOrders[i].IsTimeout())
                 {
-                    order.HideUIOrder();
+                    listOrders[i].HideUIOrder();
+                    RemoveOrder(listOrders[i]);
                 }
             }
-        }
+
+        } 
     }
 }
 

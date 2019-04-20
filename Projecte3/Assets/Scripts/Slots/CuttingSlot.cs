@@ -37,8 +37,11 @@ public class CuttingSlot : Slot
     public override void Catch(CharacterControllerAct player)
     {
         // The player just can catch items cutted or raw
-        if(item.stateIngredient == StateIngredient.cutted || item.stateIngredient == StateIngredient.raw)
-            base.Catch(player);       
+        if (item != null)
+        {
+            if (item.stateIngredient == StateIngredient.cutted || item.stateIngredient == StateIngredient.raw)
+                base.Catch(player);
+        }
     }
 
     public override void Action(CharacterControllerAct player)
@@ -56,7 +59,7 @@ public class CuttingSlot : Slot
                 {
                     fillAmount = 0;
                     barCanvas.SetActive(false);
-                    item.transform.localScale = new Vector3(item.transform.localScale.x, 0.1f, item.transform.localScale.z);
+                    item.transform.localScale = new Vector3(0.7f, 0.4f, 0.7f);
                     item.stateIngredient = StateIngredient.cutted;
                 }
             }              

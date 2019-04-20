@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class UI_System : MonoBehaviour
 {
-    public 
+    public UI_Screen currentScreen;
+    public UI_Screen previousScreen;
+    public UI_Screen startScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +17,12 @@ public class UI_System : MonoBehaviour
     void Update()
     {
         
+    }
+    public void SwitchScreen(UI_Screen newScreen)
+    {
+        if(currentScreen!=null)
+        {
+            
+        }
     }
 }

@@ -11,3 +11,12 @@ public enum ItemType
 {
     Pot,Vial, Ing
 }
+public enum ItemPotStateIngredients
+{
+    Empty, Cooking, CookedDone, Alert, Burning, BurnedToTrash
+
+}
+public enum StateIngredient
+{
+    raw, cutting, cutted, initCook, cooked
+}

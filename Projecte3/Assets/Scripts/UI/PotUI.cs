@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PotUI : MonoBehaviour
 {
-    public PotUIBar potUIBar;
+    public PotUIState potUIState;
     public List<ItemUIPot> listUIItems= new List<ItemUIPot>();
     public GameObject ListIng;
     public GameObject ItemPotUIPrefab;
@@ -38,18 +38,23 @@ public class PotUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentSoltUi!=oldSlot)
-        potUIBar.totalduration = duration;
-
+        if (currentSoltUi != oldSlot)
+        {
+            potUIState.totalduration += duration;
+        }  
+        
+        // on assingre sfillampit 
         if (hasStoveUnder)
         {
-            potUIBar.StartCooking();
+            potUIState.StartCooking();
+            
         }
         else
         {
-            potUIBar.StopCooking();
+            potUIState.StopCooking();
         }
         oldSlot = currentSoltUi;
+        RotateTOCam();
     }
     public void SetItemOnUISlot(Item item)
     {
@@ -67,5 +72,11 @@ public class PotUI : MonoBehaviour
         {
             item.setDefault();
         }
+    }
+    public void RotateTOCam()
+    {
+        Vector3 dir = Camera.main.transform.position - transform.position;
+        dir.x = 0;
+        transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
     }
 }
