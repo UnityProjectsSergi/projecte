@@ -72,6 +72,8 @@ public class PotUI : MonoBehaviour
         {
             item.setDefault();
         }
+        potUIState.Reset();
+        
     }
     public void RotateTOCam()
     {
