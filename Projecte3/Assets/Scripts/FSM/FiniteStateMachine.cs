@@ -1,18 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class FiniteStateMachine : MonoBehaviour
+namespace FSM
 {
-
-    // Use this for initialization
-    void Start()
+    public class FiniteStateMachine : MonoBehaviour
     {
 
-    }
+        // subclasses of this class should implement the Start, Update and ChangeState Methods
 
-    // Update is called once per frame
-    void Update()
-    {
+        public virtual void Exit()
+        {
+            // code to execute when FSM is exited
+            this.enabled = false;
+        }
+
+        public virtual void ReEnter()
+        {
+            // code to execute when FSM is (re)entered
+            this.enabled = true;
+        }
 
     }
 }

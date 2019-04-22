@@ -19,10 +19,11 @@ public class PotUIState : MonoBehaviour
     
     public float timeShowAlertBurning = 2.5f;
     public float timeBurning = 1.0f;
-    
+    public PotUI PotUI;
     // Start is called before the first frame update
     void Start()
     {
+        PotUI = gameObject.transform.parent.GetComponent<PotUI>();
         ProgressBar.gameObject.SetActive(false);
     }
 
@@ -46,6 +47,7 @@ public class PotUIState : MonoBehaviour
                     ProgressBar.gameObject.SetActive(false);
                     Debug.Log("buen ththe stove");
                     StartCoroutine(ShowImageOK(3f, CookedOk));
+                    PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
                 }
             }
             else
@@ -61,6 +63,7 @@ public class PotUIState : MonoBehaviour
                         {
                             Debug.Log("show image alert");
                             StartCoroutine(ShowImageAlert(3f, AlertBurn));
+                            PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
                         }
                     }
                 }
@@ -75,6 +78,7 @@ public class PotUIState : MonoBehaviour
                             if (BurnTimer >= 0.0f)
                             {
                                 StartCoroutine(ShowImageFire(4f, Fire));
+                                PotUI.SetItemPotState(ItemPotStateIngredients.Burning);
 
                             }
                         }
@@ -127,6 +131,7 @@ public class PotUIState : MonoBehaviour
         
         image.gameObject.SetActive(false);
         BurnAfterFire.gameObject.SetActive(true);
+        PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);
     }
     public IEnumerator ShowImageAlert(float wait, Image image)
     {

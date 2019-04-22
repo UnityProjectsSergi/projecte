@@ -65,7 +65,7 @@ public class StoveSlot:Slot
                 }
                 else if (itemPlayer.itemType == ItemType.Vial)
                 {
-                    if (item.GetComponent<ItemPot>().CheckIsCookedIng() && !hasPassIngToVial)
+                    if (item.GetComponent<ItemPot>().currentStatePot==ItemPotStateIngredients.CookedDone && !hasPassIngToVial)
                     {
                         player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(item.GetComponent<ItemPot>().listItem);
                         item.GetComponent<ItemPot>().ResetPot();

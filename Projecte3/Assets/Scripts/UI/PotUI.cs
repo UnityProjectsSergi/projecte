@@ -56,6 +56,10 @@ public class PotUI : MonoBehaviour
         oldSlot = currentSoltUi;
         RotateTOCam();
     }
+    public void SetItemPotState(ItemPotStateIngredients state)
+    {
+        ItemPot.currentStatePot = state;
+    }
     public void SetItemOnUISlot(Item item)
     {
         if (currentSoltUi < listUIItems.Count)

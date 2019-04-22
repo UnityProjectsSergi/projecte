@@ -35,9 +35,9 @@ public class ItemPot : Item
         listItem.Add(item);
         potUi.SetItemOnUISlot(item);
         currentStatePot = ItemPotStateIngredients.Cooking;
-     //  potUi.potUIBar.AddDuration(item.duration);
-      // item.StartCoroutine(item.Cook());
-     
+        //  potUi.potUIBar.AddDuration(item.duration);
+        // item.StartCoroutine(item.Cook());
+        currentStatePot = ItemPotStateIngredients.Cooking;
     }
    //
     public void ResetPot()
