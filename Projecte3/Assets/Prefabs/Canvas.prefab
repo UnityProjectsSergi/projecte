@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimer: {fileID: 0}
   timeLeft: 900
+  TimerUP: {fileID: 0}
   clock: 0
 --- !u!1 &1500907860
 GameObject:
@@ -192,7 +193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1500907861
 RectTransform:
   m_ObjectHideFlags: 0
@@ -610,7 +611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 0}
-  timeLeft: 30
+  timeLeft: 120
+  TimerUP: {fileID: 1500907860}
   clock: 0
 --- !u!1 &4421839534429888866
 GameObject:
