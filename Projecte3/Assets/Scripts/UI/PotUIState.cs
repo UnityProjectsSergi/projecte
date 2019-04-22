@@ -131,7 +131,7 @@ public class PotUIState : MonoBehaviour
         
         image.gameObject.SetActive(false);
         BurnAfterFire.gameObject.SetActive(true);
-        PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);
+        PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);   
     }
     public IEnumerator ShowImageAlert(float wait, Image image)
     {

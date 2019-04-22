@@ -4,13 +4,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-    class OrderManager:MonoBehaviour
+using UnityEngine.UI;
+
+class OrderManager:MonoBehaviour
     {
     private static OrderManager _instance;
     public static OrderManager Instance { get { return _instance; } private set { } }
     public Queue<Order> listOrdderQueue = new Queue<Order>();
     public List<Order> listOrders = new List<Order>();
     public OrderGenerator OrderGenerator;
+    public int points;
+    public Text Points;
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -46,7 +50,9 @@ using UnityEngine;
                     FoundOrder = order;
                     order.isServed = true;
                     order.HideUIOrder();
+                    points+= order._points;
                     OrderManager.Instance.RemoveOrder(order);
+                    
                     break;
                 }
             }
@@ -69,6 +75,7 @@ using UnityEngine;
             AddOrder(3,14f);
         }
         CheckIfOrderListHasTimeOut();
+        Points.text = points.ToString();
     }
     public void CheckIfOrderListHasTimeOut()
     {
@@ -79,6 +86,7 @@ using UnityEngine;
                 if (listOrders[i].IsTimeout())
                 {
                     listOrders[i].HideUIOrder();
+                    points -= listOrders[i]._points;
                     RemoveOrder(listOrders[i]);
                 }
             }
