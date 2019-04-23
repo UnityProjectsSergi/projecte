@@ -61,6 +61,7 @@ public class CharacterControllerAct : MonoBehaviour
         {           
             item = hit.collider.GetComponent<Item>();
             item.transform.eulerAngles = Vector3.zero;
+            item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
         }
     }
