@@ -9,17 +9,19 @@ public class ItemUIPot : MonoBehaviour
     public Sprite DefaultSprite;
     public Color defaultColor;
     public Image image;
+
     // Start is called before the first frame update
     void Start()
     {
         image = GetComponent<Image>();
+        GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
     }
+    
     public void setDefaultColor()
     {
-       // if (showWhenIsEmpty)
-           
 
     }
+
     public void setDefault()
     {
         if (showWhenIsEmpty)
@@ -27,14 +29,12 @@ public class ItemUIPot : MonoBehaviour
         //image.sprite = DefaultSprite;
     }
     // Update is called once per frame
-    void Update()
-    {
-     
-    }
+
     public void SetSpriteFromImgredient(Material material)
     {
         image.color = material.color;
     }
+
     public void SetSpriteFromImgredient(Sprite sprite)
     {
         image.sprite = sprite;

@@ -14,28 +14,22 @@ public class PotUI : MonoBehaviour
     public float duration;
     private int oldSlot;
 
-    // Start is called before the first frame update
-    public void Start()
-    {
-
-    }
     public void StartUiPot()
     {
         ItemPot = transform.parent.GetComponent<ItemPot>();
         Debug.Log(ItemPot.NumIngedientsOfPot);
         for (int i = 0; i < ItemPot.NumIngedientsOfPot; i++)
-        {
-            
+        {            
             GameObject ingPot = Instantiate(ItemPotUIPrefab);
             listUIItems.Add(ingPot.GetComponent<ItemUIPot>());
             Debug.Log("Add UI item");
             if (ItemPot.ShowSlotsIngEmpty)
-                ingPot.GetComponent<ItemUIPot>().showWhenIsEmpty = true;
-            ingPot.GetComponent<ItemUIPot>().setDefault();
+                ingPot.GetComponent<ItemUIPot>().showWhenIsEmpty = true;            
+            ingPot.GetComponent<ItemUIPot>().setDefault();            
             ingPot.transform.SetParent(ListIng.transform);
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (currentSoltUi != oldSlot)
@@ -56,10 +50,12 @@ public class PotUI : MonoBehaviour
         oldSlot = currentSoltUi;
         RotateTOCam();
     }
+
     public void SetItemPotState(ItemPotStateIngredients state)
     {
         ItemPot.currentStatePot = state;
     }
+
     public void SetItemOnUISlot(Item item)
     {
         if (currentSoltUi < listUIItems.Count)
@@ -69,6 +65,7 @@ public class PotUI : MonoBehaviour
             duration = item.duration;
         }
     }
+
     public void ResetUI()
     {
         currentSoltUi = 0;
@@ -79,6 +76,7 @@ public class PotUI : MonoBehaviour
         potUIState.Reset();
         
     }
+
     public void RotateTOCam()
     {
         Vector3 dir = Camera.main.transform.position - transform.position;

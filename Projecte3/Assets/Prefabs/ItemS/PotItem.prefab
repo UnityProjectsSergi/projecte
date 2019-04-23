@@ -411,7 +411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.04}
+  m_AnchoredPosition: {x: 0, y: 1.56}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8377703101934110814
@@ -521,8 +521,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3908169331254990592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.41}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.294365, z: 1}
   m_Children:
   - {fileID: 752984564881532413}
   - {fileID: 301765327}
@@ -532,10 +532,10 @@ RectTransform:
   m_Father: {fileID: 1590111433111636841}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.73}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.0001911968, y: -0.2}
+  m_SizeDelta: {x: 0.99939585, y: 0.7612644}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4309232608044329679
 CanvasRenderer:
@@ -598,6 +598,7 @@ MonoBehaviour:
   StartBuringBool: 0
   timeShowAlertBurning: 4
   timeBurning: 5
+  PotUI: {fileID: 0}
   StartTimerAlrert: 0
   percentCook: 0
 --- !u!1 &4334500036433946894
