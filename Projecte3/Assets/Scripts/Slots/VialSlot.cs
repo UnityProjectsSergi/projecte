@@ -6,24 +6,22 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Assets.Scripts.ObjPooler;
 
-    //Slot Where player catch ingrredients 
-    public class VialSlot : Slot
-    { 
-        public GameObject itemPrefab;
-        private void Start()
-        {
-            item = VialPool.Instance.GetObjFromPool(transform);
-           // item = Instantiate(itemPrefab, positionObjOn.transform.position, Quaternion.identity, positionObjOn.transform);
-            hasObjectOn = true;
-        }
+public class VialSlot : Slot
+{ 
+    public GameObject itemPrefab;
+    public Transform spawnTransform;
 
-        public override void Catch(CharacterControllerAct player)
-        {
-            base.Catch(player);
-            item = VialPool.Instance.GetObjFromPool(transform);
-           
-        //    item = Instantiate(itemPrefab, positionObjOn.transform.position, Quaternion.identity, positionObjOn.transform);
-            hasObjectOn = true;
-        }
+    private void Start()
+    {
+        item = VialPool.Instance.GetObjFromPool(spawnTransform);
+        hasObjectOn = true;
     }
+
+    public override void Catch(CharacterControllerAct player)
+    {
+        base.Catch(player);
+        item = VialPool.Instance.GetObjFromPool(spawnTransform);
+        hasObjectOn = true;
+    }
+}
 

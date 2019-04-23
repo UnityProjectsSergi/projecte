@@ -14,6 +14,7 @@ public class VialItem : Item
         rigidbodyController = GetComponent<RigidbodyController>();
         itemType = ItemType.Vial;
     }
+
     public void ResetVial()
     {
         listItem.Clear();

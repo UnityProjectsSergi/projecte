@@ -43,6 +43,7 @@ namespace Assets.Scripts.ObjPooler
                 obj.transform.rotation = transform.rotation;
             }
             obj.gameObject.SetActive(true);
+
             return obj ;
         }
 
