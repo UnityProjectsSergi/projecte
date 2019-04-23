@@ -15,6 +15,7 @@ namespace FSM
         public GameObject HideShowGO;
         [HideInInspector]
         public FSM_ShowHideImage FSM_ShowHideImage;
+        public float duration;
 
         // Use this for initialization
         void Awake()

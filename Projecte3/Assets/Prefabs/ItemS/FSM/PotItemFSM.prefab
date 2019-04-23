@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5945835319088927393}
   - component: {fileID: 7714913355555189543}
   - component: {fileID: 6876841270307077132}
-  - component: {fileID: 2058711765012678253}
   m_Layer: 5
   m_Name: ProgressBar
   m_TagString: Untagged
@@ -89,23 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 7714913355555189543}
-  fillAmount: 0
   percent: 0
---- !u!114 &2058711765012678253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238318631504410701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb8969f247f06914dbcda3cca67fdc76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  ProgressBarBB: {fileID: 6876841270307077132}
-  totalDuration: 0
 --- !u!1 &1852810856404290128
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +100,7 @@ GameObject:
   - component: {fileID: 6433216015493446944}
   - component: {fileID: 2191319858090621274}
   m_Layer: 10
-  m_Name: GameObject
+  m_Name: CookingFSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,6 +140,7 @@ MonoBehaviour:
   ProgBarGO: {fileID: 238318631504410701}
   HideShowGO: {fileID: 2058711763867918764}
   FSM_ShowHideImage: {fileID: 0}
+  duration: 0
 --- !u!1 &2058711763867918764
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 2058711764658268898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.4, z: 1}
+  m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 8038790729733618473}
   m_RootOrder: 1
@@ -489,8 +473,8 @@ GameObject:
   - component: {fileID: 6310279094565561590}
   - component: {fileID: 1161168441905959491}
   - component: {fileID: 141054445592145474}
-  - component: {fileID: 7027492019118329163}
   - component: {fileID: 4158327409828458624}
+  - component: {fileID: 7027492019118329163}
   m_Layer: 10
   m_Name: PotItemFSM
   m_TagString: Untagged
@@ -530,7 +514,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2356859938089687660}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -602,21 +586,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &7027492019118329163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2356859938089687660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94ce474fff2d9e146844649824e84328, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  itemPot: {fileID: 0}
-  CookingFSMGO: {fileID: 1852810856404290128}
 --- !u!114 &4158327409828458624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,16 +606,33 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
-  NumIngedientsOfPot: 0
+  NumIngedientsOfPot: 2
   ShowSlotsIngEmpty: 0
   listItem: []
   IsStartCooking: 0
-  potUi: {fileID: 2058711765030749902}
+  potUi: {fileID: 1675647737394497446}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  currentStatePot: 0
+    m_Bits: 512
   hasStoveUnder: 0
+  FSM_Pot: {fileID: 7027492019118329163}
+  currentSlotList: 0
+  totalduration: 0
+--- !u!114 &7027492019118329163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356859938089687660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ce474fff2d9e146844649824e84328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  itemPot: {fileID: 4158327409828458624}
+  CookingFSMGO: {fileID: 1852810856404290128}
 --- !u!1 &3075562987096433762
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +740,7 @@ MonoBehaviour:
   StartBuringBool: 0
   timeShowAlertBurning: 4
   timeBurning: 5
-  PotUI: {fileID: 2058711765030749902}
+  PotUI: {fileID: 0}
   StartTimerAlrert: 0
   percentCook: 0
 --- !u!114 &2058711765263547963
@@ -770,7 +756,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 7714913355555189543}
-  fillAmount: 0
   percent: 0
 --- !u!114 &2058711765263547960
 MonoBehaviour:
@@ -817,7 +802,7 @@ GameObject:
   - component: {fileID: 7552985058098281276}
   - component: {fileID: 1390330914548409179}
   - component: {fileID: 5243420775130032085}
-  - component: {fileID: 2058711765030749902}
+  - component: {fileID: 1675647737394497446}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -906,7 +891,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2058711765030749902
+--- !u!114 &1675647737394497446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -915,10 +900,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3555414119337746044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c31bb400ac7137b4388b4b69fc0a0c59, type: 3}
+  m_Script: {fileID: 11500000, guid: de01844200a847e47b4da0863c220c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potUIState: {fileID: 2058711764989960943}
+  potUIState: {fileID: 0}
   listUIItems: []
   ListIng: {fileID: 7130682296898331199}
   ItemPotUIPrefab: {fileID: 1134867215814376660, guid: ebb958ba0507e0a4eb204a0e07bff99f,
