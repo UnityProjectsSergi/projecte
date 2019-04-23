@@ -31,10 +31,10 @@ public class PotUIState : MonoBehaviour
     public bool StartTimerAlrert;
     void Update()
     {
-        // q tu aqui li dones un valor 
+        //// q tu aqui li dones un valor 
         if (StartCookingBool)
         {
-          
+
             journey += Time.deltaTime;
             if (journey < totalduration + 0.1f)
             {
@@ -103,6 +103,7 @@ public class PotUIState : MonoBehaviour
     {
         // pk sempre es true
         StartCookingBool = true;
+        PotUI.SetItemPotState(ItemPotStateIngredients.Cooking);
        
         // co=StartCoroutine(UIBarCooking());
     }
@@ -110,7 +111,7 @@ public class PotUIState : MonoBehaviour
    public void StopCooking()
     {
         StartCookingBool = false;
-        
+    
       
     }
     public IEnumerator ShowImageOK(float wait,Image image)

@@ -31,10 +31,6 @@ namespace Assets.Scripts.Slots
                     {
                         Debug.Log("Order KO");
                     }
-                   // player.attachedObject = null;
-                    //item.transform.parent = null;
-                    //vialItem.ResetVial();
-                  //  VialPool.Instance.ReturnToPool(vialItem);
                 }
                 else
                 {

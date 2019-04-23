@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class timer : MonoBehaviour
+public class TimerUI : MonoBehaviour
 {
     public Text textTimer;
    
@@ -18,18 +18,22 @@ public class timer : MonoBehaviour
  public   bool clock;
     private float mins;
     private float secs;
+    public bool isPaused;
 
     void Update()
     {
-        if (timeLeft > 0.0)
+        if (!isPaused)
         {
-            timeLeft -= Time.deltaTime;
-            UpdateTimer();
-        }
-        else
-        {
-            TimerUP.SetActive(true);
-            Time.timeScale = 0.0f;
+            if (timeLeft > 0.0)
+            {
+                timeLeft -= Time.deltaTime;
+                UpdateTimer();
+            }
+            else
+            {
+                TimerUP.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
         }
     }
 

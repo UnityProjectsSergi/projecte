@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 1231893883}
   - component: {fileID: 1231893882}
   - component: {fileID: 1231893881}
+  - component: {fileID: 1231893885}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -346,14 +347,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231893879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 010fafb0234a36b4e9f652002d7f68e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   fillAmount: 0
-  joureney: 0
   percent: 0
 --- !u!114 &1231893884
 MonoBehaviour:
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231893879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb8969f247f06914dbcda3cca67fdc76, type: 3}
   m_Name: 
@@ -370,6 +370,23 @@ MonoBehaviour:
   currentState: 0
   ProgressBarBB: {fileID: 0}
   totalDuration: 0
+--- !u!114 &1231893885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231893879}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de00e09b8ceb20c42bcb3ee1823c3b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  timeShowImage: 4
+  timeHideImage: 5
+  timer: 0
+  image: {fileID: 1231893881}
 --- !u!1 &1463411819
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +399,7 @@ GameObject:
   - component: {fileID: 1463411822}
   - component: {fileID: 1463411821}
   - component: {fileID: 1463411820}
+  - component: {fileID: 1463411824}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -469,6 +487,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1463411824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463411819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de00e09b8ceb20c42bcb3ee1823c3b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  timeShowImage: 1
+  timeHideImage: 1
+  timer: 0
+  image: {fileID: 1231893881}
 --- !u!1 &1756331245
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +529,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756331245}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 

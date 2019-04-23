@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Screen : MonoBehaviour
+public class PauseMenuController : MonoBehaviour
 {
+    public TimerUI timeUi;
+    public PauseController pauseController;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class UI_Screen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timeUi.isPaused = pauseController.isPausedGame;
     }
 }

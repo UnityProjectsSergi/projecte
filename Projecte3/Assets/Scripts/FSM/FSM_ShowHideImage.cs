@@ -1,65 +1,73 @@
 ﻿using UnityEngine;
 using System.Collections;
+using FSM;
+using UnityEngine.UI;
 namespace FSM
 {
-    public class FSM_ProgressBar : FiniteStateMachine
+    public class FSM_ShowHideImage : FiniteStateMachine
     {
-        public enum States { INITIAL, PROGRESS, DONE }
+        public enum States { INITIAL, SHOW, HIDE }
         public States currentState;
-        public ProgressBarBlackboard ProgressBarBB;
-        public float totalDuration;
+        public float timeShowImage, timeHideImage;
+        public float timer;
+        public Image image;
+        public float timeWaitShowImage;
         // Use this for initialization
+        //xo tin varies images diferents 
         void Start()
         {
-           
-            ProgressBarBB = GetComponent<ProgressBarBlackboard>();
-            ProgressBarBB.image.enabled = false;
+           // currentState = States.INITIAL;
         }
         public override void ReEnter()
         {
-            
-            ProgressBarBB.image.enabled=true;
-            currentState = States.INITIAL;
-          
+          //  currentState = States.INITIAL;
             base.ReEnter();
         }
         public override void Exit()
         {
-            ProgressBarBB.image.enabled=false;
             base.Exit();
         }
         // Update is called once per frame
         void Update()
         {
-            UpdateProgress();
+            timer += Time.deltaTime;
             switch (currentState)
             {
                 case States.INITIAL:
-                    ChangeState(States.PROGRESS);
-                    break;
-                case States.PROGRESS:
-                    if(ProgressBarBB.fillAmount>=0.99f)
+                    if (timer > timeWaitShowImage)
                     {
-                        ChangeState(States.DONE);
+                        ChangeState(States.SHOW);
+                        timer = 0F;
                     }
                     break;
-                case States.DONE:
-
+                case States.SHOW:
+                    if (timer > timeShowImage)
+                    {
+                        ChangeState(States.HIDE);
+                        timer = 0;
+                    }
+                    break;
+                case States.HIDE:
+                    if (timer > timeHideImage)
+                    {
+                        ChangeState(States.SHOW);
+                        timer = 0;
+                    }
                     break;
                 default:
                     break;
             }
+
         }
-        // puc rer
         public void ChangeState(States newState)
         {
             switch (currentState)
             {
                 case States.INITIAL:
                     break;
-                case States.PROGRESS:
+                case States.SHOW:
                     break;
-                case States.DONE:
+                case States.HIDE:
                     break;
                 default:
                     break;
@@ -69,19 +77,16 @@ namespace FSM
             {
                 case States.INITIAL:
                     break;
-                case States.PROGRESS:
+                case States.SHOW:
+                    image.gameObject.SetActive(true);
                     break;
-                case States.DONE:
+                case States.HIDE:
+                    image.gameObject.SetActive(false);
                     break;
                 default:
                     break;
             }
             currentState = newState;
-        }
-        public void UpdateProgress()
-        {
-
-            ProgressBarBB.fillAmount += Time.deltaTime;
         }
     }
 }

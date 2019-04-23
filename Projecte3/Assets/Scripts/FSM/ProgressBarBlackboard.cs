@@ -2,14 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ProgressBarBB : MonoBehaviour
+public class ProgressBarBlackboard : MonoBehaviour
 {
     public Image image;
     public float fillAmount;
-    public float joureney;
     public float percent;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         image=GetComponent<Image>();
     }
