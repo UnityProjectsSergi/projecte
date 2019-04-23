@@ -20,16 +20,20 @@ namespace FSM
             base.ReEnter();
             currentState = States.INITIAL;
         }
+        private void OnEnable()
+        {
+            cookingBlackbloard = GetComponent<CookingBlackbloard>();
+        }
         // Use this for initialization
         void Start()
         {
             cookingBlackbloard = GetComponent<CookingBlackbloard>();
             cookingBlackbloard.FSM_ShowHideImage.enabled = false;
-           cookingBlackbloard.progressBar.enabled = false;
+             cookingBlackbloard.progressBar.enabled = false;
 
-            //FSM_ShowHideImage.image = cookingBlackbloard.ImageCookingDone;
-            //FSM_ShowHideImage.timeShowImage = cookingBlackbloard.TimeShowImageDone;
-            //FSM_ShowHideImage.timeHideImage = cookingBlackbloard.timeHideImageDone;
+            cookingBlackbloard. FSM_ShowHideImage.image = cookingBlackbloard.ImageCookingDone;
+            cookingBlackbloard. FSM_ShowHideImage.timeShowImage = cookingBlackbloard.TimeShowImageDone;
+            cookingBlackbloard.FSM_ShowHideImage.timeHideImage = cookingBlackbloard.timeHideImageDone;
             currentState = States.INITIAL;
         }
 
@@ -65,9 +69,11 @@ namespace FSM
                     break;
                 case States.COOKING:
                    cookingBlackbloard.progressBar.Exit();
+                    cookingBlackbloard.ProgBarGO.gameObject.SetActive(false);
                     break;
                 case States.SHOWOKIMG:
                    cookingBlackbloard.FSM_ShowHideImage.Exit();
+                    cookingBlackbloard.HideShowGO.gameObject.SetActive(false);
                     break;
                 default:
                     break;
@@ -77,10 +83,13 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.COOKING:
+                    cookingBlackbloard.ProgBarGO.gameObject.SetActive(true);
                    cookingBlackbloard.progressBar.ReEnter();
                     break;
                 case States.SHOWOKIMG:
+                    cookingBlackbloard.HideShowGO.gameObject.SetActive(true);
                    cookingBlackbloard.FSM_ShowHideImage.ReEnter();
+                    
                     break;
                 default:
                     break;

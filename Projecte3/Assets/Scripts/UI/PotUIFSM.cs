@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PotUI : MonoBehaviour
+public class PotUIFSM : MonoBehaviour
 {
     public PotUIState potUIState;
     public List<ItemUIPot> listUIItems= new List<ItemUIPot>();
     public GameObject ListIng;
     public GameObject ItemPotUIPrefab;
-    private ItemPot ItemPot;
+    private ItemPotFSM ItemPot;
     public int currentSoltUi=0;
     public bool hasStoveUnder;
     public float duration;
@@ -21,8 +21,8 @@ public class PotUI : MonoBehaviour
     }
     public void StartUiPot()
     {
-        ItemPot = transform.parent.GetComponent<ItemPot>();
-       
+        ItemPot = transform.parent.GetComponent<ItemPotFSM>();
+        Debug.Log(ItemPot.NumIngedientsOfPot);
         for (int i = 0; i < ItemPot.NumIngedientsOfPot; i++)
         {
             
@@ -38,45 +38,25 @@ public class PotUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentSoltUi != oldSlot)
-        {
-            potUIState.totalduration += duration;
-        }  
         
-        // on assingre sfillampit 
-        if (hasStoveUnder)
-        {
-            potUIState.StartCooking();
-            
-        }
-        else
-        {
-            potUIState.StopCooking();
-        }
-        oldSlot = currentSoltUi;
         RotateTOCam();
     }
-    public void SetItemPotState(ItemPotStateIngredients state)
+   
+    public void SetItemOnUISlot(int num,Item item)
     {
-        ItemPot.currentStatePot = state;
-    }
-    public void SetItemOnUISlot(Item item)
-    {
-        if (currentSoltUi < listUIItems.Count)
-        {
-            listUIItems[currentSoltUi].SetSpriteFromImgredient(item.GetComponent<Renderer>().material);
-            currentSoltUi++;
-            duration = item.duration;
-        }
+       
+            listUIItems[num].SetSpriteFromImgredient(item.GetComponent<Renderer>().material);
+            
+        
     }
     public void ResetUI()
     {
-        currentSoltUi = 0;
+        
         foreach (var item in listUIItems)
         {
             item.setDefault();
         }
-        potUIState.Reset();
+   
         
     }
     public void RotateTOCam()

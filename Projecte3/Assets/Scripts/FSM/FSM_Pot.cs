@@ -5,14 +5,18 @@ namespace FSM {
     {
         public enum States { INITIAL, EMPTY, COOKING, ALERT, BURN }
         public States currentState;
-        public ItemPot itemPot;
+        public ItemPotFSM itemPot;
         public GameObject CookingFSMGO;
         private FSM_Cooking FSM_Cooking;
+        public PotBlackboard potBlackBoard;
+        
             // Use this for initialization
             void Start()
         {
+            potBlackBoard = GetComponent<PotBlackboard>();
             FSM_Cooking = CookingFSMGO.AddComponent<FSM_Cooking>();
-          //  currentState = States.INITIAL;
+            
+            currentState = States.INITIAL;
     
             FSM_Cooking.enabled = false;
 
@@ -28,8 +32,9 @@ namespace FSM {
         // Update is called once per frame
         void Update()
         {
+            Debug.Log(itemPot);
             if (itemPot.hasStoveUnder) {
-                //UpdateProgress();
+                potBlackBoard.journey += Time.deltaTime;
                 switch (currentState)
                 {
                     case States.INITIAL:
@@ -37,21 +42,20 @@ namespace FSM {
                         break;
                     case States.EMPTY:
                         Debug.Log(itemPot.listItem.Count);
-                        //if (itemPot.listItem.Count >0)
-                        //    ChangeState(States.COOKING);
+                        if (itemPot.listItem.Count > 0)
+                            ChangeState(States.COOKING);
                         break;
                     case States.COOKING:
-                        // if joureny< totalduration q
-                        //Change State Alerrt
-                        // Amb m
-                        // estat progres iestat de surtt ok 
+                         if (potBlackBoard.journey < itemPot.totalduration)
+                        {
+                            ChangeState(States.ALERT);
+                        }
                         break;
                     case States.ALERT:
-
-                        // si  (joreny >= temps limit alert + totalduratione)
-                        //changeState brun
-                        //els if(numActual != numCountVell && jornoet< timealert+totalduration) 
-                        //statechange(cookig)
+                        if (potBlackBoard.journey >= itemPot.totalduration + potBlackBoard.timeToAlert)
+                            ChangeState(States.BURN);
+                        else if (itemPot.currentSlotList != itemPot.oldSlot && potBlackBoard.journey < itemPot.totalduration + potBlackBoard.timeToAlert)
+                            ChangeState(States.COOKING);
 
                         break;
                     case States.BURN:
@@ -86,8 +90,9 @@ namespace FSM {
                     break;
                 case States.COOKING:
                     Debug.Log("ssss");
+                   
                     FSM_Cooking.ReEnter();
-        
+                    FSM_Cooking.cookingBlackbloard.duration = itemPot.totalduration;
                     break;
                 default:
                     break;
@@ -98,6 +103,10 @@ namespace FSM {
         {
 
             // ProgressBarBB.fillAmount=
+        }
+        public void Reset()
+        {
+            potBlackBoard.journey = 0;
         }
     }
 }

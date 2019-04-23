@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PotBlackboard : MonoBehaviour
 {
-
+    public float journey;
+    public float timeToAlert;
     // Use this for initialization
     void Start()
     {

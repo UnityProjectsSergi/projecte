@@ -69,17 +69,20 @@ public class StoveSlot : Slot
                 else if (itemPlayer.itemType == ItemType.Vial)
                 {
                     ItemPot ItemPot = item.GetComponent<ItemPot>();
-                    if ((ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone) && !hasPassIngToVial)
+                    if (!hasPassIngToVial)
                     {
-                        player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
-                        ItemPot.ResetPot();
-                        hasPassIngToVial = true;
+                        if (ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone)
+                        {
+                            player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
+                            ItemPot.ResetPot();
+                            hasPassIngToVial = true;
+                        }
+                        else
+                        {
+                            //Todo ErrorOnScreen
+                        }
                     }
-                    else
-                    {
-                        //Todo ErrorOnScreen
-
-                    }
+                 
                 }
             }
         }

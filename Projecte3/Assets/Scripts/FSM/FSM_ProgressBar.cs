@@ -38,13 +38,14 @@ namespace FSM
                     ChangeState(States.PROGRESS);
                     break;
                 case States.PROGRESS:
-                    if(ProgressBarBB.fillAmount>=0.99f)
+                    ProgressBarBB.percent += Time.deltaTime;
+                    if (ProgressBarBB.percent>=0.99f)
                     {
                         ChangeState(States.DONE);
                     }
                     break;
                 case States.DONE:
-
+                    ProgressBarBB.percent = 0;
                     break;
                 default:
                     break;
@@ -79,9 +80,8 @@ namespace FSM
             currentState = newState;
         }
         public void UpdateProgress()
-        {
-
-            ProgressBarBB.fillAmount += Time.deltaTime;
+        { 
+            
         }
     }
 }
