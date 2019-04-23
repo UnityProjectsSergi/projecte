@@ -5,11 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Assets.Scripts.ObjPooler;
+using System.Collections;
+using UnityEngine.UI;
+
 namespace Assets.Scripts.Slots
 {
     public  class ServeSlot:Slot
     {
-
+        public void Start()
+        {
+            text = textGO.GetComponent<Text>();
+        }
+        public GameObject    textGO;
+        private Text text;
         public override void LeaveObjOn(CharacterControllerAct player)
         {
             if (!hasObjectOn)
@@ -24,21 +32,25 @@ namespace Assets.Scripts.Slots
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
                     if (OrderManager.Instance.CheckAllOrder(vialItem))
                     {
-                        
-                        Debug.Log("Odrer ok");
+
+                        StartCoroutine(TextWide(5f, "Order get"));
                     }
                     else
                     {
-                        Debug.Log("Order KO");
+                        StartCoroutine(TextWide(5f, "Order Wrong"));
                     }
                 }
                 else
                 {
-                    //ToDo Show Error on Screen Needs a vial
-
-                    Debug.Log("Nees a vial");
+                    StartCoroutine(TextWide(5f, "Needs a Vial"));
                 }
             }
+        }
+        public IEnumerator TextWide(float num,string textO)
+        {
+            text.text = textO;
+            yield return new WaitForSeconds(num);
+            text.text = "";
         }
     }
 }

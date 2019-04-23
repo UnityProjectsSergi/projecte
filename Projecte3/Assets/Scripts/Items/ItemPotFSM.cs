@@ -43,7 +43,7 @@ public class ItemPotFSM : Item
     {
         if (currentSlotList < potUi.listUIItems.Count) 
             {
-            Debug.Log("add item");
+                Debug.Log("add item");
                 listItem.Add(item);
                 potUi.SetItemOnUISlot(currentSlotList,item);
                 currentSlotList++;

@@ -6,7 +6,7 @@ namespace FSM
 {
     public class FSM_ShowHideImage : FiniteStateMachine
     {
-        public enum States { INITIAL, SHOW, HIDE }
+        public enum States { INITIAL, SHOW, HIDE,END }
         public States currentState;
         public float timeShowImage, timeHideImage;
         public float timer;
@@ -16,11 +16,11 @@ namespace FSM
         //xo tin varies images diferents 
         void Start()
         {
-           // currentState = States.INITIAL;
+            currentState = States.INITIAL;
         }
         public override void ReEnter()
         {
-          //  currentState = States.INITIAL;
+            currentState = States.INITIAL;
             base.ReEnter();
         }
         public override void Exit()
@@ -48,7 +48,9 @@ namespace FSM
                     }
                     break;
                 case States.HIDE:
-                    if (timer > timeHideImage)
+                    if (timeHideImage == 0.0f)
+                        ChangeState(States.END);
+                    else if (timer > timeHideImage)
                     {
                         ChangeState(States.SHOW);
                         timer = 0;

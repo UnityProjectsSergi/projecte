@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using System.Text;
@@ -14,7 +15,9 @@ class OrderManager:MonoBehaviour
     public List<Order> listOrders = new List<Order>();
     public OrderGenerator OrderGenerator;
     public int points;
+    public float SegWaitTo2onOrder=35f;
     public Text Points;
+    public Text textO;
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -28,9 +31,20 @@ class OrderManager:MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
     }
-    public void AddOrder(int ingredients,float time)
+    public void AddOrder(float num,int ingredients,float time)
+    { 
+        listOrders.Add(OrderGenerator.GenerateOrder(num,ingredients,time));
+
+
+    }
+    public void Start()
     {
-        listOrders.Add(OrderGenerator.GenerateOrder(ingredients,time));
+        AddOrder(0.4f, 3, 40);
+        Invoke("SecondOrder", SegWaitTo2onOrder);
+    }
+    public void SecondnOrder()
+    {
+        AddOrder(0.7f, 3, 45);
     }
     public Order FoundOrder;
     public bool CheckAllOrder(VialItem item)
@@ -72,7 +86,7 @@ class OrderManager:MonoBehaviour
         // Test
         if (Input.GetKeyDown(KeyCode.M))
         {
-            AddOrder(3,14f);
+           // AddOrder(3,14f);
         }
         CheckIfOrderListHasTimeOut();
         Points.text = points.ToString();
@@ -87,11 +101,19 @@ class OrderManager:MonoBehaviour
                 {
                     listOrders[i].HideUIOrder();
                     points -= listOrders[i]._points;
+                    textO.text = "OrderLost";
+                    StartCoroutine(HideText(5f));
                     RemoveOrder(listOrders[i]);
                 }
             }
 
         } 
+    }
+    IEnumerator HideText(float num)
+    {
+        yield return new WaitForSeconds(num);
+        textO.text = "";
+    //    listOrders.Add(OrderGenerator.GenerateOrder(0.3f, ingredients, time));
     }
 }
 

@@ -96,11 +96,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ing: 0
   itemType: 2
-  isPot: 0
   points: 0
   stateIngredient: 0
   rigidbodyController: {fileID: 6281994492684871375}
-  duration: 5
+  duration: 10
+  ingCookValue: 0
+  percentCooked: 0
 --- !u!54 &3109924906579807375
 Rigidbody:
   m_ObjectHideFlags: 0

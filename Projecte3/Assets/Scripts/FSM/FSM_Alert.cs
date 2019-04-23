@@ -20,6 +20,15 @@ namespace FSM
         public void Awake()
         {
             AlertBlackBoard = GetComponent<AlertBlackBoard>();
+            AlertBlackBoard.FSM_ShowHideImage.enabled = false;
+            AlertBlackBoard.FSM_ShowHideImage.image = AlertBlackBoard.ImageCookingAlert;
+            AlertBlackBoard.FSM_ShowHideImage.timeHideImage = 0.0f;
+            AlertBlackBoard.FSM_ShowHideImage.timeShowImage = AlertBlackBoard.TimeShowImageDone;
+            AlertBlackBoard.FSM_ShowHideImage.timeWaitShowImage = AlertBlackBoard.timeWaitShowImageDone;
+        }
+        private void OnEnable()
+        {
+            AlertBlackBoard = GetComponent<AlertBlackBoard>();
         }
         // Use this for initialization
         void Start()
@@ -36,6 +45,10 @@ namespace FSM
                     ChangeState(States.ALERT);
                     break;
                 case States.ALERT:
+                    if (AlertBlackBoard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.HIDE)
+                    {
+                        ChangeState(States.END);
+                    }
                     break;
                 case States.END:
                     break;
@@ -50,6 +63,8 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.ALERT:
+                    AlertBlackBoard.FSM_ShowHideImage.Exit();
+                    AlertBlackBoard.HideShowGO.SetActive(false);
                     break;
                 case States.END:
                     break;
@@ -61,6 +76,8 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.ALERT:
+                    AlertBlackBoard.HideShowGO.gameObject.SetActive(true);
+                    AlertBlackBoard.FSM_ShowHideImage.ReEnter();
                     break;
                 case States.END:
                     break;

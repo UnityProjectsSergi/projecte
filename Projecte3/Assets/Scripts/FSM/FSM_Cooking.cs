@@ -29,10 +29,10 @@ namespace FSM
         {
             cookingBlackbloard = GetComponent<CookingBlackbloard>();
             cookingBlackbloard.FSM_ShowHideImage.enabled = false;
-             cookingBlackbloard.progressBar.enabled = false;
+            cookingBlackbloard.progressBar.enabled = false;
 
-            cookingBlackbloard. FSM_ShowHideImage.image = cookingBlackbloard.ImageCookingDone;
-            cookingBlackbloard. FSM_ShowHideImage.timeShowImage = cookingBlackbloard.TimeShowImageDone;
+            cookingBlackbloard.FSM_ShowHideImage.image = cookingBlackbloard.ImageCookingDone;
+            cookingBlackbloard.FSM_ShowHideImage.timeShowImage = cookingBlackbloard.TimeShowImageDone;
             cookingBlackbloard.FSM_ShowHideImage.timeHideImage = cookingBlackbloard.timeHideImageDone;
             currentState = States.INITIAL;
         }

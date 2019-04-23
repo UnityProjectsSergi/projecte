@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95904d76e27defd49ae0376e555ceed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImageCookingDone: {fileID: 0}
+  ImageCookingDone: {fileID: 4371578049506612591}
   TimeShowImageDone: 0
   timeWaitShowImageDone: 0
   timeHideImageDone: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  timeShowImage: 0
+  timeShowImage: 1
   timeHideImage: 0
   timer: 0
   image: {fileID: 0}
@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 2058711764657948990}
   - component: {fileID: 7813338695754285055}
   - component: {fileID: 6948600240268550421}
+  - component: {fileID: 4231757952701006567}
   m_Layer: 5
   m_Name: alert
   m_TagString: Untagged
@@ -382,6 +383,20 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &4231757952701006567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058711764657948985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5a3e3a99c6c9b42a5466db489a9918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  AlertBlackBoard: {fileID: 0}
 --- !u!1 &2058711764658268898
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,13 +490,14 @@ GameObject:
   - component: {fileID: 141054445592145474}
   - component: {fileID: 4158327409828458624}
   - component: {fileID: 7027492019118329163}
+  - component: {fileID: 7040008871505684678}
   m_Layer: 10
   m_Name: PotItemFSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8038790729733618473
 Transform:
   m_ObjectHideFlags: 0
@@ -496,6 +512,7 @@ Transform:
   - {fileID: 757509212251584523}
   - {fileID: 2058711764658268899}
   - {fileID: 6433216015493446944}
+  - {fileID: 7941923721420991504}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -618,6 +635,7 @@ MonoBehaviour:
   FSM_Pot: {fileID: 7027492019118329163}
   currentSlotList: 0
   totalduration: 0
+  oldSlot: 0
 --- !u!114 &7027492019118329163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +651,21 @@ MonoBehaviour:
   currentState: 0
   itemPot: {fileID: 4158327409828458624}
   CookingFSMGO: {fileID: 1852810856404290128}
+  potBlackBoard: {fileID: 0}
+--- !u!114 &7040008871505684678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356859938089687660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538d7115275bc3348a9d6fba476b2eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  journey: 0
+  timeToAlert: 10
 --- !u!1 &3075562987096433762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,3 +1078,52 @@ MonoBehaviour:
   m_Spacing: {x: 0.01, y: 0.01}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1 &8219818665138012432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7941923721420991504}
+  - component: {fileID: 1131025960527217465}
+  m_Layer: 10
+  m_Name: AlertFSM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7941923721420991504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8219818665138012432}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8038790729733618473}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1131025960527217465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8219818665138012432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815322e558e946a489f40ba2e815311f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImageCookingAlert: {fileID: 6948600240268550421}
+  TimeShowImageDone: 0
+  timeWaitShowImageDone: 0
+  timeHideImageDone: 0
+  HideShowGO: {fileID: 2058711764657948985}
+  FSM_ShowHideImage: {fileID: 0}

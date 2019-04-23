@@ -46,7 +46,7 @@ namespace FSM {
                             ChangeState(States.COOKING);
                         break;
                     case States.COOKING:
-                         if (potBlackBoard.journey < itemPot.totalduration)
+                         if (potBlackBoard.journey > itemPot.totalduration)
                         {
                             ChangeState(States.ALERT);
                         }
