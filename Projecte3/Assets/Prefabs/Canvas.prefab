@@ -177,6 +177,7 @@ MonoBehaviour:
   timeLeft: 900
   TimerUP: {fileID: 0}
   clock: 0
+  isPaused: 0
 --- !u!1 &1500907860
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f400c188867fa74d9b2257ddfbc9cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
 --- !u!1 &1508633098
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f400c188867fa74d9b2257ddfbc9cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
 --- !u!1 &2094558362
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 241, y: -450}
+  m_AnchoredPosition: {x: 171, y: -450}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8224785732009422653
@@ -665,7 +668,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -688,6 +691,7 @@ MonoBehaviour:
   timeLeft: 120
   TimerUP: {fileID: 1500907860}
   clock: 0
+  isPaused: 0
 --- !u!1 &4421839534429888866
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +703,7 @@ GameObject:
   - component: {fileID: 6124168070463693447}
   - component: {fileID: 4421839534429888867}
   - component: {fileID: 1456516831370924051}
+  - component: {fileID: 4421839534429888868}
   m_Layer: 5
   m_Name: PauseScreen
   m_TagString: Untagged
@@ -750,6 +755,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f400c188867fa74d9b2257ddfbc9cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+--- !u!114 &4421839534429888868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421839534429888866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0406aacab88692648a17d46f6711cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUi: {fileID: 4323936567822649700}
+  pauseController: {fileID: 5057069273427901617}
 --- !u!1 &4880502113689870792
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120, y: -453}
+  m_AnchoredPosition: {x: -186, y: -453}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9035539316065490983
@@ -822,7 +842,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -905,6 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f400c188867fa74d9b2257ddfbc9cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
 --- !u!114 &5057069273391236578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,6 +1091,7 @@ MonoBehaviour:
   isPausedGame: 0
   GamePlayScreen: {fileID: 2669392305117097054}
   PauseScreen: {fileID: 1456516831370924051}
+  System: {fileID: 0}
   TimeBetweenPause: 1
 --- !u!1 &5057069273619641545
 GameObject:
