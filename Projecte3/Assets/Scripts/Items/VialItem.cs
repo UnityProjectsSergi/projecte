@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class VialItem : Item
 {
     public List<Item> listItem;
+    public GameObject vial;
+    public Material fullMaterial;
+
     //Get Vial Item from VialItemPool
     public void Start()
     {
@@ -18,6 +17,11 @@ public class VialItem : Item
     public void ResetVial()
     {
         listItem.Clear();
+    }
+
+    public void ChangeMaterial()
+    {
+        vial.GetComponent<Renderer>().material = fullMaterial;
     }
 }
 
