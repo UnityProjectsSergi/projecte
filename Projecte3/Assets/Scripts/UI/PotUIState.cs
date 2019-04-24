@@ -46,8 +46,9 @@ public class PotUIState : MonoBehaviour
                 {
                     ProgressBar.gameObject.SetActive(false);
                     Debug.Log("buen ththe stove");
-                    StartCoroutine(ShowImageOK(3f, CookedOk));
                     PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
+                    StartCoroutine(ShowImageOK(3f, CookedOk));
+                 
                 }
             }
             else
