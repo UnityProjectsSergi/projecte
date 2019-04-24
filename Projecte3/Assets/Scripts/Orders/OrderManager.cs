@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
 class OrderManager:MonoBehaviour
-    {
+{
     private static OrderManager _instance;
     public static OrderManager Instance { get { return _instance; } private set { } }
     public Queue<Order> listOrdderQueue = new Queue<Order>();
@@ -18,6 +14,7 @@ class OrderManager:MonoBehaviour
     public float SegWaitTo2onOrder=35f;
     public Text Points;
     public Text textO;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -73,22 +70,20 @@ class OrderManager:MonoBehaviour
         }
         return found1;
     }
-    //public bool CheckOrder(Order order,Item item)
-    //{
-        
-    //}
+
     public void RemoveOrder(Order m)
     {
         listOrders.Remove(m);
     }
+
     public void Update()
     {
-        // Test
         if (listOrders.Count == 0)
             SecondOrder();
         CheckIfOrderListHasTimeOut();
         Points.text = points.ToString();
     }
+
     public void CheckIfOrderListHasTimeOut()
     {
         for (int i = 0; i < listOrders.Count; i++)
