@@ -39,12 +39,11 @@ class OrderManager:MonoBehaviour
     }
     public void Start()
     {
-        AddOrder(0.4f, 3, 120);
+        AddOrder(0.4f, 3, 100);
         Invoke("SecondOrder", SegWaitTo2onOrder);
     }
     public void SecondOrder()
     {
-        Debug.Log("ordeer add");
         AddOrder(0.7f, 3, 45);
     }
     public Order FoundOrder;
@@ -85,10 +84,8 @@ class OrderManager:MonoBehaviour
     public void Update()
     {
         // Test
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-           // AddOrder(3,14f);
-        }
+        if (listOrders.Count == 0)
+            SecondOrder();
         CheckIfOrderListHasTimeOut();
         Points.text = points.ToString();
     }
