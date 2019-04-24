@@ -47,21 +47,22 @@ public class StoveSlot : Slot
                             {
                                 Debug.Log("is inseidetemp and check");
                                 //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  
-                                itempot.LeaveObjIn(ItemClonIngredient);
-
-                                // desparent the player attached obj 
-                                player.attachedObject = null;
-                                // put the ItemClonIngredient  child of itemPot
-                                ItemClonIngredient.transform.parent = item.transform;
-                                // if ItemPlayer type is Ingredient2
-                                if (itemPlayer.GetType() == typeof(Ingredient2))
-                                    // return to pool
-                                    Ingredient2Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient2>());
-                                else
-                                    //Return to pool
-                                    Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
-                                // flag xq no pugui afegir 2 cops els igredients
-                                hasPassIngToVial = false;
+                                if (itempot.LeaveObjIn(ItemClonIngredient))
+                                {
+                                    // desparent the player attached obj 
+                                    player.attachedObject = null;
+                                    // put the ItemClonIngredient  child of itemPot
+                                    ItemClonIngredient.transform.parent = item.transform;
+                                    // if ItemPlayer type is Ingredient2
+                                    if (itemPlayer.GetType() == typeof(Ingredient2))
+                                        // return to pool
+                                        Ingredient2Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient2>());
+                                    else
+                                        //Return to pool
+                                        Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
+                                    // flag xq no pugui afegir 2 cops els igredients
+                                    hasPassIngToVial = false;
+                                }
                             }
                         }
                     }

@@ -28,23 +28,38 @@ public class ItemPot : Item
         potUi.StartUiPot();
         itemType = ItemType.Pot;
     }
-    
-  
-    public void LeaveObjIn(Item item)
+
+
+    public bool LeaveObjIn(Item item)
     {
         if (currentStatePot != ItemPotStateIngredients.Burning || currentStatePot != ItemPotStateIngredients.BurnedToTrash)
         {
             //hi poso el 2on igrdenit i esta aalert no torna a cooking
             // Son diferent crec jo tinc varies duracions una ui 
-            listItem.Add(item);
-            potUi.SetItemOnUISlot(item);
-            currentStatePot = ItemPotStateIngredients.Cooking;
-            //  potUi.potUIBar.AddDuration(item.duration);
-            // item.StartCoroutine(item.Cook());
-            currentStatePot = ItemPotStateIngredients.Cooking;
+            if (listItem.Count > 0 && listItem[0] != null)
+            {
+                if (listItem[0].name == item.gameObject.name)
+                {
+                    listItem.Add(item);
+                    potUi.SetItemOnUISlot(item);
+                    currentStatePot = ItemPotStateIngredients.Cooking;
+                    currentStatePot = ItemPotStateIngredients.Cooking;
+                    return true;
+                }
+                return false;
+            }
+            else
+            {
+                listItem.Add(item);
+                potUi.SetItemOnUISlot(item);
+                currentStatePot = ItemPotStateIngredients.Cooking;
+                currentStatePot = ItemPotStateIngredients.Cooking;
+                return true;
+            }
         }
+        return false;
     }
-   //
+    
     public void ResetPot()
     {
         currentStatePot = ItemPotStateIngredients.Empty;
