@@ -39,11 +39,12 @@ class OrderManager:MonoBehaviour
     }
     public void Start()
     {
-        AddOrder(0.4f, 3, 40);
+        AddOrder(0.4f, 3, 120);
         Invoke("SecondOrder", SegWaitTo2onOrder);
     }
-    public void SecondnOrder()
+    public void SecondOrder()
     {
+        Debug.Log("ordeer add");
         AddOrder(0.7f, 3, 45);
     }
     public Order FoundOrder;

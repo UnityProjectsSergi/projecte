@@ -39,6 +39,9 @@ namespace Assets.Scripts.Slots
                     {
                         StartCoroutine(TextWide(5f, "Order Wrong"));
                     }
+                    vialItem.ResetVial();
+                    base.LeaveObjOn(player);
+                    VialPool.Instance.ReturnToPool(vialItem);
                 }
                 else
                 {

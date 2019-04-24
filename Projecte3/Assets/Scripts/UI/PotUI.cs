@@ -40,6 +40,7 @@ public class PotUI : MonoBehaviour
         // on assingre sfillampit 
         if (hasStoveUnder)
         {
+            if(ItemPot.listItem.Count==listUIItems.Count)
             potUIState.StartCooking();
             
         }

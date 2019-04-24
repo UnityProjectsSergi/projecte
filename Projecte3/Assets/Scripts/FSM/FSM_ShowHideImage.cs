@@ -80,10 +80,10 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.SHOW:
-                    image.gameObject.SetActive(true);
+                    image.enabled=true;
                     break;
                 case States.HIDE:
-                    image.gameObject.SetActive(false);
+                    image.enabled=false;
                     break;
                 default:
                     break;

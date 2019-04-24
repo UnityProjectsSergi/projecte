@@ -103,6 +103,7 @@ public class PotUIState : MonoBehaviour
     {
         // pk sempre es true
         StartCookingBool = true;
+        
         PotUI.SetItemPotState(ItemPotStateIngredients.Cooking);
        
         // co=StartCoroutine(UIBarCooking());
