@@ -17,12 +17,10 @@ public class ItemPot : Item
     public PotUI potUi;
     // saber si el que hi ha 
     public LayerMask layerMask;
-    public  ItemPotStateIngredients currentStatePot;
-
+    public ItemPotStateIngredients currentStatePot;
    
     public void Start()
-    {
-        
+    {       
         listItem = new List<Item>();
         currentStatePot = ItemPotStateIngredients.Empty;
         potUi.StartUiPot();
