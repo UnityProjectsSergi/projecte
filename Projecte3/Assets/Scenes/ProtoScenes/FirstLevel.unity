@@ -8920,6 +8920,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6998887099925381395, guid: e6383080eea10e042a78d3afcfd82c6b,
+        type: 3}
+      propertyPath: j2
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6383080eea10e042a78d3afcfd82c6b, type: 3}
 --- !u!1001 &2101379050
@@ -9434,6 +9439,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566561507122087389, guid: 9873b3c9be487474791a97c70e46712f,
+        type: 3}
+      propertyPath: nameNextScene
+      value: SecondLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566561507122087389, guid: 9873b3c9be487474791a97c70e46712f,
+        type: 3}
+      propertyPath: timeLeft
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566561507122087389, guid: 9873b3c9be487474791a97c70e46712f,
+        type: 3}
+      propertyPath: timeChangeScene
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9873b3c9be487474791a97c70e46712f, type: 3}

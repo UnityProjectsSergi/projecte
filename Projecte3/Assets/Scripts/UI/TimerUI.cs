@@ -6,19 +6,22 @@ using UnityEngine.UI;
 public class TimerUI : MonoBehaviour
 {
     public Text textTimer;
-   
-    // Start is called before the first frame update
-    void Start()
-    {
-        textTimer=GetComponent<UnityEngine.UI.Text>();
-    }
     public float timeLeft = 300.0f;
     public GameObject TimerUP;
    
- public   bool clock;
+    public bool clock;
     private float mins;
     private float secs;
     public bool isPaused;
+    bool isStop = false;
+
+    public float timeChangeScene;
+    public string nameNextScene;
+
+    void Start()
+    {
+        textTimer = GetComponent<UnityEngine.UI.Text>();
+    }
 
     void Update()
     {
@@ -31,13 +34,25 @@ public class TimerUI : MonoBehaviour
             }
             else
             {
+                if (!isStop)
+                    isStop = true;
                 TimerUP.SetActive(true);
                 Time.timeScale = 0.0f;
             }
         }
-    }
 
- 
+        if (nameNextScene != null)
+        {
+            if (isStop)
+            {
+                if (timeChangeScene > 0.0)
+                    timeChangeScene -= Time.unscaledDeltaTime;
+                else
+                    GameManager.Instance.LoadScene(nameNextScene);
+
+            }
+        }
+    }
 
     void UpdateTimer()
     {
