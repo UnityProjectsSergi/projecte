@@ -36,6 +36,7 @@ public  class Item : MonoBehaviour
         transform.position = player.attachTransform.position;
         player.attachedObject = gameObject;    
     }
+
     public override bool Equals(object other)
     {
         if (!(other is Item))
