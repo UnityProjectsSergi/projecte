@@ -19,9 +19,9 @@ public class RigidbodyController : MonoBehaviour
         rigidbody.useGravity = active;
 
         if (!active)
-        {
+            rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+        else
             rigidbody.constraints = RigidbodyConstraints.None;
-        }
     }
 
     public void OnCollisionEnter(Collision collision)
