@@ -37,7 +37,7 @@ class OrderManager:MonoBehaviour
     public void Start()
     {
         AddOrder(0.4f, 3, 100);
-        Invoke("SecondOrder", SegWaitTo2onOrder);
+        InvokeRepeating("SecondOrder",20f, SegWaitTo2onOrder);
     }
     public void SecondOrder()
     {
@@ -46,7 +46,7 @@ class OrderManager:MonoBehaviour
     public Order FoundOrder;
     public bool CheckAllOrder(VialItem item)
     {
-       //
+       
         bool found1=false;
         foreach (var order in listOrders)
         {
@@ -78,6 +78,7 @@ class OrderManager:MonoBehaviour
 
     public void Update()
     {
+
         if (listOrders.Count == 0)
             SecondOrder();
         CheckIfOrderListHasTimeOut();

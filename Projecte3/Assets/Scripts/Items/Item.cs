@@ -14,7 +14,7 @@ public  class Item : MonoBehaviour
     public ItemType itemType;
    
     public int points;
-   
+    public string nameO;
     public StateIngredient stateIngredient;
     public RigidbodyController rigidbodyController;
     public float duration;
@@ -44,7 +44,8 @@ public  class Item : MonoBehaviour
             return false;
         }
         var objOther = other as Item;
-        if (GetType() !=objOther.GetType())
+        Debug.LogWarning(nameO + " != " + objOther.nameO);
+        if (nameO.Equals(objOther.nameO))
             return false;
         Debug.Log("ssm");
         return true;

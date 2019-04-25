@@ -42,7 +42,7 @@ public class PotUIState : MonoBehaviour
                 percentCook = Mathf.Clamp01(journey / totalduration);
                 Debug.Log(percentCook + "percent   fillamount: " + ProgressBar.fillAmount + " juourney " + journey);
                 ProgressBar.fillAmount = percentCook;
-                if (ProgressBar.fillAmount >= 1.0f)
+                if (ProgressBar.fillAmount >= 0.999f)
                 {
                     ProgressBar.gameObject.SetActive(false);
                     Debug.Log("buen ththe stove");

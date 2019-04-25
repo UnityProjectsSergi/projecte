@@ -1153,6 +1153,8 @@ MonoBehaviour:
   TimerUP: {fileID: 6566561507058034354}
   clock: 0
   isPaused: 0
+  timeChangeScene: 3
+  nameNextScene: SecondLevel
 --- !u!1 &6566561507329686906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1254,8 @@ MonoBehaviour:
   TimerUP: {fileID: 0}
   clock: 0
   isPaused: 0
+  timeChangeScene: 0
+  nameNextScene: 
 --- !u!1 &6566561507501196156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1579,8 @@ MonoBehaviour:
   TimerUP: {fileID: 6566561507058034354}
   clock: 0
   isPaused: 0
+  timeChangeScene: 0
+  nameNextScene: 
 --- !u!1001 &6566561506159412703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1736,6 +1742,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3039064880843545399, guid: 5bb7f9ebade85464483e31a00063ceea,
         type: 3}
+      propertyPath: OrderGenerator
+      value: 
+      objectReference: {fileID: 5590490060571502142}
+    - target: {fileID: 3039064880843545399, guid: 5bb7f9ebade85464483e31a00063ceea,
+        type: 3}
+      propertyPath: SegWaitTo2onOrder
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039064880843545399, guid: 5bb7f9ebade85464483e31a00063ceea,
+        type: 3}
       propertyPath: Points
       value: 
       objectReference: {fileID: 6566561506959458293}
@@ -1744,11 +1760,6 @@ PrefabInstance:
       propertyPath: textO
       value: 
       objectReference: {fileID: 6566561506449177019}
-    - target: {fileID: 3039064880843545399, guid: 5bb7f9ebade85464483e31a00063ceea,
-        type: 3}
-      propertyPath: OrderGenerator
-      value: 
-      objectReference: {fileID: 5590490060571502142}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bb7f9ebade85464483e31a00063ceea, type: 3}
 --- !u!4 &8146432894950157536 stripped

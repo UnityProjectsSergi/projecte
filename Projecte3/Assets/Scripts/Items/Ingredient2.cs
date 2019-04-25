@@ -10,7 +10,7 @@ public class Ingredient2 : Item
     {
 
         duration = 5f;
-
+        nameO = "Ing2";
         itemType = ItemType.Ing;
     }
 

@@ -12,6 +12,7 @@ using UnityEngine;
     public  void Start()
     {
         duration = 2f;
+        nameO = "Ing1";
         itemType = ItemType.Ing;
     }
 }

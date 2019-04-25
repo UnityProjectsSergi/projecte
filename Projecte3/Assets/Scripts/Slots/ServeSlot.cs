@@ -30,7 +30,9 @@ namespace Assets.Scripts.Slots
                     VialItem vialItem = item.GetComponent<VialItem>();
                        Debug.Log("es vial");
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
-                    if (OrderManager.Instance.CheckAllOrder(vialItem))
+                    bool check = OrderManager.Instance.CheckAllOrder(vialItem);
+                    Debug.Log("orderc check" + check);
+                    if (check)
                     {
 
                         StartCoroutine(TextWide(5f, "Order get"));
