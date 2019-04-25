@@ -40,12 +40,12 @@ public class PotUIState : MonoBehaviour
             {
                 ProgressBar.gameObject.SetActive(true);
                 percentCook = Mathf.Clamp01(journey / totalduration);
-                Debug.Log(percentCook + "percent   fillamount: " + ProgressBar.fillAmount + " juourney " + journey);
+              //  Debug.Log(percentCook + "percent   fillamount: " + ProgressBar.fillAmount + " juourney " + journey);
                 ProgressBar.fillAmount = percentCook;
                 if (ProgressBar.fillAmount >= 0.999f)
                 {
                     ProgressBar.gameObject.SetActive(false);
-                    Debug.Log("buen ththe stove");
+                  
                     PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
                     StartCoroutine(ShowImageOK(3f, CookedOk));
                  
@@ -62,7 +62,7 @@ public class PotUIState : MonoBehaviour
                         alertTimer -= Time.deltaTime;
                         if (alertTimer >= 0.0f)
                         {
-                            Debug.Log("show image alert");
+                         
                             StartCoroutine(ShowImageAlert(3f, AlertBurn));
                             PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
                         }

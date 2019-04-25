@@ -37,38 +37,70 @@ class OrderManager:MonoBehaviour
     public void Start()
     {
         AddOrder(0.4f, 3, 100);
-        InvokeRepeating("SecondOrder",20f, SegWaitTo2onOrder);
+        InvokeRepeating("order",20f, SegWaitTo2onOrder);
+    }
+    public void order()
+    {
+        if (Random.Range(0f,1f)>0.5f)
+        {
+            SecondOrder();
+        }
+        else
+            {
+            greenOrder();
+        }
+    }
+   
+    public void greenOrder()
+    {
+        AddOrder(0.3f, 3, 45);
     }
     public void SecondOrder()
     {
         AddOrder(0.7f, 3, 45);
     }
     public Order FoundOrder;
+    bool found1 = false;
     public bool CheckAllOrder(VialItem item)
     {
-       
-        bool found1=false;
+
+        found1 = false;
         foreach (var order in listOrders)
         {
-        //    Debug.Log("ss");
+           Debug.Log("checkings");
             if (!order.isServed)
             {
+               
                 // checkeo si els ingredients de la ordre q em donen el tinc a una ordre de la llista 
                 FoundOrder = null;
-                if (Utils.CompareLists2<Item>(order._ingredients, item.listItem))
+                if (order._ingredients.Count == 0)
+                    return false;
+                if (item.listItem.Count == 0)
+                    return false;
+                if (order._ingredients.Count != item.listItem.Count)
+                    return false;
+                for (int i = 0; i < order._ingredients.Count; i++)
                 {
-                    found1 = true;
-                    FoundOrder = order;
-                    order.isServed = true;
-                    order.HideUIOrder();
-                    points+= order._points;
-                    OrderManager.Instance.RemoveOrder(order);
-                    
-                    break;
+                    if (order._ingredients[i].ing != item.listItem[i].ing)
+                        return false;
                 }
+               // found1 = true;
+                //    FoundOrder = order;
+                   order.isServed = true;
+                   order.HideUIOrder();
+                    points+= order._points;
+                 OrderManager.Instance.RemoveOrder(order);
+                return true;
+                //    return found1;
+                //if (Utils.CompareLists2<Item>(order._ingredients, item.listItem))
+                //{
+                //   
+                //   // break;
+                //}
             }
         }
         return found1;
+     // com compares 2 llistes   
     }
 
     public void RemoveOrder(Order m)

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.ObjPooler;
+using System;
 
 
 
 // x fer unna maq esstats
 
+    [System.Serializable]
 public  class Item : MonoBehaviour
 {
     [Header("Item Variables")]
@@ -41,16 +43,17 @@ public  class Item : MonoBehaviour
     {
         if (!(other is Item))
         {
-            Debug.Log("ss");
+            Debug.Log("Other is nnull");
             return false;
         }
         var objOther = other as Item;
-        Debug.LogWarning(nameO + " != " + objOther.nameO);
-        if (nameO.Equals(objOther.nameO))
+        Debug.LogWarning(ing != objOther.ing);
+        if (ing!=objOther.ing)
             return false;
-        Debug.Log("ssm");
+        Debug.Log("is same obj");
         return true;
     }
+    // crec q funciona xo 
     //public static bool operator ==(Item x, Item y)
     //{
     //    return x.Equals(y);

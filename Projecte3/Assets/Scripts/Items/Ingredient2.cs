@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[System.Serializable]
 public class Ingredient2 : Item
 {
 
@@ -12,6 +12,7 @@ public class Ingredient2 : Item
         duration = 5f;
         nameO = "Ing2";
         itemType = ItemType.Ing;
+        ing = ItemUiType.Ing2;
     }
 
     // Update is called once per frame

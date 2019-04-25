@@ -36,7 +36,7 @@ public class StoveSlot : Slot
                     if (itemPlayer.stateIngredient == StateIngredient.cutted)
                     {
                         //clono itemplayer
-                        Debug.Log("is put insede pot");
+                       
                         Item ItemClonIngredient = itemPlayer.Clone();
                         ItemPot itempot = item.GetComponent<ItemPot>();
 
@@ -45,7 +45,7 @@ public class StoveSlot : Slot
                         {
                             if (itempot.currentStatePot != ItemPotStateIngredients.Burning || itempot.currentStatePot != ItemPotStateIngredients.BurnedToTrash)
                             {
-                                Debug.Log("is inseidetemp and check");
+                              
                                 //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  
                                 if (itempot.LeaveObjIn(ItemClonIngredient))
                                 {

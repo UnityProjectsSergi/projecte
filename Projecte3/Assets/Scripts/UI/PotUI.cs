@@ -22,7 +22,7 @@ public class PotUI : MonoBehaviour
         {            
             GameObject ingPot = Instantiate(ItemPotUIPrefab);
             listUIItems.Add(ingPot.GetComponent<ItemUIPot>());
-            Debug.Log("Add UI item");
+          
             if (ItemPot.ShowSlotsIngEmpty)
                 ingPot.GetComponent<ItemUIPot>().showWhenIsEmpty = true;            
             ingPot.GetComponent<ItemUIPot>().setDefault();            

@@ -28,7 +28,7 @@ namespace Assets.Scripts.Slots
                 if (item.itemType==ItemType.Vial)
                 {
                     VialItem vialItem = item.GetComponent<VialItem>();
-                       Debug.Log("es vial");
+                    
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
                     bool check = OrderManager.Instance.CheckAllOrder(vialItem);
                     Debug.Log("orderc check" + check);
@@ -44,6 +44,7 @@ namespace Assets.Scripts.Slots
                     vialItem.ResetVial();
                     base.LeaveObjOn(player);
                     VialPool.Instance.ReturnToPool(vialItem);
+                    hasObjectOn = false;
                 }
                 else
                 {

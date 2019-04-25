@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class VialItem : Item
 {
+    [SerializeField]
     public List<Item> listItem;
     public GameObject vial;
     public Material fullMaterial;
