@@ -64,11 +64,10 @@ class OrderManager:MonoBehaviour
     bool found1 = false;
     public bool CheckAllOrder(VialItem item)
     {
-
-        found1 = false;
         foreach (var order in listOrders)
         {
-           Debug.Log("checkings");
+
+            Debug.Log("checkings");
             if (!order.isServed)
             {
                List<Item> In1OfOrderList = order._ingredients.OfType<Ing11>().ToList<Item>();
