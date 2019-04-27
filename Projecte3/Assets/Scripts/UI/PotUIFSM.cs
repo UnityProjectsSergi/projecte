@@ -44,10 +44,7 @@ public class PotUIFSM : MonoBehaviour
    
     public void SetItemOnUISlot(int num,Item item)
     {
-       
-            listUIItems[num].SetSpriteFromImgredient(item.GetComponent<Renderer>().material);
-            
-        
+        listUIItems[num].SetSpriteFromImgredient(item.GetComponent<Renderer>().material);       
     }
     public void ResetUI()
     {

@@ -42,13 +42,13 @@ public class ItemPotFSM : Item
     public void LeaveObjIn(Item item)
     {
         if (currentSlotList < potUi.listUIItems.Count) 
-            {
-                Debug.Log("add item");
-                listItem.Add(item);
-                potUi.SetItemOnUISlot(currentSlotList,item);
-                currentSlotList++;
-                duration = item.duration;
-            }
+        {
+            Debug.Log("add item");
+            listItem.Add(item);
+            potUi.SetItemOnUISlot(currentSlotList,item);
+            currentSlotList++;
+            duration = item.duration;
+        }
     }
    //
     public void ResetPot()
@@ -77,7 +77,7 @@ public class ItemPotFSM : Item
     public void DetectIfStoveIsUnder()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up * 2f, out hit, layerMask))
+        if (Physics.Raycast(transform.position, -transform.up * 0.3f, out hit, layerMask))
         {
             StoveSlotFSM slot = hit.collider.gameObject.GetComponent<StoveSlotFSM>();
             if (slot && listItem.Count > 0)
@@ -88,10 +88,13 @@ public class ItemPotFSM : Item
             else
             {
                 hasStoveUnder = false;
-
             }
         }
     }
-   
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(transform.position, -transform.up * 0.3f);
+    }
+
 }
 

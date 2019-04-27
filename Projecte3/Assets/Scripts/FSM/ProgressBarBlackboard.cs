@@ -8,8 +8,9 @@ public class ProgressBarBlackboard : MonoBehaviour
     
     public float percent;
     // Use this for initialization
-    void Awake()
+    void Start()
     {
+       // gameObject.AddComponent<FSM.FSM_ProgressBar>();
         image=GetComponent<Image>();
     }
 

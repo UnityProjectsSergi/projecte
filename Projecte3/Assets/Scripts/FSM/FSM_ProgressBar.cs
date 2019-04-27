@@ -4,16 +4,20 @@ namespace FSM
 {
     public class FSM_ProgressBar : FiniteStateMachine
     {
-        public enum States { INITIAL, PROGRESS, DONE }
+        public enum States { INITIAL, PROGRESS,PAUSE, DONE }
         public States currentState;
         public ProgressBarBlackboard ProgressBarBB;
         public float totalDuration;
         // Use this for initialization
-        void Start()
+        void Awake()
         {
            
             ProgressBarBB = GetComponent<ProgressBarBlackboard>();
             ProgressBarBB.image.enabled = false;
+        }
+        public void OnEnable()
+        {
+            ProgressBarBB = GetComponent<ProgressBarBlackboard>();
         }
         public override void ReEnter()
         {
@@ -28,6 +32,7 @@ namespace FSM
             ProgressBarBB.image.enabled=false;
             base.Exit();
         }
+        public bool isPaused;
         // Update is called once per frame
         void Update()
         {
@@ -38,11 +43,22 @@ namespace FSM
                     ChangeState(States.PROGRESS);
                     break;
                 case States.PROGRESS:
-                    ProgressBarBB.percent += Time.deltaTime;
-                    if (ProgressBarBB.percent>=0.99f)
+                    if (isPaused)
                     {
-                        ChangeState(States.DONE);
+                        ChangeState(States.PAUSE);
                     }
+                    else
+                    {
+                        ProgressBarBB.percent += 0.01f * Time.deltaTime;
+                        if (ProgressBarBB.percent >= 0.99f)
+                        {
+                            ChangeState(States.DONE);
+                        }
+                    }
+                    break;
+                case States.PAUSE:
+                    if (!isPaused)
+                        ChangeState(States.PROGRESS);
                     break;
                 case States.DONE:
                     ProgressBarBB.percent = 0;
@@ -61,6 +77,9 @@ namespace FSM
                 case States.PROGRESS:
                     break;
                 case States.DONE:
+                case States.PAUSE:
+
+                    break;
                     break;
                 default:
                     break;
@@ -73,6 +92,9 @@ namespace FSM
                 case States.PROGRESS:
                     break;
                 case States.DONE:
+                    break;
+                case States.PAUSE:
+
                     break;
                 default:
                     break;

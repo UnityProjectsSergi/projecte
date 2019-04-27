@@ -16,6 +16,7 @@ namespace FSM
         //xo tin varies images diferents 
         void Start()
         {
+            image = GetComponent<Image>();
             currentState = States.INITIAL;
         }
         public override void ReEnter()

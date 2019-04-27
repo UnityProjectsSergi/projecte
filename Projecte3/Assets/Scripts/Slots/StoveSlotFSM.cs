@@ -22,6 +22,7 @@ public class StoveSlotFSM : Slot
     }
     public override void LeaveObjOn(CharacterControllerAct player)
     {
+        Debug.Log("sss");
         /// si tinc objecte a sobre
         if (item != null)
         {
@@ -97,13 +98,10 @@ public class StoveSlotFSM : Slot
     }
     public override void Catch(CharacterControllerAct player)
     {
-        // si player te fracco i recepta feta 
-        //passar ing dde olla a frasco
-        // sino sta feta recpta i tens frasco no agafes recepte  
-
-
+        Debug.Log("ssss");
         if (player.attachedObject == null)
         {
+            Debug.Log("catch");
             base.Catch(player);
         }
 

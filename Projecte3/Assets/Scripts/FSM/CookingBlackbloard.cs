@@ -22,6 +22,8 @@ namespace FSM
         {
             progressBar = ProgBarGO.AddComponent<FSM_ProgressBar>();
             FSM_ShowHideImage = HideShowGO.AddComponent<FSM_ShowHideImage>();
+            progressBar.enabled = false;
+            FSM_ShowHideImage.enabled = false;
         }
 
         // Update is called once per frame

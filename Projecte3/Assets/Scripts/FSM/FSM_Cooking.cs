@@ -5,28 +5,30 @@ namespace FSM
 {
     public class FSM_Cooking : FiniteStateMachine
     {
-        public enum States { INITIAL,COOKING,SHOWOKIMG,END}
-      
+        public enum States { INITIAL,COOKING,PAUSE,SHOWOKIMG,END}
+        [HideInInspector]
         public CookingBlackbloard cookingBlackbloard;
         public States currentState;
-     
+        
         public override void Exit()
         {
             base.Exit();
         }
         public override void ReEnter()
         {
-           
-            base.ReEnter();
             currentState = States.INITIAL;
+            base.ReEnter();
+            
         }
-        private void OnEnable()
+        public void OnEnable()
         {
-            cookingBlackbloard = GetComponent<CookingBlackbloard>();
+            Debug.Log("load cook bb");
+            
         }
         // Use this for initialization
-        void Start()
+        public void Start()
         {
+            Debug.Log("load cook bb");
             cookingBlackbloard = GetComponent<CookingBlackbloard>();
             cookingBlackbloard.FSM_ShowHideImage.enabled = false;
             cookingBlackbloard.progressBar.enabled = false;
@@ -38,6 +40,7 @@ namespace FSM
         }
 
         // Update is called once per frame
+        public bool isPaused;
         void Update()
         {
             switch (currentState)
@@ -46,9 +49,20 @@ namespace FSM
                     ChangeState(States.COOKING);
                     break;
                 case States.COOKING:
-                    if (cookingBlackbloard.progressBar.currentState == FSM_ProgressBar.States.DONE)
+                    if (!isPaused)
                     {
-                        ChangeState(States.SHOWOKIMG);
+                        if (cookingBlackbloard.progressBar.currentState == FSM_ProgressBar.States.DONE)
+                        {
+                            ChangeState(States.SHOWOKIMG);
+                        }
+                    }
+                    else
+                        ChangeState(States.PAUSE);
+                    break;
+                case States.PAUSE:
+                   if(!isPaused)
+                    {
+                        ChangeState(States.COOKING);
                     }
                     break;
                 case States.SHOWOKIMG:
@@ -60,6 +74,10 @@ namespace FSM
                 default:
                     break;
             }
+        }
+        public void SetPauseState(States isPaused)
+        {
+            currentState = States.PAUSE;
         }
         public void ChangeState(States newState)
         {
@@ -75,6 +93,10 @@ namespace FSM
                    cookingBlackbloard.FSM_ShowHideImage.Exit();
                     cookingBlackbloard.HideShowGO.gameObject.SetActive(false);
                     break;
+                case States.PAUSE:
+                    cookingBlackbloard.progressBar.isPaused = false;
+
+                    break;
                 default:
                     break;
             }
@@ -85,6 +107,9 @@ namespace FSM
                 case States.COOKING:
                     cookingBlackbloard.ProgBarGO.gameObject.SetActive(true);
                    cookingBlackbloard.progressBar.ReEnter();
+                    break;
+                case States.PAUSE:
+                    cookingBlackbloard.progressBar.isPaused = true;
                     break;
                 case States.SHOWOKIMG:
                     cookingBlackbloard.HideShowGO.gameObject.SetActive(true);

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1648634165423429279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -98,7 +98,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6433216015493446944}
-  - component: {fileID: 2191319858090621274}
   m_Layer: 10
   m_Name: CookingFSM
   m_TagString: Untagged
@@ -120,27 +119,6 @@ Transform:
   m_Father: {fileID: 8038790729733618473}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2191319858090621274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852810856404290128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95904d76e27defd49ae0376e555ceed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ImageCookingDone: {fileID: 4371578049506612591}
-  TimeShowImageDone: 0
-  timeWaitShowImageDone: 0
-  timeHideImageDone: 0
-  progressBar: {fileID: 0}
-  ProgBarGO: {fileID: 238318631504410701}
-  HideShowGO: {fileID: 2058711763867918764}
-  FSM_ShowHideImage: {fileID: 0}
-  duration: 0
 --- !u!1 &2058711763867918764
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +201,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058711763867918764}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de00e09b8ceb20c42bcb3ee1823c3b59, type: 3}
   m_Name: 
@@ -487,17 +465,18 @@ GameObject:
   - component: {fileID: 1124557082451654578}
   - component: {fileID: 6310279094565561590}
   - component: {fileID: 1161168441905959491}
-  - component: {fileID: 141054445592145474}
   - component: {fileID: 4158327409828458624}
   - component: {fileID: 7027492019118329163}
   - component: {fileID: 7040008871505684678}
+  - component: {fileID: 98783775}
+  - component: {fileID: 141054445592145474}
   m_Layer: 10
   m_Name: PotItemFSM
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8038790729733618473
 Transform:
   m_ObjectHideFlags: 0
@@ -589,20 +568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f811c7e7429e8e46845909386b69e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &141054445592145474
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2356859938089687660}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &4158327409828458624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,6 +583,7 @@ MonoBehaviour:
   ing: 0
   itemType: 0
   points: 0
+  nameO: 
   stateIngredient: 0
   rigidbodyController: {fileID: 1161168441905959491}
   duration: 0
@@ -652,6 +618,8 @@ MonoBehaviour:
   itemPot: {fileID: 4158327409828458624}
   CookingFSMGO: {fileID: 1852810856404290128}
   potBlackBoard: {fileID: 0}
+  cookingBlackbloard: {fileID: 0}
+  lastState: 0
 --- !u!114 &7040008871505684678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +634,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   journey: 0
   timeToAlert: 10
+--- !u!114 &98783775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356859938089687660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95904d76e27defd49ae0376e555ceed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImageCookingDone: {fileID: 4371578049506612591}
+  TimeShowImageDone: 2
+  timeWaitShowImageDone: 2
+  timeHideImageDone: 2
+  progressBar: {fileID: 0}
+  ProgBarGO: {fileID: 238318631504410701}
+  HideShowGO: {fileID: 2058711763867918764}
+  FSM_ShowHideImage: {fileID: 0}
+  duration: 0
+--- !u!136 &141054445592145474
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356859938089687660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &3075562987096433762
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,11 +679,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2725975760415416652}
   - component: {fileID: 2837121842869459373}
-  - component: {fileID: 3598446832730220660}
-  - component: {fileID: 2058711764989960943}
-  - component: {fileID: 2058711765263547963}
-  - component: {fileID: 2058711765263547960}
-  - component: {fileID: 2058711765263547961}
   m_Layer: 5
   m_Name: BgProgressbar
   m_TagString: Untagged
@@ -720,109 +718,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3075562987096433762}
   m_CullTransparentMesh: 0
---- !u!114 &3598446832730220660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3075562987096433762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.34901962}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!114 &2058711764989960943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3075562987096433762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba92d3fbda51677439ae8fa4c7d98d38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progresSpeed: 1
-  ProgressBar: {fileID: 7714913355555189543}
-  AlertBurn: {fileID: 6948600240268550421}
-  BurnAfterFire: {fileID: 7374278670595521591}
-  Fire: {fileID: 3789823804624094100}
-  CookedOk: {fileID: 4371578049506612591}
-  fillAmount: 0
-  totalduration: 0
-  StartCookingBool: 0
-  StartBuringBool: 0
-  timeShowAlertBurning: 4
-  timeBurning: 5
-  PotUI: {fileID: 0}
-  StartTimerAlrert: 0
-  percentCook: 0
---- !u!114 &2058711765263547963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3075562987096433762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 010fafb0234a36b4e9f652002d7f68e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 7714913355555189543}
-  percent: 0
---- !u!114 &2058711765263547960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3075562987096433762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de00e09b8ceb20c42bcb3ee1823c3b59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  timeShowImage: 0
-  timeHideImage: 0
-  timer: 0
-  image: {fileID: 4371578049506612591}
-  timeWaitShowImage: 0
---- !u!114 &2058711765263547961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3075562987096433762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb8969f247f06914dbcda3cca67fdc76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  ProgressBarBB: {fileID: 2058711765263547963}
-  totalDuration: 0
 --- !u!1 &3555414119337746044
 GameObject:
   m_ObjectHideFlags: 0
