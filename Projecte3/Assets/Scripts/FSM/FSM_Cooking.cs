@@ -9,7 +9,7 @@ namespace FSM
         [HideInInspector]
         public CookingBlackbloard cookingBlackbloard;
         public States currentState;
-        
+       
         public override void Exit()
         {
             base.Exit();
@@ -43,6 +43,7 @@ namespace FSM
         public bool isPaused;
         void Update()
         {
+            cookingBlackbloard.progressBar.ProgressBarBB
             switch (currentState)
             {
                 case States.INITIAL:

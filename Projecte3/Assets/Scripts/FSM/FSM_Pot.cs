@@ -13,16 +13,13 @@ namespace FSM {
         public States lastState;
         
             // Use this for initialization
-            void Start()
-        {
-
+        void Start()
+        { 
             itemPot = GetComponent<ItemPotFSM>();
             potBlackBoard = GetComponent<PotBlackboard>();
             cookingBlackbloard = GetComponent<CookingBlackbloard>();
             FSM_Cooking = gameObject.AddComponent<FSM_Cooking>();
             FSM_Cooking.enabled = false;
-        
-
         }
         public override void Exit()
         {
@@ -36,11 +33,10 @@ namespace FSM {
         // Update is called once per frame
         void Update()
         {
-            Debug.Log(itemPot);
-          
-                
+            cookingBlackbloard.duration = itemPot.totalduration;
                 switch (currentState)
                 {
+                    
                     case States.INITIAL:
                         ChangeState(States.EMPTY);
                         break;
