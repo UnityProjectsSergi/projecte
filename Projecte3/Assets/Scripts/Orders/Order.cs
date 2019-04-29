@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using UnityEngine;
-[System.Serializable]
+
 public class Order
 {
     public int _points;

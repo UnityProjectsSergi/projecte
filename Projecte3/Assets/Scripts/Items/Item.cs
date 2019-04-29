@@ -32,6 +32,7 @@ public  class Item : MonoBehaviour
 
     public override bool Equals(object other)
     {
+
         if (!(other is Item))
         {
             Debug.Log("Other is nnull");
@@ -39,7 +40,8 @@ public  class Item : MonoBehaviour
         }
         var objOther = other as Item;
         Debug.LogWarning(ing != objOther.ing);
-        if (ing!=objOther.ing)
+        if(GetType()!=objOther.GetType())
+       // if (ing!=objOther.ing)
             return false;
         Debug.Log("is same obj");
         return true;

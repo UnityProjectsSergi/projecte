@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class VialItem : Item
 {
-    [SerializeField]
+  
     public List<Item> listItem;
     public GameObject vial;
     private Material iniMaterial;
     public Material fullMaterial;
-
+    
     //Get Vial Item from VialItemPool
     public void Start()
     {

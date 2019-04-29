@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 class OrderManager:MonoBehaviour
 {
@@ -63,34 +64,42 @@ class OrderManager:MonoBehaviour
     bool found1 = false;
     public bool CheckAllOrder(VialItem item)
     {
-
-        found1 = false;
         foreach (var order in listOrders)
         {
-           Debug.Log("checkings");
+
+            Debug.Log("checkings");
             if (!order.isServed)
             {
-               
-                // checkeo si els ingredients de la ordre q em donen el tinc a una ordre de la llista 
-                FoundOrder = null;
-                if (order._ingredients.Count == 0)
-                    return false;
-                if (item.listItem.Count == 0)
-                    return false;
-                if (order._ingredients.Count != item.listItem.Count)
-                    return false;
-                for (int i = 0; i < order._ingredients.Count; i++)
+               List<Item> In1OfOrderList = order._ingredients.OfType<Ing11>().ToList<Item>();
+               List<Item> Ing2OfOrderList = order._ingredients.OfType<Ingredient2>().ToList<Item>();
+               List<Item> equalItems2Ing2 = item.listItem.OfType<Ingredient2>().ToList<Item>();
+               List<Item> equalItems2Ing1 = item.listItem.OfType<Ing11>().ToList<Item>();
+                if (equalItems2Ing1.Count == In1OfOrderList.Count && equalItems2Ing2.Count == Ing2OfOrderList.Count)
                 {
-                    if (order._ingredients[i].ing != item.listItem[i].ing)
-                        return false;
+                    Debug.Log("lists has same numbros of each ingredient");
+                    order.isServed = true;
+                    order.HideUIOrder();
+                    points += order._points;
+                    OrderManager.Instance.RemoveOrder(order);
+                    return true;
                 }
-               // found1 = true;
+                // checkeo si els ingredients de la ordre q em donen el tinc a una ordre de la llista 
+                //FoundOrder = null;
+                //if (order._ingredients.Count == 0)
+                //    return false;
+                //if (item.listItem.Count == 0)
+                //    return false;
+                //if (order._ingredients.Count != item.listItem.Count)
+                //    return false;
+                //for (int i = 0; i < order._ingredients.Count; i++)
+                //{
+                //    if (order._ingredients[i].ing != item.listItem[i].ing)
+                //        return false;
+                //}
+                // found1 = true;
                 //    FoundOrder = order;
-                   order.isServed = true;
-                   order.HideUIOrder();
-                    points+= order._points;
-                 OrderManager.Instance.RemoveOrder(order);
-                return true;
+               
+                
                 //    return found1;
                 //if (Utils.CompareLists2<Item>(order._ingredients, item.listItem))
                 //{
@@ -99,7 +108,7 @@ class OrderManager:MonoBehaviour
                 //}
             }
         }
-        return found1;
+        return false;
      // com compares 2 llistes   
     }
 
