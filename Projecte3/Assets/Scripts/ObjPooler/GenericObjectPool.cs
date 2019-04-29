@@ -9,7 +9,7 @@ namespace Assets.Scripts.ObjPooler
 {
     public abstract class GenericObjectPool<T>:MonoBehaviour  where T:Component
     {
-       public T Prefab;
+        public T Prefab;
         private static GenericObjectPool<T> _instance;
         public static GenericObjectPool<T> Instance { get { return _instance; } private set { } }
         public Queue<T> objects;
@@ -24,8 +24,7 @@ namespace Assets.Scripts.ObjPooler
             {
                 _instance = this;
                 objects = new Queue<T>();
-               DontDestroyOnLoad(this.gameObject);
-
+                DontDestroyOnLoad(this.gameObject);
             }
         }
 
