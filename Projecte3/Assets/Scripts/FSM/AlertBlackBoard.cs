@@ -6,17 +6,16 @@ namespace FSM
     public class AlertBlackBoard : MonoBehaviour
     {
 
-        // Use this for initialization
-        public Image ImageCookingAlert;
-        public float TimeShowImageDone;
-        public float timeWaitShowImageDone;
-        public float timeHideImageDone;
+      
+      
         public GameObject HideShowGO;
+          
         [HideInInspector]
         public FSM_ShowHideImage FSM_ShowHideImage;
         private void Awake()
         {
             FSM_ShowHideImage = HideShowGO.AddComponent<FSM_ShowHideImage>();
+            FSM_ShowHideImage.enabled = false;
         }
         void Start()
         {

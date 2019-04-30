@@ -22,7 +22,7 @@ public class StoveSlotFSM : Slot
     }
     public override void LeaveObjOn(CharacterControllerAct player)
     {
-        Debug.Log("sss");
+      
         /// si tinc objecte a sobre
         if (item != null)
         {
@@ -37,7 +37,7 @@ public class StoveSlotFSM : Slot
                     if (itemPlayer.stateIngredient == StateIngredient.cutted)
                     {
                         //clono itemplayer
-                        Debug.Log("is put insede pot");
+                     
                         Item ItemClonIngredient = itemPlayer.Clone();
                         ItemPotFSM itempot = item.GetComponent<ItemPotFSM>();
 
@@ -46,7 +46,7 @@ public class StoveSlotFSM : Slot
                         {
                           //  if (itempot.currentStatePot != ItemPotStateIngredients.Burning || itempot.currentStatePot != ItemPotStateIngredients.BurnedToTrash)
                             //{
-                                Debug.Log("is inseidetemp and check");
+                         
                                 //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  
                                 itempot.LeaveObjIn(ItemClonIngredient);
 

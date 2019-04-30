@@ -3,7 +3,8 @@ using System.Collections;
 namespace FSM {
     public class FSM_Pot : FiniteStateMachine
     {
-        public enum States { INITIAL, EMPTY,PAUSE, COOKING, ALERT, BURN }
+       
+        public enum States { INITIAL, EMPTY,PAUSERUNNING, BURN }
         public States currentState;
         public ItemPotFSM itemPot;
         public GameObject CookingFSMGO;
@@ -11,15 +12,18 @@ namespace FSM {
         public PotBlackboard potBlackBoard;
         public CookingBlackbloard cookingBlackbloard;
         public States lastState;
-        
-            // Use this for initialization
+        public FSM_Alert FSM_Alert;
+        public AlertBlackBoard alertBlackBoard;
+        public FSM_PauseStart FSM_PauseStart;
+
+        // Use this for initialization
         void Start()
         { 
             itemPot = GetComponent<ItemPotFSM>();
             potBlackBoard = GetComponent<PotBlackboard>();
-            cookingBlackbloard = GetComponent<CookingBlackbloard>();
-            FSM_Cooking = gameObject.AddComponent<FSM_Cooking>();
-            FSM_Cooking.enabled = false;
+            FSM_PauseStart = gameObject.AddComponent<FSM_PauseStart>();
+            FSM_PauseStart.enabled = false;
+           
         }
         public override void Exit()
         {
@@ -33,7 +37,7 @@ namespace FSM {
         // Update is called once per frame
         void Update()
         {
-            cookingBlackbloard.duration = itemPot.totalduration;
+           
                 switch (currentState)
                 {
                     
@@ -43,46 +47,19 @@ namespace FSM {
                     case States.EMPTY:
                         Debug.Log(itemPot.listItem.Count);
                         if (itemPot.listItem.Count > 0)
-                            ChangeState(States.COOKING);
+                            ChangeState(States.PAUSERUNNING);
                         break;
-                    case States.COOKING:
-                        if (itemPot.hasStoveUnder)
-                        {
-                            potBlackBoard.journey += Time.deltaTime;
-                            if (potBlackBoard.journey > itemPot.totalduration)
-                            {
-                                ChangeState(States.ALERT);
-                            }
-                        }
-                        else
-                        {
-                             lastState = currentState;
-                            ChangeState(States.PAUSE);
-                        }
-                        break;
-                    case States.ALERT:
-                        if (itemPot.hasStoveUnder)
-                        {
-                            potBlackBoard.journey += Time.deltaTime;
-                            if (potBlackBoard.journey >= itemPot.totalduration + potBlackBoard.timeToAlert)
-                                ChangeState(States.BURN);
-                            else if (itemPot.currentSlotList != itemPot.oldSlot && potBlackBoard.journey < itemPot.totalduration + potBlackBoard.timeToAlert)
-                                ChangeState(States.COOKING);
-                        }
-                        else
-                        {
-                            lastState = currentState;
-                            ChangeState(States.PAUSE);
-                        }
-                        break;
-                case States.PAUSE:
-                    if(itemPot.hasStoveUnder)
+                    case States.PAUSERUNNING:
+                    if (FSM_PauseStart.currentState == FSM.FSM_PauseStart.States.END)
                     {
-                        ChangeState(lastState);
+                        ChangeState(States.BURN);
                     }
-                    break;
-                    case States.BURN:
+
                         break;
+                    case States.BURN:
+                      
+                        break;
+               
                     default:
                         break;
                 }
@@ -97,18 +74,13 @@ namespace FSM {
                     break;
                 case States.EMPTY:
                     break;
-                case States.PAUSE:
-                    FSM_Cooking.isPaused = false;
+                case States.PAUSERUNNING:
+                    FSM_PauseStart.Exit();
                     break;
-                
-                case States.COOKING:
-                    if(itemPot.hasStoveUnder)
-                    {
-                        FSM_Cooking.Exit();
-                    }
-                                     
+           
+                   
                     
-                    break;
+                    
                 default:
                     break;
             }
@@ -119,14 +91,8 @@ namespace FSM {
                     break;
                 case States.EMPTY:
                     break;
-                case States.PAUSE:
-                    FSM_Cooking.isPaused = true;
-                    break;
-                case States.COOKING:
-                    Debug.Log("ssss");
-                    cookingBlackbloard.duration = itemPot.totalduration;
-                    FSM_Cooking.ReEnter();
-                    
+                case States.PAUSERUNNING:
+                    FSM_PauseStart.ReEnter();
                     break;
                 default:
                     break;

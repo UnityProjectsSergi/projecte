@@ -5,6 +5,7 @@ public class PotBlackboard : MonoBehaviour
 {
     public float journey;
     public float timeToAlert;
+    public bool isPaused;
     // Use this for initialization
     void Start()
     {

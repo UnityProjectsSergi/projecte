@@ -5,25 +5,23 @@ namespace FSM
 {
     public class CookingBlackbloard : MonoBehaviour
     {
-        public Image ImageCookingDone;
-        public float TimeShowImageDone;
-        public float timeWaitShowImageDone;
-        public float timeHideImageDone;
+      
         [HideInInspector]
         public FSM_ProgressBar progressBar;
         public GameObject ProgBarGO;
         public GameObject HideShowGO;
         [HideInInspector]
         public FSM_ShowHideImage FSM_ShowHideImage;
+       public PotBlackboard potBlackboard;
         public float duration;
 
         // Use this for initialization
         void Awake()
         {
             progressBar = ProgBarGO.AddComponent<FSM_ProgressBar>();
-            FSM_ShowHideImage = HideShowGO.AddComponent<FSM_ShowHideImage>();
+            potBlackboard = GetComponent<PotBlackboard>();
             progressBar.enabled = false;
-            FSM_ShowHideImage.enabled = false;
+            //FSM_ShowHideImage.enabled = false;
         }
 
         // Update is called once per frame

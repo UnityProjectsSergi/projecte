@@ -22,13 +22,13 @@ public class PotUIFSM : MonoBehaviour
     public void StartUiPot()
     {
         ItemPot = transform.parent.GetComponent<ItemPotFSM>();
-        Debug.Log(ItemPot.NumIngedientsOfPot);
+
         for (int i = 0; i < ItemPot.NumIngedientsOfPot; i++)
         {
             
             GameObject ingPot = Instantiate(ItemPotUIPrefab);
             listUIItems.Add(ingPot.GetComponent<ItemUIPot>());
-            Debug.Log("Add UI item");
+        
             if (ItemPot.ShowSlotsIngEmpty)
                 ingPot.GetComponent<ItemUIPot>().showWhenIsEmpty = true;
             ingPot.GetComponent<ItemUIPot>().setDefault();

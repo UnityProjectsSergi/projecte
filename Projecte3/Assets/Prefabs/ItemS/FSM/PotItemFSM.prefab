@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1648634165423429279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -89,6 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 7714913355555189543}
   percent: 0
+  potBlackboard: {fileID: 7040008871505684678}
 --- !u!1 &1852810856404290128
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,14 +131,14 @@ GameObject:
   - component: {fileID: 2058711763867918765}
   - component: {fileID: 8588443535675366316}
   - component: {fileID: 4371578049506612591}
-  - component: {fileID: 2058711764557556662}
+  - component: {fileID: 910208266}
   m_Layer: 5
   m_Name: ok
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2058711763867918765
 RectTransform:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058711763867918764}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -194,20 +195,19 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &2058711764557556662
+--- !u!114 &910208266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058711763867918764}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de00e09b8ceb20c42bcb3ee1823c3b59, type: 3}
+  m_Script: {fileID: 11500000, guid: 196a4b49fa032ac43b0ce9524d40d6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
-  timeShowImage: 1
+  timeShowImage: 0
   timeHideImage: 0
   timer: 0
   image: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2058711764104996479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058711764104996478}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -297,14 +297,14 @@ GameObject:
   - component: {fileID: 2058711764657948990}
   - component: {fileID: 7813338695754285055}
   - component: {fileID: 6948600240268550421}
-  - component: {fileID: 4231757952701006567}
+  - component: {fileID: 1772720980278508260}
   m_Layer: 5
   m_Name: alert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2058711764657948990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058711764657948985}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &4231757952701006567
+--- !u!114 &1772720980278508260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,11 +370,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2058711764657948985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5a3e3a99c6c9b42a5466db489a9918, type: 3}
+  m_Script: {fileID: 11500000, guid: 196a4b49fa032ac43b0ce9524d40d6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
-  AlertBlackBoard: {fileID: 0}
+  timeShowImage: 50
+  timeHideImage: 0
+  timer: 0
+  image: {fileID: 0}
+  timeWaitShowImage: 5
 --- !u!1 &2058711764658268898
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,13 +473,14 @@ GameObject:
   - component: {fileID: 7040008871505684678}
   - component: {fileID: 98783775}
   - component: {fileID: 141054445592145474}
+  - component: {fileID: 8484926330522273762}
   m_Layer: 10
   m_Name: PotItemFSM
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8038790729733618473
 Transform:
   m_ObjectHideFlags: 0
@@ -620,6 +624,9 @@ MonoBehaviour:
   potBlackBoard: {fileID: 0}
   cookingBlackbloard: {fileID: 0}
   lastState: 0
+  FSM_Alert: {fileID: 0}
+  alertBlackBoard: {fileID: 0}
+  FSM_PauseStart: {fileID: 0}
 --- !u!114 &7040008871505684678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   journey: 0
   timeToAlert: 10
+  isPaused: 0
 --- !u!114 &98783775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,14 +654,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95904d76e27defd49ae0376e555ceed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImageCookingDone: {fileID: 4371578049506612591}
-  TimeShowImageDone: 2
-  timeWaitShowImageDone: 2
-  timeHideImageDone: 2
   progressBar: {fileID: 0}
   ProgBarGO: {fileID: 238318631504410701}
   HideShowGO: {fileID: 2058711763867918764}
   FSM_ShowHideImage: {fileID: 0}
+  potBlackboard: {fileID: 0}
   duration: 0
 --- !u!136 &141054445592145474
 CapsuleCollider:
@@ -669,6 +674,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &8484926330522273762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356859938089687660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815322e558e946a489f40ba2e815311f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HideShowGO: {fileID: 2058711764657948985}
+  FSM_ShowHideImage: {fileID: 0}
 --- !u!1 &3075562987096433762
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8245844958717692643
 RectTransform:
   m_ObjectHideFlags: 0
@@ -891,7 +910,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5461705362582307789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -982,7 +1001,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7941923721420991504}
-  - component: {fileID: 1131025960527217465}
   m_Layer: 10
   m_Name: AlertFSM
   m_TagString: Untagged
@@ -1004,21 +1022,3 @@ Transform:
   m_Father: {fileID: 8038790729733618473}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1131025960527217465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8219818665138012432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 815322e558e946a489f40ba2e815311f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ImageCookingAlert: {fileID: 6948600240268550421}
-  TimeShowImageDone: 0
-  timeWaitShowImageDone: 0
-  timeHideImageDone: 0
-  HideShowGO: {fileID: 2058711764657948985}
-  FSM_ShowHideImage: {fileID: 0}

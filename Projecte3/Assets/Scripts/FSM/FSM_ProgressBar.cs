@@ -6,6 +6,7 @@ namespace FSM
     {
         public enum States { INITIAL, PROGRESS,PAUSE, DONE }
         public States currentState;
+        public States lastState;
         public ProgressBarBlackboard ProgressBarBB;
         public float totalDuration;
         // Use this for initialization
@@ -15,10 +16,7 @@ namespace FSM
             ProgressBarBB = GetComponent<ProgressBarBlackboard>();
             ProgressBarBB.image.enabled = false;
         }
-        public void OnEnable()
-        {
-            ProgressBarBB = GetComponent<ProgressBarBlackboard>();
-        }
+
         public override void ReEnter()
         {
             
@@ -32,7 +30,7 @@ namespace FSM
             ProgressBarBB.image.enabled=false;
             base.Exit();
         }
-        public bool isPaused;
+        public bool isPausedProgressBar;
         // Update is called once per frame
         void Update()
         {
@@ -43,17 +41,19 @@ namespace FSM
                     ChangeState(States.PROGRESS);
                     break;
                 case States.PROGRESS:
-                    if (isPaused)
+                    Debug.Log("state progress is pausedProgressbar" + isPausedProgressBar);
+                    if(!isPaused)
                     {
-                        ChangeState(States.PAUSE);
-                    }
-                    else
-                    {
+                        ProgressBarBB.image.enabled = true;
                         ProgressBarBB.percent += 0.01f * Time.deltaTime;
                         if (ProgressBarBB.percent >= 0.99f)
                         {
                             ChangeState(States.DONE);
                         }
+                    }
+                    else
+                    {
+                        ChangeState(States.PAUSE);
                     }
                     break;
                 case States.PAUSE:
@@ -77,10 +77,11 @@ namespace FSM
                 case States.PROGRESS:
                     break;
                 case States.DONE:
+                    break;
                 case States.PAUSE:
-
+                    ProgressBarBB.image.enabled = true;
                     break;
-                    break;
+                 
                 default:
                     break;
             }
@@ -94,7 +95,7 @@ namespace FSM
                 case States.DONE:
                     break;
                 case States.PAUSE:
-
+                    ProgressBarBB.image.enabled = false;
                     break;
                 default:
                     break;

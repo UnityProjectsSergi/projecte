@@ -18,6 +18,11 @@ namespace FSM
             // code to execute when FSM is (re)entered
             this.enabled = true;
         }
+        public bool isPaused;
+        public virtual void Update()
+        {
+             
+        }
 
     }
 }

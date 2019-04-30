@@ -1,23 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 using FSM;
-using UnityEngine.UI;
+
 namespace FSM
 {
     public class FSM_ShowHideImage : FiniteStateMachine
     {
-        public enum States { INITIAL, SHOW, HIDE,END }
+        public enum States { INITIAL, SHOW, PAUSE, HIDE, END }
         public States currentState;
-        public float timeShowImage, timeHideImage;
-        public float timer;
-        public Image image;
-        public float timeWaitShowImage;
+        public bool isPaused;
+        public ImageShowHideBlackboard ISHBackBoard;
+
         // Use this for initialization
-        //xo tin varies images diferents 
+        //xo tin varies images diferents
+        private void Awake()
+        {
+
+        }
         void Start()
         {
-            image = GetComponent<Image>();
-            currentState = States.INITIAL;
+            ISHBackBoard = GetComponent<ImageShowHideBlackboard>();
+
+
         }
         public override void ReEnter()
         {
@@ -31,31 +35,46 @@ namespace FSM
         // Update is called once per frame
         void Update()
         {
-            timer += Time.deltaTime;
+            ISHBackBoard.timer += Time.deltaTime;
             switch (currentState)
             {
                 case States.INITIAL:
-                    if (timer > timeWaitShowImage)
+                    if (!isPaused)
                     {
-                        ChangeState(States.SHOW);
-                        timer = 0F;
+                        if (ISHBackBoard.timer > ISHBackBoard.timeWaitShowImage)
+                        {
+                            ChangeState(States.SHOW);
+                            ISHBackBoard.timer = 0F;
+                        }
                     }
+                    else
+                        ChangeState(States.PAUSE);
                     break;
                 case States.SHOW:
-                    if (timer > timeShowImage)
+                    if (!isPaused)
                     {
-                        ChangeState(States.HIDE);
-                        timer = 0;
+                        if (ISHBackBoard.timer > ISHBackBoard.timeShowImage)
+                        {
+                            ChangeState(States.HIDE);
+                            ISHBackBoard.timer = 0;
+                        }
                     }
+                    else
+                        ChangeState(States.PAUSE);
                     break;
                 case States.HIDE:
-                    if (timeHideImage == 0.0f)
-                        ChangeState(States.END);
-                    else if (timer > timeHideImage)
+                    if (!isPaused)
                     {
-                        ChangeState(States.SHOW);
-                        timer = 0;
+                        if (ISHBackBoard.timeHideImage == 0.0f)
+                            ChangeState(States.END);
+                        else if (ISHBackBoard.timer > ISHBackBoard.timeHideImage)
+                        {
+                            ChangeState(States.SHOW);
+                            ISHBackBoard.timer = 0;
+                        }
                     }
+                    else
+                        ChangeState(States.PAUSE);
                     break;
                 default:
                     break;
@@ -70,7 +89,11 @@ namespace FSM
                     break;
                 case States.SHOW:
                     break;
+                case States.PAUSE:
+                    ISHBackBoard.image.enabled = true;
+                    break;
                 case States.HIDE:
+
                     break;
                 default:
                     break;
@@ -81,10 +104,13 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.SHOW:
-                    image.enabled=true;
+                    ISHBackBoard.image.enabled = true;
                     break;
                 case States.HIDE:
-                    image.enabled=false;
+                    ISHBackBoard.image.enabled = false;
+                    break;
+                case States.PAUSE:
+                    ISHBackBoard.image.enabled = false;
                     break;
                 default:
                     break;
