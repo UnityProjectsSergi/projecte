@@ -1,14 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.ObjPooler;
-using System;
 
-
-
-// x fer unna maq esstats
-
-    [System.Serializable]
+[System.Serializable]
 public  class Item : MonoBehaviour
 {
     [Header("Item Variables")]
@@ -22,12 +15,10 @@ public  class Item : MonoBehaviour
     public float duration;
     public float ingCookValue = 0;
 
-
     private bool inTable { get { return inTable; } set { } }
 
     private void OnEnable()
-    {
-       
+    {       
         stateIngredient=StateIngredient.raw;
     }
     
@@ -55,24 +46,19 @@ public  class Item : MonoBehaviour
         Debug.Log("is same obj");
         return true;
     }
-    // crec q funciona xo 
-    //public static bool operator ==(Item x, Item y)
-    //{
-    //    return x.Equals(y);
-    //}
-    //public static bool operator !=(Item x,Item y)
-    //{
-    //    return !(x == y);
-    //}
+
     public override int GetHashCode()
     {
         return base.GetHashCode();
     }
+
     public Item Clone()
     {
         return(Item) this.MemberwiseClone();
     }
+
     public float percentCooked;
+
     public IEnumerator Cook()
     {
         float journey = 0f;
@@ -86,7 +72,6 @@ public  class Item : MonoBehaviour
                 stateIngredient = StateIngredient.cooked;
 
             yield return null;
-
         }
     }
   

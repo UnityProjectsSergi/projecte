@@ -11,7 +11,7 @@ public class CharacterControllerAct : MonoBehaviour
     public LayerMask tablesLayerMask;
     public LayerMask itemsLayerMask;
     public Transform raycastTransform;
-    public Animator animator;
+    //public Animator animator;
 
     private Slot slot;
     private Item item;
@@ -21,12 +21,12 @@ public class CharacterControllerAct : MonoBehaviour
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        SlotAction();        
+        SlotAction();
     }
 
     void SlotAction()
@@ -40,12 +40,15 @@ public class CharacterControllerAct : MonoBehaviour
 
             //Animation to Idle
             if (playerInput.triangleBtn.Up)
-                animator.SetTrigger("Idle");
+            {
+
+            }
+                //animator.SetTrigger("Idle");
         }
         else
         {
             if (playerInput.XBtn.Down)
-                LeaveObjOn();           
+                LeaveObjOn();
         }
     }
 
@@ -58,7 +61,7 @@ public class CharacterControllerAct : MonoBehaviour
             slot.Catch(this);
         }
         if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, itemsLayerMask))
-        {           
+        {
             item = hit.collider.GetComponent<Item>();
             item.transform.eulerAngles = Vector3.zero;
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
@@ -68,7 +71,7 @@ public class CharacterControllerAct : MonoBehaviour
 
     private void LeaveObjOn()
     {
-        RaycastHit hit; 
+        RaycastHit hit;
         if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
         {
             slot = hit.collider.GetComponent<Slot>();
@@ -84,12 +87,15 @@ public class CharacterControllerAct : MonoBehaviour
 
     private void Action()
     {
-     
+
         RaycastHit hit;
         if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
         {
             if (playerInput.triangleBtn.Down)
-                animator.SetTrigger("Action");
+            {
+
+            }
+                //animator.SetTrigger("Action");
             slot = hit.collider.GetComponent<Slot>();
             slot.Action(this);
         }

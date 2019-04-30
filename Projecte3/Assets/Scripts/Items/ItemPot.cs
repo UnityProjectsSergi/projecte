@@ -18,7 +18,8 @@ public class ItemPot : Item
     // saber si el que hi ha 
     public LayerMask layerMask;
     public ItemPotStateIngredients currentStatePot;
-   
+    public bool hasStoveUnder;
+
     public void Start()
     {       
         listItem = new List<Item>();
@@ -69,14 +70,14 @@ public class ItemPot : Item
     {
         return listItem.All(item => item.stateIngredient == StateIngredient.cooked);
     }
-    public bool hasStoveUnder;
+
     public void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up * 2f,out hit, layerMask))
+        if (Physics.Raycast(transform.position, -transform.up * 2f, out hit, layerMask))
         {
-            StoveSlot slot= hit.collider.gameObject.GetComponent<StoveSlot>();
-            if (slot  && listItem.Count>0)
+            StoveSlot slot = hit.collider.gameObject.GetComponent<StoveSlot>();
+            if (slot  && listItem.Count > 0)
             {
                 hasStoveUnder = true;
                 potUi.hasStoveUnder = true;
@@ -86,10 +87,7 @@ public class ItemPot : Item
                 hasStoveUnder = false;
                 potUi.hasStoveUnder = false;
             }
-        }
-        
-       
+        }      
     }
-   
 }
 
