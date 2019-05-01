@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using FSM;
+using System;
 
 namespace FSM
 {
@@ -8,7 +9,10 @@ namespace FSM
     {
         public enum States { INITIAL, SHOW, PAUSE, HIDE, END }
         public States currentState;
-        public bool isPaused;
+        public States lastState;
+        
+       
+      
         public ImageShowHideBlackboard ISHBackBoard;
 
         // Use this for initialization
@@ -35,7 +39,7 @@ namespace FSM
         // Update is called once per frame
         void Update()
         {
-            ISHBackBoard.timer += Time.deltaTime;
+            UpdateProgress();
             switch (currentState)
             {
                 case States.INITIAL:
@@ -48,7 +52,10 @@ namespace FSM
                         }
                     }
                     else
+                    {
+                        lastState = currentState;
                         ChangeState(States.PAUSE);
+                    }
                     break;
                 case States.SHOW:
                     if (!isPaused)
@@ -60,21 +67,32 @@ namespace FSM
                         }
                     }
                     else
+                    {
+                        lastState = currentState;
                         ChangeState(States.PAUSE);
+                    }
                     break;
                 case States.HIDE:
                     if (!isPaused)
                     {
-                        if (ISHBackBoard.timeHideImage == 0.0f)
+                        if (!ISHBackBoard.hasRepetition)
                             ChangeState(States.END);
-                        else if (ISHBackBoard.timer > ISHBackBoard.timeHideImage)
+                        else if (ISHBackBoard.hasRepetition && ISHBackBoard.timer > ISHBackBoard.timeHideImage)
                         {
                             ChangeState(States.SHOW);
                             ISHBackBoard.timer = 0;
                         }
                     }
                     else
+                    {
+                        lastState = currentState;
                         ChangeState(States.PAUSE);
+                    }
+                    break;
+
+                case States.PAUSE:
+                    if (!isPaused)
+                        ChangeState(lastState);
                     break;
                 default:
                     break;
@@ -117,5 +135,17 @@ namespace FSM
             }
             currentState = newState;
         }
+        public void UpdateProgress()
+        {
+            if (!isPaused)
+                ISHBackBoard.timer += Time.deltaTime;
+        }
+
+        internal void Reset()
+        {
+            currentState = States.INITIAL;
+            ISHBackBoard.timer = 0;
+        }
     }
+    
 }

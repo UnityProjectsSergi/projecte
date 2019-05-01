@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+
 namespace FSM
 {
     public class FSM_Alert : FiniteStateMachine
@@ -8,7 +10,7 @@ namespace FSM
         public States currentState;
         public States lastState;
         public AlertBlackBoard AlertBlackBoard;
-        public bool isPauseAlert;
+      
         public override void Exit()
         {
             base.Exit();
@@ -22,21 +24,13 @@ namespace FSM
         public void Start()
         {
             AlertBlackBoard = GetComponent<AlertBlackBoard>();
+        }
         
-            //AlertBlackBoard.FSM_ShowHideImage.image = AlertBlackBoard.ImageCookingAlert;
-            //AlertBlackBoard.FSM_ShowHideImage.timeHideImage = 0.0f;
-            //AlertBlackBoard.FSM_ShowHideImage.timeShowImage = AlertBlackBoard.TimeShowImageDone;
-            //AlertBlackBoard.FSM_ShowHideImage.timeWaitShowImage = AlertBlackBoard.timeWaitShowImageDone;
-        }
-        private void OnEnable()
-        {
-            //AlertBlackBoard = GetComponent<AlertBlackBoard>();
-        }
         // Use this for initialization
       
 
         // Update is called once per frame
-        void Update()
+       public  void Update()
         {
             // SURTIR DEL VELL ESTAT
             switch (currentState)
@@ -45,27 +39,25 @@ namespace FSM
                     ChangeState(States.ALERT);
                     break;
                 case States.ALERT:
-                    if (isPauseAlert)
+                    if (!isPaused)
                     {
-                        lastState = currentState;
-                        ChangeState(States.PAUSE);
-                    }
-                    else
-                    {
-                        if (AlertBlackBoard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.HIDE)
+                        if (AlertBlackBoard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.END)
                         {
                             ChangeState(States.END);
                         }
-                        
+                    }
+                    else
+                    {
+                        lastState = currentState;
+                        ChangeState(States.PAUSE);
                     }
                     break;
                 case States.END:
                     break;
                 case States.PAUSE:
-                    
-                    if(isPauseAlert)
+                    if(!isPaused)
                     {
-                        ChangeState(lastState);
+                        ChangeState(States.ALERT);
                     }
                     break;
                 default:
@@ -80,11 +72,12 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.ALERT:
-                  
-               
+                    if (newState == States.END)
+                        AlertBlackBoard.FSM_ShowHideImage.Exit();
+
                     break;
                 case States.PAUSE:
-                    Debug.Log("exit Paus00");
+                 
                     AlertBlackBoard.FSM_ShowHideImage.isPaused = false;
                     break;
                 case States.END:
@@ -98,6 +91,7 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.ALERT:
+                    if(currentState==States.INITIAL)
                     AlertBlackBoard.FSM_ShowHideImage.ReEnter();
                     break;
                 case States.END:
@@ -111,6 +105,11 @@ namespace FSM
                     break;
             }
             currentState = newState;
+        }
+
+        internal void Reset()
+        {
+            
         }
     }
 }

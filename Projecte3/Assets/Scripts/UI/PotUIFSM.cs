@@ -29,8 +29,8 @@ public class PotUIFSM : MonoBehaviour
             GameObject ingPot = Instantiate(ItemPotUIPrefab);
             listUIItems.Add(ingPot.GetComponent<ItemUIPot>());
         
-            if (ItemPot.ShowSlotsIngEmpty)
-                ingPot.GetComponent<ItemUIPot>().showWhenIsEmpty = true;
+            
+            ingPot.GetComponent<ItemUIPot>().showWhenIsEmpty = ItemPot.ShowSlotsIngEmpty;
             ingPot.GetComponent<ItemUIPot>().setDefault();
             ingPot.transform.SetParent(ListIng.transform);
         }

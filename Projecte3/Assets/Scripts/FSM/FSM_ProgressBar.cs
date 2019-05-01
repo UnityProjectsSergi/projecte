@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+
 namespace FSM
 {
     public class FSM_ProgressBar : FiniteStateMachine
@@ -44,8 +46,8 @@ namespace FSM
                     Debug.Log("state progress is pausedProgressbar" + isPausedProgressBar);
                     if(!isPaused)
                     {
-                        ProgressBarBB.image.enabled = true;
-                        ProgressBarBB.percent += 0.01f * Time.deltaTime;
+                       // ProgressBarBB.itemPot.totalduration
+                        ProgressBarBB.percent += 0.1f * Time.deltaTime;
                         if (ProgressBarBB.percent >= 0.99f)
                         {
                             ChangeState(States.DONE);
@@ -105,6 +107,12 @@ namespace FSM
         public void UpdateProgress()
         { 
             
+        }
+
+        internal void Reset()
+        {
+            ProgressBarBB.percent = 0;
+            currentState = States.INITIAL;
         }
     }
 }

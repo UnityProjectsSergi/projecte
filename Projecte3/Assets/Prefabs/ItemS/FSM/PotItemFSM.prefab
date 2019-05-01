@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 7714913355555189543}
   percent: 0
-  potBlackboard: {fileID: 7040008871505684678}
+  itemPot: {fileID: 0}
 --- !u!1 &1852810856404290128
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,11 +207,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a4b49fa032ac43b0ce9524d40d6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeShowImage: 0
+  timeShowImage: 10
   timeHideImage: 0
   timer: 0
   image: {fileID: 0}
-  timeWaitShowImage: 0
+  timeWaitShowImage: 2
+  hasRepetition: 0
+  numRepetitions: 0
+  count: 0
 --- !u!1 &2058711764104996478
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,11 +376,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a4b49fa032ac43b0ce9524d40d6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeShowImage: 50
-  timeHideImage: 0
+  timeShowImage: 10
+  timeHideImage: 5
   timer: 0
   image: {fileID: 0}
   timeWaitShowImage: 5
+  hasRepetition: 1
+  numRepetitions: 0
+  count: 0
 --- !u!1 &2058711764658268898
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +600,7 @@ MonoBehaviour:
   ingCookValue: 0
   percentCooked: 0
   NumIngedientsOfPot: 2
-  ShowSlotsIngEmpty: 0
+  ShowSlotsIngEmpty: 1
   listItem: []
   IsStartCooking: 0
   potUi: {fileID: 1675647737394497446}
@@ -604,7 +610,7 @@ MonoBehaviour:
   hasStoveUnder: 0
   FSM_Pot: {fileID: 7027492019118329163}
   currentSlotList: 0
-  totalduration: 0
+  totalDurationOfCooking: 0
   oldSlot: 0
 --- !u!114 &7027492019118329163
 MonoBehaviour:
@@ -618,6 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ce474fff2d9e146844649824e84328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   currentState: 0
   itemPot: {fileID: 4158327409828458624}
   CookingFSMGO: {fileID: 1852810856404290128}
@@ -641,7 +648,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   journey: 0
   timeToAlert: 10
-  isPaused: 0
 --- !u!114 &98783775
 MonoBehaviour:
   m_ObjectHideFlags: 0

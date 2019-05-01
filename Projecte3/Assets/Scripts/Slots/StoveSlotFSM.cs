@@ -12,12 +12,13 @@ public class StoveSlotFSM : Slot
 {
     // el foc
     public bool hasPassIngToVial;
-
+    public bool ShowSlotsInUI;
     // get ItemPot from ItemPotPool.
 
     public void Start()
     {
         item = PotPoolFSM.Instance.GetObjFromPool(positionObjOn);
+        item.GetComponent<ItemPotFSM>().ShowSlotsIngEmpty = ShowSlotsInUI;
         item.transform.parent = transform;
     }
     public override void LeaveObjOn(CharacterControllerAct player)

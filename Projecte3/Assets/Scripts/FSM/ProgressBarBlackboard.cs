@@ -7,7 +7,8 @@ public class ProgressBarBlackboard : MonoBehaviour
     public Image image;
     
     public float percent;
-    public PotBlackboard potBlackboard;
+   
+    public ItemPotFSM itemPot;
     // Use this for initialization
     void Start()
     {

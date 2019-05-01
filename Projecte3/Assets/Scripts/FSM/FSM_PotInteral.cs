@@ -4,7 +4,7 @@ namespace FSM {
     public class FSM_PotInteral : FiniteStateMachine
     {
        
-        public enum States { INITIAL, COOKING, ALERT,PAUSE,END }
+        public enum States { INITIAL, COOKING,COOKINGADDING, ALERT,PAUSE,END }
         public States currentState;
         public ItemPotFSM itemPot;
         public GameObject CookingFSMGO;
@@ -65,8 +65,8 @@ namespace FSM {
        // Update is called once per frame
         void Update()
         {
-      
-            cookingBlackbloard.duration = itemPot.totalduration;
+            UpdateProgress();
+            cookingBlackbloard.duration = itemPot.totalDurationOfCooking;
             switch (currentState)
             {
 
@@ -77,10 +77,10 @@ namespace FSM {
                 case States.COOKING:
                     if (!isPaused)
                     {
-                        potBlackBoard.journey += Time.deltaTime;
-                        //if (FSM_Cooking.currentState == FSM_Cooking.States.END)
+
+                        if (FSM_Cooking.currentState == FSM_Cooking.States.END)
                         //    ChangeState(States.ALERT);
-                        if (potBlackBoard.journey > itemPot.totalduration)
+                       // if (potBlackBoard.journey > itemPot.totalDurationOfCooking)
                         {
                             ChangeState(States.ALERT);
                         }
@@ -94,11 +94,11 @@ namespace FSM {
                 case States.ALERT:
                     if (!isPaused)
                     {
-                        potBlackBoard.journey += Time.deltaTime;
-                        if (potBlackBoard.journey >= itemPot.totalduration + potBlackBoard.timeToAlert)
+                        if(FSM_Alert.currentState==FSM_Alert.States.END)
+                       // if (potBlackBoard.journey >= itemPot.totalDurationOfCooking + potBlackBoard.timeToAlert)
                             ChangeState(States.END);
-                        else if (itemPot.currentSlotList != itemPot.oldSlot && potBlackBoard.journey < itemPot.totalduration + potBlackBoard.timeToAlert)
-                            ChangeState(States.COOKING);
+                        else if (itemPot.currentSlotList != itemPot.oldSlot && potBlackBoard.journey < itemPot.totalDurationOfCooking + potBlackBoard.timeToAlert)
+                            ChangeState(States.COOKINGADDING);
                     }
                     else
                     {
@@ -109,7 +109,6 @@ namespace FSM {
                 case States.PAUSE:
                     if(!isPaused)
                     {
-                        Debug.Log("exir pase"+currentState+" " +lastState);
                         ChangeState(lastState);
                     }
                     break;
@@ -129,17 +128,20 @@ namespace FSM {
                  
 
                 case States.COOKING:
-                    //if (newState == States.ALERT)
-                    //    FSM_Cooking.Exit();
-                    //else
-                    //    FSM_Cooking.isPaused = false;
-                    //break;
-                case States.ALERT:
-
-                    ///     FSM_Alert.Exit();
+                    if (newState == States.ALERT)
+                        FSM_Cooking.Exit();
+                    else
+                        FSM_Cooking.isPaused = false;
                     break;
+                case States.ALERT:
+                    if (newState == States.END)
+                        FSM_Alert.Exit();
+                    else
+                        FSM_Alert.isPaused = false;
+                    break;
+
                 case States.PAUSE:
-                    Debug.Log("Exit Pause state"+currentState);
+            
                     FSM_Alert.isPaused = false;
                     FSM_Cooking.isPaused = false;
                     break;
@@ -156,15 +158,15 @@ namespace FSM {
                
                 case States.COOKING:
                     if (currentState==States.INITIAL)
-                    //{
-                    //    cookingBlackbloard.duration = itemPot.totalduration;
+                    {
+                        cookingBlackbloard.duration = itemPot.totalDurationOfCooking;
                       FSM_Cooking.ReEnter();
-                    //}
+                    }
                     break;
                 case States.ALERT:
-                    //if (!isPaused){
-                    //    FSM_Alert.ReEnter();
-                    //}
+                    if (currentState == States.COOKING) { 
+                        FSM_Alert.ReEnter();
+                    }
                     break;
                 case States.PAUSE:
 
@@ -181,12 +183,17 @@ namespace FSM {
         }
         public void UpdateProgress()
         {
-
+            if (!isPaused)
+            { 
+                potBlackBoard.journey += Time.deltaTime;
+            }
             // ProgressBarBB.fillAmount=
         }
         public void Reset()
         {
-            potBlackBoard.journey = 0;
+            currentState = States.INITIAL;
+            FSM_Alert.Reset();
+            FSM_Cooking.Reset();
         }
     }
 }

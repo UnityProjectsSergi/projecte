@@ -19,10 +19,7 @@ namespace FSM
             this.enabled = true;
         }
         public bool isPaused;
-        public virtual void Update()
-        {
-             
-        }
+       
 
     }
 }

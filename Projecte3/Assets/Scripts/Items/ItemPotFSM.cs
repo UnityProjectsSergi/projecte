@@ -11,6 +11,7 @@ public class ItemPotFSM : Item
 {
     [Header("Pot Variables")]
     public int NumIngedientsOfPot;
+    [HideInInspector]
     public bool ShowSlotsIngEmpty;
     public List<Item> listItem;    
     public bool IsStartCooking;
@@ -20,7 +21,7 @@ public class ItemPotFSM : Item
     public bool hasStoveUnder;
     public FSM.FSM_Pot FSM_Pot;
     public int currentSlotList=0;
-    public float totalduration;
+    public float totalDurationOfCooking;
     public int oldSlot;
 
     //  public  ItemPotStateIngredients currentStatePot;
@@ -33,7 +34,7 @@ public class ItemPotFSM : Item
     {
         
         listItem = new List<Item>();
-       // currentStatePot = ItemPotStateIngredients.Empty;
+        
         potUi.StartUiPot();
         itemType = ItemType.Pot;
     }
@@ -41,19 +42,22 @@ public class ItemPotFSM : Item
   
     public void LeaveObjIn(Item item)
     {
+        // if currentSlot if liist is minor than ui cout list
         if (currentSlotList < potUi.listUIItems.Count) 
         {
             Debug.Log("add item");
             listItem.Add(item);
+            // set items on ui
             potUi.SetItemOnUISlot(currentSlotList,item);
+            // increment currentSlotInlIst 
             currentSlotList++;
+            //Save Duraton of ing
             duration = item.duration;
         }
     }
    //
     public void ResetPot()
     {
-      //  currentStatePot = ItemPotStateIngredients.Empty;
         IsStartCooking = false;
         listItem.Clear();
         potUi.ResetUI();
@@ -68,9 +72,11 @@ public class ItemPotFSM : Item
     public void Update()
     {
         DetectIfStoveIsUnder();
+        // si he affegit Ingredient a l llista
         if (currentSlotList != oldSlot)
         {
-            totalduration += duration;
+            // add duration to totalduration of ing
+            totalDurationOfCooking += duration;
         }
         oldSlot = currentSlotList;
     }

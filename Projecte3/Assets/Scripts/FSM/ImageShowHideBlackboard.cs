@@ -7,6 +7,9 @@ public class ImageShowHideBlackboard : MonoBehaviour
     public float timer;
     public Image image;
     public float timeWaitShowImage;
+    public bool hasRepetition;
+    public int numRepetitions;
+    public int count;
     // Use this for initialization
     void Start()
     {

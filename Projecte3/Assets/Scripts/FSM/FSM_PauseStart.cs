@@ -29,7 +29,7 @@ namespace FSM
         }
 
         // Update is called once per frame
-     public  override void  Update()
+     public   void  Update()
         {
            
             switch (currentState)
@@ -95,5 +95,11 @@ namespace FSM
             }
             currentState = newState;
         }
+        public void Reset()
+        {
+            FSM_PotInteral.Reset();
+            currentState = States.INITIAL;
+        }
     }
+    
 }
