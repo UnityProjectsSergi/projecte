@@ -23,6 +23,7 @@ public class ItemPotFSM : Item
     public int currentSlotList=0;
     public float totalDurationOfCooking;
     public int oldSlot;
+    
 
     //  public  ItemPotStateIngredients currentStatePot;
     private void Awake()

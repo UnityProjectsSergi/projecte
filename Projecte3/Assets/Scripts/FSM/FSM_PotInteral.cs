@@ -13,7 +13,7 @@ namespace FSM {
         public CookingBlackbloard cookingBlackbloard;
         public States lastState;
         public FSM_Alert FSM_Alert;
-        public AlertBlackBoard alertBlackBoard;
+     
         public float lastJourney;
         
         // Use this for initialization
@@ -22,7 +22,7 @@ namespace FSM {
             itemPot = GetComponent<ItemPotFSM>();
             potBlackBoard = GetComponent<PotBlackboard>();
             cookingBlackbloard = GetComponent<CookingBlackbloard>();
-            alertBlackBoard = GetComponent<AlertBlackBoard>();
+           
 
             FSM_Cooking = gameObject.AddComponent<FSM_Cooking>();
             FSM_Alert = gameObject.AddComponent<FSM_Alert>();

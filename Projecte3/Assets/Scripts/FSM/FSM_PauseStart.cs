@@ -29,9 +29,8 @@ namespace FSM
         }
 
         // Update is called once per frame
-     public   void  Update()
+        public void Update()
         {
-           
             switch (currentState)
             {
                 case States.INITIAL:
@@ -42,13 +41,13 @@ namespace FSM
                     {
                         ChangeState(States.PAUSE);
                     }
-                    if(FSM_PotInteral.currentState==FSM_PotInteral.States.END)
+                    if (FSM_PotInteral.currentState == FSM_PotInteral.States.END)
                     {
                         ChangeState(States.END);
                     }
                     break;
                 case States.PAUSE:
-                    if(itemPot.hasStoveUnder)
+                    if (itemPot.hasStoveUnder)
                     {
                         ChangeState(States.RUNNING);
                     }
@@ -65,13 +64,13 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.RUNNING:
-                 
+
                     break;
                 case States.PAUSE:
                     FSM_PotInteral.isPaused = false;
                     break;
                 case States.END:
-                   // FSM_PotInteral.Exit();
+                    // FSM_PotInteral.Exit();
                     break;
                 default:
                     break;
@@ -81,8 +80,8 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.RUNNING:
-                    if(currentState==States.INITIAL)
-                    FSM_PotInteral.ReEnter();
+                    if (currentState == States.INITIAL)
+                        FSM_PotInteral.ReEnter();
                     break;
                 case States.PAUSE:
                     FSM_PotInteral.isPaused = true;
@@ -101,5 +100,5 @@ namespace FSM
             currentState = States.INITIAL;
         }
     }
-    
+
 }

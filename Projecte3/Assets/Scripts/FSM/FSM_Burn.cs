@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
-namespace FSM {
-    public class FSM_AlertStates :FiniteStateMachine
+namespace FSM
+{
+    public class FSM_Burn : FiniteStateMachine
     {
-        public enum States { INITIAL, SLOW,NORMAL,FAST,PAUSE, END}
+        public enum States { INITIAL, BURN ,}
         // Use this for initialization
         void Start()
         {

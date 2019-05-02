@@ -7,7 +7,7 @@ namespace FSM
 {
     public class FSM_ShowHideImage : FiniteStateMachine
     {
-        public enum States { INITIAL, SHOW, PAUSE, HIDE, END }
+        public enum States { INITIAL, SHOW, PAUSE, HIDE, END,ENDREPEAT }
         public States currentState;
         public States lastState;
         
@@ -19,7 +19,7 @@ namespace FSM
         //xo tin varies images diferents
         private void Awake()
         {
-
+        
         }
         void Start()
         {
@@ -29,8 +29,12 @@ namespace FSM
         }
         public override void ReEnter()
         {
-            currentState = States.INITIAL;
+            ISHBackBoard = GetComponent<ImageShowHideBlackboard>();
             base.ReEnter();
+        }
+        public void SetStateInitial()
+        {
+            currentState = States.INITIAL;
         }
         public override void Exit()
         {
@@ -77,17 +81,26 @@ namespace FSM
                     {
                         if (!ISHBackBoard.hasRepetition)
                             ChangeState(States.END);
+                        else if (ISHBackBoard.hasRepetition && ISHBackBoard.count > ISHBackBoard.numRepetitions)
+                        {
+                            ChangeState(States.ENDREPEAT);
+                        }
                         else if (ISHBackBoard.hasRepetition && ISHBackBoard.timer > ISHBackBoard.timeHideImage)
                         {
+                            ISHBackBoard.count++;
                             ChangeState(States.SHOW);
                             ISHBackBoard.timer = 0;
                         }
+                        
                     }
                     else
                     {
                         lastState = currentState;
                         ChangeState(States.PAUSE);
                     }
+                    break;
+                case States.ENDREPEAT:
+                   
                     break;
 
                 case States.PAUSE:
@@ -130,6 +143,9 @@ namespace FSM
                 case States.PAUSE:
                     ISHBackBoard.image.enabled = false;
                     break;
+                case States.ENDREPEAT:
+                    currentState = States.INITIAL;
+                    break;
                 default:
                     break;
             }
@@ -145,6 +161,7 @@ namespace FSM
         {
             currentState = States.INITIAL;
             ISHBackBoard.timer = 0;
+            ISHBackBoard.count = 0;
         }
     }
     

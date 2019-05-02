@@ -207,11 +207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a4b49fa032ac43b0ce9524d40d6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeShowImage: 10
+  timeShowImage: 2
   timeHideImage: 0
   timer: 0
   image: {fileID: 0}
-  timeWaitShowImage: 2
+  timeWaitShowImage: 0.5
   hasRepetition: 0
   numRepetitions: 0
   count: 0
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 7040008871505684678}
   - component: {fileID: 98783775}
   - component: {fileID: 141054445592145474}
-  - component: {fileID: 8484926330522273762}
+  - component: {fileID: 824401341}
   m_Layer: 10
   m_Name: PotItemFSM
   m_TagString: Item
@@ -632,7 +632,6 @@ MonoBehaviour:
   cookingBlackbloard: {fileID: 0}
   lastState: 0
   FSM_Alert: {fileID: 0}
-  alertBlackBoard: {fileID: 0}
   FSM_PauseStart: {fileID: 0}
 --- !u!114 &7040008871505684678
 MonoBehaviour:
@@ -680,7 +679,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &8484926330522273762
+--- !u!114 &824401341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -692,6 +691,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815322e558e946a489f40ba2e815311f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerHideSlow: 0.5
+  timerShowSlow: 0.5
+  numRepetitionsSlow: 2
+  timeWaitShowSlow: 0
+  timerHideNormal: 0.25
+  timerShowNormal: 0.25
+  numRepetitionsNormal: 5
+  timeWaitShowNormal: 0
+  timerHideFast: 0.1
+  timerShowFast: 0.1
+  numRepetitionsFast: 10
+  timeWaitShowFast: 0
   HideShowGO: {fileID: 2058711764657948985}
   FSM_ShowHideImage: {fileID: 0}
 --- !u!1 &3075562987096433762

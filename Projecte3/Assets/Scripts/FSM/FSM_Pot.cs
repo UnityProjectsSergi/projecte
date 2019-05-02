@@ -13,7 +13,7 @@ namespace FSM {
         public CookingBlackbloard cookingBlackbloard;
         public States lastState;
         public FSM_Alert FSM_Alert;
-        public AlertBlackBoard alertBlackBoard;
+       
         public FSM_PauseStart FSM_PauseStart;
 
         // Use this for initialization
@@ -23,7 +23,6 @@ namespace FSM {
             potBlackBoard = GetComponent<PotBlackboard>();
             FSM_PauseStart = gameObject.AddComponent<FSM_PauseStart>();
             FSM_PauseStart.enabled = false;
-           
         }
         public override void Exit()
         {

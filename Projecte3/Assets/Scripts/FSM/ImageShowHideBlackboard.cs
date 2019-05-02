@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using FSM;
+using System;
+
 public class ImageShowHideBlackboard : MonoBehaviour
 {
     public float timeShowImage, timeHideImage;
@@ -22,5 +25,13 @@ public class ImageShowHideBlackboard : MonoBehaviour
     void Update()
     {
 
+    }
+
+    internal void SetTimers(float _timeShow,float _timeHide,float _timeWaitShow, int numReapeats)
+    {
+        timeShowImage = _timeShow;
+        timeHideImage = _timeHide;
+        timeWaitShowImage = _timeWaitShow;
+        numRepetitions = numReapeats;
     }
 }
