@@ -43,10 +43,11 @@ namespace FSM
                     ChangeState(States.PROGRESS);
                     break;
                 case States.PROGRESS:
-                    Debug.Log("state progress is pausedProgressbar" + isPausedProgressBar);
+
                     if(!isPaused)
                     {
-                       // ProgressBarBB.itemPot.totalduration
+                        // ProgressBarBB.itemPot.totalduration
+                        
                         ProgressBarBB.percent += 0.1f * Time.deltaTime;
                         if (ProgressBarBB.percent >= 0.99f)
                         {

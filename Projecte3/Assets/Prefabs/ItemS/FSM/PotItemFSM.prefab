@@ -609,7 +609,7 @@ MonoBehaviour:
     m_Bits: 512
   hasStoveUnder: 0
   FSM_Pot: {fileID: 7027492019118329163}
-  currentSlotList: 0
+  currentSlotListCount: 0
   totalDurationOfCooking: 0
   oldSlot: 0
 --- !u!114 &7027492019118329163
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815322e558e946a489f40ba2e815311f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerHideSlow: 0.5
+  timerHideSlow: 5
   timerShowSlow: 0.5
   numRepetitionsSlow: 2
   timeWaitShowSlow: 0

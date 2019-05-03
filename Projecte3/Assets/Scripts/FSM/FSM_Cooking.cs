@@ -75,9 +75,10 @@ namespace FSM
                 case States.DONEOK:
                     if(!isPaused)
                     {
-                        if(cookingBlackbloard.FSM_ShowHideImage.currentState==FSM_ShowHideImage.States.END)
+
+                        if (cookingBlackbloard.FSM_ShowHideImage.currentState==FSM_ShowHideImage.States.END)
                         {
-                            ChangeState(States.END);
+                                ChangeState(States.END);
                         }
                     }
                     else

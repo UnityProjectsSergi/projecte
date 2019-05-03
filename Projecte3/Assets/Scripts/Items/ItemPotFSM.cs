@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,11 @@ public class ItemPotFSM : Item
     public LayerMask layerMask;
     public bool hasStoveUnder;
     public FSM.FSM_Pot FSM_Pot;
-    public int currentSlotList=0;
+    public int currentSlotListCount=0;
     public float totalDurationOfCooking;
     public int oldSlot;
-    
+    public delegate void AddItemPot();
+    public bool addItem;
 
     //  public  ItemPotStateIngredients currentStatePot;
     private void Awake()
@@ -35,6 +37,7 @@ public class ItemPotFSM : Item
     {
         
         listItem = new List<Item>();
+   
         
         potUi.StartUiPot();
         itemType = ItemType.Pot;
@@ -44,14 +47,17 @@ public class ItemPotFSM : Item
     public void LeaveObjIn(Item item)
     {
         // if currentSlot if liist is minor than ui cout list
-        if (currentSlotList < potUi.listUIItems.Count) 
+        if (currentSlotListCount < potUi.listUIItems.Count) 
         {
             Debug.Log("add item");
+            if (currentSlotListCount > 1)
+                addItem = true;
             listItem.Add(item);
             // set items on ui
-            potUi.SetItemOnUISlot(currentSlotList,item);
+            potUi.SetItemOnUISlot(currentSlotListCount,item);
             // increment currentSlotInlIst 
-            currentSlotList++;
+            currentSlotListCount++;
+          
             //Save Duraton of ing
             duration = item.duration;
         }
@@ -63,7 +69,7 @@ public class ItemPotFSM : Item
         listItem.Clear();
         potUi.ResetUI();
         FSM_Pot.Reset();
-        currentSlotList = 0;
+        currentSlotListCount = 0;
     }
     public bool CheckIsCookedIng()
     {
@@ -74,12 +80,13 @@ public class ItemPotFSM : Item
     {
         DetectIfStoveIsUnder();
         // si he affegit Ingredient a l llista
-        if (currentSlotList != oldSlot)
+        if (currentSlotListCount != oldSlot)
         {
+            Debug.Log("addditemopot");
             // add duration to totalduration of ing
             totalDurationOfCooking += duration;
         }
-        oldSlot = currentSlotList;
+        oldSlot = currentSlotListCount;
     }
     public void DetectIfStoveIsUnder()
     {

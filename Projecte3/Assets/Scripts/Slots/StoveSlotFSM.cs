@@ -7,14 +7,21 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Assets.Scripts.ObjPooler;
 using UnityEngine.UI;
+using System.Collections;
 // Fogon
 public class StoveSlotFSM : Slot
 {
-    // el foc
+    public GameObject FireBurnPot;
     public bool hasPassIngToVial;
     public bool ShowSlotsInUI;
     // get ItemPot from ItemPotPool.
-
+    public void setFireStoveFromPot()
+    {
+        if(FireBurnPot!=null)
+        {
+            FireBurnPot.gameObject.SetActive(true);
+        }
+    }
     public void Start()
     {
         item = PotPoolFSM.Instance.GetObjFromPool(positionObjOn);
@@ -45,9 +52,9 @@ public class StoveSlotFSM : Slot
 
                         if (itempot.listItem.Count < itempot.potUi.listUIItems.Count)
                         {
+                            if (itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.PAUSERUNNING || itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.EMPTY) { 
                           //  if (itempot.currentStatePot != ItemPotStateIngredients.Burning || itempot.currentStatePot != ItemPotStateIngredients.BurnedToTrash)
                             //{
-                         
                                 //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  
                                 itempot.LeaveObjIn(ItemClonIngredient);
 
@@ -64,24 +71,25 @@ public class StoveSlotFSM : Slot
                                     Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
                                 // flag xq no pugui afegir 2 cops els igredients
                                 hasPassIngToVial = false;
-                          //  }
+                            }
                         }
                     }
                 }
                 else if (itemPlayer.itemType == ItemType.Vial)
                 {
                     ItemPotFSM ItemPot = item.GetComponent<ItemPotFSM>();
-                   // if ((ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone) && !hasPassIngToVial)
-                    //{
+                    //x pantalla esmostra Matrix4x4 pantalla
+                    if (ItemPot.FSM_Pot.currentState != FSM.FSM_Pot.States.BURN)
+                    {
                         player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
                         ItemPot.ResetPot();
-                        hasPassIngToVial = true;
-                    //}
-                    //else
-                    //{
-                        //Todo ErrorOnScreen
-
-                    //}
+                        hasPassIngToVial = true;  
+                    }
+                    else
+                    {
+                        StartCoroutine(TextWide(5f, "Need to go trash"));
+                    }
+                    
                 }
             }
         }
@@ -99,10 +107,10 @@ public class StoveSlotFSM : Slot
     }
     public override void Catch(CharacterControllerAct player)
     {
-        Debug.Log("ssss");
+
         if (player.attachedObject == null)
         {
-            Debug.Log("catch");
+      
             base.Catch(player);
         }
 
@@ -116,6 +124,12 @@ public class StoveSlotFSM : Slot
     {
         return true;
     }
-
+    private Text text;
+    public IEnumerator TextWide(float num, string textO)
+    {
+        text.text = textO;
+        yield return new WaitForSeconds(num);
+        text.text = "";
+    }
 }
 

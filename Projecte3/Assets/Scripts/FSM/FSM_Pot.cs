@@ -48,7 +48,7 @@ namespace FSM {
                     //Empty
                     case States.EMPTY:
                         // Si list item Of Pot has 1 o + elements
-                        if (itemPot.listItem.Count > 0)
+                        if (itemPot.listItem.Count > itemPot.potUi.listUIItems.Count)
                             // Changestate to Cooking FSMInteral
                             ChangeState(States.PAUSERUNNING);
                         break;

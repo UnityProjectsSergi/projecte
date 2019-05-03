@@ -47,8 +47,9 @@ namespace FSM
                 case States.SLOW:
                     if (!isPaused)
                     {
+
                         if (AlertBlackBoard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.ENDREPEAT)
-                            ChangeState(States.NORMAL);
+                        ChangeState(States.NORMAL);
                     }
                     else
                     {
