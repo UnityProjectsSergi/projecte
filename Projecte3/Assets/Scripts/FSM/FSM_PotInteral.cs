@@ -93,17 +93,7 @@ namespace FSM {
                     if (!isPaused)
                     {
                         Debug.Log("ssssssssalert");
-                        if(itemPot.listItem.Count>1 && itemPot.addItem)
-                        {
-                            Debug.Log("ssssssss cook");
-                            ChangeState(States.COOKING);
-                            itemPot.addItem = false;
-                        }
-                        if (itemPot.currentSlotListCount != itemPot.oldSlot)
-                        {
-                            Debug.Log("chagestate when add item on alert");
-                            ChangeState(States.COOKING);
-                        }
+                     
                     
                         if (FSM_Alert.currentState==FSM_Alert.States.END)
                        // if (potBlackBoard.journey >= itemPot.totalDurationOfCooking + potBlackBoard.timeToAlert)
@@ -208,6 +198,8 @@ namespace FSM {
             currentState = States.INITIAL;
             FSM_Alert.Reset();
             FSM_Cooking.Reset();
+            FSM_Cooking.Exit();
+            FSM_Alert.Exit();
         }
     }
 }

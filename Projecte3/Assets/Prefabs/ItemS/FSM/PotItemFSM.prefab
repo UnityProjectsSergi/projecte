@@ -215,6 +215,7 @@ MonoBehaviour:
   hasRepetition: 0
   numRepetitions: 0
   count: 0
+  mustStay: 0
 --- !u!1 &2058711764104996478
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +227,7 @@ GameObject:
   - component: {fileID: 2058711764104996479}
   - component: {fileID: 7082305294945683605}
   - component: {fileID: 7374278670595521591}
+  - component: {fileID: 2084928196}
   m_Layer: 5
   m_Name: burn
   m_TagString: Untagged
@@ -289,6 +291,27 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &2084928196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058711764104996478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196a4b49fa032ac43b0ce9524d40d6cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeShowImage: 0
+  timeHideImage: 0
+  timer: 0
+  image: {fileID: 0}
+  timeWaitShowImage: 0
+  hasRepetition: 0
+  numRepetitions: 0
+  count: 0
+  mustStay: 1
 --- !u!1 &2058711764657948985
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +407,7 @@ MonoBehaviour:
   hasRepetition: 1
   numRepetitions: 0
   count: 0
+  mustStay: 0
 --- !u!1 &2058711764658268898
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +636,7 @@ MonoBehaviour:
   currentSlotListCount: 0
   totalDurationOfCooking: 0
   oldSlot: 0
+  addItem: 0
 --- !u!114 &7027492019118329163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +672,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   journey: 0
   timeToAlert: 10
+  GOIMGBURN: {fileID: 2058711764104996478}
+  fSM_IMAGE: {fileID: 0}
 --- !u!114 &98783775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815322e558e946a489f40ba2e815311f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerHideSlow: 5
+  timerHideSlow: 0.5
   timerShowSlow: 0.5
   numRepetitionsSlow: 2
   timeWaitShowSlow: 0

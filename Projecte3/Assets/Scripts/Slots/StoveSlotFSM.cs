@@ -14,6 +14,7 @@ public class StoveSlotFSM : Slot
     public GameObject FireBurnPot;
     public bool hasPassIngToVial;
     public bool ShowSlotsInUI;
+    public int numIngOfPot;
     // get ItemPot from ItemPotPool.
     public void setFireStoveFromPot()
     {
@@ -25,7 +26,8 @@ public class StoveSlotFSM : Slot
     public void Start()
     {
         item = PotPoolFSM.Instance.GetObjFromPool(positionObjOn);
-        item.GetComponent<ItemPotFSM>().ShowSlotsIngEmpty = ShowSlotsInUI;
+        item.GetComponent<ItemPotFSM>().Init(ShowSlotsInUI, numIngOfPot);
+        
         item.transform.parent = transform;
     }
     public override void LeaveObjOn(CharacterControllerAct player)

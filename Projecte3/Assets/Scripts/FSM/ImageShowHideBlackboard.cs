@@ -13,6 +13,7 @@ public class ImageShowHideBlackboard : MonoBehaviour
     public bool hasRepetition;
     public int numRepetitions;
     public int count;
+    public bool mustStay;
     // Use this for initialization
     void Start()
     {

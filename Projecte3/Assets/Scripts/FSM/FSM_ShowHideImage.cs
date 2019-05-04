@@ -47,8 +47,11 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
+                    if (ISHBackBoard.mustStay)
+                        ChangeState(States.SHOW);
                     if (!isPaused)
                     {
+                     
                         if (ISHBackBoard.timer > ISHBackBoard.timeWaitShowImage)
                         {
                             ChangeState(States.SHOW);
@@ -62,13 +65,19 @@ namespace FSM
                     }
                     break;
                 case States.SHOW:
+                    if (ISHBackBoard.mustStay)
+                    {
+                        ChangeState(States.SHOW);
+                    }
                     if (!isPaused)
                     {
+                        
                         if (ISHBackBoard.timer > ISHBackBoard.timeShowImage)
                         {
                             ChangeState(States.HIDE);
                             ISHBackBoard.timer = 0;
                         }
+                        
                     }
                     else
                     {
@@ -91,7 +100,7 @@ namespace FSM
                             ChangeState(States.SHOW);
                             ISHBackBoard.timer = 0;
                         }
-                        
+                       
                     }
                     else
                     {
@@ -153,16 +162,23 @@ namespace FSM
         }
         public void UpdateProgress()
         {
-            if (!isPaused)
-                ISHBackBoard.timer += Time.deltaTime;
+            if (!ISHBackBoard.mustStay)
+            {
+                if (!isPaused)
+                    ISHBackBoard.timer += Time.deltaTime;
+            }
         }
 
         internal void Reset()
         {
+         
             currentState = States.INITIAL;
+            ISHBackBoard.image.enabled = false;
             ISHBackBoard.timer = 0;
             ISHBackBoard.count = 0;
+            Exit();
         }
+
     }
     
 }

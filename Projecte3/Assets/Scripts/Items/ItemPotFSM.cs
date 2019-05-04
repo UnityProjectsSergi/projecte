@@ -42,7 +42,11 @@ public class ItemPotFSM : Item
         potUi.StartUiPot();
         itemType = ItemType.Pot;
     }
-    
+    public void Init(bool showSlotsInUI, int numIngOfPot)
+    {
+        ShowSlotsIngEmpty = showSlotsInUI;
+        NumIngedientsOfPot = numIngOfPot;
+    }  
   
     public void LeaveObjIn(Item item)
     {
@@ -50,8 +54,7 @@ public class ItemPotFSM : Item
         if (currentSlotListCount < potUi.listUIItems.Count) 
         {
             Debug.Log("add item");
-            if (currentSlotListCount > 1)
-                addItem = true;
+          
             listItem.Add(item);
             // set items on ui
             potUi.SetItemOnUISlot(currentSlotListCount,item);

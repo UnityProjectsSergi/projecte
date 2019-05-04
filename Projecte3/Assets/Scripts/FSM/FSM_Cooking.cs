@@ -134,7 +134,9 @@ namespace FSM
                     break;
                 case States.DONEOK:
                     if (currentState == States.COOKING)
+
                         cookingBlackbloard.FSM_ShowHideImage.ReEnter();
+
 
                     break;
                 default:
@@ -147,7 +149,9 @@ namespace FSM
         {
             currentState = States.INITIAL;
             cookingBlackbloard.progressBar.Reset();
+            cookingBlackbloard.progressBar.Exit();
             cookingBlackbloard.FSM_ShowHideImage.Reset();
+            cookingBlackbloard.FSM_ShowHideImage.Exit();
         }
     }
 }

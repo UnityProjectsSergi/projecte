@@ -36,7 +36,6 @@ namespace Assets.Scripts.Slots
                     Debug.Log("orderc check" + check);
                     if (check)
                     {
-
                         StartCoroutine(TextWide(5f, "Order get"));
                     }
                     else

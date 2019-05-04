@@ -8,12 +8,12 @@ namespace FSM {
         public States currentState;
         public ItemPotFSM itemPot;
         public GameObject CookingFSMGO;
-        private FSM_Cooking FSM_Cooking;
+    
         public PotBlackboard potBlackBoard;
         public CookingBlackbloard cookingBlackbloard;
         public States lastState;
         public FSM_Alert FSM_Alert;
-       
+        
         public FSM_PauseStart FSM_PauseStart;
 
         // Use this for initialization
@@ -48,7 +48,7 @@ namespace FSM {
                     //Empty
                     case States.EMPTY:
                         // Si list item Of Pot has 1 o + elements
-                        if (itemPot.listItem.Count > itemPot.potUi.listUIItems.Count)
+                        if (itemPot.listItem.Count == itemPot.potUi.listUIItems.Count)
                             // Changestate to Cooking FSMInteral
                             ChangeState(States.PAUSERUNNING);
                         break;
@@ -82,6 +82,7 @@ namespace FSM {
                     FSM_PauseStart.Exit();
                     break;
                 case States.BURN:
+
                     break;
                    
                     
@@ -100,6 +101,7 @@ namespace FSM {
                     FSM_PauseStart.ReEnter();
                     break;
                 case States.BURN:
+                    potBlackBoard.fSM_IMAGE.ReEnter();
                     break;
                 default:
                     break;
@@ -116,6 +118,12 @@ namespace FSM {
             potBlackBoard.journey = 0;
             currentState = States.INITIAL;
             FSM_PauseStart.Reset();
+            FSM_PauseStart.Exit();
+
+          
+            potBlackBoard.fSM_IMAGE.Reset();
+            potBlackBoard.fSM_IMAGE.Exit();
+            
         }
     }
 }
