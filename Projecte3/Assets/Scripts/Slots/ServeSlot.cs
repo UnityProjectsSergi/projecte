@@ -12,12 +12,14 @@ namespace Assets.Scripts.Slots
 {
     public  class ServeSlot:Slot
     {
+        public GameObject textGO;
+        private Text text;
+
         public void Start()
         {
             text = textGO.GetComponent<Text>();
         }
-        public GameObject    textGO;
-        private Text text;
+
         public override void LeaveObjOn(CharacterControllerAct player)
         {
             if (!hasObjectOn)
@@ -28,11 +30,12 @@ namespace Assets.Scripts.Slots
                 if (item.itemType==ItemType.Vial)
                 {
                     VialItem vialItem = item.GetComponent<VialItem>();
-                       Debug.Log("es vial");
+                    
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
-                    if (OrderManager.Instance.CheckAllOrder(vialItem))
+                    bool check = OrderManager.Instance.CheckAllOrder(vialItem);
+                    Debug.Log("orderc check" + check);
+                    if (check)
                     {
-
                         StartCoroutine(TextWide(5f, "Order get"));
                     }
                     else
@@ -41,7 +44,9 @@ namespace Assets.Scripts.Slots
                     }
                     vialItem.ResetVial();
                     base.LeaveObjOn(player);
+                    vialItem.ResetMaterial();
                     VialPool.Instance.ReturnToPool(vialItem);
+                    hasObjectOn = false;
                 }
                 else
                 {

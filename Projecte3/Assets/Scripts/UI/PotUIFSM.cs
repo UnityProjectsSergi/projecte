@@ -22,15 +22,15 @@ public class PotUIFSM : MonoBehaviour
     public void StartUiPot()
     {
         ItemPot = transform.parent.GetComponent<ItemPotFSM>();
-        Debug.Log(ItemPot.NumIngedientsOfPot);
+
         for (int i = 0; i < ItemPot.NumIngedientsOfPot; i++)
         {
             
             GameObject ingPot = Instantiate(ItemPotUIPrefab);
             listUIItems.Add(ingPot.GetComponent<ItemUIPot>());
-            Debug.Log("Add UI item");
-            if (ItemPot.ShowSlotsIngEmpty)
-                ingPot.GetComponent<ItemUIPot>().showWhenIsEmpty = true;
+        
+            
+            ingPot.GetComponent<ItemUIPot>().showWhenIsEmpty = ItemPot.ShowSlotsIngEmpty;
             ingPot.GetComponent<ItemUIPot>().setDefault();
             ingPot.transform.SetParent(ListIng.transform);
         }
@@ -44,10 +44,7 @@ public class PotUIFSM : MonoBehaviour
    
     public void SetItemOnUISlot(int num,Item item)
     {
-       
-            listUIItems[num].SetSpriteFromImgredient(item.GetComponent<Renderer>().material);
-            
-        
+        listUIItems[num].SetSpriteFromImgredient(item.GetComponent<Renderer>().material);       
     }
     public void ResetUI()
     {

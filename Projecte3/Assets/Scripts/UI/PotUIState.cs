@@ -40,14 +40,15 @@ public class PotUIState : MonoBehaviour
             {
                 ProgressBar.gameObject.SetActive(true);
                 percentCook = Mathf.Clamp01(journey / totalduration);
-                Debug.Log(percentCook + "percent   fillamount: " + ProgressBar.fillAmount + " juourney " + journey);
+                //Debug.Log(percentCook + "percent   fillamount: " + ProgressBar.fillAmount + " juourney " + journey);
                 ProgressBar.fillAmount = percentCook;
-                if (ProgressBar.fillAmount >= 1.0f)
+                if (ProgressBar.fillAmount >= 0.999f)
                 {
                     ProgressBar.gameObject.SetActive(false);
-                    Debug.Log("buen ththe stove");
-                    StartCoroutine(ShowImageOK(3f, CookedOk));
+                  
                     PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
+                    StartCoroutine(ShowImageOK(0.1f, CookedOk));
+                 
                 }
             }
             else
@@ -61,8 +62,8 @@ public class PotUIState : MonoBehaviour
                         alertTimer -= Time.deltaTime;
                         if (alertTimer >= 0.0f)
                         {
-                            Debug.Log("show image alert");
-                            StartCoroutine(ShowImageAlert(3f, AlertBurn));
+                         
+                            StartCoroutine(ShowImageAlert(6f, AlertBurn));
                             PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
                         }
                     }
@@ -111,20 +112,14 @@ public class PotUIState : MonoBehaviour
    
    public void StopCooking()
     {
-        StartCookingBool = false;
-    
-      
+        StartCookingBool = false;     
     }
     public IEnumerator ShowImageOK(float wait,Image image)
     {
         image.gameObject.SetActive(true);
         yield return new WaitForSeconds(wait);
         StartTimerAlrert = true;    
-        image.gameObject.SetActive(false);
-        
-       
-
-
+        image.gameObject.SetActive(false);       
     }
     public IEnumerator ShowImageFire(float wait, Image image)
     {
@@ -141,9 +136,6 @@ public class PotUIState : MonoBehaviour
         yield return new WaitForSeconds(wait);
         StartBuringBool = true; 
         image.gameObject.SetActive(false);
-
-
-
     }
     public void StartBurning()
     {

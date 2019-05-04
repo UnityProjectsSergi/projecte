@@ -56,7 +56,7 @@ public class CharaterControllerMod : MonoBehaviour
         if (playerInput == null)
             Debug.LogError("Controlleer" + playercontroller + "not connected");
         Move();
-        ColliderFlags();
+    //    ColliderFlags();
         ActivateDash();
    
     }

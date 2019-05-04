@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Assets.Scripts.ObjPooler;
+﻿using Assets.Scripts.ObjPooler;
+using UnityEngine;
+
 namespace Assets.Scripts
 {
     public  class GarbageSlot:Slot
@@ -19,19 +16,27 @@ namespace Assets.Scripts
                     {
                         player.attachedObject = null;
                         item.transform.parent = null;
+                        item.transform.localScale = new Vector3(0.85f,0.85f,0.85f);
                         Ingredient2Pool.Instance.ReturnToPool((Ingredient2)item);
                     }
                     else
                     {
                         player.attachedObject = null;
                         item.transform.parent = null;
+                        item.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
                         Ing1Pool.Instance.ReturnToPool((Ing11)item);
                     }
                 }
                 else if(item.itemType==ItemType.Pot)
                 {
                     ItemPot itemPot = item.GetComponent<ItemPot>();
-                    itemPot.ResetPot();
+                    if (itemPot)
+                        itemPot.ResetPot();
+                    else
+                    {
+                        ItemPotFSM itemPotfs = item.GetComponent<ItemPotFSM>();
+                        itemPotfs.ResetPot();
+                    }
                 }
             }          
         }

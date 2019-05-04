@@ -29,10 +29,10 @@ public abstract class Slot :MonoBehaviour
   
     public virtual void LeaveObjOn(CharacterControllerAct player)
     {
-        Debug.Log("leave");
+
         if (!hasObjectOn)
         {
-            Debug.Log("leveit");
+    
             hasObjectOn = true;
             player.attachedObject.GetComponent<Rigidbody>().isKinematic = true;
             player.attachedObject.transform.parent = positionObjOn.transform;

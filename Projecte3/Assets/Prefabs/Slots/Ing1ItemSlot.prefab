@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3322026009202144549}
   - component: {fileID: 3322026009201178597}
   - component: {fileID: 2259913647178441357}
+  - component: {fileID: 8194184523730018045}
   m_Layer: 9
   m_Name: Ing1ItemSlot
   m_TagString: Slot
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3322026009203173669}
-  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.5912085, y: -11.320473, z: 1.3158114}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -96,6 +97,19 @@ MonoBehaviour:
   hasObjectOn: 0
   itemPrefab: {fileID: 4019033098300839940, guid: 6f50ba9d2ede8054b8c1e6377f300bcd,
     type: 3}
+--- !u!65 &8194184523730018045
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322026009203173669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8, z: 1}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &4149978501888264318
 GameObject:
   m_ObjectHideFlags: 0
