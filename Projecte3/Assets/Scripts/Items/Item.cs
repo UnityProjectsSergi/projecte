@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
-
+using Assets.Scripts.InputSystem;
 [System.Serializable]
 public  class Item : MonoBehaviour
 {
+    [Header("Hability variables")]
+    public float levitationAmplitude;
+    public bool isHabilityOn;
+    public LayerMask layerSlot;
+    public bool hasDeacactivateLevitation;
     [Header("Item Variables")]
     public ItemUiType ing;
     public ItemType itemType;
@@ -74,6 +79,63 @@ public  class Item : MonoBehaviour
             yield return null;
         }
     }
-  
+   
+    private void Update()
+    {
+        if(!isHabilityOn && hasDeacactivateLevitation)
+        {
+            RaycastHit hit;
+            Debug.Log("ssaaaa");
+            if (Physics.Raycast(transform.position,-transform.up,out hit,2f,layerSlot))
+            {
+               
+                Slot slot = hit.collider.gameObject.GetComponent<Slot>();
+                if (slot)
+                {
+
+                    if (!slot.hasObjectOn && transform.parent)
+                    {
+                        
+                        slot.LeaveObjOn(transform.parent.parent.GetComponent<CharacterControllerAct>());
+                    }
+                }
+                else
+                {
+                    Debug.Log("ssssss");
+                    if (transform.parent)
+                    {
+                        transform.parent.parent.GetComponent<CharacterControllerAct>().LeaveObjOn();
+                        
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("sssmsss");
+                if (transform.parent)
+                {
+                    transform.parent.parent.GetComponent<CharacterControllerAct>().LeaveObjOn();
+
+                }
+            }
+            hasDeacactivateLevitation = false;
+        }
+    }
+    
+    public void ActivateDeactivateItemPlayerControler(bool isActive,int controller,PlayerInput playerInput)
+    {
+        isHabilityOn = isActive;
+        if (!isActive)
+            hasDeacactivateLevitation = true;
+        GetComponent<CharaterControllerMod>().enabled = isActive;
+        GetComponent<CharacterController>().enabled = isActive;
+        GetComponent<CharaterControllerMod>().playerInput = playerInput;
+       
+        GetComponent<CharaterControllerMod>().playercontroller = controller;
+        if(playerInput!=null)
+        GetComponent<CharaterControllerMod>().setplayerinptu();
+
+    }
+   
 }
 

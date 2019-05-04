@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 4059239846100790047}
   - component: {fileID: 4059239846100790044}
   - component: {fileID: 4059239846100790045}
-  - component: {fileID: 4059239846100790042}
   - component: {fileID: 4059239846100790043}
   - component: {fileID: 4059239846100790040}
   - component: {fileID: 6687023225957883944}
@@ -191,29 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d995798edf98fcc4dbd836d6ff98811a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftHoritzontalAxis: 
-  _leftVerticalAxis: 
-  _rightHoritzontalAxis: 
-  _rightVerticalAxis: 
-  _platformCtrl: 
-  _settingsBtn: 
-  _startBtn: 
-  _shareBtn: 
-  _triangleBtn: 
-  _squareBtn: 
-  _XBtn: 
-  _OBtn: 
-  _touchpadBtn: 
-  _rightStickClick: 
-  _leftStickClick: 
-  _R2Btn: 
-  _R1Btn: 
-  _L1Btn: 
-  _L2Btn: 
-  _L2Axis: 
-  _R2Axis: 
-  _dPadHorizontal: 
-  _dPadVertical: 
   settingsBtn:
     Hold: 0
     Down: 0
@@ -309,29 +285,6 @@ CharacterController:
   m_SkinWidth: 0.05
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4059239846100790042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4059239846100790041}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05851d176cdfb1c4c89408505a1af33c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultParameters:
-    dashVelocityMultiplier: 3
-    currentVelocity: 5
-    normalVelocity: 5
-    rotationSpeed: 50
-  playerInput: {fileID: 4059239846100790044}
-  m_GravityMultiplier: 3.7
-  Direction: {x: 0, y: 0, z: 0}
-  gravity: {x: 0, y: -27, z: 0}
-  playercontroller: 2
-  l_CollisionFlags: 0
 --- !u!114 &4059239846100790043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1235f59da75aa44ea7ad214956ed151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  habilityType: 0
   attachTransform: {fileID: 4059239846494751087}
   tablesLayerMask:
     serializedVersion: 2
@@ -352,6 +306,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   raycastTransform: {fileID: 4059239846154456533}
+  hability: {fileID: 0}
   attachedObject: {fileID: 0}
 --- !u!114 &4059239846100790040
 MonoBehaviour:
@@ -380,7 +335,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 4059239846100790044}
   Speed: 5
-  JumpHeight: 2
   Gravity: -9.81
   GroundDistance: 0.1
   DashDistance: 5

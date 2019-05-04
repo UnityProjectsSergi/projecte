@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6064315599331067958}
   - component: {fileID: 7571144157072600}
   - component: {fileID: 5396178865576082691}
+  - component: {fileID: 4180252413433714762}
+  - component: {fileID: 2859497979835090988}
   m_Layer: 10
   m_Name: VialItem
   m_TagString: Item
@@ -47,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0dc9ea9e0f66d48b4b45657e831455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levitationAmplitude: 0
+  isHabilityOn: 0
   ing: 0
   itemType: 1
   points: 0
@@ -56,6 +60,10 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
+  layerSlot:
+    serializedVersion: 2
+    m_Bits: 512
+  hasDeacactivateLevitation: 0
   listItem: []
   vial: {fileID: 4237300646317215325}
   fullMaterial: {fileID: 2100000, guid: d0c0535a26df87849874ac6e40f20a35, type: 2}
@@ -100,6 +108,46 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!143 &4180252413433714762
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838058373574948668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2859497979835090988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838058373574948668}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05851d176cdfb1c4c89408505a1af33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
+  playerInput: {fileID: 0}
+  m_GravityMultiplier: 3.7
+  amplitud: 0
+  frequenia: 0
+  Direction: {x: 0, y: 0, z: 0}
+  gravity: {x: 0, y: 0, z: 0}
+  playercontroller: 0
+  l_CollisionFlags: 0
+  speed: 2
 --- !u!1 &4237300646317215325
 GameObject:
   m_ObjectHideFlags: 0

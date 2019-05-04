@@ -6,22 +6,23 @@ using UnityEngine;
 
 public class CharaterControllerMod : MonoBehaviour
 {
-   
-    CharacterController characterController;
+   [HideInInspector]
+  public  CharacterController characterController;
     Camera m_MainCamera;
-    public ControllerParameters DefaultParameters;
+ 
     public PlayerInput playerInput;
 
     public float m_GravityMultiplier = 3.7f;
     float m_VerticalSpeed = 0.0f;
     bool onGround = false;
-    public ControllerParameters Parameters { get { return _overrideParameters ?? DefaultParameters; } }
+    public float amplitud, frequenia;
    
     public Vector3 Direction, gravity;
     public int playercontroller;
     public CollisionFlags l_CollisionFlags;
-    private ControllerParameters _overrideParameters;
-    private bool dashActive;
+
+ 
+    public float speed;
 
     /// <summary>
     /// says if isMoving or not
@@ -36,7 +37,7 @@ public class CharaterControllerMod : MonoBehaviour
         Vector3.RotateTowards(
             transform.forward,
             Direction,
-            Parameters.rotationSpeed* Time.deltaTime,
+            speed* Time.deltaTime,
             0);
 
     private void Start()
@@ -45,56 +46,48 @@ public class CharaterControllerMod : MonoBehaviour
         GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
 
         characterController = GetComponent<CharacterController>();
-        playerInput = GetComponent<PlayerInput>();
-        if (playerInput == null)
-            Debug.LogError("Controlleer" + playercontroller + "not connected");
+       
+       
+    }
+  
+    public void setplayerinptu()
+    {
         playerInput.SetControllerNumber(playercontroller, "PS4");
     }
-
     void Update()
     {
-        if (playerInput == null)
-            Debug.LogError("Controlleer" + playercontroller + "not connected");
+     if(playerInput!=null)
         Move();
-    //    ColliderFlags();
-        ActivateDash();
+
+       
    
     }
 
-    public void ActivateDash()
-    {
-        if (playerInput.OBtn.Down)
-            StartCoroutine(Dash(2f));
-    }
-
-    IEnumerator Dash(float duration)
-    {
-        dashActive = true;
-        yield return new WaitForSeconds(duration);
-        dashActive = false;
-    }
+   
+  
 
     public void Move()
     {
         //GravityController();
         MovementHorizontal();
 
-        if (dashActive)
-            Parameters.currentVelocity = Parameters.normalVelocity*Parameters.dashVelocityMultiplier;
-        else
-            Parameters.currentVelocity = Parameters.normalVelocity;
+  
         
         //l_CollisionFlags = characterController.Move(Direction *Parameters.currentVelocity* Time.deltaTime);
     }
-
+    private void OnEnable()
+    {
+        characterController = GetComponent<CharacterController>();
+        playerInput = GetComponent<PlayerInput>();
+    }
     private void MovementHorizontal()
     {
-        Direction = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
+        Direction = new Vector3(playerInput.LeftStick.Horizontal, Mathf.Sin(Time.fixedTime * Mathf.PI * frequenia) * amplitud, playerInput.LeftStick.Vertical);
      //   Direction += graity;
         if (!IsMoving) {  return; }
         Direction.Normalize();
-        transform.rotation = Rotation;
-        characterController.Move(Direction * Parameters.currentVelocity * Time.deltaTime);
+      //  transform.rotation = Rotation;
+        characterController.Move(Direction * speed* Time.deltaTime);
     }
 
     void GravityController()

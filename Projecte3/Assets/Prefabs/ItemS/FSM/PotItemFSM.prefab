@@ -504,6 +504,8 @@ GameObject:
   - component: {fileID: 98783775}
   - component: {fileID: 141054445592145474}
   - component: {fileID: 824401341}
+  - component: {fileID: 8056843302709748429}
+  - component: {fileID: 6177130037929418716}
   m_Layer: 10
   m_Name: PotItemFSM
   m_TagString: Item
@@ -614,6 +616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7f7f130ac11734aad1fe26cf481500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levitationAmplitude: 0
+  isHabilityOn: 0
   ing: 0
   itemType: 0
   points: 0
@@ -623,6 +627,10 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
+  layerSlot:
+    serializedVersion: 2
+    m_Bits: 0
+  hasDeacactivateLevitation: 0
   NumIngedientsOfPot: 2
   ShowSlotsIngEmpty: 1
   listItem: []
@@ -732,6 +740,46 @@ MonoBehaviour:
   timeWaitShowFast: 0
   HideShowGO: {fileID: 2058711764657948985}
   FSM_ShowHideImage: {fileID: 0}
+--- !u!143 &8056843302709748429
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356859938089687660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5000001
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6177130037929418716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356859938089687660}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05851d176cdfb1c4c89408505a1af33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
+  playerInput: {fileID: 0}
+  m_GravityMultiplier: 3.7
+  amplitud: 0
+  frequenia: 0
+  Direction: {x: 0, y: 0, z: 0}
+  gravity: {x: 0, y: 0, z: 0}
+  playercontroller: 0
+  l_CollisionFlags: 0
+  speed: 0
 --- !u!1 &3075562987096433762
 GameObject:
   m_ObjectHideFlags: 0

@@ -616,6 +616,8 @@ GameObject:
   - component: {fileID: 5404493371187664788}
   - component: {fileID: 905029988465352993}
   - component: {fileID: 2118700857527442720}
+  - component: {fileID: 7213593257549215649}
+  - component: {fileID: 8720553752030505140}
   m_Layer: 10
   m_Name: PotItem
   m_TagString: Untagged
@@ -696,6 +698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d3c39df543a5b47bae6cdb9637bb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levitationAmplitude: 0
+  isHabilityOn: 0
   ing: 0
   itemType: 0
   points: 0
@@ -705,6 +709,10 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
+  layerSlot:
+    serializedVersion: 2
+    m_Bits: 0
+  hasDeacactivateLevitation: 0
   NumIngedientsOfPot: 3
   ShowSlotsIngEmpty: 1
   listItem: []
@@ -757,6 +765,46 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!143 &7213593257549215649
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334500036433946894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5000001
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8720553752030505140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334500036433946894}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05851d176cdfb1c4c89408505a1af33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
+  playerInput: {fileID: 0}
+  m_GravityMultiplier: 3.7
+  amplitud: 0
+  frequenia: 0
+  Direction: {x: 0, y: 0, z: 0}
+  gravity: {x: 0, y: 0, z: 0}
+  playercontroller: 0
+  l_CollisionFlags: 0
+  speed: 0
 --- !u!1 &6294311981473067183
 GameObject:
   m_ObjectHideFlags: 0
