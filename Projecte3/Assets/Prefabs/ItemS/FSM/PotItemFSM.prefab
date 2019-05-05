@@ -405,7 +405,7 @@ Transform:
   m_GameObject: {fileID: 2058711764658268898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.2, z: 0.7}
   m_Children: []
   m_Father: {fileID: 8038790729733618473}
   m_RootOrder: 1
@@ -565,6 +565,8 @@ MonoBehaviour:
   totalDurationOfCooking: 0
   oldSlot: 0
   addItem: 0
+  FireIntensity: 1
+  descresesFireIntensity: 0.01
 --- !u!114 &7027492019118329163
 MonoBehaviour:
   m_ObjectHideFlags: 0

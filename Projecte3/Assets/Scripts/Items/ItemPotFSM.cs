@@ -100,23 +100,29 @@ public class ItemPotFSM : Item
     public void DetectIfStoveIsUnder()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up * 0.3f, out hit, layerMask))
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 0.25f,layerMask))
         {
             StoveSlotFSM slot = hit.collider.gameObject.GetComponent<StoveSlotFSM>();
             if (slot && listItem.Count > 0)
             {
                 hasStoveUnder = true;
-
+                //if (transform.parent.parent.GetComponent<StoveSlotFSM>())
+                //    hasStoveUnder = true;
+                //else
+                //    hasStoveUnder = false;
             }
             else
             {
                 hasStoveUnder = false;
             }
         }
+        else
+            hasStoveUnder = false;
+
     }
     public void OnDrawGizmos()
     {
-        Gizmos.DrawRay(transform.position, -transform.up * 0.3f);
+        Gizmos.DrawRay(transform.position, -transform.up * 0.25f);
     }
 
 }

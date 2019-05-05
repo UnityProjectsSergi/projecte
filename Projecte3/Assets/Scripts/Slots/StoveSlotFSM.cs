@@ -28,7 +28,7 @@ public class StoveSlotFSM : Slot
         item = PotPoolFSM.Instance.GetObjFromPool(positionObjOn);
         item.GetComponent<ItemPotFSM>().Init(ShowSlotsInUI, numIngOfPot);
         
-        item.transform.parent = transform;
+        item.transform.parent = positionObjOn.transform;
     }
     public override void LeaveObjOn(CharacterControllerAct player)
     {

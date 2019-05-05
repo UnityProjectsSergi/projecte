@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 4059239846100790043}
   - component: {fileID: 4059239846100790040}
   - component: {fileID: 6687023225957883944}
+  - component: {fileID: 2046403930999699546}
   m_Layer: 0
   m_Name: Player1Dash
   m_TagString: Untagged
@@ -297,7 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1235f59da75aa44ea7ad214956ed151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  habilityType: 0
   attachTransform: {fileID: 4059239846494751087}
   tablesLayerMask:
     serializedVersion: 2
@@ -306,7 +306,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   raycastTransform: {fileID: 4059239846154456533}
-  hability: {fileID: 0}
+  habilityesController: {fileID: 0}
   attachedObject: {fileID: 0}
   canUseHability: 1
 --- !u!114 &4059239846100790040
@@ -345,6 +345,21 @@ MonoBehaviour:
   Drag: {x: 10, y: 0, z: 10}
   playercontroller: 1
   _isGrounded: 1
+--- !u!114 &2046403930999699546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059239846100790041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf91a84488180e4390ba9fcc60ba82c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  habilityType: 0
+  hability: {fileID: 0}
+  CharacterControllerAct: {fileID: 4059239846100790043}
 --- !u!1 &4059239846154456530
 GameObject:
   m_ObjectHideFlags: 0
