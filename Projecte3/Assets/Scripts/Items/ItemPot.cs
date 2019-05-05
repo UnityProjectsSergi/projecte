@@ -71,8 +71,9 @@ public class ItemPot : Item
         return listItem.All(item => item.stateIngredient == StateIngredient.cooked);
     }
 
-    public void Update()
+    public override void Update()
     {
+        base.Update();
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up * 2f, out hit, layerMask))
         {

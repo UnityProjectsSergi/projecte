@@ -188,7 +188,7 @@ namespace FSM {
             { 
                 if(FSM_Cooking.enabled && FSM_Cooking.cookingBlackbloard.progressBar.enabled)
                 if(FSM_Cooking.cookingBlackbloard.progressBar.currentState==FSM_ProgressBar.States.PROGRESS)
-                     FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
+                     FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = 1* Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
                 potBlackBoard.journey += Time.deltaTime;
             }
             // ProgressBarBB.fillAmount=

@@ -5,7 +5,7 @@ using Assets.Scripts.InputSystem;
 public  class Item : MonoBehaviour
 {
     [Header("Hability variables")]
-    public float levitationAmplitude;
+  
     public bool isHabilityOn;
     public LayerMask layerSlot;
     public bool hasDeacactivateLevitation;
@@ -80,7 +80,7 @@ public  class Item : MonoBehaviour
         }
     }
    
-    private void Update()
+    public  virtual void Update()
     {
         if(!isHabilityOn && hasDeacactivateLevitation)
         {
@@ -127,13 +127,13 @@ public  class Item : MonoBehaviour
         isHabilityOn = isActive;
         if (!isActive)
             hasDeacactivateLevitation = true;
-        GetComponent<CharaterControllerMod>().enabled = isActive;
+        GetComponent<CharaterControllerItem>().enabled = isActive;
         GetComponent<CharacterController>().enabled = isActive;
-        GetComponent<CharaterControllerMod>().playerInput = playerInput;
+        GetComponent<CharaterControllerItem>().playerInput = playerInput;
        
-        GetComponent<CharaterControllerMod>().playercontroller = controller;
+        GetComponent<CharaterControllerItem>().playercontroller = controller;
         if(playerInput!=null)
-        GetComponent<CharaterControllerMod>().setplayerinptu();
+        GetComponent<CharaterControllerItem>().setplayerinptu();
 
     }
    

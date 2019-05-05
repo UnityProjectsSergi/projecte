@@ -27,6 +27,11 @@ public class ItemPotFSM : Item
     public delegate void AddItemPot();
     public bool addItem;
 
+    [Range(0,1)]
+    public float FireIntensity=1f;
+    public float descresesFireIntensity=0.01f;
+
+
     //  public  ItemPotStateIngredients currentStatePot;
     private void Awake()
     {
@@ -79,8 +84,9 @@ public class ItemPotFSM : Item
         return listItem.All(item => item.stateIngredient == StateIngredient.cooked);
     }
     
-    public void Update()
+    public override void Update()
     {
+        base.Update();
         DetectIfStoveIsUnder();
         // si he affegit Ingredient a l llista
         if (currentSlotListCount != oldSlot)

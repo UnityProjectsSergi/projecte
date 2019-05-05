@@ -48,8 +48,9 @@ public  class Hability : MonoBehaviour
         if(!habilityHabailable && usingHability)
         {
             usingHability = false;
-            StopCoroutine(stop);
             cancel.Invoke();
+            StopCoroutine(stop);
+            
         }
     }
     public IEnumerator Cooldown()

@@ -16,9 +16,6 @@ public class Ingredient2 : Item
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
+   
     
 }

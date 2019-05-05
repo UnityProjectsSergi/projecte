@@ -698,8 +698,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d3c39df543a5b47bae6cdb9637bb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levitationAmplitude: 0
   isHabilityOn: 0
+  layerSlot:
+    serializedVersion: 2
+    m_Bits: 512
+  hasDeacactivateLevitation: 0
   ing: 0
   itemType: 0
   points: 0
@@ -709,10 +712,6 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
-  layerSlot:
-    serializedVersion: 2
-    m_Bits: 0
-  hasDeacactivateLevitation: 0
   NumIngedientsOfPot: 3
   ShowSlotsIngEmpty: 1
   listItem: []
@@ -797,14 +796,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
   playerInput: {fileID: 0}
-  m_GravityMultiplier: 3.7
   amplitud: 0
   frequenia: 0
   Direction: {x: 0, y: 0, z: 0}
-  gravity: {x: 0, y: 0, z: 0}
   playercontroller: 0
-  l_CollisionFlags: 0
-  speed: 0
+  speed: 2
 --- !u!1 &6294311981473067183
 GameObject:
   m_ObjectHideFlags: 0
