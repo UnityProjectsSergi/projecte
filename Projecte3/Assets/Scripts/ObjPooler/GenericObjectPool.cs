@@ -56,7 +56,7 @@ namespace Assets.Scripts.ObjPooler
                 objects.Enqueue(newObj);
             }
         }
-        public void ReturnToPool(T gameObjectReturnPool)
+        public virtual void ReturnToPool(T gameObjectReturnPool)
         {
             gameObjectReturnPool.gameObject.SetActive(false);
             objects.Enqueue(gameObjectReturnPool);

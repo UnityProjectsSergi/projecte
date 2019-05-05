@@ -7,14 +7,14 @@ using System;
 
 public class CharacterControllerAct : MonoBehaviour
 {
-    public HabilityType habilityType;
+    
     public Transform attachTransform;
     PlayerInput playerInput;
     public LayerMask tablesLayerMask;
     public LayerMask itemsLayerMask;
     public Transform raycastTransform;
     //public Animator animator;
-    public Hability hability;
+    public HabilityesController habilityesController;
     private Slot slot;
     private Item item;
 
@@ -22,12 +22,9 @@ public class CharacterControllerAct : MonoBehaviour
 
     private void Start()
     {
+        habilityesController = GetComponent<HabilityesController>();
         playerInput = GetComponent<PlayerInput>();
-        hability = gameObject.AddComponent<Hability>();
-        if(habilityType==HabilityType.LevitationItems)
-        hability.set(3, 4, ActivateLevitation,DeactivateLevitation);
-       // else if(habilityType==HabilityType.SpeedTheFire)
-            //hability.set(3,4,)
+        
         //animator = GetComponent<Animator>();
     }
 
@@ -42,18 +39,18 @@ public class CharacterControllerAct : MonoBehaviour
     {
         if(attachedObject!=null)
         {
-            
-                hability.SetHabilityAvalableFalse();
+
+            habilityesController. hability.SetHabilityAvalableFalse();
                 if (playerInput.squareBtn.Down)
                 {
-                    hability.UseHability();
+                habilityesController. hability.UseHability();
                     // to hability trigger
                 }
-            if (hability.usingHability)
+            if (habilityesController.hability.usingHability)
             {
                 if (playerInput.XBtn.Down)
                 {
-                    hability.StopHability();
+                    habilityesController. hability.StopHability();
                     
                 }
             }
@@ -138,19 +135,6 @@ public class CharacterControllerAct : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawRay(raycastTransform.position, transform.forward * 1f);
-    }
-    public void ActivateLevitation()
-    {
-        attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
-        GetComponent<CharacterController>().enabled = false;
-        
-        GetComponent<Character>().enabled = false;
-    }
-    public void DeactivateLevitation()
-    {
-        attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(false, 0, null);
-        GetComponent<CharacterController>().enabled = true;
-        GetComponent<Character>().enabled = true;
     }
     
 }
