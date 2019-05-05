@@ -26,28 +26,22 @@ public class CharacterControllerAct : MonoBehaviour
         hability = gameObject.AddComponent<Hability>();
         if(habilityType==HabilityType.LevitationItems)
         hability.set(3, 4, ActivateLevitation,DeactivateLevitation);
-       // else if(habilityType==HabilityType.SpeedTheFire)
-            //hability.set(3,4,)
-        //animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         HabilityAction();
-        SlotAction();
-     
+        SlotAction();    
     }
     public bool canUseHability;
     private void HabilityAction()
     {
         if(attachedObject!=null)
-        {
-            
+        {         
                 hability.SetHabilityAvalableFalse();
                 if (playerInput.squareBtn.Down)
                 {
                     hability.UseHability();
-                    // to hability trigger
                 }
             if (hability.usingHability)
             {
@@ -68,8 +62,6 @@ public class CharacterControllerAct : MonoBehaviour
                 Catch();
             if (playerInput.triangleBtn.Hold)
                 Action();
-
-                //animator.SetTrigger("Idle");
         }
         else
         {
@@ -81,11 +73,6 @@ public class CharacterControllerAct : MonoBehaviour
     private void Catch()
     {
         RaycastHit hit;
-        if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
-        {
-            slot = hit.collider.GetComponent<Slot>();
-            slot.Catch(this);
-        }
         if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, itemsLayerMask))
         {
             item = hit.collider.GetComponent<Item>();
@@ -93,6 +80,12 @@ public class CharacterControllerAct : MonoBehaviour
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
         }
+        else if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
+        {
+            slot = hit.collider.GetComponent<Slot>();
+            slot.Catch(this);
+        }
+
     }
 
     public void LeaveObjOn()
@@ -128,8 +121,6 @@ public class CharacterControllerAct : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
         {
-            
-                //animator.SetTrigger("Action");
             slot = hit.collider.GetComponent<Slot>();
             slot.Action(this);
         }
