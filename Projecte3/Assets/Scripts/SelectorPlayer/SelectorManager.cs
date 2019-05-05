@@ -11,7 +11,7 @@ public class SelectorManager : MonoBehaviour
     public GameObject j2ConnectedText;
     public GameObject pressStartText;
     public string nextScaneName;
-
+    public List<Image> ListPlayers;
     private GameManager gameManager;
 
     private bool j1Connected = false;
@@ -34,7 +34,7 @@ public class SelectorManager : MonoBehaviour
                 j1PressCricle.SetActive(false);
                 j1ConnectedText.SetActive(true);
                 gameManager.j1 = true;
-
+                
                 if (!isPressStart)
                 {
                     isPressStart = true;

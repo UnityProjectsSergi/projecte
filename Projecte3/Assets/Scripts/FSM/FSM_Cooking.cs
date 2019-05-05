@@ -1,66 +1,97 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 namespace FSM
 {
     public class FSM_Cooking : FiniteStateMachine
     {
-        public enum States { INITIAL,COOKING,SHOWOKIMG,END}
-      
+        public enum States { INITIAL,COOKING,PAUSE,DONEOK,END}
+        [HideInInspector]
         public CookingBlackbloard cookingBlackbloard;
         public States currentState;
-     
+        public States lastState;
+        
         public override void Exit()
         {
             base.Exit();
         }
         public override void ReEnter()
         {
-           
-            base.ReEnter();
             currentState = States.INITIAL;
+            base.ReEnter();
+            
         }
-        private void OnEnable()
+        public void OnEnable()
         {
-            cookingBlackbloard = GetComponent<CookingBlackbloard>();
+          
         }
         // Use this for initialization
-        void Start()
+        public void Start()
         {
             cookingBlackbloard = GetComponent<CookingBlackbloard>();
-            cookingBlackbloard.FSM_ShowHideImage.enabled = false;
+         //   cookingBlackbloard.FSM_ShowHideImage.enabled = false;
             cookingBlackbloard.progressBar.enabled = false;
 
-            cookingBlackbloard.FSM_ShowHideImage.image = cookingBlackbloard.ImageCookingDone;
-            cookingBlackbloard.FSM_ShowHideImage.timeShowImage = cookingBlackbloard.TimeShowImageDone;
-            cookingBlackbloard.FSM_ShowHideImage.timeHideImage = cookingBlackbloard.timeHideImageDone;
-            currentState = States.INITIAL;
+            //cookingBlackbloard.FSM_ShowHideImage.image = cookingBlackbloard.ImageCookingDone;
+            //cookingBlackbloard.FSM_ShowHideImage.timeShowImage = cookingBlackbloard.TimeShowImageDone;
+            //cookingBlackbloard.FSM_ShowHideImage.timeHideImage = cookingBlackbloard.timeHideImageDone;
+            //currentState = States.INITIAL;
         }
 
         // Update is called once per frame
-        void Update()
+        public bool isPausedCooking;
+
+        private void Update()
         {
+           // cookingBlackbloard.progressBar.isPaused = isPaused;
+            cookingBlackbloard.progressBar.totalDuration = cookingBlackbloard.duration;
+           
             switch (currentState)
             {
                 case States.INITIAL:
                     ChangeState(States.COOKING);
                     break;
                 case States.COOKING:
-                    if (cookingBlackbloard.progressBar.currentState == FSM_ProgressBar.States.DONE)
+                    if (!isPaused)
                     {
-                        ChangeState(States.SHOWOKIMG);
+                        if (cookingBlackbloard.progressBar.currentState == FSM_ProgressBar.States.DONE)
+                        {
+                            ChangeState(States.DONEOK);
+                        }
+                    }
+                    else
+                    {
+                        lastState = currentState;
+                        ChangeState(States.PAUSE);
                     }
                     break;
-                case States.SHOWOKIMG:
-                    if (cookingBlackbloard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.HIDE)
+                case States.PAUSE:
+                    if(!isPaused)
                     {
-                        ChangeState(States.END);
+                        ChangeState(lastState);
+                    }
+                    break;
+                case States.DONEOK:
+                    if(!isPaused)
+                    {
+
+                        if (cookingBlackbloard.FSM_ShowHideImage.currentState==FSM_ShowHideImage.States.END)
+                        {
+                                ChangeState(States.END);
+                        }
+                    }
+                    else
+                    {
+                        lastState = currentState;
+                        ChangeState(States.PAUSE);
                     }
                     break;
                 default:
                     break;
             }
         }
+      
         public void ChangeState(States newState)
         {
             switch (currentState)
@@ -68,33 +99,59 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.COOKING:
-                   cookingBlackbloard.progressBar.Exit();
-                    cookingBlackbloard.ProgBarGO.gameObject.SetActive(false);
+                    if (newState == States.DONEOK)
+                        cookingBlackbloard.progressBar.Exit();
                     break;
-                case States.SHOWOKIMG:
-                   cookingBlackbloard.FSM_ShowHideImage.Exit();
-                    cookingBlackbloard.HideShowGO.gameObject.SetActive(false);
+                case States.END:
+             
                     break;
+                case States.DONEOK:
+                    if (newState == States.END)
+                        cookingBlackbloard.FSM_ShowHideImage.Exit();
+                    break;
+                case States.PAUSE:
+                    cookingBlackbloard.FSM_ShowHideImage.isPaused = false;
+                    cookingBlackbloard.progressBar.isPaused = false;
+                    break;
+                    
+                
                 default:
                     break;
             }
+            // es noe esttatb 
             switch (newState)
             {
                 case States.INITIAL:
                     break;
                 case States.COOKING:
-                    cookingBlackbloard.ProgBarGO.gameObject.SetActive(true);
+                    if (currentState == States.INITIAL) 
                    cookingBlackbloard.progressBar.ReEnter();
                     break;
-                case States.SHOWOKIMG:
-                    cookingBlackbloard.HideShowGO.gameObject.SetActive(true);
-                   cookingBlackbloard.FSM_ShowHideImage.ReEnter();
-                    
+
+                case States.PAUSE:
+                    cookingBlackbloard.FSM_ShowHideImage.isPaused = true;
+                    cookingBlackbloard.progressBar.isPaused = true;
+                    break;
+                case States.DONEOK:
+                    if (currentState == States.COOKING)
+
+                        cookingBlackbloard.FSM_ShowHideImage.ReEnter();
+
+
                     break;
                 default:
                     break;
             }
             currentState = newState;
+        }
+
+        internal void Reset()
+        {
+            currentState = States.INITIAL;
+            cookingBlackbloard.progressBar.Reset();
+            cookingBlackbloard.progressBar.Exit();
+            cookingBlackbloard.FSM_ShowHideImage.Reset();
+            cookingBlackbloard.FSM_ShowHideImage.Exit();
         }
     }
 }

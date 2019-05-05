@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     public PlayerInput playerInput;
     public float Speed = 5f;
-    public float JumpHeight = 2f;
+  
     public float Gravity = -9.81f;
     public float GroundDistance = 0.1f;
     public float DashDistance = 5f;

@@ -7,10 +7,14 @@ public class ProgressBarBlackboard : MonoBehaviour
     public Image image;
     
     public float percent;
+   
+    public ItemPotFSM itemPot;
     // Use this for initialization
-    void Awake()
+    void Start()
     {
+       // gameObject.AddComponent<FSM.FSM_ProgressBar>();
         image=GetComponent<Image>();
+
     }
 
     // Update is called once per frame

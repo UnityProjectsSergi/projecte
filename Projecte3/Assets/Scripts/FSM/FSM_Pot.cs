@@ -3,23 +3,26 @@ using System.Collections;
 namespace FSM {
     public class FSM_Pot : FiniteStateMachine
     {
-        public enum States { INITIAL, EMPTY, COOKING, ALERT, BURN }
+       
+        public enum States { INITIAL, EMPTY,PAUSERUNNING, BURN }
         public States currentState;
         public ItemPotFSM itemPot;
         public GameObject CookingFSMGO;
-        private FSM_Cooking FSM_Cooking;
-        public PotBlackboard potBlackBoard;
-        
-            // Use this for initialization
-            void Start()
-        {
-            potBlackBoard = GetComponent<PotBlackboard>();
-            FSM_Cooking = CookingFSMGO.AddComponent<FSM_Cooking>();
-            
-            currentState = States.INITIAL;
     
-            FSM_Cooking.enabled = false;
+        public PotBlackboard potBlackBoard;
+        public CookingBlackbloard cookingBlackbloard;
+        public States lastState;
+        public FSM_Alert FSM_Alert;
+        
+        public FSM_PauseStart FSM_PauseStart;
 
+        // Use this for initialization
+        void Start()
+        { 
+            itemPot = GetComponent<ItemPotFSM>();
+            potBlackBoard = GetComponent<PotBlackboard>();
+            FSM_PauseStart = gameObject.AddComponent<FSM_PauseStart>();
+            FSM_PauseStart.enabled = false;
         }
         public override void Exit()
         {
@@ -28,42 +31,43 @@ namespace FSM {
         public override void ReEnter()
         {
             base.ReEnter();
+            currentState = States.INITIAL;
         }
+
         // Update is called once per frame
-        void Update()
+        public  void Update()
         {
-            Debug.Log(itemPot);
-            if (itemPot.hasStoveUnder) {
-                potBlackBoard.journey += Time.deltaTime;
+            //si currentState IS
                 switch (currentState)
                 {
+                    //initial
                     case States.INITIAL:
+                           //Chage Current State To Empty State
                         ChangeState(States.EMPTY);
                         break;
+                    //Empty
                     case States.EMPTY:
-                        Debug.Log(itemPot.listItem.Count);
-                        if (itemPot.listItem.Count > 0)
-                            ChangeState(States.COOKING);
+                        // Si list item Of Pot has 1 o + elements
+                        if (itemPot.listItem.Count == itemPot.potUi.listUIItems.Count)
+                            // Changestate to Cooking FSMInteral
+                            ChangeState(States.PAUSERUNNING);
                         break;
-                    case States.COOKING:
-                         if (potBlackBoard.journey > itemPot.totalduration)
-                        {
-                            ChangeState(States.ALERT);
-                        }
-                        break;
-                    case States.ALERT:
-                        if (potBlackBoard.journey >= itemPot.totalduration + potBlackBoard.timeToAlert)
-                            ChangeState(States.BURN);
-                        else if (itemPot.currentSlotList != itemPot.oldSlot && potBlackBoard.journey < itemPot.totalduration + potBlackBoard.timeToAlert)
-                            ChangeState(States.COOKING);
+                    case States.PAUSERUNNING:
+
+                    if (FSM_PauseStart.currentState == FSM.FSM_PauseStart.States.END)
+                    {
+                        ChangeState(States.BURN);
+                    }
 
                         break;
                     case States.BURN:
+                      
                         break;
+               
                     default:
                         break;
                 }
-            }
+            
         }
 
         public void ChangeState(States newState)
@@ -74,10 +78,15 @@ namespace FSM {
                     break;
                 case States.EMPTY:
                     break;
-                case States.COOKING:
-                    FSM_Cooking.Exit();
-                    
+                case States.PAUSERUNNING:
+                    FSM_PauseStart.Exit();
                     break;
+                case States.BURN:
+
+                    break;
+                   
+                    
+                    
                 default:
                     break;
             }
@@ -88,11 +97,11 @@ namespace FSM {
                     break;
                 case States.EMPTY:
                     break;
-                case States.COOKING:
-                    Debug.Log("ssss");
-                   
-                    FSM_Cooking.ReEnter();
-                    FSM_Cooking.cookingBlackbloard.duration = itemPot.totalduration;
+                case States.PAUSERUNNING:
+                    FSM_PauseStart.ReEnter();
+                    break;
+                case States.BURN:
+                    potBlackBoard.fSM_IMAGE.ReEnter();
                     break;
                 default:
                     break;
@@ -107,6 +116,14 @@ namespace FSM {
         public void Reset()
         {
             potBlackBoard.journey = 0;
+            currentState = States.INITIAL;
+            FSM_PauseStart.Reset();
+            FSM_PauseStart.Exit();
+
+          
+            potBlackBoard.fSM_IMAGE.Reset();
+            potBlackBoard.fSM_IMAGE.Exit();
+            
         }
     }
 }

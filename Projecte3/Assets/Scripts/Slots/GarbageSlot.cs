@@ -30,7 +30,13 @@ namespace Assets.Scripts
                 else if(item.itemType==ItemType.Pot)
                 {
                     ItemPot itemPot = item.GetComponent<ItemPot>();
-                    itemPot.ResetPot();
+                    if (itemPot)
+                        itemPot.ResetPot();
+                    else
+                    {
+                        ItemPotFSM itemPotfs = item.GetComponent<ItemPotFSM>();
+                        itemPotfs.ResetPot();
+                    }
                 }
             }          
         }

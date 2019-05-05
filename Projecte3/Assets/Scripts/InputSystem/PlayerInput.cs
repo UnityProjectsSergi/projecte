@@ -8,30 +8,30 @@ namespace Assets.Scripts.InputSystem
     public class PlayerInput : MonoBehaviour
     {
         #region Strings
-        public string _leftHoritzontalAxis;
-        public string _leftVerticalAxis;
-        public string _rightHoritzontalAxis;
-        public string _rightVerticalAxis;
-        public string _platformCtrl;
-        public string _settingsBtn;
-        public string _startBtn;
-        public string _shareBtn;
-        public string _triangleBtn;
-        public string _squareBtn;
-        public string _XBtn;
-        public string _OBtn;
-        public string _touchpadBtn;
-        public string _rightStickClick;
-        public string _leftStickClick;
-        public string _R2Btn, _R1Btn, _L1Btn, _L2Btn;
+        private string _leftHoritzontalAxis;
+        private string _leftVerticalAxis;
+        private string _rightHoritzontalAxis;
+        private string _rightVerticalAxis;
+        private string _platformCtrl;
+        private string _settingsBtn;
+        private string _startBtn;
+        private string _shareBtn;
+        private string _triangleBtn;
+        private string _squareBtn;
+        private string _XBtn;
+        private string _OBtn;
+        private string _touchpadBtn;
+        private string _rightStickClick;
+        private string _leftStickClick;
+        private string _R2Btn, _R1Btn, _L1Btn, _L2Btn;
 
         internal void SetControllerNumber(object playercontroller, string v)
         {
             throw new NotImplementedException();
         }
 
-        public string _L2Axis, _R2Axis;
-        public string _dPadHorizontal, _dPadVertical;
+        private string _L2Axis, _R2Axis;
+        private string _dPadHorizontal, _dPadVertical;
 
         #endregion
         #region Vars
