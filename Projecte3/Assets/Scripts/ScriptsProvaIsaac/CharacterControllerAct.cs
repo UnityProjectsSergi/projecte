@@ -94,7 +94,7 @@ public class CharacterControllerAct : MonoBehaviour
             slot = hit.collider.GetComponent<Slot>();
             slot.Catch(this);
         }
-        else if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, itemsLayerMask))
+        if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, itemsLayerMask))
         {
             item = hit.collider.GetComponent<Item>();
             item.transform.eulerAngles = Vector3.zero;

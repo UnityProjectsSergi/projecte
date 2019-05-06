@@ -76,7 +76,7 @@ public class ItemPotFSM : Item
         IsStartCooking = false;
         listItem.Clear();
         potUi.ResetUI();
-        FSM_Pot.Reset();
+        FSM_Pot.ResetF();
         currentSlotListCount = 0;
     }
     public bool CheckIsCookedIng()
@@ -106,10 +106,6 @@ public class ItemPotFSM : Item
             if (slot && listItem.Count > 0)
             {
                 hasStoveUnder = true;
-                //if (transform.parent.parent.GetComponent<StoveSlotFSM>())
-                //    hasStoveUnder = true;
-                //else
-                //    hasStoveUnder = false;
             }
             else
             {

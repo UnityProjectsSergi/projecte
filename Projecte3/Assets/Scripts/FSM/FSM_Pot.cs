@@ -79,7 +79,7 @@ namespace FSM {
                 case States.EMPTY:
                     break;
                 case States.PAUSERUNNING:
-                    FSM_PauseStart.Exit();
+                   
                     break;
                 case States.BURN:
 
@@ -94,6 +94,14 @@ namespace FSM {
             switch (newState)
             {
                 case States.INITIAL:
+                    if(currentState==States.PAUSERUNNING)
+                                         
+                            FSM_PauseStart.ReEnter();
+                            
+                  
+                     
+                    if(currentState==States.BURN)
+                        potBlackBoard.fSM_IMAGE.ReEnter();
                     break;
                 case States.EMPTY:
                     break;
@@ -113,16 +121,15 @@ namespace FSM {
 
             // ProgressBarBB.fillAmount=
         }
-        public void Reset()
+        public void ResetF()
         {
             potBlackBoard.journey = 0;
+            if(FSM_Alert)
+            FSM_Alert.ResetFSM();
+            if(FSM_PauseStart)
+            FSM_PauseStart.ResetFSM();
             currentState = States.INITIAL;
-            FSM_PauseStart.Reset();
-            FSM_PauseStart.Exit();
-
-          
-            potBlackBoard.fSM_IMAGE.Reset();
-            potBlackBoard.fSM_IMAGE.Exit();
+           
             
         }
     }
