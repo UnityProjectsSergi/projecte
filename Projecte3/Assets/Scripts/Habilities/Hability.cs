@@ -38,8 +38,14 @@ public class Hability : MonoBehaviour
         if (!habilityHabailable)
         {
             usingHability = true;
+
             Starthability();
             stop = StartCoroutine(Cooldown());
+
+        
+          
+        }
+
 
         }
     }

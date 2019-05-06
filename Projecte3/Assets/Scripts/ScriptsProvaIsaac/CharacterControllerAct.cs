@@ -15,6 +15,7 @@ public class CharacterControllerAct : MonoBehaviour
     public Transform raycastTransform;
     //public Animator animator;
     public HabilityesController habilityesController;
+    public float throwForce = 600f;
     private Slot slot;
     private Item item;
 
@@ -24,15 +25,12 @@ public class CharacterControllerAct : MonoBehaviour
     {
         habilityesController = GetComponent<HabilityesController>();
         playerInput = GetComponent<PlayerInput>();
-
-        //animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         HabilityAction();
         SlotAction();
-
     }
     public bool canUseHability;
     private void HabilityAction()
@@ -41,19 +39,16 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if (attachedObject != null)
             {
-
                 habilityesController.hability.SetHabilityAvalableFalse();
                 if (playerInput.squareBtn.Down)
                 {
                     habilityesController.hability.UseHability();
-                    // to hability trigger
                 }
                 if (habilityesController.hability.usingHability)
                 {
                     if (playerInput.XBtn.Down)
                     {
                         habilityesController.hability.StopHability();
-
                     }
                 }
             }
@@ -65,6 +60,13 @@ public class CharacterControllerAct : MonoBehaviour
                 habilityesController.hability.SetHabilityAvalableFalse();
                 habilityesController.hability.UseHability();
             }
+        } 
+        else if(habilityesController.habilityType == HabilityType.Throw)
+        {
+            if(playerInput.squareBtn.Down)
+            {
+                ThrowObj();
+            }
         }
     }
 
@@ -73,11 +75,11 @@ public class CharacterControllerAct : MonoBehaviour
         if (attachedObject == null)
         {
             if (playerInput.XBtn.Down)
+            {
                 Catch();
+            }
             if (playerInput.triangleBtn.Hold)
                 Action();
-
-            //animator.SetTrigger("Idle");
         }
         else
         {
@@ -89,22 +91,24 @@ public class CharacterControllerAct : MonoBehaviour
     private void Catch()
     {
         RaycastHit hit;
-        if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
-        {
-            slot = hit.collider.GetComponent<Slot>();
-            slot.Catch(this);
-        }
+
         if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, itemsLayerMask))
         {
+            Debug.Log("Catch Item");
             item = hit.collider.GetComponent<Item>();
             item.transform.eulerAngles = Vector3.zero;
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
         }
+        else if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
+        {
+            slot = hit.collider.GetComponent<Slot>();
+            slot.Catch(this);
+        }    
     }
 
     public void LeaveObjOn()
-    {
+    {       
         if (attachedObject != null)
         {
             RaycastHit hit;
@@ -121,6 +125,18 @@ public class CharacterControllerAct : MonoBehaviour
             }
         }
     }
+
+    public void ThrowObj()
+    {
+        if(attachedObject != null)
+        {
+            attachedObject.GetComponent<RigidbodyController>().ActiveRigidbody(true);
+            attachedObject.transform.parent = null;
+            attachedObject.GetComponent<Rigidbody>().AddForce(transform.forward * throwForce);
+            attachedObject = null;
+        }
+    }
+
     public void LeaveObj()
     {
         if (attachedObject != null)
@@ -130,14 +146,12 @@ public class CharacterControllerAct : MonoBehaviour
             attachedObject = null;
         }
     }
+
     private void Action()
     {
-
         RaycastHit hit;
         if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
         {
-
-            //animator.SetTrigger("Action");
             slot = hit.collider.GetComponent<Slot>();
             slot.Action(this);
         }

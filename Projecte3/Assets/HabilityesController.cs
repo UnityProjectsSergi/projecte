@@ -19,6 +19,9 @@ public class HabilityesController : MonoBehaviour
         else if (habilityType == HabilityType.SpeedTheFire)
             hability.set(13, 4, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire);
 
+        else if (habilityType == HabilityType.Throw)
+            hability.set(0, 0, null,null);
+
     }
 
     // Update is called once per frame
@@ -28,11 +31,11 @@ public class HabilityesController : MonoBehaviour
         DetectOlla();
     }
     public Collider[] ollesDetected;
+
     public void ActivateLevitation()
     {
-       CharacterControllerAct. attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
+        CharacterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
         GetComponent<CharacterController>().enabled = false;
-
         GetComponent<Character>().enabled = false;
     }
     public void DeactivateLevitation()
@@ -80,45 +83,11 @@ public class HabilityesController : MonoBehaviour
             }
             
         }
-        //} (Collider item in ollesDetected)
-        //{
-        //    Debug.Log("aaa");
-
-        //    if (item.GetComponent<Item>().itemType == ItemType.Pot)
-        //    {
-        //        Debug.Log("Olla edetecd");
-        //        ItemPotFSM potItem = item.GetComponent<ItemPotFSM>();
-
-        //        if (potItem.FSM_Pot.currentState == FSM.FSM_Pot.States.PAUSERUNNING)
-        //        {
-        //            if (potItem.FSM_Pot.FSM_PauseStart.currentState == FSM.FSM_PauseStart.States.RUNNING )
-        //            {
-        //                if (speedUpCookHability)
-        //                    potItem.FSM_Pot.FSM_PauseStart.FSM_PotInteral.speedUpCook = true;
-        //                else
-        //                    potItem.FSM_Pot.FSM_PauseStart.FSM_PotInteral.speedUpCook = false;
-
-        //            }
-
-        //            else
-        //            {
-        //                potItem.FSM_Pot.FSM_PauseStart.FSM_PotInteral.speedUpCook = false;
-        //            }
-        //        }
-        //    }
-        //}
-        //hitColliders = Physics.OverlapSphere(transform.position, 5,layerMaskOverLapOlles);
-        //int i = 0;
-        //while (i < hitColliders.Length)
-        //{
-        //    Debug.Log("ssssssssssss"); ;
-        // //   hitColliders[i].SendMessage("AddDamage");
-        //    i++;
-        //}
     }
     public Collider[] hitColliders;
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, 3);
     }
+
 }
