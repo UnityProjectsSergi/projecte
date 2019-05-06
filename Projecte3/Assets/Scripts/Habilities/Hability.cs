@@ -2,68 +2,79 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public  class Hability : MonoBehaviour
+public class Hability : MonoBehaviour
 {
-    public bool habilityHabailable=true, usingHability;
+    public bool habilityHabailable = true, usingHability;
 
     public string hability;
     public float _duration;
     public float _coolDown;
-    public delegate void performHability();
-    public delegate void CancelHability();
-    CancelHability cancel;
+    public delegate void MyHability();
+    public MyHability Starthability;
+    public MyHability CancelHability;
+
     public Image imageCooldown;
-    
-    performHability f;
-    public void set(float duration,float cooldown,performHability n,CancelHability _cancel)
+
+
+    public void set(float duration, float cooldown, MyHability Start, MyHability _cancel)
     {
         _duration = duration;
         _coolDown = cooldown;
-        f += n;
-        cancel += _cancel;
+        Starthability += Start;
+        CancelHability += _cancel;
     }
     // Use this for initialization
-    public  void SetHabilityAvalableFalse()
+    public void SetHabilityAvalableFalse()
     {
         habilityHabailable = false;
     }
     public void Update()
     {
-       // imageCooldown.fillAmount=
+        // imageCooldown.fillAmount=
     }
     Coroutine stop;
-    public  void UseHability()
+    public void UseHability()
     {
         if (!habilityHabailable)
         {
             usingHability = true;
-            f.Invoke();
-          stop=  StartCoroutine(Cooldown());
+
+            Starthability();
+            stop = StartCoroutine(Cooldown());
+
+        
           
         }
 
+
+        }
     }
+    // has tocat algu de hability.cs 
+    //vesa 
+    // nomes activar  no 
     public void StopHability()
     {
-        if(!habilityHabailable && usingHability)
+        if (!habilityHabailable && usingHability)
         {
             usingHability = false;
-            cancel.Invoke();
-            StopCoroutine(stop);
-            
+            if (CancelHability != null)
+            {
+                CancelHability();
+                StopCoroutine(stop);
+            }
         }
     }
     public IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(_duration);
-        Debug.Log("2sss");
         StopHability();
         yield return new WaitForSeconds(_coolDown);
         habilityHabailable = true;
+        yield return null;
     }
 
 
 
-  
+
 
 }

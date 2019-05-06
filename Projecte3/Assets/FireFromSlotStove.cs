@@ -6,6 +6,8 @@ using UnityEngine;
 public class FireFromSlotStove : MonoBehaviour
 {
     public ParticleSystem Fire;
+    [Range(1,10)]
+    public float FIREiNTENSITY;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,8 @@ public class FireFromSlotStove : MonoBehaviour
     internal void updateFire(float fireIntensity)
     {
         var em = Fire.emission;
-        float num = Mathf.Abs(fireIntensity + 1);
+        float num = Mathf.Abs(FIREiNTENSITY - 10);
         num = num / 20;
-        em.rateOverTime = num*1000;
+        em.rateOverTime = num;
     }
 }
