@@ -11,6 +11,11 @@ namespace Assets.Scripts.ObjPooler
     // xo el problema q hi veig esq  si l'objectee  item 
    public class Ingredient2Pool:GenericObjectPool<Ingredient2>
     {
-
+        public override void ReturnToPool(Ingredient2 gameObjectReturnPool)
+        {
+            gameObjectReturnPool.stateIngredient = StateIngredient.raw;
+            gameObjectReturnPool.transform.localScale = Vector3.one;
+            base.ReturnToPool(gameObjectReturnPool);
+        }
     }
 }

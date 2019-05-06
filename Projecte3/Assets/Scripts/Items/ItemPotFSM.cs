@@ -27,6 +27,11 @@ public class ItemPotFSM : Item
     public delegate void AddItemPot();
     public bool addItem;
 
+    [Range(0,1)]
+    public float FireIntensity=1f;
+    public float descresesFireIntensity=0.01f;
+
+
     //  public  ItemPotStateIngredients currentStatePot;
     private void Awake()
     {
@@ -71,7 +76,7 @@ public class ItemPotFSM : Item
         IsStartCooking = false;
         listItem.Clear();
         potUi.ResetUI();
-        FSM_Pot.Reset();
+        FSM_Pot.ResetF();
         currentSlotListCount = 0;
     }
     public bool CheckIsCookedIng()
@@ -79,8 +84,9 @@ public class ItemPotFSM : Item
         return listItem.All(item => item.stateIngredient == StateIngredient.cooked);
     }
     
-    public void Update()
+    public override void Update()
     {
+        base.Update();
         DetectIfStoveIsUnder();
         // si he affegit Ingredient a l llista
         if (currentSlotListCount != oldSlot)
@@ -94,23 +100,25 @@ public class ItemPotFSM : Item
     public void DetectIfStoveIsUnder()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up * 0.3f, out hit, layerMask))
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 0.25f,layerMask))
         {
             StoveSlotFSM slot = hit.collider.gameObject.GetComponent<StoveSlotFSM>();
             if (slot && listItem.Count > 0)
             {
                 hasStoveUnder = true;
-
             }
             else
             {
                 hasStoveUnder = false;
             }
         }
+        else
+            hasStoveUnder = false;
+
     }
     public void OnDrawGizmos()
     {
-        Gizmos.DrawRay(transform.position, -transform.up * 0.3f);
+        Gizmos.DrawRay(transform.position, -transform.up * 0.25f);
     }
 
 }

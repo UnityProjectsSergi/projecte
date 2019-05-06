@@ -30,6 +30,8 @@ namespace FSM {
             FSM_Cooking.enabled = false;
         }
         public bool Enter = false;
+        public bool speedUpCook;
+
         public override void Exit()
         {
             //if (currentState != States.END)
@@ -92,11 +94,8 @@ namespace FSM {
                 case States.ALERT:
                     if (!isPaused)
                     {
-                        Debug.Log("ssssssssalert");
-                     
-                    
                         if (FSM_Alert.currentState==FSM_Alert.States.END)
-                       // if (potBlackBoard.journey >= itemPot.totalDurationOfCooking + potBlackBoard.timeToAlert)
+
                             ChangeState(States.END);
 
                     }
@@ -107,6 +106,7 @@ namespace FSM {
                     }
                     break;
                 case States.PAUSE:
+
                     if(!isPaused)
                     {
                         ChangeState(lastState);
@@ -155,6 +155,11 @@ namespace FSM {
             switch (newState)
             {
                 case States.INITIAL:
+                   if(currentState==States.PAUSE)
+                    {
+                       // FSM_Cooking.Reset();
+                        //FSM_Alert.Reset();
+                    }
                     break;
                
                 case States.COOKING:
@@ -188,18 +193,26 @@ namespace FSM {
             { 
                 if(FSM_Cooking.enabled && FSM_Cooking.cookingBlackbloard.progressBar.enabled)
                 if(FSM_Cooking.cookingBlackbloard.progressBar.currentState==FSM_ProgressBar.States.PROGRESS)
-                     FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
-                potBlackBoard.journey += Time.deltaTime;
+                     FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = 1* Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
+              
+                if(speedUpCook)
+                    potBlackBoard.journey += Time.deltaTime*2f;
+                else
+                    potBlackBoard.journey += Time.deltaTime;
             }
             // ProgressBarBB.fillAmount=
         }
-        public void Reset()
+        public void ResetFSM()
         {
-            currentState = States.INITIAL;
-            FSM_Alert.Reset();
-            FSM_Cooking.Reset();
-            FSM_Cooking.Exit();
-            FSM_Alert.Exit();
+            if(FSM_Alert)
+            FSM_Alert.ResetFSM();
+            if(FSM_Cooking)
+            FSM_Cooking.ResetFSM();
+            Exit();
+
+            //ChangeState(States.INITIAL);
+            
+           
         }
     }
 }

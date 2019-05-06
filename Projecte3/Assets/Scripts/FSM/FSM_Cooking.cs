@@ -122,6 +122,14 @@ namespace FSM
             switch (newState)
             {
                 case States.INITIAL:
+                    if (currentState == States.INITIAL)
+                    {
+                      //  if(cookingBlackbloard.progressBar.enabled)
+                       // cookingBlackbloard.progressBar.Reset();
+                   ///     if(cookingBlackbloard.FSM_ShowHideImage.enabled)
+                     //  cookingBlackbloard.FSM_ShowHideImage.Reset();
+                    }
+
                     break;
                 case States.COOKING:
                     if (currentState == States.INITIAL) 
@@ -145,13 +153,13 @@ namespace FSM
             currentState = newState;
         }
 
-        internal void Reset()
+        internal void ResetFSM()
         {
-            currentState = States.INITIAL;
-            cookingBlackbloard.progressBar.Reset();
-            cookingBlackbloard.progressBar.Exit();
-            cookingBlackbloard.FSM_ShowHideImage.Reset();
-            cookingBlackbloard.FSM_ShowHideImage.Exit();
+            cookingBlackbloard.progressBar.ResetFSM();
+            cookingBlackbloard.FSM_ShowHideImage.ResetFSM();
+            Exit();
+            
+            
         }
     }
 }

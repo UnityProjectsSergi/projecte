@@ -8,7 +8,7 @@ using UnityEngine;
 
 public abstract class Slot :MonoBehaviour
 {
-    protected Item item;
+    public Item item;
     public Transform positionObjOn;
 
     public bool isActive;

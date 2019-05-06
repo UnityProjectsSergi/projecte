@@ -34,7 +34,8 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
-                    ChangeState(States.RUNNING);
+                    if (itemPot.listItem.Count == itemPot.potUi.listUIItems.Count)
+                        ChangeState(States.RUNNING);
                     break;
                 case States.RUNNING:
                     if (!itemPot.hasStoveUnder)
@@ -47,10 +48,12 @@ namespace FSM
                     }
                     break;
                 case States.PAUSE:
-                    if (itemPot.hasStoveUnder)
-                    {
-                        ChangeState(States.RUNNING);
-                    }
+                   
+                        if (itemPot.hasStoveUnder)
+                        {
+                            ChangeState(States.RUNNING);
+                        }
+                   
                     break;
                 default:
                     break;
@@ -70,7 +73,7 @@ namespace FSM
                     FSM_PotInteral.isPaused = false;
                     break;
                 case States.END:
-                    // FSM_PotInteral.Exit();
+                
                     break;
                 default:
                     break;
@@ -78,6 +81,8 @@ namespace FSM
             switch (newState)
             {
                 case States.INITIAL:
+                    if (currentState == States.PAUSE)
+                        FSM_PotInteral.ReEnter();
                     break;
                 case States.RUNNING:
                     if (currentState == States.INITIAL)
@@ -94,10 +99,11 @@ namespace FSM
             }
             currentState = newState;
         }
-        public void Reset()
+        public void ResetFSM ()
         {
-            FSM_PotInteral.Reset();
-            currentState = States.INITIAL;
+            FSM_PotInteral.ResetFSM();
+            Exit();
+            
         }
     }
 
