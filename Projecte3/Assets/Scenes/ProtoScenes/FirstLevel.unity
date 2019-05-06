@@ -1571,11 +1571,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1945413882}
     m_Modifications:
-    - target: {fileID: 6277848071853180710, guid: 2176405df08c1834898833fd879fa909,
-        type: 3}
-      propertyPath: m_Name
-      value: GarbageSlot
-      objectReference: {fileID: 0}
     - target: {fileID: 269718050534245238, guid: 2176405df08c1834898833fd879fa909,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1630,6 +1625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277848071853180710, guid: 2176405df08c1834898833fd879fa909,
+        type: 3}
+      propertyPath: m_Name
+      value: GarbageSlot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2176405df08c1834898833fd879fa909, type: 3}
@@ -4091,7 +4091,7 @@ PrefabInstance:
     - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
         type: 3}
       propertyPath: habilityType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059239846494751087, guid: 406e278c10005b44cb6df7d262104b2b,
         type: 3}
@@ -4456,11 +4456,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1945413882}
     m_Modifications:
-    - target: {fileID: 6769926451291428701, guid: 0d983b6d8a3978846969107c4ee5819b,
-        type: 3}
-      propertyPath: m_Name
-      value: CuttingSlot (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6769926451291428697, guid: 0d983b6d8a3978846969107c4ee5819b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4515,6 +4510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769926451291428701, guid: 0d983b6d8a3978846969107c4ee5819b,
+        type: 3}
+      propertyPath: m_Name
+      value: CuttingSlot (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d983b6d8a3978846969107c4ee5819b, type: 3}
@@ -5150,11 +5150,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1945413882}
     m_Modifications:
-    - target: {fileID: 752571833094838346, guid: ce932715efcc4704c88b51fdc0e054b6,
-        type: 3}
-      propertyPath: m_Name
-      value: Ing2ItemSlot
-      objectReference: {fileID: 0}
     - target: {fileID: 752571833094669418, guid: ce932715efcc4704c88b51fdc0e054b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5209,6 +5204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 752571833094838346, guid: ce932715efcc4704c88b51fdc0e054b6,
+        type: 3}
+      propertyPath: m_Name
+      value: Ing2ItemSlot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce932715efcc4704c88b51fdc0e054b6, type: 3}
@@ -5871,11 +5871,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1945413882}
     m_Modifications:
-    - target: {fileID: 6769926451291428701, guid: 0d983b6d8a3978846969107c4ee5819b,
-        type: 3}
-      propertyPath: m_Name
-      value: CuttingSlot
-      objectReference: {fileID: 0}
     - target: {fileID: 6769926451291428697, guid: 0d983b6d8a3978846969107c4ee5819b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5930,6 +5925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769926451291428701, guid: 0d983b6d8a3978846969107c4ee5819b,
+        type: 3}
+      propertyPath: m_Name
+      value: CuttingSlot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d983b6d8a3978846969107c4ee5819b, type: 3}
