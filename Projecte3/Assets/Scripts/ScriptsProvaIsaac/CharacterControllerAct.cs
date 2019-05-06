@@ -165,7 +165,7 @@ public class CharacterControllerAct : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(raycastTransform.position, transform.forward * 1f);
+        //Gizmos.DrawRay(raycastTransform.position, transform.forward * 1f);
     }
 
 }

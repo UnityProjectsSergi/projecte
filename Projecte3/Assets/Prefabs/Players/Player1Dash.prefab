@@ -196,10 +196,10 @@ GameObject:
   - component: {fileID: 4059239846100790047}
   - component: {fileID: 4059239846100790044}
   - component: {fileID: 4059239846100790045}
-  - component: {fileID: 4059239846100790043}
   - component: {fileID: 4059239846100790040}
   - component: {fileID: 6687023225957883944}
   - component: {fileID: 2046403930999699546}
+  - component: {fileID: 2227135488605312352}
   m_Layer: 0
   m_Name: Player1Dash
   m_TagString: Untagged
@@ -378,29 +378,6 @@ CharacterController:
   m_SkinWidth: 0.05
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4059239846100790043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4059239846100790041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1235f59da75aa44ea7ad214956ed151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachTransform: {fileID: 4059239846494751087}
-  tablesLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  itemsLayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  raycastTransform: {fileID: 4059239846154456533}
-  habilityesController: {fileID: 0}
-  attachedObject: {fileID: 0}
-  canUseHability: 1
 --- !u!114 &4059239846100790040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   habilityType: 1
   hability: {fileID: 0}
-  CharacterControllerAct: {fileID: 4059239846100790043}
+  CharacterControllerAct: {fileID: 2227135488605312352}
   HabilityRadi: {fileID: 1248374053}
   layerMaskOverLapOlles:
     serializedVersion: 2
@@ -459,6 +436,30 @@ MonoBehaviour:
   speedUpCookHability: 0
   ollesDetected: []
   hitColliders: []
+--- !u!114 &2227135488605312352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059239846100790041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68faa311cb2fa3d458041b12447fbe80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachTransform: {fileID: 4059239846494751087}
+  tablesLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  itemsLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  raycastTransform: {fileID: 4059239846154456533}
+  habilityesController: {fileID: 2046403930999699546}
+  throwForce: 600
+  attachedObject: {fileID: 0}
+  canUseHability: 0
 --- !u!1 &4059239846154456530
 GameObject:
   m_ObjectHideFlags: 0
