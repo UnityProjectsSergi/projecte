@@ -82,20 +82,41 @@ public  class Item : MonoBehaviour
    
     public  virtual void Update()
     {
-        if(!isHabilityOn && hasDeacactivateLevitation)
+        DetectSlotBelow();
+    }
+    
+    public void ActivateDeactivateItemPlayerControler(bool isActive,int controller,PlayerInput playerInput)
+    {
+        // he fet servir el character controller mod
+        isHabilityOn = isActive;
+        if (!isActive)
+        { 
+            hasDeacactivateLevitation = true;
+            DetectSlotBelow();
+        }
+        GetComponent<CharaterControllerItem>().enabled = isActive;
+        GetComponent<CharacterController>().enabled = isActive;
+        GetComponent<CharaterControllerItem>().playerInput = playerInput;
+        GetComponent<CharaterControllerItem>().playercontroller = controller;
+        if(playerInput!=null)
+        GetComponent<CharaterControllerItem>().setplayerinptu();
+
+    }
+    public void DetectSlotBelow()
+    {
+        if (!isHabilityOn && hasDeacactivateLevitation)
         {
             RaycastHit hit;
             Debug.Log("ssaaaa");
-            if (Physics.Raycast(transform.position,-transform.up,out hit,2f,layerSlot))
+            if (Physics.Raycast(transform.position, -transform.up, out hit, 2f, layerSlot))
             {
-               
+
                 Slot slot = hit.collider.gameObject.GetComponent<Slot>();
                 if (slot)
                 {
-
                     if (!slot.hasObjectOn && transform.parent)
                     {
-                        
+
                         slot.LeaveObjOn(transform.parent.parent.GetComponent<CharacterControllerAct>());
                     }
                 }
@@ -105,7 +126,7 @@ public  class Item : MonoBehaviour
                     if (transform.parent)
                     {
                         transform.parent.parent.GetComponent<CharacterControllerAct>().LeaveObjOn();
-                        
+
                     }
                 }
             }
@@ -120,22 +141,8 @@ public  class Item : MonoBehaviour
             }
             hasDeacactivateLevitation = false;
         }
-    }
-    
-    public void ActivateDeactivateItemPlayerControler(bool isActive,int controller,PlayerInput playerInput)
-    {
-        isHabilityOn = isActive;
-        if (!isActive)
-            hasDeacactivateLevitation = true;
-        GetComponent<CharaterControllerItem>().enabled = isActive;
-        GetComponent<CharacterController>().enabled = isActive;
-        GetComponent<CharaterControllerItem>().playerInput = playerInput;
-       
-        GetComponent<CharaterControllerItem>().playercontroller = controller;
-        if(playerInput!=null)
-        GetComponent<CharaterControllerItem>().setplayerinptu();
 
     }
-   
+
 }
 

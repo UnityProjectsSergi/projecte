@@ -190,17 +190,30 @@ namespace FSM {
         public void UpdateProgress()
         {
             if (!isPaused)
-            { 
-                if(FSM_Cooking.enabled && FSM_Cooking.cookingBlackbloard.progressBar.enabled)
-                if(FSM_Cooking.cookingBlackbloard.progressBar.currentState==FSM_ProgressBar.States.PROGRESS)
-                     FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = 1* Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
-              
-                if(speedUpCook)
-                    potBlackBoard.journey += Time.deltaTime*2f;
-                else
-                    potBlackBoard.journey += Time.deltaTime;
+            {
+                potBlackBoard.journey += Time.deltaTime;
+                if (FSM_Cooking.enabled && FSM_Cooking.cookingBlackbloard.progressBar.enabled)
+                    if(FSM_Cooking.cookingBlackbloard.progressBar.currentState==FSM_ProgressBar.States.PROGRESS)
+                        if(speedUpCook)
+                         FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = 2F* Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
+                     else
+                         FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = 1F * Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
+                if (FSM_Alert.enabled && FSM_Alert.AlertBlackBoard.FSM_ShowHideImage.enabled)
+                    if (FSM_Alert.AlertBlackBoard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.SHOW || FSM_Alert.AlertBlackBoard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.HIDE)
+                        if (speedUpCook)
+                            FSM_Alert.AlertBlackBoard.FSM_ShowHideImage.speed = 2f;
+                        else
+                            FSM_Alert.AlertBlackBoard.FSM_ShowHideImage.speed = 1f;
+                if (FSM_Cooking.enabled && FSM_Cooking.cookingBlackbloard.FSM_ShowHideImage.enabled)
+                    if (FSM_Cooking.cookingBlackbloard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.SHOW || FSM_Cooking.cookingBlackbloard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.HIDE)
+                        if (speedUpCook)
+                            FSM_Cooking.cookingBlackbloard.FSM_ShowHideImage.speed = 2f;
+                        else
+                            FSM_Cooking.cookingBlackbloard.FSM_ShowHideImage.speed = 1f;
+
+
             }
-            // ProgressBarBB.fillAmount=
+        
         }
         public void ResetFSM()
         {

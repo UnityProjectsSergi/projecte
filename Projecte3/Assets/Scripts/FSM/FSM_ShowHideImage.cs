@@ -14,6 +14,7 @@ namespace FSM
        
       
         public ImageShowHideBlackboard ISHBackBoard;
+        public float speed=1;
 
         // Use this for initialization
         //xo tin varies images diferents
@@ -51,7 +52,6 @@ namespace FSM
                         ChangeState(States.SHOW);
                     if (!isPaused)
                     {
-                     
                         if (ISHBackBoard.timer > ISHBackBoard.timeWaitShowImage)
                         {
                             ChangeState(States.SHOW);
@@ -167,7 +167,7 @@ namespace FSM
             if (!ISHBackBoard.mustStay)
             {
                 if (!isPaused)
-                    ISHBackBoard.timer += Time.deltaTime;
+                    ISHBackBoard.timer +=speed* Time.deltaTime;
             }
         }
 
