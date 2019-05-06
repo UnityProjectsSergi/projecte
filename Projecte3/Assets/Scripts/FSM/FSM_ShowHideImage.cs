@@ -142,6 +142,8 @@ namespace FSM
             switch (newState)
             {
                 case States.INITIAL:
+                    if(currentState==States.PAUSE)
+                        ISHBackBoard.image.enabled = false;
                     break;
                 case States.SHOW:
                     ISHBackBoard.image.enabled = true;
@@ -169,14 +171,15 @@ namespace FSM
             }
         }
 
-        internal void Reset()
+        internal void ResetFSM()
         {
-         
-            currentState = States.INITIAL;
-            ISHBackBoard.image.enabled = false;
+
+          //  ChangeState(States.INITIAL);
+           
             ISHBackBoard.timer = 0;
             ISHBackBoard.count = 0;
             Exit();
+           
         }
 
     }

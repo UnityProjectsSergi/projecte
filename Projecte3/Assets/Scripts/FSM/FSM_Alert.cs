@@ -123,6 +123,8 @@ namespace FSM
             switch (newState)
             {
                 case States.INITIAL:
+                  //  if(currentState==States.PAUSE)
+                      //  AlertBlackBoard.FSM_ShowHideImage.Reset();
                     break;
                 case States.SLOW:
                     if (currentState == States.INITIAL)
@@ -239,9 +241,12 @@ namespace FSM
         //    currentState = newState;
         //}
 
-        internal void Reset()
+        internal void ResetFSM()
         {
-            AlertBlackBoard.FSM_ShowHideImage.Reset();
+            if(AlertBlackBoard.FSM_ShowHideImage)
+            AlertBlackBoard.FSM_ShowHideImage.ResetFSM();
+            Exit();
+           
         }
     }
 }

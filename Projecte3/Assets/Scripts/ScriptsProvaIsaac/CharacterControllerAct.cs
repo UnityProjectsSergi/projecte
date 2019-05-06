@@ -7,7 +7,7 @@ using System;
 
 public class CharacterControllerAct : MonoBehaviour
 {
-    
+
     public Transform attachTransform;
     PlayerInput playerInput;
     public LayerMask tablesLayerMask;
@@ -24,7 +24,7 @@ public class CharacterControllerAct : MonoBehaviour
     {
         habilityesController = GetComponent<HabilityesController>();
         playerInput = GetComponent<PlayerInput>();
-        
+
         //animator = GetComponent<Animator>();
     }
 
@@ -32,27 +32,38 @@ public class CharacterControllerAct : MonoBehaviour
     {
         HabilityAction();
         SlotAction();
-     
+
     }
     public bool canUseHability;
     private void HabilityAction()
     {
-        if(attachedObject!=null)
+        if (habilityesController.habilityType == HabilityType.LevitationItems)
         {
+            if (attachedObject != null)
+            {
 
-            habilityesController. hability.SetHabilityAvalableFalse();
+                habilityesController.hability.SetHabilityAvalableFalse();
                 if (playerInput.squareBtn.Down)
                 {
-                habilityesController. hability.UseHability();
+                    habilityesController.hability.UseHability();
                     // to hability trigger
                 }
-            if (habilityesController.hability.usingHability)
-            {
-                if (playerInput.XBtn.Down)
+                if (habilityesController.hability.usingHability)
                 {
-                    habilityesController. hability.StopHability();
-                    
+                    if (playerInput.XBtn.Down)
+                    {
+                        habilityesController.hability.StopHability();
+
+                    }
                 }
+            }
+        }
+        else if(habilityesController.habilityType==HabilityType.SpeedTheFire)
+        {
+            if (playerInput.squareBtn.Down)
+            {
+                habilityesController.hability.SetHabilityAvalableFalse();
+                habilityesController.hability.UseHability();
             }
         }
     }
@@ -66,7 +77,7 @@ public class CharacterControllerAct : MonoBehaviour
             if (playerInput.triangleBtn.Hold)
                 Action();
 
-                //animator.SetTrigger("Idle");
+            //animator.SetTrigger("Idle");
         }
         else
         {
@@ -74,7 +85,7 @@ public class CharacterControllerAct : MonoBehaviour
                 LeaveObjOn();
         }
     }
-    
+
     private void Catch()
     {
         RaycastHit hit;
@@ -125,8 +136,8 @@ public class CharacterControllerAct : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
         {
-            
-                //animator.SetTrigger("Action");
+
+            //animator.SetTrigger("Action");
             slot = hit.collider.GetComponent<Slot>();
             slot.Action(this);
         }
@@ -136,5 +147,5 @@ public class CharacterControllerAct : MonoBehaviour
     {
         Gizmos.DrawRay(raycastTransform.position, transform.forward * 1f);
     }
-    
+
 }

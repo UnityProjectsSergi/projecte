@@ -110,10 +110,10 @@ namespace FSM
             
         }
 
-        internal void Reset()
+        internal void ResetFSM()
         {
             ProgressBarBB.percent = 0;
-            currentState = States.INITIAL;
+            Exit();
         }
     }
 }

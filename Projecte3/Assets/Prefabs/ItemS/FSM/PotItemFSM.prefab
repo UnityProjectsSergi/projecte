@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 824401341}
   - component: {fileID: 8056843302709748429}
   - component: {fileID: 6177130037929418716}
+  - component: {fileID: 1928146262605827359}
   m_Layer: 10
   m_Name: PotItemFSM
   m_TagString: Item
@@ -631,9 +632,9 @@ CapsuleCollider:
   m_GameObject: {fileID: 2356859938089687660}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
-  m_Height: 2
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &824401341
@@ -699,6 +700,19 @@ MonoBehaviour:
   Direction: {x: 0, y: 0, z: 0}
   playercontroller: 0
   speed: 2
+--- !u!65 &1928146262605827359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356859938089687660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3075562987096433762
 GameObject:
   m_ObjectHideFlags: 0
