@@ -46,9 +46,6 @@ namespace FSM
 
                     if(!isPaused)
                     {
-                        // ProgressBarBB.itemPot.totalduration
-                        
-                       // ProgressBarBB.percent += 0.1f * Time.deltaTime;
                         if (ProgressBarBB.percent >= 0.99f)
                         {
                             ChangeState(States.DONE);

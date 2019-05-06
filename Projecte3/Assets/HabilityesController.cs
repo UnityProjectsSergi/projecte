@@ -18,8 +18,10 @@ public class HabilityesController : MonoBehaviour
             hability.set(3, 4, ActivateLevitation, DeactivateLevitation);
         else if (habilityType == HabilityType.SpeedTheFire)
             hability.set(13, 4, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire);
+
         else if (habilityType == HabilityType.Throw)
             hability.set(0, 0, null,null);
+
     }
 
     // Update is called once per frame
