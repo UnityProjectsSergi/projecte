@@ -22,5 +22,5 @@ public enum StateIngredient
 }
 public enum HabilityType
 {
-    LevitationItems,SpeedTheFire
+    LevitationItems, SpeedTheFire, Throw
 }
