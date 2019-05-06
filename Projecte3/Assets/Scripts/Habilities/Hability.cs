@@ -14,7 +14,7 @@ public class Hability : MonoBehaviour
     public MyHability CancelHability;
 
     public Image imageCooldown;
-
+    Coroutine stop;
 
     public void set(float duration, float cooldown, MyHability Start, MyHability _cancel)
     {
@@ -23,16 +23,12 @@ public class Hability : MonoBehaviour
         Starthability += Start;
         CancelHability += _cancel;
     }
-    // Use this for initialization
+
     public void SetHabilityAvalableFalse()
     {
         habilityHabailable = false;
     }
-    public void Update()
-    {
-        // imageCooldown.fillAmount=
-    }
-    Coroutine stop;
+
     public void UseHability()
     {
         if (!habilityHabailable)
@@ -41,17 +37,9 @@ public class Hability : MonoBehaviour
 
             Starthability();
             stop = StartCoroutine(Cooldown());
-
-        
-          
-        }
-
-
         }
     }
-    // has tocat algu de hability.cs 
-    //vesa 
-    // nomes activar  no 
+
     public void StopHability()
     {
         if (!habilityHabailable && usingHability)
@@ -64,6 +52,7 @@ public class Hability : MonoBehaviour
             }
         }
     }
+
     public IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(_duration);
