@@ -94,7 +94,13 @@ public class CharacterControllerAct : MonoBehaviour
 
         if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, itemsLayerMask))
         {
-            Debug.Log("Catch Item");
+            item = hit.collider.GetComponent<Item>();
+            item.transform.eulerAngles = Vector3.zero;
+            item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            item.Catch(this);
+        }
+        else if(Physics.Raycast(raycastTransform.position, transform.forward + new Vector3(0, 0.5f, 0), out hit, 1, itemsLayerMask))
+        {
             item = hit.collider.GetComponent<Item>();
             item.transform.eulerAngles = Vector3.zero;
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
