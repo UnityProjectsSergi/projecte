@@ -7,24 +7,34 @@ using System;
 
 public class CharacterControllerAct : MonoBehaviour
 {
-
     public Transform attachTransform;
     PlayerInput playerInput;
     public LayerMask tablesLayerMask;
     public LayerMask itemsLayerMask;
     public Transform raycastTransform;
-    //public Animator animator;
     public HabilityesController habilityesController;
     public float throwForce = 600f;
     private Slot slot;
     private Item item;
 
     public GameObject attachedObject;
+    //Portal Habiliti
+    public GameObject portal;
+    private bool movePortalA = true;
+    public bool canMovePortals = true;
+    private GameObject portalA;
+    private GameObject portalB;
 
     private void Start()
     {
         habilityesController = GetComponent<HabilityesController>();
         playerInput = GetComponent<PlayerInput>();
+        
+        if(habilityesController.habilityType == HabilityType.Portal)
+        {
+            portalA = Instantiate(portal, new Vector3(200, 0, 0), Quaternion.identity);
+            portalB = Instantiate(portal, new Vector3(200, 0, 0), Quaternion.identity);
+        }
     }
 
     void Update()
@@ -64,8 +74,13 @@ public class CharacterControllerAct : MonoBehaviour
         else if(habilityesController.habilityType == HabilityType.Throw)
         {
             if(playerInput.squareBtn.Down)
-            {
                 ThrowObj();
+        } else if(habilityesController.habilityType == HabilityType.Portal)
+        {
+            if(playerInput.squareBtn.Down)
+            {
+                habilityesController.hability.SetHabilityAvalableFalse();
+                habilityesController.hability.UseHability();
             }
         }
     }
@@ -75,9 +90,8 @@ public class CharacterControllerAct : MonoBehaviour
         if (attachedObject == null)
         {
             if (playerInput.XBtn.Down)
-            {
                 Catch();
-            }
+
             if (playerInput.triangleBtn.Hold)
                 Action();
         }
@@ -107,7 +121,7 @@ public class CharacterControllerAct : MonoBehaviour
             item.Catch(this);
         }
         else if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
-        {
+        {          
             slot = hit.collider.GetComponent<Slot>();
             slot.Catch(this);
         }    
@@ -143,6 +157,33 @@ public class CharacterControllerAct : MonoBehaviour
         }
     }
 
+    public void PutPortal()
+    {
+        RaycastHit hit;
+        if (!Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1.6f, tablesLayerMask) && canMovePortals)
+        {
+            Vector3 _portalPosition = new Vector3(transform.position.x + transform.forward.x, 1, transform.position.z + transform.forward.z);
+            if (movePortalA)
+            {
+                portalA.transform.position = _portalPosition;
+                movePortalA = !movePortalA;
+            }
+            else
+            {
+                portalB.transform.position = _portalPosition;
+                movePortalA = !movePortalA;
+                canMovePortals = false;
+            }
+        }
+    }
+
+    public void EndPortal()
+    {
+        portalA.transform.position = new Vector3(200, 0, 0);
+        portalB.transform.position = new Vector3(200, 0, 0);
+        canMovePortals = true;
+    }
+
     public void LeaveObj()
     {
         if (attachedObject != null)
@@ -165,7 +206,7 @@ public class CharacterControllerAct : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //Gizmos.DrawRay(raycastTransform.position, transform.forward * 1f);
+        Gizmos.DrawRay(raycastTransform.position, transform.forward * 1.6f);
     }
 
 }

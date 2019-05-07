@@ -49,8 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0dc9ea9e0f66d48b4b45657e831455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levitationAmplitude: 0
   isHabilityOn: 0
+  layerSlot:
+    serializedVersion: 2
+    m_Bits: 512
+  hasDeacactivateLevitation: 0
   ing: 0
   itemType: 1
   points: 0
@@ -60,10 +63,6 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
-  layerSlot:
-    serializedVersion: 2
-    m_Bits: 512
-  hasDeacactivateLevitation: 0
   listItem: []
   vial: {fileID: 4237300646317215325}
   fullMaterial: {fileID: 2100000, guid: d0c0535a26df87849874ac6e40f20a35, type: 2}
@@ -140,13 +139,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
   playerInput: {fileID: 0}
-  m_GravityMultiplier: 3.7
   amplitud: 0
   frequenia: 0
   Direction: {x: 0, y: 0, z: 0}
-  gravity: {x: 0, y: 0, z: 0}
   playercontroller: 0
-  l_CollisionFlags: 0
   speed: 2
 --- !u!1 &4237300646317215325
 GameObject:
@@ -173,13 +169,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4237300646317215325}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.167, z: 0}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 2209381653563686938}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
 --- !u!33 &3934039429192371048
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -187,7 +183,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4237300646317215325}
-  m_Mesh: {fileID: 4300000, guid: 6582e07fa42e01f45925b101c4bcde27, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d6ff482e8a5ca7c42947eb1456580208, type: 3}
 --- !u!23 &4868906121317456177
 MeshRenderer:
   m_ObjectHideFlags: 0
