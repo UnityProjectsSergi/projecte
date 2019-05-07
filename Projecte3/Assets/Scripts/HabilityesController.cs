@@ -9,7 +9,8 @@ public class HabilityesController : MonoBehaviour
     public CharacterControllerAct CharacterControllerAct;
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
-    public bool speedUpCookHability;
+    public bool 
+        CookHability;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class HabilityesController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // if(habilityType == HabilityType.SpeedTheFire)
+       if(hability.usingHability)
         DetectOlla();
     }
     public Collider[] ollesDetected;
@@ -85,6 +86,9 @@ public class HabilityesController : MonoBehaviour
         }
     }
     public Collider[] hitColliders;
+
+    public bool speedUpCookHability { get; private set; }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, 3);

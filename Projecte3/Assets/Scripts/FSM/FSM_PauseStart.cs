@@ -4,7 +4,7 @@ namespace FSM
 {
     public class FSM_PauseStart : FiniteStateMachine
     {
-        public enum States { INITIAL, RUNNING, PAUSE, END }
+        public enum States { INITIAL, RUNNING, PAUSE, END ,RESET}
         public FSM_Pot fSM_pot;
         public States currentState;
         public ItemPotFSM itemPot;
@@ -48,12 +48,17 @@ namespace FSM
                     }
                     break;
                 case States.PAUSE:
-                   
+                    if (ResetFSM)
+                        ChangeState(States.RESET);
                         if (itemPot.hasStoveUnder)
                         {
                             ChangeState(States.RUNNING);
                         }
                    
+                    break;
+                case States.RESET:
+                    ResetFSM = false;
+                    ChangeState(States.INITIAL);
                     break;
                 default:
                     break;
@@ -70,6 +75,8 @@ namespace FSM
 
                     break;
                 case States.PAUSE:
+                    // si no curretState es PAUSE i Nw Stae Reset 
+                    if(newState!=States.RESET)
                     FSM_PotInteral.isPaused = false;
                     break;
                 case States.END:
@@ -94,17 +101,21 @@ namespace FSM
                 case States.END:
                     FSM_PotInteral.Exit();
                     break;
+                case States.RESET:
+                 //   FSM_PotInternal.resetFSM;
+                    break;
                 default:
                     break;
             }
             currentState = newState;
         }
-        public void ResetFSM ()
-        {
-            FSM_PotInteral.ResetFSM();
-            Exit();
+        public bool ResetFSM;
+        //public void ResetFSM ()
+        //{
+        //    FSM_PotInteral.ResetFSM();
+        //    Exit();
             
-        }
+        //}
     }
 
 }

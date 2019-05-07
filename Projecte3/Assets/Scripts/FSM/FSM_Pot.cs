@@ -4,7 +4,7 @@ namespace FSM {
     public class FSM_Pot : FiniteStateMachine
     {
        
-        public enum States { INITIAL, EMPTY,PAUSERUNNING, BURN }
+        public enum States { INITIAL, EMPTY,PAUSERUNNING, BURN ,RESETT}
         public States currentState;
         public ItemPotFSM itemPot;
         public GameObject CookingFSMGO;
@@ -15,6 +15,7 @@ namespace FSM {
         public FSM_Alert FSM_Alert;
         
         public FSM_PauseStart FSM_PauseStart;
+        private bool resetFSM;
 
         // Use this for initialization
         void Start()
@@ -53,7 +54,10 @@ namespace FSM {
                             ChangeState(States.PAUSERUNNING);
                         break;
                     case States.PAUSERUNNING:
-
+                    if (resetFSM)
+                    {
+                        ChangeState(States.RESETT);
+                    }
                     if (FSM_PauseStart.currentState == FSM.FSM_PauseStart.States.END)
                     {
                         ChangeState(States.BURN);
@@ -61,9 +65,13 @@ namespace FSM {
 
                         break;
                     case States.BURN:
-                      
+                    if (resetFSM)
+                        ChangeState(States.RESETT);
                         break;
-               
+                case States.RESETT:
+                    resetFSM = false;
+                    ChangeState(States.INITIAL);
+                    break;
                     default:
                         break;
                 }
@@ -79,10 +87,12 @@ namespace FSM {
                 case States.EMPTY:
                     break;
                 case States.PAUSERUNNING:
-                   
+                    if(newState!=States.RESETT )
+                    FSM_PauseStart.Exit();
                     break;
                 case States.BURN:
-
+                    if(newState!=States.RESETT)
+                    potBlackBoard.fSM_IMAGE.Exit();
                     break;
                    
                     
@@ -94,14 +104,11 @@ namespace FSM {
             switch (newState)
             {
                 case States.INITIAL:
-                    if(currentState==States.PAUSERUNNING)
-                                         
-                            FSM_PauseStart.ReEnter();
-                            
-                  
-                     
-                    if(currentState==States.BURN)
-                        potBlackBoard.fSM_IMAGE.ReEnter();
+
+                    //if (currentState == States.PAUSERUNNING)
+                    //    FSM_PauseStart.ReEnter(); 
+                    //if(currentState==States.BURN)
+                    //    potBlackBoard.fSM_IMAGE.ReEnter();
                     break;
                 case States.EMPTY:
                     break;
@@ -110,6 +117,9 @@ namespace FSM {
                     break;
                 case States.BURN:
                     potBlackBoard.fSM_IMAGE.ReEnter();
+                    break;
+                case States.RESETT:
+                    FSM_PauseStart.ResetFSM = true;
                     break;
                 default:
                     break;
@@ -123,12 +133,8 @@ namespace FSM {
         }
         public void ResetF()
         {
-            potBlackBoard.journey = 0;
-            if(FSM_Alert)
-            FSM_Alert.ResetFSM();
-            if(FSM_PauseStart)
-            FSM_PauseStart.ResetFSM();
-            currentState = States.INITIAL;
+        
+            resetFSM = true;
            
             
         }
