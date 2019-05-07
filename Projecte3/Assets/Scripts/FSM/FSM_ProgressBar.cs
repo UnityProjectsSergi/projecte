@@ -6,7 +6,7 @@ namespace FSM
 {
     public class FSM_ProgressBar : FiniteStateMachine
     {
-        public enum States { INITIAL, PROGRESS,PAUSE, DONE }
+        public enum States { INITIAL, PROGRESS,PAUSE, DONE,RESET }
         public States currentState;
         public States lastState;
         public ProgressBarBlackboard ProgressBarBB;
@@ -40,6 +40,7 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
+                    if(!isPaused)
                     ChangeState(States.PROGRESS);
                     break;
                 case States.PROGRESS:
@@ -57,11 +58,21 @@ namespace FSM
                     }
                     break;
                 case States.PAUSE:
+                    if (ResetFSMProgBar)
+                        ChangeState(States.RESET);
                     if (!isPaused)
                         ChangeState(States.PROGRESS);
                     break;
                 case States.DONE:
-                    ProgressBarBB.percent = 0;
+                    if (ResetFSMProgBar)
+                    {
+                        ChangeState(States.RESET);
+                        ProgressBarBB.percent = 0;
+                    }
+                    break;
+                case States.RESET:
+                    ResetFSMProgBar = false;
+                    ChangeState(States.INITIAL);
                     break;
                 default:
                     break;
@@ -79,6 +90,7 @@ namespace FSM
                 case States.DONE:
                     break;
                 case States.PAUSE:
+                    if(newState!=States.RESET)
                     ProgressBarBB.image.enabled = true;
                     break;
                  
@@ -93,9 +105,13 @@ namespace FSM
                 case States.PROGRESS:
                     break;
                 case States.DONE:
+                    ProgressBarBB.percent = 0.0F;
                     break;
                 case States.PAUSE:
                     ProgressBarBB.image.enabled = false;
+                    break;
+                case States.RESET:
+                    ProgressBarBB.percent = 0.0F;
                     break;
                 default:
                     break;
@@ -107,10 +123,6 @@ namespace FSM
             
         }
 
-        internal void ResetFSM()
-        {
-            ProgressBarBB.percent = 0;
-            Exit();
-        }
+        public bool ResetFSMProgBar;
     }
 }

@@ -49,7 +49,9 @@ namespace FSM
                     break;
                 case States.PAUSE:
                     if (ResetFSM)
+                    {
                         ChangeState(States.RESET);
+                    }
                         if (itemPot.hasStoveUnder)
                         {
                             ChangeState(States.RUNNING);
@@ -59,6 +61,12 @@ namespace FSM
                 case States.RESET:
                     ResetFSM = false;
                     ChangeState(States.INITIAL);
+                    break;
+                case States.END:
+                    if (ResetFSM)
+                    {
+                        ChangeState(States.RESET);
+                    }
                     break;
                 default:
                     break;
@@ -90,10 +98,15 @@ namespace FSM
                 case States.INITIAL:
                     if (currentState == States.PAUSE)
                         FSM_PotInteral.ReEnter();
+                        
                     break;
                 case States.RUNNING:
                     if (currentState == States.INITIAL)
+                    {
+                        FSM_PotInteral.isPaused = false;
                         FSM_PotInteral.ReEnter();
+                      
+                    }
                     break;
                 case States.PAUSE:
                     FSM_PotInteral.isPaused = true;
@@ -102,7 +115,7 @@ namespace FSM
                     FSM_PotInteral.Exit();
                     break;
                 case States.RESET:
-                 //   FSM_PotInternal.resetFSM;
+                    FSM_PotInteral.resetFSM = true;
                     break;
                 default:
                     break;

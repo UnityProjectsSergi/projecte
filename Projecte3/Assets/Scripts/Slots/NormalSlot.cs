@@ -27,7 +27,7 @@ public class NormalSlot:Slot
                         Debug.Log("ssm");
                         //item.transform.p;arent = null;
                         Item ItemClonIngredient = itemPlayer.Clone();
-                        ItemPot itempot = item.GetComponent<ItemPot>();
+                        ItemPotFSM itempot = item.GetComponent<ItemPotFSM>();
                         if (itempot.listItem.Count < itempot.potUi.listUIItems.Capacity)
                         {
                             //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  

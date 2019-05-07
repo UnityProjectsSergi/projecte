@@ -87,12 +87,12 @@ namespace FSM {
                 case States.EMPTY:
                     break;
                 case States.PAUSERUNNING:
-                    if(newState!=States.RESETT )
-                    FSM_PauseStart.Exit();
+                    //if(newState!=States.RESETT )
+                    //FSM_PauseStart.Exit();
                     break;
                 case States.BURN:
-                    if(newState!=States.RESETT)
-                    potBlackBoard.fSM_IMAGE.Exit();
+                    //if(newState!=States.RESETT)
+                    //potBlackBoard.fSM_IMAGE.Exit();
                     break;
                    
                     
@@ -116,10 +116,26 @@ namespace FSM {
                     FSM_PauseStart.ReEnter();
                     break;
                 case States.BURN:
+
+                    potBlackBoard.fSM_IMAGE.isPaused = false;
                     potBlackBoard.fSM_IMAGE.ReEnter();
+                                        potBlackBoard.fSM_IMAGE.ISHBackBoard.mustStay = true;
                     break;
                 case States.RESETT:
-                    FSM_PauseStart.ResetFSM = true;
+                    if (FSM_PauseStart.enabled)
+                    {
+                        FSM_PauseStart.ResetFSM = true;
+                        potBlackBoard.journey = 0;
+                        itemPot.totalDurationOfCooking = 0;
+                        
+                    }
+                    if (potBlackBoard.fSM_IMAGE.enabled)
+                    {
+                        potBlackBoard.fSM_IMAGE.ResetFSMImage = true;
+                        potBlackBoard.fSM_IMAGE.ISHBackBoard.count = 0;
+                        potBlackBoard.fSM_IMAGE.ISHBackBoard.timer = 0;
+                        potBlackBoard.fSM_IMAGE.ISHBackBoard.image.enabled = false;
+                    }
                     break;
                 default:
                     break;
