@@ -18,9 +18,10 @@ public class HabilityesController : MonoBehaviour
             hability.set(3, 4, ActivateLevitation, DeactivateLevitation);
         else if (habilityType == HabilityType.SpeedTheFire)
             hability.set(13, 4, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire);
-
         else if (habilityType == HabilityType.Throw)
-            hability.set(0, 0, null,null);
+            hability.set(0, 0, null, null);
+        else if (habilityType == HabilityType.Portal)
+            hability.set(12, 15, ActiveHabilityPortal, DeactivateHabilityPortal);
 
     }
 
@@ -40,7 +41,7 @@ public class HabilityesController : MonoBehaviour
     }
     public void DeactivateLevitation()
     {
-        CharacterControllerAct. attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(false, 0, null);
+        CharacterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(false, 0, null);
         GetComponent<CharacterController>().enabled = true;
         GetComponent<Character>().enabled = true;
     }
@@ -48,12 +49,21 @@ public class HabilityesController : MonoBehaviour
     {
         speedUpCookHability = true;
         HabilityRadi.gameObject.SetActive(true);
-
     }
     public void DeactivateHabilitySpeedFire()
     {
         speedUpCookHability = false;
         HabilityRadi.gameObject.SetActive(false);
+    }
+    public void ActiveHabilityPortal()
+    {
+        Debug.Log("Active Portals");
+        CharacterControllerAct.PutPortal();
+    }
+    public void DeactivateHabilityPortal()
+    {
+        Debug.Log("End Portals");
+        CharacterControllerAct.EndPortal();
     }
     public void DetectOlla()
     {

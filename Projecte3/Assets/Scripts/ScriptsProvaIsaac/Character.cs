@@ -37,16 +37,12 @@ public class Character : MonoBehaviour
         
         Vector3 move = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
         _controller.Move(move * Time.deltaTime * Speed);
+
         if (move != Vector3.zero)
             transform.forward = move;
 
-        //if (Input.GetButtonDown("Jump") && _isGrounded)
-        //    _velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
         if (playerInput.OBtn.Down)
-        {
-            Debug.Log("Dash");
             _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
-        }
 
 
         _velocity.y += Gravity * Time.deltaTime;
@@ -57,13 +53,5 @@ public class Character : MonoBehaviour
 
         _controller.Move(_velocity * Time.deltaTime);
 
-    }
-    public void OnDrawGizmos()
-    {
-        
-    }
-    public void FixedUpdate()
-    {
-       
     }
 }
