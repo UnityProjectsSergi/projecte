@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1248374057
 Transform:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3daa31c2cc9df8c4aa9a9e7aa2736c01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -433,7 +433,7 @@ MonoBehaviour:
   layerMaskOverLapOlles:
     serializedVersion: 2
     m_Bits: 512
-  speedUpCookHability: 0
+  CookHability: 0
   ollesDetected: []
   hitColliders: []
 --- !u!114 &2227135488605312352
@@ -459,6 +459,8 @@ MonoBehaviour:
   habilityesController: {fileID: 2046403930999699546}
   throwForce: 600
   attachedObject: {fileID: 0}
+  portal: {fileID: 0}
+  canMovePortals: 1
   canUseHability: 0
 --- !u!1 &4059239846154456530
 GameObject:

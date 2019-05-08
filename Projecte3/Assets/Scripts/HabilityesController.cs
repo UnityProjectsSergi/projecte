@@ -70,7 +70,7 @@ public class HabilityesController : MonoBehaviour
     {
         Debug.Log("sss");
         
-        ollesDetected = Physics.OverlapSphere(transform.position, 3,layerMaskOverLapOlles);
+        ollesDetected = Physics.OverlapSphere(transform.position,HabilityRadi.transform.localScale.x/2,layerMaskOverLapOlles);
         if (ollesDetected.Length > 1)
             Debug.Log("sssssss");
         for (int i = 0; i < ollesDetected.Length; i++)
@@ -120,7 +120,7 @@ public class HabilityesController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, 3);
+        Gizmos.DrawWireSphere(transform.position, HabilityRadi.transform.localScale.x/2);
     }
 
 }
