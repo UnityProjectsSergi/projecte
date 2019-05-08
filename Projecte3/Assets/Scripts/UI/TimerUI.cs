@@ -7,8 +7,8 @@ public class TimerUI : MonoBehaviour
 {
     public Text textTimer;
     public float timeLeft = 300.0f;
-    public GameObject TimerUP;
-   
+    public UI_Screen TimerUP;
+    public UI_System System;
     public bool clock;
     private float mins;
     private float secs;
@@ -20,6 +20,7 @@ public class TimerUI : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(gameObject.name);
         textTimer = GetComponent<UnityEngine.UI.Text>();
     }
 
@@ -36,8 +37,8 @@ public class TimerUI : MonoBehaviour
             {
                 if (!isStop)
                     isStop = true;
-                TimerUP.SetActive(true);
-                Time.timeScale = 0.0f;
+                System.SwitchScreen(TimerUP);
+
             }
         }
 

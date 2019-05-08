@@ -4,30 +4,29 @@ using UnityEngine;
 
 public class UI_Screen : MonoBehaviour
 {
-   public CanvasGroup canvas;
+    public UIFader canvas;
     // Start is called before the first frame update
-    void Awake()
+    public virtual void Awake()
     {
-        canvas = GetComponent<CanvasGroup>();
+        canvas = GetComponent<UIFader>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public virtual void CloseScreen()
     {
-        canvas.alpha = 0;
-        canvas.interactable = false;
-        canvas.blocksRaycasts = false;
+        canvas.FadeOut();
+        canvas.uiElement.interactable = false;
+        canvas.uiElement.blocksRaycasts = false;
     }
     public virtual void OpenScreen()
     {
-        canvas.alpha = 1;
-        canvas.interactable = true;
-        canvas.blocksRaycasts = true;
-      
-    }
+        canvas.FadeIn();
+        canvas.uiElement.interactable = true;
+        canvas.uiElement.blocksRaycasts = true;
 
+    }
 }
