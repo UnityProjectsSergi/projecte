@@ -20,3 +20,7 @@ public enum StateIngredient
 {
     raw, cutting, cutted, initCook, cooked
 }
+public enum HabilityType
+{
+    LevitationItems, SpeedTheFire, Throw, Portal
+}

@@ -20,6 +20,10 @@ public class RigidbodyController : MonoBehaviour
 
         if (!active)
         {
+            rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+        }
+        else
+        {
             rigidbody.constraints = RigidbodyConstraints.None;
         }
     }

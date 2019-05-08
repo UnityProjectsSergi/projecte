@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class PotUIState : MonoBehaviour
     public Image ProgressBar;
     public Image AlertBurn;
     public Image BurnAfterFire;
+    public Image Fire;
     public Image CookedOk;
     public float fillAmount = 0;
     public float totalduration = 0;
@@ -17,78 +19,127 @@ public class PotUIState : MonoBehaviour
     
     public float timeShowAlertBurning = 2.5f;
     public float timeBurning = 1.0f;
-    
+    public PotUI PotUI;
     // Start is called before the first frame update
     void Start()
     {
+        PotUI = gameObject.transform.parent.GetComponent<PotUI>();
         ProgressBar.gameObject.SetActive(false);
     }
-  
+
     // Update is called once per frame
+    public bool StartTimerAlrert;
+    public float alertTimer = 3;
     void Update()
     {
-        // q tu aqui li dones un valor 
+        //// q tu aqui li dones un valor 
         if (StartCookingBool)
         {
-          
-            journey += Time.deltaTime;
-            if (journey < totalduration)
+            if (speedUp)
+                journey += Time.deltaTime * 2f;
+            else
+               journey += Time.deltaTime;
+            if (journey < totalduration + 0.1f)
             {
                 ProgressBar.gameObject.SetActive(true);
                 percentCook = Mathf.Clamp01(journey / totalduration);
-                Debug.Log(percentCook + "percent   fillamount: "+ProgressBar.fillAmount+" juourney " + journey);
+
                 ProgressBar.fillAmount = percentCook;
-                if (ProgressBar.fillAmount >= 0.99f)
+                if (ProgressBar.fillAmount >= 0.999f)
                 {
                     ProgressBar.gameObject.SetActive(false);
-                    Debug.Log("buen ththe stove");
-                    StartCoroutine(ShowImageOK(3f));
+                  
+                    PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
+                    StartCoroutine(ShowImageOK(0.5f, CookedOk));
+                 
                 }
             }
             else
             {
-                if(journey<=(totalduration + timeShowAlertBurning))
+                if (journey <= (totalduration + timeShowAlertBurning))
                 {
-                    Debug.Log("show alert to burn");
-
 
                     
+                    if (StartTimerAlrert)
+                    {
+                        alertTimer -= Time.deltaTime;
+                        if (alertTimer >= 0.0f)
+                        {
+                            StartCoroutine(ShowImageAlert(3f, AlertBurn));
+                            PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
+                        }
+                    }
                 }
-                else if(journey<= (totalduration+timeShowAlertBurning+timeBurning))
+                else
                 {
-                 //   AlertShowed = true;
-                    
-                    Debug.Log("show icon ingredients burned");
+                    if (journey <= (totalduration + timeShowAlertBurning + timeBurning))
+                    {
+                        float BurnTimer = 4f;
+                        if (StartBuringBool)
+                        {
+                            BurnTimer -= Time.deltaTime;
+                            if (BurnTimer >= 0.0f)
+                            {
+                                PotUI.SetItemPotState(ItemPotStateIngredients.Burning);
+                                StartCoroutine(ShowImageFire(4f, Fire));
+
+
+                            }
+                        }
+                    }
                 }
             }
-            // fillAmount += progresSpeed * Time.deltaTime;
-            //  ProgressBar.fillAmount = fillAmount;
-            // fillAmount += percentCook * Time.deltaTime;
-            // ProgressBar.fillAmount = fillAmount;
         }
     }
+
+    internal void Reset()
+    {
+        journey = 0;
+        StartCookingBool = false;
+        StartBuringBool = false;
+        StartTimerAlrert = false;
+        BurnAfterFire.gameObject.SetActive(false);
+        totalduration = 0;
+        ProgressBar.fillAmount = 0;
+    }
+
     public void StartCooking()
     {
         // pk sempre es true
         StartCookingBool = true;
+        Debug.Log("start cooking");
+        PotUI.SetItemPotState(ItemPotStateIngredients.Cooking);
        
-        // co=StartCoroutine(UIBarCooking());
+  
     }
    
    public void StopCooking()
     {
-        StartCookingBool = false;
-        
-      
+        StartCookingBool = false;     
     }
-    public IEnumerator ShowImageOK(float wait)
+    public IEnumerator ShowImageOK(float wait,Image image)
     {
-        CookedOk.gameObject.SetActive(true);
+        image.gameObject.SetActive(true);
         yield return new WaitForSeconds(wait);
-        CookedOk.gameObject.SetActive(false);
-          
+        StartTimerAlrert = true;    
+        image.gameObject.SetActive(false);       
     }
-
+    public IEnumerator ShowImageFire(float wait, Image image)
+    {
+        image.gameObject.SetActive(true);
+        yield return new WaitForSeconds(wait);
+        
+        image.gameObject.SetActive(false);
+        BurnAfterFire.gameObject.SetActive(true);
+        PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);   
+    }
+    public IEnumerator ShowImageAlert(float wait, Image image)
+    {
+        image.gameObject.SetActive(true);
+        yield return new WaitForSeconds(wait);
+        StartBuringBool = true; 
+        image.gameObject.SetActive(false);
+    }
     public void StartBurning()
     {
         StartBuringBool = true;
@@ -98,7 +149,8 @@ public class PotUIState : MonoBehaviour
         StartBuringBool = false;
     }
     public float percentCook;
-    private float journey;
+    public float journey;
+    public bool speedUp;
     //********* code for control the potui with correountine */
     /*
     Coroutine co;

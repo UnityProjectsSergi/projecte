@@ -17,29 +17,48 @@ public class ItemPot : Item
     public PotUI potUi;
     // saber si el que hi ha 
     public LayerMask layerMask;
-    public  ItemPotStateIngredients currentStatePot;
-   
+    public ItemPotStateIngredients currentStatePot;
+    public bool hasStoveUnder;
+
     public void Start()
-    {
-        
+    {       
         listItem = new List<Item>();
         currentStatePot = ItemPotStateIngredients.Empty;
         potUi.StartUiPot();
         itemType = ItemType.Pot;
     }
-    
-  
-    public void LeaveObjIn(Item item)
+
+
+    public bool LeaveObjIn(Item item)
     {
-       // Son diferent crec jo tinc varies duracions una ui 
-        listItem.Add(item);
-        potUi.SetItemOnUISlot(item);
-        currentStatePot = ItemPotStateIngredients.Cooking;
-     //  potUi.potUIBar.AddDuration(item.duration);
-      // item.StartCoroutine(item.Cook());
-     
+        if (currentStatePot != ItemPotStateIngredients.Burning || currentStatePot != ItemPotStateIngredients.BurnedToTrash)
+        {
+            //hi poso el 2on igrdenit i esta aalert no torna a cooking
+            // Son diferent crec jo tinc varies duracions una ui 
+            if (listItem.Count > 0 && listItem[0] != null)
+            {
+                if (listItem[0].name == item.gameObject.name)
+                {
+                    listItem.Add(item);
+                    potUi.SetItemOnUISlot(item);
+                    //currentStatePot = ItemPotStateIngredients.Cooking;
+                    //currentStatePot = ItemPotStateIngredients.Cooking;
+                    return true;
+                }
+                return false;
+            }
+            else
+            {
+                listItem.Add(item);
+                potUi.SetItemOnUISlot(item);
+                //currentStatePot = ItemPotStateIngredients.Cooking;
+                //currentStatePot = ItemPotStateIngredients.Cooking;
+                return true;
+            }
+        }
+        return false;
     }
-   //
+    
     public void ResetPot()
     {
         currentStatePot = ItemPotStateIngredients.Empty;
@@ -51,14 +70,15 @@ public class ItemPot : Item
     {
         return listItem.All(item => item.stateIngredient == StateIngredient.cooked);
     }
-    public bool hasStoveUnder;
-    public void Update()
+
+    public override void Update()
     {
+        base.Update();
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up * 2f,out hit, layerMask))
+        if (Physics.Raycast(transform.position, -transform.up * 2f, out hit, layerMask))
         {
-            StoveSlot slot= hit.collider.gameObject.GetComponent<StoveSlot>();
-            if (slot  && listItem.Count>0)
+            StoveSlot slot = hit.collider.gameObject.GetComponent<StoveSlot>();
+            if (slot  && listItem.Count > 0)
             {
                 hasStoveUnder = true;
                 potUi.hasStoveUnder = true;
@@ -68,10 +88,7 @@ public class ItemPot : Item
                 hasStoveUnder = false;
                 potUi.hasStoveUnder = false;
             }
-        }
-        
-       
+        }      
     }
-   
 }
 

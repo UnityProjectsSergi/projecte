@@ -5,10 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Assets.Scripts.ObjPooler;
+using System.Collections;
+using UnityEngine.UI;
+
 namespace Assets.Scripts.Slots
 {
     public  class ServeSlot:Slot
     {
+        public GameObject textGO;
+        private Text text;
+
+        public void Start()
+        {
+            text = textGO.GetComponent<Text>();
+        }
 
         public override void LeaveObjOn(CharacterControllerAct player)
         {
@@ -20,29 +30,35 @@ namespace Assets.Scripts.Slots
                 if (item.itemType==ItemType.Vial)
                 {
                     VialItem vialItem = item.GetComponent<VialItem>();
-                       Debug.Log("es vial");
+                    
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
-                    if (OrderManager.Instance.CheckAllOrder(vialItem))
+                    bool check = OrderManager.Instance.CheckAllOrder(vialItem);
+                    Debug.Log("orderc check" + check);
+                    if (check)
                     {
-                        
-                        Debug.Log("Odrer ok");
+                        StartCoroutine(TextWide(5f, "Order get"));
                     }
                     else
                     {
-                        Debug.Log("Order KO");
+                        StartCoroutine(TextWide(5f, "Order Wrong"));
                     }
-                   // player.attachedObject = null;
-                    //item.transform.parent = null;
-                    //vialItem.ResetVial();
-                  //  VialPool.Instance.ReturnToPool(vialItem);
+                    vialItem.ResetVial();
+                    base.LeaveObjOn(player);
+                    vialItem.ResetMaterial();
+                    VialPool.Instance.ReturnToPool(vialItem);
+                    hasObjectOn = false;
                 }
                 else
                 {
-                    //ToDo Show Error on Screen Needs a vial
-
-                    Debug.Log("Nees a vial");
+                    StartCoroutine(TextWide(5f, "Needs a Vial"));
                 }
             }
+        }
+        public IEnumerator TextWide(float num,string textO)
+        {
+            text.text = textO;
+            yield return new WaitForSeconds(num);
+            text.text = "";
         }
     }
 }

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Assets.Scripts.ObjPooler;
+﻿using Assets.Scripts.ObjPooler;
+using UnityEngine;
+
 namespace Assets.Scripts
 {
     public  class GarbageSlot:Slot
@@ -13,18 +10,33 @@ namespace Assets.Scripts
             if (!hasObjectOn)
             {
                 item = player.attachedObject.GetComponent<Item>();
-
-                if(item.GetType() == typeof(Ingredient2))
+                if (item.itemType == ItemType.Ing)
                 {
-                    player.attachedObject = null;
-                    item.transform.parent = null;
-                    Ingredient2Pool.Instance.ReturnToPool((Ingredient2)item);
+                    if (item.GetType() == typeof(Ingredient2))
+                    {
+                        player.attachedObject = null;
+                        item.transform.parent = null;
+                        item.transform.localScale = new Vector3(0.85f,0.85f,0.85f);
+                        Ingredient2Pool.Instance.ReturnToPool((Ingredient2)item);
+                    }
+                    else
+                    {
+                        player.attachedObject = null;
+                        item.transform.parent = null;
+                        item.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
+                        Ing1Pool.Instance.ReturnToPool((Ing11)item);
+                    }
                 }
-                else
+                else if(item.itemType==ItemType.Pot)
                 {
-                    player.attachedObject = null;
-                    item.transform.parent = null;
-                    Ing1Pool.Instance.ReturnToPool((Ing11)item);
+                    ItemPot itemPot = item.GetComponent<ItemPot>();
+                    if (itemPot)
+                        itemPot.ResetPot();
+                    else
+                    {
+                        ItemPotFSM itemPotfs = item.GetComponent<ItemPotFSM>();
+                        itemPotfs.ResetPot();
+                    }
                 }
             }          
         }

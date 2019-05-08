@@ -25,7 +25,7 @@ public class OrderGenerator : MonoBehaviour
     /// </summary>
     /// <param name="numIng"></param>
     /// <returns></returns>
-    public Order GenerateOrder(int numIng,float duration)
+    public Order GenerateOrder(float rad,int numIng,float duration)
     {
         // listes Elements a generar x crear ordre
         List<Item> listIng = new List<Item>();
@@ -40,7 +40,7 @@ public class OrderGenerator : MonoBehaviour
                 // item elements
                 Item n;
                 /// Decideixo quin ingredinent si un o l'altre amb random
-                float rad = Random.Range(0.0f, 1.0f);
+               // float rad = Random.Range(0.0f, 1.0f);
                 if (rad>0.5f)
                 {
                     n = Ing1Pool.Instance.GetObjFromPool();

@@ -22,9 +22,9 @@ public class OrderUI:MonoBehaviour
     {
         RectTransform rect = GetComponent<RectTransform>();
         float withOfRect= rect.rect.width;
-        Debug.Log(withOfRect);
+      
         float withOfChilds = withOfRect / ItemUIlist.Count;
-        Debug.Log(withOfChilds);
+      
         foreach (var item in ItemUIlist)
         {
             item.gameObject.transform.SetParent(ListItemsUIParent.transform);

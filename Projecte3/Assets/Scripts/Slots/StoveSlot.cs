@@ -8,13 +8,13 @@ using UnityEngine;
 using Assets.Scripts.ObjPooler;
 using UnityEngine.UI;
 // Fogon
-public class StoveSlot:Slot
+public class StoveSlot : Slot
 {
     // el foc
     public bool hasPassIngToVial;
-    
+
     // get ItemPot from ItemPotPool.
-   
+
     public void Start()
     {
         item = PotPool.Instance.GetObjFromPool(positionObjOn);
@@ -36,45 +36,56 @@ public class StoveSlot:Slot
                     if (itemPlayer.stateIngredient == StateIngredient.cutted)
                     {
                         //clono itemplayer
-                        Debug.Log("is put insede pot");
+                       
                         Item ItemClonIngredient = itemPlayer.Clone();
-                        ItemPot itempot  = item.GetComponent<ItemPot>();
-                        
-                        
+                        ItemPot itempot = item.GetComponent<ItemPot>();
+
+                        //s al agafa el ing fets del pot 
                         if (itempot.listItem.Count < itempot.potUi.listUIItems.Count)
                         {
-                            Debug.Log("is inseidetemp and check");
-                            //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  
-                            itempot.LeaveObjIn(ItemClonIngredient);
-
-                            // desparent the player attached obj 
-                            player.attachedObject = null;
-                            // put the ItemClonIngredient  child of itemPot
-                            ItemClonIngredient.transform.parent = item.transform;
-                            // if ItemPlayer type is Ingredient2
-                            if (itemPlayer.GetType() == typeof(Ingredient2))
-                                // return to pool
-                                Ingredient2Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient2>());
-                            else
-                                //Return to pool
-                                Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
-                            // flag xq no pugui afegir 2 cops els igredients
-                            hasPassIngToVial = false;
+                            if (itempot.currentStatePot != ItemPotStateIngredients.Burning || itempot.currentStatePot != ItemPotStateIngredients.BurnedToTrash)
+                            {
+                              
+                                //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  
+                                if (itempot.LeaveObjIn(ItemClonIngredient))
+                                {
+                                    // desparent the player attached obj 
+                                    player.attachedObject = null;
+                                    // put the ItemClonIngredient  child of itemPot
+                                    ItemClonIngredient.transform.parent = item.transform;
+                                    // if ItemPlayer type is Ingredient2
+                                    if (itemPlayer.GetType() == typeof(Ingredient2))
+                                        // return to pool
+                                        Ingredient2Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient2>());
+                                    else
+                                        //Return to pool
+                                        Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
+                                    // flag xq no pugui afegir 2 cops els igredients
+                                    hasPassIngToVial = false;
+                                }
+                            }
                         }
                     }
                 }
                 else if (itemPlayer.itemType == ItemType.Vial)
                 {
-                    if (item.GetComponent<ItemPot>().CheckIsCookedIng() && !hasPassIngToVial)
+                    ItemPot ItemPot = item.GetComponent<ItemPot>();
+                    if (!hasPassIngToVial)
                     {
-                        player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(item.GetComponent<ItemPot>().listItem);
-                        item.GetComponent<ItemPot>().ResetPot();
-                        hasPassIngToVial = true;
+                        //aqui
+                        if (ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone)
+                        {
+                            player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
+                            player.attachedObject.GetComponent<VialItem>().ChangeMaterial();
+                            ItemPot.ResetPot();
+                            hasPassIngToVial = true;
+                        }
+                        else
+                        {
+                            //Todo ErrorOnScreen
+                        }
                     }
-                    else
-                    {
-                        //Todo ErrorOnScreen
-                    }
+                 
                 }
             }
         }
@@ -88,7 +99,7 @@ public class StoveSlot:Slot
     }
     public void Update()
     {
-        
+
     }
     public override void Catch(CharacterControllerAct player)
     {
@@ -96,13 +107,13 @@ public class StoveSlot:Slot
         //passar ing dde olla a frasco
         // sino sta feta recpta i tens frasco no agafes recepte  
 
-     
+
         if (player.attachedObject == null)
         {
             base.Catch(player);
         }
-   
-   
+
+
     }
     /// <summary>
     /// Check if all ingredients are cooked
@@ -112,6 +123,6 @@ public class StoveSlot:Slot
     {
         return true;
     }
-    
+
 }
 

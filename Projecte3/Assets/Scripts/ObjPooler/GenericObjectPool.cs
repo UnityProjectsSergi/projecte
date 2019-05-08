@@ -9,7 +9,7 @@ namespace Assets.Scripts.ObjPooler
 {
     public abstract class GenericObjectPool<T>:MonoBehaviour  where T:Component
     {
-       public T Prefab;
+        public T Prefab;
         private static GenericObjectPool<T> _instance;
         public static GenericObjectPool<T> Instance { get { return _instance; } private set { } }
         public Queue<T> objects;
@@ -24,8 +24,7 @@ namespace Assets.Scripts.ObjPooler
             {
                 _instance = this;
                 objects = new Queue<T>();
-               DontDestroyOnLoad(this.gameObject);
-
+                DontDestroyOnLoad(this.gameObject);
             }
         }
 
@@ -43,6 +42,7 @@ namespace Assets.Scripts.ObjPooler
                 obj.transform.rotation = transform.rotation;
             }
             obj.gameObject.SetActive(true);
+
             return obj ;
         }
 
@@ -56,7 +56,7 @@ namespace Assets.Scripts.ObjPooler
                 objects.Enqueue(newObj);
             }
         }
-        public void ReturnToPool(T gameObjectReturnPool)
+        public virtual void ReturnToPool(T gameObjectReturnPool)
         {
             gameObjectReturnPool.gameObject.SetActive(false);
             objects.Enqueue(gameObjectReturnPool);
