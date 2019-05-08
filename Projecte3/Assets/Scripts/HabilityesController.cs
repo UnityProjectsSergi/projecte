@@ -80,9 +80,28 @@ public class HabilityesController : MonoBehaviour
                             itemPot.FSM_Pot.FSM_PauseStart.FSM_PotInteral.speedUpCook = false;
                     }
                 }
+               
 
             }
-            
+            else
+            {
+                StoveSlot stoveNotF = ollesDetected[i].GetComponent<StoveSlot>();
+                if(stoveNotF!=null && stoveNotF.item!=null && stoveNotF.item.itemType==ItemType.Pot)
+                {
+                    ItemPot pot = stoveNotF.item.GetComponent<ItemPot>();
+                    if(pot!=null)
+                    {
+                        if (pot.currentStatePot == ItemPotStateIngredients.Cooking || pot.currentStatePot == ItemPotStateIngredients.Alert)
+                        {
+                            pot.potUi.potUIState.speedUp = true;
+                        }
+                        else
+                            pot.potUi.potUIState.speedUp = false;
+                    }
+                }
+
+            }
+
         }
     }
     public Collider[] hitColliders;

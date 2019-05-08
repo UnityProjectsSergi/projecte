@@ -41,8 +41,8 @@ public class ItemPot : Item
                 {
                     listItem.Add(item);
                     potUi.SetItemOnUISlot(item);
-                    currentStatePot = ItemPotStateIngredients.Cooking;
-                    currentStatePot = ItemPotStateIngredients.Cooking;
+                    //currentStatePot = ItemPotStateIngredients.Cooking;
+                    //currentStatePot = ItemPotStateIngredients.Cooking;
                     return true;
                 }
                 return false;
@@ -51,8 +51,8 @@ public class ItemPot : Item
             {
                 listItem.Add(item);
                 potUi.SetItemOnUISlot(item);
-                currentStatePot = ItemPotStateIngredients.Cooking;
-                currentStatePot = ItemPotStateIngredients.Cooking;
+                //currentStatePot = ItemPotStateIngredients.Cooking;
+                //currentStatePot = ItemPotStateIngredients.Cooking;
                 return true;
             }
         }

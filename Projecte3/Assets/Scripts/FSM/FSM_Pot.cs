@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
-namespace FSM {
+namespace FSM
+{
     public class FSM_Pot : FiniteStateMachine
     {
-       
-        public enum States { INITIAL, EMPTY,PAUSERUNNING, BURN ,RESETT}
+
+        public enum States { INITIAL, EMPTY, PAUSERUNNING, BURN, RESETT }
         public States currentState;
         public ItemPotFSM itemPot;
         public GameObject CookingFSMGO;
-    
+
         public PotBlackboard potBlackBoard;
         public CookingBlackbloard cookingBlackbloard;
         public States lastState;
         public FSM_Alert FSM_Alert;
-        
+
         public FSM_PauseStart FSM_PauseStart;
         private bool resetFSM;
 
         // Use this for initialization
         void Start()
-        { 
+        {
             itemPot = GetComponent<ItemPotFSM>();
             potBlackBoard = GetComponent<PotBlackboard>();
             FSM_PauseStart = gameObject.AddComponent<FSM_PauseStart>();
@@ -36,24 +37,24 @@ namespace FSM {
         }
 
         // Update is called once per frame
-        public  void Update()
+        public void Update()
         {
             //si currentState IS
-                switch (currentState)
-                {
-                    //initial
-                    case States.INITIAL:
-                           //Chage Current State To Empty State
-                        ChangeState(States.EMPTY);
-                        break;
-                    //Empty
-                    case States.EMPTY:
-                        // Si list item Of Pot has 1 o + elements
-                        if (itemPot.listItem.Count == itemPot.potUi.listUIItems.Count)
-                            // Changestate to Cooking FSMInteral
-                            ChangeState(States.PAUSERUNNING);
-                        break;
-                    case States.PAUSERUNNING:
+            switch (currentState)
+            {
+                //initial
+                case States.INITIAL:
+                    //Chage Current State To Empty State
+                    ChangeState(States.EMPTY);
+                    break;
+                //Empty
+                case States.EMPTY:
+                    // Si list item Of Pot has 1 o + elements
+                    if (itemPot.listItem.Count == itemPot.potUi.listUIItems.Count)
+                        // Changestate to Cooking FSMInteral
+                        ChangeState(States.PAUSERUNNING);
+                    break;
+                case States.PAUSERUNNING:
                     if (resetFSM)
                     {
                         ChangeState(States.RESETT);
@@ -63,19 +64,19 @@ namespace FSM {
                         ChangeState(States.BURN);
                     }
 
-                        break;
-                    case States.BURN:
+                    break;
+                case States.BURN:
                     if (resetFSM)
                         ChangeState(States.RESETT);
-                        break;
+                    break;
                 case States.RESETT:
                     resetFSM = false;
                     ChangeState(States.INITIAL);
                     break;
-                    default:
-                        break;
-                }
-            
+                default:
+                    break;
+            }
+
         }
 
         public void ChangeState(States newState)
@@ -88,15 +89,15 @@ namespace FSM {
                     break;
                 case States.PAUSERUNNING:
                     //if(newState!=States.RESETT )
-                    //FSM_PauseStart.Exit();
+                    FSM_PauseStart.Exit();
                     break;
                 case States.BURN:
                     //if(newState!=States.RESETT)
-                    //potBlackBoard.fSM_IMAGE.Exit();
+                    potBlackBoard.fSM_IMAGE.Exit();
                     break;
-                   
-                    
-                    
+
+
+
                 default:
                     break;
             }
@@ -119,7 +120,7 @@ namespace FSM {
 
                     potBlackBoard.fSM_IMAGE.isPaused = false;
                     potBlackBoard.fSM_IMAGE.ReEnter();
-                                        potBlackBoard.fSM_IMAGE.ISHBackBoard.mustStay = true;
+                    potBlackBoard.fSM_IMAGE.ISHBackBoard.mustStay = true;
                     break;
                 case States.RESETT:
                     if (FSM_PauseStart.enabled)
@@ -127,7 +128,7 @@ namespace FSM {
                         FSM_PauseStart.ResetFSM = true;
                         potBlackBoard.journey = 0;
                         itemPot.totalDurationOfCooking = 0;
-                        
+
                     }
                     if (potBlackBoard.fSM_IMAGE.enabled)
                     {
@@ -149,10 +150,10 @@ namespace FSM {
         }
         public void ResetF()
         {
-        
+
             resetFSM = true;
-           
-            
+
+
         }
     }
 }

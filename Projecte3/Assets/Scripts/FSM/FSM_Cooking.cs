@@ -118,9 +118,7 @@ namespace FSM
                     //if (newState == States.DONEOK)
                     //    cookingBlackbloard.progressBar.Exit();
                     break;
-                case States.END:
-             
-                    break;
+               
                 case States.DONEOK:
                     //if (newState == States.END)
                     //    cookingBlackbloard.FSM_ShowHideImage.Exit();

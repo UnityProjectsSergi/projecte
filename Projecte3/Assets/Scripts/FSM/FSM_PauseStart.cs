@@ -80,7 +80,8 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.RUNNING:
-
+                    if (newState == States.END)
+                        FSM_PotInteral.Exit();
                     break;
                 case States.PAUSE:
                     // si no curretState es PAUSE i Nw Stae Reset 
@@ -103,7 +104,7 @@ namespace FSM
                 case States.RUNNING:
                     if (currentState == States.INITIAL)
                     {
-                        FSM_PotInteral.isPaused = false;
+                 //       FSM_PotInteral.isPaused = false;
                         FSM_PotInteral.ReEnter();
                       
                     }
@@ -112,7 +113,7 @@ namespace FSM
                     FSM_PotInteral.isPaused = true;
                     break;
                 case States.END:
-                    FSM_PotInteral.Exit();
+                    
                     break;
                 case States.RESET:
                     FSM_PotInteral.resetFSM = true;

@@ -143,7 +143,7 @@ MonoBehaviour:
   FireBurnPot: {fileID: 0}
   hasPassIngToVial: 0
   ShowSlotsInUI: 1
-  numIngOfPot: 1
+  numIngOfPot: 2
 --- !u!1001 &7552080210513381200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -210,6 +210,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500045991699329654, guid: d92a9de61b224ec42abcf22180001bd9,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 831
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500045991699329654, guid: d92a9de61b224ec42abcf22180001bd9,
+        type: 3}
+      propertyPath: ForceModule.y.maxCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d92a9de61b224ec42abcf22180001bd9, type: 3}

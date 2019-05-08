@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.015686275, g: 0.50980395, b: 0.05882353, a: 1}
+  m_Color: {r: 0.9622642, g: 0.4034295, b: 0.33134568, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -596,11 +596,14 @@ MonoBehaviour:
   totalduration: 0
   StartCookingBool: 0
   StartBuringBool: 0
-  timeShowAlertBurning: 10
+  timeShowAlertBurning: 5
   timeBurning: 10
   PotUI: {fileID: 0}
   StartTimerAlrert: 0
+  alertTimer: 1
   percentCook: 0
+  journey: 0
+  speedUp: 0
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0
