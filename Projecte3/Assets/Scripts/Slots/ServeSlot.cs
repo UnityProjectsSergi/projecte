@@ -36,11 +36,13 @@ namespace Assets.Scripts.Slots
                     Debug.Log("orderc check" + check);
                     if (check)
                     {
-                        StartCoroutine(TextWide(5f, "Order get"));
+                        FloatingText.Show("Order Get", "OrderOK", new FromWorldPointTextPositioner(Camera.main, transform.position));
+                       // StartCoroutine(TextWide(5f, "Order get"));
                     }
                     else
                     {
-                        StartCoroutine(TextWide(5f, "Order Wrong"));
+                        FloatingText.Show("Order Wrong", "OrderKO", new FromWorldPointTextPositioner(Camera.main, transform.position));
+                    //    StartCoroutine(TextWide(5f, "Order Wrong"));
                     }
                     vialItem.ResetVial();
                     base.LeaveObjOn(player);
@@ -50,7 +52,8 @@ namespace Assets.Scripts.Slots
                 }
                 else
                 {
-                    StartCoroutine(TextWide(5f, "Needs a Vial"));
+                    FloatingText.Show("Needs A Vial", "OrderKO", new FromWorldPointTextPositioner(Camera.main, transform.position));
+                //    StartCoroutine(TextWide(5f, "Needs a Vial"));
                 }
             }
         }

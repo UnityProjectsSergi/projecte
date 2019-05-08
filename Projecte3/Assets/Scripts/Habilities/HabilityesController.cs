@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Assets.Scripts.InputSystem;
 public class HabilityesController : MonoBehaviour
 {
@@ -9,11 +10,19 @@ public class HabilityesController : MonoBehaviour
     public CharacterControllerAct CharacterControllerAct;
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
+<<<<<<< HEAD:Projecte3/Assets/Scripts/HabilityesController.cs
     public bool CookHability;
 
     private MeshRenderer meshRenderer;
     public GameObject[] playerTypes;
     
+=======
+    public bool 
+        CookHability;
+    public Image CoolDown;
+    public bool HabilityInCoolDown;
+    // Start is called before the first frame update
+>>>>>>> a4b75b53bdc32802bd43bd7d9b0d40a66e76d77b:Projecte3/Assets/Scripts/Habilities/HabilityesController.cs
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -45,35 +54,69 @@ public class HabilityesController : MonoBehaviour
 
     public void ActivateLevitation()
     {
-        CharacterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
-        GetComponent<CharacterController>().enabled = false;
-        GetComponent<Character>().enabled = false;
+        if (!HabilityInCoolDown)
+        {
+            CharacterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
+            GetComponent<CharacterController>().enabled = false;
+            GetComponent<Character>().enabled = false;
+        }
     }
     public void DeactivateLevitation()
     {
         CharacterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(false, 0, null);
         GetComponent<CharacterController>().enabled = true;
         GetComponent<Character>().enabled = true;
+        HabilityInCoolDown = true;
+        StartCoroutine(CountDownAnimation(4f));
     }
+    IEnumerator CountDownAnimation(float time)
+    {
+        float animationTime = time;
+        while (animationTime > 0)
+        {
+            CoolDown.GetComponent<Image>().enabled = true;
+            animationTime -= Time.deltaTime;
+            CoolDown.fillAmount = animationTime / time;
+            if (animationTime < 0.01f){
+                HabilityInCoolDown = false;
+                CoolDown.GetComponent<Image>().enabled = false;
+            }
+            
+            yield return null;
+        }
+        
+    }
+  
     public void ActivateHabilitySpeedFire()
     {
-        speedUpCookHability = true;
-        HabilityRadi.gameObject.SetActive(true);
+        if (!HabilityInCoolDown)
+        {
+            
+            HabilityRadi.gameObject.SetActive(true);
+            speedUpCookHability = true;
+        }
     }
     public void DeactivateHabilitySpeedFire()
     {
         speedUpCookHability = false;
         HabilityRadi.gameObject.SetActive(false);
+        HabilityInCoolDown = true;
+        StartCoroutine(CountDownAnimation(4f));
     }
     public void ActiveHabilityPortal()
     {
-        Debug.Log("Active Portals");
-        CharacterControllerAct.PutPortal();
+        if (!HabilityInCoolDown)
+        {
+            Debug.Log("Active Portals");
+            CharacterControllerAct.PutPortal();
+        }
     }
     public void DeactivateHabilityPortal()
     {
         Debug.Log("End Portals");
         CharacterControllerAct.EndPortal();
+        HabilityInCoolDown = true;
+        StartCoroutine(CountDownAnimation(4f));
     }
     public void DetectOlla()
     {
