@@ -9,14 +9,23 @@ public class HabilityesController : MonoBehaviour
     public CharacterControllerAct CharacterControllerAct;
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
-    public bool 
-        CookHability;
-    // Start is called before the first frame update
+    public bool CookHability;
+
+    private MeshRenderer meshRenderer;
+    public GameObject[] playerTypes;
+    
     void Start()
     {
+        meshRenderer = GetComponent<MeshRenderer>();
+
         hability = gameObject.AddComponent<Hability>();
         if (habilityType == HabilityType.LevitationItems)
+        {
+            //meshRenderer.enabled = false;
+            GameObject go = Instantiate(playerTypes[0]);
+            go.transform.transform.position = transform.position;
             hability.set(3, 4, ActivateLevitation, DeactivateLevitation);
+        }
         else if (habilityType == HabilityType.SpeedTheFire)
             hability.set(13, 4, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire);
         else if (habilityType == HabilityType.Throw)

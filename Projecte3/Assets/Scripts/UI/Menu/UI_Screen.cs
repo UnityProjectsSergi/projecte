@@ -8,7 +8,6 @@ public class UI_Screen : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Awake()
     {
-
         canvas = GetComponent<UIFader>();
     }
 
