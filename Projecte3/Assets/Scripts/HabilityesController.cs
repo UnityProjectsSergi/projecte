@@ -9,7 +9,8 @@ public class HabilityesController : MonoBehaviour
     public CharacterControllerAct CharacterControllerAct;
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
-    public bool speedUpCookHability;
+    public bool 
+        CookHability;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class HabilityesController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // if(habilityType == HabilityType.SpeedTheFire)
+       if(hability.usingHability)
         DetectOlla();
     }
     public Collider[] ollesDetected;
@@ -89,12 +90,34 @@ public class HabilityesController : MonoBehaviour
                             itemPot.FSM_Pot.FSM_PauseStart.FSM_PotInteral.speedUpCook = false;
                     }
                 }
+               
 
             }
-            
+            else
+            {
+                StoveSlot stoveNotF = ollesDetected[i].GetComponent<StoveSlot>();
+                if(stoveNotF!=null && stoveNotF.item!=null && stoveNotF.item.itemType==ItemType.Pot)
+                {
+                    ItemPot pot = stoveNotF.item.GetComponent<ItemPot>();
+                    if(pot!=null)
+                    {
+                        if (pot.currentStatePot == ItemPotStateIngredients.Cooking || pot.currentStatePot == ItemPotStateIngredients.Alert)
+                        {
+                            pot.potUi.potUIState.speedUp = true;
+                        }
+                        else
+                            pot.potUi.potUIState.speedUp = false;
+                    }
+                }
+
+            }
+
         }
     }
     public Collider[] hitColliders;
+
+    public bool speedUpCookHability { get; private set; }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, 3);

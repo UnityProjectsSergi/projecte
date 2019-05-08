@@ -6,16 +6,15 @@ namespace FSM
 {
     public class FSM_Alert : FiniteStateMachine
     {
-        public enum States { INITIAL, SLOW, NORMAL, FAST, PAUSE, END }
+        public enum States { INITIAL, SLOW, NORMAL, FAST, PAUSE, END ,RESET}
         public States currentState;
         public States lastState;
         //public enum States { INITIAL, ALERT,PAUSE, END }
         //public States currentState;
         //public States lastState;
         public AlertBlackBoard AlertBlackBoard;
-     
-        
-      
+        internal bool ResetFSMAlert;
+
         public override void Exit()
         {
             base.Exit();
@@ -42,6 +41,7 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
+                    if(!isPaused)
                     ChangeState(States.SLOW);
                     break;
                 case States.SLOW:
@@ -82,11 +82,19 @@ namespace FSM
                     }
                     break;
                 case States.PAUSE:
+                    if (ResetFSMAlert)
+                        ChangeState(States.RESET);
                     if (!isPaused)
                         ChangeState(lastState);
                     break;
                 case States.END:
+                    if (ResetFSMAlert)
+                        ChangeState(States.RESET);
                     break;
+                case States.RESET:
+                    ResetFSMAlert = false;
+                    ChangeState(States.INITIAL);
+                    break; 
                 default:
                     break;
             }
@@ -98,24 +106,25 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.SLOW:
-                    if (newState == States.NORMAL)
-                        AlertBlackBoard.FSM_ShowHideImage.Exit();
+                    //if (newState == States.NORMAL)
+                       // AlertBlackBoard.FSM_ShowHideImage.Exit();
                     break;
                 case States.NORMAL:
-                    
-                    if (newState == States.FAST)
-                        AlertBlackBoard.FSM_ShowHideImage.Exit();
+
+                    //if (newState == States.FAST)
+                        //AlertBlackBoard.FSM_ShowHideImage.Exit();
                     break;
                 case States.FAST:
-                    if (newState == States.END)
-                        AlertBlackBoard.FSM_ShowHideImage.Exit();
+                    //if (newState == States.END)
+                      //  AlertBlackBoard.FSM_ShowHideImage.Exit();
                     break;
                 case States.PAUSE:
-                    AlertBlackBoard.FSM_ShowHideImage.isPaused = false;
+                    if (newState != States.RESET)
+                        AlertBlackBoard.FSM_ShowHideImage.isPaused = false;
                     break;
                 case States.END:
-                    if(currentState==States.FAST)
-                    AlertBlackBoard.FSM_ShowHideImage.Exit();
+                    //if (currentState == States.FAST)
+                      //  AlertBlackBoard.FSM_ShowHideImage.Exit();
                     break;
                 default:
                     break;
@@ -123,21 +132,23 @@ namespace FSM
             switch (newState)
             {
                 case States.INITIAL:
-                  //  if(currentState==States.PAUSE)
-                      //  AlertBlackBoard.FSM_ShowHideImage.Reset();
+               
                     break;
                 case States.SLOW:
                     if (currentState == States.INITIAL)
                     {
+                        AlertBlackBoard.FSM_ShowHideImage.isPaused = false;
                         AlertBlackBoard.FSM_ShowHideImage.ReEnter();
                         AlertBlackBoard.FSM_ShowHideImage.ISHBackBoard.SetTimers(AlertBlackBoard.timerShowSlow, AlertBlackBoard.timerHideSlow,
                                                                                        AlertBlackBoard.timeWaitShowSlow, AlertBlackBoard.numRepetitionsSlow);
                         AlertBlackBoard.FSM_ShowHideImage.SetStateInitial();
+                        
                     }
                     break;
                 case States.NORMAL:
                     if (currentState == States.SLOW)
                     {
+                        AlertBlackBoard.FSM_ShowHideImage.isPaused = false;
                         AlertBlackBoard.FSM_ShowHideImage.ReEnter();
                         AlertBlackBoard.FSM_ShowHideImage.ISHBackBoard.SetTimers(AlertBlackBoard.timerShowNormal, AlertBlackBoard.timerHideNormal,
                                                                                        AlertBlackBoard.timeWaitShowNormal, AlertBlackBoard.numRepetitionsNormal);
@@ -147,6 +158,7 @@ namespace FSM
                 case States.FAST:
                     if (currentState == States.NORMAL)
                     {
+                        AlertBlackBoard.FSM_ShowHideImage.isPaused = false;
                         AlertBlackBoard.FSM_ShowHideImage.ReEnter();
                         AlertBlackBoard.FSM_ShowHideImage.ISHBackBoard.SetTimers(AlertBlackBoard.timerShowFast, AlertBlackBoard.timerHideFast,
                                                                                        AlertBlackBoard.timeWaitShowFast, AlertBlackBoard.numRepetitionsFast);
@@ -157,6 +169,11 @@ namespace FSM
                     AlertBlackBoard.FSM_ShowHideImage.isPaused = true;
                     break;
                 case States.END:
+                    
+                    break;
+                case States.RESET:
+                    
+                    AlertBlackBoard.FSM_ShowHideImage.ResetFSMImage = true;
                     break;
                 default:
                     break;
@@ -243,9 +260,6 @@ namespace FSM
 
         internal void ResetFSM()
         {
-            if(AlertBlackBoard.FSM_ShowHideImage)
-            AlertBlackBoard.FSM_ShowHideImage.ResetFSM();
-            Exit();
            
         }
     }

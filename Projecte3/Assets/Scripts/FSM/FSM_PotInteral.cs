@@ -4,7 +4,7 @@ namespace FSM {
     public class FSM_PotInteral : FiniteStateMachine
     {
        
-        public enum States { INITIAL, COOKING,COOKINGADDING, ALERT,PAUSE,END }
+        public enum States { INITIAL, COOKING,COOKINGADDING, ALERT,PAUSE,END ,RESET}
         public States currentState;
         public ItemPotFSM itemPot;
         public GameObject CookingFSMGO;
@@ -31,6 +31,8 @@ namespace FSM {
         }
         public bool Enter = false;
         public bool speedUpCook;
+
+        public bool resetFSM;
 
         public override void Exit()
         {
@@ -73,6 +75,7 @@ namespace FSM {
             {
 
                 case States.INITIAL:
+                    if(!isPaused)
                     ChangeState(States.COOKING);
                     break;
                
@@ -106,12 +109,24 @@ namespace FSM {
                     }
                     break;
                 case States.PAUSE:
-
+                    if (resetFSM)
+                    {
+                        ChangeState(States.RESET);
+                    }
                     if(!isPaused)
                     {
                         ChangeState(lastState);
                     }
                     break;
+                case States.RESET:
+                    resetFSM = false;
+                    ChangeState(States.INITIAL);
+                    break;
+                case States.END:
+                    if (resetFSM)
+                        ChangeState(States.RESET);
+                    break;
+                
                 default:
                     break;
             }
@@ -130,21 +145,23 @@ namespace FSM {
                 case States.COOKING:
                     if (newState == States.ALERT)
                         FSM_Cooking.Exit();
-                    else
-                        FSM_Cooking.isPaused = false;
+                    //else
+                    //    FSM_Cooking.isPaused = false;
                     break;
                 case States.ALERT:
-                    if (newState == States.END)
-                        FSM_Alert.Exit();
-                    else
-                        FSM_Alert.isPaused = false;
+                    //if (newState == States.END)
+                    //    FSM_Alert.Exit();
+                    //else
+                    //    FSM_Alert.isPaused = false;
 
                     break;
 
                 case States.PAUSE:
-            
-                    FSM_Alert.isPaused = false;
-                    FSM_Cooking.isPaused = false;
+                    if (newState != States.RESET)
+                    {
+                        FSM_Alert.isPaused = false;
+                        FSM_Cooking.isPaused = false;
+                    }
                     break;
 
 
@@ -155,32 +172,36 @@ namespace FSM {
             switch (newState)
             {
                 case States.INITIAL:
-                   if(currentState==States.PAUSE)
-                    {
-                       // FSM_Cooking.Reset();
-                        //FSM_Alert.Reset();
-                    }
+                   
                     break;
                
                 case States.COOKING:
-                    if (currentState==States.INITIAL || currentState==States.ALERT)
+                    if (currentState==States.INITIAL)
                     {
                         cookingBlackbloard.duration = itemPot.totalDurationOfCooking;
-                      FSM_Cooking.ReEnter();
+                        FSM_Cooking.isPaused = false;
+                        FSM_Cooking.ReEnter();
+
+
                     }
                     break;
                 case States.ALERT:
-                    if (currentState == States.COOKING) { 
-                        FSM_Alert.ReEnter();
+                    if (currentState == States.COOKING) {
+                        //FSM_Alert.isPaused = false;
+                        //FSM_Alert.ReEnter();
                     }
                     break;
                 case States.PAUSE:
 
-                    FSM_Alert.isPaused = true;
+                    //FSM_Alert.isPaused = true;
                     FSM_Cooking.isPaused = true;
                     break;
                 case States.END:
 
+                    break;
+                case States.RESET:
+                    FSM_Cooking.ResetFSM = true;
+                   /// FSM_Alert.ResetFSMAlert = true;
                     break;
                 default:
                     break;
@@ -217,12 +238,7 @@ namespace FSM {
         }
         public void ResetFSM()
         {
-            if(FSM_Alert)
-            FSM_Alert.ResetFSM();
-            if(FSM_Cooking)
-            FSM_Cooking.ResetFSM();
-            Exit();
-
+      // h
             //ChangeState(States.INITIAL);
             
            

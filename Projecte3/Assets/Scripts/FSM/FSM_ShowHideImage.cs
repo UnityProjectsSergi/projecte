@@ -7,7 +7,7 @@ namespace FSM
 {
     public class FSM_ShowHideImage : FiniteStateMachine
     {
-        public enum States { INITIAL, SHOW, PAUSE, HIDE, END,ENDREPEAT }
+        public enum States { INITIAL, SHOW, PAUSE, HIDE, END,ENDREPEAT ,RESET}
         public States currentState;
         public States lastState;
         
@@ -48,10 +48,13 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
+                    if (ResetFSMImage)
+                        ChangeState(States.RESET);
                     if (ISHBackBoard.mustStay)
                         ChangeState(States.SHOW);
                     if (!isPaused)
                     {
+                      
                         if (ISHBackBoard.timer > ISHBackBoard.timeWaitShowImage)
                         {
                             ChangeState(States.SHOW);
@@ -65,19 +68,23 @@ namespace FSM
                     }
                     break;
                 case States.SHOW:
+                    if (ResetFSMImage)
+                    {
+                        ChangeState(States.RESET);
+                        
+                    }
+                    
                     if (ISHBackBoard.mustStay)
                     {
                         ChangeState(States.SHOW);
                     }
                     if (!isPaused)
                     {
-                        
                         if (ISHBackBoard.timer > ISHBackBoard.timeShowImage)
                         {
                             ChangeState(States.HIDE);
                             ISHBackBoard.timer = 0;
                         }
-                        
                     }
                     else
                     {
@@ -86,6 +93,8 @@ namespace FSM
                     }
                     break;
                 case States.HIDE:
+                    if (ResetFSMImage)
+                        ChangeState(States.RESET);
                     if (!isPaused)
                     {
                         if (!ISHBackBoard.hasRepetition)
@@ -113,8 +122,22 @@ namespace FSM
                     break;
 
                 case States.PAUSE:
+                    if (ResetFSMImage)
+                        ChangeState(States.RESET);
                     if (!isPaused)
                         ChangeState(lastState);
+                    break;
+                case States.RESET:
+                    ISHBackBoard.mustStay = false;
+                    ISHBackBoard.image.enabled = false;
+                    ISHBackBoard.timer = 0;
+                    ISHBackBoard.count = 0;
+                    ResetFSMImage = false;
+                    ChangeState(States.INITIAL);
+                    break;
+                case States.END:
+                    if (ResetFSMImage)
+                        ChangeState(States.RESET);
                     break;
                 default:
                     break;
@@ -130,6 +153,7 @@ namespace FSM
                 case States.SHOW:
                     break;
                 case States.PAUSE:
+                 
                     ISHBackBoard.image.enabled = true;
                     break;
                 case States.HIDE:
@@ -157,6 +181,17 @@ namespace FSM
                 case States.ENDREPEAT:
                     currentState = States.INITIAL;
                     break;
+                case States.RESET:
+                    ISHBackBoard.mustStay = false;
+                    ISHBackBoard.count = 0;
+                    ISHBackBoard.timer = 0;
+                    ISHBackBoard.image.enabled = false;
+                    break;
+                case States.END:
+                    ISHBackBoard.count = 0;
+                    ISHBackBoard.timer = 0;
+                    
+                    break;
                 default:
                     break;
             }
@@ -171,16 +206,7 @@ namespace FSM
             }
         }
 
-        internal void ResetFSM()
-        {
-
-          //  ChangeState(States.INITIAL);
-           
-            ISHBackBoard.timer = 0;
-            ISHBackBoard.count = 0;
-            Exit();
-           
-        }
+        public bool ResetFSMImage;
 
     }
     

@@ -29,25 +29,28 @@ public class PotUIState : MonoBehaviour
 
     // Update is called once per frame
     public bool StartTimerAlrert;
+    public float alertTimer = 3;
     void Update()
     {
         //// q tu aqui li dones un valor 
         if (StartCookingBool)
         {
-
-            journey += Time.deltaTime;
+            if (speedUp)
+                journey += Time.deltaTime * 2f;
+            else
+               journey += Time.deltaTime;
             if (journey < totalduration + 0.1f)
             {
                 ProgressBar.gameObject.SetActive(true);
                 percentCook = Mathf.Clamp01(journey / totalduration);
-                //Debug.Log(percentCook + "percent   fillamount: " + ProgressBar.fillAmount + " juourney " + journey);
+
                 ProgressBar.fillAmount = percentCook;
                 if (ProgressBar.fillAmount >= 0.999f)
                 {
                     ProgressBar.gameObject.SetActive(false);
                   
                     PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
-                    StartCoroutine(ShowImageOK(0.1f, CookedOk));
+                    StartCoroutine(ShowImageOK(0.5f, CookedOk));
                  
                 }
             }
@@ -56,14 +59,13 @@ public class PotUIState : MonoBehaviour
                 if (journey <= (totalduration + timeShowAlertBurning))
                 {
 
-                    float alertTimer = 3;
+                    
                     if (StartTimerAlrert)
                     {
                         alertTimer -= Time.deltaTime;
                         if (alertTimer >= 0.0f)
                         {
-                         
-                            StartCoroutine(ShowImageAlert(6f, AlertBurn));
+                            StartCoroutine(ShowImageAlert(3f, AlertBurn));
                             PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
                         }
                     }
@@ -78,8 +80,9 @@ public class PotUIState : MonoBehaviour
                             BurnTimer -= Time.deltaTime;
                             if (BurnTimer >= 0.0f)
                             {
-                                StartCoroutine(ShowImageFire(4f, Fire));
                                 PotUI.SetItemPotState(ItemPotStateIngredients.Burning);
+                                StartCoroutine(ShowImageFire(4f, Fire));
+
 
                             }
                         }
@@ -104,10 +107,10 @@ public class PotUIState : MonoBehaviour
     {
         // pk sempre es true
         StartCookingBool = true;
-        
+        Debug.Log("start cooking");
         PotUI.SetItemPotState(ItemPotStateIngredients.Cooking);
        
-        // co=StartCoroutine(UIBarCooking());
+  
     }
    
    public void StopCooking()
@@ -146,7 +149,8 @@ public class PotUIState : MonoBehaviour
         StartBuringBool = false;
     }
     public float percentCook;
-    private float journey;
+    public float journey;
+    public bool speedUp;
     //********* code for control the potui with correountine */
     /*
     Coroutine co;
