@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 2227135488605312352}
   m_Layer: 0
   m_Name: Player1Dash
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf91a84488180e4390ba9fcc60ba82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  habilityType: 2
+  habilityType: 3
   hability: {fileID: 0}
   CharacterControllerAct: {fileID: 2227135488605312352}
   HabilityRadi: {fileID: 1248374053}
@@ -459,6 +459,8 @@ MonoBehaviour:
   habilityesController: {fileID: 2046403930999699546}
   throwForce: 600
   attachedObject: {fileID: 0}
+  portal: {fileID: 8495011384436437612, guid: 9f37039be0b51cd4183f6e8aa6ad0676, type: 3}
+  canMovePortals: 1
   canUseHability: 0
 --- !u!1 &4059239846154456530
 GameObject:
