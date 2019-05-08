@@ -10,29 +10,17 @@ public class HabilityesController : MonoBehaviour
     public CharacterControllerAct CharacterControllerAct;
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
-<<<<<<< HEAD:Projecte3/Assets/Scripts/HabilityesController.cs
     public bool CookHability;
 
-    private MeshRenderer meshRenderer;
-    public GameObject[] playerTypes;
-    
-=======
-    public bool 
-        CookHability;
+    public bool cCookHability;
     public Image CoolDown;
     public bool HabilityInCoolDown;
-    // Start is called before the first frame update
->>>>>>> a4b75b53bdc32802bd43bd7d9b0d40a66e76d77b:Projecte3/Assets/Scripts/Habilities/HabilityesController.cs
+
     void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-
         hability = gameObject.AddComponent<Hability>();
         if (habilityType == HabilityType.LevitationItems)
         {
-            //meshRenderer.enabled = false;
-            GameObject go = Instantiate(playerTypes[0]);
-            go.transform.transform.position = transform.position;
             hability.set(3, 4, ActivateLevitation, DeactivateLevitation);
         }
         else if (habilityType == HabilityType.SpeedTheFire)
