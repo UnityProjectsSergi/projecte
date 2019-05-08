@@ -120,7 +120,7 @@ public class HabilityesController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, HabilityRadi.transform.localScale.x/2);
+    //    Gizmos.DrawWireSphere(transform.position, HabilityRadi.transform.localScale.x/2);
     }
 
 }

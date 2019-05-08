@@ -18,7 +18,8 @@ public class StoveSlot : Slot
     public void Start()
     {
         item = PotPool.Instance.GetObjFromPool(positionObjOn);
-        item.transform.parent = transform;
+       
+        item.transform.parent = positionObjOn.transform;
     }
     public override void LeaveObjOn(CharacterControllerAct player)
     {
