@@ -16,11 +16,17 @@ public class HabilityesController : MonoBehaviour
     public Image CoolDown;
     public bool HabilityInCoolDown;
 
+    MeshRenderer meshRenderer;
+    public GameObject[] typePlayer;
+
     void Start()
     {
+        meshRenderer = GetComponent<MeshRenderer>();
+
         hability = gameObject.AddComponent<Hability>();
         if (habilityType == HabilityType.LevitationItems)
         {
+            ChangeMesh(0);
             hability.set(3, 4, ActivateLevitation, DeactivateLevitation);
         }
         else if (habilityType == HabilityType.SpeedTheFire)
@@ -74,7 +80,6 @@ public class HabilityesController : MonoBehaviour
         }
         
     }
-  
     public void ActivateHabilitySpeedFire()
     {
         if (!HabilityInCoolDown)
@@ -155,6 +160,13 @@ public class HabilityesController : MonoBehaviour
         }
     }
     public Collider[] hitColliders;
+    public void ChangeMesh(int value)
+    {
+        meshRenderer.enabled = false;
+        GameObject go = Instantiate(typePlayer[value], transform.position, Quaternion.identity);
+        go.transform.position = transform.position;
+        go.transform.parent = transform;
+    }
 
     public bool speedUpCookHability { get; private set; }
 
