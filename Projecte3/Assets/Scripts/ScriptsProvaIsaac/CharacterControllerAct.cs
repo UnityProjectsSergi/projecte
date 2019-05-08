@@ -18,12 +18,15 @@ public class CharacterControllerAct : MonoBehaviour
     private Item item;
 
     public GameObject attachedObject;
+
     //Portal Habiliti
     public GameObject portal;
     private bool movePortalA = true;
     public bool canMovePortals = true;
     private GameObject portalA;
     private GameObject portalB;
+    private Portal pa;
+    private Portal pb;
 
     private void Start()
     {
@@ -34,6 +37,12 @@ public class CharacterControllerAct : MonoBehaviour
         {
             portalA = Instantiate(portal, new Vector3(200, 0, 0), Quaternion.identity);
             portalB = Instantiate(portal, new Vector3(200, 0, 0), Quaternion.identity);
+
+            pa = portalA.GetComponent<Portal>();
+            pb = portalB.GetComponent<Portal>();
+
+            pa.otherPortal = pb;
+            pb.otherPortal = pa;
         }
     }
 
@@ -167,11 +176,13 @@ public class CharacterControllerAct : MonoBehaviour
             {
                 portalA.transform.position = _portalPosition;
                 movePortalA = !movePortalA;
+                pa.tpPoint.transform.position = transform.position;
             }
             else
             {
                 portalB.transform.position = _portalPosition;
                 movePortalA = !movePortalA;
+                pb.tpPoint.transform.position = transform.position;
                 canMovePortals = false;
             }
         }
