@@ -204,7 +204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4059239845917169699
 Transform:
   m_ObjectHideFlags: 0
@@ -529,8 +529,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   CookHability: 0
+  cCookHability: 0
   CoolDown: {fileID: 3369234520523048436}
   HabilityInCoolDown: 0
+  typePlayer:
+  - {fileID: 307815461245427096, guid: 31f4855c50f635049b894a074d6ccfaa, type: 3}
+  - {fileID: 1217603213239586396, guid: cd873cd157d925446b9fec94d715ac58, type: 3}
+  - {fileID: 5545659600657215541, guid: 98e51dd33084a5d4d81fd030b2becafe, type: 3}
+  - {fileID: 5364815210979393001, guid: c926c603661ef164293f21a8484a636a, type: 3}
   ollesDetected: []
   hitColliders: []
 --- !u!114 &3829608386823041486
@@ -637,7 +643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4059239847085239230
 Transform:
   m_ObjectHideFlags: 0

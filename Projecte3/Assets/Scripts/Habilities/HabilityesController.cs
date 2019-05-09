@@ -30,11 +30,20 @@ public class HabilityesController : MonoBehaviour
             hability.set(3, 4, ActivateLevitation, DeactivateLevitation);
         }
         else if (habilityType == HabilityType.SpeedTheFire)
+        {
+            ChangeMesh(1);
             hability.set(13, 4, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire);
+        }
         else if (habilityType == HabilityType.Throw)
+        {
+            ChangeMesh(2);
             hability.set(0, 0, null, null);
+        }
         else if (habilityType == HabilityType.Portal)
+        {
+            ChangeMesh(3);
             hability.set(12, 15, ActiveHabilityPortal, DeactivateHabilityPortal);
+        }
 
     }
 
