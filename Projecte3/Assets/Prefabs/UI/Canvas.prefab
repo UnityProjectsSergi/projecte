@@ -230,9 +230,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1514495413273549476}
-  - component: {fileID: 1514495413273549479}
   - component: {fileID: 1514495413273549478}
   - component: {fileID: 5382451074675181054}
+  - component: {fileID: 5057069273244486999}
   m_Layer: 5
   m_Name: TimesUP
   m_TagString: Untagged
@@ -260,27 +260,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1514495413273549479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514495413273549477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d40088a6124c578ad6b428df586e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_pivot: {x: 0.5, y: 0.5}
-  m_anchorPosition: 4
-  m_rect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 50
-    height: 50
-  m_margins: {x: 0, y: 0, z: 0, w: 0}
 --- !u!225 &1514495413273549478
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -289,9 +268,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514495413273549477}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &5382451074675181054
 MonoBehaviour:
@@ -306,6 +285,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+--- !u!114 &5057069273244486999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514495413273549477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493540a4bfb73694cbe49643bcd72ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElement: {fileID: 1514495413273549478}
 --- !u!1 &1514495413283797499
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +605,6 @@ GameObject:
   - component: {fileID: 1514495413740224876}
   - component: {fileID: 1514495413740224878}
   - component: {fileID: 1514495413740224879}
-  - component: {fileID: 1514495413740224849}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -684,26 +675,6 @@ MonoBehaviour:
   m_Text: 'Time up
 
 '
---- !u!114 &1514495413740224849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514495413740224877}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8773218acd43a5c499676b4a88360a60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textTimer: {fileID: 0}
-  timeLeft: 900
-  TimerUP: {fileID: 0}
-  System: {fileID: 0}
-  clock: 0
-  isPaused: 0
-  timeChangeScene: 0
-  nameNextScene: 
 --- !u!1 &2277421175149891227
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,10 +924,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8773218acd43a5c499676b4a88360a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textTimer: {fileID: 0}
+  textTimer: {fileID: 5815772902680979313}
   timeLeft: 120
-  TimerUP: {fileID: 0}
-  System: {fileID: 0}
+  TimerUP: {fileID: 5382451074675181054}
+  System: {fileID: 3563058320603985839}
   clock: 0
   isPaused: 0
   timeChangeScene: 5
