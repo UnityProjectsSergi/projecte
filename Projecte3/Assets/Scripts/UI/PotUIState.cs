@@ -50,16 +50,13 @@ public class PotUIState : MonoBehaviour
                     ProgressBar.gameObject.SetActive(false);
                   
                     PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
-                    StartCoroutine(ShowImageOK(0.5f, CookedOk));
-                 
+                    StartCoroutine(ShowImageOK(0.5f, CookedOk));               
                 }
             }
             else
             {
                 if (journey <= (totalduration + timeShowAlertBurning))
-                {
-
-                    
+                {                    
                     if (StartTimerAlrert)
                     {
                         alertTimer -= Time.deltaTime;
@@ -82,8 +79,6 @@ public class PotUIState : MonoBehaviour
                             {
                                 PotUI.SetItemPotState(ItemPotStateIngredients.Burning);
                                 StartCoroutine(ShowImageFire(4f, Fire));
-
-
                             }
                         }
                     }

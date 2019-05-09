@@ -69,6 +69,7 @@ public  class Item : MonoBehaviour
         float journey = 0f;
         while (journey <= duration)
         {
+            Debug.Log("coocking");
             journey += Time.deltaTime;
             percentCooked = Mathf.Clamp01(journey / duration);
 
