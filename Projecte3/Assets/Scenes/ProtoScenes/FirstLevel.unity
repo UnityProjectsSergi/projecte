@@ -3433,6 +3433,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalSlot (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 331090388877718922, guid: 25839242c68870b47b815fad44082da0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 331090388877718926, guid: 25839242c68870b47b815fad44082da0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3785,6 +3790,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MesaHocto (1) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836727117611159385, guid: 0c42f37fa9239424a9702c9959504fdf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7836727117611389817, guid: 0c42f37fa9239424a9702c9959504fdf,
         type: 3}
@@ -19808,7 +19818,7 @@ PrefabInstance:
     - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
         type: 3}
       propertyPath: habilityType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406e278c10005b44cb6df7d262104b2b, type: 3}
@@ -47255,7 +47265,7 @@ PrefabInstance:
     - target: {fileID: 6998887099925381395, guid: e6383080eea10e042a78d3afcfd82c6b,
         type: 3}
       propertyPath: j1
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6383080eea10e042a78d3afcfd82c6b, type: 3}
