@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -88,7 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: e1119e55842cbf7468f2cf5bfba1edd8,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -12855,6 +12856,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2Dash
       objectReference: {fileID: 0}
+    - target: {fileID: 4059239846100790041, guid: e9dd411d439969c4697415adddd1d2e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4059239846100790049, guid: e9dd411d439969c4697415adddd1d2e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19754,6 +19760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player1Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059239846100790041, guid: 406e278c10005b44cb6df7d262104b2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4059239846100790049, guid: 406e278c10005b44cb6df7d262104b2b,
         type: 3}

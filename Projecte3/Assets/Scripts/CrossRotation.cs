@@ -36,7 +36,7 @@ public class CrossRotation : MonoBehaviour
         if (!isMoving)
             return false;
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, nextRotation, 15 * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, nextRotation, 25 * Time.deltaTime);
 
         if (transform.rotation == nextRotation)
         {
