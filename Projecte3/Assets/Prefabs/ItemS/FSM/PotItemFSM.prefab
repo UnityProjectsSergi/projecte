@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 7714913355555189543}
   percent: 0
-  itemPot: {fileID: 0}
+  itemPot: {fileID: 4158327409828458624}
 --- !u!1 &2058711763867918764
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +186,7 @@ MonoBehaviour:
   numRepetitions: 0
   count: 0
   mustStay: 0
+  ItemPotFSM: {fileID: 4158327409828458624}
 --- !u!1 &2058711764104996478
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +283,7 @@ MonoBehaviour:
   numRepetitions: 0
   count: 0
   mustStay: 1
+  ItemPotFSM: {fileID: 4158327409828458624}
 --- !u!1 &2058711764657948985
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +380,7 @@ MonoBehaviour:
   numRepetitions: 0
   count: 0
   mustStay: 0
+  ItemPotFSM: {fileID: 4158327409828458624}
 --- !u!1 &2058711764658268898
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +626,7 @@ MonoBehaviour:
   FSM_ShowHideImage: {fileID: 0}
   potBlackboard: {fileID: 0}
   duration: 0
+  itemPotFSM: {fileID: 0}
 --- !u!136 &141054445592145474
 CapsuleCollider:
   m_ObjectHideFlags: 0

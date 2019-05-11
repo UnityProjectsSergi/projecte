@@ -16,7 +16,7 @@ namespace FSM
         public FSM_Alert FSM_Alert;
 
         public FSM_PauseStart FSM_PauseStart;
-        private bool resetFSM;
+        public bool resetFSM;
 
         // Use this for initialization
         void Start()
@@ -55,14 +55,15 @@ namespace FSM
                         ChangeState(States.PAUSERUNNING);
                     break;
                 case States.PAUSERUNNING:
-                    if (resetFSM)
-                    {
-                        ChangeState(States.RESETT);
-                    }
                     if (FSM_PauseStart.currentState == FSM.FSM_PauseStart.States.END)
                     {
                         ChangeState(States.BURN);
                     }
+                    if (resetFSM)
+                    {
+                        ChangeState(States.RESETT);
+                    }
+
 
                     break;
                 case States.BURN:
@@ -70,7 +71,6 @@ namespace FSM
                         ChangeState(States.RESETT);
                     break;
                 case States.RESETT:
-                    resetFSM = false;
                     ChangeState(States.INITIAL);
                     break;
                 default:
@@ -88,14 +88,18 @@ namespace FSM
                 case States.EMPTY:
                     break;
                 case States.PAUSERUNNING:
-                    //if(newState!=States.RESETT )
+                    if(newState!=States.RESETT )
                     FSM_PauseStart.Exit();
                     break;
                 case States.BURN:
-                    //if(newState!=States.RESETT)
+                    if(newState!=States.RESETT)
                     potBlackBoard.fSM_IMAGE.Exit();
                     break;
-
+                case States.RESETT:
+                    resetFSM = false;
+                    FSM_PauseStart.ResetFSM = false;
+                  //  currentState = States.INITIAL;
+                    break;
 
 
                 default:
@@ -105,7 +109,7 @@ namespace FSM
             switch (newState)
             {
                 case States.INITIAL:
-
+                 //   FSM_PauseStart.ResetFSM = false;
                     //if (currentState == States.PAUSERUNNING)
                     //    FSM_PauseStart.ReEnter(); 
                     //if(currentState==States.BURN)
@@ -152,6 +156,7 @@ namespace FSM
         {
 
             resetFSM = true;
+           
 
 
         }

@@ -59,7 +59,7 @@ namespace FSM
                    
                     break;
                 case States.RESET:
-                    ResetFSM = false;
+             
                     ChangeState(States.INITIAL);
                     break;
                 case States.END:
@@ -91,14 +91,20 @@ namespace FSM
                 case States.END:
                 
                     break;
+                case States.RESET:
+                   // FSM_PotInteral.Exit();
+                    FSM_PotInteral.isPaused = false;
+                    FSM_PotInteral.resetFSM = false;
+                    
+                    break;
                 default:
                     break;
             }
             switch (newState)
             {
                 case States.INITIAL:
-                    if (currentState == States.PAUSE)
-                        FSM_PotInteral.ReEnter();
+                   // if (currentState == States.PAUSE)
+                     //   FSM_PotInteral.ReEnter();
                         
                     break;
                 case States.RUNNING:

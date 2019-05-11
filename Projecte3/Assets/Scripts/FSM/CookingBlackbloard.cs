@@ -14,13 +14,14 @@ namespace FSM
         public FSM_ShowHideImage FSM_ShowHideImage;
        public PotBlackboard potBlackboard;
         public float duration;
-
+        public ItemPotFSM itemPotFSM;
         // Use this for initialization
         void Awake()
         {
             progressBar = ProgBarGO.AddComponent<FSM_ProgressBar>();
             FSM_ShowHideImage = HideShowGO.AddComponent<FSM_ShowHideImage>();
             potBlackboard = GetComponent<PotBlackboard>();
+            itemPotFSM = GetComponent<ItemPotFSM>();
             progressBar.enabled = false;
             FSM_ShowHideImage.enabled = false;
         }

@@ -132,7 +132,7 @@ PrefabInstance:
     - target: {fileID: 6769926451291428697, guid: 0d983b6d8a3978846969107c4ee5819b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.63
+      value: -2.858
       objectReference: {fileID: 0}
     - target: {fileID: 6769926451291428697, guid: 0d983b6d8a3978846969107c4ee5819b,
         type: 3}
@@ -321,6 +321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
+        type: 3}
+      propertyPath: typePlayer.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5521083496807498001, guid: 406e278c10005b44cb6df7d262104b2b,
         type: 3}
@@ -1790,6 +1795,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1833240666}
+    - target: {fileID: 2955809324576987797, guid: b411db7c564abdb46b8871ffa1aa096f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b411db7c564abdb46b8871ffa1aa096f, type: 3}
 --- !u!1001 &6553253766399463208

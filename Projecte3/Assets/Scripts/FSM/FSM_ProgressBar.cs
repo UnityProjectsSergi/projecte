@@ -40,7 +40,7 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
-                    if(!isPaused)
+                  if(  ProgressBarBB.itemPot.listItem.Count==ProgressBarBB.itemPot.potUi.listUIItems.Count)
                     ChangeState(States.PROGRESS);
                     break;
                 case States.PROGRESS:
@@ -71,7 +71,7 @@ namespace FSM
                     }
                     break;
                 case States.RESET:
-                    ResetFSMProgBar = false;
+           
                     ChangeState(States.INITIAL);
                     break;
                 default:

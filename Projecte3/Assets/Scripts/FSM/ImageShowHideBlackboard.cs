@@ -14,6 +14,7 @@ public class ImageShowHideBlackboard : MonoBehaviour
     public int numRepetitions;
     public int count;
     public bool mustStay;
+    public ItemPotFSM ItemPotFSM;
     // Use this for initialization
     void Start()
     {

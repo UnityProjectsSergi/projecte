@@ -50,7 +50,7 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
-                    if(!isPaused)
+                    if(cookingBlackbloard.itemPotFSM.listItem.Count==cookingBlackbloard.itemPotFSM.potUi.listUIItems.Count)
                     ChangeState(States.COOKING);
                     break;
                 case States.COOKING:
@@ -93,7 +93,7 @@ namespace FSM
                     break;
                 
                 case States.RESET:
-                    ResetFSM = false;
+             
                     ChangeState(States.INITIAL);
                     break;
                 case States.END:
@@ -115,8 +115,8 @@ namespace FSM
                 case States.INITIAL:
                     break;
                 case States.COOKING:
-                    //if (newState == States.DONEOK)
-                    //    cookingBlackbloard.progressBar.Exit();
+            
+                      //  cookingBlackbloard.progressBar.Exit();
                     break;
                
                 case States.DONEOK:
@@ -130,7 +130,13 @@ namespace FSM
                         cookingBlackbloard.progressBar.isPaused = false;
                     }
                     break;
+                case States.RESET:
+                    cookingBlackbloard.progressBar.isPaused = false;
+                    cookingBlackbloard.progressBar.ResetFSMProgBar = false;
+                    cookingBlackbloard.FSM_ShowHideImage.isPaused = false;
+                    cookingBlackbloard.FSM_ShowHideImage.ResetFSMImage = false;
                     
+                    break;
                 
                 default:
                     break;
@@ -151,7 +157,7 @@ namespace FSM
                 case States.COOKING:
                     if (currentState == States.INITIAL)
                     {
-                        cookingBlackbloard.progressBar.isPaused = false;
+                        //cookingBlackbloard.progressBar.isPaused = false;
                         cookingBlackbloard.progressBar.ReEnter();
                    
                     }
@@ -163,7 +169,7 @@ namespace FSM
                     break;
                 case States.DONEOK:
                     if (currentState == States.COOKING) { 
-                        cookingBlackbloard.FSM_ShowHideImage.isPaused = false;
+                     //   cookingBlackbloard.FSM_ShowHideImage.isPaused = false;
                     
                         cookingBlackbloard.FSM_ShowHideImage.ReEnter();
    

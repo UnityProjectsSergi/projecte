@@ -75,7 +75,7 @@ namespace FSM {
             {
 
                 case States.INITIAL:
-                    if(!isPaused)
+                    if(cookingBlackbloard.itemPotFSM.listItem.Count==cookingBlackbloard.itemPotFSM.potUi.listUIItems.Count)
                     ChangeState(States.COOKING);
                     break;
                
@@ -119,7 +119,7 @@ namespace FSM {
                     }
                     break;
                 case States.RESET:
-                    resetFSM = false;
+              
                     ChangeState(States.INITIAL);
                     break;
                 case States.END:
@@ -163,7 +163,11 @@ namespace FSM {
                         FSM_Cooking.isPaused = false;
                     }
                     break;
-
+                case States.RESET:
+                    FSM_Cooking.ResetFSM = false;
+                    FSM_Cooking.isPaused = false;
+                
+                    break;
 
                 default:
                     break;
@@ -179,7 +183,7 @@ namespace FSM {
                     if (currentState==States.INITIAL)
                     {
                         cookingBlackbloard.duration = itemPot.totalDurationOfCooking;
-                        FSM_Cooking.isPaused = false;
+                        //FSM_Cooking.isPaused = false;
                         FSM_Cooking.ReEnter();
 
 
@@ -187,13 +191,13 @@ namespace FSM {
                     break;
                 case States.ALERT:
                     if (currentState == States.COOKING) {
-                        //FSM_Alert.isPaused = false;
-                        //FSM_Alert.ReEnter();
+                       //FSM_Alert.isPaused = false;
+                      // FSM_Alert.ReEnter();
                     }
                     break;
                 case States.PAUSE:
 
-                    //FSM_Alert.isPaused = true;
+                    FSM_Alert.isPaused = true;
                     FSM_Cooking.isPaused = true;
                     break;
                 case States.END:
@@ -201,7 +205,7 @@ namespace FSM {
                     break;
                 case States.RESET:
                     FSM_Cooking.ResetFSM = true;
-                   /// FSM_Alert.ResetFSMAlert = true;
+                    FSM_Alert.ResetFSMAlert = true;
                     break;
                 default:
                     break;
@@ -212,13 +216,17 @@ namespace FSM {
         {
             if (!isPaused)
             {
-                potBlackBoard.journey += Time.deltaTime;
                 if (FSM_Cooking.enabled && FSM_Cooking.cookingBlackbloard.progressBar.enabled)
-                    if(FSM_Cooking.cookingBlackbloard.progressBar.currentState==FSM_ProgressBar.States.PROGRESS)
-                        if(speedUpCook)
-                         FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = 2F* Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
-                     else
-                         FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = 1F * Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
+                {
+                    if (FSM_Cooking.cookingBlackbloard.progressBar.currentState == FSM_ProgressBar.States.PROGRESS)
+                    {
+                        if (speedUpCook)
+                            potBlackBoard.journey += Time.deltaTime * 1.75f;
+                        else
+                            potBlackBoard.journey += Time.deltaTime;
+                        FSM_Cooking.cookingBlackbloard.progressBar.ProgressBarBB.percent = Mathf.Clamp01(potBlackBoard.journey / itemPot.totalDurationOfCooking);
+                    }
+                }
                 if (FSM_Alert.enabled && FSM_Alert.AlertBlackBoard.FSM_ShowHideImage.enabled)
                     if (FSM_Alert.AlertBlackBoard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.SHOW || FSM_Alert.AlertBlackBoard.FSM_ShowHideImage.currentState == FSM_ShowHideImage.States.HIDE)
                         if (speedUpCook)
@@ -236,12 +244,6 @@ namespace FSM {
             }
         
         }
-        public void ResetFSM()
-        {
-      // h
-            //ChangeState(States.INITIAL);
-            
-           
-        }
+      
     }
 }

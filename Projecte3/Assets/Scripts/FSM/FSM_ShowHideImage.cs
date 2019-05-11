@@ -7,7 +7,7 @@ namespace FSM
 {
     public class FSM_ShowHideImage : FiniteStateMachine
     {
-        public enum States { INITIAL, SHOW, PAUSE, HIDE, END,ENDREPEAT ,RESET}
+        public enum States { INITIAL, SHOW, PAUSE, HIDE, END,ENDREPEAT ,RESET,WAITTOSHOW}
         public States currentState;
         public States lastState;
         
@@ -48,8 +48,14 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
-                    if (ResetFSMImage)
-                        ChangeState(States.RESET);
+                    if (ISHBackBoard.ItemPotFSM.listItem.Count == ISHBackBoard.ItemPotFSM.potUi.listUIItems.Count)
+                        if (ISHBackBoard.mustStay)
+                            ChangeState(States.SHOW);
+                        else 
+                            ChangeState(States.WAITTOSHOW);
+                        
+                    break;
+                case States.WAITTOSHOW:
                     if (ISHBackBoard.mustStay)
                         ChangeState(States.SHOW);
                     if (!isPaused)
@@ -66,7 +72,9 @@ namespace FSM
                         lastState = currentState;
                         ChangeState(States.PAUSE);
                     }
+                    
                     break;
+
                 case States.SHOW:
                     if (ResetFSMImage)
                     {
@@ -128,11 +136,7 @@ namespace FSM
                         ChangeState(lastState);
                     break;
                 case States.RESET:
-                    ISHBackBoard.mustStay = false;
-                    ISHBackBoard.image.enabled = false;
-                    ISHBackBoard.timer = 0;
-                    ISHBackBoard.count = 0;
-                    ResetFSMImage = false;
+                 
                     ChangeState(States.INITIAL);
                     break;
                 case States.END:
@@ -157,7 +161,14 @@ namespace FSM
                     ISHBackBoard.image.enabled = true;
                     break;
                 case States.HIDE:
-
+                    
+                    break;
+                case States.RESET:
+                    ISHBackBoard.mustStay = false;
+                    ISHBackBoard.image.enabled = false;
+                    ISHBackBoard.timer = 0;
+                    ISHBackBoard.count = 0;
+                    ResetFSMImage = false;
                     break;
                 default:
                     break;
@@ -172,6 +183,9 @@ namespace FSM
                 case States.SHOW:
                     ISHBackBoard.image.enabled = true;
                     break;
+                case States.WAITTOSHOW:
+                    ISHBackBoard.image.enabled = true;
+                    break;
                 case States.HIDE:
                     ISHBackBoard.image.enabled = false;
                     break;
@@ -183,8 +197,6 @@ namespace FSM
                     break;
                 case States.RESET:
                     ISHBackBoard.mustStay = false;
-                    ISHBackBoard.count = 0;
-                    ISHBackBoard.timer = 0;
                     ISHBackBoard.image.enabled = false;
                     break;
                 case States.END:
@@ -202,6 +214,7 @@ namespace FSM
             if (!ISHBackBoard.mustStay)
             {
                 if (!isPaused)
+                    if(currentState==States.SHOW || currentState==States.HIDE || currentState==States.WAITTOSHOW)
                     ISHBackBoard.timer +=speed* Time.deltaTime;
             }
         }
