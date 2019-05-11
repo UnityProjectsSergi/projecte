@@ -17,10 +17,10 @@ public class StoveSlot : Slot
 
     public void Start()
     {
-        item = PotPool.Instance.GetObjFromPool(positionObjOn);
-       
+        item = PotPool.Instance.GetObjFromPool(positionObjOn);       
         item.transform.parent = positionObjOn.transform;
     }
+
     public override void LeaveObjOn(CharacterControllerAct player)
     {
         /// si tinc objecte a sobre
@@ -98,28 +98,16 @@ public class StoveSlot : Slot
         }
         // mirar al joc si es poden fgr 
     }
-    public void Update()
-    {
 
-    }
     public override void Catch(CharacterControllerAct player)
     {
-        // si player te fracco i recepta feta 
-        //passar ing dde olla a frasco
-        // sino sta feta recpta i tens frasco no agafes recepte  
-
-
         if (player.attachedObject == null)
         {
             base.Catch(player);
         }
-
-
     }
-    /// <summary>
-    /// Check if all ingredients are cooked
-    /// </summary>
-    /// <returns>true if are cooked false if not</returns>
+
+
     public bool CheckIsCookedIng()
     {
         return true;
