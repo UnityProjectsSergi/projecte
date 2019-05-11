@@ -73,7 +73,7 @@ public class StoveSlot : Slot
                     ItemPot ItemPot = item.GetComponent<ItemPot>();
                     if (!hasPassIngToVial)
                     {
-                        //aqui
+                        Debug.Log(ItemPot.currentStatePot);
                         if (ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone)
                         {
                             player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
