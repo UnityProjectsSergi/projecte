@@ -75,7 +75,9 @@ namespace FSM {
             {
 
                 case States.INITIAL:
-                    if(cookingBlackbloard.itemPotFSM.listItem.Count==cookingBlackbloard.itemPotFSM.potUi.listUIItems.Count)
+                    if (isPaused && itemPot.hasStoveUnder)
+                        isPaused = false;
+                    if (cookingBlackbloard.itemPotFSM.listItem.Count==cookingBlackbloard.itemPotFSM.potUi.listUIItems.Count)
                     ChangeState(States.COOKING);
                     break;
                
@@ -165,7 +167,7 @@ namespace FSM {
                     break;
                 case States.RESET:
                     FSM_Cooking.ResetFSM = false;
-                    FSM_Cooking.isPaused = false;
+                  //  FSM_Cooking.isPaused = false;
                 
                     break;
 

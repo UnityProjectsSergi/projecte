@@ -50,7 +50,9 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
-                    if(cookingBlackbloard.itemPotFSM.listItem.Count==cookingBlackbloard.itemPotFSM.potUi.listUIItems.Count)
+                    if (isPaused && cookingBlackbloard.itemPotFSM.hasStoveUnder)
+                        isPaused = false;
+                    if (cookingBlackbloard.itemPotFSM.listItem.Count==cookingBlackbloard.itemPotFSM.potUi.listUIItems.Count)
                     ChangeState(States.COOKING);
                     break;
                 case States.COOKING:
@@ -131,9 +133,9 @@ namespace FSM
                     }
                     break;
                 case States.RESET:
-                    cookingBlackbloard.progressBar.isPaused = false;
+                //    cookingBlackbloard.progressBar.isPaused = false;
                     cookingBlackbloard.progressBar.ResetFSMProgBar = false;
-                    cookingBlackbloard.FSM_ShowHideImage.isPaused = false;
+                  //  cookingBlackbloard.FSM_ShowHideImage.isPaused = false;
                     cookingBlackbloard.FSM_ShowHideImage.ResetFSMImage = false;
                     
                     break;

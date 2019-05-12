@@ -15,10 +15,10 @@ public class HabilityesController : MonoBehaviour
     public bool cCookHability;
     public Image CoolDown;
     public bool HabilityInCoolDown;
-
+   
     MeshRenderer meshRenderer;
     public GameObject[] typePlayer;
-
+    
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -50,8 +50,8 @@ public class HabilityesController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(hability.usingHability)
-        DetectOlla();
+       if(speedUpCookHability && hability.usingHability )
+         DetectOlla();
     }
     public Collider[] ollesDetected;
 
@@ -93,7 +93,6 @@ public class HabilityesController : MonoBehaviour
     {
         if (!HabilityInCoolDown)
         {
-            
             HabilityRadi.gameObject.SetActive(true);
             speedUpCookHability = true;
         }
@@ -129,26 +128,26 @@ public class HabilityesController : MonoBehaviour
             Debug.Log("sssssss");
         for (int i = 0; i < ollesDetected.Length; i++)
         {
-            StoveSlotFSM stove = ollesDetected[i].GetComponent<StoveSlotFSM>();
-            if(stove!=null && stove.item!=null && stove.item.itemType==ItemType.Pot)
-            {
-                ItemPotFSM itemPot = stove.item.GetComponent<ItemPotFSM>();
-                if(itemPot!=null)
-                {
-                    if (itemPot.FSM_Pot.currentState == FSM.FSM_Pot.States.PAUSERUNNING)
-                    {
-                        if (itemPot.FSM_Pot.FSM_PauseStart.currentState == FSM.FSM_PauseStart.States.RUNNING)
+            //StoveSlotFSM stove = ollesDetected[i].GetComponent<StoveSlotFSM>();
+            //if(stove!=null && stove.item!=null && stove.item.itemType==ItemType.Pot)
+            //{
+            //    ItemPotFSM itemPot = stove.item.GetComponent<ItemPotFSM>();
+            //    if(itemPot!=null)
+            //    {
+            //        if (itemPot.FSM_Pot.currentState == FSM.FSM_Pot.States.PAUSERUNNING)
+            //        {
+            //            if (itemPot.FSM_Pot.FSM_PauseStart.currentState == FSM.FSM_PauseStart.States.RUNNING)
 
-                            itemPot.FSM_Pot.FSM_PauseStart.FSM_PotInteral.speedUpCook = true;
-                        else
-                            itemPot.FSM_Pot.FSM_PauseStart.FSM_PotInteral.speedUpCook = false;
-                    }
-                }
+            //                itemPot.FSM_Pot.FSM_PauseStart.FSM_PotInteral.speedUpCook = true;
+            //            else
+            //                itemPot.FSM_Pot.FSM_PauseStart.FSM_PotInteral.speedUpCook = false;
+            //        }
+            //    }
                
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 StoveSlot stoveNotF = ollesDetected[i].GetComponent<StoveSlot>();
                 if(stoveNotF!=null && stoveNotF.item!=null && stoveNotF.item.itemType==ItemType.Pot)
                 {
@@ -164,7 +163,7 @@ public class HabilityesController : MonoBehaviour
                     }
                 }
 
-            }
+            //}
 
         }
     }

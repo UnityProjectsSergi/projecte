@@ -34,6 +34,8 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
+                    if (isPaused && itemPot.hasStoveUnder)
+                        isPaused = false;
                     if (itemPot.listItem.Count == itemPot.potUi.listUIItems.Count)
                         ChangeState(States.RUNNING);
                     break;
@@ -93,7 +95,7 @@ namespace FSM
                     break;
                 case States.RESET:
                    // FSM_PotInteral.Exit();
-                    FSM_PotInteral.isPaused = false;
+                //    FSM_PotInteral.isPaused = false;
                     FSM_PotInteral.resetFSM = false;
                     
                     break;
@@ -103,6 +105,7 @@ namespace FSM
             switch (newState)
             {
                 case States.INITIAL:
+                   
                    // if (currentState == States.PAUSE)
                      //   FSM_PotInteral.ReEnter();
                         

@@ -48,6 +48,8 @@ namespace FSM
             switch (currentState)
             {
                 case States.INITIAL:
+                    if (isPaused && ISHBackBoard.ItemPotFSM.hasStoveUnder)
+                        isPaused = false;
                     if (ISHBackBoard.ItemPotFSM.listItem.Count == ISHBackBoard.ItemPotFSM.potUi.listUIItems.Count)
                         if (ISHBackBoard.mustStay)
                             ChangeState(States.SHOW);
@@ -177,14 +179,14 @@ namespace FSM
             switch (newState)
             {
                 case States.INITIAL:
-                    if(currentState==States.PAUSE)
-                        ISHBackBoard.image.enabled = false;
+                    //if(currentState==States.PAUSE)
+                    //    ISHBackBoard.image.enabled = false;
                     break;
                 case States.SHOW:
                     ISHBackBoard.image.enabled = true;
                     break;
                 case States.WAITTOSHOW:
-                    ISHBackBoard.image.enabled = true;
+                    ISHBackBoard.image.enabled = false;
                     break;
                 case States.HIDE:
                     ISHBackBoard.image.enabled = false;

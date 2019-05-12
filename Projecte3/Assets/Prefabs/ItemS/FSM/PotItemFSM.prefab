@@ -82,7 +82,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238318631504410701}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 010fafb0234a36b4e9f652002d7f68e7, type: 3}
   m_Name: 
@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 8056843302709748429}
   - component: {fileID: 6177130037929418716}
   - component: {fileID: 1928146262605827359}
+  - component: {fileID: 1844611857}
   m_Layer: 10
   m_Name: PotItemFSM
   m_TagString: Item
@@ -592,6 +593,7 @@ MonoBehaviour:
   lastState: 0
   FSM_Alert: {fileID: 0}
   FSM_PauseStart: {fileID: 0}
+  resetFSM: 0
 --- !u!114 &7040008871505684678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +719,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1844611857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356859938089687660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 010fafb0234a36b4e9f652002d7f68e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  percent: 0
+  itemPot: {fileID: 0}
 --- !u!1 &3075562987096433762
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,7 +54,9 @@ public class StoveSlotFSM : Slot
 
                         if (itempot.listItem.Count < itempot.potUi.listUIItems.Count)
                         {
-                            if (itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.PAUSERUNNING || itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.EMPTY) { 
+                            if(itempot.FSM_Pot.currentState==POT_FSM2.States.EMPTY || itempot.FSM_Pot.currentState==POT_FSM2.States.PAUSE)
+                            { 
+                        /// if (itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.PAUSERUNNING || itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.EMPTY) { 
                           //  if (itempot.currentStatePot != ItemPotStateIngredients.Burning || itempot.currentStatePot != ItemPotStateIngredients.BurnedToTrash)
                             //{
                                 //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  
@@ -87,16 +89,16 @@ public class StoveSlotFSM : Slot
                 {
                     ItemPotFSM ItemPot = item.GetComponent<ItemPotFSM>();
             
-                    if (ItemPot.FSM_Pot.currentState != FSM.FSM_Pot.States.BURN)
-                    {
-                        player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
-                        ItemPot.ResetPot();
-                        hasPassIngToVial = true;  
-                    }
-                    else
-                    {
-                        StartCoroutine(TextWide(5f, "Need to go trash"));
-                    }
+                 ////   if (ItemPot.FSM_Pot.currentState != FSM.FSM_Pot.States.BURN)
+                 //   {
+                 //       player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
+                 //       ItemPot.ResetPot();
+                 //       hasPassIngToVial = true;  
+                 //   }
+                 //   else
+                 //   {
+                 //       StartCoroutine(TextWide(5f, "Need to go trash"));
+                 //   }
                     
                 }
             }
