@@ -55,7 +55,7 @@ public class PotUI : MonoBehaviour
 
     public void SetItemPotState(ItemPotStateIngredients state)
     {
-        if(ItemPot.currentStatePot != ItemPotStateIngredients.CookedDone)
+        //if(ItemPot.currentStatePot != ItemPotStateIngredients.CookedDone)
             ItemPot.currentStatePot = state;
     }
 
