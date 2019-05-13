@@ -36,12 +36,12 @@ namespace Assets.Scripts.Slots
                     Debug.Log("orderc check" + check);
                     if (check)
                     {
-                        FloatingText.Show("Order Get", "OrderOK", new FromWorldPointTextPositioner(Camera.main, transform.position));
+                        FloatingText.Show("Order Get", "OrderOK", new FromWorldPointTextPositioner(Camera.main, new Vector3(transform.position.x,transform.position.y+1,transform.position.z),0.5f,20f));
                        // StartCoroutine(TextWide(5f, "Order get"));
                     }
                     else
                     {
-                        FloatingText.Show("Order Wrong", "OrderKO", new FromWorldPointTextPositioner(Camera.main, transform.position));
+                        FloatingText.Show("Order Wrong", "OrderKO", new FromWorldPointTextPositioner(Camera.main, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f, 20f));
                     //    StartCoroutine(TextWide(5f, "Order Wrong"));
                     }
                     vialItem.ResetVial();
@@ -52,7 +52,7 @@ namespace Assets.Scripts.Slots
                 }
                 else
                 {
-                    FloatingText.Show("Needs A Vial", "OrderKO", new FromWorldPointTextPositioner(Camera.main, transform.position));
+                    FloatingText.Show("Needs A Vial", "OrderKO", new FromWorldPointTextPositioner(Camera.main, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f, 20f));
                 //    StartCoroutine(TextWide(5f, "Needs a Vial"));
                 }
             }

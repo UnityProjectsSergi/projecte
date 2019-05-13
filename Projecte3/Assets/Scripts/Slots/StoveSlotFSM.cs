@@ -54,24 +54,32 @@ public class StoveSlotFSM : Slot
 
                         if (itempot.listItem.Count < itempot.potUi.listUIItems.Count)
                         {
-                            if (itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.PAUSERUNNING || itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.EMPTY) { 
+                            if(itempot.FSM_Pot.currentState==POT_FSM2.States.EMPTY || itempot.FSM_Pot.currentState==POT_FSM2.States.PAUSE)
+                            { 
+                        /// if (itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.PAUSERUNNING || itempot.FSM_Pot.currentState == FSM.FSM_Pot.States.EMPTY) { 
                           //  if (itempot.currentStatePot != ItemPotStateIngredients.Burning || itempot.currentStatePot != ItemPotStateIngredients.BurnedToTrash)
                             //{
                                 //Affegeixo ItemClon a llista items del ItemPot que tinc a sobre  
                                 itempot.LeaveObjIn(ItemClonIngredient);
 
                                 // desparent the player attached obj 
-                                player.attachedObject = null;
+
+
                                 // put the ItemClonIngredient  child of itemPot
-                                ItemClonIngredient.transform.parent = item.transform;
+                                //   ItemClonIngredient.transform.parent = item.transform;
                                 // if ItemPlayer type is Ingredient2
                                 if (itemPlayer.GetType() == typeof(Ingredient2))
+                                {
                                     // return to pool
                                     Ingredient2Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient2>());
+                                    Ingredient2Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ingredient2>());
+                                }
                                 else
-                                    //Return to pool
+                                {   //Return to pool
                                     Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
-                                // flag xq no pugui afegir 2 cops els igredients
+                                    Ing1Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ing11>());
+                                }
+                            
                                 hasPassIngToVial = false;
                             }
                         }
@@ -80,17 +88,17 @@ public class StoveSlotFSM : Slot
                 else if (itemPlayer.itemType == ItemType.Vial)
                 {
                     ItemPotFSM ItemPot = item.GetComponent<ItemPotFSM>();
-                    //x pantalla esmostra Matrix4x4 pantalla
-                    if (ItemPot.FSM_Pot.currentState != FSM.FSM_Pot.States.BURN)
-                    {
-                        player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
-                        ItemPot.ResetPot();
-                        hasPassIngToVial = true;  
-                    }
-                    else
-                    {
-                        StartCoroutine(TextWide(5f, "Need to go trash"));
-                    }
+            
+                 ////   if (ItemPot.FSM_Pot.currentState != FSM.FSM_Pot.States.BURN)
+                 //   {
+                 //       player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
+                 //       ItemPot.ResetPot();
+                 //       hasPassIngToVial = true;  
+                 //   }
+                 //   else
+                 //   {
+                 //       StartCoroutine(TextWide(5f, "Need to go trash"));
+                 //   }
                     
                 }
             }

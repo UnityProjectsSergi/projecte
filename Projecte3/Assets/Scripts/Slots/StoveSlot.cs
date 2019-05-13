@@ -17,10 +17,10 @@ public class StoveSlot : Slot
 
     public void Start()
     {
-        item = PotPool.Instance.GetObjFromPool(positionObjOn);
-       
+        item = PotPool.Instance.GetObjFromPool(positionObjOn);       
         item.transform.parent = positionObjOn.transform;
     }
+
     public override void LeaveObjOn(CharacterControllerAct player)
     {
         /// si tinc objecte a sobre
@@ -51,17 +51,19 @@ public class StoveSlot : Slot
                                 if (itempot.LeaveObjIn(ItemClonIngredient))
                                 {
                                     // desparent the player attached obj 
-                                    player.attachedObject = null;
-                                    // put the ItemClonIngredient  child of itemPot
-                                    ItemClonIngredient.transform.parent = item.transform;
+
                                     // if ItemPlayer type is Ingredient2
                                     if (itemPlayer.GetType() == typeof(Ingredient2))
-                                        // return to pool
+                                    { // return to pool
                                         Ingredient2Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient2>());
+                                        Ingredient2Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ingredient2>());
+                                    }
                                     else
+                                    {
                                         //Return to pool
                                         Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
-                                    // flag xq no pugui afegir 2 cops els igredients
+                                        Ing1Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ing11>());
+                                    }// flag xq no pugui afegir 2 cops els igredients
                                     hasPassIngToVial = false;
                                 }
                             }
@@ -73,7 +75,7 @@ public class StoveSlot : Slot
                     ItemPot ItemPot = item.GetComponent<ItemPot>();
                     if (!hasPassIngToVial)
                     {
-                        //aqui
+                        Debug.Log(ItemPot.currentStatePot);
                         if (ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone)
                         {
                             player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
@@ -98,28 +100,16 @@ public class StoveSlot : Slot
         }
         // mirar al joc si es poden fgr 
     }
-    public void Update()
-    {
 
-    }
     public override void Catch(CharacterControllerAct player)
     {
-        // si player te fracco i recepta feta 
-        //passar ing dde olla a frasco
-        // sino sta feta recpta i tens frasco no agafes recepte  
-
-
         if (player.attachedObject == null)
         {
             base.Catch(player);
         }
-
-
     }
-    /// <summary>
-    /// Check if all ingredients are cooked
-    /// </summary>
-    /// <returns>true if are cooked false if not</returns>
+
+
     public bool CheckIsCookedIng()
     {
         return true;

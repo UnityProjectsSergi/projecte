@@ -20,7 +20,7 @@ public class ItemPotFSM : Item
     // saber si el que hi ha 
     public LayerMask layerMask;
     public bool hasStoveUnder;
-    public FSM.FSM_Pot FSM_Pot;
+    public POT_FSM2 FSM_Pot;
     public int currentSlotListCount=0;
     public float totalDurationOfCooking;
     public int oldSlot;
@@ -35,7 +35,7 @@ public class ItemPotFSM : Item
     //  public  ItemPotStateIngredients currentStatePot;
     private void Awake()
     {
-        FSM_Pot = GetComponent<FSM.FSM_Pot>();
+        FSM_Pot = GetComponent<POT_FSM2>();
     }
 
     public void Start()
@@ -76,7 +76,7 @@ public class ItemPotFSM : Item
         IsStartCooking = false;
         listItem.Clear();
         potUi.ResetUI();
-        FSM_Pot.ResetF();
+        FSM_Pot.resetFSM=true;
         currentSlotListCount = 0;
     }
     public bool CheckIsCookedIng()
@@ -99,21 +99,26 @@ public class ItemPotFSM : Item
     }
     public void DetectIfStoveIsUnder()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up, out hit, 0.25f,layerMask))
-        {
-            StoveSlotFSM slot = hit.collider.gameObject.GetComponent<StoveSlotFSM>();
-            if (slot && listItem.Count > 0)
-            {
-                hasStoveUnder = true;
-            }
-            else
-            {
-                hasStoveUnder = false;
-            }
-        }
+        if (this.transform.parent)
+            if(this.transform.parent.parent.GetComponent<StoveSlotFSM>())
+            hasStoveUnder = true;
         else
             hasStoveUnder = false;
+        //RaycastHit hit;
+        //if (Physics.Raycast(transform.position, -transform.up, out hit, 0.25f,layerMask))
+        //{
+        //    StoveSlotFSM slot = hit.collider.gameObject.GetComponent<StoveSlotFSM>();
+        //    if (slot && listItem.Count > 0)
+        //    {
+        //        hasStoveUnder = true;
+        //    }
+        //    else
+        //    {
+        //        hasStoveUnder = false;
+        //    }
+        //}
+        //else
+        //    hasStoveUnder = false;
 
     }
     public void OnDrawGizmos()

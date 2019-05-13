@@ -16,20 +16,24 @@ public class PotUIState : MonoBehaviour
     public float totalduration = 0;
     public bool StartCookingBool;
     public bool StartBuringBool;
+    public bool isStarted = false;
     
     public float timeShowAlertBurning = 2.5f;
     public float timeBurning = 1.0f;
     public PotUI PotUI;
-    // Start is called before the first frame update
+
+    public float percentCook;
+    public float journey;
+    public bool speedUp;
+    public bool StartTimerAlrert;
+    public float alertTimer = 3;
+
     void Start()
     {
         PotUI = gameObject.transform.parent.GetComponent<PotUI>();
         ProgressBar.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    public bool StartTimerAlrert;
-    public float alertTimer = 3;
     void Update()
     {
         //// q tu aqui li dones un valor 
@@ -50,16 +54,13 @@ public class PotUIState : MonoBehaviour
                     ProgressBar.gameObject.SetActive(false);
                   
                     PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
-                    StartCoroutine(ShowImageOK(0.5f, CookedOk));
-                 
+                    StartCoroutine(ShowImageOK(0.5f, CookedOk));               
                 }
             }
             else
             {
                 if (journey <= (totalduration + timeShowAlertBurning))
-                {
-
-                    
+                {                    
                     if (StartTimerAlrert)
                     {
                         alertTimer -= Time.deltaTime;
@@ -82,8 +83,6 @@ public class PotUIState : MonoBehaviour
                             {
                                 PotUI.SetItemPotState(ItemPotStateIngredients.Burning);
                                 StartCoroutine(ShowImageFire(4f, Fire));
-
-
                             }
                         }
                     }
@@ -105,18 +104,20 @@ public class PotUIState : MonoBehaviour
 
     public void StartCooking()
     {
-        // pk sempre es true
-        StartCookingBool = true;
-        Debug.Log("start cooking");
-        PotUI.SetItemPotState(ItemPotStateIngredients.Cooking);
-       
-  
+        if (!isStarted)
+        {
+            isStarted = true;
+            StartCookingBool = true;
+            Debug.Log("start cooking");
+            PotUI.SetItemPotState(ItemPotStateIngredients.Cooking);
+        }
     }
    
-   public void StopCooking()
+    public void StopCooking()
     {
         StartCookingBool = false;     
     }
+
     public IEnumerator ShowImageOK(float wait,Image image)
     {
         image.gameObject.SetActive(true);
@@ -124,6 +125,7 @@ public class PotUIState : MonoBehaviour
         StartTimerAlrert = true;    
         image.gameObject.SetActive(false);       
     }
+
     public IEnumerator ShowImageFire(float wait, Image image)
     {
         image.gameObject.SetActive(true);
@@ -133,6 +135,7 @@ public class PotUIState : MonoBehaviour
         BurnAfterFire.gameObject.SetActive(true);
         PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);   
     }
+
     public IEnumerator ShowImageAlert(float wait, Image image)
     {
         image.gameObject.SetActive(true);
@@ -140,43 +143,14 @@ public class PotUIState : MonoBehaviour
         StartBuringBool = true; 
         image.gameObject.SetActive(false);
     }
+
     public void StartBurning()
     {
         StartBuringBool = true;
     }
+
     public void StopBurning()
     {
         StartBuringBool = false;
     }
-    public float percentCook;
-    public float journey;
-    public bool speedUp;
-    //********* code for control the potui with correountine */
-    /*
-    Coroutine co;
-    // xcom si fessim u altre cosa apart 
-    IEnumerator UIBarCooking()
-    {
-        
-        
-        float journey = 0f;
-        while (journey <= totalduration)
-        {
-            
-                journey += Time.deltaTime;
-                percentCook = Mathf.Clamp01(journey / totalduration);
-
-                ProgressBar.fillAmount = Mathf.Lerp(0, 1.0f, percentCook);
-                if (ProgressBar.fillAmount >= 1.0)
-                {
-                    ProgressBar.gameObject.SetActive(false);
-                    StartCookingBool = false;
-                }
-                yield return null;
-            
-            
-
-        }
-    }*/
-
 }

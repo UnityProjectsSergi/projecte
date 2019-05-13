@@ -52,6 +52,8 @@ public class CharacterControllerAct : MonoBehaviour
         SlotAction();
     }
     public bool canUseHability;
+    private float fovAngle=5f;
+
     private void HabilityAction()
     {
         if (habilityesController.habilityType == HabilityType.LevitationItems)
@@ -109,6 +111,32 @@ public class CharacterControllerAct : MonoBehaviour
             if (playerInput.XBtn.Down)
                 LeaveObjOn();
         }
+        HightLightSlot();
+    }
+    Vector3 leftRayRotation;
+    Vector3 rightRayRotation;
+   
+    private void HightLightSlot()
+    {
+      
+         leftRayRotation = Quaternion.AngleAxis(-fovAngle, transform.up) * transform.forward;
+         rightRayRotation = Quaternion.AngleAxis(fovAngle, transform.up) * transform.forward;
+        RaycastHit Hit, LHit, RHit;
+        bool Front = Physics.Raycast(raycastTransform.position, transform.forward, out Hit, 1, tablesLayerMask);
+        bool LFront = Physics.Raycast(raycastTransform.position, leftRayRotation, out LHit, 1, tablesLayerMask);
+        bool RFront = Physics.Raycast(raycastTransform.position, rightRayRotation, out RHit, 1, tablesLayerMask);
+        if (Front)
+        {
+            
+        }
+        if (LFront)
+        {
+            Debug.Log("Left");
+        }
+        if (RFront)
+        {
+            Debug.Log("Right");
+        }
     }
 
     private void Catch()
@@ -129,7 +157,7 @@ public class CharacterControllerAct : MonoBehaviour
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
         }
-        else if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 2, tablesLayerMask))
+        else if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 1, tablesLayerMask))
         {          
             slot = hit.collider.GetComponent<Slot>();
             slot.Catch(this);
@@ -217,7 +245,9 @@ public class CharacterControllerAct : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(raycastTransform.position, transform.forward * 1.6f);
+        Gizmos.DrawRay(raycastTransform.position, transform.forward * 1f);
+        Gizmos.DrawRay(raycastTransform.position, leftRayRotation * 1);
+        Gizmos.DrawRay(raycastTransform.position, rightRayRotation * 1f);
     }
 
 }
