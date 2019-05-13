@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.InputSystem;
+
 public class Character : MonoBehaviour
 {
     public PlayerInput playerInput;
@@ -32,8 +33,9 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
-        if (_isGrounded && _velocity.y < 0.0f)
+        Debug.Log(_velocity.y);
+        _isGrounded = Physics.Raycast(transform.position, -transform.up, 2, Ground); /*Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Collide)*/
+        if (_isGrounded /*&& _velocity.y < 0.0f*/)
             _velocity.y = 0f;
         
         Vector3 move = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
@@ -53,6 +55,10 @@ public class Character : MonoBehaviour
         _velocity.z /= 1 + Drag.z * Time.deltaTime;
 
         _controller.Move(_velocity * Time.deltaTime);
+    }
 
+    public void SetVelocityY(float value)
+    {
+        _velocity.y = value;
     }
 }

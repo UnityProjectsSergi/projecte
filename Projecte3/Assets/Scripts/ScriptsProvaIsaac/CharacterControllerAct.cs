@@ -111,32 +111,6 @@ public class CharacterControllerAct : MonoBehaviour
             if (playerInput.XBtn.Down)
                 LeaveObjOn();
         }
-        HightLightSlot();
-    }
-    Vector3 leftRayRotation;
-    Vector3 rightRayRotation;
-   
-    private void HightLightSlot()
-    {
-      
-         leftRayRotation = Quaternion.AngleAxis(-fovAngle, transform.up) * transform.forward;
-         rightRayRotation = Quaternion.AngleAxis(fovAngle, transform.up) * transform.forward;
-        RaycastHit Hit, LHit, RHit;
-        bool Front = Physics.Raycast(raycastTransform.position, transform.forward, out Hit, 1, tablesLayerMask);
-        bool LFront = Physics.Raycast(raycastTransform.position, leftRayRotation, out LHit, 1, tablesLayerMask);
-        bool RFront = Physics.Raycast(raycastTransform.position, rightRayRotation, out RHit, 1, tablesLayerMask);
-        if (Front)
-        {
-            
-        }
-        if (LFront)
-        {
-            Debug.Log("Left");
-        }
-        if (RFront)
-        {
-            Debug.Log("Right");
-        }
     }
 
     private void Catch()
@@ -246,8 +220,6 @@ public class CharacterControllerAct : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawRay(raycastTransform.position, transform.forward * 1f);
-        Gizmos.DrawRay(raycastTransform.position, leftRayRotation * 1);
-        Gizmos.DrawRay(raycastTransform.position, rightRayRotation * 1f);
     }
 
 }

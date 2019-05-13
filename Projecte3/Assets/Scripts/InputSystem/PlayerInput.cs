@@ -90,90 +90,82 @@ namespace Assets.Scripts.InputSystem
         }
 
         private void Update()
-        { // assigno el  nummero de player 1 o 2
-
-            //     Debug.Log("chec");
-            //if (Input.GetJoystickNames().Length > 0)
-            //{
-            //    if (string.IsNullOrWhiteSpace(Input.GetJoystickNames()[controllerNumber]))
-            //        Debug.Log("connect Controller " + Input.GetJoystickNames()[controllerNumber]);
-            //}
+        {
             if (controllerNumber > 0)
             {
-                //Left Stick
-                LeftStick.Horizontal = Input.GetAxis(_leftHoritzontalAxis);
-                LeftStick.Vertical = Input.GetAxis(_leftVerticalAxis);
-                //Right Stck
-                RightStick.Horizontal = InputManager.Instance.GetAxis(_rightHoritzontalAxis);
-                RightStick.Vertical = InputManager.Instance.GetAxis(_rightVerticalAxis);
-                // Dpad Axis
-                DPadAxis.Vertical = InputManager.Instance.GetAxis(_dPadVertical);
-                DPadAxis.Horizontal = InputManager.Instance.GetAxis(_dPadHorizontal);             
-                //R2  and L2 Axis
-                R2Axis.Vertical = InputManager.Instance.GetAxis(_R2Axis);
-                L2Axis.Vertical = InputManager.Instance.GetAxis(_L2Axis);
-                // Settings btn
-                settingsBtn.Hold = InputManager.Instance.GetButtonOnHold(_settingsBtn);
-                settingsBtn.Down = InputManager.Instance.GetButtonDown(_settingsBtn);
-                settingsBtn.Up = InputManager.Instance.GetButtonUp(_settingsBtn);
-                // Share Btn
-                shareBtn.Hold = InputManager.Instance.GetButtonOnHold(_shareBtn);
-                shareBtn.Down = InputManager.Instance.GetButtonDown(_shareBtn);
-                shareBtn.Up = InputManager.Instance.GetButtonUp(_shareBtn);
-                //Start btn
-                startBtn.Hold = InputManager.Instance.GetButtonOnHold(_startBtn);
-                startBtn.Down = InputManager.Instance.GetButtonDown(_startBtn);
-                startBtn.Up = InputManager.Instance.GetButtonUp(_startBtn);
-                // L2 Btn
-                L2Btn.Hold = InputManager.Instance.GetButtonOnHold(_L2Btn);
-                L2Btn.Down = InputManager.Instance.GetButtonDown(_L2Btn);
-                L2Btn.Up = InputManager.Instance.GetButtonUp(_L2Btn);
-                // R2 Btn
-                R2Btn.Hold = InputManager.Instance.GetButtonOnHold(_R2Btn);
-                R2Btn.Down = InputManager.Instance.GetButtonDown(_R2Btn);
-                R2Btn.Up = InputManager.Instance.GetButtonUp(_R2Btn);
-                // R1 Btn
-                R1Btn.Hold = InputManager.Instance.GetButtonOnHold(_R1Btn);
-                R1Btn.Up = InputManager.Instance.GetButtonUp(_R1Btn);
-                R1Btn.Down = InputManager.Instance.GetButtonDown(_R1Btn);
-                // L1 Btn
-                L1Btn.Hold = InputManager.Instance.GetButtonOnHold(_L1Btn);
-                L1Btn.Down = InputManager.Instance.GetButtonDown(_L1Btn);
-                L1Btn.Up = InputManager.Instance.GetButtonUp(_L1Btn);
-                // Right Stick Click
-                rightStickClick.Hold = InputManager.Instance.GetButtonOnHold(_rightStickClick);
-                rightStickClick.Up = InputManager.Instance.GetButtonUp(_rightStickClick);
-                rightStickClick.Down = InputManager.Instance.GetButtonDown(_rightStickClick);
-                // Left Stick
-                leftStickClick.Hold = InputManager.Instance.GetButtonOnHold(_leftStickClick);
-                leftStickClick.Down = InputManager.Instance.GetButtonDown(_leftStickClick);
-                leftStickClick.Up = InputManager.Instance.GetButtonUp(_leftStickClick);
-                // Touckpd Btn
-                touchPadBtn.Hold = InputManager.Instance.GetButtonOnHold(_touchpadBtn);
-                touchPadBtn.Up = InputManager.Instance.GetButtonUp(_touchpadBtn);
-                touchPadBtn.Down = InputManager.Instance.GetButtonDown(_touchpadBtn);
-                // X Btn
-                XBtn.Hold = InputManager.Instance.GetButtonOnHold(_XBtn);
-                XBtn.Up = InputManager.Instance.GetButtonUp(_XBtn);
-                XBtn.Down = InputManager.Instance.GetButtonDown(_XBtn);
-                // OBtn
-                OBtn.Hold = InputManager.Instance.GetButtonOnHold(_OBtn);
-                OBtn.Up = InputManager.Instance.GetButtonUp(_OBtn);
-                OBtn.Down = InputManager.Instance.GetButtonDown(_OBtn);
-                //square Btn
-                squareBtn.Hold = InputManager.Instance.GetButtonOnHold(_squareBtn);
-                squareBtn.Up = InputManager.Instance.GetButtonUp(_squareBtn);
-                squareBtn.Down = InputManager.Instance.GetButtonDown(_squareBtn);
-                // triangle Btn
-                triangleBtn.Hold = InputManager.Instance.GetButtonOnHold(_triangleBtn);
-                triangleBtn.Up = InputManager.Instance.GetButtonUp(_triangleBtn);
-                triangleBtn.Down = InputManager.Instance.GetButtonDown(_triangleBtn);
+                    //Left Stick
+                    LeftStick.Horizontal = Input.GetAxis(_leftHoritzontalAxis);
+                    LeftStick.Vertical = Input.GetAxis(_leftVerticalAxis);
+                    //Right Stck
+                    RightStick.Horizontal = InputManager.Instance.GetAxis(_rightHoritzontalAxis);
+                    RightStick.Vertical = InputManager.Instance.GetAxis(_rightVerticalAxis);
+                    // Dpad Axis
+                    DPadAxis.Vertical = InputManager.Instance.GetAxis(_dPadVertical);
+                    DPadAxis.Horizontal = InputManager.Instance.GetAxis(_dPadHorizontal);
+                    //R2  and L2 Axis
+                    R2Axis.Vertical = InputManager.Instance.GetAxis(_R2Axis);
+                    L2Axis.Vertical = InputManager.Instance.GetAxis(_L2Axis);
+                    // Settings btn
+                    settingsBtn.Hold = InputManager.Instance.GetButtonOnHold(_settingsBtn);
+                    settingsBtn.Down = InputManager.Instance.GetButtonDown(_settingsBtn);
+                    settingsBtn.Up = InputManager.Instance.GetButtonUp(_settingsBtn);
+                    // Share Btn
+                    shareBtn.Hold = InputManager.Instance.GetButtonOnHold(_shareBtn);
+                    shareBtn.Down = InputManager.Instance.GetButtonDown(_shareBtn);
+                    shareBtn.Up = InputManager.Instance.GetButtonUp(_shareBtn);
+                    //Start btn
+                    startBtn.Hold = InputManager.Instance.GetButtonOnHold(_startBtn);
+                    startBtn.Down = InputManager.Instance.GetButtonDown(_startBtn);
+                    startBtn.Up = InputManager.Instance.GetButtonUp(_startBtn);
+                    // L2 Btn
+                    L2Btn.Hold = InputManager.Instance.GetButtonOnHold(_L2Btn);
+                    L2Btn.Down = InputManager.Instance.GetButtonDown(_L2Btn);
+                    L2Btn.Up = InputManager.Instance.GetButtonUp(_L2Btn);
+                    // R2 Btn
+                    R2Btn.Hold = InputManager.Instance.GetButtonOnHold(_R2Btn);
+                    R2Btn.Down = InputManager.Instance.GetButtonDown(_R2Btn);
+                    R2Btn.Up = InputManager.Instance.GetButtonUp(_R2Btn);
+                    // R1 Btn
+                    R1Btn.Hold = InputManager.Instance.GetButtonOnHold(_R1Btn);
+                    R1Btn.Up = InputManager.Instance.GetButtonUp(_R1Btn);
+                    R1Btn.Down = InputManager.Instance.GetButtonDown(_R1Btn);
+                    // L1 Btn
+                    L1Btn.Hold = InputManager.Instance.GetButtonOnHold(_L1Btn);
+                    L1Btn.Down = InputManager.Instance.GetButtonDown(_L1Btn);
+                    L1Btn.Up = InputManager.Instance.GetButtonUp(_L1Btn);
+                    // Right Stick Click
+                    rightStickClick.Hold = InputManager.Instance.GetButtonOnHold(_rightStickClick);
+                    rightStickClick.Up = InputManager.Instance.GetButtonUp(_rightStickClick);
+                    rightStickClick.Down = InputManager.Instance.GetButtonDown(_rightStickClick);
+                    // Left Stick
+                    leftStickClick.Hold = InputManager.Instance.GetButtonOnHold(_leftStickClick);
+                    leftStickClick.Down = InputManager.Instance.GetButtonDown(_leftStickClick);
+                    leftStickClick.Up = InputManager.Instance.GetButtonUp(_leftStickClick);
+                    // Touckpd Btn
+                    touchPadBtn.Hold = InputManager.Instance.GetButtonOnHold(_touchpadBtn);
+                    touchPadBtn.Up = InputManager.Instance.GetButtonUp(_touchpadBtn);
+                    touchPadBtn.Down = InputManager.Instance.GetButtonDown(_touchpadBtn);
+                    // X Btn
+                    XBtn.Hold = InputManager.Instance.GetButtonOnHold(_XBtn);
+                    XBtn.Up = InputManager.Instance.GetButtonUp(_XBtn);
+                    XBtn.Down = InputManager.Instance.GetButtonDown(_XBtn);
+                    // OBtn
+                    OBtn.Hold = InputManager.Instance.GetButtonOnHold(_OBtn);
+                    OBtn.Up = InputManager.Instance.GetButtonUp(_OBtn);
+                    OBtn.Down = InputManager.Instance.GetButtonDown(_OBtn);
+                    //square Btn
+                    squareBtn.Hold = InputManager.Instance.GetButtonOnHold(_squareBtn);
+                    squareBtn.Up = InputManager.Instance.GetButtonUp(_squareBtn);
+                    squareBtn.Down = InputManager.Instance.GetButtonDown(_squareBtn);
+                    // triangle Btn
+                    triangleBtn.Hold = InputManager.Instance.GetButtonOnHold(_triangleBtn);
+                    triangleBtn.Up = InputManager.Instance.GetButtonUp(_triangleBtn);
+                    triangleBtn.Down = InputManager.Instance.GetButtonDown(_triangleBtn);
 
-                //DPadButton.Down = (InputManager.Instance.GetAxisRaw(_dPadVertical) == -1);
-                //DPadButton.Up = (InputManager.Instance.GetAxisRaw(_dPadVertical) == 1);
-                //DPadButton.Left = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == -1);
-                //DPadButton.Right = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == 1);
-
+                    //DPadButton.Down = (InputManager.Instance.GetAxisRaw(_dPadVertical) == -1);
+                    //DPadButton.Up = (InputManager.Instance.GetAxisRaw(_dPadVertical) == 1);
+                    //DPadButton.Left = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == -1);
+                    //DPadButton.Right = (InputManager.Instance.GetAxisRaw(_dPadHorizontal) == 1);
             }
         }
     }
