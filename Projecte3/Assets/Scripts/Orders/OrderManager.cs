@@ -15,6 +15,7 @@ class OrderManager:MonoBehaviour
     public float SegWaitTo2onOrder=35f;
     public Text Points;
     public Text textO;
+    
 
     private void Awake()
     {
@@ -37,7 +38,7 @@ class OrderManager:MonoBehaviour
     }
     public void Start()
     {
-        AddOrder(0.4f, 3, 100);
+        AddOrder(0.2f, 3, 10);
         InvokeRepeating("order",20f, SegWaitTo2onOrder);
     }
     public void order()
@@ -70,17 +71,21 @@ class OrderManager:MonoBehaviour
             Debug.Log("checkings");
             if (!order.isServed)
             {
-               List<Item> In1OfOrderList = order._ingredients.OfType<Ing11>().ToList<Item>();
-               List<Item> Ing2OfOrderList = order._ingredients.OfType<Ingredient2>().ToList<Item>();
-               List<Item> equalItems2Ing2 = item.listItem.OfType<Ingredient2>().ToList<Item>();
-               List<Item> equalItems2Ing1 = item.listItem.OfType<Ing11>().ToList<Item>();
-                if (equalItems2Ing1.Count == In1OfOrderList.Count && equalItems2Ing2.Count == Ing2OfOrderList.Count)
+
+                List<Item> In1OfOrderList = order._ingredients.OfType<Ingredient1>().ToList<Item>();
+                List<Item> Ing2OfOrderList = order._ingredients.OfType<Ingredient2>().ToList<Item>();
+                List<Item> Ing3OfOrderList = order._ingredients.OfType<Ingredient3>().ToList<Item>();
+                List<Item> equalItems2Ing2 = item.listItem.OfType<Ingredient2>().ToList<Item>();
+                List<Item> equalItems2Ing1 = item.listItem.OfType<Ingredient1>().ToList<Item>();
+                List<Item> equalItems2Ing3 = item.listItem.OfType<Ingredient3>().ToList<Item>();
+                if (equalItems2Ing1.Count == In1OfOrderList.Count && equalItems2Ing2.Count == Ing2OfOrderList.Count && equalItems2Ing3 .Count==Ing3OfOrderList.Count)
                 {
                     Debug.Log("lists has same numbros of each ingredient");
                     order.isServed = true;
+                    order._OrderServed();
                     order.HideUIOrder();
                     points += order._points;
-                    OrderManager.Instance.RemoveOrder(order);
+                    RemoveOrder(order);
                     return true;
                 }
                 // checkeo si els ingredients de la ordre q em donen el tinc a una ordre de la llista 
@@ -136,8 +141,6 @@ class OrderManager:MonoBehaviour
                 {
                     listOrders[i].HideUIOrder();
                     points -= listOrders[i]._points;
-                    textO.text = "OrderLost";
-                    StartCoroutine(HideText(5f));
                     RemoveOrder(listOrders[i]);
                 }
             }
@@ -149,6 +152,10 @@ class OrderManager:MonoBehaviour
         yield return new WaitForSeconds(num);
         textO.text = "";
     //    listOrders.Add(OrderGenerator.GenerateOrder(0.3f, ingredients, time));
+    }
+    public void OrderServed()
+    {
+
     }
 }
 

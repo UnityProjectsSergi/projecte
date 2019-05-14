@@ -24,7 +24,7 @@ namespace Assets.Scripts
                         player.attachedObject = null;
                         item.transform.parent = null;
                         item.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
-                        Ing1Pool.Instance.ReturnToPool((Ing11)item);
+                        Ing1Pool.Instance.ReturnToPool((Ingredient1)item);
                     }
                 }
                 else if(item.itemType==ItemType.Pot)

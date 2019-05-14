@@ -33,7 +33,7 @@ namespace Assets.Scripts.Slots
                     
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
                     bool check = OrderManager.Instance.CheckAllOrder(vialItem);
-                    Debug.Log("orderc check" + check);
+                 
                     if (check)
                     {
                         FloatingText.Show("Order Get", "OrderOK", new FromWorldPointTextPositioner(Camera.main, new Vector3(transform.position.x,transform.position.y+1,transform.position.z),0.5f,20f));

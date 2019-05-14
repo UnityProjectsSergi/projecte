@@ -5,13 +5,13 @@ class FloatingText : MonoBehaviour
     private static readonly GUISkin Skin = Resources.Load<GUISkin>("GameSkin");    
     public static FloatingText Show(string text,string style, IFloatingTextPositioner posititoner )
     {
-        Debug.Log("www");
+       
         var go = new GameObject("FloatingText");
         var floatingText = go.AddComponent<FloatingText>();
         floatingText.Style = Skin.GetStyle(style);
         floatingText._positioner = posititoner;
         floatingText._content = new GUIContent(text);
-        Debug.Log(floatingText);
+        
         return floatingText;
     }
     private GUIContent _content;

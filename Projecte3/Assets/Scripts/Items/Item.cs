@@ -108,7 +108,7 @@ public  class Item : MonoBehaviour
         if (!isHabilityOn && hasDeacactivateLevitation)
         {
             RaycastHit hit;
-            Debug.Log("ssaaaa");
+       
             if (Physics.Raycast(transform.position, -transform.up, out hit, 2f, layerSlot))
             {
 
@@ -123,7 +123,7 @@ public  class Item : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("ssssss");
+                 
                     if (transform.parent)
                     {
                         transform.parent.parent.GetComponent<CharacterControllerAct>().LeaveObjOn();
@@ -133,7 +133,7 @@ public  class Item : MonoBehaviour
             }
             else
             {
-                Debug.Log("sssmsss");
+          
                 if (transform.parent)
                 {
                     transform.parent.parent.GetComponent<CharacterControllerAct>().LeaveObjOn();

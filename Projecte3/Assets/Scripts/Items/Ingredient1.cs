@@ -1,21 +1,24 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
+
 [System.Serializable]
-public class Ingredient2 : Item
-{
+public class Ingredient1:Item
+    {
     public Canvas canvas;
-    // Use this for initialization
- 
     public  void Start()
     {
         if (canvas == null)
             canvas = GetComponentInChildren<Canvas>();
         if(rigidbodyController==null)
         rigidbodyController = GetComponent<RigidbodyController>();
-        duration = 5f;
-        nameO = "Ing2";
+        duration = 2f;
+        nameO = "Ing1";
         itemType = ItemType.Ing;
-        ing = ItemUiType.Ing2;
+        ing = ItemUiType.Ing1;
     }
     private void Update()
     {
@@ -25,11 +28,7 @@ public class Ingredient2 : Item
                 canvas.transform.gameObject.SetActive(false);
         }
         else
-                 if (!canvas.gameObject.activeSelf)
+             if (!canvas.gameObject.activeSelf)
             canvas.transform.gameObject.SetActive(true);
     }
-
-    // Update is called once per frame
-
-
 }

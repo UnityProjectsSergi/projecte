@@ -7,7 +7,7 @@ public class OrderGenerator : MonoBehaviour
 {
 
     // Use this for initialization
-    public GameObject OrderUIPrefb,Ing1UIPrefab,Ing2UIPrefab;
+    public GameObject OrderUIPrefb,Ing1UIPrefab,Ing2UIPrefab,Ing3UIPrafab;
     public Transform parentUI;
    
     void Start()
@@ -41,17 +41,22 @@ public class OrderGenerator : MonoBehaviour
                 Item n;
                 /// Decideixo quin ingredinent si un o l'altre amb random
                // float rad = Random.Range(0.0f, 1.0f);
-                if (rad>0.5f)
+                if (rad>0.33f)
                 {
                     n = Ing1Pool.Instance.GetObjFromPool();
                      m = Instantiate(Ing1UIPrefab);
                    
                 }
-                else
+                else if(rad>0.3 && rad <0.6)
                 {
                     n = Ingredient2Pool.Instance.GetObjFromPool();
                      m = Instantiate(Ing2UIPrefab);
                     
+                }
+                else
+                {
+                    n = Ingredient3Pool.Instance.GetObjFromPool();
+                    m = Instantiate(Ing3UIPrafab);
                 }
                 n.gameObject.SetActive(false);
                 //// Adegirixo a llistes a generar la UI i els obj Ingreienr o Item
