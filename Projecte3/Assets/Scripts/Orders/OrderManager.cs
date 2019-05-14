@@ -38,7 +38,7 @@ class OrderManager:MonoBehaviour
     }
     public void Start()
     {
-        AddOrder(0.4f, 3, 10);
+        AddOrder(0.2f, 3, 10);
         InvokeRepeating("order",20f, SegWaitTo2onOrder);
     }
     public void order()
