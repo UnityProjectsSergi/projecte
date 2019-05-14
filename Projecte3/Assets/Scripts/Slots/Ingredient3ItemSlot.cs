@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Scripts.ObjPooler;
-public class Ingredient2ItemSlot : ItemSlot
+public class Ingredient3ItemSlot : ItemSlot
 {
 
     // Use this for initialization

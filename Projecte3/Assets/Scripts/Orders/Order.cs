@@ -16,7 +16,9 @@ public class Order
     public OrderUI _orderUI;
     public bool isTimeOut;
     public float duration = 3f;
-   
+    public Order.OrderRes OrderLost;
+    public Order.OrderRes OrderServed;
+
     public Order (List<Item> ingredients,int points,OrderUI orderUI)
     {
         _points = points;
@@ -26,6 +28,7 @@ public class Order
     }
     public Order(List<Item> ingredients, int points,float duracio)
     {
+      
         _points = points;
         _ingredients = ingredients;
         duration = duracio;
@@ -34,7 +37,6 @@ public class Order
     public void HideUIOrder()
     {
         _orderUI.gameObject.SetActive(false);
-
     }
     
     public void SetOrderUi(OrderUI ordrrui)
@@ -50,6 +52,15 @@ public class Order
     {
         return _orderUI.timeout;
     }
+  
+
+    internal void _OrderServed()
+    {
+        _orderUI.OrderServed(OrderServed);
+    }
+    public delegate void OrderRes();
+   
+   
 }
 
 

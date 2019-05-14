@@ -24,7 +24,7 @@ public class NormalSlot:Slot
                 {
                     if (itemPlayer.stateIngredient == StateIngredient.cutted)
                     {
-                        Debug.Log("ssm");
+                      
                         //item.transform.p;arent = null;
                         Item ItemClonIngredient = itemPlayer.Clone();
                         ItemPot itempot = item.GetComponent<ItemPot>();
@@ -43,7 +43,7 @@ public class NormalSlot:Slot
                                 Ingredient2Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient2>());
                             else
                                 //Return to pool
-                                Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
+                                Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient1>());
                             // flag xq no pugui afegir 2 cops els igredients
                             hasPassIngToVial = false;
                         }

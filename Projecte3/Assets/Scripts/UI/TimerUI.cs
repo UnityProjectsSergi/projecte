@@ -20,7 +20,7 @@ public class TimerUI : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(gameObject.name);
+       
         textTimer = GetComponent<UnityEngine.UI.Text>();
     }
 

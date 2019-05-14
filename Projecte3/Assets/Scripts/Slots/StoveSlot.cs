@@ -18,6 +18,7 @@ public class StoveSlot : Slot
     public void Start()
     {
         item = PotPool.Instance.GetObjFromPool(positionObjOn);       
+        
         item.transform.parent = positionObjOn.transform;
     }
 
@@ -61,8 +62,8 @@ public class StoveSlot : Slot
                                     else
                                     {
                                         //Return to pool
-                                        Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
-                                        Ing1Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ing11>());
+                                        Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient1>());
+                                        Ing1Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ingredient1>());
                                     }// flag xq no pugui afegir 2 cops els igredients
                                     hasPassIngToVial = false;
                                 }
@@ -75,7 +76,8 @@ public class StoveSlot : Slot
                     ItemPot ItemPot = item.GetComponent<ItemPot>();
                     if (!hasPassIngToVial)
                     {
-                        Debug.Log(ItemPot.currentStatePot);
+                       
+
                         if (ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone)
                         {
                             player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);

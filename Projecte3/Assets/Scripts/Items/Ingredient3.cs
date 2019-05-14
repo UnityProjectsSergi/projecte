@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 [System.Serializable]
-public class Ingredient2 : Item
+public class Ingredient3 : Item
 {
 
     // Use this for initialization

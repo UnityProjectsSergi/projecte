@@ -33,7 +33,7 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(_velocity.y);
+      
         _isGrounded = Physics.Raycast(transform.position, -transform.up, 2, Ground); /*Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Collide)*/
         if (_isGrounded /*&& _velocity.y < 0.0f*/)
             _velocity.y = 0f;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 [System.Serializable]
-public class Ing11:Item
+public class Ingredient1:Item
     {
    
     public  void Start()
