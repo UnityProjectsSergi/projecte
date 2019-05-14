@@ -100,7 +100,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &5835007799903847297
 MonoBehaviour:
@@ -204,7 +204,7 @@ MonoBehaviour:
   isHabilityOn: 0
   layerSlot:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   hasDeacactivateLevitation: 0
   ing: 2
   itemType: 2
@@ -215,6 +215,7 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
+  canvas: {fileID: 0}
 --- !u!1 &6623657663404150824
 GameObject:
   m_ObjectHideFlags: 0

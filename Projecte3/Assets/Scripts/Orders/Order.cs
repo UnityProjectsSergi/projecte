@@ -37,6 +37,7 @@ public class Order
     public void HideUIOrder()
     {
         _orderUI.gameObject.SetActive(false);
+        _orderUI.gameObject.transform.parent = null;
     }
     
     public void SetOrderUi(OrderUI ordrrui)

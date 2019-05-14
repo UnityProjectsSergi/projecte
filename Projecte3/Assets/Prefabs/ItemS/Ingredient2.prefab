@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3800222221273125981}
   - component: {fileID: 1268174797434116732}
   - component: {fileID: 1916098412055843778}
-  - component: {fileID: 4022039056508579099}
+  - component: {fileID: 8533613093127066976}
   m_Layer: 10
   m_Name: Ingredient2
   m_TagString: Item
@@ -189,7 +189,7 @@ MonoBehaviour:
   Direction: {x: 0, y: 0, z: 0}
   playercontroller: 0
   speed: 2
---- !u!114 &4022039056508579099
+--- !u!114 &8533613093127066976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,21 +198,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 4019033098300839940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 759f8d3ba120dff45829ab0ddc782875, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e6358896b9fad94c9a0ff5914689b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isHabilityOn: 0
   layerSlot:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   hasDeacactivateLevitation: 0
-  ing: 2
+  ing: 1
   itemType: 2
-  points: 0
+  points: 2
   nameO: 
   stateIngredient: 0
   rigidbodyController: {fileID: 0}
-  duration: 0
+  duration: 5
   ingCookValue: 0
   percentCooked: 0
 --- !u!1 &6647253220893242726

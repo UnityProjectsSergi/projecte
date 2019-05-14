@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OrderUI:MonoBehaviour
+public class OrderUI : MonoBehaviour
 {
     public Image imageTimeOut;
-    public List<ItemUI> ItemUIlist=new List<ItemUI>();
+    public List<ItemUI> ItemUIlist = new List<ItemUI>();
     public float duration;
     public float timeOutValue;
     public GameObject ListItemsUIParent;
@@ -16,22 +16,22 @@ public class OrderUI:MonoBehaviour
     public SkackeGameObject SkackeGameObject;
     public Image ImageOrderServed;
     public Image ImageOrderLost;
-    
-   
+
+
     public void Start()
     {
         timeout = false;
         SkackeGameObject = GetComponent<SkackeGameObject>();
         StartCoroutine(Countdown());
-        
+
     }
     public void generateItemsUI()
     {
         RectTransform rect = GetComponent<RectTransform>();
-        float withOfRect= rect.rect.width;
-      
+        float withOfRect = rect.rect.width;
+
         float withOfChilds = withOfRect / ItemUIlist.Count;
-      
+
         foreach (var item in ItemUIlist)
         {
             item.gameObject.transform.SetParent(ListItemsUIParent.transform);
@@ -45,7 +45,7 @@ public class OrderUI:MonoBehaviour
     internal void OrderServed(Order.OrderRes order)
     {
         // go to greencolor on ImageOrderServed
-      
+
     }
     IEnumerator FadeTo(Image image, float aValue, float aTime, float bTime)
     {
@@ -58,16 +58,16 @@ public class OrderUI:MonoBehaviour
             yield return null;
         }
         CanvasGroup canvas = GetComponent<CanvasGroup>();
-        for (float f = 0; f <= 2; f += Time.deltaTime/bTime)
+        for (float f = 0; f <= 2; f += Time.deltaTime / bTime)
         {
-            canvas.alpha = Mathf.Lerp(1f, 0f, f );
+            canvas.alpha = Mathf.Lerp(1f, 0f, f);
             yield return null;
         }
     }
-    
+
     internal void OrderLost(Order.OrderRes order)
     {
-      
+
     }
 
     public void Update()
@@ -77,13 +77,13 @@ public class OrderUI:MonoBehaviour
     public void UpdateTimeOut()
     {
         Debug.Log(timeOutValue);
-        if(timeOutValue<0.15f)
+        if (timeOutValue < 0.15f)
         {
             SkackeGameObject.InduceShacke(0.5f);
         }
-        if(timeOutValue<0.05f)
+        if (timeOutValue < 0.05f)
         {
-            StartCoroutine(FadeTo(ImageOrderLost, 0.5f, 0.5f,0.5f));
+            StartCoroutine(FadeTo(ImageOrderLost, 0.5f, 0.5f, 0.5f));
         }
         imageTimeOut.fillAmount = timeOutValue;
     }
@@ -96,13 +96,13 @@ public class OrderUI:MonoBehaviour
         while (totalTime <= duration)
         {
             if (!timeout)
-         {
+            {
                 timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
 
-            totalTime += Time.deltaTime;
-            if (timeOutValue < 0.00000001f)
-                timeout = true;
-        }
+                totalTime += Time.deltaTime;
+                if (timeOutValue <= 0.01f)
+                    timeout = true;
+            }
             yield return null;
         }
     }

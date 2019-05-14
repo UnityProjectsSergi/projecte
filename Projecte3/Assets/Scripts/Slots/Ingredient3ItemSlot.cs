@@ -7,7 +7,7 @@ public class Ingredient3ItemSlot : ItemSlot
     // Use this for initialization
     public override void Start()
     {
-        item = Ingredient2Pool.Instance.GetObjFromPool(transform);
+        item = Ingredient3Pool.Instance.GetObjFromPool(transform);
      
         base.Start();
     }
@@ -15,7 +15,7 @@ public class Ingredient3ItemSlot : ItemSlot
     public override void Catch(CharacterControllerAct player)
     {
         base.Catch(player);
-        item = Ingredient2Pool.Instance.GetObjFromPool(transform);
+        item = Ingredient3Pool.Instance.GetObjFromPool(transform);
         
      
     }
