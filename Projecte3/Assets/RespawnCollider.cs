@@ -11,16 +11,13 @@ public class RespawnCollider : MonoBehaviour
         SpawnPositions = GetComponentsInChildren<Transform>();
     }
     public Transform[] SpawnPositions;
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Character>())
         {
             other.gameObject.SetActive(false);
+            other.gameObject.GetComponent<Character>().SetVelocityY(0);
             int num = Random.Range(0, SpawnPositions.Length);
             //TODO Effect of respawn with GameObject of Arry SpawnPosition[num] and call next methodth in other object
             other.GetComponent<RespawnPlayerCharacter>().Respawn(SpawnPositions[num]);
