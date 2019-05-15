@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 public enum ItemUiType
 {
-    Ing1,Ing2
+    Ing1,Ing2,Ing3
 }
 public enum ItemType
 {

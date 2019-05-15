@@ -58,8 +58,7 @@ public class ItemPotFSM : Item
         // if currentSlot if liist is minor than ui cout list
         if (currentSlotListCount < potUi.listUIItems.Count) 
         {
-            Debug.Log("add item");
-          
+        
             listItem.Add(item);
             // set items on ui
             potUi.SetItemOnUISlot(currentSlotListCount,item);
@@ -91,7 +90,7 @@ public class ItemPotFSM : Item
         // si he affegit Ingredient a l llista
         if (currentSlotListCount != oldSlot)
         {
-            Debug.Log("addditemopot");
+     
             // add duration to totalduration of ing
             totalDurationOfCooking += duration;
         }

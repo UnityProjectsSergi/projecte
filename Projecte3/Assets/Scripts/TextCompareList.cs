@@ -23,10 +23,10 @@ public class TextCompareList : MonoBehaviour
         OrderToChecl.Add(Ingredient2Pool.Instance.GetObjFromPool());
         // 2 llistte
         
-        In1OfOrderList = OrderList.OfType<Ing11>().ToList<Item>();
+        In1OfOrderList = OrderList.OfType<Ingredient1>().ToList<Item>();
         Ing2OfOrderList = OrderList.OfType<Ingredient2>().ToList<Item>();
         equalItems2Ing2 = OrderToChecl.OfType<Ingredient2>().ToList<Item>();
-        equalItems2Ing1 = OrderToChecl.OfType<Ing11>().ToList<Item>();
+        equalItems2Ing1 = OrderToChecl.OfType<Ingredient1>().ToList<Item>();
         if (equalItems2Ing1.Count == In1OfOrderList.Count)
             Debug.Log("Ing1 has same number of ing at 2 lists");
         if(equalItems2Ing2.Count==Ing2OfOrderList.Count)

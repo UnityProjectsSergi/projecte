@@ -24,7 +24,8 @@ public class RigidbodyController : MonoBehaviour
         }
         else
         {
-            rigidbody.constraints = RigidbodyConstraints.None;
+            rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+
         }
     }
 

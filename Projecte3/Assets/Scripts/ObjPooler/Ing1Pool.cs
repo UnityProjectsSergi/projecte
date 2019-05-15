@@ -9,9 +9,9 @@ namespace Assets.Scripts.ObjPooler
 {
 
     // xo el problema q hi veig esq  si l'objectee  item 
-   public class Ing1Pool:GenericObjectPool<Ing11>
+   public class Ing1Pool:GenericObjectPool<Ingredient1>
     {
-        public override void ReturnToPool(Ing11 gameObjectReturnPool)
+        public override void ReturnToPool(Ingredient1 gameObjectReturnPool)
         {
             gameObjectReturnPool.stateIngredient = StateIngredient.raw;
             gameObjectReturnPool.transform.localScale = Vector3.one;

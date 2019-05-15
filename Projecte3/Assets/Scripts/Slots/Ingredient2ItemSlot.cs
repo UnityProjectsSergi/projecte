@@ -8,6 +8,7 @@ public class Ingredient2ItemSlot : ItemSlot
     public override void Start()
     {
         item = Ingredient2Pool.Instance.GetObjFromPool(transform);
+     
         base.Start();
     }
 
@@ -15,6 +16,8 @@ public class Ingredient2ItemSlot : ItemSlot
     {
         base.Catch(player);
         item = Ingredient2Pool.Instance.GetObjFromPool(transform);
+        
+     
     }
     // Update is called once per frame
     void Update()

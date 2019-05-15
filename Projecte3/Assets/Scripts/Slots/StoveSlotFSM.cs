@@ -76,8 +76,8 @@ public class StoveSlotFSM : Slot
                                 }
                                 else
                                 {   //Return to pool
-                                    Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ing11>());
-                                    Ing1Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ing11>());
+                                    Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient1>());
+                                    Ing1Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ingredient1>());
                                 }
                             
                                 hasPassIngToVial = false;
