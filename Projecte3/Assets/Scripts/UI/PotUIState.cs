@@ -29,7 +29,6 @@ public class PotUIState : MonoBehaviour
     public float timeBetweenCookDoneAndShowOK;
     public float timeShowingOK;
     public float timeBetweenShowOkAndAlert;
-    public float timeShowingAlert;
     public float timeBetweenAlertAndBurn;
     
 
@@ -122,12 +121,9 @@ public class PotUIState : MonoBehaviour
         yield return new WaitForSeconds(waitBefore);
         image.gameObject.SetActive(true);
         yield return new WaitForSeconds(waitDuring);
-       
         image.gameObject.SetActive(false);
         yield return new WaitForSeconds(waitAfter);
-        StartCoroutine(ShowImageAlert(timeBetweenShowOkAndAlert,timeShowingAlert,0, AlertBurn));
-        
-        
+        StartCoroutine(ShowImageAlert(timeBetweenShowOkAndAlert,0, AlertBurn));
     }
 
     public IEnumerator ShowImageBurn(float waitBefore, Image image)
@@ -135,19 +131,33 @@ public class PotUIState : MonoBehaviour
         yield return new WaitForSeconds(waitBefore);
         image.gameObject.SetActive(true);
         PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);
-
-
-
     }
 
-    public IEnumerator ShowImageAlert(float waitBefore, float waitDuring, float waitAfter, Image image)
+    public IEnumerator ShowImageAlert(float waitBefore, float waitAfter, Image image)
     {
         yield return new WaitForSeconds(waitBefore);
         PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
-        image.gameObject.SetActive(true);
-        yield return new WaitForSeconds(waitDuring);
-
-        image.gameObject.SetActive(false);
+        for (int i = 0; i < 3; i++)
+        {
+            image.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            image.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            image.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.25f);
+            image.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.25f);
+        }
+        for (int i = 0; i < 12; i++)
+        {
+            image.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            image.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+        }
         yield return new WaitForSeconds(waitAfter);
         StartCoroutine(ShowImageBurn(0.1f, BurnAfterFire));
 
