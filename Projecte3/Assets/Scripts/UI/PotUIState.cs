@@ -30,7 +30,7 @@ public class PotUIState : MonoBehaviour
     public float timeShowingOK;
     public float timeBetweenShowOkAndAlert;
     public float timeBetweenAlertAndBurn;
-    
+    public float SpeedUpReduccion;
 
 
 
@@ -46,7 +46,7 @@ public class PotUIState : MonoBehaviour
         if (StartCookingBool)
         {
             if (speedUp)
-                journey += Time.deltaTime * 2f;
+                journey += Time.deltaTime * SpeedUpReduccion;
             else
                journey += Time.deltaTime;
             if (journey < totalduration + 0.1f)
@@ -118,47 +118,48 @@ public class PotUIState : MonoBehaviour
 
     public IEnumerator ShowImageOK(float waitBefore,float waitDuring,float waitAfter,Image image)
     {
-        yield return new WaitForSeconds(waitBefore);
+
+        yield return new WaitForSeconds((speedUp)?waitBefore/SpeedUpReduccion:waitBefore);
         image.gameObject.SetActive(true);
-        yield return new WaitForSeconds(waitDuring);
+        yield return new WaitForSeconds((speedUp)?waitDuring/SpeedUpReduccion:waitDuring);
         image.gameObject.SetActive(false);
-        yield return new WaitForSeconds(waitAfter);
+        yield return new WaitForSeconds((speedUp)?waitAfter/SpeedUpReduccion:waitAfter);
         StartCoroutine(ShowImageAlert(timeBetweenShowOkAndAlert,0, AlertBurn));
     }
 
     public IEnumerator ShowImageBurn(float waitBefore, Image image)
     {
-        yield return new WaitForSeconds(waitBefore);
+        yield return new WaitForSeconds((speedUp) ? waitBefore/SpeedUpReduccion:waitBefore);
         image.gameObject.SetActive(true);
         PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);
     }
 
     public IEnumerator ShowImageAlert(float waitBefore, float waitAfter, Image image)
     {
-        yield return new WaitForSeconds(waitBefore);
+        yield return new WaitForSeconds((speedUp) ? waitBefore/SpeedUpReduccion:waitBefore);
         PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
         for (int i = 0; i < 3; i++)
         {
             image.gameObject.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f/SpeedUpReduccion);
             image.gameObject.SetActive(false);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f/SpeedUpReduccion);
         }
         for (int i = 0; i < 6; i++)
         {
             image.gameObject.SetActive(true);
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.25f/SpeedUpReduccion);
             image.gameObject.SetActive(false);
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.25f/SpeedUpReduccion);
         }
         for (int i = 0; i < 12; i++)
         {
             image.gameObject.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f/SpeedUpReduccion);
             image.gameObject.SetActive(false);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f/SpeedUpReduccion);
         }
-        yield return new WaitForSeconds(waitAfter);
+        yield return new WaitForSeconds(waitAfter/SpeedUpReduccion);
         StartCoroutine(ShowImageBurn(0.1f, BurnAfterFire));
 
     }
