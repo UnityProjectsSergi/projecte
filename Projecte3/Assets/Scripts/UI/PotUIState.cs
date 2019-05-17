@@ -141,25 +141,25 @@ public class PotUIState : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             image.gameObject.SetActive(true);
-            yield return new WaitForSeconds(0.5f/SpeedUpReduccion);
+            yield return new WaitForSeconds((speedUp)?0.5f /SpeedUpReduccion:0.5F);
             image.gameObject.SetActive(false);
-            yield return new WaitForSeconds(0.5f/SpeedUpReduccion);
+            yield return new WaitForSeconds((speedUp) ? 0.5f / SpeedUpReduccion : 0.5F);
         }
         for (int i = 0; i < 6; i++)
         {
             image.gameObject.SetActive(true);
-            yield return new WaitForSeconds(0.25f/SpeedUpReduccion);
+            yield return new WaitForSeconds((speedUp) ? 0.25f / SpeedUpReduccion : 0.25F);
             image.gameObject.SetActive(false);
-            yield return new WaitForSeconds(0.25f/SpeedUpReduccion);
+            yield return new WaitForSeconds((speedUp) ? 0.25f / SpeedUpReduccion : 0.25F);
         }
         for (int i = 0; i < 12; i++)
         {
             image.gameObject.SetActive(true);
-            yield return new WaitForSeconds(0.1f/SpeedUpReduccion);
+            yield return new WaitForSeconds((speedUp) ? 0.1f / SpeedUpReduccion : 0.1F);
             image.gameObject.SetActive(false);
-            yield return new WaitForSeconds(0.1f/SpeedUpReduccion);
+            yield return new WaitForSeconds((speedUp) ? 0.1f / SpeedUpReduccion : 0.1F);
         }
-        yield return new WaitForSeconds(waitAfter/SpeedUpReduccion);
+        yield return new WaitForSeconds((speedUp) ? waitAfter / SpeedUpReduccion : waitAfter);
         StartCoroutine(ShowImageBurn(0.1f, BurnAfterFire));
 
     }
