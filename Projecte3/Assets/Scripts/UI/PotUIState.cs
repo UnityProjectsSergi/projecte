@@ -15,7 +15,7 @@ public class PotUIState : MonoBehaviour
     public float fillAmount = 0;
     public float totalduration = 0;
     public bool StartCookingBool;
-    public bool StartBuringBool;
+
     public bool isStarted = false;
     
     public float timeShowAlertBurning = 2.5f;
@@ -25,8 +25,15 @@ public class PotUIState : MonoBehaviour
     public float percentCook;
     public float journey;
     public bool speedUp;
-    public bool StartTimerAlrert;
-    public float alertTimer = 3;
+  
+    public float timeBetweenCookDoneAndShowOK;
+    public float timeShowingOK;
+    public float timeBetweenShowOkAndAlert;
+    public float timeShowingAlert;
+    public float timeBetweenAlertAndBurn;
+    
+
+
 
     void Start()
     {
@@ -52,42 +59,36 @@ public class PotUIState : MonoBehaviour
                 if (ProgressBar.fillAmount >= 0.999f)
                 {
                     ProgressBar.gameObject.SetActive(false);
-                  
                     PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
-                    StartCoroutine(ShowImageOK(0.5f, CookedOk));               
+                    StartCoroutine(ShowImageOK(timeBetweenCookDoneAndShowOK,timeShowingOK,0, CookedOk));               
                 }
             }
-            else
-            {
-                if (journey <= (totalduration + timeShowAlertBurning))
-                {                    
-                    if (StartTimerAlrert)
-                    {
-                        alertTimer -= Time.deltaTime;
-                        if (alertTimer >= 0.0f)
-                        {
-                            StartCoroutine(ShowImageAlert(3f, AlertBurn));
-                            PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
-                        }
-                    }
-                }
-                else
-                {
-                    if (journey <= (totalduration + timeShowAlertBurning + timeBurning))
-                    {
-                        float BurnTimer = 4f;
-                        if (StartBuringBool)
-                        {
-                            BurnTimer -= Time.deltaTime;
-                            if (BurnTimer >= 0.0f)
-                            {
-                                PotUI.SetItemPotState(ItemPotStateIngredients.Burning);
-                                StartCoroutine(ShowImageFire(4f, Fire));
-                            }
-                        }
-                    }
-                }
-            }
+            //else
+            //{
+            //    //if (journey <= (totalduration + timeAlertBurning))
+            //    //{
+            //    //    if (StartTimerAlrert)
+            //    //    {
+            //    //        alertTimer -= Time.deltaTime;
+            //    //        if (alertTimer >= 0.0f)
+            //    //        {
+            //    //            StartCoroutine(ShowImageAlert(3f, AlertBurn));
+            //    //            PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
+            //    //        }
+            //    //    }
+            //    //}
+            //    //else
+            //    //{
+            //    //    if (journey <= (totalduration + timeShowAlertBurning + alertTimer))
+            //    //    {
+
+            //    //                PotUI.SetItemPotState(ItemPotStateIngredients.Burning);
+            //    //                StartCoroutine(ShowImageFire(4f, Fire));
+
+
+            //    //    }
+            //    //}
+            //}
         }
     }
 
@@ -95,8 +96,6 @@ public class PotUIState : MonoBehaviour
     {
         journey = 0;
         StartCookingBool = false;
-        StartBuringBool = false;
-        StartTimerAlrert = false;
         BurnAfterFire.gameObject.SetActive(false);
         totalduration = 0;
         ProgressBar.fillAmount = 0;
@@ -118,39 +117,41 @@ public class PotUIState : MonoBehaviour
         StartCookingBool = false;     
     }
 
-    public IEnumerator ShowImageOK(float wait,Image image)
+    public IEnumerator ShowImageOK(float waitBefore,float waitDuring,float waitAfter,Image image)
     {
+        yield return new WaitForSeconds(waitBefore);
         image.gameObject.SetActive(true);
-        yield return new WaitForSeconds(wait);
-        StartTimerAlrert = true;    
-        image.gameObject.SetActive(false);       
-    }
-
-    public IEnumerator ShowImageFire(float wait, Image image)
-    {
-        image.gameObject.SetActive(true);
-        yield return new WaitForSeconds(wait);
+        yield return new WaitForSeconds(waitDuring);
+       
+        image.gameObject.SetActive(false);
+        yield return new WaitForSeconds(waitAfter);
+        StartCoroutine(ShowImageAlert(timeBetweenShowOkAndAlert,timeShowingAlert,0, AlertBurn));
         
-        image.gameObject.SetActive(false);
-        BurnAfterFire.gameObject.SetActive(true);
-        PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);   
+        
     }
 
-    public IEnumerator ShowImageAlert(float wait, Image image)
+    public IEnumerator ShowImageBurn(float waitBefore, Image image)
     {
+        yield return new WaitForSeconds(waitBefore);
         image.gameObject.SetActive(true);
-        yield return new WaitForSeconds(wait);
-        StartBuringBool = true; 
+        PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);
+
+
+
+    }
+
+    public IEnumerator ShowImageAlert(float waitBefore, float waitDuring, float waitAfter, Image image)
+    {
+        yield return new WaitForSeconds(waitBefore);
+        PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
+        image.gameObject.SetActive(true);
+        yield return new WaitForSeconds(waitDuring);
+
         image.gameObject.SetActive(false);
+        yield return new WaitForSeconds(waitAfter);
+        StartCoroutine(ShowImageBurn(0.1f, BurnAfterFire));
+
     }
 
-    public void StartBurning()
-    {
-        StartBuringBool = true;
-    }
-
-    public void StopBurning()
-    {
-        StartBuringBool = false;
-    }
+   
 }

@@ -595,7 +595,6 @@ MonoBehaviour:
   fillAmount: 0
   totalduration: 0
   StartCookingBool: 0
-  StartBuringBool: 0
   isStarted: 0
   timeShowAlertBurning: 5
   timeBurning: 0.01
@@ -603,8 +602,11 @@ MonoBehaviour:
   percentCook: 0
   journey: 0
   speedUp: 0
-  StartTimerAlrert: 0
-  alertTimer: 1
+  timeBetweenCookDoneAndShowOK: 2
+  timeShowingOK: 10
+  timeBetweenShowOkAndAlert: 2
+  timeShowingAlert: 5
+  timeBetweenAlertAndBurn: 2
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0

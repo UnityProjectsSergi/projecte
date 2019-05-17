@@ -17,7 +17,7 @@ public class Ingredient2 : Item
         itemType = ItemType.Ing;
         ing = ItemUiType.Ing2;
     }
-    private void Update()
+    public void Update()
     {
         if (transform.parent != null && transform.parent.parent == null)
         {
@@ -25,7 +25,7 @@ public class Ingredient2 : Item
                 canvas.transform.gameObject.SetActive(false);
         }
         else
-                 if (!canvas.gameObject.activeSelf)
+            if (!canvas.gameObject.activeSelf)
             canvas.transform.gameObject.SetActive(true);
     }
 
