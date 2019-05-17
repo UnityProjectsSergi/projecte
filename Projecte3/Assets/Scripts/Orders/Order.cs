@@ -26,12 +26,13 @@ public class Order
         _ingredients = ingredients;
         _orderUI = orderUI;
     }
-    public Order(List<Item> ingredients, int points,float duracio)
+    public Order(List<Item> ingredients, int points,float duracio,OrderRes  res)
     {
       
         _points = points;
         _ingredients = ingredients;
         duration = duracio;
+        OrderServed += res;
       
     }
     public void HideUIOrder()
@@ -55,11 +56,11 @@ public class Order
     }
   
 
-    internal void _OrderServed()
+    internal void _OrderServed(Order order)
     {
-        _orderUI.OrderServed(OrderServed);
+        _orderUI.OrderServed(OrderServed, order);
     }
-    public delegate void OrderRes();
+    public delegate void OrderRes(Order order);
    
    
 }

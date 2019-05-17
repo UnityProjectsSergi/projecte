@@ -25,7 +25,7 @@ public class OrderGenerator : MonoBehaviour
     /// </summary>
     /// <param name="numIng"></param>
     /// <returns></returns>
-    public Order GenerateOrder(float rad,int numIng,float duration)
+    public Order GenerateOrder(float rad,int numIng,float duration,int points,Order.OrderRes orderServed)
     {
         // listes Elements a generar x crear ordre
         List<Item> listIng = new List<Item>();
@@ -65,8 +65,9 @@ public class OrderGenerator : MonoBehaviour
                 listIng.Add(n);
             }    
         }
+       
         // Creo Obj order passat li la list ingredients
-        Order order = new Order(listIng, 8,duration);
+        Order order = new Order(listIng, points,duration,orderServed);
         // Creao obj de tipus OrdreUI 
         GameObject orderUI = Instantiate(OrderUIPrefb, parentUI);
         // li poso pare de la llista de elements a UI
@@ -74,9 +75,9 @@ public class OrderGenerator : MonoBehaviour
         // Trec el script OrdrerUI del obj
         OrderUI orderUIS = orderUI.GetComponent<OrderUI>();
        // afegeixo els la llista d'ingredients UI generada al ordre 
-       orderUIS.ItemUIlist.AddRange(listIngUI);
+        orderUIS.ItemUIlist.AddRange(listIngUI);
         // genero i ordeno la llista ingredienta a UI
-       orderUIS.generateItemsUI();
+        orderUIS.generateItemsUI();
         // Assigno obj OrderUi a l'order
         order.SetOrderUi(orderUIS);
         return order;

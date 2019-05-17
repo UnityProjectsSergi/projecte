@@ -11,7 +11,7 @@ class OrderManager:MonoBehaviour
     public Queue<Order> listOrdderQueue = new Queue<Order>();
     public List<Order> listOrders = new List<Order>();
     public OrderGenerator OrderGenerator;
-    public int points;
+    public int pointsUI;
     public float SegWaitTo2onOrder=35f;
     public Text Points;
     public Text textO;
@@ -30,15 +30,15 @@ class OrderManager:MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
     }
-    public void AddOrder(float num,int ingredients,float time)
+    public void AddOrder(float num,int ingredients,float time,int points)
     { 
-        listOrders.Add(OrderGenerator.GenerateOrder(num,ingredients,time));
+        listOrders.Add(OrderGenerator.GenerateOrder(num,ingredients,time,points,ServeOrder));
 
 
     }
     public void Start()
     {
-        AddOrder(0.2f, 3, 10);
+        AddOrder(0.2f, 3, 10,5);
         InvokeRepeating("order",20f, SegWaitTo2onOrder);
     }
     public void order()
@@ -52,17 +52,23 @@ class OrderManager:MonoBehaviour
             greenOrder();
         }
     }
-   
+    
     public void greenOrder()
     {
-        AddOrder(0.3f, 3, 45);
+        AddOrder(0.4f, 3, 45,5);
     }
     public void SecondOrder()
     {
-        AddOrder(0.7f, 3, 45);
+        AddOrder(0.8f, 3, 45,5);
     }
     public Order FoundOrder;
     bool found1 = false;
+    public void ServeOrder(Order order)
+    {
+        order.HideUIOrder();
+        pointsUI += order._points;
+        RemoveOrder(order);
+    }
     public bool CheckAllOrder(VialItem item)
     {
         foreach (var order in listOrders)
@@ -78,14 +84,11 @@ class OrderManager:MonoBehaviour
                 List<Item> equalItems2Ing2 = item.listItem.OfType<Ingredient2>().ToList<Item>();
                 List<Item> equalItems2Ing1 = item.listItem.OfType<Ingredient1>().ToList<Item>();
                 List<Item> equalItems2Ing3 = item.listItem.OfType<Ingredient3>().ToList<Item>();
-                if (equalItems2Ing1.Count == In1OfOrderList.Count && equalItems2Ing2.Count == Ing2OfOrderList.Count && equalItems2Ing3 .Count==Ing3OfOrderList.Count)
+                if (equalItems2Ing1.Count == In1OfOrderList.Count && equalItems2Ing2.Count == Ing2OfOrderList.Count && equalItems2Ing3.Count == Ing3OfOrderList.Count)
                 {
                     Debug.Log("lists has same numbros of each ingredient");
                     order.isServed = true;
-                    order._OrderServed();
-                    order.HideUIOrder();
-                    points += order._points;
-                    RemoveOrder(order);
+                    order._OrderServed(order);
                     return true;
                 }
                 // checkeo si els ingredients de la ordre q em donen el tinc a una ordre de la llista 
@@ -128,7 +131,7 @@ class OrderManager:MonoBehaviour
         if (listOrders.Count == 0)
             SecondOrder();
         CheckIfOrderListHasTimeOut();
-        Points.text = points.ToString();
+        Points.text = pointsUI.ToString();
     }
 
     public void CheckIfOrderListHasTimeOut()
@@ -140,7 +143,7 @@ class OrderManager:MonoBehaviour
                 if (listOrders[i].IsTimeout())
                 {
                     listOrders[i].HideUIOrder();
-                    points -= listOrders[i]._points;
+                    pointsUI -= listOrders[i]._points;
                     RemoveOrder(listOrders[i]);
                 }
             }

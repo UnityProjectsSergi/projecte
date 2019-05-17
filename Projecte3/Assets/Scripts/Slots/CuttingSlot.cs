@@ -18,7 +18,16 @@ public class CuttingSlot : Slot
     {
         progresSpeed = 1 / timerToAction;
     }
-
+    public void Update()
+    {
+        RotateTOCam();
+    }
+    public void RotateTOCam()
+    {
+        Vector3 dir = Camera.main.transform.position - progresBar.gameObject.transform.position;
+        dir.x = 0;
+        progresBar.gameObject.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+    }
     public override void LeaveObjOn(CharacterControllerAct player)
     {
         Item i = player.attachedObject.GetComponent<Item>();
