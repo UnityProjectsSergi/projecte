@@ -230,6 +230,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6769926451291428698, guid: 0d983b6d8a3978846969107c4ee5819b,
+        type: 3}
+      propertyPath: timerToAction
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d983b6d8a3978846969107c4ee5819b, type: 3}
 --- !u!1001 &9332326
@@ -4576,12 +4581,17 @@ PrefabInstance:
     - target: {fileID: 7054250794201423016, guid: d3c7c51d1c461c74d82b6a9d4216b665,
         type: 3}
       propertyPath: iCoolDownRotation
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7054250794201423016, guid: d3c7c51d1c461c74d82b6a9d4216b665,
         type: 3}
       propertyPath: increaseYawRotation
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054250794201423016, guid: d3c7c51d1c461c74d82b6a9d4216b665,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8080827364412763386, guid: d3c7c51d1c461c74d82b6a9d4216b665,
         type: 3}
@@ -17281,6 +17291,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f935f3ca5fae86c4fba63d3b393e19ed, type: 2}
+    - target: {fileID: 331090388339573023, guid: 25839242c68870b47b815fad44082da0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 331090388877718924, guid: 25839242c68870b47b815fad44082da0,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5922950074374952049, guid: 25839242c68870b47b815fad44082da0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17320,16 +17340,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.6743797
-      objectReference: {fileID: 0}
-    - target: {fileID: 331090388339573023, guid: 25839242c68870b47b815fad44082da0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 331090388877718924, guid: 25839242c68870b47b815fad44082da0,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25839242c68870b47b815fad44082da0, type: 3}
@@ -38538,11 +38548,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6769926451291428698, guid: 0d983b6d8a3978846969107c4ee5819b,
-        type: 3}
-      propertyPath: timerToAction
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6769926451964906002, guid: 0d983b6d8a3978846969107c4ee5819b,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38557,6 +38562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769926451291428698, guid: 0d983b6d8a3978846969107c4ee5819b,
+        type: 3}
+      propertyPath: timerToAction
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d983b6d8a3978846969107c4ee5819b, type: 3}
@@ -48861,7 +48871,7 @@ PrefabInstance:
     - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
         type: 3}
       propertyPath: habilityType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406e278c10005b44cb6df7d262104b2b, type: 3}
@@ -52760,7 +52770,7 @@ PrefabInstance:
     - target: {fileID: 3322026009203471621, guid: d7b64cfc237b175449beacb0ccd8e2bf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3322026009203471621, guid: d7b64cfc237b175449beacb0ccd8e2bf,
         type: 3}
@@ -52770,7 +52780,7 @@ PrefabInstance:
     - target: {fileID: 3322026009203471621, guid: d7b64cfc237b175449beacb0ccd8e2bf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3322026009203471621, guid: d7b64cfc237b175449beacb0ccd8e2bf,
         type: 3}

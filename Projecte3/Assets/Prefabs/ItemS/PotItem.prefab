@@ -605,8 +605,8 @@ MonoBehaviour:
   timeBetweenCookDoneAndShowOK: 2
   timeShowingOK: 10
   timeBetweenShowOkAndAlert: 2
-  timeShowingAlert: 5
   timeBetweenAlertAndBurn: 2
+  SpeedUpReduccion: 0
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +673,7 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
-  NumIngedientsOfPot: 1
+  NumIngedientsOfPot: 3
   ShowSlotsIngEmpty: 1
   listItem: []
   IsStartCooking: 0
