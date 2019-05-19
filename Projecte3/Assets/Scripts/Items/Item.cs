@@ -81,7 +81,7 @@ public  class Item : MonoBehaviour
         }
     }
    
-    public  virtual void Update()
+    public   void Update()
     {
         DetectSlotBelow();
     }

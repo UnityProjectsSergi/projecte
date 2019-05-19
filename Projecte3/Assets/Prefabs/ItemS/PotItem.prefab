@@ -605,8 +605,8 @@ MonoBehaviour:
   timeBetweenCookDoneAndShowOK: 2
   timeShowingOK: 10
   timeBetweenShowOkAndAlert: 2
-  timeShowingAlert: 5
   timeBetweenAlertAndBurn: 2
+  SpeedUpReduccion: 0
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +909,19 @@ MonoBehaviour:
   m_Spacing: {x: 0.01, y: 0.01}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!135 &1273999193
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118709256587392023}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6287101
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &9118709256587358903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -966,6 +979,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
+--- !u!1 &9118709256587392023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 57a286de97e136543b1801a2a3a9e636,
+    type: 3}
+  m_PrefabInstance: {fileID: 9118709256587358903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9118709256587225143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636,

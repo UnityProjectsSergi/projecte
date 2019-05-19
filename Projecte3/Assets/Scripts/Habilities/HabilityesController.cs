@@ -11,7 +11,7 @@ public class HabilityesController : MonoBehaviour
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
     public bool CookHability;
-
+    public float coolDownTimerHability;
     public bool cCookHability;
     public Image CoolDown;
     public bool HabilityInCoolDown;
@@ -70,7 +70,7 @@ public class HabilityesController : MonoBehaviour
         GetComponent<CharacterController>().enabled = true;
         GetComponent<Character>().enabled = true;
         HabilityInCoolDown = true;
-        StartCoroutine(CountDownAnimation(4f));
+        StartCoroutine(CountDownAnimation(coolDownTimerHability));
     }
     IEnumerator CountDownAnimation(float time)
     {
@@ -102,7 +102,7 @@ public class HabilityesController : MonoBehaviour
         speedUpCookHability = false;
         HabilityRadi.gameObject.SetActive(false);
         HabilityInCoolDown = true;
-        StartCoroutine(CountDownAnimation(4f));
+        StartCoroutine(CountDownAnimation(coolDownTimerHability));
     }
     public void ActiveHabilityPortal()
     {
@@ -117,7 +117,7 @@ public class HabilityesController : MonoBehaviour
         Debug.Log("End Portals");
         CharacterControllerAct.EndPortal();
         HabilityInCoolDown = true;
-        StartCoroutine(CountDownAnimation(4f));
+        StartCoroutine(CountDownAnimation(coolDownTimerHability));
     }
     public void DetectOlla()
     {

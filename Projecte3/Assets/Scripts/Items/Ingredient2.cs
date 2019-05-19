@@ -19,12 +19,17 @@ public class Ingredient2 : Item
     }
     public void Update()
     {
-        if (transform.parent == null  )
-        { 
-                canvas.transform.gameObject.SetActive(true);
+        if (transform.parent != null && transform.parent.parent != null)
+        {
+
+            canvas.gameObject.SetActive(false);
+            if (transform.parent.parent.GetComponent<Character>() != null)
+                canvas.gameObject.SetActive(true);
         }
-        else if(transform.parent!=null && transform.parent==null)
-            canvas.transform.gameObject.SetActive(false);
+
+        else
+            canvas.gameObject.SetActive(true);
+     
     }
 
     // Update is called once per frame
