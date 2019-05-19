@@ -17,8 +17,8 @@ public class StoveSlot : Slot
 
     public void Start()
     {
-        item = PotPool.Instance.GetObjFromPool(positionObjOn);       
-        
+        item = PotPool.Instance.GetObjFromPool(positionObjOn);
+        item.GetComponent<ItemPot>().SetMeshToFire();
         item.transform.parent = positionObjOn.transform;
     }
 

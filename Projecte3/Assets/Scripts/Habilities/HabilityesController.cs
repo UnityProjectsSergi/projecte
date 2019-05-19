@@ -11,14 +11,16 @@ public class HabilityesController : MonoBehaviour
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
     public bool CookHability;
-    public float coolDownTimerHability;
+  
     public bool cCookHability;
     public Image CoolDown;
     public bool HabilityInCoolDown;
    
     MeshRenderer meshRenderer;
     public GameObject[] typePlayer;
-    
+    [Header("Habilitys params")]
+    public float coolDownTimerHability;
+    public float durationHabilityTime;
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -27,22 +29,22 @@ public class HabilityesController : MonoBehaviour
         if (habilityType == HabilityType.LevitationItems)
         {
             ChangeMesh(0);
-            hability.set(3, 4, ActivateLevitation, DeactivateLevitation);
+            hability.set(durationHabilityTime, coolDownTimerHability, ActivateLevitation, DeactivateLevitation,CoolDown);
         }
         else if (habilityType == HabilityType.SpeedTheFire)
         {
             ChangeMesh(1);
-            hability.set(13, 4, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire);
+            hability.set(durationHabilityTime, coolDownTimerHability, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire,CoolDown);
         }
         else if (habilityType == HabilityType.Throw)
         {
             ChangeMesh(2);
-            hability.set(0, 0, null, null);
+            hability.set(0, 0, null, null,CoolDown);
         }
         else if (habilityType == HabilityType.Portal)
         {
             ChangeMesh(3);
-            hability.set(12, 15, ActiveHabilityPortal, DeactivateHabilityPortal);
+            hability.set(durationHabilityTime, coolDownTimerHability, ActiveHabilityPortal, DeactivateHabilityPortal,CoolDown);
         }
 
     }
@@ -57,12 +59,11 @@ public class HabilityesController : MonoBehaviour
 
     public void ActivateLevitation()
     {
-        if (!HabilityInCoolDown)
-        {
+
             CharacterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
             GetComponent<CharacterController>().enabled = false;
             GetComponent<Character>().enabled = false;
-        }
+        
     }
     public void DeactivateLevitation()
     {
@@ -70,54 +71,36 @@ public class HabilityesController : MonoBehaviour
         GetComponent<CharacterController>().enabled = true;
         GetComponent<Character>().enabled = true;
         HabilityInCoolDown = true;
-        StartCoroutine(CountDownAnimation(coolDownTimerHability));
-    }
-    IEnumerator CountDownAnimation(float time)
-    {
-        float animationTime = time;
-        while (animationTime > 0)
-        {
-            CoolDown.GetComponent<Image>().enabled = true;
-            animationTime -= Time.deltaTime;
-            CoolDown.fillAmount = animationTime / time;
-            if (animationTime < 0.01f){
-                HabilityInCoolDown = false;
-                CoolDown.GetComponent<Image>().enabled = false;
-            }
-            
-            yield return null;
-        }
         
     }
+   
     public void ActivateHabilitySpeedFire()
     {
-        if (!HabilityInCoolDown)
-        {
+
+            Debug.Log("ssssssss");
             HabilityRadi.gameObject.SetActive(true);
             speedUpCookHability = true;
-        }
+        
     }
     public void DeactivateHabilitySpeedFire()
     {
         speedUpCookHability = false;
         HabilityRadi.gameObject.SetActive(false);
         HabilityInCoolDown = true;
-        StartCoroutine(CountDownAnimation(coolDownTimerHability));
+      
     }
     public void ActiveHabilityPortal()
     {
-        if (!HabilityInCoolDown)
-        {
+        
             Debug.Log("Active Portals");
             CharacterControllerAct.PutPortal();
-        }
+        
     }
     public void DeactivateHabilityPortal()
     {
         Debug.Log("End Portals");
         CharacterControllerAct.EndPortal();
         HabilityInCoolDown = true;
-        StartCoroutine(CountDownAnimation(coolDownTimerHability));
     }
     public void DetectOlla()
     {

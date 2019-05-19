@@ -63,6 +63,7 @@ public  class Item : MonoBehaviour
     }
 
     public float percentCooked;
+    private float floatStrength;
 
     public IEnumerator Cook()
     {
@@ -81,9 +82,15 @@ public  class Item : MonoBehaviour
         }
     }
    
-    public   void Update()
+    public void Update()
     {
         DetectSlotBelow();
+        if(isHabilityOn)
+        {
+            transform.position = new Vector3(transform.position.x,
+        transform.position.y + ((float)Mathf.Sin(Time.time) * floatStrength),
+        transform.position.z);
+        }
     }
     
     public void ActivateDeactivateItemPlayerControler(bool isActive,int controller,PlayerInput playerInput)
