@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.091780774, g: 0.09365333, b: 0.14808753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -51,7 +51,7 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -420,6 +420,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -613,6 +618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -1001,6 +1011,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1138,6 +1153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -1290,6 +1310,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (82)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -1447,6 +1472,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (94)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1515,6 +1545,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -1737,6 +1772,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (120)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1921,8 +1961,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.85882354, g: 0.45882353, b: 0.02745098, a: 1}
-  m_Intensity: 3
-  m_Range: 3
+  m_Intensity: 2
+  m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1940,7 +1980,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1956,7 +1996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82140345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.445, y: 2.415, z: 7.736}
+  m_LocalPosition: {x: -2.445, y: 2.415, z: 7.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2187,6 +2227,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2255,6 +2300,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (128)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -2636,6 +2686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -3562,6 +3617,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (142)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3782,6 +3842,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1551849913}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &170161568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 170161570}
+  - component: {fileID: 170161569}
+  m_Layer: 0
+  m_Name: Point Light (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &170161569
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170161568}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.99215686, g: 0.1171871, b: 0.0039215623, a: 1}
+  m_Intensity: 6
+  m_Range: 3.7414327
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &170161570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170161568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16, y: 1.89, z: -0.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &172272834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3951,6 +4080,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -4386,6 +4520,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4454,6 +4593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (137)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -4599,6 +4743,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (80)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4673,6 +4822,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -5544,6 +5698,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322555, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322555, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322553, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88e08d4d51f2d34ab32ac084f3f8fcf, type: 3}
 --- !u!4 &287119919 stripped
@@ -5638,6 +5822,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -5990,6 +6179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (129)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6156,8 +6350,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.85882354, g: 0.45882353, b: 0.02745098, a: 1}
-  m_Intensity: 3
-  m_Range: 3
+  m_Intensity: 2
+  m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -6175,7 +6369,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -6191,7 +6385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309712768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.42, y: 2.35, z: 5.15}
+  m_LocalPosition: {x: 3.2, y: 2.35, z: 5.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6588,6 +6782,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (76)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6731,6 +6930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (77)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -6964,6 +7168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -7264,6 +7473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -8120,6 +8334,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (157)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8210,7 +8429,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.1981132, g: 0.25072446, b: 0.7924528, a: 1}
+  m_Color: {r: 0.028346404, g: 0.09926733, b: 0.8584906, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -8233,7 +8452,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 22.84
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -8245,13 +8464,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441420792}
-  m_LocalRotation: {x: 0.42230722, y: 0.034761358, z: -0.016209593, w: 0.9056409}
-  m_LocalPosition: {x: -13.21, y: 8.3, z: 0}
+  m_LocalRotation: {x: 0.73005307, y: 0.038300205, z: -0.0020503157, w: 0.6823133}
+  m_LocalPosition: {x: -2.5, y: 8.3, z: 10.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 50.000004, y: 4.3960004, z: 0}
+  m_LocalEulerAnglesHint: {x: 85.142006, y: 144.42601, z: 141.153}
 --- !u!4 &442715871 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
@@ -8674,6 +8893,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -9257,6 +9481,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (95)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9348,8 +9577,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.85882354, g: 0.45882353, b: 0.02745098, a: 1}
-  m_Intensity: 3
-  m_Range: 3
+  m_Intensity: 2
+  m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -9367,7 +9596,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -9383,7 +9612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513318885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.803, y: 2.263, z: 5.302}
+  m_LocalPosition: {x: -3.66, y: 2.263, z: 4.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9560,6 +9789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (87)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -9909,6 +10143,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322555, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322555, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322553, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88e08d4d51f2d34ab32ac084f3f8fcf, type: 3}
@@ -10299,6 +10563,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (72)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10456,6 +10725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -10687,6 +10961,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (93)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -11201,6 +11480,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11269,6 +11553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -11432,6 +11721,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11575,6 +11869,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (135)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -11852,6 +12151,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (113)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11920,6 +12224,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (154)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -12197,6 +12506,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (83)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12272,6 +12586,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12341,6 +12660,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12409,6 +12733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -12490,6 +12819,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -12589,6 +12923,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -12872,6 +13211,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13090,6 +13434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -13926,6 +14275,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (79)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14419,6 +14773,36 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.6005802
       objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322555, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322555, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322553, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88e08d4d51f2d34ab32ac084f3f8fcf, type: 3}
 --- !u!1001 &807001355
@@ -14432,6 +14816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (103)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -14571,6 +14960,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14645,6 +15039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (156)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -14739,6 +15138,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14807,6 +15211,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (144)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -15014,6 +15423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -15327,6 +15741,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15471,6 +15890,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (116)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15539,6 +15963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -15836,6 +16265,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15904,6 +16338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (70)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -16424,6 +16863,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16492,6 +16936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (136)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -16792,6 +17241,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -17750,6 +18204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (118)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18524,6 +18983,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18889,6 +19353,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (119)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19032,6 +19501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (138)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -19370,6 +19844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -19951,6 +20430,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20170,6 +20654,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (148)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20382,6 +20871,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -20601,6 +21095,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (101)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -20847,6 +21346,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (102)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20915,6 +21419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (107)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -21140,6 +21649,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -21508,6 +22022,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21802,6 +22321,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21951,6 +22475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (104)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -22559,6 +23088,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322555, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322555, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281430442786322554, guid: a88e08d4d51f2d34ab32ac084f3f8fcf,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88e08d4d51f2d34ab32ac084f3f8fcf, type: 3}
@@ -23559,6 +24113,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23824,8 +24383,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.85882354, g: 0.45882353, b: 0.02745098, a: 1}
-  m_Intensity: 3
-  m_Range: 3
+  m_Intensity: 2
+  m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -23843,7 +24402,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -23859,7 +24418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352643066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.023, y: 2.415, z: 7.736}
+  m_LocalPosition: {x: 2.023, y: 2.415, z: 7.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -24096,6 +24655,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (158)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24164,6 +24728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -24527,6 +25096,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -24971,6 +25545,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (125)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -25476,6 +26055,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25544,6 +26128,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -25619,6 +26208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -26179,6 +26773,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532427430}
   m_Mesh: {fileID: 4300002, guid: 41a4b89438636fc4a84449e743e5ab26, type: 3}
+--- !u!1 &1533143917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533143919}
+  - component: {fileID: 1533143918}
+  m_Layer: 0
+  m_Name: Point Light (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1533143918
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533143917}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.9921569, g: 0.098039225, b: 0.003921569, a: 1}
+  m_Intensity: 6
+  m_Range: 3.6817951
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1533143919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533143917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16, y: 1.89, z: -5.11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1533529480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26645,6 +27308,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (139)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26815,6 +27483,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26883,6 +27556,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (99)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -27181,6 +27859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -27636,6 +28319,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (147)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27710,6 +28398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (106)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -27849,6 +28542,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (96)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27923,6 +28621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -29357,6 +30060,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29733,6 +30441,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (88)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -30304,6 +31017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (108)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30647,6 +31365,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -31026,6 +31749,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31326,6 +32054,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (92)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31469,6 +32202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (69)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -31918,6 +32656,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -32733,6 +33476,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (84)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32790,6 +33538,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f75c8a85609d6b54bb30186c8ee2666b, type: 3}
+--- !u!1 &1889075261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889075263}
+  - component: {fileID: 1889075262}
+  m_Layer: 0
+  m_Name: Point Light (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1889075262
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889075261}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 0.62329185, b: 0.0141509175, a: 1}
+  m_Intensity: 6
+  m_Range: 5
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1889075263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889075261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.42, y: 1.89, z: -2.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1890676879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7505903588615400326, guid: 532be013bb83a01498d02fa7b81d5473,
@@ -33679,6 +34496,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (155)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33747,6 +34569,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (112)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -33885,6 +34712,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -34098,6 +34930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (85)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -36958,6 +37795,536 @@ PrefabInstance:
       propertyPath: textGO
       value: 
       objectReference: {fileID: 665967829}
+    - target: {fileID: 7815414802288961752, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815414802288961752, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900715455924895588, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900715455924895588, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390534759941670674, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390534759941670674, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528115303472563541, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528115303472563541, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257128704228608479, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257128704228608479, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753699196839422986, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753699196839422986, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034313377066744128, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034313377066744128, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808771172958385978, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808771172958385978, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911378656508660207, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911378656508660207, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314464748441540291, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314464748441540291, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667092896240069817, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667092896240069817, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 13490065474199255, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 13490065474199255, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222807661631081117, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222807661631081117, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376141528791258681, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376141528791258681, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221732298886930349, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221732298886930349, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441197620086897921, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441197620086897921, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776577336608828112, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776577336608828112, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457026302537244267, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457026302537244267, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646077170333055097, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646077170333055097, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815664566647457096, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815664566647457096, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453185040309795007, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453185040309795007, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212239908063531693, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212239908063531693, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027275891651134081, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027275891651134081, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581092114308624124, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581092114308624124, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033756824913579243, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033756824913579243, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190014356606925946, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190014356606925946, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017918992888433169, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017918992888433169, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800310320836062862, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800310320836062862, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201433141131085297, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201433141131085297, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694075816954936569, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694075816954936569, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 558044019694258536, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 558044019694258536, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736034811907259982, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736034811907259982, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458108862269868235, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458108862269868235, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438123645688407559, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438123645688407559, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 38619157599216263, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 38619157599216263, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146294484927887145, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146294484927887145, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354473111127919608, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354473111127919608, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972209782685087749, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972209782685087749, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418178704171912998, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418178704171912998, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543872621205594595, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543872621205594595, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184192712480604695, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184192712480604695, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1985336956370092290, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 1985336956370092290, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188877415614145085, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188877415614145085, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864026434255503004, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864026434255503004, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554812878149285977, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554812878149285977, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483613788647887890, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483613788647887890, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 756080624878610768, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 756080624878610768, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373019076731534736, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373019076731534736, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661928774899788152, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661928774899788152, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 280175938077700425, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 280175938077700425, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584480508666927789, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584480508666927789, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184537945908525289, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184537945908525289, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617739668649490219, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617739668649490219, guid: cbf80455f786dd94085dc35642a83181,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbf80455f786dd94085dc35642a83181, type: 3}
 --- !u!1001 &1964381502
@@ -37134,6 +38501,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (124)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37202,6 +38574,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -37352,6 +38729,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (75)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -37574,6 +38956,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37729,6 +39116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (117)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -38375,6 +39767,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (89)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38590,6 +39987,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 532be013bb83a01498d02fa7b81d5473, type: 3}
+--- !u!1 &2064458831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2064458833}
+  - component: {fileID: 2064458832}
+  m_Layer: 0
+  m_Name: Point Light (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &2064458832
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064458831}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 0.62329185, b: 0.0141509175, a: 1}
+  m_Intensity: 6
+  m_Range: 5
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &2064458833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064458831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.58, y: 1.89, z: -2.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2066748266
 GameObject:
   m_ObjectHideFlags: 0
@@ -38862,6 +40328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (143)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -39365,6 +40836,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (123)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
@@ -39980,6 +41456,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40186,6 +41667,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Suelo1 (Vertical) Variant (111)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111925211994227950, guid: f75c8a85609d6b54bb30186c8ee2666b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9111925211993741518, guid: f75c8a85609d6b54bb30186c8ee2666b,
         type: 3}
