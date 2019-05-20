@@ -937,6 +937,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -981,6 +985,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbc1e03548abd484886d47898567ea7c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
 --- !u!1 &9118709256587392023 stripped
