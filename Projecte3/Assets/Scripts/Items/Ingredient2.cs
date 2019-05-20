@@ -17,16 +17,19 @@ public class Ingredient2 : Item
         itemType = ItemType.Ing;
         ing = ItemUiType.Ing2;
     }
-    private void Update()
+    public void Update()
     {
-        if (transform.parent != null && transform.parent.parent == null)
+        if (transform.parent != null && transform.parent.parent != null)
         {
-            if (canvas.gameObject.activeSelf)
-                canvas.transform.gameObject.SetActive(false);
+
+            canvas.gameObject.SetActive(false);
+            if (transform.parent.parent.GetComponent<Character>() != null)
+                canvas.gameObject.SetActive(true);
         }
+
         else
-                 if (!canvas.gameObject.activeSelf)
-            canvas.transform.gameObject.SetActive(true);
+            canvas.gameObject.SetActive(true);
+     
     }
 
     // Update is called once per frame

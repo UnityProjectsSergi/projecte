@@ -59,12 +59,17 @@ public class StoveSlot : Slot
                                         Ingredient2Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient2>());
                                         Ingredient2Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ingredient2>());
                                     }
-                                    else
+                                    else if(itemPlayer.GetType() == typeof(Ingredient1))
                                     {
                                         //Return to pool
                                         Ing1Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient1>());
                                         Ing1Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ingredient1>());
                                     }// flag xq no pugui afegir 2 cops els igredients
+                                    else
+                                    {
+                                        Ingredient3Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient3>());
+                                        Ingredient3Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ingredient3>());
+                                    }
                                     hasPassIngToVial = false;
                                 }
                             }

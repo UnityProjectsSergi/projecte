@@ -6,6 +6,7 @@ public class CrossRotation : MonoBehaviour
 {
     public float iCoolDownRotation;
     public float increaseYawRotation;
+    public float rotationSpeed;
     private float coolDownRotation;
 
     private bool isMoving = false;
@@ -36,7 +37,7 @@ public class CrossRotation : MonoBehaviour
         if (!isMoving)
             return false;
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, nextRotation, 45 * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, nextRotation, rotationSpeed * Time.deltaTime);
 
         if (transform.rotation == nextRotation)
         {

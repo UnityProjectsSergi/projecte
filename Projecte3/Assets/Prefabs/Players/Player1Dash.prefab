@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf91a84488180e4390ba9fcc60ba82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  habilityType: 3
+  habilityType: 0
   hability: {fileID: 0}
   CharacterControllerAct: {fileID: 2227135488605312352}
   HabilityRadi: {fileID: 1248374053}
@@ -626,7 +626,7 @@ MonoBehaviour:
   CoolDown: {fileID: 971433796}
   HabilityInCoolDown: 0
   typePlayer:
-  - {fileID: 100000, guid: 7dc9b150379716c4db5aa7d7551a8428, type: 3}
+  - {fileID: 6224028408939576729, guid: 3d5f174fe79fc17449da12778efeb9ba, type: 3}
   - {fileID: 1217603213239586396, guid: cd873cd157d925446b9fec94d715ac58, type: 3}
   - {fileID: 5545659600657215541, guid: 98e51dd33084a5d4d81fd030b2becafe, type: 3}
   - {fileID: 5364815210979393001, guid: c926c603661ef164293f21a8484a636a, type: 3}
@@ -658,7 +658,6 @@ MonoBehaviour:
   portal: {fileID: 8495011384436437612, guid: 9f37039be0b51cd4183f6e8aa6ad0676, type: 3}
   canMovePortals: 1
   canUseHability: 0
-  fovAngle: 20
 --- !u!114 &6616424973089696037
 MonoBehaviour:
   m_ObjectHideFlags: 0

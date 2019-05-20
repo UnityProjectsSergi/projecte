@@ -16,6 +16,8 @@ public class OrderUI : MonoBehaviour
     public SkackeGameObject SkackeGameObject;
     public Image ImageOrderServed;
     public Image ImageOrderLost;
+    public Color InitColor;
+    public Color FinishColor;
 
 
     public void Start()
@@ -42,12 +44,11 @@ public class OrderUI : MonoBehaviour
         }
     }
 
-    internal void OrderServed(Order.OrderRes order)
+    internal void OrderServed(Order.OrderRes order, Order order1)
     {
-        // go to greencolor on ImageOrderServed
-
+        StartCoroutine(FadeTo(ImageOrderServed, 0.5f, 0.5f, 0.5f,order,order1));
     }
-    IEnumerator FadeTo(Image image, float aValue, float aTime, float bTime)
+    IEnumerator FadeTo(Image image, float aValue, float aTime, float bTime,Order.OrderRes order=null,Order orderObj=null)
     {
 
         float alpha = image.color.a;
@@ -63,6 +64,10 @@ public class OrderUI : MonoBehaviour
             canvas.alpha = Mathf.Lerp(1f, 0f, f);
             yield return null;
         }
+        if(order!=null)
+        {
+            order.Invoke(orderObj);
+        }
     }
 
     internal void OrderLost(Order.OrderRes order)
@@ -76,7 +81,7 @@ public class OrderUI : MonoBehaviour
     }
     public void UpdateTimeOut()
     {
-        Debug.Log(timeOutValue);
+
         if (timeOutValue < 0.15f)
         {
             SkackeGameObject.InduceShacke(0.5f);
@@ -86,6 +91,7 @@ public class OrderUI : MonoBehaviour
             StartCoroutine(FadeTo(ImageOrderLost, 0.5f, 0.5f, 0.5f));
         }
         imageTimeOut.fillAmount = timeOutValue;
+        imageTimeOut.color = TimeOutColor;
     }
 
     IEnumerator Countdown()
@@ -98,7 +104,7 @@ public class OrderUI : MonoBehaviour
             if (!timeout)
             {
                 timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
-
+                TimeOutColor = Color.Lerp(InitColor, FinishColor, totalTime / duration);
                 totalTime += Time.deltaTime;
                 if (timeOutValue <= 0.01f)
                     timeout = true;
