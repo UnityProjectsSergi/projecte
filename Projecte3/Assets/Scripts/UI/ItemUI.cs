@@ -7,7 +7,7 @@ public class ItemUI : MonoBehaviour
     
     public  void Awake()
     {
-      //  image = GetComponent<Image>();
+        image = GetComponentInChildren<Image>();
     }
 }
 // x pose dir si es 
