@@ -1,33 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UI_ScreenTimer : UI_Screen
 {
-    CanvasGroup canvas;
+    public float timerToClose=2;
+    private float timer = 0;
+    public bool isOpen;
+    public UnityEvent OnComplete;
     // Start is called before the first frame update
-    void Start()
+   public override void  Awake()
     {
-        canvas = GetComponent<CanvasGroup>();
+        base.Awake();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
-    public   void CloseScreen()
+    public override void CloseScreen()
     {
-        canvas.alpha = 0;
-        canvas.interactable = false;
-        canvas.blocksRaycasts = false;
+        isOpen = false;
+        base.CloseScreen();
     }
-    public void OpenScreen()
+    public override void OpenScreen()
     {
-        canvas.alpha = 1;
-        canvas.interactable = true;
-        canvas.blocksRaycasts = true;
-      
+        isOpen = true;
+        timer = Time.time;
+
+        base.OpenScreen();
+        StartCoroutine(WaitForTime());
+
     }
+    public IEnumerator WaitForTime()
+    {
+        yield return new WaitForSeconds(timerToClose);
+        if (OnComplete != null)
+            OnComplete.Invoke();
+    }
+
 
 }
