@@ -89,6 +89,10 @@ public class PotUIState : MonoBehaviour
             //    //}
             //}
         }
+        else
+        {
+
+        }
     }
 
     internal void Reset()
@@ -96,8 +100,12 @@ public class PotUIState : MonoBehaviour
         journey = 0;
         StartCookingBool = false;
         BurnAfterFire.gameObject.SetActive(false);
+        AlertBurn.gameObject.SetActive(false);
+        CookedOk.gameObject.SetActive(false);   
         totalduration = 0;
+        journey = 0;
         ProgressBar.fillAmount = 0;
+        StopAllCoroutines();
     }
 
     public void StartCooking()
@@ -111,9 +119,9 @@ public class PotUIState : MonoBehaviour
         }
     }
    
-    public void StopCooking()
+    public void PauseCooking()
     {
-        StartCookingBool = false;     
+        StartCookingBool = false; 
     }
 
     public IEnumerator ShowImageOK(float waitBefore,float waitDuring,float waitAfter,Image image)

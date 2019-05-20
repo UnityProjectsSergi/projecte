@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 301765327}
   - component: {fileID: 7755836916650567886}
   - component: {fileID: 2321874309804713485}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: ok
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 668603677}
   - component: {fileID: 9141010186618829815}
   - component: {fileID: 8846389152408309589}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: burn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 1189460572}
   - component: {fileID: 8141537620904643741}
   - component: {fileID: 9006179369304576631}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: alert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 752984564881532413}
   - component: {fileID: 5625517968046367171}
   - component: {fileID: 8611695727971123269}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: ProgressBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 1142069224921468985}
   - component: {fileID: 6077146018220610743}
   - component: {fileID: 1546401196}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 4309232608044329679}
   - component: {fileID: 3270250106653039382}
   - component: {fileID: 1385927053}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: BgProgressbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ BoxCollider:
   m_GameObject: {fileID: 4334500036433946894}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.94, z: 0.9}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 7997587254705863041}
   - component: {fileID: 2878413487451409917}
   - component: {fileID: 2885166729914167542}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5886096031498295333}
   - component: {fileID: 3388552682537620547}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: IngUiList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,7 +917,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9118709256587392023}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.6287101
@@ -933,6 +933,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OLLA
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -947,19 +951,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.6450158
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.2610043
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.25004673
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.67328155
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_RootOrder

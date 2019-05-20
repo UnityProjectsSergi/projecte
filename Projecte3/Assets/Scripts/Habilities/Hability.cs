@@ -16,26 +16,24 @@ public class Hability : MonoBehaviour
     public Image imageCooldown;
     Coroutine stop;
 
-    public void set(float duration, float cooldown, MyHability Start, MyHability _cancel)
+    public void set(float duration, float cooldown, MyHability Start, MyHability _cancel,Image image)
     {
         _duration = duration;
         _coolDown = cooldown;
         Starthability += Start;
         CancelHability += _cancel;
+        imageCooldown = image;
     }
 
-    public void SetHabilityAvalableFalse()
-    {
-        habilityHabailable = false;
-    }
+   
 
     public void UseHability()
     {
-        if (!habilityHabailable)
+        if (habilityHabailable)
         {
-            usingHability = true;
-
             Starthability();
+            habilityHabailable = false;
+            usingHability = true;
             stop = StartCoroutine(Cooldown());
         }
     }
@@ -49,6 +47,7 @@ public class Hability : MonoBehaviour
             {
                 CancelHability();
                 StopCoroutine(stop);
+                CountDownAnimation(_coolDown);
             }
         }
     }
@@ -57,9 +56,26 @@ public class Hability : MonoBehaviour
     {
         yield return new WaitForSeconds(_duration);
         StopHability();
-        yield return new WaitForSeconds(_coolDown);
-        habilityHabailable = true;
+        StartCoroutine(CountDownAnimation(_coolDown));
         yield return null;
+    }
+    IEnumerator CountDownAnimation(float time)
+    {
+        float animationTime = time;
+        while (animationTime > 0)
+        {
+            imageCooldown.GetComponent<Image>().enabled = true;
+            animationTime -= Time.deltaTime;
+            imageCooldown.fillAmount = animationTime / time;
+            if (animationTime < 0.01f)
+            {
+                habilityHabailable = true;
+               imageCooldown.enabled = false;
+            }
+
+            yield return null;
+        }
+
     }
 
 

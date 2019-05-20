@@ -27,7 +27,10 @@ public class ItemPot : Item
         potUi.StartUiPot();
         itemType = ItemType.Pot;
     }
+    public void SetMeshToFire()
+    {
 
+    }
 
     public bool LeaveObjIn(Item item)
     {
@@ -73,12 +76,8 @@ public class ItemPot : Item
 
     public  void Update()
     {
-        base.Update();
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up * 2f, out hit, layerMask))
-        {
-            StoveSlot slot = hit.collider.gameObject.GetComponent<StoveSlot>();
-            if (slot  && listItem.Count > 0)
+        if (this.transform.parent)
+            if (this.transform.parent.parent.GetComponent<StoveSlot>())
             {
                 hasStoveUnder = true;
                 potUi.hasStoveUnder = true;
@@ -88,7 +87,21 @@ public class ItemPot : Item
                 hasStoveUnder = false;
                 potUi.hasStoveUnder = false;
             }
-        }      
+        //RaycastHit hit;
+        //if (Physics.Raycast(transform.position, -transform.up * 2f, out hit, layerMask))
+        //{
+        //    StoveSlot slot = hit.collider.gameObject.GetComponent<StoveSlot>();
+        //    if (slot  && listItem.Count > 0)
+        //    {
+        //        hasStoveUnder = true;
+        //     
+        //    }
+        //    else
+        //    {
+        //        hasStoveUnder = false;
+        //        potUi.hasStoveUnder = false;
+        //    }
+        //}      
     }
 }
 

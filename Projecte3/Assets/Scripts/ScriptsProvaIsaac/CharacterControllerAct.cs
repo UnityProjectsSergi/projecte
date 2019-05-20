@@ -60,7 +60,7 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if (attachedObject != null)
             {
-                habilityesController.hability.SetHabilityAvalableFalse();
+                if (habilityesController.hability.habilityHabailable) ;
                 if (playerInput.squareBtn.Down)
                 {
                     habilityesController.hability.UseHability();
@@ -78,7 +78,8 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if (playerInput.squareBtn.Down)
             {
-                habilityesController.hability.SetHabilityAvalableFalse();
+                
+                if(habilityesController.hability.habilityHabailable);
                 habilityesController.hability.UseHability();
             }
         } 
@@ -90,7 +91,7 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if(playerInput.squareBtn.Down)
             {
-                habilityesController.hability.SetHabilityAvalableFalse();
+                if (habilityesController.hability.habilityHabailable) 
                 habilityesController.hability.UseHability();
             }
         }
