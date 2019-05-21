@@ -22,9 +22,15 @@ public class Ingredient1:Item
     }
     private void Update()
     {
-        if (transform.parent != null && transform.parent.parent == null)
+        if (transform.parent != null && transform.parent.parent != null)
+        {
+
             canvas.gameObject.SetActive(false);
+            if (transform.parent.parent.GetComponent<Character>() != null)
+                canvas.gameObject.SetActive(true);
+        }
+
         else
-            canvas.gameObject.SetActive(gameObject.activeSelf);
+            canvas.gameObject.SetActive(true);
     }
 }
