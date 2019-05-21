@@ -39,6 +39,6 @@ public class UIFader : MonoBehaviour {
 			yield return new WaitForFixedUpdate();
 		}
 
-        print("done");
+       
 	}
 }
