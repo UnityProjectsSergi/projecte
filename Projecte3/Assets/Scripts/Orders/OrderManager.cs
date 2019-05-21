@@ -61,8 +61,8 @@ class OrderManager:MonoBehaviour
     {
         AddOrder(0.8f, 3, 45,5);
     }
-    public Order FoundOrder;
-    bool found1 = false;
+  
+   
     public void ServeOrder(Order order)
     {
         order.HideUIOrder();

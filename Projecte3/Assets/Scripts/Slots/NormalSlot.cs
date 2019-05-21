@@ -52,10 +52,17 @@ public class NormalSlot:Slot
             }
             else if (item.itemType == ItemType.Vial)
             {
-                Item i = player.attachedObject.GetComponent<Item>();
-                if (i.itemType == ItemType.Pot)
+                Item itemPlayer = player.attachedObject.GetComponent<Item>();
+                if (itemPlayer.itemType == ItemType.Pot)
                 {
-
+                    ItemPot ItemPot = itemPlayer.GetComponent<ItemPot>();
+                    if (ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone)
+                    {
+                        item.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
+                        item.GetComponent<VialItem>().ChangeMaterial();
+                        ItemPot.ResetPot();
+                        hasPassIngToVial = true;
+                    }
                 }
             }
         }

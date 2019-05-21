@@ -99,11 +99,18 @@ public class OrderUI : MonoBehaviour
         imageTimeOut.fillAmount = timeOutValue;
         imageTimeOut.color = TimeOutColor;
     }
-
+    public void OnEnable()
+    {
+        //TODO Resume Cooldown
+        Debug.Log("ssssm");
+    }
+    public void OnDisable()
+    {
+        //RIDO Pause Cooldown
+        Debug.Log("ssss");
+    }
     IEnumerator Countdown()
     {
-        // 3 seconds you can change this to
-        //to whatever you want
         float totalTime = 0;
         while (totalTime <= duration)
         {
