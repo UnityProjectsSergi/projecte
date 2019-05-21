@@ -67,14 +67,11 @@ public class PotUIState : MonoBehaviour
         }
         else
         {
-
             foreach (var item in fires)
             {
                 var fire = item.emission;
-
                 fire.rateOverTimeMultiplier = 0;
             }
-
         }
     }
     void Update()
@@ -83,7 +80,6 @@ public class PotUIState : MonoBehaviour
         //// q tu aqui li dones un valor 
         if (StartCookingBool)
         {
-
             if (speedUp)
             {
                 journey += Time.deltaTime * SpeedUpReduccion;
@@ -96,7 +92,6 @@ public class PotUIState : MonoBehaviour
             {
                 ProgressBar.gameObject.SetActive(true);
                 percentCook = Mathf.Clamp01(journey / totalduration);
-
                 ProgressBar.fillAmount = percentCook;
                 if (ProgressBar.fillAmount >= 0.999f)
                 {
@@ -169,7 +164,11 @@ public class PotUIState : MonoBehaviour
 
     public IEnumerator ShowImageOK(float waitBefore, float waitDuring, float waitAfter, Image image)
     {
-
+        //if (!StartCookingBool)
+        //{
+        //    while (true)
+        //        yield return null;
+        //}
         yield return new WaitForSeconds((speedUp) ? waitBefore / SpeedUpReduccion : waitBefore);
         image.gameObject.SetActive(true);
         yield return new WaitForSeconds((speedUp) ? waitDuring / SpeedUpReduccion : waitDuring);
@@ -180,6 +179,7 @@ public class PotUIState : MonoBehaviour
 
     public IEnumerator ShowImageBurn(float waitBefore, Image image)
     {
+
         yield return new WaitForSeconds((speedUp) ? waitBefore / SpeedUpReduccion : waitBefore);
         image.gameObject.SetActive(true);
         PotUI.SetItemPotState(ItemPotStateIngredients.BurnedToTrash);
@@ -187,6 +187,11 @@ public class PotUIState : MonoBehaviour
 
     public IEnumerator ShowImageAlert(float waitBefore, float waitAfter, Image image)
     {
+        if (!StartCookingBool)
+        {
+            while (true)
+                yield return null;
+        }
         yield return new WaitForSeconds((speedUp) ? waitBefore / SpeedUpReduccion : waitBefore);
         PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
         for (int i = 0; i < 3; i++)
