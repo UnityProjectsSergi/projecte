@@ -168,14 +168,7 @@ public class SaveData
     {
         File.WriteAllText(path, contents);
     }
-    //public static void AddOBjectInScene(ObjToSave[] array)
-    //{
-    //    foreach (var item in array)
-    //    {
-    //        GameController.Instance.currentSlot.ObjectsToSaveInSlot.Add(item.gameObjSave.data);
-    //    }
-        
-    //}
+
     private bool HasType(string typeName)
     {
         foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
