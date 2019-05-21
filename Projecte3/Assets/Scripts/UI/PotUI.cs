@@ -28,6 +28,7 @@ public class PotUI : MonoBehaviour
             ingPot.GetComponent<ItemUIPot>().setDefault();            
             ingPot.transform.SetParent(ListIng.transform);
         }
+        potUIState.SetFire();
     }
 
     void Update()
