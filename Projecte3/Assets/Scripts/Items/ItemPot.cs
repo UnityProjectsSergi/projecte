@@ -18,19 +18,27 @@ public class ItemPot : Item
     // saber si el que hi ha 
     public LayerMask layerMask;
     public ItemPotStateIngredients currentStatePot;
-    public bool hasStoveUnder;
+    [HideInInspector]
+    public GameObject Fire;
+    public GameObject FirePrefab;
+    public Transform FirePos;
 
+    public bool hasStoveUnder;
+    public void Awake()
+    {
+        Fire = Instantiate(FirePrefab, FirePos.position, FirePos.rotation, transform);
+   
+    }
     public void Start()
-    {       
+    {
         listItem = new List<Item>();
         currentStatePot = ItemPotStateIngredients.Empty;
         potUi.StartUiPot();
+
         itemType = ItemType.Pot;
-    }
-    public void SetMeshToFire()
-    {
 
     }
+ 
 
     public bool LeaveObjIn(Item item)
     {

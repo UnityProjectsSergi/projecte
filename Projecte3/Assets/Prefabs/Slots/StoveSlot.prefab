@@ -85,6 +85,7 @@ MonoBehaviour:
   isActive: 0
   hasObjectOn: 1
   hasPassIngToVial: 0
+  fIRE: {fileID: 1802535625496137361}
 --- !u!33 &603419415665611124
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -212,6 +213,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8983597ae2b314549a68d0d4ded9b688, type: 3}
+--- !u!1 &1802535625496137361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1802535625632198371, guid: 8983597ae2b314549a68d0d4ded9b688,
+    type: 3}
+  m_PrefabInstance: {fileID: 140779634}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1291591443685045814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1291591443548460612, guid: 8983597ae2b314549a68d0d4ded9b688,
