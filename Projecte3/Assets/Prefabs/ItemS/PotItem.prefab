@@ -494,6 +494,36 @@ MonoBehaviour:
   currentSoltUi: 0
   hasStoveUnder: 0
   duration: 0
+--- !u!1 &3756849139362580954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5274718161778659865}
+  m_Layer: 10
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5274718161778659865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756849139362580954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8294934397275523147}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3908169331254990592
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +629,7 @@ MonoBehaviour:
   timeShowAlertBurning: 5
   timeBurning: 0.01
   PotUI: {fileID: 0}
+  ItemPot: {fileID: 0}
   percentCook: 0
   journey: 0
   speedUp: 0
@@ -607,6 +638,7 @@ MonoBehaviour:
   timeBetweenShowOkAndAlert: 2
   timeBetweenAlertAndBurn: 2
   SpeedUpReduccion: 0
+  fires: []
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +676,7 @@ Transform:
   - {fileID: 1590111433111636841}
   - {fileID: 1189140865}
   - {fileID: 9118709256587225143}
+  - {fileID: 5274718161778659865}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -682,6 +715,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   currentStatePot: 0
+  Fire: {fileID: 0}
+  FirePrefab: {fileID: 1802535625632198371, guid: 8983597ae2b314549a68d0d4ded9b688,
+    type: 3}
+  FirePos: {fileID: 5274718161778659865}
   hasStoveUnder: 0
 --- !u!54 &5404493371187664788
 Rigidbody:
