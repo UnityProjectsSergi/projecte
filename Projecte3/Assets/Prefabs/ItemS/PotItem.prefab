@@ -517,13 +517,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3756849139362580954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8294934397275523147}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &3908169331254990592
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,8 +626,6 @@ MonoBehaviour:
   totalduration: 0
   StartCookingBool: 0
   isStarted: 0
-  timeShowAlertBurning: 5
-  timeBurning: 0.01
   PotUI: {fileID: 0}
   ItemPot: {fileID: 0}
   percentCook: 0
@@ -638,7 +636,9 @@ MonoBehaviour:
   timeBetweenShowOkAndAlert: 2
   timeBetweenAlertAndBurn: 2
   SpeedUpReduccion: 0
+  SpeedUpParticlesFireAmount: 0
   fires: []
+  hasSpeedUp: 0
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +706,7 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
-  NumIngedientsOfPot: 3
+  NumIngedientsOfPot: 1
   ShowSlotsIngEmpty: 1
   listItem: []
   IsStartCooking: 0
@@ -954,7 +954,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9118709256587392023}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.6287101

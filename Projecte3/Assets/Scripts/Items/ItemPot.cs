@@ -20,15 +20,10 @@ public class ItemPot : Item
     public ItemPotStateIngredients currentStatePot;
     [HideInInspector]
     public GameObject Fire;
-    public GameObject FirePrefab;
-    public Transform FirePos;
+   
 
     public bool hasStoveUnder;
-    public void Awake()
-    {
-        Fire = Instantiate(FirePrefab, FirePos.position, FirePos.rotation, transform);
-   
-    }
+  
     public void Start()
     {
         listItem = new List<Item>();
@@ -38,7 +33,11 @@ public class ItemPot : Item
         itemType = ItemType.Pot;
 
     }
- 
+    public void setFire(GameObject _fires)
+    {
+        Fire = _fires;
+        potUi.SetfireStates();
+    }
 
     public bool LeaveObjIn(Item item)
     {

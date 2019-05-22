@@ -52,7 +52,7 @@ public class CharacterControllerAct : MonoBehaviour
         SlotAction();
     }
     public bool canUseHability;
-    private float fovAngle=5f;
+  
 
     private void HabilityAction()
     {

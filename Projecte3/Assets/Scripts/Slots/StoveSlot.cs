@@ -12,13 +12,19 @@ public class StoveSlot : Slot
 {
     // el foc
     public bool hasPassIngToVial;
-    public GameObject fIRE;
+  
+    public GameObject Fire;
+  
     // get ItemPot from ItemPotPool.
+    public void Awake()
+    {
+      //  Fire = Instantiate(FirePrefab, FirePos.position, FirePos.rotation, transform);
 
+    }
     public void Start()
     {
         item = PotPool.Instance.GetObjFromPool(positionObjOn);
-      
+        item.GetComponent<ItemPot>().setFire(Fire);
         item.transform.parent = positionObjOn.transform;
       
     }

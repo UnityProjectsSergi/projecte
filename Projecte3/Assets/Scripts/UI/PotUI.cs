@@ -28,9 +28,12 @@ public class PotUI : MonoBehaviour
             ingPot.GetComponent<ItemUIPot>().setDefault();            
             ingPot.transform.SetParent(ListIng.transform);
         }
+      
+    }
+    public void SetfireStates()
+    {
         potUIState.SetFire();
     }
-
     void Update()
     {
         if (currentSoltUi != oldSlot)
@@ -39,13 +42,18 @@ public class PotUI : MonoBehaviour
         }
         if (ItemPot.listItem.Count == listUIItems.Count)
         {
-            if (hasStoveUnder)
-            {
-               potUIState.StartCooking(); 
-            }
+            if (!potUIState.isStarted)
+                potUIState.StartCooking();
             else
-            { 
-                potUIState.PauseCooking();
+            {
+                if (hasStoveUnder)
+                {
+                    potUIState.ResumeCooking();
+                }
+                else
+                {
+                    potUIState.PauseCooking();
+                }
             }
         }
         oldSlot = currentSoltUi;
