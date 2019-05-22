@@ -11,6 +11,9 @@ public abstract class Slot :MonoBehaviour
     public Item item;
     public Transform positionObjOn;
 
+    public Material iniMaterial;
+    public Material selectedMaterial;
+
     public bool isActive;
     public bool hasObjectOn; //Object in slot
 
@@ -29,10 +32,8 @@ public abstract class Slot :MonoBehaviour
   
     public virtual void LeaveObjOn(CharacterControllerAct player)
     {
-
         if (!hasObjectOn)
-        {
-    
+        { 
             hasObjectOn = true;
             player.attachedObject.GetComponent<Rigidbody>().isKinematic = true;
             player.attachedObject.transform.parent = positionObjOn.transform;
@@ -45,6 +46,18 @@ public abstract class Slot :MonoBehaviour
     public virtual void Action(CharacterControllerAct player)
     {
 
+    }
+
+    public void ChangeMaterialSelected()
+    {
+        if(selectedMaterial != null)
+            this.gameObject.GetComponent<Renderer>().material = selectedMaterial;
+    }
+
+    public void ChangeMaterialIni()
+    {
+        if (iniMaterial != null)
+            this.gameObject.GetComponent<Renderer>().material = iniMaterial;
     }
 }
 
