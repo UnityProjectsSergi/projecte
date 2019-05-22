@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &603419415111752576
 Transform:
@@ -48,7 +48,7 @@ GameObject:
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &603419415665611114
 Transform:
@@ -85,6 +85,7 @@ MonoBehaviour:
   isActive: 0
   hasObjectOn: 1
   hasPassIngToVial: 0
+  fIRE: {fileID: 1802535625496137361}
 --- !u!33 &603419415665611124
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -212,6 +213,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8983597ae2b314549a68d0d4ded9b688, type: 3}
+--- !u!1 &1802535625496137361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1802535625632198371, guid: 8983597ae2b314549a68d0d4ded9b688,
+    type: 3}
+  m_PrefabInstance: {fileID: 140779634}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1291591443685045814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1291591443548460612, guid: 8983597ae2b314549a68d0d4ded9b688,
@@ -295,6 +302,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4059425911511038541, guid: 670727a6af03ac04b88b28893bd10699,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 4719711140477142141, guid: 670727a6af03ac04b88b28893bd10699,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -340,11 +352,6 @@ PrefabInstance:
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 8192
       objectReference: {fileID: 0}
-    - target: {fileID: 4059425911511038541, guid: 670727a6af03ac04b88b28893bd10699,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 888894763, guid: 670727a6af03ac04b88b28893bd10699, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1.1
@@ -372,6 +379,21 @@ PrefabInstance:
     - target: {fileID: 888894763, guid: 670727a6af03ac04b88b28893bd10699, type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 8192
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364129516060242121, guid: 670727a6af03ac04b88b28893bd10699,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 140f916488b881e4fbfef424166c601d, type: 2}
+    - target: {fileID: 3364129516060242121, guid: 670727a6af03ac04b88b28893bd10699,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 140f916488b881e4fbfef424166c601d, type: 2}
+    - target: {fileID: 3364129516060242121, guid: 670727a6af03ac04b88b28893bd10699,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7986391281638480603, guid: 670727a6af03ac04b88b28893bd10699,
         type: 3}
@@ -523,21 +545,6 @@ PrefabInstance:
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 8192
       objectReference: {fileID: 0}
-    - target: {fileID: 3364129516060242121, guid: 670727a6af03ac04b88b28893bd10699,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 140f916488b881e4fbfef424166c601d, type: 2}
-    - target: {fileID: 3364129516060242121, guid: 670727a6af03ac04b88b28893bd10699,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 140f916488b881e4fbfef424166c601d, type: 2}
-    - target: {fileID: 3364129516060242121, guid: 670727a6af03ac04b88b28893bd10699,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 670727a6af03ac04b88b28893bd10699, type: 3}
 --- !u!4 &1766437112869668919 stripped
@@ -601,6 +608,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 588a7bfbd0753d14eb9b51f5db63ab04, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbc1e03548abd484886d47898567ea7c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588a7bfbd0753d14eb9b51f5db63ab04, type: 3}
 --- !u!4 &6596214611986050491 stripped

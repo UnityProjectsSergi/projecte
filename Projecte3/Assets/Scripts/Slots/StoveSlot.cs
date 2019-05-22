@@ -12,14 +12,15 @@ public class StoveSlot : Slot
 {
     // el foc
     public bool hasPassIngToVial;
-
+    public GameObject fIRE;
     // get ItemPot from ItemPotPool.
 
     public void Start()
     {
         item = PotPool.Instance.GetObjFromPool(positionObjOn);
-        item.GetComponent<ItemPot>().SetMeshToFire();
+      
         item.transform.parent = positionObjOn.transform;
+      
     }
 
     public override void LeaveObjOn(CharacterControllerAct player)
