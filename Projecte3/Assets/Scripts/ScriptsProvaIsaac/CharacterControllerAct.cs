@@ -57,11 +57,7 @@ public class CharacterControllerAct : MonoBehaviour
         SlotAction();
         ActiveSlot();
     }
-
-    public bool canUseHability;
   
-
-
     private void HabilityAction()
     {
         if (habilityesController.habilityType == HabilityType.LevitationItems)
