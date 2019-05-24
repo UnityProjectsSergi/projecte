@@ -27,6 +27,11 @@ public class CharacterControllerAct : MonoBehaviour
     private GameObject portalB;
     private Portal pa;
     private Portal pb;
+    public bool canUseHability;
+    private float fovAngle = 5f;
+
+
+    public Slot activeSlot;
 
     private void Start()
     {
@@ -50,17 +55,16 @@ public class CharacterControllerAct : MonoBehaviour
     {
         HabilityAction();
         SlotAction();
+        ActiveSlot();
     }
-    public bool canUseHability;
-    private float fovAngle=5f;
-
+  
     private void HabilityAction()
     {
         if (habilityesController.habilityType == HabilityType.LevitationItems)
         {
             if (attachedObject != null)
             {
-                habilityesController.hability.SetHabilityAvalableFalse();
+                if (habilityesController.hability.habilityHabailable) ;
                 if (playerInput.squareBtn.Down)
                 {
                     habilityesController.hability.UseHability();
@@ -78,7 +82,8 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if (playerInput.squareBtn.Down)
             {
-                habilityesController.hability.SetHabilityAvalableFalse();
+                
+                if(habilityesController.hability.habilityHabailable);
                 habilityesController.hability.UseHability();
             }
         } 
@@ -90,7 +95,7 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if(playerInput.squareBtn.Down)
             {
-                habilityesController.hability.SetHabilityAvalableFalse();
+                if (habilityesController.hability.habilityHabailable) 
                 habilityesController.hability.UseHability();
             }
         }
@@ -139,7 +144,7 @@ public class CharacterControllerAct : MonoBehaviour
     }
 
     public void LeaveObjOn()
-    {       
+    {
         if (attachedObject != null)
         {
             RaycastHit hit;
@@ -214,6 +219,28 @@ public class CharacterControllerAct : MonoBehaviour
         {
             slot = hit.collider.GetComponent<Slot>();
             slot.Action(this);
+        }
+    }
+
+    private void ActiveSlot()
+    {
+        RaycastHit slotHit;
+        if (Physics.Raycast(raycastTransform.position, transform.forward, out slotHit, 1, tablesLayerMask) /*&& slotHit.collider.GetComponent<Slot>() != activeSlot*/)
+        {
+            if (activeSlot != null)
+                activeSlot.ChangeMaterialIni();
+            activeSlot = slotHit.collider.GetComponent<Slot>();
+            activeSlot.ChangeMaterialSelected();
+        }
+
+        if (activeSlot != null)
+        {
+            Debug.Log((activeSlot.gameObject.transform.position - transform.position).magnitude);
+            if ((activeSlot.gameObject.transform.position - transform.position).magnitude >= 1.9)
+            {
+                activeSlot.ChangeMaterialIni();
+                activeSlot = null;
+            }
         }
     }
 

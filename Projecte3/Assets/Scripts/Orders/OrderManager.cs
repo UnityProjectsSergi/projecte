@@ -38,7 +38,7 @@ class OrderManager:MonoBehaviour
     }
     public void Start()
     {
-        AddOrder(0.2f, 3, 10,5);
+  //      AddOrder(0.2f, 3, 10,5);
         InvokeRepeating("order",20f, SegWaitTo2onOrder);
     }
     public void order()
@@ -61,8 +61,8 @@ class OrderManager:MonoBehaviour
     {
         AddOrder(0.8f, 3, 45,5);
     }
-    public Order FoundOrder;
-    bool found1 = false;
+  
+   
     public void ServeOrder(Order order)
     {
         order.HideUIOrder();

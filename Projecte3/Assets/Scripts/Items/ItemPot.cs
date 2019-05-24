@@ -18,16 +18,26 @@ public class ItemPot : Item
     // saber si el que hi ha 
     public LayerMask layerMask;
     public ItemPotStateIngredients currentStatePot;
-    public bool hasStoveUnder;
+    [HideInInspector]
+    public GameObject Fire;
+   
 
+    public bool hasStoveUnder;
+  
     public void Start()
-    {       
+    {
         listItem = new List<Item>();
         currentStatePot = ItemPotStateIngredients.Empty;
         potUi.StartUiPot();
-        itemType = ItemType.Pot;
-    }
 
+        itemType = ItemType.Pot;
+
+    }
+    public void setFire(GameObject _fires)
+    {
+        Fire = _fires;
+        potUi.SetfireStates();
+    }
 
     public bool LeaveObjIn(Item item)
     {
@@ -73,12 +83,8 @@ public class ItemPot : Item
 
     public  void Update()
     {
-        base.Update();
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up * 2f, out hit, layerMask))
-        {
-            StoveSlot slot = hit.collider.gameObject.GetComponent<StoveSlot>();
-            if (slot  && listItem.Count > 0)
+        if (this.transform.parent)
+            if (this.transform.parent.parent.GetComponent<StoveSlot>())
             {
                 hasStoveUnder = true;
                 potUi.hasStoveUnder = true;
@@ -88,7 +94,21 @@ public class ItemPot : Item
                 hasStoveUnder = false;
                 potUi.hasStoveUnder = false;
             }
-        }      
+        //RaycastHit hit;
+        //if (Physics.Raycast(transform.position, -transform.up * 2f, out hit, layerMask))
+        //{
+        //    StoveSlot slot = hit.collider.gameObject.GetComponent<StoveSlot>();
+        //    if (slot  && listItem.Count > 0)
+        //    {
+        //        hasStoveUnder = true;
+        //     
+        //    }
+        //    else
+        //    {
+        //        hasStoveUnder = false;
+        //        potUi.hasStoveUnder = false;
+        //    }
+        //}      
     }
 }
 

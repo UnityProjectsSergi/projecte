@@ -34,8 +34,8 @@ public class Character : MonoBehaviour
     void Update()
     {
       
-        _isGrounded = Physics.Raycast(transform.position, -transform.up, 2, Ground); /*Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Collide)*/
-        if (_isGrounded /*&& _velocity.y < 0.0f*/)
+        _isGrounded = Physics.Raycast(transform.position, -transform.up, 2, Ground); 
+        if (_isGrounded)
             _velocity.y = 0f;
         
         Vector3 move = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);

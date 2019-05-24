@@ -4,7 +4,7 @@ using System.Collections;
 public class Ingredient1UI : ItemUI
 {
     public Color color;
-
+     
     // Use this for initialization
     public  void Start()
     {

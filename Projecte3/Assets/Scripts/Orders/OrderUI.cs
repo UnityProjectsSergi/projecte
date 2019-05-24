@@ -12,20 +12,23 @@ public class OrderUI : MonoBehaviour
     public float timeOutValue;
     public GameObject ListItemsUIParent;
     public bool timeout;
-    public Color TimeOutColor;
+   
     public SkackeGameObject SkackeGameObject;
-    public Image ImageOrderServed;
-    public Image ImageOrderLost;
-    public Color InitColor;
-    public Color FinishColor;
+    public Color ColorOrderServed;
+    public Color ColorOrderLost;
+    public Color InitColorBarTimeOut;
+    public Color FinishColorBarTimeOut;
 
+    public Image[] listImags;
+
+    public Color TimeOutColor;
 
     public void Start()
     {
         timeout = false;
         SkackeGameObject = GetComponent<SkackeGameObject>();
         StartCoroutine(Countdown());
-
+      
     }
     public void generateItemsUI()
     {
@@ -42,20 +45,23 @@ public class OrderUI : MonoBehaviour
             item.gameObject.transform.localScale = transform.localScale;
             item.gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, withOfChilds);
         }
+        listImags = GetComponentsInChildren<Image>();
     }
 
     internal void OrderServed(Order.OrderRes order, Order order1)
     {
-        StartCoroutine(FadeTo(ImageOrderServed, 0.5f, 0.5f, 0.5f,order,order1));
+        StartCoroutine(FadeTo(listImags,ColorOrderServed, 1f, 1f,order,order1));
     }
-    IEnumerator FadeTo(Image image, float aValue, float aTime, float bTime,Order.OrderRes order=null,Order orderObj=null)
+    IEnumerator FadeTo(Image[] imageList,Color  color, float aTime, float bTime,Order.OrderRes order=null,Order orderObj=null)
     {
-
-        float alpha = image.color.a;
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+        for (int i = 0; i < imageList.Length; i++)
         {
-            Color newColor = new Color(image.color.r, image.color.g, image.color.b, Mathf.Lerp(alpha, aValue, t));
-            image.color = newColor;
+            for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+            {
+                Color newColor = Color.Lerp(imageList[i].color, color,t);// new Color.(image[i].color.r, image[i].color.g, image[i].color.b, Mathf.Lerp(alpha, aValue, t));
+                imageList[i].color = newColor;
+               
+            }
             yield return null;
         }
         CanvasGroup canvas = GetComponent<CanvasGroup>();
@@ -86,27 +92,34 @@ public class OrderUI : MonoBehaviour
         {
             SkackeGameObject.InduceShacke(0.5f);
         }
-        if (timeOutValue < 0.05f)
+        if (timeOutValue < 0.07f)
         {
-            StartCoroutine(FadeTo(ImageOrderLost, 0.5f, 0.5f, 0.5f));
+            StartCoroutine(FadeTo(listImags,ColorOrderLost, 1f, 1f));
         }
         imageTimeOut.fillAmount = timeOutValue;
         imageTimeOut.color = TimeOutColor;
     }
-
+    public void OnEnable()
+    {
+        //TODO Resume Cooldown
+        Debug.Log("ssssm");
+    }
+    public void OnDisable()
+    {
+        //RIDO Pause Cooldown
+        Debug.Log("ssss");
+    }
     IEnumerator Countdown()
     {
-        // 3 seconds you can change this to
-        //to whatever you want
         float totalTime = 0;
         while (totalTime <= duration)
         {
             if (!timeout)
             {
                 timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
-                TimeOutColor = Color.Lerp(InitColor, FinishColor, totalTime / duration);
+                TimeOutColor = Color.Lerp(InitColorBarTimeOut, FinishColorBarTimeOut, totalTime / duration);
                 totalTime += Time.deltaTime;
-                if (timeOutValue <= 0.01f)
+                if (timeOutValue <= 0.03f)
                     timeout = true;
             }
             yield return null;

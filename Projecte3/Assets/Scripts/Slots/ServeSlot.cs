@@ -12,12 +12,11 @@ namespace Assets.Scripts.Slots
 {
     public  class ServeSlot:Slot
     {
-        public GameObject textGO;
-        private Text text;
+       
 
         public void Start()
         {
-            text = textGO.GetComponent<Text>();
+          
         }
 
         public override void LeaveObjOn(CharacterControllerAct player)
@@ -57,11 +56,6 @@ namespace Assets.Scripts.Slots
                 }
             }
         }
-        public IEnumerator TextWide(float num,string textO)
-        {
-            text.text = textO;
-            yield return new WaitForSeconds(num);
-            text.text = "";
-        }
+     
     }
 }

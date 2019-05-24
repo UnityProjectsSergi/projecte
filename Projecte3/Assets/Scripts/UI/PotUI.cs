@@ -28,26 +28,33 @@ public class PotUI : MonoBehaviour
             ingPot.GetComponent<ItemUIPot>().setDefault();            
             ingPot.transform.SetParent(ListIng.transform);
         }
+      
     }
-
+    public void SetfireStates()
+    {
+        potUIState.SetFire();
+    }
     void Update()
     {
         if (currentSoltUi != oldSlot)
         {
-            potUIState.totalduration += duration;
-        }  
-        
-        // on assingre sfillampit 
-        if (hasStoveUnder)
-        {
-            Debug.Log(ItemPot.listItem.Count == listUIItems.Count);
-            if (ItemPot.listItem.Count == listUIItems.Count)
-            { potUIState.StartCooking(); }
-            
+            potUIState.totalduration += duration;        
         }
-        else
+        if (ItemPot.listItem.Count == listUIItems.Count)
         {
-            potUIState.StopCooking();
+            if (!potUIState.isStarted)
+                potUIState.StartCooking();
+            else
+            {
+                if (hasStoveUnder)
+                {
+                    potUIState.ResumeCooking();
+                }
+                else
+                {
+                    potUIState.PauseCooking();
+                }
+            }
         }
         oldSlot = currentSoltUi;
         RotateTOCam();
@@ -55,7 +62,7 @@ public class PotUI : MonoBehaviour
 
     public void SetItemPotState(ItemPotStateIngredients state)
     {
-        //if(ItemPot.currentStatePot != ItemPotStateIngredients.CookedDone)
+      
             ItemPot.currentStatePot = state;
     }
 
@@ -77,7 +84,7 @@ public class PotUI : MonoBehaviour
             item.setDefault();
         }
         potUIState.Reset();
-        
+        duration = 0;
     }
 
     public void RotateTOCam()

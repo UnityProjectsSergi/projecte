@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 301765327}
   - component: {fileID: 7755836916650567886}
   - component: {fileID: 2321874309804713485}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: ok
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 668603677}
   - component: {fileID: 9141010186618829815}
   - component: {fileID: 8846389152408309589}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: burn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 1189460572}
   - component: {fileID: 8141537620904643741}
   - component: {fileID: 9006179369304576631}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: alert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 752984564881532413}
   - component: {fileID: 5625517968046367171}
   - component: {fileID: 8611695727971123269}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: ProgressBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 1142069224921468985}
   - component: {fileID: 6077146018220610743}
   - component: {fileID: 1546401196}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,6 +494,36 @@ MonoBehaviour:
   currentSoltUi: 0
   hasStoveUnder: 0
   duration: 0
+--- !u!1 &3756849139362580954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5274718161778659865}
+  m_Layer: 10
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5274718161778659865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756849139362580954}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8294934397275523147}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &3908169331254990592
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +536,7 @@ GameObject:
   - component: {fileID: 4309232608044329679}
   - component: {fileID: 3270250106653039382}
   - component: {fileID: 1385927053}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: BgProgressbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,9 +626,8 @@ MonoBehaviour:
   totalduration: 0
   StartCookingBool: 0
   isStarted: 0
-  timeShowAlertBurning: 5
-  timeBurning: 0.01
   PotUI: {fileID: 0}
+  ItemPot: {fileID: 0}
   percentCook: 0
   journey: 0
   speedUp: 0
@@ -607,6 +636,9 @@ MonoBehaviour:
   timeBetweenShowOkAndAlert: 2
   timeBetweenAlertAndBurn: 2
   SpeedUpReduccion: 0
+  SpeedUpParticlesFireAmount: 0
+  fires: []
+  hasSpeedUp: 0
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +676,7 @@ Transform:
   - {fileID: 1590111433111636841}
   - {fileID: 1189140865}
   - {fileID: 9118709256587225143}
+  - {fileID: 5274718161778659865}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -673,7 +706,7 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   percentCooked: 0
-  NumIngedientsOfPot: 3
+  NumIngedientsOfPot: 1
   ShowSlotsIngEmpty: 1
   listItem: []
   IsStartCooking: 0
@@ -682,6 +715,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   currentStatePot: 0
+  Fire: {fileID: 0}
+  FirePrefab: {fileID: 1802535625632198371, guid: 8983597ae2b314549a68d0d4ded9b688,
+    type: 3}
+  FirePos: {fileID: 5274718161778659865}
   hasStoveUnder: 0
 --- !u!54 &5404493371187664788
 Rigidbody:
@@ -771,7 +808,7 @@ BoxCollider:
   m_GameObject: {fileID: 4334500036433946894}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.94, z: 0.9}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -786,7 +823,7 @@ GameObject:
   - component: {fileID: 7997587254705863041}
   - component: {fileID: 2878413487451409917}
   - component: {fileID: 2885166729914167542}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5886096031498295333}
   - component: {fileID: 3388552682537620547}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: IngUiList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,6 +970,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: OLLA
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -947,19 +992,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.6450158
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.2610043
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.25004673
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.67328155
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
       propertyPath: m_RootOrder
@@ -977,6 +1022,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbc1e03548abd484886d47898567ea7c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57a286de97e136543b1801a2a3a9e636, type: 3}
 --- !u!1 &9118709256587392023 stripped
