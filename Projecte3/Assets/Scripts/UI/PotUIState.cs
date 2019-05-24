@@ -18,7 +18,7 @@ public class PotUIState : MonoBehaviour
 
     public bool isStarted = false;
 
-  
+
     public PotUI PotUI;
     public ItemPot ItemPot;
     public float percentCook;
@@ -48,41 +48,41 @@ public class PotUIState : MonoBehaviour
         Debug.Log(fires);
         for (int i = 0; i < fires.Length; i++)
         {
-          nums[i]=  fires[i].emission.rateOverTimeMultiplier; 
+            nums[i] = fires[i].emission.rateOverTimeMultiplier;
         }
     }
-    float[] nums=new float[5];
+    float[] nums = new float[5];
 
     public bool IsPasedCooking;
 
     public void setSpeedUpParticles()
-    {  
-       
-            if (speedUp && !hasSpeedUp)
-            {
-                int i = 0;
-                foreach (var item in fires)
-                {
-                    var fire = item.emission;
-                    nums[i] = fire.rateOverTimeMultiplier;
-                    fire.rateOverTimeMultiplier += SpeedUpParticlesFireAmount;
-                    hasSpeedUp = true;
-                    i++;
-                }
+    {
 
-            }
-            else
+        if (speedUp && !hasSpeedUp)
+        {
+            Debug.Log("speddUPoK");
+            int i = 0;
+            foreach (var item in fires)
             {
-                int i = 0;
-                foreach (var item in fires)
-                {
-                    var fire = item.emission;
-                    fire.rateOverTimeMultiplier = nums[i];
-                    hasSpeedUp = false;
-                    i++;
-                }
+                var fire = item.emission;
+                nums[i] = fire.rateOverTimeMultiplier;
+                fire.rateOverTimeMultiplier *= SpeedUpParticlesFireAmount;
+                i++;
             }
-      
+            hasSpeedUp = true;
+        }
+        else if(!speedUp)
+        {
+            Debug.Log("not speedup");
+            int i = 0;
+            foreach (var item in fires)
+            {
+                var fire = item.emission;
+                fire.rateOverTimeMultiplier = nums[i];
+                i++;
+            }
+        }
+
     }
 
     void Update()
@@ -90,27 +90,28 @@ public class PotUIState : MonoBehaviour
         setSpeedUpParticles();
         if (StartCookingBool)
         {
-            if (!IsPasedCooking) { 
-            if (speedUp)
+            if (!IsPasedCooking)
             {
-                journey += Time.deltaTime * SpeedUpReduccion;
-            }
-            else
-            {
-                journey += Time.deltaTime;
-            }
-            if (journey < totalduration + 0.1f)
-            {
-                ProgressBar.gameObject.SetActive(true);
-                percentCook = Mathf.Clamp01(journey / totalduration);
-                ProgressBar.fillAmount = percentCook;
-                if (ProgressBar.fillAmount >= 0.999f)
+                if (speedUp)
                 {
-                    ProgressBar.gameObject.SetActive(false);
-                    PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
-                    StartCoroutine(ShowImageOK(timeBetweenCookDoneAndShowOK, timeShowingOK, 0.1f, CookedOk));
+                    journey += Time.deltaTime * SpeedUpReduccion;
                 }
-            }
+                else
+                {
+                    journey += Time.deltaTime;
+                }
+                if (journey < totalduration + 0.1f)
+                {
+                    ProgressBar.gameObject.SetActive(true);
+                    percentCook = Mathf.Clamp01(journey / totalduration);
+                    ProgressBar.fillAmount = percentCook;
+                    if (ProgressBar.fillAmount >= 0.999f)
+                    {
+                        ProgressBar.gameObject.SetActive(false);
+                        PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
+                        StartCoroutine(ShowImageOK(timeBetweenCookDoneAndShowOK, timeShowingOK, 0.1f, CookedOk));
+                    }
+                }
                 //else
                 //{
                 //    //if (journey <= (totalduration + timeAlertBurning))
@@ -148,7 +149,7 @@ public class PotUIState : MonoBehaviour
     internal void Reset()
     {
         journey = 0;
-        isStarted=false;
+        isStarted = false;
         StartCookingBool = false;
         BurnAfterFire.gameObject.SetActive(false);
         AlertBurn.gameObject.SetActive(false);
@@ -161,12 +162,12 @@ public class PotUIState : MonoBehaviour
 
     public void StartCooking()
     {
-        
-            isStarted = true;
-            StartCookingBool = true;
-            Debug.Log("start cooking");
-            PotUI.SetItemPotState(ItemPotStateIngredients.Cooking);
-        
+
+        isStarted = true;
+        StartCookingBool = true;
+        Debug.Log("start cooking");
+        PotUI.SetItemPotState(ItemPotStateIngredients.Cooking);
+
     }
     public void ResumeCooking()
     {
@@ -177,7 +178,7 @@ public class PotUIState : MonoBehaviour
     {
         if (isStarted)
             IsPasedCooking = true;
-        
+
     }
 
     public IEnumerator ShowImageOK(float waitBefore, float waitDuring, float waitAfter, Image image)
