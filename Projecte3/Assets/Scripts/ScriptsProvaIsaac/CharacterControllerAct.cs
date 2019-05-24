@@ -235,7 +235,6 @@ public class CharacterControllerAct : MonoBehaviour
 
         if (activeSlot != null)
         {
-            Debug.Log((activeSlot.gameObject.transform.position - transform.position).magnitude);
             if ((activeSlot.gameObject.transform.position - transform.position).magnitude >= 1.9)
             {
                 activeSlot.ChangeMaterialIni();

@@ -8,9 +8,7 @@ using UnityEngine;
 
 public abstract class Slot :MonoBehaviour
 {
-
-    public GameObject MeshToRender;
-    Renderer renderer;
+    public Renderer renderer;
 
     public Item item;
     public Transform positionObjOn;
@@ -20,11 +18,6 @@ public abstract class Slot :MonoBehaviour
 
     public bool isActive;
     public bool hasObjectOn; //Object in slot
-
-    public void Start()
-    {
-        renderer = MeshToRender.GetComponent<Renderer>();
-    }
 
     public virtual void Catch(CharacterControllerAct player)
     {  

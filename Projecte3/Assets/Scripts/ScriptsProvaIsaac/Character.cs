@@ -34,7 +34,8 @@ public class Character : MonoBehaviour
     void Update()
     {
       
-        _isGrounded = Physics.Raycast(transform.position, -transform.up, 2, Ground); 
+        _isGrounded = Physics.Raycast(transform.position, -transform.up, 2, Ground);
+        Debug.Log(_isGrounded);
         if (_isGrounded)
             _velocity.y = 0f;
         
