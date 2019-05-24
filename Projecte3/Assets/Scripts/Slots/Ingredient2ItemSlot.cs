@@ -7,7 +7,7 @@ public class Ingredient2ItemSlot : ItemSlot
     // Use this for initialization
     public override void Start()
     {
-        item = Ingredient2Pool.Instance.GetObjFromPool(transform);
+        item = Ingredient2Pool.Instance.GetObjFromPool(pivot);
      
         base.Start();
     }
