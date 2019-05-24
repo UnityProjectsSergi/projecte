@@ -8,6 +8,10 @@ using UnityEngine;
 
 public abstract class Slot :MonoBehaviour
 {
+
+    public GameObject MeshToRender;
+    Renderer renderer;
+
     public Item item;
     public Transform positionObjOn;
 
@@ -16,6 +20,11 @@ public abstract class Slot :MonoBehaviour
 
     public bool isActive;
     public bool hasObjectOn; //Object in slot
+
+    public void Start()
+    {
+        renderer = MeshToRender.GetComponent<Renderer>();
+    }
 
     public virtual void Catch(CharacterControllerAct player)
     {  
@@ -51,13 +60,13 @@ public abstract class Slot :MonoBehaviour
     public void ChangeMaterialSelected()
     {
         if(selectedMaterial != null)
-            this.gameObject.GetComponent<Renderer>().material = selectedMaterial;
+            renderer.material = selectedMaterial;
     }
 
     public void ChangeMaterialIni()
     {
         if (iniMaterial != null)
-            this.gameObject.GetComponent<Renderer>().material = iniMaterial;
+            renderer.material = iniMaterial;
     }
 }
 
