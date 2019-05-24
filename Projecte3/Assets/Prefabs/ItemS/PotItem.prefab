@@ -635,10 +635,11 @@ MonoBehaviour:
   timeShowingOK: 10
   timeBetweenShowOkAndAlert: 2
   timeBetweenAlertAndBurn: 2
-  SpeedUpReduccion: 0
-  SpeedUpParticlesFireAmount: 0
+  SpeedUpReduccion: 2
+  SpeedUpParticlesFireAmount: 5
   fires: []
   hasSpeedUp: 0
+  IsPasedCooking: 0
 --- !u!1 &4334500036433946894
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,9 +717,6 @@ MonoBehaviour:
     m_Bits: 512
   currentStatePot: 0
   Fire: {fileID: 0}
-  FirePrefab: {fileID: 1802535625632198371, guid: 8983597ae2b314549a68d0d4ded9b688,
-    type: 3}
-  FirePos: {fileID: 5274718161778659865}
   hasStoveUnder: 0
 --- !u!54 &5404493371187664788
 Rigidbody:

@@ -77,7 +77,7 @@ public class HabilityesController : MonoBehaviour
     public void ActivateHabilitySpeedFire()
     {
 
-            Debug.Log("ssssssss");
+      
             HabilityRadi.gameObject.SetActive(true);
             speedUpCookHability = true;
         
@@ -137,12 +137,15 @@ public class HabilityesController : MonoBehaviour
                     ItemPot pot = stoveNotF.item.GetComponent<ItemPot>();
                     if(pot!=null)
                     {
-                        if (pot.currentStatePot == ItemPotStateIngredients.Cooking || pot.currentStatePot == ItemPotStateIngredients.Alert)
-                        {
-                            pot.potUi.potUIState.speedUp = true;
-                        }
-                        else
-                            pot.potUi.potUIState.speedUp = false;
+                    if (pot.currentStatePot == ItemPotStateIngredients.Cooking || pot.currentStatePot == ItemPotStateIngredients.Alert)
+                    {
+                        pot.potUi.potUIState.speedUp = true;
+                    }
+                    else
+                    {
+                        pot.potUi.potUIState.speedUp = false;
+                        pot.potUi.potUIState.hasSpeedUp = false;
+                    }
                     }
                 }
 
