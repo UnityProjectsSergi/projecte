@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PotUI : MonoBehaviour
 {
-    public PotUIState potUIState;
+    public PotUIStateCo potUIState;
     public List<ItemUIPot> listUIItems= new List<ItemUIPot>();
     public GameObject ListIng;
     public GameObject ItemPotUIPrefab;

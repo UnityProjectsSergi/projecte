@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31bb400ac7137b4388b4b69fc0a0c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potUIState: {fileID: 1385927053}
+  potUIState: {fileID: 1740128490047490135}
   listUIItems: []
   ListIng: {fileID: 9108326518432846173}
   ItemPotUIPrefab: {fileID: 1134867215814376660, guid: ebb958ba0507e0a4eb204a0e07bff99f,
@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 4309232608044329679}
   - component: {fileID: 3270250106653039382}
   - component: {fileID: 1385927053}
+  - component: {fileID: 1740128490047490135}
   m_Layer: 10
   m_Name: BgProgressbar
   m_TagString: Untagged
@@ -611,7 +612,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3908169331254990592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba92d3fbda51677439ae8fa4c7d98d38, type: 3}
   m_Name: 
@@ -633,6 +634,42 @@ MonoBehaviour:
   speedUp: 0
   timeBetweenCookDoneAndShowOK: 2
   timeShowingOK: 10
+  timeBetweenShowOkAndAlert: 2
+  timeBetweenAlertAndBurn: 2
+  SpeedUpReduccion: 2
+  SpeedUpParticlesFireAmount: 5
+  fires: []
+  hasSpeedUp: 0
+  IsPasedCooking: 0
+--- !u!114 &1740128490047490135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908169331254990592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e91e987776cecf4d9c1fd26f8b87a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresSpeed: 0.5
+  ProgressBar: {fileID: 8611695727971123269}
+  AlertBurn: {fileID: 9006179369304576631}
+  BurnAfterFire: {fileID: 8846389152408309589}
+  Fire: {fileID: 2885166729914167542}
+  CookedOk: {fileID: 2321874309804713485}
+  fillAmount: 0
+  totalduration: 0
+  StartCookingBool: 0
+  isStarted: 0
+  PotUI: {fileID: 0}
+  ItemPot: {fileID: 0}
+  percentCook: 0
+  journey: 0
+  speedUp: 0
+  timeBetweenCookDoneAndShowOK: 2
+  timeShowingOK: 2
   timeBetweenShowOkAndAlert: 2
   timeBetweenAlertAndBurn: 2
   SpeedUpReduccion: 2
