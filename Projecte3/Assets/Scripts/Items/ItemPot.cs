@@ -81,8 +81,9 @@ public class ItemPot : Item
         return listItem.All(item => item.stateIngredient == StateIngredient.cooked);
     }
 
-    public  void Update()
+    public override void Update()
     {
+        base.Update();
         if (this.transform.parent)
             if (this.transform.parent.parent.GetComponent<StoveSlot>())
             {

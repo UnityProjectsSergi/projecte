@@ -26,14 +26,21 @@ public class Order
         _ingredients = ingredients;
         _orderUI = orderUI;
     }
-    public Order(List<Item> ingredients, int points,float duracio,OrderRes  res)
+    public Order(List<Item> ingredients, float duracio, OrderRes res)
     {
-      
-        _points = points;
+
+        SetPointsOder(ingredients);
         _ingredients = ingredients;
         duration = duracio;
         OrderServed += res;
-      
+    }
+
+    private void SetPointsOder(List<Item> ingredients)
+    {
+        foreach (var item in ingredients)
+        {
+            _points += item.points;
+        }
     }
     public void HideUIOrder()
     {

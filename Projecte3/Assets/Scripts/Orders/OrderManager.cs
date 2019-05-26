@@ -14,8 +14,9 @@ class OrderManager:MonoBehaviour
     public int pointsUI;
     public float SegWaitTo2onOrder=35f;
     public Text Points;
-    public Text textO;
-    
+    public int NumIngredientsOfOrders;
+    public float durationOfOrders;
+
 
     private void Awake()
     {
@@ -30,39 +31,26 @@ class OrderManager:MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
     }
-    public void AddOrder(float num,int ingredients,float time,int points)
-    { 
-        listOrders.Add(OrderGenerator.GenerateOrder(num,ingredients,time,points,ServeOrder));
-
+    public void AddOrder(float num, int numIngredients, float duracióOfOder)
+    {
+        listOrders.Add(OrderGenerator.GenerateOrder(IngCounter, numIngredients, duracióOfOder, ServeOrder));
+        IngCounter++;
 
     }
     public void Start()
     {
-  //      AddOrder(0.2f, 3, 10,5);
-        InvokeRepeating("order",20f, SegWaitTo2onOrder);
+   
+        InvokeRepeating("order", 2f, SegWaitTo2onOrder);
     }
     public void order()
     {
-        if (Random.Range(0f,1f)>0.5f)
-        {
-            SecondOrder();
-        }
-        else
-            {
-            greenOrder();
-        }
+        AddOrder(IngCounter, NumIngredientsOfOrders, durationOfOrders);
+
     }
-    
-    public void greenOrder()
-    {
-        AddOrder(0.4f, 3, 45,5);
-    }
-    public void SecondOrder()
-    {
-        AddOrder(0.8f, 3, 45,5);
-    }
-  
-   
+
+
+    public float IngCounter;
+
     public void ServeOrder(Order order)
     {
         order.HideUIOrder();
@@ -129,7 +117,7 @@ class OrderManager:MonoBehaviour
     {
 
         if (listOrders.Count == 0)
-            SecondOrder();
+            AddOrder(IngCounter, NumIngredientsOfOrders, durationOfOrders);
         CheckIfOrderListHasTimeOut();
         Points.text = pointsUI.ToString();
     }
@@ -150,12 +138,7 @@ class OrderManager:MonoBehaviour
 
         } 
     }
-    IEnumerator HideText(float num)
-    {
-        yield return new WaitForSeconds(num);
-        textO.text = "";
-    //    listOrders.Add(OrderGenerator.GenerateOrder(0.3f, ingredients, time));
-    }
+   
     public void OrderServed()
     {
 

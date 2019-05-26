@@ -17,8 +17,9 @@ public class Ingredient2 : Item
         itemType = ItemType.Ing;
         ing = ItemUiType.Ing2;
     }
-    public void Update()
+    public override void Update()
     {
+        base.Update();
         if (transform.parent != null && transform.parent.parent != null)
         {
 

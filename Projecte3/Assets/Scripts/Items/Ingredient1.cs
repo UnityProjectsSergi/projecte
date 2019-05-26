@@ -20,16 +20,17 @@ public class Ingredient1:Item
         itemType = ItemType.Ing;
         ing = ItemUiType.Ing1;
     }
-    private void Update()
+    public override void Update()
     {
+        base.Update();
         if (transform.parent != null && transform.parent.parent != null)
         {
-
-            canvas.gameObject.SetActive(false);
             if (transform.parent.parent.GetComponent<Character>() != null)
                 canvas.gameObject.SetActive(true);
+            else
+                 canvas.gameObject.SetActive(false);
+           
         }
-
         else
             canvas.gameObject.SetActive(true);
     }

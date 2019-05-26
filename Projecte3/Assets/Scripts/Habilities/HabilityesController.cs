@@ -150,7 +150,7 @@ public class HabilityesController : MonoBehaviour
                 }
 
             //}
-
+            //q si modifiqueu prefabs heu dfer ovverride apply allxq sino 
         }
     }
     public Collider[] hitColliders;

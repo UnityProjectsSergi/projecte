@@ -25,49 +25,57 @@ public class OrderGenerator : MonoBehaviour
     /// </summary>
     /// <param name="numIng"></param>
     /// <returns></returns>
-    public Order GenerateOrder(float rad,int numIng,float duration,int points,Order.OrderRes orderServed)
+    float rad;
+    public Order GenerateOrder(float counter, int numIng, float duration, Order.OrderRes orderServed)
     {
         // listes Elements a generar x crear ordre
         List<Item> listIng = new List<Item>();
         List<ItemUI> listIngUI = new List<ItemUI>();
-        
+
         if (numIng > 0)
         {
             for (int i = 0; i < numIng; i++)
             {
+                rad = Random.Range(0.0f, 1.0f);
+                Debug.Log(rad);
                 // UI elements
-                GameObject m;
+                GameObject m = null;
                 // item elements
-                Item n;
+                Item n = null;
+
                 /// Decideixo quin ingredinent si un o l'altre amb random
-               // float rad = Random.Range(0.0f, 1.0f);
-                if (rad>0.33f)
+                // float rad = Random.Range(0.0f, 1.0f);
+                if (counter % 9 == 0)
+                //  if (rad>0.33f)
                 {
                     n = Ing1Pool.Instance.GetObjFromPool();
-                     m = Instantiate(Ing1UIPrefab);
-                   
+                    m = Instantiate(Ing1UIPrefab);
                 }
-                else if(rad>0.3 && rad <0.6)
+                else if (counter % 3 == 0)
+                //else if(rad>0.3 && rad <0.6)
                 {
                     n = Ingredient2Pool.Instance.GetObjFromPool();
-                     m = Instantiate(Ing2UIPrefab);
-                    
+                    m = Instantiate(Ing2UIPrefab);
                 }
-                else
+                else if (counter % 1 == 0)
                 {
                     n = Ingredient3Pool.Instance.GetObjFromPool();
                     m = Instantiate(Ing3UIPrafab);
                 }
-                n.gameObject.SetActive(false);
-                //// Adegirixo a llistes a generar la UI i els obj Ingreienr o Item
-                ItemUI mn =m.GetComponent<ItemUI>();
-                listIngUI.Add(mn);
-                listIng.Add(n);
-            }    
+
+                if (n != null)
+                {
+                    n.gameObject.SetActive(false);
+                    //// Adegirixo a llistes a generar la UI i els obj Ingreienr o Item
+                    ItemUI mn = m.GetComponent<ItemUI>();
+                    listIngUI.Add(mn);
+                    listIng.Add(n);
+                }
+            }
         }
-       
+
         // Creo Obj order passat li la list ingredients
-        Order order = new Order(listIng, points,duration,orderServed);
+        Order order = new Order(listIng,duration,orderServed);
         // Creao obj de tipus OrdreUI 
         GameObject orderUI = Instantiate(OrderUIPrefb, parentUI);
         // li poso pare de la llista de elements a UI

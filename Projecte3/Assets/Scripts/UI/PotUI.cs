@@ -13,6 +13,8 @@ public class PotUI : MonoBehaviour
     public bool hasStoveUnder;
     public float duration;
     private int oldSlot;
+    private bool enter;
+    private bool enter2;
 
     public void StartUiPot()
     {
@@ -42,18 +44,31 @@ public class PotUI : MonoBehaviour
         }
         if (ItemPot.listItem.Count == listUIItems.Count)
         {
-            if (!potUIState.isStarted)
-                potUIState.StartCooking();
-            else
+            if (potUIState.isStarted)
             {
                 if (hasStoveUnder)
                 {
-                    potUIState.ResumeCooking();
+                    if (enter)
+                    {
+                        potUIState.ResumeCooking();
+                        enter = false;
+                    }
+                    enter2 = true;
                 }
                 else
                 {
-                    potUIState.PauseCooking();
+
+                    if (enter2)
+                    {
+                        potUIState.PauseCooking();
+                        enter2 = false;
+                    }
+                    enter = true;
                 }
+            }
+            else
+            {
+                potUIState.StartCooking();
             }
         }
         oldSlot = currentSoltUi;
@@ -62,7 +77,6 @@ public class PotUI : MonoBehaviour
 
     public void SetItemPotState(ItemPotStateIngredients state)
     {
-      
             ItemPot.currentStatePot = state;
     }
 

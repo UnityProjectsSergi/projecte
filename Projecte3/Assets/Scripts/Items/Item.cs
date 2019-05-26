@@ -82,14 +82,14 @@ public  class Item : MonoBehaviour
         }
     }
    
-    public void Update()
+    public virtual void Update()
     {
         DetectSlotBelow();
         if(isHabilityOn)
         {
-            transform.position = new Vector3(transform.position.x,
-        transform.position.y + ((float)Mathf.Sin(Time.time) * floatStrength),
-        transform.position.z);
+              transform.position = new Vector3(transform.position.x,
+              transform.position.y + ((float)Mathf.Sin(Time.time) * floatStrength),
+              transform.position.z);
         }
     }
     

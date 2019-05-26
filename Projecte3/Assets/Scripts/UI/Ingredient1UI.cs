@@ -4,12 +4,13 @@ using System.Collections;
 public class Ingredient1UI : ItemUI
 {
     public Color color;
-     
+    public Sprite Ing1Sripte;
+
     // Use this for initialization
     public  void Start()
     {
-       
-       // image.color = color;
+        image.sprite = Ing1Sripte;
+        // image.color = color;
         itemUiType = ItemUiType.Ing1;
     }
 
