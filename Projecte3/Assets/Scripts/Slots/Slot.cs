@@ -13,9 +13,6 @@ public abstract class Slot :MonoBehaviour
     public Item item;
     public Transform positionObjOn;
 
-    public Material iniMaterial;
-    public Material selectedMaterial;
-
     public bool isActive;
     public bool hasObjectOn; //Object in slot
 
@@ -52,14 +49,12 @@ public abstract class Slot :MonoBehaviour
 
     public void ChangeMaterialSelected()
     {
-        if(selectedMaterial != null)
-            renderer.material = selectedMaterial;
+        renderer.material.EnableKeyword("_EMISSION");
     }
 
     public void ChangeMaterialIni()
     {
-        if (iniMaterial != null)
-            renderer.material = iniMaterial;
+        renderer.material.DisableKeyword("_EMISSION");
     }
 }
 
