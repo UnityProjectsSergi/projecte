@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4221a1fa40016c443be261aad8e42425, type: 3}
+  - {fileID: 2100000, guid: 8619cb4d71e09e94bbe749076f1f66dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,7 +166,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4221a1fa40016c443be261aad8e42425, type: 3}
+  - {fileID: 2100000, guid: 8619cb4d71e09e94bbe749076f1f66dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf514b7bd346d0a4a8f5edeb883af6c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
+  renderer: {fileID: 4595706754332971355}
   item: {fileID: 0}
   positionObjOn: {fileID: 4784889726873586829}
   isActive: 0
@@ -492,6 +492,12 @@ PrefabInstance:
 --- !u!4 &4595706754331071419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: da9352b03b5c31747a5082e78f532bb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4595706754330937659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4595706754332971355 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: da9352b03b5c31747a5082e78f532bb9,
     type: 3}
   m_PrefabInstance: {fileID: 4595706754330937659}
   m_PrefabAsset: {fileID: 0}
