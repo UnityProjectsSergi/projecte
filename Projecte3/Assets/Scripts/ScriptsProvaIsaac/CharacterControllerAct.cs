@@ -95,8 +95,12 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if(playerInput.squareBtn.Down)
             {
-                if (habilityesController.hability.habilityHabailable) 
-                habilityesController.hability.UseHability();
+                //if (habilityesController.hability.habilityHabailable)
+                //{
+                    Debug.Log("asdsad");
+                PutPortal();    
+                //habilityesController.hability.UseHability();
+                //}
             }
         }
     }
@@ -176,11 +180,13 @@ public class CharacterControllerAct : MonoBehaviour
     public void PutPortal()
     {
         RaycastHit hit;
+
+        Debug.Log("Can Move Portals: " + canMovePortals);
         if (!Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1.6f, tablesLayerMask) && canMovePortals)
         {
-            Vector3 _portalPosition = new Vector3(transform.position.x + transform.forward.x, 1, transform.position.z + transform.forward.z);
+            Vector3 _portalPosition = new Vector3(transform.position.x + transform.forward.x, 1.5f, transform.position.z + transform.forward.z);
             if (movePortalA)
-            {
+            {              
                 portalA.transform.position = _portalPosition;
                 movePortalA = !movePortalA;
                 pa.tpPoint.transform.position = transform.position;
