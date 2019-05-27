@@ -7,7 +7,7 @@ public class SelectorManager : MonoBehaviour
 {  
     public GameObject j1PressCricle;
     public GameObject j2PressCricle;
-    public GameObject j1ConnectedText;
+    public GameObject[] j1Character = new GameObject[4];
     public GameObject j2ConnectedText;
     public GameObject pressStartText;
     public string nextScaneName;
@@ -32,7 +32,7 @@ public class SelectorManager : MonoBehaviour
             {
                 j1Connected = true;
                 j1PressCricle.SetActive(false);
-                j1ConnectedText.SetActive(true);
+                j1Character[0].SetActive(true);
                 gameManager.j1 = true;
                 
                 if (!isPressStart)
@@ -42,6 +42,9 @@ public class SelectorManager : MonoBehaviour
                 }
 
             }
+        } else
+        {
+            //if(InputManager.Instance.GetButtonDown("J1SettingsButtonPS4"))
         }
 
         if (!j2Connected)
