@@ -46612,6 +46612,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9105457921127778359, guid: 15c3dc5b4f693f448b20858f04b419a0,
+        type: 3}
+      propertyPath: NumIngredientsOfOrders
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105457921127778359, guid: 15c3dc5b4f693f448b20858f04b419a0,
+        type: 3}
+      propertyPath: SegWaitTo2onOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105457921127778359, guid: 15c3dc5b4f693f448b20858f04b419a0,
+        type: 3}
+      propertyPath: durationOfOrders
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c3dc5b4f693f448b20858f04b419a0, type: 3}
 --- !u!4 &1866967003 stripped
@@ -50284,7 +50299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991998725}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: -0.051690042, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5795980993534913189}
