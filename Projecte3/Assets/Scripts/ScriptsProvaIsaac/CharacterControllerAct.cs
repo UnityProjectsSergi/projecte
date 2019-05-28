@@ -94,14 +94,7 @@ public class CharacterControllerAct : MonoBehaviour
         } else if(habilityesController.habilityType == HabilityType.Portal)
         {
             if(playerInput.squareBtn.Down)
-            {
-                //if (habilityesController.hability.habilityHabailable)
-                //{
-                    Debug.Log("asdsad");
                 PutPortal();    
-                //habilityesController.hability.UseHability();
-                //}
-            }
         }
     }
 

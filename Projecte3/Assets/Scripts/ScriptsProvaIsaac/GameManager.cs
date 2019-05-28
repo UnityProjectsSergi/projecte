@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
-    public bool j1, j2;
+    public bool j1, j2, j3, j4;
+    public int j1c, j2c, j3c, j4c;
 
     void Awake()
     {
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
             case 1:
                 if (!j1)
                     caller.SetActive(false);
+                    caller.GetComponent<HabilityesController>().habilityType = (HabilityType) j1c;
                 break;
             case 2:
                 if (!j2)
