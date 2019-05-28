@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using UnityEngine;
-
+[System.Serializable]
 public class Order
 {
     public int _points;
@@ -28,7 +28,7 @@ public class Order
     }
     public Order(List<Item> ingredients, float duracio, OrderRes res)
     {
-
+       
         SetPointsOder(ingredients);
         _ingredients = ingredients;
         duration = duracio;
@@ -50,8 +50,10 @@ public class Order
     
     public void SetOrderUi(OrderUI ordrrui)
     {
+       
         _orderUI = ordrrui;
         _orderUI.duration = duration;
+        _orderUI.Order = this;
     }
     public bool IsServed()
     {

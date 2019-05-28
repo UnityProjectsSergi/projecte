@@ -18,7 +18,7 @@ public class PauseMenuController : MonoBehaviour
     void Update()
     {
 
-        timeUi.isPaused = pauseController.isPausedGame;
+         timeUi.isPaused = pauseController.isPausedGame;
      
     }
     public void OpenSoundOptions()
