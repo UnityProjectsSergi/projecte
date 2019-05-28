@@ -23,30 +23,34 @@ public class HabilityesController : MonoBehaviour
     public float durationHabilityTime;
     void Start()
     {
+        SetHability();
+    }
+
+    public void SetHability()
+    {
         meshRenderer = GetComponent<MeshRenderer>();
 
         hability = gameObject.AddComponent<Hability>();
         if (habilityType == HabilityType.LevitationItems)
         {
             ChangeMesh(0);
-            hability.set(durationHabilityTime, coolDownTimerHability, ActivateLevitation, DeactivateLevitation,CoolDown);
+            hability.set(durationHabilityTime, coolDownTimerHability, ActivateLevitation, DeactivateLevitation, CoolDown);
         }
         else if (habilityType == HabilityType.SpeedTheFire)
         {
             ChangeMesh(1);
-            hability.set(durationHabilityTime, coolDownTimerHability, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire,CoolDown);
+            hability.set(durationHabilityTime, coolDownTimerHability, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire, CoolDown);
         }
         else if (habilityType == HabilityType.Throw)
         {
             ChangeMesh(2);
-            hability.set(0, 0, null, null,CoolDown);
+            hability.set(0, 0, null, null, CoolDown);
         }
         else if (habilityType == HabilityType.Portal)
         {
             ChangeMesh(3);
-            hability.set(durationHabilityTime, coolDownTimerHability, ActiveHabilityPortal, DeactivateHabilityPortal,CoolDown);
+            hability.set(durationHabilityTime, coolDownTimerHability, ActiveHabilityPortal, DeactivateHabilityPortal, CoolDown);
         }
-
     }
 
     // Update is called once per frame
