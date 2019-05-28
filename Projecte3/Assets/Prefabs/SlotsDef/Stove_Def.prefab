@@ -14166,7 +14166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002e93129f20ac847967e0fc0de48ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
+  renderer: {fileID: 4343806233949388748}
   item: {fileID: 0}
   positionObjOn: {fileID: 1910492459179620149}
   isActive: 0
@@ -37897,11 +37897,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1910492458625236447}
     m_Modifications:
-    - target: {fileID: 9028935469017460864, guid: 61fb30da5bfcc474c8fa160f93413eb3,
-        type: 3}
-      propertyPath: m_Name
-      value: baseOlla_GAME
-      objectReference: {fileID: 0}
     - target: {fileID: 9028935469017230496, guid: 61fb30da5bfcc474c8fa160f93413eb3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37972,11 +37967,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2500006
       objectReference: {fileID: 0}
+    - target: {fileID: 9028935469017460864, guid: 61fb30da5bfcc474c8fa160f93413eb3,
+        type: 3}
+      propertyPath: m_Name
+      value: baseOlla_GAME
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61fb30da5bfcc474c8fa160f93413eb3, type: 3}
 --- !u!4 &4343806233947094316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9028935469017230496, guid: 61fb30da5bfcc474c8fa160f93413eb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4685278778081497484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4343806233949388748 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 9028935469015461440, guid: 61fb30da5bfcc474c8fa160f93413eb3,
     type: 3}
   m_PrefabInstance: {fileID: 4685278778081497484}
   m_PrefabAsset: {fileID: 0}
