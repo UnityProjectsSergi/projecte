@@ -73,6 +73,7 @@ public class OrderGenerator : MonoBehaviour
                 }
             }
         }
+       
 
         // Creo Obj order passat li la list ingredients
         Order order = new Order(listIng,duration,orderServed);

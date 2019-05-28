@@ -17,7 +17,7 @@ class OrderManager:MonoBehaviour
     public int NumIngredientsOfOrders;
     public float durationOfOrders;
 
-
+    public bool isPausedGame;
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -33,6 +33,7 @@ class OrderManager:MonoBehaviour
     }
     public void AddOrder(float num, int numIngredients, float duracióOfOder)
     {
+        
         listOrders.Add(OrderGenerator.GenerateOrder(IngCounter, numIngredients, duracióOfOder, ServeOrder));
         IngCounter++;
 
@@ -44,7 +45,13 @@ class OrderManager:MonoBehaviour
     }
     public void order()
     {
+        if(NumIngredientsOfOrders>0)
         AddOrder(IngCounter, NumIngredientsOfOrders, durationOfOrders);
+        else
+            
+        {
+            Debug.LogWarning("need to add number of ingedients to orderManager");
+        }
 
     }
 
@@ -120,6 +127,7 @@ class OrderManager:MonoBehaviour
             AddOrder(IngCounter, NumIngredientsOfOrders, durationOfOrders);
         CheckIfOrderListHasTimeOut();
         Points.text = pointsUI.ToString();
+      
     }
 
     public void CheckIfOrderListHasTimeOut()

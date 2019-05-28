@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Edelweiss.Coroutine;
 
 public class OrderUI : MonoBehaviour
 {
@@ -11,24 +12,28 @@ public class OrderUI : MonoBehaviour
     public float duration;
     public float timeOutValue;
     public GameObject ListItemsUIParent;
+
+    public Order Order;
+
     public bool timeout;
-   
+    private float totalTime;
     public SkackeGameObject SkackeGameObject;
     public Color ColorOrderServed;
     public Color ColorOrderLost;
     public Color InitColorBarTimeOut;
     public Color FinishColorBarTimeOut;
-
+    
     public Image[] listImags;
 
     public Color TimeOutColor;
-
+    public SafeCoroutine CountDown;
+    public SafeCoroutine OrderLostCo, OrderServedCo;
     public void Start()
     {
         timeout = false;
+        totalTime = 0;
         SkackeGameObject = GetComponent<SkackeGameObject>();
-        StartCoroutine(Countdown());
-      
+        CountDown = this.StartSafeCoroutine(Countdown());
     }
     public void generateItemsUI()
     {
@@ -50,7 +55,7 @@ public class OrderUI : MonoBehaviour
 
     internal void OrderServed(Order.OrderRes order, Order order1)
     {
-        StartCoroutine(FadeTo(listImags,ColorOrderServed, 1f, 1f,order,order1));
+       OrderServedCo=this.StartSafeCoroutine(FadeTo(listImags,ColorOrderServed, 1f, 1f,order,order1));
     }
     IEnumerator FadeTo(Image[] imageList,Color  color, float aTime, float bTime,Order.OrderRes order=null,Order orderObj=null)
     {
@@ -87,7 +92,18 @@ public class OrderUI : MonoBehaviour
     }
     public void UpdateTimeOut()
     {
-
+        if(timeOutValue<0.750 && timeOutValue >0.749)
+        {
+            Order._points -= 1;
+        }
+        if (timeOutValue < 0.50 && timeOutValue > 0.499)
+        {
+            Order._points -= 2;
+        }
+        if (timeOutValue < 0.25 && timeOutValue > 0.249)
+        {
+            Order._points -= 2;
+        }
         if (timeOutValue < 0.15f)
         {
             SkackeGameObject.InduceShacke(0.5f);
