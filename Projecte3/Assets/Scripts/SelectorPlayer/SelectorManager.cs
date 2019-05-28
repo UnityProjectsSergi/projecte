@@ -13,8 +13,9 @@ public class SelectorManager : MonoBehaviour
     public string nextScaneName;
     public List<Image> ListPlayers;
     private GameManager gameManager;
-
+    
     private bool j1Connected = false;
+    private int j1PlayerNum = 0;
     private bool j2Connected = false;
 
     private bool isPressStart = false;
@@ -32,7 +33,7 @@ public class SelectorManager : MonoBehaviour
             {
                 j1Connected = true;
                 j1PressCricle.SetActive(false);
-                j1Character[0].SetActive(true);
+                j1Character[j1PlayerNum].SetActive(true);
                 gameManager.j1 = true;
                 
                 if (!isPressStart)
@@ -44,7 +45,16 @@ public class SelectorManager : MonoBehaviour
             }
         } else
         {
-            //if(InputManager.Instance.GetButtonDown("J1SettingsButtonPS4"))
+            if(InputManager.Instance.GetAxisRaw("J1LeftStickHorizontalPS4") > 0)
+            {
+                j1Character[j1PlayerNum].SetActive(false);
+
+                j1PlayerNum++;
+                if(j1PlayerNum > 3)
+                    j1PlayerNum = 0;
+
+                j1Character[j1PlayerNum].SetActive(true);
+            }
         }
 
         if (!j2Connected)
