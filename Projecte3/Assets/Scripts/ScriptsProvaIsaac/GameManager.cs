@@ -28,24 +28,16 @@ public class GameManager : MonoBehaviour
 
     public void CheckPlayerActive(int controller, GameObject caller)
     {
-        HabilityesController hability;
-        switch (controller)
+        switch(controller)
         {
             case 1:
                 if (!j1)
                     caller.SetActive(false);
-
-                hability = caller.GetComponent<HabilityesController>();
-                hability.habilityType = (HabilityType)j1c;
-                hability.SetHability();
+                    caller.GetComponent<HabilityesController>().habilityType = (HabilityType) j1c;
                 break;
             case 2:
                 if (!j2)
                     caller.SetActive(false);
-
-                hability = caller.GetComponent<HabilityesController>();
-                hability.habilityType = (HabilityType)j2c;
-                hability.SetHability();
                 break;
             default:
                 break;
