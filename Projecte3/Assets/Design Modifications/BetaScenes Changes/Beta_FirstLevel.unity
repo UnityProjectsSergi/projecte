@@ -7828,11 +7828,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 651471421924786232, guid: 3c6b6356ffa00134187a5aeb46beb10c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.99
-      objectReference: {fileID: 0}
     - target: {fileID: 4579537738568276941, guid: 3c6b6356ffa00134187a5aeb46beb10c,
         type: 3}
       propertyPath: m_Size.y
@@ -7842,6 +7837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 651471421924786232, guid: 3c6b6356ffa00134187a5aeb46beb10c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c6b6356ffa00134187a5aeb46beb10c, type: 3}
@@ -14716,16 +14716,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 908646702361134500, guid: bae1efd287d2dbf4da803e0d807ac45f,
-        type: 3}
-      propertyPath: renderer
-      value: 
-      objectReference: {fileID: 1786495202}
-    - target: {fileID: 651471421924786232, guid: bae1efd287d2dbf4da803e0d807ac45f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.82
-      objectReference: {fileID: 0}
     - target: {fileID: 4579537738568276941, guid: bae1efd287d2dbf4da803e0d807ac45f,
         type: 3}
       propertyPath: m_Size.y
@@ -14736,6 +14726,16 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 651471421924786232, guid: bae1efd287d2dbf4da803e0d807ac45f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 908646702361134500, guid: bae1efd287d2dbf4da803e0d807ac45f,
+        type: 3}
+      propertyPath: renderer
+      value: 
+      objectReference: {fileID: 1786495202}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bae1efd287d2dbf4da803e0d807ac45f, type: 3}
 --- !u!4 &506695385 stripped
@@ -59781,7 +59781,7 @@ PrefabInstance:
     - target: {fileID: 9105457921127778359, guid: 15c3dc5b4f693f448b20858f04b419a0,
         type: 3}
       propertyPath: SegWaitTo2onOrder
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9105457921127778359, guid: 15c3dc5b4f693f448b20858f04b419a0,
         type: 3}
@@ -59791,7 +59791,7 @@ PrefabInstance:
     - target: {fileID: 9105457921127778359, guid: 15c3dc5b4f693f448b20858f04b419a0,
         type: 3}
       propertyPath: durationOfOrders
-      value: 55
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 778549753314104291, guid: 15c3dc5b4f693f448b20858f04b419a0,
         type: 3}
