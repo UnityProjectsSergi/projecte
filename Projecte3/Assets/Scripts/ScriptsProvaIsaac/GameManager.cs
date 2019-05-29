@@ -33,11 +33,12 @@ public class GameManager : MonoBehaviour
             case 1:
                 if (!j1)
                     caller.SetActive(false);
-                    caller.GetComponent<HabilityesController>().habilityType = (HabilityType) j1c;
+                caller.GetComponent<HabilityesController>().habilityType = (HabilityType) j1c;
                 break;
             case 2:
                 if (!j2)
                     caller.SetActive(false);
+                caller.GetComponent<HabilityesController>().habilityType = (HabilityType)j2c;
                 break;
             default:
                 break;
