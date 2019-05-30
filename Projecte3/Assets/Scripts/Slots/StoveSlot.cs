@@ -14,10 +14,13 @@ public class StoveSlot : Slot
     public bool hasPassIngToVial;
   
     public GameObject Fire;
-  
+
+    public int numIngStove;
+
     // get ItemPot from ItemPotPool.
     public void Awake()
     {
+
       //  Fire = Instantiate(FirePrefab, FirePos.position, FirePos.rotation, transform);
 
     }

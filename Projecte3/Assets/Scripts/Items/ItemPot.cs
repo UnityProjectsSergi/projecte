@@ -28,8 +28,9 @@ public class ItemPot : Item
     {
         listItem = new List<Item>();
         currentStatePot = ItemPotStateIngredients.Empty;
+        NumIngedientsOfPot = gameObject.transform.parent.parent.GetComponent<StoveSlot>().numIngStove;
         potUi.StartUiPot();
-
+      
         itemType = ItemType.Pot;
 
     }
