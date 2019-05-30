@@ -616,7 +616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   habilityType: 0
   hability: {fileID: 0}
-  CharacterControllerAct: {fileID: 2227135488605312352}
+  characterControllerAct: {fileID: 0}
   HabilityRadi: {fileID: 1248374053}
   layerMaskOverLapOlles:
     serializedVersion: 2
@@ -657,6 +657,7 @@ MonoBehaviour:
   habilityesController: {fileID: 2046403930999699546}
   throwForce: 600
   attachedObject: {fileID: 0}
+  animator: {fileID: 0}
   portal: {fileID: 8495011384436437612, guid: 9f37039be0b51cd4183f6e8aa6ad0676, type: 3}
   canMovePortals: 1
   canUseHability: 0

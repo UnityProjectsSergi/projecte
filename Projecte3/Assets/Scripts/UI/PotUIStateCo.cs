@@ -77,7 +77,6 @@ public class PotUIStateCo : MonoBehaviour
         }
         else if(!speedUp)
         {
-            Debug.Log("not speedup");
             int i = 0;
             foreach (var item in fires)
             {
@@ -119,7 +118,6 @@ public class PotUIStateCo : MonoBehaviour
                 }
                 if (OK != null)
                 {
-                    Debug.Log(OK.State);
                     if (OK.HasFinished)
                     {
                         ProgressBar.gameObject.SetActive(false);

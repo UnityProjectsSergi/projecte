@@ -18,6 +18,7 @@ public class CharacterControllerAct : MonoBehaviour
     private Item item;
 
     public GameObject attachedObject;
+    public Animator animator;
 
     //Portal Habiliti
     public GameObject portal;
@@ -29,7 +30,6 @@ public class CharacterControllerAct : MonoBehaviour
     private Portal pb;
     public bool canUseHability;
     private float fovAngle = 5f;
-
 
     public Slot activeSlot;
 
@@ -100,13 +100,21 @@ public class CharacterControllerAct : MonoBehaviour
 
     void SlotAction()
     {
+        if (playerInput.triangleBtn.Up)
+        {
+            animator.SetTrigger("MolerToIdle");
+        }
+
         if (attachedObject == null)
         {
             if (playerInput.XBtn.Down)
                 Catch();
 
             if (playerInput.triangleBtn.Hold)
+            {
                 Action();
+                animator.SetTrigger("toMoler");
+            }            
         }
         else
         {
@@ -125,6 +133,7 @@ public class CharacterControllerAct : MonoBehaviour
             item.transform.eulerAngles = Vector3.zero;
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
+            animator.SetTrigger("toIng");
         }
         else if(Physics.Raycast(raycastTransform.position, transform.forward + new Vector3(0, 0.5f, 0), out hit, 1, itemsLayerMask))
         {
@@ -132,11 +141,13 @@ public class CharacterControllerAct : MonoBehaviour
             item.transform.eulerAngles = Vector3.zero;
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
+            animator.SetTrigger("toIng");
         }
         else if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 1, tablesLayerMask))
         {          
             slot = hit.collider.GetComponent<Slot>();
             slot.Catch(this);
+            animator.SetTrigger("toIng");
         }    
     }
 

@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
     public int playercontroller;
 
     private CharacterController _controller;
+    private CharacterControllerAct ccAct;
     private Vector3 _velocity;
     public bool _isGrounded = true;
     private Transform _groundChecker;
@@ -25,6 +26,7 @@ public class Character : MonoBehaviour
     {
         GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
 
+        ccAct = GetComponent<CharacterControllerAct>();
         _controller = GetComponent<CharacterController>();
         _groundChecker = transform.GetChild(transform.childCount-1);
         playerInput = GetComponent<PlayerInput>();
@@ -39,10 +41,16 @@ public class Character : MonoBehaviour
             _velocity.y = 0f;
         
         Vector3 move = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
+
         _controller.Move(move * Time.deltaTime * Speed);
 
         if (move != Vector3.zero)
+        {
+            ccAct.animator.SetTrigger("toMove");
             transform.forward = move;
+        }
+        else
+            ccAct.animator.SetTrigger("toIdle");
 
         if (playerInput.OBtn.Down)
             _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));

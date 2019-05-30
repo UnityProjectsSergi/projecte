@@ -7,7 +7,7 @@ public class HabilityesController : MonoBehaviour
 {
     public HabilityType habilityType;
     public Hability hability;
-    public CharacterControllerAct CharacterControllerAct;
+    public CharacterControllerAct characterControllerAct;
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
     public bool CookHability;
@@ -23,6 +23,7 @@ public class HabilityesController : MonoBehaviour
     public float durationHabilityTime;
     void Start()
     {
+        characterControllerAct = GetComponent<CharacterControllerAct>();
         meshRenderer = GetComponent<MeshRenderer>();
 
         hability = gameObject.AddComponent<Hability>();
@@ -59,13 +60,13 @@ public class HabilityesController : MonoBehaviour
 
     public void ActivateLevitation()
     {
-        CharacterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
+        characterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
         GetComponent<CharacterController>().enabled = false;
         GetComponent<Character>().enabled = false;      
     }
     public void DeactivateLevitation()
     {
-        CharacterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(false, 0, null);
+        characterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(false, 0, null);
         GetComponent<CharacterController>().enabled = true;
         GetComponent<Character>().enabled = true;
         HabilityInCoolDown = true;
@@ -86,25 +87,21 @@ public class HabilityesController : MonoBehaviour
       
     }
     public void ActiveHabilityPortal()
-    {
-        
-            Debug.Log("Active Portals");
-            CharacterControllerAct.PutPortal();
-        
+    {      
+        Debug.Log("Active Portals");
+        characterControllerAct.PutPortal();       
     }
     public void DeactivateHabilityPortal()
     {
         Debug.Log("End Portals");
-        CharacterControllerAct.EndPortal();
+        characterControllerAct.EndPortal();
         HabilityInCoolDown = true;
     }
     public void DetectOlla()
-    {
-        Debug.Log("sss");
-        
+    {      
         ollesDetected = Physics.OverlapSphere(transform.position,HabilityRadi.transform.localScale.x/2,layerMaskOverLapOlles);
         if (ollesDetected.Length > 1)
-            Debug.Log("sssssss");
+
         for (int i = 0; i < ollesDetected.Length; i++)
         {
                 StoveSlot stoveNotF = ollesDetected[i].GetComponent<StoveSlot>();
@@ -133,6 +130,7 @@ public class HabilityesController : MonoBehaviour
         GameObject go = Instantiate(typePlayer[value], transform.position, Quaternion.identity);
         go.transform.position = transform.position;
         go.transform.parent = transform;
+        characterControllerAct.animator = go.GetComponent<Animator>();
     }
 
     public bool speedUpCookHability { get; private set; }
