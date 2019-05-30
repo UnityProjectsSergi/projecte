@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4852033113191694407}
   - component: {fileID: 4852033113190564487}
   - component: {fileID: 2087488855418416031}
-  - component: {fileID: 3452466640292574710}
+  - component: {fileID: 2574670538663699631}
   m_Layer: 9
   m_Name: Baul_Item3_Slot 1
   m_TagString: Slot
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9111824, y: 0.97, z: 0.6716378}
   m_Center: {x: -0.43754554, y: -0.0141643435, z: 0.01}
---- !u!114 &3452466640292574710
+--- !u!114 &2574670538663699631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4852033113188637767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbecc8d243ef2da4eaaae4f7a81d1dc0, type: 3}
+  m_Script: {fileID: 11500000, guid: f8f0ae200f994fb4b972f52fa35c2139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 4852033113190564487}
@@ -113,7 +113,6 @@ MonoBehaviour:
   hasObjectOn: 0
   itemPrefab: {fileID: 1396583389862295856, guid: c80a1aa4fb16b9e489ef2b1430615a58,
     type: 3}
-  pivot: {fileID: 3062435157529325674}
 --- !u!1 &6113768506647231772
 GameObject:
   m_ObjectHideFlags: 0
