@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //using FMODUnity;
@@ -33,19 +34,19 @@ public class SoundManager : MonoBehaviour
     {
         
     }
-    //public void OneShotEvent(string nameEvent, Vector3 position = new Vector3())
-    //{
-    //    RuntimeManager.PlayOneShot(nameEvent, position);
-    //}
-    //public void OneShotEventAttatchet(string  nameEvent, GameObject gameObject)
-    //{
-    //    RuntimeManager.PlayOneShotAttached(nameEvent, gameObject);
-    //}
-    //public FMOD.Studio.EventInstance CreateEventInstaceAttached(string name,GameObject gameObject)
-    //{
-    //    FMOD.Studio.EventInstance instance= RuntimeManager.CreateInstance(name);
-    //    RuntimeManager.AttachInstanceToGameObject(instance, gameObject.transform, gameObject.GetComponent<Rigidbody>());
-    //    return instance;
-    //}
+    public void OneShotEvent(string nameEvent, Vector3 position = new Vector3())
+    {
+        RuntimeManager.PlayOneShot(nameEvent, position);
+    }
+    public void OneShotEventAttatchet(string nameEvent, GameObject gameObject)
+    {
+        RuntimeManager.PlayOneShotAttached(nameEvent, gameObject);
+    }
+    public FMOD.Studio.EventInstance CreateEventInstaceAttached(string name, GameObject gameObject)
+    {
+        FMOD.Studio.EventInstance instance = RuntimeManager.CreateInstance(name);
+        RuntimeManager.AttachInstanceToGameObject(instance, gameObject.transform, gameObject.GetComponent<Rigidbody>());
+        return instance;
+    }
 
 }

@@ -117,13 +117,12 @@ public class OrderUI : MonoBehaviour
     }
     public void OnEnable()
     {
-        //TODO Resume Cooldown
-        Debug.Log("ssssm");
+
     }
     public void OnDisable()
     {
         //RIDO Pause Cooldown
-        Debug.Log("ssss");
+       
     }
     IEnumerator Countdown()
     {

@@ -45,8 +45,9 @@ public class Character : MonoBehaviour
             transform.forward = move;
 
         if (playerInput.OBtn.Down)
+        {// SoundManager.Instance.OneShotEventAttatchet(  , this.gameObject);
             _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
-
+        }
 
         _velocity.y += Gravity * Time.deltaTime;
 

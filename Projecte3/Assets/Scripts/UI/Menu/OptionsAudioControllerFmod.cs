@@ -88,15 +88,15 @@ public class OptionsAudioControllerFmod : MonoBehaviour
     /// <summary>
     /// FMOD Studio Bus Master
     /// </summary>
-    //public FMOD.Studio.Bus instanceEventMaster;
+   public FMOD.Studio.Bus instanceEventMaster;
     ///// <summary>
     ///// FMOD Studio Bus Music
     ///// </summary>
-    //public FMOD.Studio.Bus instanceEventMusic;
+    public FMOD.Studio.Bus instanceEventMusic;
     ///// <summary>
     ///// FMOD Studio Bus SFX
     ///// </summary>
-    //public FMOD.Studio.Bus instanceEventSFX;
+   public FMOD.Studio.Bus instanceEventSFX;
     /// <summary>
     /// FMOD Studio Bus Voices
     /// </summary>
@@ -110,9 +110,9 @@ public class OptionsAudioControllerFmod : MonoBehaviour
         if (GameController.hasLoadedGameData)
         {
             /// Debug.Log("SSS");
-            //instanceEventMaster = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusMaster);
-            //instanceEventMusic = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusMusic);
-            //instanceEventSFX = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusSFX);
+            instanceEventMaster = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusMaster);
+            instanceEventMusic = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusMusic);
+            instanceEventSFX = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusSFX);
             // instanceEventVoices = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusVoices);
             if (GameController.Instance.fileExists)
                 _loadedAudioParameters = SaveData.objcts.Parameters.Sound;
@@ -197,7 +197,7 @@ public class OptionsAudioControllerFmod : MonoBehaviour
         /// </summary>
         public void SetDefaultVolumeMaster()
         {
-           // instanceEventMaster.setVolume(Parameters.masterValue);
+            instanceEventMaster.setVolume(Parameters.masterValue);
             MasterSlider.value = Parameters.masterValue;
         }
         /// <summary>
@@ -205,7 +205,7 @@ public class OptionsAudioControllerFmod : MonoBehaviour
         /// </summary>
         public void SetDefaultVolumeMusic()
         {
-         //   instanceEventMusic.setVolume(Parameters.musicValue);
+            instanceEventMusic.setVolume(Parameters.musicValue);
             MusicSlider.value = Parameters.musicValue;
         }
         /// <summary>
@@ -213,7 +213,7 @@ public class OptionsAudioControllerFmod : MonoBehaviour
         /// </summary>
         public void SetDefaultVolumeSFX()
         {
-           // instanceEventSFX.setVolume(Parameters.soundFXValue);
+            instanceEventSFX.setVolume(Parameters.soundFXValue);
             SFXSlider.value = Parameters.soundFXValue;
         }
         /// <summary>
@@ -234,7 +234,7 @@ public class OptionsAudioControllerFmod : MonoBehaviour
         /// <param name="value"></param>
         public void SetVolumeMaster(float value)
         {
-           // instanceEventMaster.setVolume(value);
+            instanceEventMaster.setVolume(value);
             Parameters.masterValue = value;
             SetParametersOnSaveData();
             GameController.Save();
@@ -246,7 +246,7 @@ public class OptionsAudioControllerFmod : MonoBehaviour
         /// <param name="value"></param>
         public void SetVolumeMusic(float value)
         {
-         //   instanceEventMusic.setVolume(value);
+            instanceEventMusic.setVolume(value);
             Parameters.musicValue = value;
             SetParametersOnSaveData();
             GameController.Save();
@@ -258,7 +258,7 @@ public class OptionsAudioControllerFmod : MonoBehaviour
         /// <param name="value"></param>
         public void SetVolumeSFX(float value)
         {
-        //    instanceEventSFX.setVolume(value);
+            instanceEventSFX.setVolume(value);
             Parameters.soundFXValue = value;
             SetParametersOnSaveData();
             GameController.Save();
