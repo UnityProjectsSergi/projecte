@@ -295,13 +295,14 @@ GameObject:
   - component: {fileID: 9016926211081807184}
   - component: {fileID: 907908535374652683}
   - component: {fileID: 3829608386823041486}
+  - component: {fileID: 608574582}
   m_Layer: 0
   m_Name: Player2Dash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4059239846100790049
 Transform:
   m_ObjectHideFlags: 0
@@ -318,6 +319,7 @@ Transform:
   - {fileID: 4059239847085239230}
   - {fileID: 4059239846154456533}
   - {fileID: 6405704490443674889}
+  - {fileID: 691806052793911562}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -499,10 +501,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 4059239846100790044}
-  Speed: 5
+  Speed: 4
   Gravity: -9.81
   GroundDistance: 0.1
-  DashDistance: 5
+  DashDistance: 2
   Ground:
     serializedVersion: 2
     m_Bits: 2048
@@ -523,19 +525,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   habilityType: 0
   hability: {fileID: 0}
-  CharacterControllerAct: {fileID: 3829608386823041486}
-  HabilityRadi: {fileID: 0}
+  characterControllerAct: {fileID: 0}
+  HabilityRadi: {fileID: 7820595294908312429}
   layerMaskOverLapOlles:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   CookHability: 0
   cCookHability: 0
   CoolDown: {fileID: 3369234520523048436}
   HabilityInCoolDown: 0
   typePlayer:
   - {fileID: 2599924836858875097, guid: c61b47098423eba4591e49d16a5254b1, type: 3}
-  - {fileID: 1217603213239586396, guid: cd873cd157d925446b9fec94d715ac58, type: 3}
-  - {fileID: 5545659600657215541, guid: 98e51dd33084a5d4d81fd030b2becafe, type: 3}
+  - {fileID: 2766449255149619230, guid: 082a02b41e9b87d45b928e49baa4916d, type: 3}
+  - {fileID: 9059341182103500877, guid: d5621fad4d5a34a4894708e50c3d8456, type: 3}
   - {fileID: 5364815210979393001, guid: c926c603661ef164293f21a8484a636a, type: 3}
   coolDownTimerHability: 25
   durationHabilityTime: 15
@@ -564,10 +566,23 @@ MonoBehaviour:
   habilityesController: {fileID: 907908535374652683}
   throwForce: 600
   attachedObject: {fileID: 0}
+  animator: {fileID: 0}
   portal: {fileID: 0}
   canMovePortals: 1
   canUseHability: 0
   activeSlot: {fileID: 0}
+--- !u!114 &608574582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059239846100790041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa021c9c8a216814583ce20e1b102ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4059239846154456530
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,3 +735,47 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &7820595294908312429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 691806052793911562}
+  - component: {fileID: 2321194958217699180}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &691806052793911562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7820595294908312429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.11, y: 3.11, z: 3.11}
+  m_Children: []
+  m_Father: {fileID: 4059239846100790049}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2321194958217699180
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7820595294908312429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

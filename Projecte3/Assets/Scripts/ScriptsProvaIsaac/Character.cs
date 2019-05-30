@@ -22,7 +22,7 @@ public class Character : MonoBehaviour
     private Transform _groundChecker;
     
 
-    void Start()
+    void Awake()
     {
         GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
 
