@@ -37,7 +37,6 @@ public class OrderGenerator : MonoBehaviour
             for (int i = 0; i < numIng; i++)
             {
                 rad = Random.Range(0.0f, 1.0f);
-              
                 // UI elements
                 GameObject m = null;
                 // item elements

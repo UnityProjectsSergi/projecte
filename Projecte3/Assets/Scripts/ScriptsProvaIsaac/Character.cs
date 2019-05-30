@@ -16,15 +16,17 @@ public class Character : MonoBehaviour
     public int playercontroller;
 
     private CharacterController _controller;
+    private CharacterControllerAct ccAct;
     private Vector3 _velocity;
     public bool _isGrounded = true;
     private Transform _groundChecker;
     
 
-    void Start()
+    void Awake()
     {
         GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
 
+        ccAct = GetComponent<CharacterControllerAct>();
         _controller = GetComponent<CharacterController>();
         _groundChecker = transform.GetChild(transform.childCount-1);
         playerInput = GetComponent<PlayerInput>();
@@ -39,10 +41,16 @@ public class Character : MonoBehaviour
             _velocity.y = 0f;
         
         Vector3 move = new Vector3(playerInput.LeftStick.Horizontal, 0, playerInput.LeftStick.Vertical);
+
         _controller.Move(move * Time.deltaTime * Speed);
 
         if (move != Vector3.zero)
+        {
+            ccAct.animator.SetTrigger("toMove");
             transform.forward = move;
+        }
+        else
+            ccAct.animator.SetTrigger("toIdle");
 
         if (playerInput.OBtn.Down)
         {// SoundManager.Instance.OneShotEventAttatchet(  , this.gameObject);
