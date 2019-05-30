@@ -41,6 +41,11 @@ public class GameManager : MonoBehaviour
                     caller.SetActive(false);
                 caller.GetComponent<HabilityesController>().habilityType = (HabilityType)j2c;
                 break;
+            case 3:
+                if (!j3)
+                    caller.SetActive(false);
+                caller.GetComponent<HabilityesController>().habilityType = (HabilityType)j3c;
+                break;
             default:
                 break;
         }
