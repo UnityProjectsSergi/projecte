@@ -77,6 +77,9 @@ public class StoveSlot : Slot
                                         Ingredient3Pool.Instance.ReturnToPool(itemPlayer.GetComponent<Ingredient3>());
                                         Ingredient3Pool.Instance.ReturnToPool(player.attachedObject.GetComponent<Ingredient3>());
                                     }
+                                    itemPlayer.transform.parent = null;
+                                    player.attachedObject = null;
+                                   
                                     hasPassIngToVial = false;
                                 }
                             }

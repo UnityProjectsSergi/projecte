@@ -84,7 +84,7 @@ public class PotUI : MonoBehaviour
     {
         if (currentSoltUi < listUIItems.Count)
         {
-            listUIItems[currentSoltUi].SetSpriteFromImgredient(item.GetComponent<Renderer>().material);
+            listUIItems[currentSoltUi].SetSpriteFromImgredient(item.GetComponent<Item>().spriteIng);
             currentSoltUi++;
             duration = item.duration;
         }

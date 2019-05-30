@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Scripts.ObjPooler;
+using UnityEngine.UI;
+
 public class Ingredient3ItemSlot : ItemSlot
 {
 
@@ -16,7 +18,7 @@ public class Ingredient3ItemSlot : ItemSlot
     {
         base.Catch(player);
         item = Ingredient3Pool.Instance.GetObjFromPool(transform);
-        
+        item.GetComponent<Ingredient3>().canvas.GetComponentInChildren<Image>().sprite = item.GetComponent<Item>().spriteIng;
      
     }
     // Update is called once per frame

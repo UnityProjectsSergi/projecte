@@ -9,6 +9,7 @@ using UnityEngine;
 public class Ingredient1:Item
     {
     public Canvas canvas;
+    
     public  void Start()
     {
         if (canvas == null)

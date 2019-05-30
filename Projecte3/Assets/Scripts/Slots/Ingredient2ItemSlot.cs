@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Scripts.ObjPooler;
+using UnityEngine.UI;
+
 public class Ingredient2ItemSlot : ItemSlot
 {
     public Transform pivot;
@@ -16,8 +18,8 @@ public class Ingredient2ItemSlot : ItemSlot
     {
         base.Catch(player);
         item = Ingredient2Pool.Instance.GetObjFromPool(pivot);
-        
-     
+        item.GetComponent<Ingredient2>().canvas.GetComponentInChildren<Image>().sprite = item.GetComponent<Item>().spriteIng;
+
     }
     // Update is called once per frame
     void Update()

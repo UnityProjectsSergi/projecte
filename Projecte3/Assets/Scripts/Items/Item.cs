@@ -19,6 +19,7 @@ public  class Item : MonoBehaviour
     public RigidbodyController rigidbodyController;
     public float duration;
     public float ingCookValue = 0;
+    public Sprite spriteIng;
 
     private bool inTable { get { return inTable; } set { } }
 
