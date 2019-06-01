@@ -11,13 +11,13 @@ public class Provasound : MonoBehaviour
     void Start()
     {
         eventInstance = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotIdle", this.gameObject);
-        
+        eventInstance.start();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A))
-            eventInstance.start();
+      //  if(Input.GetKeyDown(KeyCode.A))
+        
     }
 }
