@@ -33,7 +33,7 @@ public class OrderUI : MonoBehaviour
         timeout = false;
         totalTime = 0;
         SkackeGameObject = GetComponent<SkackeGameObject>();
-        CountDown = this.StartSafeCoroutine(Countdown());
+         this.StartCoroutine(Countdown());
     }
     public void generateItemsUI()
     {
@@ -117,13 +117,12 @@ public class OrderUI : MonoBehaviour
     }
     public void OnEnable()
     {
-        //TODO Resume Cooldown
-        Debug.Log("ssssm");
+
     }
     public void OnDisable()
     {
         //RIDO Pause Cooldown
-        Debug.Log("ssss");
+       
     }
     IEnumerator Countdown()
     {
@@ -132,14 +131,19 @@ public class OrderUI : MonoBehaviour
         {
             if (!timeout)
             {
-                timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
-                TimeOutColor = Color.Lerp(InitColorBarTimeOut, FinishColorBarTimeOut, totalTime / duration);
-                totalTime += Time.deltaTime;
-                if (timeOutValue <= 0.03f)
-                    timeout = true;
+                if (this.gameObject.activeSelf)
+                {
+                    timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
+                    TimeOutColor = Color.Lerp(InitColorBarTimeOut, FinishColorBarTimeOut, totalTime / duration);
+                    totalTime += Time.deltaTime;
+                    if (timeOutValue <= 0.03f)
+                        timeout = true;
+                }
+                yield return null;
             }
-            yield return null;
+           
         }
+        
     }
 
 }

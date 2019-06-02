@@ -26,7 +26,7 @@ public class ItemUIPot : MonoBehaviour
     {
         if (showWhenIsEmpty)
             image.color = defaultColor;
-        //image.sprite = DefaultSprite;
+            image.sprite = DefaultSprite;
     }
     // Update is called once per frame
 
