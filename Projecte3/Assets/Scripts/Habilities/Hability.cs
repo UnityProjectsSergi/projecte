@@ -70,6 +70,7 @@ public class Hability : MonoBehaviour
             if (animationTime < 0.01f)
             {
                 habilityHabailable = true;
+
                imageCooldown.enabled = false;
             }
 

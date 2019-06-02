@@ -33,7 +33,7 @@ public class PotUIStateCo : MonoBehaviour
     public float SpeedUpParticlesFireAmount;
     public ParticleSystem[] fires;
     public bool hasSpeedUp;
-    
+    FMOD.Studio.EventInstance Cook;
     public SafeCoroutine OK;
     public SafeCoroutine Alert;
     void Awake()
@@ -42,6 +42,11 @@ public class PotUIStateCo : MonoBehaviour
         PotUI = gameObject.transform.parent.GetComponent<PotUI>();
 
         ProgressBar.gameObject.SetActive(false);
+    }
+    public void Start()
+    {
+        Cook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotIdle", this.gameObject);
+      
     }
 
     public void SetFire()
@@ -87,7 +92,7 @@ public class PotUIStateCo : MonoBehaviour
         }
 
     }
-
+    
     void Update()
     {
         setSpeedUpParticles();
@@ -95,6 +100,7 @@ public class PotUIStateCo : MonoBehaviour
         {
             if (!IsPasedCooking)
             {
+                Cook.start();
                 if (speedUp)
                 {
                     journey += Time.deltaTime * SpeedUpReduccion;
@@ -154,6 +160,7 @@ public class PotUIStateCo : MonoBehaviour
             }
             else
             {
+                Cook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 ProgressBar.gameObject.SetActive(false);
                 CookedOk.gameObject.SetActive(false);
                 AlertBurn.gameObject.SetActive(false);
@@ -183,6 +190,7 @@ public class PotUIStateCo : MonoBehaviour
             if (Alert.IsPaused) Alert.Stop();
         OK = null;
         Alert = null;
+        speedUp = false;
     }
 
     public void StartCooking()

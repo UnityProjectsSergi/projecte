@@ -11,11 +11,11 @@ public class HabilityesController : MonoBehaviour
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
     public bool CookHability;
-  
+
     public bool cCookHability;
     public Image CoolDown;
     public bool HabilityInCoolDown;
-   
+
     MeshRenderer meshRenderer;
     public GameObject[] typePlayer;
     [Header("Habilitys params")]
@@ -30,22 +30,22 @@ public class HabilityesController : MonoBehaviour
         if (habilityType == HabilityType.LevitationItems)
         {
             ChangeMesh(0);
-            hability.set(durationHabilityTime, coolDownTimerHability, ActivateLevitation, DeactivateLevitation,CoolDown);
+            hability.set(durationHabilityTime, coolDownTimerHability, ActivateLevitation, DeactivateLevitation, CoolDown);
         }
         else if (habilityType == HabilityType.SpeedTheFire)
         {
             ChangeMesh(1);
-            hability.set(durationHabilityTime, coolDownTimerHability, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire,CoolDown);
+            hability.set(durationHabilityTime, coolDownTimerHability, ActivateHabilitySpeedFire, DeactivateHabilitySpeedFire, CoolDown);
         }
         else if (habilityType == HabilityType.Throw)
         {
             ChangeMesh(2);
-            hability.set(0, 0, null, null,CoolDown);
+            hability.set(0, 0, null, null, CoolDown);
         }
         else if (habilityType == HabilityType.Portal)
         {
             ChangeMesh(3);
-            hability.set(durationHabilityTime, coolDownTimerHability, ActiveHabilityPortal, DeactivateHabilityPortal,CoolDown);
+            hability.set(durationHabilityTime, coolDownTimerHability, ActiveHabilityPortal, DeactivateHabilityPortal, CoolDown);
         }
 
     }
@@ -53,8 +53,10 @@ public class HabilityesController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(speedUpCookHability && hability.usingHability )
-         DetectOlla();
+        if(speedUpCookHability)
+            DetectOlla();
+        
+            
     }
     public Collider[] ollesDetected;
 
@@ -62,7 +64,7 @@ public class HabilityesController : MonoBehaviour
     {
         characterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
         GetComponent<CharacterController>().enabled = false;
-        GetComponent<Character>().enabled = false;      
+        GetComponent<Character>().enabled = false;
     }
     public void DeactivateLevitation()
     {
@@ -70,26 +72,26 @@ public class HabilityesController : MonoBehaviour
         GetComponent<CharacterController>().enabled = true;
         GetComponent<Character>().enabled = true;
         HabilityInCoolDown = true;
-        
+
     }
-   
+
     public void ActivateHabilitySpeedFire()
-    { 
+    {
         HabilityRadi.gameObject.SetActive(true);
         speedUpCookHability = true;
-   
+
     }
     public void DeactivateHabilitySpeedFire()
     {
         speedUpCookHability = false;
         HabilityRadi.gameObject.SetActive(false);
         HabilityInCoolDown = true;
-      
+
     }
     public void ActiveHabilityPortal()
-    {      
+    {
         Debug.Log("Active Portals");
-        characterControllerAct.PutPortal();       
+        characterControllerAct.PutPortal();
     }
     public void DeactivateHabilityPortal()
     {
@@ -98,30 +100,39 @@ public class HabilityesController : MonoBehaviour
         HabilityInCoolDown = true;
     }
     public void DetectOlla()
-    {      
-        ollesDetected = Physics.OverlapSphere(transform.position,HabilityRadi.transform.localScale.x/2,layerMaskOverLapOlles);
+    {
+      
+            ollesDetected = Physics.OverlapSphere(transform.position, HabilityRadi.transform.localScale.x / 2, layerMaskOverLapOlles);
         if (ollesDetected.Length > 1)
 
-        for (int i = 0; i < ollesDetected.Length; i++)
-        {
+            for (int i = 0; i < ollesDetected.Length; i++)
+            {
                 StoveSlot stoveNotF = ollesDetected[i].GetComponent<StoveSlot>();
-                if(stoveNotF!=null && stoveNotF.item!=null && stoveNotF.item.itemType==ItemType.Pot)
+                if (stoveNotF != null && stoveNotF.item != null && stoveNotF.item.itemType == ItemType.Pot)
                 {
                     ItemPot pot = stoveNotF.item.GetComponent<ItemPot>();
-                    if(pot!=null)
+                    if (pot != null)
                     {
-                    if (pot.currentStatePot == ItemPotStateIngredients.Cooking || pot.currentStatePot == ItemPotStateIngredients.Alert)
-                    {
-                        pot.potUi.potUIState.speedUp = true;
-                    }
-                    else
-                    {
-                        pot.potUi.potUIState.speedUp = false;
-                        pot.potUi.potUIState.hasSpeedUp = false;
+                        if (hability.usingHability)
+                        {
+                            if (pot.currentStatePot == ItemPotStateIngredients.Cooking || pot.currentStatePot == ItemPotStateIngredients.Alert)
+                            {
+                                pot.potUi.potUIState.speedUp = true;
+                            }
+                            else
+                            {
+                                pot.potUi.potUIState.speedUp = false;
+                                pot.potUi.potUIState.hasSpeedUp = false;
+                            }
+                        }
+                        else
+                        {
+                            pot.potUi.potUIState.speedUp = false;
+                            pot.potUi.potUIState.hasSpeedUp = false;
+                        }
                     }
                 }
             }
-        }
     }
     public Collider[] hitColliders;
     public void ChangeMesh(int value)
@@ -133,11 +144,11 @@ public class HabilityesController : MonoBehaviour
         characterControllerAct.animator = go.GetComponent<Animator>();
     }
 
-    public bool speedUpCookHability { get; private set; }
+    public bool speedUpCookHability;
 
     private void OnDrawGizmos()
     {
-    //    Gizmos.DrawWireSphere(transform.position, HabilityRadi.transform.localScale.x/2);
+        //    Gizmos.DrawWireSphere(transform.position, HabilityRadi.transform.localScale.x/2);
     }
 
 }

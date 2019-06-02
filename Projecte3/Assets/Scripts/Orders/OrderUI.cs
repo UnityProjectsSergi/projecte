@@ -131,15 +131,17 @@ public class OrderUI : MonoBehaviour
         {
             if (!timeout)
             {
-                Debug.Log("ssssss");
-                timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
-                TimeOutColor = Color.Lerp(InitColorBarTimeOut, FinishColorBarTimeOut, totalTime / duration);
-                totalTime += Time.deltaTime;
-                if (timeOutValue <= 0.03f)
-                    timeout = true;
-                
+                if (this.gameObject.activeSelf)
+                {
+                    timeOutValue = Mathf.Lerp(1.0f, 0.0f, totalTime / duration);
+                    TimeOutColor = Color.Lerp(InitColorBarTimeOut, FinishColorBarTimeOut, totalTime / duration);
+                    totalTime += Time.deltaTime;
+                    if (timeOutValue <= 0.03f)
+                        timeout = true;
+                }
+                yield return null;
             }
-            yield return null;
+           
         }
         
     }
