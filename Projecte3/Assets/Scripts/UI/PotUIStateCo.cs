@@ -34,6 +34,7 @@ public class PotUIStateCo : MonoBehaviour
     public ParticleSystem[] fires;
     public bool hasSpeedUp;
     FMOD.Studio.EventInstance Cook;
+    FMOD.Studio.EventInstance SpeedUpCook;
     public SafeCoroutine OK;
     public SafeCoroutine Alert;
     void Awake()
@@ -46,7 +47,7 @@ public class PotUIStateCo : MonoBehaviour
     public void Start()
     {
         Cook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotIdle", this.gameObject);
-      
+        SpeedUpCook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotCooking", this.gameObject);
     }
 
     public void SetFire()
