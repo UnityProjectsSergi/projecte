@@ -20,17 +20,36 @@ public class Character : MonoBehaviour
     private Vector3 _velocity;
     public bool _isGrounded = true;
     private Transform _groundChecker;
+    private bool isAwake = false;
     
+
+    void Awake()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
+
+            ccAct = GetComponent<CharacterControllerAct>();
+            _controller = GetComponent<CharacterController>();
+            _groundChecker = transform.GetChild(transform.childCount - 1);
+            playerInput = GetComponent<PlayerInput>();
+            playerInput.SetControllerNumber(playercontroller, "PS4");
+            isAwake = true;
+        }
+    }
 
     void Start()
     {
-        GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
+        if (!isAwake)
+        {
+            GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
 
-        ccAct = GetComponent<CharacterControllerAct>();
-        _controller = GetComponent<CharacterController>();
-        _groundChecker = transform.GetChild(transform.childCount-1);
-        playerInput = GetComponent<PlayerInput>();
-        playerInput.SetControllerNumber(playercontroller, "PS4");
+            ccAct = GetComponent<CharacterControllerAct>();
+            _controller = GetComponent<CharacterController>();
+            _groundChecker = transform.GetChild(transform.childCount - 1);
+            playerInput = GetComponent<PlayerInput>();
+            playerInput.SetControllerNumber(playercontroller, "PS4");
+        }
     }
 
     void Update()
