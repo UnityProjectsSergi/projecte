@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114817757923053094}
-  - {fileID: 114666091006749124}
+  - {fileID: 114945527095248992}
+  - {fileID: 114220517473653046}
   EditorEvents:
   - {fileID: 114628279730386550}
   - {fileID: 114143580337884638}
@@ -23,11 +23,12 @@ MonoBehaviour:
   - {fileID: 114928504852603826}
   - {fileID: 114487804668113474}
   - {fileID: 114788813543643174}
+  - {fileID: 114147019623842530}
   MasterBanks:
-  - {fileID: 114666091006749124}
+  - {fileID: 114220517473653046}
   StringsBanks:
-  - {fileID: 114817757923053094}
-  stringsBankWriteTime: 636950722929985236
+  - {fileID: 114945527095248992}
+  stringsBankWriteTime: 636950930617428987
   cacheVersion: 3
 --- !u!114 &114143580337884638
 MonoBehaviour:
@@ -44,7 +45,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Wood/WoodIdle
   guid: 70f33dffa4227f4c8adc2528b0d9d0a9
   Banks:
-  - {fileID: 114666091006749124}
+  - {fileID: 114220517473653046}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -52,6 +53,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 90520
+--- !u!114 &114147019623842530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Effects/Alert
+  guid: ccf7fc726638454388531483a5bf895b
+  Banks:
+  - {fileID: 114220517473653046}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1102
 --- !u!114 &114149246939267456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +91,7 @@ MonoBehaviour:
   Path: event:/Sounds/Effects/MagicLevitation
   guid: 74999bb356deb749b0c6cb394fe13875
   Banks:
-  - {fileID: 114666091006749124}
+  - {fileID: 114220517473653046}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -75,6 +99,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8500
+--- !u!114 &114220517473653046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ab250\Desktop\Alchemia\Projectunity\Bo\FMODProject\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636950930617409134
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2684608
+  Exists: 1
 --- !u!114 &114487804668113474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,7 +134,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Wood/WoodCooking
   guid: b2692bfc20d2754dadeaa6cab093aeb2
   Banks:
-  - {fileID: 114666091006749124}
+  - {fileID: 114220517473653046}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -113,13 +157,13 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Pot/PotCooking
   guid: 2365b2bef7382b46a71c0e503cb8b1d8
   Banks:
-  - {fileID: 114666091006749124}
+  - {fileID: 114220517473653046}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 150
   Length: 10000
 --- !u!114 &114666091006749124
 MonoBehaviour:
@@ -156,7 +200,7 @@ MonoBehaviour:
   Path: event:/Sounds/Effects/CatchObject
   guid: bead7c604debd24da3406228954ea00b
   Banks:
-  - {fileID: 114666091006749124}
+  - {fileID: 114220517473653046}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -199,7 +243,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Crush/SOFTCRUSH
   guid: 87adb06e141d9c4497aa3fae94cbf161
   Banks:
-  - {fileID: 114666091006749124}
+  - {fileID: 114220517473653046}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -222,11 +266,30 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Pot/PotIdle
   guid: 9f70b9954f245046b71abbe9d42b55d8
   Banks:
-  - {fileID: 114666091006749124}
+  - {fileID: 114220517473653046}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 9
   Length: 7346
+--- !u!114 &114945527095248992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: .\..\FMODProject\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636950930617428987
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1162
+  Exists: 1
