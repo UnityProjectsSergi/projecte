@@ -28,8 +28,9 @@ public class GameManager : MonoBehaviour
 
     public void CheckPlayerActive(int controller, GameObject caller)
     {
-        switch(controller)
-        {
+        Debug.Log(controller);
+        switch (controller)
+        {           
             case 1:
                 if (!j1)
                     caller.SetActive(false);
