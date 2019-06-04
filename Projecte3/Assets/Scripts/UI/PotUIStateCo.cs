@@ -35,6 +35,8 @@ public class PotUIStateCo : MonoBehaviour
     public bool hasSpeedUp;
     FMOD.Studio.EventInstance Cook;
     FMOD.Studio.EventInstance SpeedUpCook;
+    FMOD.Studio.EventInstance OkCook;
+    FMOD.Studio.EventInstance AlertCook;
     public SafeCoroutine OK;
     public SafeCoroutine Alert;
     void Awake()
@@ -46,6 +48,7 @@ public class PotUIStateCo : MonoBehaviour
     }
     public void Start()
     {
+        
         Cook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotIdle", this.gameObject);
         SpeedUpCook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotCooking", this.gameObject);
     }
@@ -63,11 +66,11 @@ public class PotUIStateCo : MonoBehaviour
 
     public bool IsPasedCooking;
 
-    public bool IsPausedCooking { get; private set; }
+    public bool IsPausedCooking;
 
     public void setSpeedUpParticles()
     {
-
+        Debug.Log("se cooking");
         if (speedUp && !hasSpeedUp)
         {
             Debug.Log("speddUPoK");
@@ -81,7 +84,7 @@ public class PotUIStateCo : MonoBehaviour
             }
             hasSpeedUp = true;
         }
-        else if(!speedUp)
+        else if(!speedUp )
         {
             int i = 0;
             foreach (var item in fires)
@@ -93,14 +96,35 @@ public class PotUIStateCo : MonoBehaviour
         }
 
     }
-    
+    public void StopFire()
+    {
+        foreach (var item in fires)
+        {
+            var fire = item.emission;
+            fire.rateOverTimeMultiplier = 0;
+        }
+
+    }
+    public void StartFire()
+    {
+        int i = 0;
+        foreach (var item in fires)
+        {
+            var fire = item.emission;
+            fire.rateOverTimeMultiplier = nums[i];
+            i++;
+        }
+
+    }
     void Update()
     {
-        setSpeedUpParticles();
+       
         if (StartCookingBool)
         {
-            if (!IsPasedCooking)
+            if (!IsPausedCooking)
             {
+
+                setSpeedUpParticles();
                 Cook.start();
                 if (speedUp)
                 {
@@ -161,6 +185,7 @@ public class PotUIStateCo : MonoBehaviour
             }
             else
             {
+                StopFire();
                 Cook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 ProgressBar.gameObject.SetActive(false);
                 CookedOk.gameObject.SetActive(false);
@@ -169,12 +194,13 @@ public class PotUIStateCo : MonoBehaviour
         }
         else
         {
-
+            StopFire();
         }
     }
 
     internal void Reset()
     {
+
         journey = 0;
         isStarted = false;
         StartCookingBool = false;
@@ -249,6 +275,7 @@ public class PotUIStateCo : MonoBehaviour
         else
         {
             yield return new WaitForSeconds((speedUp) ? waitBefore / SpeedUpReduccion : waitBefore);
+            SoundManager.Instance.OneShotEventAttatchet("event:/Sounds/Cook/Pot/CookOk", this.gameObject);
             image.gameObject.SetActive(true);
             yield return new WaitForSeconds((speedUp) ? waitDuring / SpeedUpReduccion : waitDuring);
             image.gameObject.SetActive(false);
@@ -279,6 +306,7 @@ public class PotUIStateCo : MonoBehaviour
             PotUI.SetItemPotState(ItemPotStateIngredients.Alert);
             for (int i = 0; i < 3; i++)
             {
+                SoundManager.Instance.OneShotEventAttatchet("event:/Sounds/Cook/Pot/SoundAlert", this.gameObject);
                 image.gameObject.SetActive(true);
                 yield return new WaitForSeconds((speedUp) ? 0.5f / SpeedUpReduccion : 1F);
                 image.gameObject.SetActive(false);
@@ -286,6 +314,7 @@ public class PotUIStateCo : MonoBehaviour
             }
             for (int i = 0; i < 6; i++)
             {
+                SoundManager.Instance.OneShotEventAttatchet("event:/Sounds/Cook/Pot/SoundAlert", this.gameObject);
                 image.gameObject.SetActive(true);
                 yield return new WaitForSeconds((speedUp) ? 0.25f / SpeedUpReduccion : 0.5F);
                 image.gameObject.SetActive(false);
@@ -293,6 +322,7 @@ public class PotUIStateCo : MonoBehaviour
             }
             for (int i = 0; i < 12; i++)
             {
+                SoundManager.Instance.OneShotEventAttatchet("event:/Sounds/Cook/Pot/SoundAlert", this.gameObject);
                 image.gameObject.SetActive(true);
                 yield return new WaitForSeconds((speedUp) ? 0.1f / SpeedUpReduccion : 0.25F);
                 image.gameObject.SetActive(false);

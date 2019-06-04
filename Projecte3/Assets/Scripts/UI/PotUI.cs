@@ -49,7 +49,8 @@ public class PotUI : MonoBehaviour
                 if (hasStoveUnder)
                 {
                     if (enter)
-                    {
+                    {   
+                        
                         potUIState.ResumeCooking();
                         enter = false;
                     }

@@ -72,8 +72,12 @@ public class Character : MonoBehaviour
             ccAct.animator.SetTrigger("toIdle");
 
         if (playerInput.OBtn.Down)
-            _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
-
+        {
+            
+           Vector3 dash= Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
+            _velocity += dash;
+            
+        }
 
         _velocity.y += Gravity * Time.deltaTime;
 
@@ -82,6 +86,14 @@ public class Character : MonoBehaviour
         _velocity.z /= 1 + Drag.z * Time.deltaTime;
 
         _controller.Move(_velocity * Time.deltaTime);
+    }
+    public void OnControllerColliderHit( ControllerColliderHit hit)
+    {
+        var v3 = hit.transform.position - transform.position;
+        var angle = Vector3.Angle(v3, transform.forward);
+        Debug.Log(angle);
+        if (angle > 45.0 && angle < 135.0)
+            Debug.Log("Side hit");
     }
 
     public void SetVelocityY(float value)
