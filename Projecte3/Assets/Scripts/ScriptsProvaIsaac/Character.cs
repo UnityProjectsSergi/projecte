@@ -63,20 +63,27 @@ public class Character : MonoBehaviour
 
         _controller.Move(move * Time.deltaTime * Speed);
 
-        if (move != Vector3.zero)
+        if(move.magnitude >= 0.1)
         {
-            ccAct.animator.SetTrigger("toMove");
-            transform.forward = move;
+            ccAct.animator.SetBool("toMove", true);
+            ccAct.animator.SetBool("toIdle", false);
         }
         else
-            ccAct.animator.SetTrigger("toIdle");
+        {
+            ccAct.animator.SetBool("toMove", false);
+            ccAct.animator.SetBool("toIdle", true);
+        }
+
+        if (move != Vector3.zero)
+        {            
+            transform.forward = move;
+        }
+
 
         if (playerInput.OBtn.Down)
-        {
-            
+        {            
            Vector3 dash= Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
-            _velocity += dash;
-            
+            _velocity += dash;           
         }
 
         _velocity.y += Gravity * Time.deltaTime;
@@ -91,7 +98,7 @@ public class Character : MonoBehaviour
     {
         var v3 = hit.transform.position - transform.position;
         var angle = Vector3.Angle(v3, transform.forward);
-        Debug.Log(angle);
+
         if (angle > 45.0 && angle < 135.0)
             Debug.Log("Side hit");
     }
