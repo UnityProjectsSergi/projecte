@@ -100,9 +100,16 @@ public class CharacterControllerAct : MonoBehaviour
 
     void SlotAction()
     {
-        if (playerInput.triangleBtn.Up)
+        if (playerInput.triangleBtn.Down)
         {
-            animator.SetTrigger("MolerToIdle");
+            animator.SetBool("toMoler", true);
+            animator.SetBool("toMove", false);
+            animator.SetBool("toIdle", false);
+        }
+        else if (playerInput.triangleBtn.Up)
+        {
+            animator.SetBool("toIdle", true);
+            animator.SetBool("toMoler", false);
         }
 
         if (attachedObject == null)
@@ -113,8 +120,7 @@ public class CharacterControllerAct : MonoBehaviour
             if (playerInput.triangleBtn.Hold)
             {
                 Action();
-                animator.SetTrigger("toMoler");
-            }            
+            }          
         }
         else
         {
