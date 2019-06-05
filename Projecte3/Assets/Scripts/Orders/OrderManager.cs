@@ -84,6 +84,7 @@ class OrderManager:MonoBehaviour
                     Debug.Log("lists has same numbros of each ingredient");
                     order.isServed = true;
                     order._OrderServed(order);
+                    SoundManager.Instance.OneShotEventAttatchet("event:/Sounds/Effects/OrderGet", this.gameObject);
                     return true;
                 }
                 // checkeo si els ingredients de la ordre q em donen el tinc a una ordre de la llista 

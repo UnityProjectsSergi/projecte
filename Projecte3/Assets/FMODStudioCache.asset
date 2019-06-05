@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114640201250669044}
-  - {fileID: 114164032117444942}
+  - {fileID: 114029436184766566}
+  - {fileID: 114006176100221982}
   EditorEvents:
-  - {fileID: 114397773167339886}
-  - {fileID: 114805822386597902}
-  - {fileID: 114316619110838508}
-  - {fileID: 114823659341299918}
-  - {fileID: 114433476366501906}
-  - {fileID: 114911199374487328}
-  - {fileID: 114314682146116532}
-  - {fileID: 114619123035222770}
+  - {fileID: 114019959708293560}
+  - {fileID: 114191628622285208}
+  - {fileID: 114759048294397118}
+  - {fileID: 114202241601285682}
+  - {fileID: 114139440401958372}
+  - {fileID: 114299190789460036}
+  - {fileID: 114412444868783316}
+  - {fileID: 114267688895810902}
   MasterBanks:
-  - {fileID: 114164032117444942}
+  - {fileID: 114006176100221982}
   StringsBanks:
-  - {fileID: 114640201250669044}
-  stringsBankWriteTime: 636950776923426210
+  - {fileID: 114029436184766566}
+  stringsBankWriteTime: 636950761396591661
   cacheVersion: 3
---- !u!114 &114164032117444942
+--- !u!114 &114006176100221982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,100 +42,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: C:\Users\Usuario\Desktop\PDIII\Proj3BoBo\FMODProject\Build\Desktop\Master
+  Path: E:\Users\Sergi Regi\GoogleDriveTecnocampus\Grau Videojocs\Curs4\Projecte III\Projecte3\FMODProject\Build\Desktop\Master
     Bank.bank
-  lastModified: 636950776923406213
+  lastModified: 636950761396501759
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 2684608
   Exists: 1
---- !u!114 &114166905539583516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Usuario\Desktop\PDIII\Proj3BoBo\FMODProject\Build\Desktop\Master
-    Bank.bank
-  lastModified: 636950776923406213
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 2684608
-  Exists: 1
---- !u!114 &114251838119208410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Izzy\Desktop\Git\FMODProject\Build\Desktop\Master Bank.bank
-  lastModified: 636950859050555078
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 2684608
-  Exists: 0
---- !u!114 &114314682146116532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Sounds/Effects/CatchObject
-  guid: bead7c604debd24da3406228954ea00b
-  Banks:
-  - {fileID: 114164032117444942}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &114316619110838508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Sounds/Effects/MagicLevitation
-  guid: 74999bb356deb749b0c6cb394fe13875
-  Banks:
-  - {fileID: 114164032117444942}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 8500
---- !u!114 &114397773167339886
+--- !u!114 &114019959708293560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,7 +65,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Pot/PotCooking
   guid: 2365b2bef7382b46a71c0e503cb8b1d8
   Banks:
-  - {fileID: 114164032117444942}
+  - {fileID: 114006176100221982}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -158,7 +73,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 150
   Length: 10000
---- !u!114 &114433476366501906
+--- !u!114 &114029436184766566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: .\..\FMODProject\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636950761396591661
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1162
+  Exists: 1
+--- !u!114 &114139440401958372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +107,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Pot/PotIdle
   guid: 9f70b9954f245046b71abbe9d42b55d8
   Banks:
-  - {fileID: 114164032117444942}
+  - {fileID: 114006176100221982}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -181,49 +115,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 9
   Length: 7346
---- !u!114 &114619123035222770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Sounds/Effects/Alert
-  guid: ccf7fc726638454388531483a5bf895b
-  Banks:
-  - {fileID: 114164032117444942}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1102
---- !u!114 &114640201250669044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: .\..\FMODProject\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636950776923426210
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1162
-  Exists: 1
---- !u!114 &114805822386597902
+--- !u!114 &114191628622285208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,7 +130,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Wood/WoodIdle
   guid: 70f33dffa4227f4c8adc2528b0d9d0a9
   Banks:
-  - {fileID: 114164032117444942}
+  - {fileID: 114006176100221982}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -246,7 +138,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 90520
---- !u!114 &114823659341299918
+--- !u!114 &114202241601285682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,7 +153,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Crush/SOFTCRUSH
   guid: 87adb06e141d9c4497aa3fae94cbf161
   Banks:
-  - {fileID: 114164032117444942}
+  - {fileID: 114006176100221982}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -269,7 +161,53 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
---- !u!114 &114911199374487328
+--- !u!114 &114205674423602386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Cook/Pot/PotCooking
+  guid: 2365b2bef7382b46a71c0e503cb8b1d8
+  Banks:
+  - {fileID: 114299939430779128}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 150
+  Length: 10000
+--- !u!114 &114267688895810902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Effects/Alert
+  guid: ccf7fc726638454388531483a5bf895b
+  Banks:
+  - {fileID: 114006176100221982}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1102
+--- !u!114 &114299190789460036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,7 +222,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Wood/WoodCooking
   guid: b2692bfc20d2754dadeaa6cab093aeb2
   Banks:
-  - {fileID: 114164032117444942}
+  - {fileID: 114006176100221982}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -292,3 +230,249 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 90520
+--- !u!114 &114299939430779128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Users\Sergi Regi\GoogleDriveTecnocampus\Grau Videojocs\Curs4\Projecte III\Projecte3\FMODProject\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636950761396501759
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2684608
+  Exists: 1
+--- !u!114 &114306046282184422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Effects/Alert
+  guid: ccf7fc726638454388531483a5bf895b
+  Banks:
+  - {fileID: 114299939430779128}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1102
+--- !u!114 &114412444868783316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Effects/CatchObject
+  guid: bead7c604debd24da3406228954ea00b
+  Banks:
+  - {fileID: 114006176100221982}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &114542104414916726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Effects/MagicLevitation
+  guid: 74999bb356deb749b0c6cb394fe13875
+  Banks:
+  - {fileID: 114299939430779128}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8500
+--- !u!114 &114570726997140662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Cook/Wood/WoodIdle
+  guid: 70f33dffa4227f4c8adc2528b0d9d0a9
+  Banks:
+  - {fileID: 114299939430779128}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 90520
+--- !u!114 &114759048294397118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Effects/MagicLevitation
+  guid: 74999bb356deb749b0c6cb394fe13875
+  Banks:
+  - {fileID: 114006176100221982}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8500
+--- !u!114 &114834840878415668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Cook/Crush/SOFTCRUSH
+  guid: 87adb06e141d9c4497aa3fae94cbf161
+  Banks:
+  - {fileID: 114299939430779128}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &114858142203626310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Effects/CatchObject
+  guid: bead7c604debd24da3406228954ea00b
+  Banks:
+  - {fileID: 114299939430779128}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &114861885368198924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Cook/Pot/PotIdle
+  guid: 9f70b9954f245046b71abbe9d42b55d8
+  Banks:
+  - {fileID: 114299939430779128}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 7346
+--- !u!114 &114987442849645646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Sounds/Cook/Wood/WoodCooking
+  guid: b2692bfc20d2754dadeaa6cab093aeb2
+  Banks:
+  - {fileID: 114299939430779128}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 90520
+--- !u!114 &114992324298033194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: .\..\FMODProject\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636950761396591661
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1162
+  Exists: 1
