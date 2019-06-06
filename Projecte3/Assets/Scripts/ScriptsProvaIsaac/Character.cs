@@ -65,12 +65,22 @@ public class Character : MonoBehaviour
 
         if(move.magnitude >= 0.1)
         {
-            ccAct.animator.SetBool("toMove", true);
-            ccAct.animator.SetBool("toIdle", false);
+            Debug.Log("asdsadsa = " + ccAct.HasItem);
+            if (!ccAct.HasItem)
+            {
+                ccAct.animator.SetBool("toMove", true);
+                ccAct.animator.SetBool("toIdle", false);
+            }
+            else
+            {
+                ccAct.animator.SetBool("toLlevar", true);
+                ccAct.animator.SetBool("toIdle", false);
+            }
         }
         else
         {
             ccAct.animator.SetBool("toMove", false);
+            ccAct.animator.SetBool("toLlevar", false);
             ccAct.animator.SetBool("toIdle", true);
         }
 

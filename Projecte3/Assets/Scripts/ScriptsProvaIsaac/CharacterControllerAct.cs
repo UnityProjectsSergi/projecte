@@ -32,6 +32,7 @@ public class CharacterControllerAct : MonoBehaviour
     private float fovAngle = 5f;
 
     public Slot activeSlot;
+    public bool HasItem = false;
 
     private void Start()
     {
@@ -154,7 +155,8 @@ public class CharacterControllerAct : MonoBehaviour
             slot = hit.collider.GetComponent<Slot>();
             slot.Catch(this);
             animator.SetTrigger("toIng");
-        }    
+        }
+        HasItem = true;
     }
 
     public void LeaveObjOn()
@@ -168,11 +170,12 @@ public class CharacterControllerAct : MonoBehaviour
                 slot.LeaveObjOn(this);
             }
             else
-            {
+            {              
                 attachedObject.GetComponent<RigidbodyController>().ActiveRigidbody(true);
                 attachedObject.transform.parent = null;
                 attachedObject = null;
             }
+            HasItem = false;
         }
     }
 
