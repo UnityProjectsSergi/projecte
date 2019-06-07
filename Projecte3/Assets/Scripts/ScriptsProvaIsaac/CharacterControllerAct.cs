@@ -211,7 +211,6 @@ public class CharacterControllerAct : MonoBehaviour
 
     public void EndPortal()
     {
-        Debug.Log("asdsadsadsadasdsadsadasdsadasdsadsa");
         portalA.transform.position = new Vector3(200, 0, 0);
         portalB.transform.position = new Vector3(200, 0, 0);
         canMovePortals = true;
