@@ -83,8 +83,7 @@ public class CharacterControllerAct : MonoBehaviour
         else if(habilityesController.habilityType==HabilityType.SpeedTheFire)
         {
             if (playerInput.squareBtn.Down)
-            {
-                
+            {               
                 if(habilityesController.hability.habilityHabailable);
                 habilityesController.hability.UseHability();
             }
@@ -205,12 +204,14 @@ public class CharacterControllerAct : MonoBehaviour
                 movePortalA = !movePortalA;
                 pb.tpPoint.transform.position = transform.position;
                 canMovePortals = false;
+                habilityesController.hability.UseHability();
             }
         }
     }
 
     public void EndPortal()
     {
+        Debug.Log("asdsadsadsadasdsadsadasdsadasdsadsa");
         portalA.transform.position = new Vector3(200, 0, 0);
         portalB.transform.position = new Vector3(200, 0, 0);
         canMovePortals = true;

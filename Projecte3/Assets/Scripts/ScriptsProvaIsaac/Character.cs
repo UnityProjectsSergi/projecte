@@ -28,7 +28,6 @@ public class Character : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
-
             ccAct = GetComponent<CharacterControllerAct>();
             _controller = GetComponent<CharacterController>();
             _groundChecker = transform.GetChild(transform.childCount - 1);

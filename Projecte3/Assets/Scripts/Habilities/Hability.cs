@@ -45,7 +45,7 @@ public class Hability : MonoBehaviour
             usingHability = false;
             if (CancelHability != null)
             {
-                CancelHability();
+                CancelHability.Invoke();
                 StopCoroutine(stop);
                 CountDownAnimation(_coolDown);
             }
