@@ -11,6 +11,7 @@ public class CharacterControllerAct : MonoBehaviour
     PlayerInput playerInput;
     public LayerMask tablesLayerMask;
     public LayerMask itemsLayerMask;
+    public LayerMask portalLayerMask;
     public Transform raycastTransform;
     public HabilityesController habilityesController;
     public float throwForce = 600f;
@@ -32,6 +33,7 @@ public class CharacterControllerAct : MonoBehaviour
     private float fovAngle = 5f;
 
     public Slot activeSlot;
+    public bool HasItem = false;
 
     private void Start()
     {
@@ -81,8 +83,7 @@ public class CharacterControllerAct : MonoBehaviour
         else if(habilityesController.habilityType==HabilityType.SpeedTheFire)
         {
             if (playerInput.squareBtn.Down)
-            {
-                
+            {               
                 if(habilityesController.hability.habilityHabailable);
                 habilityesController.hability.UseHability();
             }
@@ -102,7 +103,8 @@ public class CharacterControllerAct : MonoBehaviour
     {
         if (playerInput.triangleBtn.Up)
         {
-            animator.SetTrigger("MolerToIdle");
+            animator.SetBool("toIdle", true);
+            animator.SetBool("toMoler", false);
         }
 
         if (attachedObject == null)
@@ -113,8 +115,7 @@ public class CharacterControllerAct : MonoBehaviour
             if (playerInput.triangleBtn.Hold)
             {
                 Action();
-                animator.SetTrigger("toMoler");
-            }            
+            }          
         }
         else
         {
@@ -133,7 +134,7 @@ public class CharacterControllerAct : MonoBehaviour
             item.transform.eulerAngles = Vector3.zero;
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
-            animator.SetTrigger("toIng");
+            HasItem = true;
         }
         else if(Physics.Raycast(raycastTransform.position, transform.forward + new Vector3(0, 0.5f, 0), out hit, 1, itemsLayerMask))
         {
@@ -141,20 +142,21 @@ public class CharacterControllerAct : MonoBehaviour
             item.transform.eulerAngles = Vector3.zero;
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
-            animator.SetTrigger("toIng");
+            HasItem = true;
         }
         else if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 1, tablesLayerMask))
         {          
             slot = hit.collider.GetComponent<Slot>();
             slot.Catch(this);
-            animator.SetTrigger("toIng");
-        }    
+        }
+        
     }
 
     public void LeaveObjOn()
     {
         if (attachedObject != null)
         {
+            animator.SetBool("toLlevar", false);
             RaycastHit hit;
             if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
             {
@@ -162,11 +164,12 @@ public class CharacterControllerAct : MonoBehaviour
                 slot.LeaveObjOn(this);
             }
             else
-            {
+            {              
                 attachedObject.GetComponent<RigidbodyController>().ActiveRigidbody(true);
                 attachedObject.transform.parent = null;
                 attachedObject = null;
             }
+            HasItem = false;
         }
     }
 
@@ -186,7 +189,7 @@ public class CharacterControllerAct : MonoBehaviour
         RaycastHit hit;
 
         Debug.Log("Can Move Portals: " + canMovePortals);
-        if (!Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1.6f, tablesLayerMask) && canMovePortals)
+        if (!Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1.6f, portalLayerMask) && canMovePortals)
         {
             Vector3 _portalPosition = new Vector3(transform.position.x + transform.forward.x, 1.5f, transform.position.z + transform.forward.z);
             if (movePortalA)
@@ -201,6 +204,7 @@ public class CharacterControllerAct : MonoBehaviour
                 movePortalA = !movePortalA;
                 pb.tpPoint.transform.position = transform.position;
                 canMovePortals = false;
+                habilityesController.hability.UseHability();
             }
         }
     }
@@ -229,6 +233,15 @@ public class CharacterControllerAct : MonoBehaviour
         {
             slot = hit.collider.GetComponent<Slot>();
             slot.Action(this);
+            if(slot.GetComponent<CuttingSlot>() != null)
+            {
+                if (playerInput.triangleBtn.Down)
+                {
+                    animator.SetBool("toMoler", true);
+                    animator.SetBool("toMove", false);
+                    animator.SetBool("toIdle", false);
+                }
+            }
         }
     }
 

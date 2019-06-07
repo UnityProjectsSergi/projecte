@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbecc8d243ef2da4eaaae4f7a81d1dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
+  renderer: {fileID: 6926654056559456981}
   item: {fileID: 0}
   positionObjOn: {fileID: 6926654056557162549}
   isActive: 0
@@ -151,11 +151,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6926654056557162549}
     m_Modifications:
-    - target: {fileID: 3446937634440613389, guid: 19896d832ebcd2a43a6908dc203b5405,
-        type: 3}
-      propertyPath: m_Name
-      value: baul_GAME
-      objectReference: {fileID: 0}
     - target: {fileID: 3446937634440843821, guid: 19896d832ebcd2a43a6908dc203b5405,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -210,6 +205,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446937634440613389, guid: 19896d832ebcd2a43a6908dc203b5405,
+        type: 3}
+      propertyPath: m_Name
+      value: baul_GAME
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19896d832ebcd2a43a6908dc203b5405, type: 3}

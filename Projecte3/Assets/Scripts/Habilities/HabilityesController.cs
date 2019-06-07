@@ -90,8 +90,7 @@ public class HabilityesController : MonoBehaviour
     }
     public void ActiveHabilityPortal()
     {
-        Debug.Log("Active Portals");
-        characterControllerAct.PutPortal();
+
     }
     public void DeactivateHabilityPortal()
     {
@@ -100,9 +99,8 @@ public class HabilityesController : MonoBehaviour
         HabilityInCoolDown = true;
     }
     public void DetectOlla()
-    {
-      
-            ollesDetected = Physics.OverlapSphere(transform.position, HabilityRadi.transform.localScale.x / 2, layerMaskOverLapOlles);
+    {      
+        ollesDetected = Physics.OverlapSphere(transform.position, HabilityRadi.transform.localScale.x / 2, layerMaskOverLapOlles);
         if (ollesDetected.Length > 1)
 
             for (int i = 0; i < ollesDetected.Length; i++)
@@ -142,13 +140,10 @@ public class HabilityesController : MonoBehaviour
         go.transform.position = transform.position;
         go.transform.parent = transform;
         characterControllerAct.animator = go.GetComponent<Animator>();
+
+        //Descomentar quan estiguin tots els pj animats
+        go.transform.position += new Vector3(0, -0.8f, 0);
     }
 
     public bool speedUpCookHability;
-
-    private void OnDrawGizmos()
-    {
-        //    Gizmos.DrawWireSphere(transform.position, HabilityRadi.transform.localScale.x/2);
-    }
-
 }

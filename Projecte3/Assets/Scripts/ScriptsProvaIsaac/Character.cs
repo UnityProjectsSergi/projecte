@@ -20,17 +20,35 @@ public class Character : MonoBehaviour
     private Vector3 _velocity;
     public bool _isGrounded = true;
     private Transform _groundChecker;
+    private bool isAwake = false;
     
+
+    void Awake()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
+            ccAct = GetComponent<CharacterControllerAct>();
+            _controller = GetComponent<CharacterController>();
+            _groundChecker = transform.GetChild(transform.childCount - 1);
+            playerInput = GetComponent<PlayerInput>();
+            playerInput.SetControllerNumber(playercontroller, "PS4");
+            isAwake = true;
+        }
+    }
 
     void Start()
     {
-        GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
+        if (!isAwake)
+        {
+            GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
 
-        ccAct = GetComponent<CharacterControllerAct>();
-        _controller = GetComponent<CharacterController>();
-        _groundChecker = transform.GetChild(transform.childCount-1);
-        playerInput = GetComponent<PlayerInput>();
-        playerInput.SetControllerNumber(playercontroller, "PS4");
+            ccAct = GetComponent<CharacterControllerAct>();
+            _controller = GetComponent<CharacterController>();
+            _groundChecker = transform.GetChild(transform.childCount - 1);
+            playerInput = GetComponent<PlayerInput>();
+            playerInput.SetControllerNumber(playercontroller, "PS4");
+        }
     }
 
     void Update()
@@ -44,17 +62,19 @@ public class Character : MonoBehaviour
 
         _controller.Move(move * Time.deltaTime * Speed);
 
+        AnimationControll(move);
+
         if (move != Vector3.zero)
-        {
-            ccAct.animator.SetTrigger("toMove");
+        {            
             transform.forward = move;
         }
-        else
-            ccAct.animator.SetTrigger("toIdle");
+
 
         if (playerInput.OBtn.Down)
-            _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
-
+        {            
+           Vector3 dash= Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
+            _velocity += dash;           
+        }
 
         _velocity.y += Gravity * Time.deltaTime;
 
@@ -63,6 +83,51 @@ public class Character : MonoBehaviour
         _velocity.z /= 1 + Drag.z * Time.deltaTime;
 
         _controller.Move(_velocity * Time.deltaTime);
+    }
+    public void OnControllerColliderHit( ControllerColliderHit hit)
+    {
+        var v3 = hit.transform.position - transform.position;
+        var angle = Vector3.Angle(v3, transform.forward);
+
+        if (angle > 45.0 && angle < 135.0)
+            Debug.Log("Side hit");
+    }
+
+    private void AnimationControll(Vector3 move)
+    {
+        if (move.magnitude >= 0.1)
+        {
+            Debug.Log("asdsadsa = " + ccAct.HasItem);
+            if (!ccAct.HasItem)
+            {
+                ccAct.animator.SetBool("toMove", true);
+                ccAct.animator.SetBool("toIdle", false);
+                ccAct.animator.SetBool("toLlevarIdle", false);
+            }
+            else
+            {
+                ccAct.animator.SetBool("toLlevar", true);
+                ccAct.animator.SetBool("toIdle", false);
+                ccAct.animator.SetBool("toLlevarIdle", false);
+            }
+        }
+        else
+        {
+            if (!ccAct.HasItem)
+            {
+                ccAct.animator.SetBool("toMove", false);
+                ccAct.animator.SetBool("toLlevar", false);
+                ccAct.animator.SetBool("toLlevarIdle", false);
+                ccAct.animator.SetBool("toIdle", true);
+            }
+            else
+            {
+                ccAct.animator.SetBool("toMove", false);
+                ccAct.animator.SetBool("toLlevar", false);
+                ccAct.animator.SetBool("toIdle", false);
+                ccAct.animator.SetBool("toLlevarIdle", true);
+            }
+        }
     }
 
     public void SetVelocityY(float value)

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Assets.Scripts.ObjPooler;
 using UnityEngine.UI;
+
 // Fogon
 public class StoveSlot : Slot
 {
