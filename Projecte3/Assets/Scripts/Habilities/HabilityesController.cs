@@ -143,7 +143,7 @@ public class HabilityesController : MonoBehaviour
         characterControllerAct.animator = go.GetComponent<Animator>();
 
         //Descomentar quan estiguin tots els pj animats
-        //go.transform.position += new Vector3(0, -0.8f, 0);
+        go.transform.position += new Vector3(0, -0.8f, 0);
     }
 
     public bool speedUpCookHability;

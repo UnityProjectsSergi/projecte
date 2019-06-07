@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-
 public abstract class Slot :MonoBehaviour
 {
     public Renderer renderer;
@@ -23,6 +22,7 @@ public abstract class Slot :MonoBehaviour
             item.transform.parent = player.attachTransform;
             item.transform.position = player.attachTransform.position;
             player.attachedObject = item.gameObject;
+            player.HasItem = true;
             item.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             hasObjectOn = false;
             item = null;
