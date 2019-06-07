@@ -63,26 +63,7 @@ public class Character : MonoBehaviour
 
         _controller.Move(move * Time.deltaTime * Speed);
 
-        if(move.magnitude >= 0.1)
-        {
-            Debug.Log("asdsadsa = " + ccAct.HasItem);
-            if (!ccAct.HasItem)
-            {
-                ccAct.animator.SetBool("toMove", true);
-                ccAct.animator.SetBool("toIdle", false);
-            }
-            else
-            {
-                ccAct.animator.SetBool("toLlevar", true);
-                ccAct.animator.SetBool("toIdle", false);
-            }
-        }
-        else
-        {
-            ccAct.animator.SetBool("toMove", false);
-            ccAct.animator.SetBool("toLlevar", false);
-            ccAct.animator.SetBool("toIdle", true);
-        }
+        AnimationControll(move);
 
         if (move != Vector3.zero)
         {            
@@ -111,6 +92,43 @@ public class Character : MonoBehaviour
 
         if (angle > 45.0 && angle < 135.0)
             Debug.Log("Side hit");
+    }
+
+    private void AnimationControll(Vector3 move)
+    {
+        if (move.magnitude >= 0.1)
+        {
+            Debug.Log("asdsadsa = " + ccAct.HasItem);
+            if (!ccAct.HasItem)
+            {
+                ccAct.animator.SetBool("toMove", true);
+                ccAct.animator.SetBool("toIdle", false);
+                ccAct.animator.SetBool("toLlevarIdle", false);
+            }
+            else
+            {
+                ccAct.animator.SetBool("toLlevar", true);
+                ccAct.animator.SetBool("toIdle", false);
+                ccAct.animator.SetBool("toLlevarIdle", false);
+            }
+        }
+        else
+        {
+            if (!ccAct.HasItem)
+            {
+                ccAct.animator.SetBool("toMove", false);
+                ccAct.animator.SetBool("toLlevar", false);
+                ccAct.animator.SetBool("toLlevarIdle", false);
+                ccAct.animator.SetBool("toIdle", true);
+            }
+            else
+            {
+                ccAct.animator.SetBool("toMove", false);
+                ccAct.animator.SetBool("toLlevar", false);
+                ccAct.animator.SetBool("toIdle", false);
+                ccAct.animator.SetBool("toLlevarIdle", true);
+            }
+        }
     }
 
     public void SetVelocityY(float value)
