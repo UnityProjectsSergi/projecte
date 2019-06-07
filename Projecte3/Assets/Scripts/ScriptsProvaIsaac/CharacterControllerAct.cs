@@ -101,13 +101,7 @@ public class CharacterControllerAct : MonoBehaviour
 
     void SlotAction()
     {
-        if (playerInput.triangleBtn.Down)
-        {
-            animator.SetBool("toMoler", true);
-            animator.SetBool("toMove", false);
-            animator.SetBool("toIdle", false);
-        }
-        else if (playerInput.triangleBtn.Up)
+        if (playerInput.triangleBtn.Up)
         {
             animator.SetBool("toIdle", true);
             animator.SetBool("toMoler", false);
@@ -140,7 +134,7 @@ public class CharacterControllerAct : MonoBehaviour
             item.transform.eulerAngles = Vector3.zero;
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
-            animator.SetTrigger("toIng");
+            HasItem = true;
         }
         else if(Physics.Raycast(raycastTransform.position, transform.forward + new Vector3(0, 0.5f, 0), out hit, 1, itemsLayerMask))
         {
@@ -148,21 +142,21 @@ public class CharacterControllerAct : MonoBehaviour
             item.transform.eulerAngles = Vector3.zero;
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
-            animator.SetTrigger("toIng");
+            HasItem = true;
         }
         else if (Physics.Raycast(raycastTransform.position, raycastTransform.forward, out hit, 1, tablesLayerMask))
         {          
             slot = hit.collider.GetComponent<Slot>();
             slot.Catch(this);
-            animator.SetTrigger("toIng");
         }
-        HasItem = true;
+        
     }
 
     public void LeaveObjOn()
     {
         if (attachedObject != null)
         {
+            animator.SetBool("toLlevar", false);
             RaycastHit hit;
             if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
             {
@@ -238,6 +232,15 @@ public class CharacterControllerAct : MonoBehaviour
         {
             slot = hit.collider.GetComponent<Slot>();
             slot.Action(this);
+            if(slot.GetComponent<CuttingSlot>() != null)
+            {
+                if (playerInput.triangleBtn.Down)
+                {
+                    animator.SetBool("toMoler", true);
+                    animator.SetBool("toMove", false);
+                    animator.SetBool("toIdle", false);
+                }
+            }
         }
     }
 
