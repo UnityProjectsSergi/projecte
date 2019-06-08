@@ -25205,6 +25205,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
+        type: 3}
+      propertyPath: typePlayer.Array.data[0]
+      value: 
+      objectReference: {fileID: 2599924836858875097, guid: c61b47098423eba4591e49d16a5254b1,
+        type: 3}
+    - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
+        type: 3}
+      propertyPath: typePlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 5097942136317455254, guid: 2dc4ba05c584d544d9c1963611b3b725,
+        type: 3}
+    - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
+        type: 3}
+      propertyPath: typePlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 5545659600657215541, guid: 98e51dd33084a5d4d81fd030b2becafe,
+        type: 3}
+    - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
+        type: 3}
+      propertyPath: typePlayer.Array.data[3]
+      value: 
+      objectReference: {fileID: 5364815210979393001, guid: c926c603661ef164293f21a8484a636a,
+        type: 3}
+    - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
+        type: 3}
+      propertyPath: coolDownTimerHability
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2046403930999699546, guid: 406e278c10005b44cb6df7d262104b2b,
+        type: 3}
+      propertyPath: durationHabilityTime
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406e278c10005b44cb6df7d262104b2b, type: 3}
 --- !u!4 &8531946394149389317 stripped
@@ -42767,12 +42801,22 @@ PrefabInstance:
     - target: {fileID: 8134083891003747916, guid: 15c3dc5b4f693f448b20858f04b419a0,
         type: 3}
       propertyPath: m_Padding.m_Left
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8134083891003747916, guid: 15c3dc5b4f693f448b20858f04b419a0,
         type: 3}
       propertyPath: m_Padding.m_Top
-      value: 5
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134083891003747916, guid: 15c3dc5b4f693f448b20858f04b419a0,
+        type: 3}
+      propertyPath: m_ChildAlignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134083891003747916, guid: 15c3dc5b4f693f448b20858f04b419a0,
+        type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 778549753314104291, guid: 15c3dc5b4f693f448b20858f04b419a0,
         type: 3}
