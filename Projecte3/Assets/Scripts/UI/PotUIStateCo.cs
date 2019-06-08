@@ -56,7 +56,6 @@ public class PotUIStateCo : MonoBehaviour
     public void SetFire()
     {
         fires = ItemPot.Fire.GetComponentsInChildren<ParticleSystem>();
-        Debug.Log(fires);
         for (int i = 0; i < fires.Length; i++)
         {
             nums[i] = fires[i].emission.rateOverTimeMultiplier;

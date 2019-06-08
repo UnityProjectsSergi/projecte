@@ -626,12 +626,12 @@ MonoBehaviour:
   CoolDown: {fileID: 971433796}
   HabilityInCoolDown: 0
   typePlayer:
-  - {fileID: 2599924836858875097, guid: c61b47098423eba4591e49d16a5254b1, type: 3}
-  - {fileID: 5097942136317455254, guid: 2dc4ba05c584d544d9c1963611b3b725, type: 3}
-  - {fileID: 5545659600657215541, guid: 98e51dd33084a5d4d81fd030b2becafe, type: 3}
-  - {fileID: 5364815210979393001, guid: c926c603661ef164293f21a8484a636a, type: 3}
-  coolDownTimerHability: 0
-  durationHabilityTime: 0
+  - {fileID: 7428933371453304712, guid: 750dec3893cdc594ea79c5a1faa143b3, type: 3}
+  - {fileID: 5947412937767570151, guid: 4a9d71b995c63a1478cecb94c0a02042, type: 3}
+  - {fileID: 2013507853070076163, guid: ef8c48d881213914b8cdb20febf435b7, type: 3}
+  - {fileID: 8434215457628665786, guid: 68cdaa63d1e502144a6bbddef358764f, type: 3}
+  coolDownTimerHability: 15
+  durationHabilityTime: 15
   ollesDetected: []
   hitColliders: []
   speedUpCookHability: 0
@@ -663,6 +663,7 @@ MonoBehaviour:
   canMovePortals: 1
   canUseHability: 0
   activeSlot: {fileID: 0}
+  HasItem: 0
 --- !u!114 &6616424973089696037
 MonoBehaviour:
   m_ObjectHideFlags: 0

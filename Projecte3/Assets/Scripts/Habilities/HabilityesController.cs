@@ -90,8 +90,7 @@ public class HabilityesController : MonoBehaviour
     }
     public void ActiveHabilityPortal()
     {
-        Debug.Log("Active Portals");
-        characterControllerAct.PutPortal();
+
     }
     public void DeactivateHabilityPortal()
     {
