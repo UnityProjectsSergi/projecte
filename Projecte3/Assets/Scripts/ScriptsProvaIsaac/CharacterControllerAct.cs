@@ -11,6 +11,7 @@ public class CharacterControllerAct : MonoBehaviour
     PlayerInput playerInput;
     public LayerMask tablesLayerMask;
     public LayerMask itemsLayerMask;
+    public LayerMask portalLayerMask;
     public Transform raycastTransform;
     public HabilityesController habilityesController;
     public float throwForce = 600f;
@@ -82,8 +83,7 @@ public class CharacterControllerAct : MonoBehaviour
         else if(habilityesController.habilityType==HabilityType.SpeedTheFire)
         {
             if (playerInput.squareBtn.Down)
-            {
-                
+            {               
                 if(habilityesController.hability.habilityHabailable);
                 habilityesController.hability.UseHability();
             }
@@ -189,7 +189,7 @@ public class CharacterControllerAct : MonoBehaviour
         RaycastHit hit;
 
         Debug.Log("Can Move Portals: " + canMovePortals);
-        if (!Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1.6f, tablesLayerMask) && canMovePortals)
+        if (!Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1.6f, portalLayerMask) && canMovePortals)
         {
             Vector3 _portalPosition = new Vector3(transform.position.x + transform.forward.x, 1.5f, transform.position.z + transform.forward.z);
             if (movePortalA)
@@ -204,6 +204,7 @@ public class CharacterControllerAct : MonoBehaviour
                 movePortalA = !movePortalA;
                 pb.tpPoint.transform.position = transform.position;
                 canMovePortals = false;
+                habilityesController.hability.UseHability();
             }
         }
     }

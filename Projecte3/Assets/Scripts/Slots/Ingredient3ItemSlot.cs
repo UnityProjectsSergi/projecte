@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Ingredient3ItemSlot : ItemSlot
 {
-
+    public Transform pivot;
     // Use this for initialization
     public override void Start()
     {
-        item = Ingredient3Pool.Instance.GetObjFromPool(transform);
-     
+        item = Ingredient3Pool.Instance.GetObjFromPool(pivot);
+
         base.Start();
     }
 
