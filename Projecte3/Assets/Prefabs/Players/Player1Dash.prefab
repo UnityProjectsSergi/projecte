@@ -627,7 +627,7 @@ MonoBehaviour:
   HabilityInCoolDown: 0
   typePlayer:
   - {fileID: 7428933371453304712, guid: 750dec3893cdc594ea79c5a1faa143b3, type: 3}
-  - {fileID: 5947412937767570151, guid: 4a9d71b995c63a1478cecb94c0a02042, type: 3}
+  - {fileID: 2680817329897890801, guid: 82446f27516da1e44ab7563048d9db7d, type: 3}
   - {fileID: 2013507853070076163, guid: ef8c48d881213914b8cdb20febf435b7, type: 3}
   - {fileID: 8434215457628665786, guid: 68cdaa63d1e502144a6bbddef358764f, type: 3}
   coolDownTimerHability: 15
@@ -654,6 +654,9 @@ MonoBehaviour:
   itemsLayerMask:
     serializedVersion: 2
     m_Bits: 1024
+  portalLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   raycastTransform: {fileID: 4059239846154456533}
   habilityesController: {fileID: 2046403930999699546}
   throwForce: 600
