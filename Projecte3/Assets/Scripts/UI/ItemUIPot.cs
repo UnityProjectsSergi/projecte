@@ -16,7 +16,17 @@ public class ItemUIPot : MonoBehaviour
         image = GetComponent<Image>();
         GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
     }
+    private void Update()
+    {
+        RotateTOCam();
+    }
+    public void RotateTOCam()
+    {
+        Vector3 dir = Camera.main.transform.position - transform.position;
+        dir.x = 0;
     
+        transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+    }
     public void setDefaultColor()
     {
 

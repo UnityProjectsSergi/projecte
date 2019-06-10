@@ -38,6 +38,7 @@ public class PotUI : MonoBehaviour
     }
     void Update()
     {
+        RotateTOCam();
         if (currentSoltUi != oldSlot)
         {
             potUIState.totalduration += duration;        
@@ -73,7 +74,7 @@ public class PotUI : MonoBehaviour
             }
         }
         oldSlot = currentSoltUi;
-        RotateTOCam();
+        
     }
 
     public void SetItemPotState(ItemPotStateIngredients state)
@@ -106,6 +107,7 @@ public class PotUI : MonoBehaviour
     {
         Vector3 dir = Camera.main.transform.position - transform.position;
         dir.x = 0;
+        
         transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
     }
 }
