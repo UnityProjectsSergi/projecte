@@ -72,6 +72,7 @@ public class PotUIStateCo : MonoBehaviour
         Debug.Log("se cooking");
         if (speedUp && !hasSpeedUp)
         {
+            SpeedUpCook.start();
             Debug.Log("speddUPoK");
             int i = 0;
             foreach (var item in fires)
@@ -85,6 +86,7 @@ public class PotUIStateCo : MonoBehaviour
         }
         else if(!speedUp )
         {
+            SpeedUpCook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             int i = 0;
             foreach (var item in fires)
             {
