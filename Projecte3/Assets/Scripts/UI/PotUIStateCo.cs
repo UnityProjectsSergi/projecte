@@ -49,8 +49,8 @@ public class PotUIStateCo : MonoBehaviour
     public void Start()
     {
         
-        Cook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotIdle", this.gameObject);
-        SpeedUpCook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotCooking", this.gameObject);
+        //Cook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotIdle", this.gameObject);
+        //SpeedUpCook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotCooking", this.gameObject);
     }
 
     public void SetFire()
@@ -72,7 +72,7 @@ public class PotUIStateCo : MonoBehaviour
         Debug.Log("se cooking");
         if (speedUp && !hasSpeedUp)
         {
-            SpeedUpCook.start();
+         //   SpeedUpCook.start();
             Debug.Log("speddUPoK");
             int i = 0;
             foreach (var item in fires)
@@ -86,7 +86,7 @@ public class PotUIStateCo : MonoBehaviour
         }
         else if(!speedUp )
         {
-            SpeedUpCook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+           // SpeedUpCook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             int i = 0;
             foreach (var item in fires)
             {
@@ -126,7 +126,7 @@ public class PotUIStateCo : MonoBehaviour
             {
 
                 setSpeedUpParticles();
-                Cook.start();
+             //   Cook.start();
                 if (speedUp)
                 {
                     journey += Time.deltaTime * SpeedUpReduccion;
@@ -190,7 +190,7 @@ public class PotUIStateCo : MonoBehaviour
             else
             {
                 StopFire();
-                Cook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+               // Cook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 ProgressBarGO.gameObject.SetActive(false);
                 CookedOk.gameObject.SetActive(false);
                 AlertBurn.gameObject.SetActive(false);

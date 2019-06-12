@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114767929706888758}
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   EditorEvents:
   - {fileID: 114747581173360114}
   - {fileID: 114005903991753940}
@@ -27,11 +27,12 @@ MonoBehaviour:
   - {fileID: 114990831959193358}
   - {fileID: 114885272305282948}
   - {fileID: 114904387263114510}
+  - {fileID: 114550568649070868}
   MasterBanks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   StringsBanks:
   - {fileID: 114767929706888758}
-  stringsBankWriteTime: 636959375825762032
+  stringsBankWriteTime: 636958661485993910
   cacheVersion: 3
 --- !u!114 &114005903991753940
 MonoBehaviour:
@@ -48,13 +49,13 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Pot/PotCooking
   guid: 2365b2bef7382b46a71c0e503cb8b1d8
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 45
   Length: 10000
 --- !u!114 &114071894226219742
 MonoBehaviour:
@@ -71,7 +72,7 @@ MonoBehaviour:
   Path: event:/Sounds/Effects/MagicLevitation
   guid: 74999bb356deb749b0c6cb394fe13875
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -113,35 +114,15 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Pot/PotIdle
   guid: 9f70b9954f245046b71abbe9d42b55d8
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 45
   Length: 7346
---- !u!114 &114596158452665302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Usuario\Desktop\PDIII\Proj3BoBo\FMODProject\Build\Desktop\Master
-    Bank.bank
-  lastModified: 636959375825732044
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 2948608
-  Exists: 1
---- !u!114 &114604725790913370
+--- !u!114 &114550568649070868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +137,7 @@ MonoBehaviour:
   Path: event:/Music/Ambient/Ambient
   guid: 8933932005651d4f9b2b667914ffd582
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -164,6 +145,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 16993
+--- !u!114 &114596158452665302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Usuario\Desktop\PDIII\Proj3BoBo\FMODProject\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636953322743518577
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2737280
+  Exists: 1
 --- !u!114 &114607680878142488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Wood/WoodIdle
   guid: 70f33dffa4227f4c8adc2528b0d9d0a9
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -202,7 +203,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Crush/SOFTCRUSH
   guid: 87adb06e141d9c4497aa3fae94cbf161
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -245,14 +246,34 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Pot/SoundAlert
   guid: 00753bd5db274645bc501e7d2dd602ff
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 45
   Length: 500
+--- !u!114 &114749248491808288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Users\Sergi Regi\GoogleDriveTecnocampus\Grau Videojocs\Curs4\Projecte III\Projecte3\FMODProject\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636958661485903972
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2948608
+  Exists: 1
 --- !u!114 &114767929706888758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: .\..\FMODProject\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636959375825762032
+  lastModified: 636958661485993910
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -287,13 +308,13 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Pot/CookOK
   guid: 7ba36b8ce34f804d9b79abd97703ba53
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 45
   Length: 4385
 --- !u!114 &114885272305282948
 MonoBehaviour:
@@ -310,7 +331,7 @@ MonoBehaviour:
   Path: event:/Sounds/Effects/OrderGet
   guid: ca1a307a378f0d4e82e131d6cf971c57
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -333,7 +354,7 @@ MonoBehaviour:
   Path: event:/Sounds/CharactersMovement/Dash
   guid: d8201c12822cf04a99e4aa8f71475f9b
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -356,7 +377,7 @@ MonoBehaviour:
   Path: event:/Sounds/Cook/Wood/WoodCooking
   guid: b2692bfc20d2754dadeaa6cab093aeb2
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -399,7 +420,7 @@ MonoBehaviour:
   Path: event:/Sounds/Effects/CatchObject
   guid: bead7c604debd24da3406228954ea00b
   Banks:
-  - {fileID: 114596158452665302}
+  - {fileID: 114749248491808288}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
