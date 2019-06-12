@@ -5,7 +5,7 @@ using UnityEngine;
 //using FMODUnity;
 public class SoundManager : MonoBehaviour
 {
-    
+    public FMOD.Studio.EventInstance Music;
     private static SoundManager _instance;
     public static SoundManager Instance { get { return _instance; } private set { } }
     public string FireEvent;
@@ -26,7 +26,8 @@ public class SoundManager : MonoBehaviour
     //called before the first frame update
     void Start()
     {
-        
+        Music = CreateEventInstaceAttached("event:/Music/Ambient/Ambient", this.gameObject);
+        Music.start();
     }
 
     // Update is called once per frame

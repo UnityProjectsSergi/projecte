@@ -70,6 +70,9 @@
         <relationship name="modules">
             <destination>{27ce85f8-9040-41ec-b840-0297760daa62}</destination>
         </relationship>
+        <relationship name="markers">
+            <destination>{6aa84af2-1686-40dc-9acc-8715900807e1}</destination>
+        </relationship>
     </object>
     <object class="EventMixerMaster" id="{850a88fa-3c32-4180-809b-86d7ec0c4b59}">
         <relationship name="effectChain">
@@ -101,7 +104,7 @@
             <value>Audio 1</value>
         </property>
         <relationship name="modulators">
-            <destination>{4ed7fe75-39e1-49e2-8f77-bd020f4f68cc}</destination>
+            <destination>{1e4e7a6f-034e-4194-bfc9-eb9ecd01cf81}</destination>
         </relationship>
         <relationship name="effectChain">
             <destination>{35b3450f-9275-40c6-b612-3a1789f4371a}</destination>
@@ -113,6 +116,20 @@
             <destination>{850a88fa-3c32-4180-809b-86d7ec0c4b59}</destination>
         </relationship>
     </object>
+    <object class="LoopRegion" id="{6aa84af2-1686-40dc-9acc-8715900807e1}">
+        <property name="position">
+            <value>0</value>
+        </property>
+        <property name="length">
+            <value>7.3469387755102042</value>
+        </property>
+        <relationship name="timeline">
+            <destination>{b08d33fc-68ea-4066-bb58-b6615ac6e558}</destination>
+        </relationship>
+        <relationship name="markerTrack">
+            <destination>{b01e2f3a-ea5c-4f67-9735-4394a3022f29}</destination>
+        </relationship>
+    </object>
     <object class="MixerBusEffectChain" id="{8541f718-a5e2-4759-8688-79154b6d56ae}">
         <relationship name="effects">
             <destination>{e0428240-9907-4b75-bf5c-d9093d62df10}</destination>
@@ -121,7 +138,7 @@
     </object>
     <object class="MixerBusPanner" id="{3ddc98e1-f414-4553-b4aa-24671cf54e26}"/>
     <object class="MixerBusFader" id="{7d222ef5-e25a-47e2-acba-3fad4eb3de1e}"/>
-    <object class="ADSRModulator" id="{4ed7fe75-39e1-49e2-8f77-bd020f4f68cc}">
+    <object class="ADSRModulator" id="{1e4e7a6f-034e-4194-bfc9-eb9ecd01cf81}">
         <property name="nameOfPropertyBeingModulated">
             <value>volume</value>
         </property>
@@ -136,6 +153,13 @@
     </object>
     <object class="MixerBusPanner" id="{1c1a78ee-4f25-4787-9ca8-520d0472ac4f}"/>
     <object class="MixerBusFader" id="{e0428240-9907-4b75-bf5c-d9093d62df10}"/>
-    <object class="SpatialiserEffect" id="{f7c10f10-713c-4fa7-adcf-b413e5cd2b97}"/>
+    <object class="SpatialiserEffect" id="{f7c10f10-713c-4fa7-adcf-b413e5cd2b97}">
+        <property name="distanceRolloffType">
+            <value>1</value>
+        </property>
+        <property name="maximumDistance">
+            <value>45</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{6caae71f-81d1-4c59-9ad5-43a394d8ebf3}"/>
 </objects>
