@@ -7,7 +7,7 @@ using Edelweiss.Coroutine;
 public class PotUIStateCo : MonoBehaviour
 {
     public float progresSpeed = 1;
-    public Image ProgressBar;
+    public Image ProgressBar,ProgressBarGO;
     public Image AlertBurn;
     public Image BurnAfterFire;
     public Image Fire;
@@ -44,7 +44,7 @@ public class PotUIStateCo : MonoBehaviour
         ItemPot = gameObject.transform.parent.parent.GetComponent<ItemPot>();
         PotUI = gameObject.transform.parent.GetComponent<PotUI>();
 
-        ProgressBar.gameObject.SetActive(false);
+        ProgressBarGO.gameObject.SetActive(false);
     }
     public void Start()
     {
@@ -72,6 +72,7 @@ public class PotUIStateCo : MonoBehaviour
         Debug.Log("se cooking");
         if (speedUp && !hasSpeedUp)
         {
+            SpeedUpCook.start();
             Debug.Log("speddUPoK");
             int i = 0;
             foreach (var item in fires)
@@ -85,6 +86,7 @@ public class PotUIStateCo : MonoBehaviour
         }
         else if(!speedUp )
         {
+            SpeedUpCook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             int i = 0;
             foreach (var item in fires)
             {
@@ -135,12 +137,14 @@ public class PotUIStateCo : MonoBehaviour
                 }
                 if (journey < totalduration + 0.1f)
                 {
+                    ProgressBarGO.gameObject.SetActive(true);
                     ProgressBar.gameObject.SetActive(true);
                     percentCook = Mathf.Clamp01(journey / totalduration);
                     ProgressBar.fillAmount = percentCook;
                     if (ProgressBar.fillAmount >= 0.999f)
                     {
                         ProgressBar.gameObject.SetActive(false);
+                        ProgressBarGO.gameObject.SetActive(false);
                         PotUI.SetItemPotState(ItemPotStateIngredients.CookedDone);
                         // StartCoroutine(ShowImageOK(timeBetweenCookDoneAndShowOK, timeShowingOK, 0.1f, CookedOk));
                         OK = this.StartSafeCoroutine(ShowImageOK(timeBetweenCookDoneAndShowOK, timeShowingOK, 0.1f, CookedOk));
@@ -151,6 +155,7 @@ public class PotUIStateCo : MonoBehaviour
                     if (OK.HasFinished)
                     {
                         ProgressBar.gameObject.SetActive(false);
+                        ProgressBarGO.gameObject.SetActive(false);
                         Alert = this.StartSafeCoroutine(ShowImageAlert(timeBetweenShowOkAndAlert, 0.1f, AlertBurn));
                         OK = null;
                     }
@@ -186,7 +191,7 @@ public class PotUIStateCo : MonoBehaviour
             {
                 StopFire();
                 Cook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                ProgressBar.gameObject.SetActive(false);
+                ProgressBarGO.gameObject.SetActive(false);
                 CookedOk.gameObject.SetActive(false);
                 AlertBurn.gameObject.SetActive(false);
             }
@@ -199,7 +204,7 @@ public class PotUIStateCo : MonoBehaviour
 
     internal void Reset()
     {
-
+        ProgressBarGO.gameObject.SetActive(false);
         journey = 0;
         isStarted = false;
         StartCookingBool = false;

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 [System.Serializable]
 public class Ingredient3 : Item
 {
@@ -12,6 +14,7 @@ public class Ingredient3 : Item
             canvas = GetComponentInChildren<Canvas>();
         if (rigidbodyController == null)
             rigidbodyController = GetComponent<RigidbodyController>();
+        canvas.GetComponentInChildren<Image>().sprite = spriteIng;
         duration = 5f;
         nameO = "Ing2";
         itemType = ItemType.Ing;
