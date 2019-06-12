@@ -31,7 +31,7 @@ MonoBehaviour:
   - {fileID: 114596158452665302}
   StringsBanks:
   - {fileID: 114767929706888758}
-  stringsBankWriteTime: 636953322743548555
+  stringsBankWriteTime: 636959375825762032
   cacheVersion: 3
 --- !u!114 &114005903991753940
 MonoBehaviour:
@@ -135,12 +135,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Usuario\Desktop\PDIII\Proj3BoBo\FMODProject\Build\Desktop\Master
     Bank.bank
-  lastModified: 636953322743518577
+  lastModified: 636959375825732044
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2737280
+    Value: 2948608
   Exists: 1
+--- !u!114 &114604725790913370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Ambient/Ambient
+  guid: 8933932005651d4f9b2b667914ffd582
+  Banks:
+  - {fileID: 114596158452665302}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16993
 --- !u!114 &114607680878142488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,11 +266,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: .\..\FMODProject\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636953322743548555
+  lastModified: 636959375825762032
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1320
+    Value: 1384
   Exists: 1
 --- !u!114 &114811818661373108
 MonoBehaviour:
