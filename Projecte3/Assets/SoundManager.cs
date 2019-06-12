@@ -26,8 +26,8 @@ public class SoundManager : MonoBehaviour
     //called before the first frame update
     void Start()
     {
-        Music = CreateEventInstaceAttached("event:/Music/Ambient/Ambient", this.gameObject);
-        Music.start();
+        //Music = CreateEventInstaceAttached("event:/Music/Ambient/Ambient", this.gameObject);
+        //Music.start();
     }
 
     // Update is called once per frame
