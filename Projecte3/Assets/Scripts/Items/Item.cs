@@ -33,7 +33,7 @@ public  class Item : MonoBehaviour
         rigidbodyController.ActiveRigidbody(false);
         transform.parent = player.attachTransform;
         transform.position = player.attachTransform.position;
-        player.attachedObject = gameObject;    
+        player.attachedObject = gameObject;
     }
 
     public override bool Equals(object other)
