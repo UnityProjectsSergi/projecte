@@ -21,6 +21,8 @@ public class HabilityesController : MonoBehaviour
     [Header("Habilitys params")]
     public float coolDownTimerHability;
     public float durationHabilityTime;
+    public FMOD.Studio.EventInstance Levitation;
+
     void Start()
     {
         characterControllerAct = GetComponent<CharacterControllerAct>();
@@ -29,6 +31,7 @@ public class HabilityesController : MonoBehaviour
         hability = gameObject.AddComponent<Hability>();
         if (habilityType == HabilityType.LevitationItems)
         {
+            Levitation = SoundManager.Instance.CreateEventInstaceAttached("event:/EFECTOS/MAGIA_LEVITACIÓN", this.gameObject);
             ChangeMesh(0);
             hability.set(durationHabilityTime, coolDownTimerHability, ActivateLevitation, DeactivateLevitation, CoolDown);
         }
@@ -48,6 +51,7 @@ public class HabilityesController : MonoBehaviour
             hability.set(durationHabilityTime, coolDownTimerHability, ActiveHabilityPortal, DeactivateHabilityPortal, CoolDown);
         }
 
+
     }
 
     // Update is called once per frame
@@ -62,12 +66,14 @@ public class HabilityesController : MonoBehaviour
 
     public void ActivateLevitation()
     {
+        Levitation.start();
         characterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
         GetComponent<CharacterController>().enabled = false;
         GetComponent<Character>().enabled = false;
     }
     public void DeactivateLevitation()
     {
+        Levitation.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         characterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(false, 0, null);
         GetComponent<CharacterController>().enabled = true;
         GetComponent<Character>().enabled = true;

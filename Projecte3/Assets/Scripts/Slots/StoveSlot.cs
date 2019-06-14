@@ -126,6 +126,7 @@ public class StoveSlot : Slot
     {
         if (player.attachedObject == null)
         {
+          
             base.Catch(player);
         }
     }

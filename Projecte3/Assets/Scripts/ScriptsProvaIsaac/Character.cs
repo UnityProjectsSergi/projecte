@@ -71,7 +71,8 @@ public class Character : MonoBehaviour
 
 
         if (playerInput.OBtn.Down)
-        {            
+        {
+            SoundManager.Instance.OneShotEvent("event:/MOVIMIENTO PERSONAJE/DASH", transform.position);
            Vector3 dash= Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
             _velocity += dash;           
         }

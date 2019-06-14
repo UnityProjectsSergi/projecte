@@ -17,6 +17,7 @@ public class RespawnCollider : MonoBehaviour
         if (other.gameObject.GetComponent<Character>())
         {
             other.gameObject.SetActive(false);
+            SoundManager.Instance.OneShotEvent("event:/EFECTOS/CAIDA LIBRE", transform.position);
             other.gameObject.GetComponent<Character>().SetVelocityY(0);
             int num = Random.Range(0, SpawnPositions.Length);
             //TODO Effect of respawn with GameObject of Arry SpawnPosition[num] and call next methodth in other object

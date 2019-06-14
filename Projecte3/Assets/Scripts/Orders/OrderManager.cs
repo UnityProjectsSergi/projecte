@@ -33,7 +33,7 @@ class OrderManager:MonoBehaviour
     }
     public void AddOrder(float num, int numIngredients, float duracióOfOder)
     {
-        
+        SoundManager.Instance.OneShotEventAttatchet("event:/INFORMACIÓN JUGADOR/RECETA ENTRANTE", this.gameObject);
         listOrders.Add(OrderGenerator.GenerateOrder(IngCounter, numIngredients, duracióOfOder, ServeOrder));
         IngCounter++;
 
@@ -45,10 +45,13 @@ class OrderManager:MonoBehaviour
     }
     public void order()
     {
-        if(NumIngredientsOfOrders>0)
-        AddOrder(IngCounter, NumIngredientsOfOrders, durationOfOrders);
+        if (NumIngredientsOfOrders > 0)
+        {
+         
+            AddOrder(IngCounter, NumIngredientsOfOrders, durationOfOrders);
+        }
         else
-            
+
         {
             Debug.LogWarning("need to add number of ingedients to orderManager");
         }
@@ -60,6 +63,7 @@ class OrderManager:MonoBehaviour
 
     public void ServeOrder(Order order)
     {
+        SoundManager.Instance.OneShotEventAttatchet("event:/INFORMACIÓN JUGADOR/ENTREGADO/ENTREGADO BIEN", this.gameObject);
         order.HideUIOrder();
         pointsUI += order._points;
         RemoveOrder(order);
@@ -84,7 +88,7 @@ class OrderManager:MonoBehaviour
                     Debug.Log("lists has same numbros of each ingredient");
                     order.isServed = true;
                     order._OrderServed(order);
-                    SoundManager.Instance.OneShotEventAttatchet("event:/Sounds/Effects/OrderGet", this.gameObject);
+             //       SoundManager.Instance.OneShotEventAttatchet("event:/Sounds/Effects/OrderGet", this.gameObject);
                     return true;
                 }
                 // checkeo si els ingredients de la ordre q em donen el tinc a una ordre de la llista 
@@ -118,6 +122,7 @@ class OrderManager:MonoBehaviour
 
     public void RemoveOrder(Order m)
     {
+        SoundManager.Instance.OneShotEventAttatchet("event:/INFORMACIÓN JUGADOR/ENTREGADO/ENTREGADO MAL", this.gameObject);
         listOrders.Remove(m);
     }
 
@@ -139,6 +144,7 @@ class OrderManager:MonoBehaviour
             {
                 if (listOrders[i].IsTimeout())
                 {
+
                     listOrders[i].HideUIOrder();
                     pointsUI -= listOrders[i]._points;
                     RemoveOrder(listOrders[i]);
