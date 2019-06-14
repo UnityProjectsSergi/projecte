@@ -11,7 +11,7 @@ public class initscren : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(InputManager.Instance.GetButtonDown("J1SettingsButtonPS4"))
+        if(InputManager.Instance.GetButtonDown("J1XButtonPS4"))
         {
             system.SwitchScreen(nextScreen);
             selector.enabled = true;

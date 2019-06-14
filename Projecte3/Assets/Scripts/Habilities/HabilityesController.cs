@@ -58,9 +58,7 @@ public class HabilityesController : MonoBehaviour
     void Update()
     {
         if(speedUpCookHability)
-            DetectOlla();
-        
-            
+            DetectOlla();          
     }
     public Collider[] ollesDetected;
 
@@ -69,7 +67,7 @@ public class HabilityesController : MonoBehaviour
         Levitation.start();
         characterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
         GetComponent<CharacterController>().enabled = false;
-        GetComponent<Character>().enabled = false;
+        GetComponent<Character>().enabled = false;     
     }
     public void DeactivateLevitation()
     {

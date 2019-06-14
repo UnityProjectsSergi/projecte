@@ -90,8 +90,11 @@ public class CharacterControllerAct : MonoBehaviour
         } 
         else if(habilityesController.habilityType == HabilityType.Throw)
         {
-            if(playerInput.squareBtn.Down)
+            if (playerInput.squareBtn.Down)
+            {
+                HasItem = false;
                 ThrowObj();
+            }
         } else if(habilityesController.habilityType == HabilityType.Portal)
         {
             if(playerInput.squareBtn.Down)
