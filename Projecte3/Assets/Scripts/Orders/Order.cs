@@ -9,7 +9,7 @@ using UnityEngine;
 [System.Serializable]
 public class Order
 {
-    public int _points;
+    public int _points=0;
     public List<Item> _ingredients;
     public bool isTriggered;
     public bool isServed;
@@ -29,17 +29,21 @@ public class Order
     public Order(List<Item> ingredients, float duracio, OrderRes res)
     {
        
-        SetPointsOder(ingredients);
+        
         _ingredients = ingredients;
         duration = duracio;
         OrderServed += res;
+        SetPointsOder(_ingredients);
     }
 
     private void SetPointsOder(List<Item> ingredients)
     {
         foreach (var item in ingredients)
         {
+
             _points += item.points;
+
+            Debug.Log(item.points + "ing pint" + _points + "ordeeerpints");
         }
     }
     public void HideUIOrder()

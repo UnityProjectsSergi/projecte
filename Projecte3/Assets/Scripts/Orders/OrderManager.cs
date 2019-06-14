@@ -65,9 +65,11 @@ class OrderManager:MonoBehaviour
     {
         SoundManager.Instance.OneShotEventAttatchet("event:/INFORMACIÓN JUGADOR/ENTREGADO/ENTREGADO BIEN", this.gameObject);
         order.HideUIOrder();
-        pointsUI += order._points;
+        Debug.Log("Oder pounts noew" + order._points + "points now" + pointsUI);
+      //  pointsUI += order._points;
         RemoveOrder(order);
     }
+    // nessesito algu q em ju
     public bool CheckAllOrder(VialItem item)
     {
         foreach (var order in listOrders)
@@ -88,6 +90,7 @@ class OrderManager:MonoBehaviour
                     Debug.Log("lists has same numbros of each ingredient");
                     order.isServed = true;
                     order._OrderServed(order);
+                    pointsUI += 5;
              //       SoundManager.Instance.OneShotEventAttatchet("event:/Sounds/Effects/OrderGet", this.gameObject);
                     return true;
                 }
@@ -144,9 +147,8 @@ class OrderManager:MonoBehaviour
             {
                 if (listOrders[i].IsTimeout())
                 {
-
                     listOrders[i].HideUIOrder();
-                    pointsUI -= listOrders[i]._points;
+                    pointsUI -= 2;
                     RemoveOrder(listOrders[i]);
                 }
             }
