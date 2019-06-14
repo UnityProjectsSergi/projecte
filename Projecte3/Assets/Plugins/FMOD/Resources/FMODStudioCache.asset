@@ -12,12 +12,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: 114970567125086398}
+  - {fileID: 114174456076063616}
+  EditorEvents:
+  - {fileID: 114270458687086314}
+  - {fileID: 114703939498399314}
+  - {fileID: 114208322062553680}
+  - {fileID: 114369330221072132}
+  - {fileID: 114883636673573088}
+  - {fileID: 114780071235728786}
+  - {fileID: 114620636139289814}
+  - {fileID: 114874350826758562}
+  - {fileID: 114160196774120776}
+  - {fileID: 114552603263860828}
+  - {fileID: 114823774673841264}
+  - {fileID: 114079562556240260}
+  - {fileID: 114025199771757100}
+  - {fileID: 114284439165631938}
+  - {fileID: 114378417714401710}
+  - {fileID: 114750797980344018}
+  - {fileID: 114713153683564572}
+  - {fileID: 114336263838177276}
+  - {fileID: 114204805357976130}
+  - {fileID: 114862228282043138}
+  - {fileID: 114603745218052014}
+  - {fileID: 114836620276837316}
+  - {fileID: 114088965907459966}
+  - {fileID: 114613835135227194}
+  - {fileID: 114752469698123658}
+  - {fileID: 114919580974868244}
+  - {fileID: 114134268777923018}
+  - {fileID: 114922747591903674}
+  - {fileID: 114482081456368460}
+  - {fileID: 114934628869056522}
+  - {fileID: 114552281839236230}
+  - {fileID: 114771284058599944}
+  - {fileID: 114811023106922174}
+  - {fileID: 114058203428972066}
+  - {fileID: 114412549126524258}
+  - {fileID: 114554070325852270}
+  - {fileID: 114980173416200548}
+  - {fileID: 114467910756564382}
+  - {fileID: 114748129011772322}
+  - {fileID: 114858290115980326}
+  - {fileID: 114065588971006400}
+  - {fileID: 114521292121631072}
+  - {fileID: 114890752644075608}
+  - {fileID: 114324323587052706}
+  - {fileID: 114350450987971754}
+  - {fileID: 114423700724642058}
+  - {fileID: 114165487721819830}
+  - {fileID: 114536385992976032}
+  - {fileID: 114472418834552010}
+  - {fileID: 114236565706142914}
+  - {fileID: 114032277798334810}
+  - {fileID: 114922284872667606}
+  - {fileID: 114932013682203032}
+  - {fileID: 114944452574969636}
+  - {fileID: 114147195658168378}
+  - {fileID: 114904673595960268}
+  - {fileID: 114332448043669552}
+  - {fileID: 114168254257205028}
+  - {fileID: 114733978110414694}
+  - {fileID: 114116461989902736}
+  - {fileID: 114460068332150178}
+  - {fileID: 114941659669234716}
+  - {fileID: 114349136409019732}
+  - {fileID: 114864567868629018}
+  - {fileID: 114308486193964282}
+  - {fileID: 114363402538236170}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  stringsBankWriteTime: 0
+  MasterBanks:
+  - {fileID: 114174456076063616}
+  StringsBanks:
+  - {fileID: 114970567125086398}
+  stringsBankWriteTime: 636960920927242132
   cacheVersion: 3
 --- !u!114 &114001124990363422
 MonoBehaviour:
@@ -111,6 +181,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114025199771757100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/COGER/COGER OBJETO DURO
+  guid: 3607eee485aa104cbc3951c3dfca92e0
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 792
 --- !u!114 &114031872321017070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +227,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 870
+--- !u!114 &114032277798334810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FONDO/BSO
+  guid: cd6e24260fd1d34fbe7c9c69f14d86b8
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 47520
 --- !u!114 &114039441451992584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +365,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 22272
+--- !u!114 &114058203428972066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/CAMINAR/SUELO PIEDRA/PASOS PIEDRA NORMAL
+  guid: 78a35a583f8abe4f9e43255229540638
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 240
+--- !u!114 &114065588971006400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/DEJAR/DEJAR OBJETO MORTERO/DEJAR OBJETO DURO MORTERO
+  guid: 87b0f24b84aef5409d1c5878974cb740
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 520
 --- !u!114 &114075999952169006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +457,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 13722
+--- !u!114 &114079562556240260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/SONIDO CUENTA ATR\xC1S"
+  guid: 35fdc20003aa024b9f4f025f998eb5ab
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 31000
 --- !u!114 &114088578810853494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +503,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1000
+--- !u!114 &114088965907459966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FONDO/SONIDO MURCIELAGO
+  guid: 5a7d331c403fa04185d8d3bb41b57d11
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 23040
 --- !u!114 &114096464162358370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +595,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1400
+--- !u!114 &114116461989902736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/VOCES/QUASIMODO IDLE
+  guid: f7464c831efe364e915e43a1b3102821
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1584
 --- !u!114 &114126358016831346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,6 +661,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 837
+--- !u!114 &114134268777923018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/COCINAR/CALDERO/BURBUJAS
+  guid: 6669be7d9a74f54d84a47374ed83ab7b
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1700
 --- !u!114 &114139617480186054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,6 +753,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1960
+--- !u!114 &114147195658168378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FONDO/SONIDO INSECTOS
+  guid: dd8895e182b0cd4eb6de5db0e93fac9d
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 24748
+--- !u!114 &114160196774120776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/VOCES/BRUJA IDLE
+  guid: 26d896e2af4ada4bb6527640e6fc5c44
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 837
 --- !u!114 &114161809662550826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +868,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 55430
+--- !u!114 &114165487721819830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/COCINAR/CORTAR
+  guid: c0f60ae9a68aa94fa48a30abb39d8fe5
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 355
+--- !u!114 &114168254257205028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/COCINAR/MACHACAR/MACHACAR BLANDO
+  guid: ecd531aafa03384bb092143b6adad534
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 250
 --- !u!114 &114168550498594084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +960,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 837
+--- !u!114 &114174456076063616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Users\Sergi Regi\GoogleDriveTecnocampus\Grau Videojocs\Curs4\Projecte III\Projecte3\FMOD
+    WIZCRAFT\Build\Desktop\Master.bank
+  lastModified: 636960920927112205
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 5820064
+  Exists: 1
 --- !u!114 &114181471591171920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,6 +1049,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 440
+--- !u!114 &114204805357976130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/COCINAR/MACHACAR/MACHACAR DURO
+  guid: 4c40b2f75680d743ad354ad7be735f67
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &114207906149573410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,6 +1095,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 160
+--- !u!114 &114208322062553680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/VOCES/GRITO APRENDIZ
+  guid: 04589c2d4993014a90a8c1e5315e99b9
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1600
 --- !u!114 &114214298008343412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,6 +1210,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 520
+--- !u!114 &114236565706142914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/SLIDE
+  guid: c9944257e615dc4bb012f206379a42a8
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3110
 --- !u!114 &114239346190675720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,6 +1368,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 160
+--- !u!114 &114270458687086314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/ACABADO CALDERO"
+  guid: 01bd9937f5ec7a43837b7f327f944d72
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1400
 --- !u!114 &114275471051305292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,6 +1414,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1300
+--- !u!114 &114284439165631938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/VICTORIA"
+  guid: 37266c8cc40aef40b233617bff999b90
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 10135
 --- !u!114 &114285806067847018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,6 +1483,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1418
+--- !u!114 &114308486193964282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/DEJAR/DEJAR OBJETO MORTERO/DEJAR OBJETO BLANDO
+    MORTERO
+  guid: fdcd8e6dc618304caf797277286037b5
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 520
 --- !u!114 &114309698026015248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,6 +1553,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 13946
+--- !u!114 &114324323587052706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/COCINAR/ENCANTAMIENTO
+  guid: 8c3ca0046e979b48918e3de0e2780971
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3294
+--- !u!114 &114332448043669552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/MOVIMIENTO PERSONAJE/CAMINAR/SUELO PIEDRA/PASOS PIEDRA R\xC1PIDO"
+  guid: e1f079934649c045b1cf26bdc556c1f6
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 160
+--- !u!114 &114336263838177276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/TRANSPORTAR FRASCO LLENO
+  guid: 4beb1d194d5988449436b64e8c830fad
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 13221
 --- !u!114 &114341070132759366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,6 +1668,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 14597
+--- !u!114 &114349136409019732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/EFECTOS/CAIDA LIBRE
+  guid: fbef41db4e8a984391564e7fdaa4bd85
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 550
+--- !u!114 &114350450987971754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/DERROTA"
+  guid: b02edc0b38868f489c59738142acf63f
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 8772
 --- !u!114 &114351589987381940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,6 +1737,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4546
+--- !u!114 &114363402538236170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/COCINAR/CALDERO/SONIDOALERTA
+  guid: 2357bfdaed280d4da861ae6607d46dd3
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &114369330221072132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/COCINAR/LE\xD1A/SACAR CALDERO DE LE\xD1A"
+  guid: 0cfebfacc972e44faf1840854299a293
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 14597
 --- !u!114 &114371430235593208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1186,6 +1852,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 959
+--- !u!114 &114378417714401710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/COCINAR/CALDERO/CALDERO COCINANDO
+  guid: 42ca3600b75b33408cfafa5c7c3592f5
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 9500
 --- !u!114 &114408243149010034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1232,6 +1921,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1001
+--- !u!114 &114412549126524258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/MOVIMIENTO PERSONAJE/CAMINAR/SUELO MADERA/PASOS MADERA R\xC1PIDO"
+  guid: 7bf9f567949a5a42be00dae2d194eb56
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 125
 --- !u!114 &114415646769788082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1321,6 +2033,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 23040
+--- !u!114 &114423700724642058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/EFECTOS/SONIDO TELELPORTACI\xD3N MAGICA"
+  guid: ba0ecd778331a54086ff78d39b25f909
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 875
 --- !u!114 &114427695865326286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1459,6 +2194,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 792
+--- !u!114 &114460068332150178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/VOCES/MAGO IDLE
+  guid: f8af76e02e573f469532824c2d78be83
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1943
 --- !u!114 &114465398921837010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,6 +2240,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 13221
+--- !u!114 &114467910756564382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/EFECTOS/SONIDO ROTURA FRASCO
+  guid: 84d2429ae68d8e4783757117c12d1946
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1300
+--- !u!114 &114472418834552010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/CAJA/APERTURA CAJA
+  guid: c61dec67cc063045b9502b13a1e64272
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2550
 --- !u!114 &114475131709216946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,6 +2332,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 18880
+--- !u!114 &114482081456368460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FONDO/SONIDO DE JAULA
+  guid: 6bff72a14c57ee46aa2c941865fe6a02
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4546
 --- !u!114 &114495972125553068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,6 +2447,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 290
+--- !u!114 &114521292121631072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/VOCES/GRITO BRUJA
+  guid: 881e531f8ee6d54a80c9f7d77a93f7eb
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 837
 --- !u!114 &114523516256302764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,6 +2493,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 23040
+--- !u!114 &114536385992976032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/DASH
+  guid: c500a0c41b0f7b41ba2e33297752c7ce
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 667
 --- !u!114 &114547788994692646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1689,6 +2562,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 13722
+--- !u!114 &114552281839236230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/MOVIMIENTO PERSONAJE/CAMINAR/SUELO PIEDRA/COJERA PASOS PIEDRA R\xC1PIDO"
+  guid: 752e3b44e83f0440983d47386dd62cc4
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 400
+--- !u!114 &114552603263860828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/CAJA/CIERRE CAJA
+  guid: 2bc1f13313c6e54c804154b1499f180e
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2786
 --- !u!114 &114553493700805122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1712,6 +2631,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 31000
+--- !u!114 &114554070325852270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/COCINAR/LE\xD1A/PONER CALDERO EN LE\xD1A"
+  guid: 808ca040c749c94b9324f30e524c9cee
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 15014
 --- !u!114 &114561321821856756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1850,6 +2792,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 566
+--- !u!114 &114603745218052014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/HABILIDAD COOLDOWN"
+  guid: 55cf224521695c45a159691e560634fe
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 580
 --- !u!114 &114608272908518402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1897,6 +2862,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 520
+--- !u!114 &114613835135227194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/VOCES/GRITO MAGO
+  guid: 5c709b9db9da91488582bf56b7009ac5
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1418
 --- !u!114 &114620099015655646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1920,6 +2908,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3110
+--- !u!114 &114620636139289814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/ENTREGADO/ENTREGADO BIEN"
+  guid: 15f9f2c16ff1bf4b927757bcca69427c
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 959
 --- !u!114 &114621335928204374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2150,6 +3161,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 520
+--- !u!114 &114703939498399314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FONDO/MADERA CRUJIENDO
+  guid: 023bc2b568063942a5bb4edae7c3beb5
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 566
 --- !u!114 &114709427474265842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2173,6 +3207,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 470
+--- !u!114 &114713153683564572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/COGER/COGER BOTELLA
+  guid: 4887f401fc110140b61dfd2e3f3929c8
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 792
 --- !u!114 &114713500695675962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2285,6 +3342,98 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1584
+--- !u!114 &114733978110414694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/COCINAR/LE\xD1A/LE\xD1A COCINANDO"
+  guid: f3388845ade2064689a90f5be42d53bb
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 13722
+--- !u!114 &114748129011772322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/ESTRELLITAS DESCENSO"
+  guid: 8669b5bbf732824185560934d46708a4
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4963
+--- !u!114 &114750797980344018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/ENTREGADO/ENTREGADO MAL"
+  guid: 450719ba48550745a2f5f00b144ea7ba
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 583
+--- !u!114 &114752469698123658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/CAMINAR/SUELO PIEDRA/COJERA PASOS PIEDRA NORMAL
+  guid: 5f0fe39a223d8c4a81bc256ce2c0f753
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 440
 --- !u!114 &114753553511962582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2331,6 +3480,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 837
+--- !u!114 &114771284058599944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/MOVIMIENTO PERSONAJE/CAMINAR/SUELO MADERA/COJERA PASOS MADERA R\xC1PIDO"
+  guid: 75a89379a2f9ae43b528892a65c2a5d0
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 300
+--- !u!114 &114780071235728786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FONDO/SONIDO TRUENO
+  guid: 15b898f1041f324bb0dd6adf120ad9ff
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 22272
 --- !u!114 &114785223250164916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2515,6 +3710,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 13722
+--- !u!114 &114811023106922174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/DEJAR/DEJAR OBJETO DURO
+  guid: 75c8b0e980278344b36cdb7045ffe6fc
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &114817384355575334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2561,6 +3779,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2550
+--- !u!114 &114823774673841264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/EFECTOS/ENFRASCAR POCI\xD3N"
+  guid: 34daf970ac1a7c4d93fb024f1b8af786
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 917
 --- !u!114 &114825486376704344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2607,6 +3848,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 13946
+--- !u!114 &114836620276837316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/VOCES/GRITO QUASIMODO
+  guid: 589013abec87c74795381917020491b9
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1584
 --- !u!114 &114842608051774860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,6 +3894,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 24748
+--- !u!114 &114858290115980326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/DEJAR/DEJAR OBJETO BLANDO
+  guid: 86e589bcdacfdd409326845e7046bba4
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1001
+--- !u!114 &114862228282043138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/VOCES/APRENDIZ IDLE
+  guid: 4f03b5df86e9e14389154b59d5258962
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1001
 --- !u!114 &114862955949625162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2654,6 +3964,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 520
+--- !u!114 &114864567868629018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/CAMINAR/SUELO MADERA/COJERA PASOS MADERA NORMAL
+  guid: fc7bf2682de3294b9ca76f6ad84edb65
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 470
 --- !u!114 &114868402902424522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2723,6 +4056,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 18880
+--- !u!114 &114874350826758562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/CAMINAR/SUELO MADERA/PASOS MADERA NORMAL
+  guid: 1d8d733f9e8ee94bbb36dab22cf8bf2c
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 290
+--- !u!114 &114883636673573088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/COGER/COGER CALDERO
+  guid: 12e247955d52b44682f48fd4fa8a697f
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114884161838247908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,6 +4125,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 580
+--- !u!114 &114890752644075608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/DEJAR/DEJAR CALDERO
+  guid: 8a3f0e7253ea414d949123f3b9af05b1
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114893961689463708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2815,6 +4217,98 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 792
+--- !u!114 &114904673595960268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/COCINAR/LE\xD1A/LE\xD1A IDLE"
+  guid: df82d45789fb28488460b375dc91656c
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 13722
+--- !u!114 &114919580974868244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/EFECTOS/MAGIA_LEVITACI\xD3N"
+  guid: 6392263aab3faf448d0a762fccd8ccc7
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 8600
+--- !u!114 &114922284872667606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/SONIDO DE ALERTA PARPADEANTE"
+  guid: d655de0c7308e0408ac151acee81ff8d
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 18880
+--- !u!114 &114922747591903674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/RECETA ENTRANTE"
+  guid: 6a0f0302aedea34199ed49d245f173e9
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2113
 --- !u!114 &114931010308901092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2838,6 +4332,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 792
+--- !u!114 &114932013682203032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MOVIMIENTO PERSONAJE/COGER/COGER OBJETO BLANDO
+  guid: d825194aa14e074297138a96fec6785d
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 458
 --- !u!114 &114934196864112204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2861,6 +4378,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 300
+--- !u!114 &114934628869056522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/INGREDIENTE QUEMADO"
+  guid: 71341ec3df0c3d47b199653ee334896d
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1960
 --- !u!114 &114936080062348844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2907,6 +4447,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 458
+--- !u!114 &114941659669234716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/COCINAR/CALDERO/CALDERO IDLE
+  guid: fb1b39f5719aae4080227a66c8a41e26
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 13946
 --- !u!114 &114943175978641808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2930,6 +4493,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 290
+--- !u!114 &114944452574969636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FONDO/SONIDO LLUVIA
+  guid: da05addd37fdae4d97910b16e7e9a467
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 55430
 --- !u!114 &114958219288260432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2953,6 +4539,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1600
+--- !u!114 &114970567125086398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Users\Sergi Regi\GoogleDriveTecnocampus\Grau Videojocs\Curs4\Projecte III\Projecte3\FMOD
+    WIZCRAFT\Build\Desktop\Master.strings.bank
+  lastModified: 636960920927242132
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 4126
+  Exists: 1
 --- !u!114 &114975700707426676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2976,6 +4582,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 13221
+--- !u!114 &114980173416200548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/INFORMACI\xD3N JUGADOR/ESTRELLITAS"
+  guid: 83816c4404637441bb4541be7584c956
+  Banks:
+  - {fileID: 114174456076063616}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5880
 --- !u!114 &114984860308890702
 MonoBehaviour:
   m_ObjectHideFlags: 0
