@@ -88,15 +88,15 @@ public class OptionsAudioControllerFmod : MonoBehaviour
     /// <summary>
     /// FMOD Studio Bus Master
     /// </summary>
-    //public FMOD.Studio.Bus instanceEventMaster;
+    public FMOD.Studio.Bus instanceEventMaster;
     ///// <summary>
     ///// FMOD Studio Bus Music
     ///// </summary>
-    //public FMOD.Studio.Bus instanceEventMusic;
+    public FMOD.Studio.Bus instanceEventMusic;
     ///// <summary>
     ///// FMOD Studio Bus SFX
     ///// </summary>
-    //public FMOD.Studio.Bus instanceEventSFX;
+    public FMOD.Studio.Bus instanceEventSFX;
     /// <summary>
     /// FMOD Studio Bus Voices
     /// </summary>
@@ -110,9 +110,9 @@ public class OptionsAudioControllerFmod : MonoBehaviour
         if (GameController.hasLoadedGameData)
         {
             /// Debug.Log("SSS");
-            //instanceEventMaster = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusMaster);
-            //instanceEventMusic = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusMusic);
-            //instanceEventSFX = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusSFX);
+            instanceEventMaster = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusMaster);
+            instanceEventMusic = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusMusic);
+            instanceEventSFX = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusSFX);
             // instanceEventVoices = FMODUnity.RuntimeManager.GetBus("Bus:/" + nameBusVoices);
             if (GameController.Instance.fileExists)
                 _loadedAudioParameters = SaveData.objcts.Parameters.Sound;
