@@ -31,7 +31,7 @@ public class PauseController : MonoBehaviour
         if(AllowEnterPause  && Time.time>=timer && Switch)
         {
             isPausedGame =! isPausedGame;
-            OrderManager.Instance.isPausedGame = isPausedGame;
+           // OrderManager.Instance.isPausedGame = isPausedGame;
             if(isPausedGame)
             {
                 System.SwitchScreen(PauseScreen);

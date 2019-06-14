@@ -23,14 +23,14 @@ public class Ingredient3 : Item
     public override void Update()
     {
         base.Update();
-        if (transform.parent != null && transform.parent.parent == null)
+        if (transform.parent != null && transform.parent.parent != null)
         {
-            if (canvas.gameObject.activeSelf)
-                canvas.transform.gameObject.SetActive(false);
+            if (!canvas.gameObject.activeSelf)
+                canvas.transform.gameObject.SetActive(true);
         }
         else
-            if(!canvas.gameObject.activeSelf)
-            canvas.transform.gameObject.SetActive(true);
+            if(canvas.gameObject.activeSelf)
+            canvas.transform.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
