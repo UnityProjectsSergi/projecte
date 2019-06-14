@@ -69,7 +69,7 @@ public class Character : MonoBehaviour
             transform.forward = move;
         }
 
-
+        //elcheckplayerno s q peta a vegades
         if (playerInput.OBtn.Down)
         {
             SoundManager.Instance.OneShotEvent("event:/MOVIMIENTO PERSONAJE/DASH", transform.position);
