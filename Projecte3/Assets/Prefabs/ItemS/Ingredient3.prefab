@@ -216,6 +216,7 @@ MonoBehaviour:
   duration: 0
   ingCookValue: 0
   spriteIng: {fileID: 21300002, guid: 6a147f139f9708e498f61c717c1d77f8, type: 3}
+  collider: {fileID: 4584147548371858841}
   percentCooked: 0
   canvas: {fileID: 4082925179063709579}
 --- !u!1 &6623657663404150824
@@ -424,6 +425,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3463907306777115977}
     m_Modifications:
+    - target: {fileID: 1418573142837418883, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
+        type: 3}
+      propertyPath: m_Name
+      value: dedo_GAME
+      objectReference: {fileID: 0}
     - target: {fileID: 1418573142837446563, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -478,11 +484,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -194.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418573142837418883, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
-        type: 3}
-      propertyPath: m_Name
-      value: dedo_GAME
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 309cacbc82aa3c1419294cceb3c3bb2e, type: 3}

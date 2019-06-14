@@ -21,6 +21,7 @@ public abstract class Slot :MonoBehaviour
         {    
             item.transform.parent = player.attachTransform;
             item.transform.position = player.attachTransform.position;
+            item.GetComponent<Item>().enabled = false;
             player.attachedObject = item.gameObject;
             player.HasItem = true;
             item.gameObject.GetComponent<Rigidbody>().isKinematic = false;

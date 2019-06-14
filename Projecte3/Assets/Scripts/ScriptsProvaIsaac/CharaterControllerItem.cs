@@ -38,8 +38,8 @@ public class CharaterControllerItem : MonoBehaviour
 
     private void Start()
     {
-      
-        GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
+        if(gameObject.tag != "Item")
+            GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
 
         characterController = GetComponent<CharacterController>();
        

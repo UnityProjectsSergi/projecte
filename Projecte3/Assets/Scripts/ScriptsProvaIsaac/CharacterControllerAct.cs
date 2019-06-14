@@ -160,6 +160,7 @@ public class CharacterControllerAct : MonoBehaviour
         if (attachedObject != null)
         {
             animator.SetBool("toLlevar", false);
+            attachedObject.GetComponent<Item>().collider.enabled = true;
             RaycastHit hit;
             if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
             {

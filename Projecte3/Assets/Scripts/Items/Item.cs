@@ -21,6 +21,8 @@ public  class Item : MonoBehaviour
     public float ingCookValue = 0;
     public Sprite spriteIng;
 
+    public Collider collider;
+
     private bool inTable { get { return inTable; } set { } }
 
     private void OnEnable()
@@ -34,6 +36,7 @@ public  class Item : MonoBehaviour
         transform.parent = player.attachTransform;
         transform.position = player.attachTransform.position;
         player.attachedObject = gameObject;
+        collider.enabled = false;
     }
 
     public override bool Equals(object other)
