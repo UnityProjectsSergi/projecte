@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-
+    
     public void CheckPlayerActive(int controller, GameObject caller)
     {
         switch (controller)
@@ -43,12 +43,12 @@ public class GameManager : MonoBehaviour
             case 3:
                 if (!j3)
                     caller.SetActive(false);
-                caller.GetComponent<HabilityesController>().habilityType = (HabilityType)j2c;
+                caller.GetComponent<HabilityesController>().habilityType = (HabilityType)j3c;
                 break;
             case 4:
                 if (!j4)
                     caller.SetActive(false);
-                caller.GetComponent<HabilityesController>().habilityType = (HabilityType)j2c;
+                caller.GetComponent<HabilityesController>().habilityType = (HabilityType)j4c;
                 break;
             default:
                 break;
