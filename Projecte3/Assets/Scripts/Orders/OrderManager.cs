@@ -147,7 +147,9 @@ class OrderManager:MonoBehaviour
             {
                 if (listOrders[i].IsTimeout())
                 {
+                    //qunat s'acabi el temps rest a4 sempre 
                     listOrders[i].HideUIOrder();
+                    // aqui detecta quant el temps de s'acaa 
                     pointsUI -= 2;
                     RemoveOrder(listOrders[i]);
                 }
