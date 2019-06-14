@@ -15,12 +15,9 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: E:\Users\Sergi Regi\GoogleDriveTecnocampus\Grau Videojocs\Curs4\Projecte
-    III\Projecte3\FMOD WIZCRAFT\FMOD WIZCRAFT.fspro
-  SourceProjectPathUnformatted: E:\Users\Sergi Regi\GoogleDriveTecnocampus\Grau Videojocs\Curs4\Projecte
-    III\Projecte3\FMOD WIZCRAFT\FMOD WIZCRAFT.fspro
-  SourceBankPathUnformatted: E:\Users\Sergi Regi\GoogleDriveTecnocampus\Grau Videojocs\Curs4\Projecte
-    III\Projecte3\FMOD WIZCRAFT\Build
+  sourceProjectPath: ..\FMOD WIZCRAFT\FMOD WIZCRAFT.fspro
+  SourceProjectPathUnformatted: ..\FMOD WIZCRAFT\FMOD WIZCRAFT.fspro
+  SourceBankPathUnformatted: ..\FMOD WIZCRAFT\Build
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
@@ -78,7 +75,9 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Master.strings
   BanksToLoad: []
   LiveUpdatePort: 9264
