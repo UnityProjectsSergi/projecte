@@ -522,9 +522,9 @@ namespace FMODUnity
                 // Copy over any files that don't match timestamp or size or don't exist
                 foreach (var bankRef in eventCache.EditorBanks)
                 {
-                    var subDir = Path.GetDirectoryName(bankRef.Path).Replace(bankSourceFolder, "");
-                    string sourcePath = bankSourceFolder + subDir + Path.DirectorySeparatorChar + bankRef.Name + ".bank";
-                    string targetPath = bankTargetFolder + subDir + Path.DirectorySeparatorChar + bankRef.Name + "." + bankTargetExension;
+                   //var subDir = Path.GetDirectoryName(bankRef.Path).Replace(bankSourceFolder, "");
+                    string sourcePath = bankSourceFolder +  Path.DirectorySeparatorChar + bankRef.Name + ".bank";
+                    string targetPath = bankTargetFolder + Path.DirectorySeparatorChar + bankRef.Name + "." + bankTargetExension;
 
                     FileInfo sourceInfo = new FileInfo(sourcePath);
                     FileInfo targetInfo = new FileInfo(targetPath);
