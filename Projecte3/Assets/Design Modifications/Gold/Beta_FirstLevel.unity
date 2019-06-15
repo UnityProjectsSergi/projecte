@@ -175,7 +175,7 @@ SpriteRenderer:
   m_Size: {x: 16, y: 7.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &305825615
@@ -293,6 +293,42 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215458677582332399, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215458677582332399, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215458676487991893, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215458676487991893, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201690266213842008, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: particlesEnd
+      value: 
+      objectReference: {fileID: 7301001915827155688, guid: b684caeb23e3454409f8a5b31c09924f,
+        type: 3}
+    - target: {fileID: 5215458676487991894, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215458677582332396, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd71702d3171e4042be373b9f1f7c235, type: 3}

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class CuttingSlot : Slot
 {
+    public GameObject particlesEnd;
     private float fillAmount = 0;
     public float timerToAction;
     private float progresSpeed;
@@ -70,6 +71,8 @@ public class CuttingSlot : Slot
                     barCanvas.SetActive(false);
                     item.transform.localScale = new Vector3(0.7f, 0.4f, 0.7f);
                     item.stateIngredient = StateIngredient.cutted;
+                    particlesEnd.transform.localScale = new Vector3(2, 2, 2);
+                    Instantiate(particlesEnd, transform.position, Quaternion.identity);
                 }
             }              
         }

@@ -282,6 +282,8 @@ MonoBehaviour:
   positionObjOn: {fileID: 4784889726873586829}
   isActive: 0
   hasObjectOn: 0
+  particlesEnd: {fileID: 7301001915827155688, guid: b684caeb23e3454409f8a5b31c09924f,
+    type: 3}
   timerToAction: 2
   barCanvas: {fileID: 3285026704360641260}
   progresBar: {fileID: 3285026703083275301}
@@ -449,6 +451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mp_GAME
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: da9352b03b5c31747a5082e78f532bb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d4c09032941740c4a8e84db8e38be3e9, type: 2}
     - target: {fileID: 400000, guid: da9352b03b5c31747a5082e78f532bb9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -493,10 +499,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: da9352b03b5c31747a5082e78f532bb9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d4c09032941740c4a8e84db8e38be3e9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da9352b03b5c31747a5082e78f532bb9, type: 3}
 --- !u!4 &4595706754331071419 stripped

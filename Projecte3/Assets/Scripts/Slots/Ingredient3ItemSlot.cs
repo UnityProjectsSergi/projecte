@@ -17,7 +17,7 @@ public class Ingredient3ItemSlot : ItemSlot
     public override void Catch(CharacterControllerAct player)
     {
         base.Catch(player);
-        item = Ingredient3Pool.Instance.GetObjFromPool(transform);
+        item = Ingredient3Pool.Instance.GetObjFromPool(pivot);
         item.GetComponent<Ingredient3>().canvas.GetComponentInChildren<Image>().sprite = item.GetComponent<Item>().spriteIng;
      
     }
