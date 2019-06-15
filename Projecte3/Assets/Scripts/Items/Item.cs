@@ -21,6 +21,8 @@ public  class Item : MonoBehaviour
     public float ingCookValue = 0;
     public Sprite spriteIng;
 
+    public Collider collider;
+
     private bool inTable { get { return inTable; } set { } }
 
     private void OnEnable()
@@ -33,7 +35,8 @@ public  class Item : MonoBehaviour
         rigidbodyController.ActiveRigidbody(false);
         transform.parent = player.attachTransform;
         transform.position = player.attachTransform.position;
-        player.attachedObject = gameObject;    
+        player.attachedObject = gameObject;
+        collider.enabled = false;
     }
 
     public override bool Equals(object other)
@@ -144,8 +147,9 @@ public  class Item : MonoBehaviour
           
                 if (transform.parent)
                 {
-                    transform.parent.parent.GetComponent<CharacterControllerAct>().LeaveObjOn();
-
+                    CharacterControllerAct act = transform.parent.parent.gameObject.transform.parent.parent.GetComponent<CharacterControllerAct>();
+                    act.habilityesController.hability.StartCoolDown();
+                    act.LeaveObjOn();                  
                 }
             }
             hasDeacactivateLevitation = false;

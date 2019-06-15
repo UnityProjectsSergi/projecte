@@ -216,6 +216,7 @@ MonoBehaviour:
   duration: 5
   ingCookValue: 0
   spriteIng: {fileID: 21300006, guid: 6a147f139f9708e498f61c717c1d77f8, type: 3}
+  collider: {fileID: 4056078537708835031}
   percentCooked: 0
   canvas: {fileID: 4574895025791503045}
 --- !u!1 &6647253220893242726
@@ -411,6 +412,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4019033098300839943}
     m_Modifications:
+    - target: {fileID: 8241445717069476098, guid: 3fda6ca01027c4e4b9921a57700f3c1e,
+        type: 3}
+      propertyPath: m_Name
+      value: seta_GAME
+      objectReference: {fileID: 0}
     - target: {fileID: 8241445717069049122, guid: 3fda6ca01027c4e4b9921a57700f3c1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -465,11 +471,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8241445717069476098, guid: 3fda6ca01027c4e4b9921a57700f3c1e,
-        type: 3}
-      propertyPath: m_Name
-      value: seta_GAME
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fda6ca01027c4e4b9921a57700f3c1e, type: 3}

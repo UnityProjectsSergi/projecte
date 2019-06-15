@@ -25,6 +25,7 @@ public abstract class Slot :MonoBehaviour
             player.HasItem = true;
             item.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             hasObjectOn = false;
+            item.collider.enabled = false;
             item = null;
         }
     }

@@ -55,10 +55,17 @@ public class Hability : MonoBehaviour
     public IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(_duration);
+        Debug.Log("Cooldown end");
         StopHability();
         StartCoroutine(CountDownAnimation(_coolDown));
         yield return null;
     }
+
+    public void StartCoolDown()
+    {
+        StartCoroutine(CountDownAnimation(_coolDown));
+    }
+
     IEnumerator CountDownAnimation(float time)
     {
         float animationTime = time;

@@ -38,8 +38,8 @@ public class CharaterControllerItem : MonoBehaviour
 
     private void Start()
     {
-      
-        GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
+        if(gameObject.tag != "Item")
+            GameManager.Instance.CheckPlayerActive(playercontroller, this.gameObject);
 
         characterController = GetComponent<CharacterController>();
        
@@ -52,25 +52,16 @@ public class CharaterControllerItem : MonoBehaviour
     }
     void Update()
     {
-     if(playerInput!=null)
-        Move();
-
-       
-   
+        if(playerInput!=null)
+            Move();       
     }
-
-   
-  
 
     public void Move()
     {
         //GravityController();
         MovementHorizontal();
+    }  
 
-  
-        
-        //l_CollisionFlags = characterController.Move(Direction *Parameters.currentVelocity* Time.deltaTime);
-    }
     private void OnEnable()
     {
         characterController = GetComponent<CharacterController>();
@@ -85,47 +76,6 @@ public class CharaterControllerItem : MonoBehaviour
       //  transform.rotation = Rotation;
         characterController.Move(Direction * speed* Time.deltaTime);
     }
-
-    //void GravityController()
-    //{
-    //    m_VerticalSpeed += (Physics.gravity.y * m_GravityMultiplier) * Time.deltaTime;
-    //    Direction.y = m_VerticalSpeed * Time.deltaTime;
-
-    //    if ((l_CollisionFlags & CollisionFlags.Below) != 0)
-    //    {
-    //        onGround = true;
-    //        m_VerticalSpeed = 0.0f;
-    //    }
-    //    else
-    //        onGround = false;
-
-    //    if ((l_CollisionFlags & CollisionFlags.Above) != 0 && m_VerticalSpeed > 0.0f)
-    //        m_VerticalSpeed = 0.0f;
-    //}
-
-    //public void ColliderFlags()
-    //{
-    //    if (characterController.collisionFlags == CollisionFlags.None)
-    //        print("Free floating!");
-
-    //    if ((characterController.collisionFlags & CollisionFlags.Sides) != 0)
-    //        print("Touching sides!");
-
-    //    if (characterController.collisionFlags == CollisionFlags.Sides)
-    //        print("Only touching sides, nothing else!");
-
-    //    if ((characterController.collisionFlags & CollisionFlags.Above) != 0)
-    //        print("Touching sides!");
-
-    //    if (characterController.collisionFlags == CollisionFlags.Above)
-    //        print("Only touching Ceiling, nothing else!");
-
-    //    if ((characterController.collisionFlags & CollisionFlags.Below) != 0)
-    //        print("Touching ground!");
-
-    //    if (characterController.collisionFlags == CollisionFlags.Below)
-    //        print("Only touching ground, nothing else!");
-    //}
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {

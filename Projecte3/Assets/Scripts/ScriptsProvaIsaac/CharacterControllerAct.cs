@@ -69,6 +69,8 @@ public class CharacterControllerAct : MonoBehaviour
                 if (habilityesController.hability.habilityHabailable) ;
                 if (playerInput.squareBtn.Down)
                 {
+                    animator.SetBool("toIdle", true);
+                    animator.SetBool("toLlevar", false);
                     habilityesController.hability.UseHability();
                 }
                 if (habilityesController.hability.usingHability)
@@ -160,6 +162,7 @@ public class CharacterControllerAct : MonoBehaviour
         if (attachedObject != null)
         {
             animator.SetBool("toLlevar", false);
+            attachedObject.GetComponent<Item>().collider.enabled = true;
             RaycastHit hit;
             if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, tablesLayerMask))
             {
