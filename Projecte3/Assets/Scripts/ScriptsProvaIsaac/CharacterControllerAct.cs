@@ -69,6 +69,7 @@ public class CharacterControllerAct : MonoBehaviour
                 if (habilityesController.hability.habilityHabailable) ;
                 if (playerInput.squareBtn.Down)
                 {
+                    animator.SetBool("toIdle", true);
                     habilityesController.hability.UseHability();
                 }
                 if (habilityesController.hability.usingHability)
