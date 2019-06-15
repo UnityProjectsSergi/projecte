@@ -48,7 +48,7 @@ public class HabilityesController : MonoBehaviour
         else if (habilityType == HabilityType.Portal)
         {
             ChangeMesh(3);
-            hability.set(durationHabilityTime, coolDownTimerHability, ActiveHabilityPortal, DeactivateHabilityPortal, CoolDown);
+            hability.set(durationHabilityTime * 3, coolDownTimerHability, ActiveHabilityPortal, DeactivateHabilityPortal, CoolDown);
         }
 
 

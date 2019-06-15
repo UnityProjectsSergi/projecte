@@ -40,10 +40,7 @@ public class Order
     {
         foreach (var item in ingredients)
         {
-
             _points += item.points;
-
-            Debug.Log(item.points + "ing pint" + _points + "ordeeerpints");
         }
     }
     public void HideUIOrder()
