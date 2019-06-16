@@ -94,7 +94,7 @@ public class CharacterControllerAct : MonoBehaviour
         {
             if (playerInput.squareBtn.Down)
             {
-                HasItem = false;
+                HasItem = false;              
                 ThrowObj();
             }
         } else if(habilityesController.habilityType == HabilityType.Portal)
@@ -185,6 +185,7 @@ public class CharacterControllerAct : MonoBehaviour
     {
         if(attachedObject != null)
         {
+            attachedObject.GetComponent<Item>().collider.enabled = true;
             attachedObject.GetComponent<RigidbodyController>().ActiveRigidbody(true);
             attachedObject.transform.parent = null;
             attachedObject.GetComponent<Rigidbody>().AddForce(transform.forward * throwForce);
