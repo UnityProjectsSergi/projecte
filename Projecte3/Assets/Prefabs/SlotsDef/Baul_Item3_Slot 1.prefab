@@ -153,25 +153,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7950776244899220149}
     m_Modifications:
-    - target: {fileID: 1857825188012621259, guid: 6301e53edcb4a1743822ae93ec275f6a,
-        type: 3}
-      propertyPath: m_Name
-      value: Material1_Emissive (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1857825188012621263, guid: 6301e53edcb4a1743822ae93ec275f6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1857825188012621263, guid: 6301e53edcb4a1743822ae93ec275f6a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00999999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1857825188012621263, guid: 6301e53edcb4a1743822ae93ec275f6a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.49
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 1857825188012621263, guid: 6301e53edcb4a1743822ae93ec275f6a,
         type: 3}
@@ -213,6 +208,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1857825188012621259, guid: 6301e53edcb4a1743822ae93ec275f6a,
+        type: 3}
+      propertyPath: m_Name
+      value: Material1_Emissive (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6301e53edcb4a1743822ae93ec275f6a, type: 3}
 --- !u!4 &3121501118232390594 stripped
@@ -228,11 +228,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7950776244899220149}
     m_Modifications:
-    - target: {fileID: 1418573142837418883, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
-        type: 3}
-      propertyPath: m_Name
-      value: dedo_GAME
-      objectReference: {fileID: 0}
     - target: {fileID: 1418573142837446563, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -303,6 +298,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.5580955
       objectReference: {fileID: 0}
+    - target: {fileID: 1418573142837418883, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
+        type: 3}
+      propertyPath: m_Name
+      value: dedo_GAME
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 309cacbc82aa3c1419294cceb3c3bb2e, type: 3}
 --- !u!4 &2393195158268142486 stripped
@@ -318,11 +318,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7950776244899220149}
     m_Modifications:
-    - target: {fileID: 3446937634440613389, guid: 19896d832ebcd2a43a6908dc203b5405,
-        type: 3}
-      propertyPath: m_Name
-      value: baul_GAME
-      objectReference: {fileID: 0}
     - target: {fileID: 3446937634440843821, guid: 19896d832ebcd2a43a6908dc203b5405,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -378,16 +373,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3446937634440613387, guid: 19896d832ebcd2a43a6908dc203b5405,
+    - target: {fileID: 3446937634440613389, guid: 19896d832ebcd2a43a6908dc203b5405,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Name
+      value: baul_GAME
       objectReference: {fileID: 0}
     - target: {fileID: 3446937634442612941, guid: 19896d832ebcd2a43a6908dc203b5405,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f8f1ccd84f18c1542a08b5fad06899ee, type: 2}
+    - target: {fileID: 3446937634440613387, guid: 19896d832ebcd2a43a6908dc203b5405,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19896d832ebcd2a43a6908dc203b5405, type: 3}
 --- !u!4 &4931073966744475204 stripped

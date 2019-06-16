@@ -295,16 +295,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6590708363904044600}
     m_Modifications:
-    - target: {fileID: 2116386644471958149, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
-        type: 3}
-      propertyPath: m_Name
-      value: Cut_Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2116386644471958149, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2116386644471958150, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -409,6 +399,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116386644471958149, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Cut_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116386644471958149, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2116386645606718540, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
         type: 3}
@@ -529,20 +529,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6590708363904044600}
     m_Modifications:
-    - target: {fileID: 889970496372801526, guid: c40f1f8d7f2a074478af0b9441a09530,
-        type: 3}
-      propertyPath: m_Name
-      value: CutSlot1_Emissive
-      objectReference: {fileID: 0}
     - target: {fileID: 889970496372801522, guid: c40f1f8d7f2a074478af0b9441a09530,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.029999971
+      value: -0.037
       objectReference: {fileID: 0}
     - target: {fileID: 889970496372801522, guid: c40f1f8d7f2a074478af0b9441a09530,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.029999971
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 889970496372801522, guid: c40f1f8d7f2a074478af0b9441a09530,
         type: 3}
@@ -588,6 +583,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 889970496372801522, guid: c40f1f8d7f2a074478af0b9441a09530,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 889970496372801522, guid: c40f1f8d7f2a074478af0b9441a09530,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 889970496372801526, guid: c40f1f8d7f2a074478af0b9441a09530,
+        type: 3}
+      propertyPath: m_Name
+      value: CutSlot1_Emissive
       objectReference: {fileID: 0}
     - target: {fileID: 889970496372801523, guid: c40f1f8d7f2a074478af0b9441a09530,
         type: 3}
