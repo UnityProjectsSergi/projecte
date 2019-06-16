@@ -26,7 +26,7 @@ public class OrderGenerator : MonoBehaviour
     /// <param name="numIng"></param>
     /// <returns></returns>
     float rad;
-    public Order GenerateOrder(float counter, int numIng, float duration, Order.OrderRes orderServed)
+    public Order GenerateOrder  (float counter, int numIng, float duration, Order.OrderRes orderServed)
     {
         // listes Elements a generar x crear ordre
         List<Item> listIng = new List<Item>();
@@ -67,7 +67,7 @@ public class OrderGenerator : MonoBehaviour
                     n.gameObject.SetActive(false);
                     //// Adegirixo a llistes a generar la UI i els obj Ingreienr o Item
                     ItemUI mn = m.GetComponent<ItemUI>();
-                    listIngUI.Add(mn);
+                   // listIngUI.Add(mn);
                     listIng.Add(n);
                 }
             }

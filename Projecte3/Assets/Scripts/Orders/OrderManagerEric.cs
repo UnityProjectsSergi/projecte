@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-class OrderManager:MonoBehaviour
+class OrderManagerEric:MonoBehaviour
 {
-    private static OrderManager _instance;
-    public static OrderManager Instance { get { return _instance; } private set { } }
+    private static OrderManagerEric _instance;
+    public static OrderManagerEric Instance { get { return _instance; } private set { } }
     public Queue<Order> listOrdderQueue = new Queue<Order>();
-    public List<Order> listOrders = new List<Order>();
-    public OrderGenerator OrderGenerator;
+    public List<OrderEric> listOrders = new List<OrderEric>();
+    public OrderGeneratorEric OrderGenerator;
     public int pointsUI;
     public float SegWaitTo2onOrder=35f;
     public Text Points;
@@ -34,7 +34,7 @@ class OrderManager:MonoBehaviour
     public void AddOrder(float num, int numIngredients, float duracióOfOder)
     {
         SoundManager.Instance.OneShotEventAttatchet("event:/INFORMACIÓN JUGADOR/RECETA ENTRANTE", this.gameObject);
-        listOrders.Add(OrderGenerator.GenerateOrder(TypeCounter, numIngredients, duracióOfOder, ServeOrder));
+        listOrders.Add(OrderGenerator.GenerateOrderEric(TypeCounter, numIngredients, duracióOfOder, ServeOrder));
         TypeCounter++;
 
     }
@@ -61,7 +61,7 @@ class OrderManager:MonoBehaviour
 
     public float TypeCounter;
 
-    public void ServeOrder(Order order)
+    public void ServeOrder(OrderEric order)
     {
         SoundManager.Instance.OneShotEventAttatchet("event:/INFORMACIÓN JUGADOR/ENTREGADO/ENTREGADO BIEN", this.gameObject);
         order.HideUIOrder();
@@ -123,7 +123,7 @@ class OrderManager:MonoBehaviour
      // com compares 2 llistes   
     }
 
-    public void RemoveOrder(Order m)
+    public void RemoveOrder(OrderEric m)
     {
         SoundManager.Instance.OneShotEventAttatchet("event:/INFORMACIÓN JUGADOR/ENTREGADO/ENTREGADO MAL", this.gameObject);
         listOrders.Remove(m);
