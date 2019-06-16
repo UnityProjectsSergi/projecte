@@ -33,7 +33,7 @@ namespace Assets.Scripts.ObjPooler
         public T GetObjFromPool(Transform transform=null)
         {
             if (objects.Count == 0)
-                AddObjects(4);
+                AddObjects(20);
 
             T obj = objects.Dequeue();
             if (transform != null)
