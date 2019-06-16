@@ -92,13 +92,14 @@ public class StoveSlot : Slot
                 }
                 else if (itemPlayer.itemType == ItemType.Vial)
                 {
+                    player.animator.SetBool("toIdle", true);
+                    player.animator.SetBool("toLlevar", false);
+                    player.animator.SetBool("toLlevarIdle", false);
                     ItemPot ItemPot = item.GetComponent<ItemPot>();
                     if (!hasPassIngToVial)
-                    {
-                       
-
+                    {                      
                         if (ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone)
-                        {              
+                        {
                             player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
                             player.attachedObject.GetComponent<VialItem>().ChangeMaterial(ItemPot.listItem[0].ing);
                             ItemPot.ResetPot();
