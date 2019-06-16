@@ -52158,11 +52158,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1910492458625236447}
     m_Modifications:
-    - target: {fileID: 9028935469017460864, guid: 61fb30da5bfcc474c8fa160f93413eb3,
-        type: 3}
-      propertyPath: m_Name
-      value: baseOlla_GAME
-      objectReference: {fileID: 0}
     - target: {fileID: 9028935469017230496, guid: 61fb30da5bfcc474c8fa160f93413eb3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -52171,7 +52166,7 @@ PrefabInstance:
     - target: {fileID: 9028935469017230496, guid: 61fb30da5bfcc474c8fa160f93413eb3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.103
+      value: 0.147
       objectReference: {fileID: 0}
     - target: {fileID: 9028935469017230496, guid: 61fb30da5bfcc474c8fa160f93413eb3,
         type: 3}
@@ -52233,6 +52228,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2500006
       objectReference: {fileID: 0}
+    - target: {fileID: 9028935469017460864, guid: 61fb30da5bfcc474c8fa160f93413eb3,
+        type: 3}
+      propertyPath: m_Name
+      value: baseOlla_GAME
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61fb30da5bfcc474c8fa160f93413eb3, type: 3}
 --- !u!23 &4343806233949388748 stripped
@@ -52254,20 +52254,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1910492458625236447}
     m_Modifications:
-    - target: {fileID: 6796200534000765942, guid: f95897d7010195c4280ed827e57735e9,
-        type: 3}
-      propertyPath: m_Name
-      value: StoveSlot1_Emissive (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6796200534000765938, guid: f95897d7010195c4280ed827e57735e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6796200534000765938, guid: f95897d7010195c4280ed827e57735e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25125006
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 6796200534000765938, guid: f95897d7010195c4280ed827e57735e9,
         type: 3}
@@ -52317,8 +52312,23 @@ PrefabInstance:
     - target: {fileID: 6796200534000765938, guid: f95897d7010195c4280ed827e57735e9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.34082502
+      value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 6796200534000765938, guid: f95897d7010195c4280ed827e57735e9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796200534000765942, guid: f95897d7010195c4280ed827e57735e9,
+        type: 3}
+      propertyPath: m_Name
+      value: StoveSlot1_Emissive (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796200534000765936, guid: f95897d7010195c4280ed827e57735e9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9197a7e0a3ff1854689e1f1f92a04d09, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95897d7010195c4280ed827e57735e9, type: 3}
 --- !u!4 &2989147772319778273 stripped
