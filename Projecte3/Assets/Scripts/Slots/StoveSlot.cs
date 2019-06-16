@@ -15,7 +15,7 @@ public class StoveSlot : Slot
     public bool hasPassIngToVial;
   
     public GameObject Fire;
-
+    
     public int numIngStove;
 
     // get ItemPot from ItemPotPool.
@@ -98,9 +98,9 @@ public class StoveSlot : Slot
                        
 
                         if (ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone)
-                        {
+                        {              
                             player.attachedObject.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
-                            player.attachedObject.GetComponent<VialItem>().ChangeMaterial();
+                            player.attachedObject.GetComponent<VialItem>().ChangeMaterial(ItemPot.listItem[0].ing);
                             ItemPot.ResetPot();
                             hasPassIngToVial = true;
                         }

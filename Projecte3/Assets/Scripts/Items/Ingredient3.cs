@@ -16,9 +16,9 @@ public class Ingredient3 : Item
             rigidbodyController = GetComponent<RigidbodyController>();
         canvas.GetComponentInChildren<Image>().sprite = spriteIng;
         duration = 5f;
-        nameO = "Ing2";
+        nameO = "Ing3";
         itemType = ItemType.Ing;
-        ing = ItemUiType.Ing2;
+        ing = ItemUiType.Ing3;
     }
     public override void Update()
     {

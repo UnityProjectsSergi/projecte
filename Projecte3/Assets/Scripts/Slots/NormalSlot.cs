@@ -59,7 +59,7 @@ public class NormalSlot:Slot
                     if (ItemPot.currentStatePot == ItemPotStateIngredients.Alert || ItemPot.currentStatePot == ItemPotStateIngredients.CookedDone)
                     {
                         item.GetComponent<VialItem>().listItem = new List<Item>(ItemPot.listItem);
-                        item.GetComponent<VialItem>().ChangeMaterial();
+                        item.GetComponent<VialItem>().ChangeMaterial(ItemPot.listItem[0].ing);
                         ItemPot.ResetPot();
                         hasPassIngToVial = true;
                     }

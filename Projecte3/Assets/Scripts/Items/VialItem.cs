@@ -8,8 +8,10 @@ public class VialItem : Item
     public List<Item> listItem;
     public GameObject vial;
     private Material iniMaterial;
-    public Material fullMaterial;
-    
+    public Material ing1Material;
+    public Material ing2Material;
+    public Material ing3Material;
+
     //Get Vial Item from VialItemPool
     public void Start()
     {
@@ -23,9 +25,21 @@ public class VialItem : Item
         listItem.Clear();
     }
 
-    public void ChangeMaterial()
+    public void ChangeMaterial(ItemUiType type)
     {
-        vial.GetComponent<Renderer>().material = fullMaterial;
+        switch(type)
+        {
+            case ItemUiType.Ing1:
+                vial.GetComponent<Renderer>().material = ing1Material;
+                break;
+            case ItemUiType.Ing2:
+                vial.GetComponent<Renderer>().material = ing2Material;
+                break;
+            case ItemUiType.Ing3:
+                vial.GetComponent<Renderer>().material = ing3Material;
+                break;
+        }
+        
     }
 
     public void ResetMaterial()
