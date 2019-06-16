@@ -58,6 +58,8 @@ public class CharacterControllerAct : MonoBehaviour
         HabilityAction();
         SlotAction();
         ActiveSlot();
+        if (attachedObject != null)
+            HasItem = true;
     }
   
     private void HabilityAction()
