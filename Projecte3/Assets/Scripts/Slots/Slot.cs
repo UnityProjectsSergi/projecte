@@ -39,6 +39,8 @@ public abstract class Slot :MonoBehaviour
             player.attachedObject.transform.parent = positionObjOn.transform;
             item = player.attachedObject.GetComponent<Item>();
             item.transform.position = positionObjOn.transform.position;
+            if(item.itemType == ItemType.Ing)
+                item.transform.eulerAngles = new Vector3(90, 180, 0);
             player.attachedObject = null;
         }    
     }

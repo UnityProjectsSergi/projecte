@@ -48,20 +48,16 @@ public class SelectorManager : MonoBehaviour
     {
         if (!j1Connected)
         {
-            if (Input.GetAxis("J1OButtonPS4") > 0)
+            j1Connected = true;
+            j1PressCricle.SetActive(false);
+            j1Character[j1PlayerNum].SetActive(true);
+            gameManager.j1 = true;
+            gameManager.j1c = j1PlayerNum;
+
+            if (!isPressStart)
             {
-                j1Connected = true;
-                j1PressCricle.SetActive(false);
-                j1Character[j1PlayerNum].SetActive(true);
-                gameManager.j1 = true;
-                gameManager.j1c = j1PlayerNum;
-
-                if (!isPressStart)
-                {
-                    isPressStart = true;
-                    pressStartText.SetActive(true);                  
-                }
-
+                isPressStart = true;
+                pressStartText.SetActive(true);                  
             }
         } else
         {
