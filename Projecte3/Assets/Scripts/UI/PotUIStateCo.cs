@@ -203,6 +203,9 @@ public class PotUIStateCo : MonoBehaviour
 
     internal void Reset()
     {
+        Fire.gameObject.SetActive(false);
+        Cook.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        SpeedUpCook.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         ProgressBarGO.gameObject.SetActive(false);
         journey = 0;
         isStarted = false;
