@@ -9525,7 +9525,7 @@ MonoBehaviour:
   - {fileID: 1333987557}
   - {fileID: 341617784}
   pressStartText: {fileID: 1536471816}
-  nextScaneName: Beta_FirstLevel
+  nextScaneName: Beta_ThirdLevel
   ListPlayers: []
 --- !u!4 &1407681153
 Transform:
@@ -9648,6 +9648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireEvent: 
+  isstarted: 0
 --- !u!4 &1416385630
 Transform:
   m_ObjectHideFlags: 0
@@ -75932,6 +75933,7 @@ MonoBehaviour:
   timerToAction: 2
   barCanvas: {fileID: 5215458677781830480}
   progresBar: {fileID: 5215458676744064409}
+  playsound: 0
 --- !u!114 &6201690265787328228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75954,6 +75956,7 @@ MonoBehaviour:
   timerToAction: 2
   barCanvas: {fileID: 5215458676728899818}
   progresBar: {fileID: 5215458677863136803}
+  playsound: 0
 --- !u!1 &6303564080505513326
 GameObject:
   m_ObjectHideFlags: 0
