@@ -5,7 +5,7 @@
 			<value>MACHACAR BLANDO</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{50d61c37-1a6d-4e69-b6c8-7985c5d4ae35}</destination>
@@ -108,6 +108,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d511520d-3b3f-4f1f-8ce9-00454f0ad035}">
+		<property name="volume">
+			<value>5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -138,6 +141,7 @@
 	<object class="MixerBusEffectChain" id="{f210bd47-a6ba-4b65-a5c3-4fb980a35686}">
 		<relationship name="effects">
 			<destination>{fe0d1f8f-ee9d-4a04-b607-99c228500192}</destination>
+			<destination>{766323ff-18b8-4911-bb21-3840dafdcbcf}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{89abb575-761d-4ce0-89d7-3e61cb38cb4f}" />
@@ -179,5 +183,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{768090fc-810e-4ed6-87c1-ef6822906016}" />
 	<object class="MixerBusFader" id="{fe0d1f8f-ee9d-4a04-b607-99c228500192}" />
+	<object class="SpatialiserEffect" id="{766323ff-18b8-4911-bb21-3840dafdcbcf}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="maximumDistance">
+			<value>65</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{d8990f96-ea9d-4f23-abb3-109197acc20e}" />
 </objects>
