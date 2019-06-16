@@ -8,13 +8,24 @@ public class initscren : MonoBehaviour
     public UI_Screen nextScreen;
     public SelectorManager selector;
 
-    // Update is called once per frame
+    private bool move = false;
+    public GameObject mainCamera;
+
     void Update()
     {
-        if(InputManager.Instance.GetButtonDown("J1XButtonPS4"))
+        if(InputManager.Instance.GetButtonDown("J1XButtonPS4") && !move)
         {
             system.SwitchScreen(nextScreen);
             selector.enabled = true;
+            move = true;
+        }
+
+        if(move)
+        {
+            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, new Vector3(-7, 14.4f, -42.5f), 20 * Time.deltaTime);
+
+            if (mainCamera.transform.position == new Vector3(-7, 14.4f, -42.5f))
+                move = false;
         }
     }
 }
