@@ -21,14 +21,14 @@ public class SoundManager : MonoBehaviour
             _instance = this;
             //   listOrders = new List<Order>();
             DontDestroyOnLoad(this.gameObject);
-            Music = CreateEventInstaceAttached("event:/FONDO/BSO", this.gameObject);
-            Music.start();
+           
         }
     }
     //called before the first frame update
     void Start()
     {
-      
+        Music = CreateEventInstaceAttached("event:/FONDO/BSO", this.gameObject);
+        Music.start();
     }
 
     // Update is called once per frame

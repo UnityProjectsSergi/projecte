@@ -58,6 +58,7 @@ public class TimerUI : MonoBehaviour
     void UpdateTimer()
     {
         int min = Mathf.FloorToInt(timeLeft / 60);
+        
         int sec = Mathf.FloorToInt(timeLeft % 60);
         textTimer.text = min.ToString("00") + ":" + sec.ToString("00");
     }

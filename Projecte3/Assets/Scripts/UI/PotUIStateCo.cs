@@ -327,13 +327,13 @@ public class PotUIStateCo : MonoBehaviour
             for (int i = 0; i < 12; i++)
             {
                 SoundManager.Instance.OneShotEventAttatchet("event:/COCINAR/CALDERO/SONIDOALERTA", this.gameObject);
-                image.gameObject.SetActive(true);
+                BurnAfterFire.gameObject.SetActive(true);
                 yield return new WaitForSeconds((speedUp) ? 0.1f / SpeedUpReduccion : 0.25F);
-                image.gameObject.SetActive(false);
+                BurnAfterFire.gameObject.SetActive(false);
                 yield return new WaitForSeconds((speedUp) ? 0.1f / SpeedUpReduccion : 0.25F);
             }
             yield return new WaitForSeconds((speedUp) ? waitAfter / SpeedUpReduccion : waitAfter);
-            StartCoroutine(ShowImageBurn(0.1f, BurnAfterFire));
+            StartCoroutine(ShowImageBurn(0.1f, Fire));
             yield return null;
         }
     }
