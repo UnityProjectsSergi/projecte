@@ -265,6 +265,21 @@ PrefabInstance:
       propertyPath: renderer
       value: 
       objectReference: {fileID: 1073890016}
+    - target: {fileID: 4413149946260175364, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: SegWaitTo2onOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413149946260175364, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: NumIngredientsOfOrders
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413149946260175364, guid: fd71702d3171e4042be373b9f1f7c235,
+        type: 3}
+      propertyPath: durationOfOrders
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd71702d3171e4042be373b9f1f7c235, type: 3}
 --- !u!23 &1073890016 stripped

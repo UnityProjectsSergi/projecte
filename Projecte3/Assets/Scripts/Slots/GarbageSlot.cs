@@ -12,7 +12,14 @@ namespace Assets.Scripts
                 item = player.attachedObject.GetComponent<Item>();
                 if (item.itemType == ItemType.Ing)
                 {
-                    if (item.GetType() == typeof(Ingredient2))
+                    if (item.GetType() == typeof(Ingredient3))
+                    {
+                        player.attachedObject = null;
+                        item.transform.parent = null;
+                        item.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
+                        Ingredient3Pool.Instance.ReturnToPool((Ingredient3)item);
+                    }
+                    else if (item.GetType() == typeof(Ingredient2))
                     {
                         player.attachedObject = null;
                         item.transform.parent = null;
