@@ -74,17 +74,19 @@ class OrderManager:MonoBehaviour
     {
         foreach (var order in listOrders)
         {
-
             Debug.Log("checkings");
             if (!order.isServed)
             {
-
                 List<Item> In1OfOrderList = order._ingredients.OfType<Ingredient1>().ToList<Item>();
                 List<Item> Ing2OfOrderList = order._ingredients.OfType<Ingredient2>().ToList<Item>();
                 List<Item> Ing3OfOrderList = order._ingredients.OfType<Ingredient3>().ToList<Item>();
                 List<Item> equalItems2Ing2 = item.listItem.OfType<Ingredient2>().ToList<Item>();
                 List<Item> equalItems2Ing1 = item.listItem.OfType<Ingredient1>().ToList<Item>();
                 List<Item> equalItems2Ing3 = item.listItem.OfType<Ingredient3>().ToList<Item>();
+                Debug.Log(equalItems2Ing1.Count + "Item list ing1" + In1OfOrderList.Count + " num items Orers");
+                Debug.Log(equalItems2Ing2.Count + "Item list ing2" + Ing2OfOrderList.Count + " num items Orers");
+                Debug.Log(equalItems2Ing1.Count == In1OfOrderList.Count && equalItems2Ing2.Count == Ing2OfOrderList.Count);
+
                 if (equalItems2Ing1.Count == In1OfOrderList.Count && equalItems2Ing2.Count == Ing2OfOrderList.Count && equalItems2Ing3.Count == Ing3OfOrderList.Count)
                 {
                     Debug.Log("lists has same numbros of each ingredient");

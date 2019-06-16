@@ -5,7 +5,7 @@
 			<value>CALDERO IDLE</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{e1120c2f-15bb-4170-ba31-50d5236fcb3e}</destination>
@@ -168,6 +168,7 @@
 	<object class="MixerBusEffectChain" id="{ef0a9cf5-0c1f-4869-bf3e-a1fb4dbebf60}">
 		<relationship name="effects">
 			<destination>{7aba75e1-e855-4bfe-a52c-0eb7253f33cb}</destination>
+			<destination>{60d82c7f-f35f-4045-8adc-9d653c563136}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e519a952-3657-4859-aa9d-e1d46658467b}" />
@@ -220,6 +221,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{f4bcabf9-f61e-4aa2-9e1e-65154976f286}" />
 	<object class="MixerBusFader" id="{7aba75e1-e855-4bfe-a52c-0eb7253f33cb}" />
+	<object class="SpatialiserEffect" id="{60d82c7f-f35f-4045-8adc-9d653c563136}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="maximumDistance">
+			<value>35</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{5a1dc8cb-b680-448d-b654-e21aa79dec38}">
 		<property name="position">
 			<value>6.6000000000000005</value>

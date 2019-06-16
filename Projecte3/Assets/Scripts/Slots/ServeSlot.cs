@@ -31,15 +31,17 @@ namespace Assets.Scripts.Slots
                     VialItem vialItem = item.GetComponent<VialItem>();
                     
                     //   Crear ordre o mirar si a llist of orders hi ha ordres d'aquest item
-                    bool check = OrderManager.Instance.CheckAllOrder(vialItem);
+                    bool check = OrderManagerEric.Instance.CheckAllOrder(vialItem);
                  
                     if (check)
                     {
+                        Debug.Log("SSSSS VLID");
                         FloatingText.Show("Order Get", "OrderOK", new FromWorldPointTextPositioner(Camera.main, new Vector3(transform.position.x,transform.position.y+1,transform.position.z),0.5f,20f));
                        // StartCoroutine(TextWide(5f, "Order get"));
                     }
                     else
                     {
+                        Debug.Log("SSSS NOT");
                         FloatingText.Show("Order Wrong", "OrderKO", new FromWorldPointTextPositioner(Camera.main, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f, 20f));
                     //    StartCoroutine(TextWide(5f, "Order Wrong"));
                     }

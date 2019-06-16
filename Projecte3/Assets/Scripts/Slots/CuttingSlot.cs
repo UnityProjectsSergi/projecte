@@ -15,6 +15,7 @@ public class CuttingSlot : Slot
     public GameObject barCanvas;
     public Image progresBar;
     FMOD.Studio.EventInstance Maxacq;
+    public bool playsound;
 
     private void Start()
     {
@@ -60,18 +61,26 @@ public class CuttingSlot : Slot
     {
         if (item != null)
         {
-            Maxacq.start();
+           
             if (item.stateIngredient == StateIngredient.raw 
              || item.stateIngredient == StateIngredient.cutting)
             {
-               
+                if (!playsound)
+                {
+                    Maxacq.start();
+                    playsound = true;
+                }
                 item.stateIngredient = StateIngredient.cutting;
                 fillAmount += progresSpeed * Time.deltaTime;
                 progresBar.fillAmount = fillAmount;
 
                 if (fillAmount >= 1)
                 {
-                    Maxacq.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    if (playsound)
+                    {
+                        Maxacq.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                        playsound = false;
+                    }
                     fillAmount = 0;
                     barCanvas.SetActive(false);
                     item.gameObject.transform.localEulerAngles = new Vector3(0, 180, 0);
