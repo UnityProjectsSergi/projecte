@@ -36,15 +36,26 @@ namespace Assets.Scripts
                 }
                 else if(item.itemType==ItemType.Pot)
                 {
+                    Debug.Log("Pot");
                     ItemPot itemPot = item.GetComponent<ItemPot>();
                     if (itemPot)
+                    {
+                        Debug.Log("ressetpot");
                         itemPot.ResetPot();
+                    }
                     else
                     {
                         ItemPotFSM itemPotfs = item.GetComponent<ItemPotFSM>();
                         itemPotfs.ResetPot();
                     }
                 }
+                else if (item.itemType == ItemType.Vial)
+                {
+                    Debug.Log("vial");
+                    VialItem vialItem = item.GetComponent<VialItem>();
+                    vialItem.ResetVial();
+                }
+                
             }          
         }
     }

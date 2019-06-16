@@ -76,6 +76,7 @@ public class ItemPot : Item
         IsStartCooking = false;
         listItem.Clear();
         potUi.ResetUI();
+        
     }
     public bool CheckIsCookedIng()
     {
