@@ -69,8 +69,10 @@ public class CuttingSlot : Slot
                 {
                     fillAmount = 0;
                     barCanvas.SetActive(false);
-                    item.transform.localScale = new Vector3(0.7f, 0.4f, 0.7f);
+                    item.gameObject.transform.localEulerAngles = new Vector3(0, 180, 0);
                     item.stateIngredient = StateIngredient.cutted;
+                    item.itemObject.SetActive(false);
+                    item.itemMolido.SetActive(true);
                     particlesEnd.transform.localScale = new Vector3(2, 2, 2);
                     Instantiate(particlesEnd, transform.position, Quaternion.identity);
                 }

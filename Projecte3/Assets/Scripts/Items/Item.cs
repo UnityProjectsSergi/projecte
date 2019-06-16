@@ -25,6 +25,9 @@ public  class Item : MonoBehaviour
 
     private bool inTable { get { return inTable; } set { } }
 
+    public GameObject itemObject;
+    public GameObject itemMolido;
+
     private void OnEnable()
     {       
         stateIngredient=StateIngredient.raw;

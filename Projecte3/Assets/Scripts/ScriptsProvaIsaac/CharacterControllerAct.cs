@@ -136,7 +136,8 @@ public class CharacterControllerAct : MonoBehaviour
         if (Physics.Raycast(raycastTransform.position, transform.forward, out hit, 1, itemsLayerMask))
         {
             item = hit.collider.GetComponent<Item>();
-            item.transform.eulerAngles = Vector3.zero;
+            if (item.itemType == ItemType.Ing)
+                item.transform.eulerAngles = new Vector3(90, 180, 0);
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
             HasItem = true;
@@ -144,7 +145,8 @@ public class CharacterControllerAct : MonoBehaviour
         else if(Physics.Raycast(raycastTransform.position, transform.forward + new Vector3(0, 0.5f, 0), out hit, 1, itemsLayerMask))
         {
             item = hit.collider.GetComponent<Item>();
-            item.transform.eulerAngles = Vector3.zero;
+            if(item.itemType == ItemType.Ing)
+                item.transform.eulerAngles = new Vector3(90, 180, 0);
             item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             item.Catch(this);
             HasItem = true;
