@@ -147,8 +147,9 @@ public  class Item : MonoBehaviour
           
                 if (transform.parent)
                 {
-                    transform.parent.parent.GetComponent<CharacterControllerAct>().LeaveObjOn();
-
+                    CharacterControllerAct act = transform.parent.parent.gameObject.transform.parent.parent.GetComponent<CharacterControllerAct>();
+                    act.habilityesController.hability.StartCoolDown();
+                    act.LeaveObjOn();                  
                 }
             }
             hasDeacactivateLevitation = false;

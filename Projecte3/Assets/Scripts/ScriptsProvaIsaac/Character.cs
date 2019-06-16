@@ -90,15 +90,14 @@ public class Character : MonoBehaviour
         var v3 = hit.transform.position - transform.position;
         var angle = Vector3.Angle(v3, transform.forward);
 
-        if (angle > 45.0 && angle < 135.0)
-            Debug.Log("Side hit");
+        //if (angle > 45.0 && angle < 135.0)
+
     }
 
     private void AnimationControll(Vector3 move)
     {
         if (move.magnitude >= 0.1)
         {
-            Debug.Log("asdsadsa = " + ccAct.HasItem);
             if (!ccAct.HasItem)
             {
                 ccAct.animator.SetBool("toMove", true);
