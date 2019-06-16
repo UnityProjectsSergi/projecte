@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05e8f57972949fb45ae102c7229c1e74, type: 2}
+  - {fileID: 2100000, guid: 70cf144b7dd1c88469dd003ebeb60e8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -288,6 +288,7 @@ MonoBehaviour:
   timerToAction: 2
   barCanvas: {fileID: 3285026704360641260}
   progresBar: {fileID: 3285026703083275301}
+  playsound: 0
 --- !u!1001 &3515103564122249321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,6 +296,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6590708363904044600}
     m_Modifications:
+    - target: {fileID: 2116386644471958149, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Cut_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116386644471958149, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2116386644471958150, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -399,16 +410,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2116386644471958149, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
-        type: 3}
-      propertyPath: m_Name
-      value: Cut_Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2116386644471958149, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2116386645606718540, guid: 3cc7e9b34f7f9dc438048e14393d95c7,
         type: 3}
@@ -529,6 +530,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6590708363904044600}
     m_Modifications:
+    - target: {fileID: 889970496372801526, guid: c40f1f8d7f2a074478af0b9441a09530,
+        type: 3}
+      propertyPath: m_Name
+      value: CutSlot1_Emissive
+      objectReference: {fileID: 0}
     - target: {fileID: 889970496372801522, guid: c40f1f8d7f2a074478af0b9441a09530,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -593,11 +599,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 889970496372801526, guid: c40f1f8d7f2a074478af0b9441a09530,
-        type: 3}
-      propertyPath: m_Name
-      value: CutSlot1_Emissive
       objectReference: {fileID: 0}
     - target: {fileID: 889970496372801523, guid: c40f1f8d7f2a074478af0b9441a09530,
         type: 3}
