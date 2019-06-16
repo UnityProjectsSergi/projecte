@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     private static SoundManager _instance;
     public static SoundManager Instance { get { return _instance; } private set { } }
     public string FireEvent;
+    public bool isstarted;
     // Start is 
     private void Awake()
     {
@@ -27,8 +28,12 @@ public class SoundManager : MonoBehaviour
     //called before the first frame update
     void Start()
     {
-        Music = CreateEventInstaceAttached("event:/FONDO/BSO", this.gameObject);
-        Music.start();
+        if (!isstarted)
+        {
+            Music = CreateEventInstaceAttached("event:/FONDO/BSO", this.gameObject);
+            Music.start();
+            isstarted = true;
+        }
     }
 
     // Update is called once per frame

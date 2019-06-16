@@ -49,8 +49,8 @@ public class PotUIStateCo : MonoBehaviour
     public void Start()
     {
 
-        //TODO : Cook = SoundManager.Instance.CreateEventInstaceAttached("event:/COCINAR/CALDERO/CALDERO IDLE", this.gameObject);
-        //TODO : SpeedUpCook = SoundManager.Instance.CreateEventInstaceAttached("event:/Sounds/Cook/Pot/PotCooking", this.gameObject);
+         Cook = SoundManager.Instance.CreateEventInstaceAttached("event:/COCINAR/CALDERO/CALDERO IDLE", this.gameObject);
+         SpeedUpCook = SoundManager.Instance.CreateEventInstaceAttached("event:/COCINAR/CALDERO/CALDERO COCINANDO", this.gameObject);
     }
 
     public void SetFire()
@@ -72,7 +72,7 @@ public class PotUIStateCo : MonoBehaviour
         Debug.Log("se cooking");
         if (speedUp && !hasSpeedUp)
         {
-         //TODO   SpeedUpCook.start();
+              SpeedUpCook.start();
             Debug.Log("speddUPoK");
             int i = 0;
             foreach (var item in fires)
@@ -86,7 +86,7 @@ public class PotUIStateCo : MonoBehaviour
         }
         else if(!speedUp )
         {
-           //TODO: SpeedUpCook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            SpeedUpCook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             int i = 0;
             foreach (var item in fires)
             {
@@ -124,9 +124,8 @@ public class PotUIStateCo : MonoBehaviour
         {
             if (!IsPausedCooking)
             {
-
                 setSpeedUpParticles();
-             //TODO   Cook.start();
+                Cook.start();
                 if (speedUp)
                 {
                     journey += Time.deltaTime * SpeedUpReduccion;
@@ -190,7 +189,7 @@ public class PotUIStateCo : MonoBehaviour
             else
             {
                 StopFire();
-               //TODO Cook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                Cook.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 ProgressBarGO.gameObject.SetActive(false);
                 CookedOk.gameObject.SetActive(false);
                 AlertBurn.gameObject.SetActive(false);

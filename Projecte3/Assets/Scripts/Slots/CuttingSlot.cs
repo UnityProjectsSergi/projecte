@@ -14,9 +14,12 @@ public class CuttingSlot : Slot
     private float progresSpeed;
     public GameObject barCanvas;
     public Image progresBar;
+    FMOD.Studio.EventInstance Maxacq;
+    public bool playsound;
 
     private void Start()
     {
+        Maxacq = SoundManager.Instance.CreateEventInstaceAttached("event:/COCINAR/MACHACAR/MACHACAR BLANDO", this.gameObject);
         progresSpeed = 1 / timerToAction;
     }
     public void Update()
@@ -58,15 +61,26 @@ public class CuttingSlot : Slot
     {
         if (item != null)
         {
+           
             if (item.stateIngredient == StateIngredient.raw 
              || item.stateIngredient == StateIngredient.cutting)
             {
+                if (!playsound)
+                {
+                    Maxacq.start();
+                    playsound = true;
+                }
                 item.stateIngredient = StateIngredient.cutting;
                 fillAmount += progresSpeed * Time.deltaTime;
                 progresBar.fillAmount = fillAmount;
 
                 if (fillAmount >= 1)
                 {
+                    if (playsound)
+                    {
+                        Maxacq.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                        playsound = false;
+                    }
                     fillAmount = 0;
                     barCanvas.SetActive(false);
                     item.gameObject.transform.localEulerAngles = new Vector3(0, 180, 0);

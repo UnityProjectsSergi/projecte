@@ -5,7 +5,7 @@
 			<value>CALDERO COCINANDO</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{e1120c2f-15bb-4170-ba31-50d5236fcb3e}</destination>
@@ -191,9 +191,14 @@
 	<object class="MixerBusEffectChain" id="{c1622ee8-6a42-436d-92b9-af2b4562de26}">
 		<relationship name="effects">
 			<destination>{b6a6f409-086c-4b44-b133-1434d4dc83bf}</destination>
+			<destination>{2a20bf67-3c26-44fd-86f3-c6cacb6e2f66}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{13ad5622-4a80-444a-b7b2-b6a7f868d08e}" />
+	<object class="MixerBusPanner" id="{13ad5622-4a80-444a-b7b2-b6a7f868d08e}">
+		<property name="surroundPanDirection">
+			<value>-180</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{b819ad25-6745-4141-b648-affbde9ec37b}" />
 	<object class="AutomationPoint" id="{edc7db38-b2c9-4eef-91ba-9af9681cc5a4}">
 		<property name="position">
@@ -234,4 +239,12 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{b6a6f409-086c-4b44-b133-1434d4dc83bf}" />
+	<object class="SpatialiserEffect" id="{2a20bf67-3c26-44fd-86f3-c6cacb6e2f66}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="maximumDistance">
+			<value>35</value>
+		</property>
+	</object>
 </objects>
