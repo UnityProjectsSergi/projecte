@@ -75,6 +75,18 @@ public class SelectorManager : MonoBehaviour
                     j1Character[j1PlayerNum].SetActive(true);
                     gameManager.j1c = j1PlayerNum;
                 }
+                else if (InputManager.Instance.GetAxisRaw("J1LeftStickHorizontalPS4") < 0)
+                {
+                    j1Timer = iniTimer;
+                    j1Character[j1PlayerNum].SetActive(false);
+
+                    j1PlayerNum--;
+                    if (j1PlayerNum < 0)
+                        j1PlayerNum = 3;
+
+                    j1Character[j1PlayerNum].SetActive(true);
+                    gameManager.j1c = j1PlayerNum;
+                }
             } else if(j1Timer > 0)
             {
                 j1Timer -= Time.deltaTime;
@@ -110,6 +122,17 @@ public class SelectorManager : MonoBehaviour
                     j2PlayerNum++;
                     if (j2PlayerNum > 3)
                         j2PlayerNum = 0;
+
+                    j2Character[j2PlayerNum].SetActive(true);
+                    gameManager.j2c = j2PlayerNum;
+                } else if(InputManager.Instance.GetAxisRaw("J2LeftStickHorizontalPS4") < 0)
+                {
+                    j2Timer = iniTimer;
+                    j2Character[j2PlayerNum].SetActive(false);
+
+                    j2PlayerNum--;
+                    if (j2PlayerNum < 0)
+                        j2PlayerNum = 3;
 
                     j2Character[j2PlayerNum].SetActive(true);
                     gameManager.j2c = j2PlayerNum;
@@ -154,6 +177,18 @@ public class SelectorManager : MonoBehaviour
                     j3Character[j3PlayerNum].SetActive(true);
                     gameManager.j3c = j3PlayerNum;
                 }
+                else if (InputManager.Instance.GetAxisRaw("J3LeftStickHorizontalPS4") < 0)
+                {
+                    j3Timer = iniTimer;
+                    j3Character[j3PlayerNum].SetActive(false);
+
+                    j3PlayerNum--;
+                    if (j3PlayerNum < 0)
+                        j3PlayerNum = 3;
+
+                    j3Character[j3PlayerNum].SetActive(true);
+                    gameManager.j3c = j3PlayerNum;
+                }
             }
             else if (j3Timer > 0)
             {
@@ -194,8 +229,20 @@ public class SelectorManager : MonoBehaviour
                     j4Character[j4PlayerNum].SetActive(true);
                     gameManager.j4c = j4PlayerNum;
                 }
+                else if (InputManager.Instance.GetAxisRaw("J4LeftStickHorizontalPS4") < 0)
+                {
+                    j4Timer = iniTimer;
+                    j4Character[j4PlayerNum].SetActive(false);
+
+                    j4PlayerNum--;
+                    if (j4PlayerNum < 0)
+                        j4PlayerNum = 3;
+
+                    j4Character[j4PlayerNum].SetActive(true);
+                    gameManager.j4c = j4PlayerNum;
+                }
             }
-            else if (j3Timer > 0)
+            else if (j4Timer > 0)
             {
                 j4Timer -= Time.deltaTime;
             }
