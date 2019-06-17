@@ -118,7 +118,10 @@ public class StoveSlot : Slot
         {
             Item itemPlayer = player.attachedObject.GetComponent<Item>();
             if (itemPlayer.itemType == ItemType.Pot)
+            {
+                itemPlayer.transform.eulerAngles = new Vector3(0,0,0);
                 base.LeaveObjOn(player);
+            }
         }
         // mirar al joc si es poden fgr 
     }
