@@ -11,22 +11,6 @@ public class OrderGeneratorEric : MonoBehaviour
     public Sprite OrderUIEricIng2Seta, OrderUIEricIng3Seta, OrderUIEricIng2Dit, OrderUIEricIng3Dit,OrderUIEricIng2Min,OrderUIEricIng3Min;
     public Transform parentUI;
     
-   
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    /// <summary>
-    /// Order UI and Order data Generator 
-    /// </summary>
-    /// <param name="numIng"></param>
-    /// <returns></returns>
     float rad;
     public OrderEric GenerateOrderEric(float counter, int numIng, float duration, OrderEric.OrderRes orderServed)
     {

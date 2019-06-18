@@ -81,15 +81,15 @@ public class OrderUIEric : MonoBehaviour
     {
         if(timeOutValue<0.750 && timeOutValue >0.749)
         {
-            Order._points -= 1;
+            Order._points -= 0;
         }
         if (timeOutValue < 0.50 && timeOutValue > 0.499)
         {
-            Order._points -= 2;
+            Order._points -= 0;
         }
         if (timeOutValue < 0.25 && timeOutValue > 0.249)
         {
-            Order._points -= 2;
+            Order._points -= 0;
         }
         if (timeOutValue < 0.15f)
         {

@@ -90,33 +90,9 @@ class OrderManagerEric:MonoBehaviour
                     Debug.Log("lists has same numbros of each ingredient");
                     order.isServed = true;
                     order._OrderServed(order);
-                    pointsUI += 5;
-             //       SoundManager.Instance.OneShotEventAttatchet("event:/Sounds/Effects/OrderGet", this.gameObject);
+                    pointsUI += 25;
                     return true;
                 }
-                // checkeo si els ingredients de la ordre q em donen el tinc a una ordre de la llista 
-                //FoundOrder = null;
-                //if (order._ingredients.Count == 0)
-                //    return false;
-                //if (item.listItem.Count == 0)
-                //    return false;
-                //if (order._ingredients.Count != item.listItem.Count)
-                //    return false;
-                //for (int i = 0; i < order._ingredients.Count; i++)
-                //{
-                //    if (order._ingredients[i].ing != item.listItem[i].ing)
-                //        return false;
-                //}
-                // found1 = true;
-                //    FoundOrder = order;
-               
-                
-                //    return found1;
-                //if (Utils.CompareLists2<Item>(order._ingredients, item.listItem))
-                //{
-                //   
-                //   // break;
-                //}
             }
         }
         return false;
@@ -150,7 +126,7 @@ class OrderManagerEric:MonoBehaviour
                     //qunat s'acabi el temps rest a4 sempre 
                     listOrders[i].HideUIOrder();
                     // aqui detecta quant el temps de s'acaa 
-                    pointsUI -= 2;
+                    pointsUI -= 10;
                     RemoveOrder(listOrders[i]);
                 }
             }

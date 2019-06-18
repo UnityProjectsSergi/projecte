@@ -362,7 +362,7 @@ MonoBehaviour:
   hasDeacactivateLevitation: 0
   ing: 0
   itemType: 2
-  points: 5
+  points: 25
   nameO: 
   stateIngredient: 0
   rigidbodyController: {fileID: 6281994492684871375}
@@ -473,6 +473,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4019033098300839943}
     m_Modifications:
+    - target: {fileID: 3548714549215242099, guid: b0c853d746f83594fb1b70bb5e34ab40,
+        type: 3}
+      propertyPath: m_Name
+      value: mineral_GAME
+      objectReference: {fileID: 0}
     - target: {fileID: 3548714549215214419, guid: b0c853d746f83594fb1b70bb5e34ab40,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -528,11 +533,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180.00002
       objectReference: {fileID: 0}
-    - target: {fileID: 3548714549215242099, guid: b0c853d746f83594fb1b70bb5e34ab40,
-        type: 3}
-      propertyPath: m_Name
-      value: mineral_GAME
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c853d746f83594fb1b70bb5e34ab40, type: 3}
 --- !u!1 &2851122841213398218 stripped
@@ -554,6 +554,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4019033098300839943}
     m_Modifications:
+    - target: {fileID: 8423669051369867348, guid: d7e0e28039d4b2948b579cc1480555f6,
+        type: 3}
+      propertyPath: m_Name
+      value: GAME_MasillaMineral
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423669051369867348, guid: d7e0e28039d4b2948b579cc1480555f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8423669051369867353, guid: d7e0e28039d4b2948b579cc1480555f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -623,16 +633,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5993707
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423669051369867348, guid: d7e0e28039d4b2948b579cc1480555f6,
-        type: 3}
-      propertyPath: m_Name
-      value: GAME_MasillaMineral
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423669051369867348, guid: d7e0e28039d4b2948b579cc1480555f6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e0e28039d4b2948b579cc1480555f6, type: 3}
