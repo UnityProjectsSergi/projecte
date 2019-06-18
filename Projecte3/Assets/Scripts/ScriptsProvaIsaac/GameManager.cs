@@ -25,7 +25,13 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKey("escape"))
+            Application.Quit();
+    }
+
     public void CheckPlayerActive(int controller, GameObject caller)
     {
         switch (controller)
