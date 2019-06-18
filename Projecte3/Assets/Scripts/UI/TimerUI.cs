@@ -14,13 +14,13 @@ public class TimerUI : MonoBehaviour
     private float secs;
     public bool isPaused;
     bool isStop = false;
-
+    FMOD.Studio.EventInstance EventInstance;
     public float timeChangeScene;
     public string nameNextScene;
 
     void Start()
     {
-       
+        EventInstance = SoundManager.Instance.CreateEventInstaceAttached("event:/INFORMACIÓN JUGADOR/SONIDO CUENTA ATRÁS", this.gameObject);
         textTimer = GetComponent<UnityEngine.UI.Text>();
     }
 
@@ -28,16 +28,23 @@ public class TimerUI : MonoBehaviour
     {
         if (!isPaused)
         {
+
             if (timeLeft > 0.0)
             {
+                if (timeLeft == 30.0000000000000000f)
+                    EventInstance.start();
                 timeLeft -= Time.deltaTime;
                 UpdateTimer();
             }
             else
             {
                 if (!isStop)
+                {
+                    EventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    System.SwitchScreen(TimerUP);
                     isStop = true;
-                System.SwitchScreen(TimerUP);
+                }
+                
 
             }
         }

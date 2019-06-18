@@ -30,9 +30,9 @@ public class SoundManager : MonoBehaviour
     {
         if (!isstarted)
         {
-            Music = CreateEventInstaceAttached("event:/FONDO/BSO", this.gameObject);
-            Music.start();
-            isstarted = true;
+            //Music = CreateEventInstaceAttached("event:/FONDO/BSO", this.gameObject);
+            //Music.start();
+            //isstarted = true;
         }
     }
 
