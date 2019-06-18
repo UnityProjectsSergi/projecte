@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance { get { return _instance; } private set { } }
     public string FireEvent;
     public bool isstarted;
+    public FMOD.Studio.EventInstance Tuto;
+    public bool isStatedTuto;
     // Start is 
     private void Awake()
     {
@@ -30,12 +32,27 @@ public class SoundManager : MonoBehaviour
     {
         if (!isstarted)
         {
-            //Music = CreateEventInstaceAttached("event:/FONDO/BSO", this.gameObject);
-            //Music.start();
-            //isstarted = true;
+            Tuto= SoundManager.Instance.CreateEventInstaceAttached("event:/Music/Tutorial", this.gameObject);
+          
         }
     }
+    public void StartMusicTuto()
+    {
+        if (!isStatedTuto)
+        {
+            isStatedTuto = true;
+            Tuto.start();
+        }
+    }
+    public void StopMusicTuto()
+    {
+        if (isStatedTuto)
 
+        {
+            Tuto.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            isStatedTuto = false;
+        }
+    }
     // Update is called once per frame
     void Update()
     {

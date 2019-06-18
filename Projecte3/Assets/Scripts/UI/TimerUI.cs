@@ -17,6 +17,7 @@ public class TimerUI : MonoBehaviour
     FMOD.Studio.EventInstance EventInstance;
     public float timeChangeScene;
     public string nameNextScene;
+    private bool hasStartSound;
 
     void Start()
     {
@@ -28,11 +29,13 @@ public class TimerUI : MonoBehaviour
     {
         if (!isPaused)
         {
-
             if (timeLeft > 0.0)
             {
-                if (timeLeft == 30.0000000000000000f)
+                if (!hasStartSound && timeLeft < 30.0f  )
+                {
+                    hasStartSound = true;
                     EventInstance.start();
+                }
                 timeLeft -= Time.deltaTime;
                 UpdateTimer();
             }

@@ -1059,11 +1059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  stringEventSound: 
   FisrrtSelected: {fileID: 519752079}
-  HasStopOnClose: 0
-  HasStartOnOpen: 0
-  isSounding: 0
 --- !u!225 &523713537
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2565,11 +2561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  stringEventSound: 
   FisrrtSelected: {fileID: 0}
-  HasStopOnClose: 0
-  HasStartOnOpen: 0
-  isSounding: 0
 --- !u!114 &1580187336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2932,11 +2924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  stringEventSound: 
   FisrrtSelected: {fileID: 0}
-  HasStopOnClose: 0
-  HasStartOnOpen: 0
-  isSounding: 0
   timerToClose: 2
   isOpen: 0
   OnComplete:
@@ -3818,11 +3806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  stringEventSound: event:/Music/Tutorial
   FisrrtSelected: {fileID: 0}
-  HasStopOnClose: 0
-  HasStartOnOpen: 1
-  isSounding: 0
   timerToClose: 2
   isOpen: 0
   OnComplete:
@@ -4343,11 +4327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  stringEventSound: 
   FisrrtSelected: {fileID: 1508633098}
-  HasStopOnClose: 0
-  HasStartOnOpen: 0
-  isSounding: 0
 --- !u!114 &4421839534429888868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4491,6 +4471,7 @@ GameObject:
   - component: {fileID: 2669392305117097054}
   - component: {fileID: 5057069273391236578}
   - component: {fileID: 1828873046}
+  - component: {fileID: 2804201635403437762}
   m_Layer: 5
   m_Name: Screen
   m_TagString: Untagged
@@ -4556,11 +4537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  stringEventSound: event:/Music/MUSICLEVEL
   FisrrtSelected: {fileID: 0}
-  HasStopOnClose: 1
-  HasStartOnOpen: 1
-  isSounding: 0
 --- !u!114 &5057069273391236578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4603,6 +4580,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiElement: {fileID: 5057069273391236579}
+--- !u!114 &2804201635403437762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057069273391236577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d648960d99ea4449a2b8f06e7b16df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5057069273427901616
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,11 +4896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  stringEventSound: event:/Music/Tutorial
   FisrrtSelected: {fileID: 0}
-  HasStopOnClose: 1
-  HasStartOnOpen: 0
-  isSounding: 0
   timerToClose: 2
   isOpen: 0
   OnComplete:
@@ -5278,15 +5263,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bb7f9ebade85464483e31a00063ceea, type: 3}
---- !u!1 &3872598731729991952 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3039064880843545398, guid: 5bb7f9ebade85464483e31a00063ceea,
-    type: 3}
-  m_PrefabInstance: {fileID: 2275111036487967270}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3872598731729991954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3039064880843545396, guid: 5bb7f9ebade85464483e31a00063ceea,
+    type: 3}
+  m_PrefabInstance: {fileID: 2275111036487967270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3872598731729991952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3039064880843545398, guid: 5bb7f9ebade85464483e31a00063ceea,
     type: 3}
   m_PrefabInstance: {fileID: 2275111036487967270}
   m_PrefabAsset: {fileID: 0}
@@ -5369,9 +5354,9 @@ PrefabInstance:
       objectReference: {fileID: 5057069273619641544}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbbb7b2ce093d7049a83fdadd28dd646, type: 3}
---- !u!4 &4911379733421139698 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1636062243509871586, guid: dbbb7b2ce093d7049a83fdadd28dd646,
+--- !u!1 &4911379733421139696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1636062243509871584, guid: dbbb7b2ce093d7049a83fdadd28dd646,
     type: 3}
   m_PrefabInstance: {fileID: 5952857287051379984}
   m_PrefabAsset: {fileID: 0}
@@ -5387,9 +5372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941183c3706474e43955d11c87cc0df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4911379733421139696 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1636062243509871584, guid: dbbb7b2ce093d7049a83fdadd28dd646,
+--- !u!4 &4911379733421139698 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1636062243509871586, guid: dbbb7b2ce093d7049a83fdadd28dd646,
     type: 3}
   m_PrefabInstance: {fileID: 5952857287051379984}
   m_PrefabAsset: {fileID: 0}
