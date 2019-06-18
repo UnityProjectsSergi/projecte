@@ -219,6 +219,7 @@ MonoBehaviour:
   ingCookValue: 0
   spriteIng: {fileID: 21300006, guid: 6a147f139f9708e498f61c717c1d77f8, type: 3}
   collider: {fileID: 4056078537708835031}
+  levitationParticles: {fileID: 0}
   itemObject: {fileID: 3639811609955730607}
   itemMolido: {fileID: 5417214439416124462}
   percentCooked: 0
@@ -566,16 +567,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4019033098300839943}
     m_Modifications:
-    - target: {fileID: 3878170052853985405, guid: 15a3318caa7a2034b9b0dac7bae7d537,
-        type: 3}
-      propertyPath: m_Name
-      value: GAME_MasillaSeta
-      objectReference: {fileID: 0}
-    - target: {fileID: 3878170052853985405, guid: 15a3318caa7a2034b9b0dac7bae7d537,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3878170052853985400, guid: 15a3318caa7a2034b9b0dac7bae7d537,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,6 +636,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5860089
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878170052853985405, guid: 15a3318caa7a2034b9b0dac7bae7d537,
+        type: 3}
+      propertyPath: m_Name
+      value: GAME_MasillaSeta
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878170052853985405, guid: 15a3318caa7a2034b9b0dac7bae7d537,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a3318caa7a2034b9b0dac7bae7d537, type: 3}

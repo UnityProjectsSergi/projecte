@@ -23,6 +23,8 @@ public  class Item : MonoBehaviour
 
     public Collider collider;
 
+    public GameObject levitationParticles;
+
     private bool inTable { get { return inTable; } set { } }
 
     public GameObject itemObject;

@@ -370,6 +370,7 @@ MonoBehaviour:
   ingCookValue: 0
   spriteIng: {fileID: 21300000, guid: 6a147f139f9708e498f61c717c1d77f8, type: 3}
   collider: {fileID: 4056078537708835031}
+  levitationParticles: {fileID: 0}
   itemObject: {fileID: 2851122841213398218}
   itemMolido: {fileID: 556133077245722991}
   percentCooked: 0
@@ -553,16 +554,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4019033098300839943}
     m_Modifications:
-    - target: {fileID: 8423669051369867348, guid: d7e0e28039d4b2948b579cc1480555f6,
-        type: 3}
-      propertyPath: m_Name
-      value: GAME_MasillaMineral
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423669051369867348, guid: d7e0e28039d4b2948b579cc1480555f6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8423669051369867353, guid: d7e0e28039d4b2948b579cc1480555f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -632,6 +623,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5993707
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423669051369867348, guid: d7e0e28039d4b2948b579cc1480555f6,
+        type: 3}
+      propertyPath: m_Name
+      value: GAME_MasillaMineral
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423669051369867348, guid: d7e0e28039d4b2948b579cc1480555f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e0e28039d4b2948b579cc1480555f6, type: 3}
