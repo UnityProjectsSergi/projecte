@@ -28,6 +28,8 @@ public  class Item : MonoBehaviour
     public GameObject itemObject;
     public GameObject itemMolido;
 
+    public GameObject levitationParticles;
+
     private void OnEnable()
     {       
         stateIngredient=StateIngredient.raw;
