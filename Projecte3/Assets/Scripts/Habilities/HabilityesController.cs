@@ -11,6 +11,7 @@ public class HabilityesController : MonoBehaviour
     public GameObject HabilityRadi;
     public LayerMask layerMaskOverLapOlles;
     public bool CookHability;
+    public GameObject levitationParticles;
 
     public bool cCookHability;
     public Image CoolDown;
@@ -50,11 +51,8 @@ public class HabilityesController : MonoBehaviour
             ChangeMesh(3);
             hability.set(durationHabilityTime * 3, coolDownTimerHability, ActiveHabilityPortal, DeactivateHabilityPortal, CoolDown);
         }
-
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(speedUpCookHability)
@@ -65,18 +63,21 @@ public class HabilityesController : MonoBehaviour
     public void ActivateLevitation()
     {
         Levitation.start();
-        characterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
+        Item item = characterControllerAct.attachedObject.GetComponent<Item>();
+        item.ActivateDeactivateItemPlayerControler(true, GetComponent<Character>().playercontroller, GetComponent<PlayerInput>());
+        item.levitationParticles = Instantiate(levitationParticles, item.gameObject.transform.position, Quaternion.identity, item.gameObject.transform);
         GetComponent<CharacterController>().enabled = false;
-        GetComponent<Character>().enabled = false;     
+        GetComponent<Character>().enabled = false;
     }
     public void DeactivateLevitation()
     {
         Levitation.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        characterControllerAct.attachedObject.GetComponent<Item>().ActivateDeactivateItemPlayerControler(false, 0, null);
+        Item item = characterControllerAct.attachedObject.GetComponent<Item>();
+        item.ActivateDeactivateItemPlayerControler(false, 0, null);
+        Destroy(item.levitationParticles.gameObject);
         GetComponent<CharacterController>().enabled = true;
         GetComponent<Character>().enabled = true;
         HabilityInCoolDown = true;
-
     }
 
     public void ActivateHabilitySpeedFire()
