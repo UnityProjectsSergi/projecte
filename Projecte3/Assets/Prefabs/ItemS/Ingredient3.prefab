@@ -211,7 +211,7 @@ MonoBehaviour:
   hasDeacactivateLevitation: 0
   ing: 2
   itemType: 2
-  points: 4
+  points: 25
   nameO: 
   stateIngredient: 0
   rigidbodyController: {fileID: 0}
@@ -605,6 +605,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3463907306777115977}
     m_Modifications:
+    - target: {fileID: 1418573142837418883, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
+        type: 3}
+      propertyPath: m_Name
+      value: dedo_GAME
+      objectReference: {fileID: 0}
     - target: {fileID: 1418573142837446563, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -659,11 +664,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -194.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418573142837418883, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
-        type: 3}
-      propertyPath: m_Name
-      value: dedo_GAME
       objectReference: {fileID: 0}
     - target: {fileID: 1418573142835152195, guid: 309cacbc82aa3c1419294cceb3c3bb2e,
         type: 3}
