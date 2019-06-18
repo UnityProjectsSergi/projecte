@@ -32,6 +32,7 @@ public class OrderUIEric : MonoBehaviour
         totalTime = 0;
         SkackeGameObject = GetComponent<SkackeGameObject>();
         this.StartCoroutine(Countdown());
+        listImags = GetComponentsInChildren<Image>();
     }
     public void SetCooldown()
     {  }
