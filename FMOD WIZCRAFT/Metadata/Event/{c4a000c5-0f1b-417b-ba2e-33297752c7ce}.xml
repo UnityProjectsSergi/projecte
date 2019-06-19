@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{81d83816-4c25-4f48-969e-1b7755d34ee4}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -131,6 +134,7 @@
 	<object class="MixerBusEffectChain" id="{4351cbfa-7f19-4b08-9f06-0d2d72e4a064}">
 		<relationship name="effects">
 			<destination>{672178aa-9f6c-41c6-9c77-c9397348d599}</destination>
+			<destination>{9296fe14-c580-4579-bfed-e4368bf8066b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2455513d-7881-41ca-aaf6-6d4a62976031}" />
@@ -155,4 +159,9 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{672178aa-9f6c-41c6-9c77-c9397348d599}" />
+	<object class="TremoloEffect" id="{9296fe14-c580-4579-bfed-e4368bf8066b}">
+		<property name="depth">
+			<value>0.415000021</value>
+		</property>
+	</object>
 </objects>
